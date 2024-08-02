@@ -49,8 +49,8 @@ class GroceryModel extends FlutterFlowModel<GroceryWidget> {
   TextEditingController? textFielddisAmtTextController;
   String? Function(BuildContext, String?)?
       textFielddisAmtTextControllerValidator;
-  // Stores action output result for [Custom Action - addToHoldListGrCalculation] action in TextFielddisAmt widget.
-  List<dynamic>? allbillistdiscperCopy;
+  // Stores action output result for [Custom Action - disAmtChangedFunctiongrocery] action in TextFielddisAmt widget.
+  List<dynamic>? allbillistdiscper;
   // Stores action output result for [Custom Action - calSubTotalForHoldList] action in TextFielddisAmt widget.
   double? res13Copy2Copy;
   // Stores action output result for [Custom Action - calBillAmt] action in TextFielddisAmt widget.
@@ -60,8 +60,8 @@ class GroceryModel extends FlutterFlowModel<GroceryWidget> {
   TextEditingController? textFieldtaxPerTextController;
   String? Function(BuildContext, String?)?
       textFieldtaxPerTextControllerValidator;
-  // Stores action output result for [Custom Action - addToHoldListGrCalculation] action in TextFieldtaxPer widget.
-  List<dynamic>? allbillisttaxcper;
+  // Stores action output result for [Custom Action - taxPerChangedFunctiongrocery] action in TextFieldtaxPer widget.
+  List<dynamic>? taxperchenged;
   // Stores action output result for [Custom Action - calSubTotalForHoldList] action in TextFieldtaxPer widget.
   double? res13Copy2Copy2;
   // Stores action output result for [Custom Action - calBillAmt] action in TextFieldtaxPer widget.
@@ -71,8 +71,8 @@ class GroceryModel extends FlutterFlowModel<GroceryWidget> {
   TextEditingController? textFieldTaxAmtTextController;
   String? Function(BuildContext, String?)?
       textFieldTaxAmtTextControllerValidator;
-  // Stores action output result for [Custom Action - addToHoldListGrCalculation] action in TextFieldTaxAmt widget.
-  List<dynamic>? allbillisttaxcperCopy;
+  // Stores action output result for [Custom Action - taxAmtChangedFunctiongrocery] action in TextFieldTaxAmt widget.
+  List<dynamic>? taxamtchanged;
   // Stores action output result for [Custom Action - calSubTotalForHoldList] action in TextFieldTaxAmt widget.
   double? res13Copy2Copy2Copy;
   // Stores action output result for [Custom Action - calBillAmt] action in TextFieldTaxAmt widget.

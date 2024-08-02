@@ -684,8 +684,8 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                         controller: _model.textFielddisAmtTextController,
                         focusNode: _model.textFielddisAmtFocusNode,
                         onFieldSubmitted: (_) async {
-                          _model.allbillistdiscperCopy =
-                              await actions.addToHoldListGrCalculation(
+                          _model.allbillistdiscper =
+                              await actions.disAmtChangedFunctiongrocery(
                             widget!.parameter2!,
                             FFAppState().selBill,
                             widget!.parameter3!.toList(),
@@ -706,7 +706,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                           setState(() {
                             _model.textFielddisPerTextController?.text =
                                 getJsonField(
-                              _model.allbillistdiscperCopy!
+                              _model.allbillistdiscper!
                                   .where((e) =>
                                       getJsonField(
                                         widget!.jsonitem,
@@ -833,8 +833,8 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                         controller: _model.textFieldtaxPerTextController,
                         focusNode: _model.textFieldtaxPerFocusNode,
                         onFieldSubmitted: (_) async {
-                          _model.allbillisttaxcper =
-                              await actions.addToHoldListGrCalculation(
+                          _model.taxperchenged =
+                              await actions.taxPerChangedFunctiongrocery(
                             widget!.parameter2!,
                             FFAppState().selBill,
                             widget!.parameter3!.toList(),
@@ -855,7 +855,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                           setState(() {
                             _model.textFieldTaxAmtTextController?.text =
                                 getJsonField(
-                              _model.allbillisttaxcper!
+                              _model.taxperchenged!
                                   .where((e) =>
                                       getJsonField(
                                         widget!.jsonitem,
@@ -982,8 +982,8 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                         controller: _model.textFieldTaxAmtTextController,
                         focusNode: _model.textFieldTaxAmtFocusNode,
                         onFieldSubmitted: (_) async {
-                          _model.allbillisttaxcperCopy =
-                              await actions.addToHoldListGrCalculation(
+                          _model.taxamtchanged =
+                              await actions.taxAmtChangedFunctiongrocery(
                             widget!.parameter2!,
                             FFAppState().selBill,
                             widget!.parameter3!.toList(),
@@ -1004,7 +1004,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                           setState(() {
                             _model.textFieldtaxPerTextController?.text =
                                 getJsonField(
-                              _model.allbillisttaxcperCopy!
+                              _model.taxamtchanged!
                                   .where((e) =>
                                       getJsonField(
                                         widget!.jsonitem,
