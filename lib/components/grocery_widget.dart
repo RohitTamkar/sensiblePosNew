@@ -524,9 +524,10 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                   children: [
                     Expanded(
                       child: Text(
-                        FFLocalizations.of(context).getText(
-                          'xe9k1m10' /* 500 */,
-                        ),
+                        getJsonField(
+                          widget!.jsonitem,
+                          r'''$.mrpPrice''',
+                        ).toString(),
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).labelSmall.override(
                               fontFamily:

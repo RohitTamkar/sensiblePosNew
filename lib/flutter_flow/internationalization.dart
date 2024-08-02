@@ -25053,13 +25053,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'xe9k1m10': {
-      'en': '500',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
   },
   // Miscellaneous
   {
