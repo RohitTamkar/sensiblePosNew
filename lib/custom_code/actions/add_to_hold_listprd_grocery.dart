@@ -81,6 +81,7 @@ Future<List<dynamic>> addToHoldListprdGrocery(
     final data = {
       "name": document!.name,
       "price": (document.sellingPrice)!.toDouble(),
+      "mrpPrice": (document.mrpPrice)!.toDouble(),
       "quantity": quantity,
       "unit": unitRecord.unitType, //kg,pcs,doz
       "unitId": unitRecord.id,

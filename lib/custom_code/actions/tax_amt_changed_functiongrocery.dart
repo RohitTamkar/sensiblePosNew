@@ -79,6 +79,7 @@ Future<List<dynamic>> taxAmtChangedFunctiongrocery(
   final data = {
     "name": document!.name,
     "price": price,
+    "mrpPrice": (document.mrpPrice)!.toDouble(),
     "quantity": quantity,
     "unit": unitRecord.unitType,
     "total": total,
