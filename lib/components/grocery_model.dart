@@ -27,8 +27,8 @@ class GroceryModel extends FlutterFlowModel<GroceryWidget> {
   FocusNode? textFieldrateFocusNode;
   TextEditingController? textFieldrateTextController;
   String? Function(BuildContext, String?)? textFieldrateTextControllerValidator;
-  // Stores action output result for [Custom Action - addToHoldListGrCalculation] action in TextFieldrate widget.
-  List<dynamic>? allbillistCopy;
+  // Stores action output result for [Custom Action - ratePriceChangedFunctiongrocery] action in TextFieldrate widget.
+  List<dynamic>? ratechanged;
   // Stores action output result for [Custom Action - calSubTotalForHoldList] action in TextFieldrate widget.
   double? res13Copy;
   // Stores action output result for [Custom Action - calBillAmt] action in TextFieldrate widget.

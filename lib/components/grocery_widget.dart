@@ -378,8 +378,8 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                         controller: _model.textFieldrateTextController,
                         focusNode: _model.textFieldrateFocusNode,
                         onFieldSubmitted: (_) async {
-                          _model.allbillistCopy =
-                              await actions.addToHoldListGrCalculation(
+                          _model.ratechanged =
+                              await actions.ratePriceChangedFunctiongrocery(
                             widget!.parameter2!,
                             FFAppState().selBill,
                             widget!.parameter3!.toList(),
@@ -397,6 +397,30 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             double.parse(
                                 _model.textFieldTaxAmtTextController.text),
                           );
+                          setState(() {
+                            _model.textFieldTaxAmtTextController?.text =
+                                getJsonField(
+                              _model.ratechanged!
+                                  .where((e) =>
+                                      getJsonField(
+                                        e,
+                                        r'''$.id''',
+                                      ) ==
+                                      getJsonField(
+                                        widget!.jsonitem,
+                                        r'''$.id''',
+                                      ))
+                                  .toList()
+                                  .first,
+                              r'''$.taxAmt''',
+                            ).toString();
+                            _model.textFieldTaxAmtTextController?.selection =
+                                TextSelection.collapsed(
+                                    offset: _model
+                                        .textFieldTaxAmtTextController!
+                                        .text
+                                        .length);
+                          });
                           _model.res13Copy =
                               await actions.calSubTotalForHoldList(
                             FFAppState().selBill.toString(),
@@ -545,7 +569,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             int.parse(
                                 _model.textFielddisPerTextController.text),
                             double.parse(
-                                _model.textFieldtaxPerTextController.text),
+                                _model.textFielddisAmtTextController.text),
                             double.parse(
                                 _model.textFieldrateTextController.text),
                             double.parse(_model.textFieldqtTextController.text),
