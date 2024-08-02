@@ -184,13 +184,13 @@ class _SearchHiveprdGroceryState extends State<SearchHiveprdGrocery> {
                           FFAppState().holdBillCount));
                   FFAppState().selBill = 1;
                 }
-                _model.addtosavebill = await actions.addToHoldListprdCopy(
-                  document,
-                  FFAppState().selBill,
-                  widget.taxcollection!.toList(),
-                  functions.enabletaxinclusive(
-                      widget.appSettingsRecord.inclusiveTax),
-                );
+                _model.addtosavebill = await actions.addToHoldListprdGrocery(
+                    document,
+                    FFAppState().selBill,
+                    widget.taxcollection!.toList(),
+                    functions.enabletaxinclusive(
+                        widget.appSettingsRecord.inclusiveTax),
+                    widget.unitcollection!.toList());
                 _model.calculateResult = await actions.calSubTotalForHoldList(
                   FFAppState().selBill.toString(),
                   _model.addtosavebill!.toList(),
