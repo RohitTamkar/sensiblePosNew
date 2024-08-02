@@ -44,7 +44,14 @@ Future<List<dynamic>> addToHoldListprdGrocery(
     (element) => element.id == unitId,
     orElse: null,
   );
+  int disPer = document.discountPer.toInt();
+  double disAmt = document.discountAmt;
 
+  if (disAmt > 0) {
+    disPer = (disAmt * 100 / document.sellingPrice).toInt();
+  } else if (disPer > 0) {
+    disAmt = (document.sellingPrice * disPer) / 100.0;
+  }
   if (taxRecord != null) {
     double taxPer = taxRecord.percentage ?? 0.0;
     double price = document!.sellingPrice;
@@ -62,8 +69,15 @@ Future<List<dynamic>> addToHoldListprdGrocery(
         : (price * quantity) + double.parse(taxAmt.toStringAsFixed(2));*/
     double total = (inclusiveorexclusive.toLowerCase() == 'inclusive')
         ? (price * quantity)
-        : (price * quantity);
+        : (price * quantity) + double.parse(taxAmt.toStringAsFixed(2));
 
+    // Deduct discount amount from total
+    total -= disAmt * quantity;
+
+    // Add tax amount for exclusive tax
+    if (inclusiveorexclusive.toLowerCase() == 'exclusive') {
+      total += taxAmt;
+    }
     final data = {
       "name": document!.name,
       "price": (document.sellingPrice)!.toDouble(),
@@ -76,8 +90,8 @@ Future<List<dynamic>> addToHoldListprdGrocery(
       "taxId": document!.taxId,
       "taxPer": taxPer,
       "taxAmt": double.parse(taxAmt.toStringAsFixed(2)),
-      "disPer": document!.discountPer,
-      "disAmt": document!.discountAmt,
+      "disPer": disPer,
+      "disAmt": disAmt,
     };
 
     var index;

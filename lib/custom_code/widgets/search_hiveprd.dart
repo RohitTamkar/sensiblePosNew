@@ -12,6 +12,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom widgets
 
+import 'index.dart'; // Imports other custom widgets
+
 import 'package:flutter/scheduler.dart';
 import '/custom_code/actions/index.dart' as actions;
 
@@ -73,140 +75,130 @@ class _SearchHiveprdState extends State<SearchHiveprd> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        TypeAheadField<ProductStructStruct>(
-          textFieldConfiguration: TextFieldConfiguration(
-            controller: _productNameController,
-            focusNode: _focusNode,
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
+        Expanded(
+          flex: 4,
+          child: Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
+            child: TypeAheadField<ProductStructStruct>(
+              textFieldConfiguration: TextFieldConfiguration(
+                controller: _productNameController,
+                focusNode: _focusNode,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'Search for a product...',
+                ),
+                onSubmitted: (value) async {
+                  print('Submitted value: $value');
+                  List<ProductStructStruct> matchingProducts = widget.document
+                      .where((product) => product.barcode == value)
+                      .toList();
+
+                  if (matchingProducts.isNotEmpty) {
+                    ProductStructStruct selectedProduct =
+                        matchingProducts.first;
+                    FFAppState().productHiveput = selectedProduct;
+                    if (FFAppState().holdBillCount == 0) {
+                      FFAppState().holdBillCount =
+                          FFAppState().holdBillCount + 1;
+                      FFAppState().addToAllBillsList(
+                          functions.generateBillDetailsJson(
+                              0.0,
+                              0.0,
+                              0.0,
+                              'CASH',
+                              0.0,
+                              0.0,
+                              FFAppState().billAmt,
+                              0.0,
+                              FFAppState().finalAmt,
+                              '0',
+                              FFAppState().itemCartList.toList(),
+                              FFAppState().holdBillCount));
+                      FFAppState().selBill = 1;
+                    }
+                    _model.addtosavebill = await actions.addToHoldListprdCopy(
+                      FFAppState().productHiveput,
+                      FFAppState().selBill,
+                      widget.taxcollection,
+                      functions.enabletaxinclusive(
+                          widget.appSettingsRecord.inclusiveTax),
+                    );
+                    _model.calculateResult =
+                        await actions.calSubTotalForHoldList(
+                      FFAppState().selBill.toString(),
+                      _model.addtosavebill!,
+                    );
+                    _model.calbillAmt = await actions.calBillAmt(
+                      FFAppState().disAmt,
+                      FFAppState().delCharges,
+                    );
+                    await _model.listViewprd?.animateTo(
+                      _model.listViewprd!.position.maxScrollExtent,
+                      duration: Duration(milliseconds: 100),
+                      curve: Curves.ease,
+                    );
+
+                    _model.submitForm();
+                    _productNameController.clear();
+                    await Future.delayed(Duration(milliseconds: 100));
+                    FocusScope.of(context).requestFocus(_focusNode);
+                  }
+                },
+              ),
+              suggestionsCallback: (pattern) {
+                return widget.document.where((product) =>
+                    product.name.toLowerCase().contains(pattern.toLowerCase()));
+              },
+              itemBuilder: (context, ProductStructStruct product) {
+                return ListTile(
+                  title: Text(product.name),
+                  subtitle:
+                      Text('\₹${product.sellingPrice.toStringAsFixed(2)}'),
+                );
+              },
+              onSuggestionSelected: (ProductStructStruct document) async {
+                _productNameController.clear();
+                if (FFAppState().holdBillCount == 0) {
+                  FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
+                  FFAppState().addToAllBillsList(
+                      functions.generateBillDetailsJson(
+                          0.0,
+                          0.0,
+                          0.0,
+                          'CASH',
+                          0.0,
+                          0.0,
+                          FFAppState().billAmt,
+                          0.0,
+                          FFAppState().finalAmt,
+                          '0',
+                          FFAppState().itemCartList.toList(),
+                          FFAppState().holdBillCount));
+                  FFAppState().selBill = 1;
+                }
+                _model.addtosavebill = await actions.addToHoldListprdCopy(
+                  document,
+                  FFAppState().selBill,
+                  widget.taxcollection!.toList(),
+                  functions.enabletaxinclusive(
+                      widget.appSettingsRecord.inclusiveTax),
+                );
+                _model.calculateResult = await actions.calSubTotalForHoldList(
+                  FFAppState().selBill.toString(),
+                  _model.addtosavebill!.toList(),
+                );
+                _model.calbillAmt = await actions.calBillAmt(
+                  FFAppState().disAmt,
+                  FFAppState().delCharges,
+                );
+                await _model.listViewprd?.animateTo(
+                  _model.listViewprd!.position.maxScrollExtent,
+                  duration: Duration(milliseconds: 100),
+                  curve: Curves.ease,
+                );
+              },
             ),
-            onSubmitted: (value) async {
-              String enteredValue = _productNameController.text;
-              List<ProductStructStruct> matchingProducts = widget.document
-                  .where((product) => product.barcode == enteredValue)
-                  .toList();
-
-              ProductStructStruct selectedProduct = matchingProducts.first;
-              FFAppState().productHiveput = selectedProduct;
-              if (FFAppState().holdBillCount == 0) {
-                FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
-                FFAppState().addToAllBillsList(
-                    functions.generateBillDetailsJson(
-                        0.0,
-                        0.0,
-                        0.0,
-                        'CASH',
-                        0.0,
-                        0.0,
-                        FFAppState().billAmt,
-                        0.0,
-                        FFAppState().finalAmt,
-                        '0',
-                        FFAppState().itemCartList.toList(),
-                        FFAppState().holdBillCount));
-                FFAppState().selBill = 1;
-              }
-              _model.addtosavebill = await actions.addToHoldListprdCopy(
-                FFAppState().productHiveput,
-                FFAppState().selBill,
-                widget.taxcollection!.toList(),
-                functions
-                    .enabletaxinclusive(widget.appSettingsRecord.inclusiveTax),
-              );
-              _model.calculateResult = await actions.calSubTotalForHoldList(
-                FFAppState().selBill.toString(),
-                _model.addtosavebill!.toList(),
-              );
-              _model.calbillAmt = await actions.calBillAmt(
-                FFAppState().disAmt,
-                FFAppState().delCharges,
-              );
-              await _model.listViewprd?.animateTo(
-                _model.listViewprd!.position.maxScrollExtent,
-                duration: Duration(milliseconds: 100),
-                curve: Curves.ease,
-              );
-
-              //submit auto on this point
-              _model.submitForm();
-              _productNameController.clear();
-              await Future.delayed(
-                  Duration(milliseconds: 100)); // Delay to ensure completion
-              FocusScope.of(context).requestFocus(_focusNode);
-            },
           ),
-          suggestionsCallback: (pattern) async {
-            try {
-              // Simulate an asynchronous call with Future.delayed
-              await Future.delayed(Duration(seconds: 1));
-
-              return widget.document
-                  .where((product) => product.name
-                      .toLowerCase()
-                      .contains(pattern.toLowerCase()))
-                  .toList();
-            } catch (e) {
-              print('Error fetching suggestions: $e');
-              return [];
-            }
-          },
-          itemBuilder: (context, ProductStructStruct product) {
-            return ListTile(
-              title: Text(product.name),
-              subtitle: Text('\₹${product.sellingPrice.toStringAsFixed(2)}'),
-            );
-          },
-          /* loadingBuilder: (BuildContext context) {
-              return SizedBox(
-                width: 24,
-                height: 24,
-                child: CircularProgressIndicator(),
-              );
-            },*/
-          noItemsFoundBuilder: (BuildContext context) {
-            return Text('No products found');
-          },
-          debounceDuration: Duration(milliseconds: 500),
-          onSuggestionSelected: (ProductStructStruct document) async {
-            _productNameController.clear();
-            if (FFAppState().holdBillCount == 0) {
-              FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
-              FFAppState().addToAllBillsList(functions.generateBillDetailsJson(
-                  0.0,
-                  0.0,
-                  0.0,
-                  'CASH',
-                  0.0,
-                  0.0,
-                  FFAppState().billAmt,
-                  0.0,
-                  FFAppState().finalAmt,
-                  '0',
-                  FFAppState().itemCartList.toList(),
-                  FFAppState().holdBillCount));
-              FFAppState().selBill = 1;
-            }
-            _model.addtosavebill = await actions.addToHoldListprdCopy(
-              document,
-              FFAppState().selBill,
-              widget.taxcollection!.toList(),
-              functions
-                  .enabletaxinclusive(widget.appSettingsRecord.inclusiveTax),
-            );
-            _model.calculateResult = await actions.calSubTotalForHoldList(
-              FFAppState().selBill.toString(),
-              _model.addtosavebill!.toList(),
-            );
-            _model.calbillAmt = await actions.calBillAmt(
-              FFAppState().disAmt,
-              FFAppState().delCharges,
-            );
-            await _model.listViewprd?.animateTo(
-              _model.listViewprd!.position.maxScrollExtent,
-              duration: Duration(milliseconds: 100),
-              curve: Curves.ease,
-            );
-          },
         ),
       ],
     );
