@@ -66,7 +66,7 @@ Future<List<dynamic>> disAmtChangedFunctiongrocery(
   double totalTaxAmt = taxAmtPerItem * quantity;
 
   // Calculate total amount considering discounts and tax
-  double total = (inclusiveorexclusive.toLowerCase() == 'inclusive')
+  double total = (inclusiveorexclusive.toLowerCase() == 'exclusive')
       ? (price * quantity)
       : (price * quantity) + double.parse(totalTaxAmt.toStringAsFixed(2));
 
