@@ -222,7 +222,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                         focusNode: _model.textFieldqtFocusNode,
                         onFieldSubmitted: (_) async {
                           _model.allbillist =
-                              await actions.addToHoldListGrCalculation(
+                              await actions.quantitychangedGroceryCal(
                             widget!.parameter2!,
                             FFAppState().selBill,
                             widget!.parameter3!.toList(),

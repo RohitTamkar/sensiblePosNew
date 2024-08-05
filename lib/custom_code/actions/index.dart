@@ -14,7 +14,7 @@ export 'add_to_hold_listprd_grocery.dart' show addToHoldListprdGrocery;
 export 'print_bill_copy.dart' show printBillCopy;
 export 'add_to_hold_listprd_copy.dart' show addToHoldListprdCopy;
 export 'add_to_hold_listprdplus_grocery.dart' show addToHoldListprdplusGrocery;
-export 'add_to_hold_list_gr_calculation.dart' show addToHoldListGrCalculation;
+export 'quantitychanged_grocery_cal.dart' show quantitychangedGroceryCal;
 export 'add_to_hold_listprdplus.dart' show addToHoldListprdplus;
 export 'add_to_hold_listprdminus.dart' show addToHoldListprdminus;
 export 'add_to_hold_listprd.dart' show addToHoldListprd;
