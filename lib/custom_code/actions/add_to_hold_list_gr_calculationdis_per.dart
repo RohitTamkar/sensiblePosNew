@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom actions
+
 // Imports other custom actions
 Future<List<dynamic>> addToHoldListGrCalculationdisPer(
   ProductStructStruct document,
@@ -49,10 +51,11 @@ Future<List<dynamic>> addToHoldListGrCalculationdisPer(
   }
 
   // Calculate disPer if disAmt is provided
-  if (disAmt > 0) {
+/*  if (disAmt > 0) {
     disPer = (disAmt * 100 / price).toInt();
-  } else if (disPer > 0) {
-    disAmt = (price * disPer) / 100.0;
+  } else*/
+  if (disPer >= 0) {
+    disAmt = (price * disPer * quantity) / 100.0;
   }
 
   // Calculate taxAmt for each item separately

@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 Future<List<dynamic>> addToHoldListprdGrocery(
   ProductStructStruct document,
   int billno,
@@ -67,7 +69,7 @@ Future<List<dynamic>> addToHoldListprdGrocery(
     /* double total = (inclusiveorexclusive.toLowerCase() == 'inclusive')
         ? (price * quantity)
         : (price * quantity) + double.parse(taxAmt.toStringAsFixed(2));*/
-    double total = (inclusiveorexclusive.toLowerCase() == 'inclusive')
+    double total = (inclusiveorexclusive.toLowerCase() == 'exclusive')
         ? (price * quantity)
         : (price * quantity) + double.parse(taxAmt.toStringAsFixed(2));
 
