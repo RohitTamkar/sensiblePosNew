@@ -13,6 +13,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 Future<List<dynamic>> addToHoldListprdGrocery(
   ProductStructStruct document,
   int billno,
@@ -134,7 +136,8 @@ Future<List<dynamic>> addToHoldListprdGrocery(
       if (flag1) {
         for (int j = 0; j < itemList.length; j++) {
           if (itemList[j]["name"] == data["name"]) {
-            itemList[j]["quantity"]++;
+            /*  itemList[j]["quantity"]++;
+            itemList[j]["disAmt"] = disAmt*itemList[j]["quantity"];
             itemList[j]["taxAmt"] +=
                 taxAmtPerItem; // Update taxAmt for each item
             if (inclusiveorexclusive.toLowerCase() == 'inclusive') {
@@ -143,7 +146,7 @@ Future<List<dynamic>> addToHoldListprdGrocery(
             } else {
               itemList[j]["total"] =
                   itemList[j]["quantity"] * itemList[j]["price"];
-            }
+            }*/
             list[index]["details"]["itemList"] = itemList;
             FFAppState().allBillsList = list;
             flag = true;
@@ -162,5 +165,5 @@ Future<List<dynamic>> addToHoldListprdGrocery(
   }
 
   print(FFAppState().allBillsList);
-  return FFAppState().allBillsList;
+  return itemList;
 }

@@ -1,9 +1,9 @@
 import '/backend/backend.dart';
-import '/components/grocery_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/grocery_windows/grocery/grocery_widget.dart';
 import '/grocery_windows/grocery_header/grocery_header_widget.dart';
 import '/grocery_windows/spplier_gro/spplier_gro_widget.dart';
 import '/backend/schema/structs/index.dart';
@@ -49,10 +49,10 @@ class BillingGroceryNewModel extends FlutterFlowModel<BillingGroceryNewWidget> {
   String? Function(BuildContext, String?)? textController6Validator;
   // Stores action output result for [Custom Action - removeHoldListItem] action in IconButton widget.
   List<dynamic>? res20;
-  // Stores action output result for [Custom Action - calSubTotalForHoldList] action in IconButton widget.
-  double? res21;
-  // Stores action output result for [Custom Action - calBillAmt] action in IconButton widget.
-  double? reuslt22;
+  // Stores action output result for [Custom Action - calSubTotalForGrocery] action in IconButton widget.
+  double? ret;
+  // Stores action output result for [Custom Action - calBillAmtGrocery] action in IconButton widget.
+  double? ads;
 
   @override
   void initState(BuildContext context) {

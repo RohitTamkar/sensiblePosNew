@@ -97,7 +97,6 @@ export '/pages/shift_end_new2/shift_end_new2_widget.dart'
 export '/pages/edit_bill_new/edit_bill_new_widget.dart' show EditBillNewWidget;
 export '/pages/screens/print_settingkiosk/print_settingkiosk_widget.dart'
     show PrintSettingkioskWidget;
-export '/pages/grocery_p_o_s/grocery_p_o_s_widget.dart' show GroceryPOSWidget;
 export '/pages/product_and_list_new_copy/product_and_list_new_copy_widget.dart'
     show ProductAndListNewCopyWidget;
 export '/pages/kiosk/kiosk_payment/kiosk_payment_widget.dart'
@@ -176,8 +175,6 @@ export '/pages/kiosk/kiosk_splash_screen/kiosk_splash_screen_widget.dart'
     show KioskSplashScreenWidget;
 export '/pages/kiosk/loading_screenkiosknew/loading_screenkiosknew_widget.dart'
     show LoadingScreenkiosknewWidget;
-export '/pages/grocery_p_o_s_copy/grocery_p_o_s_copy_widget.dart'
-    show GroceryPOSCopyWidget;
 export '/labeltest/labeltest_widget.dart' show LabeltestWidget;
 export '/pages/kot_order_screen/kot_order_screen_widget.dart'
     show KotOrderScreenWidget;
@@ -189,12 +186,8 @@ export '/pages/kiosk/token_display/token_display_widget.dart'
     show TokenDisplayWidget;
 export '/pages/app_setting_new_pos/app_setting_new_pos_widget.dart'
     show AppSettingNewPosWidget;
-export '/grocery_windows/billing_grocery/billing_grocery_widget.dart'
-    show BillingGroceryWidget;
 export '/grocery_windows/purchase_grocery/purchase_grocery_widget.dart'
     show PurchaseGroceryWidget;
-export '/grocery_windows/supplier_grocery/supplier_grocery_widget.dart'
-    show SupplierGroceryWidget;
 export '/pages/kiosk/mini_kiosk/mini_kiosk_dine_parcel/mini_kiosk_dine_parcel_widget.dart'
     show MiniKioskDineParcelWidget;
 export '/pages/kiosk/mini_kiosk/kiosk_dine_parcel_copy/kiosk_dine_parcel_copy_widget.dart'

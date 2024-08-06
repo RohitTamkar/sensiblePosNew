@@ -1,9 +1,9 @@
 import '/backend/backend.dart';
-import '/components/grocery_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/grocery_windows/grocery/grocery_widget.dart';
 import '/grocery_windows/grocery_header/grocery_header_widget.dart';
 import '/grocery_windows/spplier_gro/spplier_gro_widget.dart';
 import '/backend/schema/structs/index.dart';
@@ -1270,45 +1270,48 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                       ),
                                             ),
                                           ),
-                                          Container(
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
-                                              borderRadius:
-                                                  BorderRadius.circular(2.0),
-                                              border: Border.all(
+                                          Flexible(
+                                            child: Container(
+                                              decoration: BoxDecoration(
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .accent1,
+                                                        .secondaryBackground,
+                                                borderRadius:
+                                                    BorderRadius.circular(4.0),
+                                                border: Border.all(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .accent1,
+                                                ),
                                               ),
-                                            ),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 0.0, 10.0, 0.0),
-                                              child: Container(
-                                                width: 210.0,
-                                                height: 40.0,
-                                                child: custom_widgets
-                                                    .SearchHiveprdGrocery(
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 10.0, 0.0),
+                                                child: Container(
                                                   width: 210.0,
                                                   height: 40.0,
-                                                  billno: FFAppState().selBill,
-                                                  billnum: FFAppState()
-                                                      .selBill
-                                                      .toString(),
-                                                  disAmt: FFAppState().disAmt,
-                                                  delChargs:
-                                                      FFAppState().delCharges,
-                                                  document:
-                                                      FFAppState().productHive,
-                                                  taxcollection:
-                                                      widget!.taxDetails!,
-                                                  appSettingsRecord:
-                                                      columnAppSettingsRecord!,
-                                                  unitcollection:
-                                                      billingGroceryNewUnitTypeRecordList,
+                                                  child: custom_widgets
+                                                      .SearchHiveprdGrocery(
+                                                    width: 210.0,
+                                                    height: 40.0,
+                                                    billno:
+                                                        FFAppState().selBill,
+                                                    billnum: FFAppState()
+                                                        .selBill
+                                                        .toString(),
+                                                    disAmt: FFAppState().disAmt,
+                                                    delChargs:
+                                                        FFAppState().delCharges,
+                                                    document: FFAppState()
+                                                        .productHive,
+                                                    taxcollection:
+                                                        widget!.taxDetails!,
+                                                    appSettingsRecord:
+                                                        columnAppSettingsRecord!,
+                                                    unitcollection:
+                                                        billingGroceryNewUnitTypeRecordList,
+                                                  ),
                                                 ),
                                               ),
                                             ),
@@ -1725,7 +1728,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                 ),
                                               ),
                                               Expanded(
-                                                flex: 3,
+                                                flex: 5,
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -2302,8 +2305,8 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                         ),
                                                         FFAppState().selBill,
                                                       );
-                                                      _model.res21 = await actions
-                                                          .calSubTotalForHoldList(
+                                                      _model.ret = await actions
+                                                          .calSubTotalForGrocery(
                                                         FFAppState()
                                                             .selBill
                                                             .toString(),
@@ -2311,9 +2314,8 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                             .allBillsList
                                                             .toList(),
                                                       );
-                                                      _model.reuslt22 =
-                                                          await actions
-                                                              .calBillAmt(
+                                                      _model.ads = await actions
+                                                          .calBillAmtGrocery(
                                                         valueOrDefault<double>(
                                                           FFAppState().disAmt,
                                                           0.0,

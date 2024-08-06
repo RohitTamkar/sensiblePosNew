@@ -17,6 +17,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 Future<double> calSubTotalForGrocery(
   String billNo,
   List<dynamic> allBillList,
@@ -40,12 +42,12 @@ Future<double> calSubTotalForGrocery(
               disAmt += itemList[i]["disAmt"];
               //tax = 0;
               double tax2 = itemList[i]["taxAmt"];
-              if (itemList[i]["taxPer"] > 0.0) {
-                total += itemList[i]["quantity"] * itemList[i]["price"];
+              /*  if (itemList[i]["taxPer"] > 0.0) {
+                total += itemList[i]["total"] ;
               } else {
-                total += itemList[i]["quantity"] * itemList[i]["price"];
-              }
-              // total += itemList[i]["total"];
+                total += itemList[i]["total"] ;
+              }*/
+              total += itemList[i]["total"];
               qty += itemList[i]["quantity"];
               print("total");
               print(total);

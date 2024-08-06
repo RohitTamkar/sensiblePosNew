@@ -587,11 +587,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => PrintSettingkioskWidget(),
             ),
             FFRoute(
-              name: 'GroceryPOS',
-              path: 'groceryPOS',
-              builder: (context, params) => GroceryPOSWidget(),
-            ),
-            FFRoute(
               name: 'ProductAndListNewCopy',
               path: 'productAndListNewCopy',
               asyncParams: {
@@ -1257,18 +1252,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'GroceryPOSCopy',
-              path: 'groceryPOSCopy',
-              builder: (context, params) => GroceryPOSCopyWidget(
-                categoryHive: params.getParam<CategoryStructStruct>(
-                  'categoryHive',
-                  ParamType.DataStruct,
-                  isList: true,
-                  structBuilder: CategoryStructStruct.fromSerializableMap,
-                ),
-              ),
-            ),
-            FFRoute(
               name: 'labeltest',
               path: 'labeltest',
               builder: (context, params) => LabeltestWidget(),
@@ -1299,27 +1282,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => AppSettingNewPosWidget(),
             ),
             FFRoute(
-              name: 'BillingGrocery',
-              path: 'billingGrocery',
-              builder: (context, params) => BillingGroceryWidget(
-                categoryHive: params.getParam<CategoryStructStruct>(
-                  'categoryHive',
-                  ParamType.DataStruct,
-                  isList: true,
-                  structBuilder: CategoryStructStruct.fromSerializableMap,
-                ),
-              ),
-            ),
-            FFRoute(
               name: 'PurchaseGrocery',
               path: 'purchaseGrocery',
               requireAuth: true,
               builder: (context, params) => PurchaseGroceryWidget(),
-            ),
-            FFRoute(
-              name: 'SupplierGrocery',
-              path: 'supplierGrocery',
-              builder: (context, params) => SupplierGroceryWidget(),
             ),
             FFRoute(
               name: 'MiniKioskDineParcel',

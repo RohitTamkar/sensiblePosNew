@@ -1,5 +1,6 @@
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/custom_code/actions/index.dart' as actions;
@@ -213,10 +214,25 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                 ),
               ),
               Expanded(
-                flex: 3,
+                flex: 5,
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
+                    FlutterFlowIconButton(
+                      borderColor: FlutterFlowTheme.of(context).primaryText,
+                      borderRadius: 20.0,
+                      borderWidth: 1.0,
+                      buttonSize: 25.0,
+                      fillColor: FlutterFlowTheme.of(context).alternate,
+                      icon: Icon(
+                        Icons.minimize_rounded,
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        size: 10.0,
+                      ),
+                      onPressed: () {
+                        print('IconButton pressed ...');
+                      },
+                    ),
                     Expanded(
                       child: TextFormField(
                         controller: _model.textFieldqtTextController,
@@ -372,6 +388,21 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                         validator: _model.textFieldqtTextControllerValidator
                             .asValidator(context),
                       ),
+                    ),
+                    FlutterFlowIconButton(
+                      borderColor: FlutterFlowTheme.of(context).primaryText,
+                      borderRadius: 20.0,
+                      borderWidth: 1.0,
+                      buttonSize: 25.0,
+                      fillColor: FlutterFlowTheme.of(context).alternate,
+                      icon: Icon(
+                        Icons.add,
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        size: 10.0,
+                      ),
+                      onPressed: () {
+                        print('IconButton pressed ...');
+                      },
                     ),
                     SizedBox(
                       height: 100.0,
