@@ -10,6 +10,8 @@ import 'package:flutter/material.dart';
 // Begin custom widget code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom widgets
+
 import '../../flutter_flow/flutter_flow_drop_down.dart';
 import '../../flutter_flow/form_field_controller.dart';
 import 'index.dart'; // Imports other custom widgets
@@ -132,18 +134,13 @@ class _SearchHiveprdGroceryState extends State<SearchHiveprdGrocery> {
                       widget.unitcollection,
                     );
                     _model.calculateResult =
-                        await actions.calSubTotalForHoldList(
+                        await actions.calSubTotalForGrocery(
                       FFAppState().selBill.toString(),
-                      _model.addtosavebill!,
+                      FFAppState().allBillsList!,
                     );
-                    _model.calbillAmt = await actions.calBillAmt(
+                    _model.calbillAmt = await actions.calBillAmtGrocery(
                       FFAppState().disAmt,
                       FFAppState().delCharges,
-                    );
-                    await _model.listViewprd?.animateTo(
-                      _model.listViewprd!.position.maxScrollExtent,
-                      duration: Duration(milliseconds: 100),
-                      curve: Curves.ease,
                     );
 
                     _model.submitForm();
@@ -191,19 +188,21 @@ class _SearchHiveprdGroceryState extends State<SearchHiveprdGrocery> {
                     functions.enabletaxinclusive(
                         widget.appSettingsRecord.inclusiveTax),
                     widget.unitcollection!.toList());
-                _model.calculateResult = await actions.calSubTotalForHoldList(
+                _model.calculateResult = await actions.calSubTotalForGrocery(
                   FFAppState().selBill.toString(),
-                  _model.addtosavebill!.toList(),
+                  FFAppState().allBillsList!.toList(),
                 );
-                _model.calbillAmt = await actions.calBillAmt(
+                _model.calbillAmt = await actions.calBillAmtGrocery(
                   FFAppState().disAmt,
                   FFAppState().delCharges,
                 );
-                await _model.listViewprd?.animateTo(
+                /* await _model.listViewprd?.animateTo(
                   _model.listViewprd!.position.maxScrollExtent,
                   duration: Duration(milliseconds: 100),
                   curve: Curves.ease,
-                );
+
+
+                );*/
               },
             ),
           ),

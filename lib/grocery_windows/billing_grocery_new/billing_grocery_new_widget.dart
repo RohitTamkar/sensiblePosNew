@@ -1270,32 +1270,46 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                       ),
                                             ),
                                           ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 10.0, 0.0),
-                                            child: Container(
-                                              width: 210.0,
-                                              height: 40.0,
-                                              child: custom_widgets
-                                                  .SearchHiveprdGrocery(
+                                          Container(
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              borderRadius:
+                                                  BorderRadius.circular(2.0),
+                                              border: Border.all(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .accent1,
+                                              ),
+                                            ),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 10.0, 0.0),
+                                              child: Container(
                                                 width: 210.0,
                                                 height: 40.0,
-                                                billno: FFAppState().selBill,
-                                                billnum: FFAppState()
-                                                    .selBill
-                                                    .toString(),
-                                                disAmt: FFAppState().disAmt,
-                                                delChargs:
-                                                    FFAppState().delCharges,
-                                                document:
-                                                    FFAppState().productHive,
-                                                taxcollection:
-                                                    widget!.taxDetails!,
-                                                appSettingsRecord:
-                                                    columnAppSettingsRecord!,
-                                                unitcollection:
-                                                    billingGroceryNewUnitTypeRecordList,
+                                                child: custom_widgets
+                                                    .SearchHiveprdGrocery(
+                                                  width: 210.0,
+                                                  height: 40.0,
+                                                  billno: FFAppState().selBill,
+                                                  billnum: FFAppState()
+                                                      .selBill
+                                                      .toString(),
+                                                  disAmt: FFAppState().disAmt,
+                                                  delChargs:
+                                                      FFAppState().delCharges,
+                                                  document:
+                                                      FFAppState().productHive,
+                                                  taxcollection:
+                                                      widget!.taxDetails!,
+                                                  appSettingsRecord:
+                                                      columnAppSettingsRecord!,
+                                                  unitcollection:
+                                                      billingGroceryNewUnitTypeRecordList,
+                                                ),
                                               ),
                                             ),
                                           ),
