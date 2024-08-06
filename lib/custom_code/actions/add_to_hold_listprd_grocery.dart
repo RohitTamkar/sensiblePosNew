@@ -66,9 +66,6 @@ Future<List<dynamic>> addToHoldListprdGrocery(
 
     double taxAmt = taxAmtPerItem * quantity;
 
-    /* double total = (inclusiveorexclusive.toLowerCase() == 'inclusive')
-        ? (price * quantity)
-        : (price * quantity) + double.parse(taxAmt.toStringAsFixed(2));*/
     double total = (inclusiveorexclusive.toLowerCase() == 'exclusive')
         ? (price * quantity)
         : (price * quantity) + double.parse(taxAmt.toStringAsFixed(2));
@@ -80,7 +77,22 @@ Future<List<dynamic>> addToHoldListprdGrocery(
     if (inclusiveorexclusive.toLowerCase() == 'exclusive') {
       total += taxAmt;
     }
+
+    int srNo = 1;
+    if (list.isNotEmpty) {
+      for (var bill in list) {
+        if (bill["billno"] == billno) {
+          if (bill["details"]["itemList"].isNotEmpty) {
+            itemList = bill["details"]["itemList"];
+            srNo = itemList.length + 1;
+            break;
+          }
+        }
+      }
+    }
+
     final data = {
+      "srno": srNo,
       "name": document!.name,
       "price": (document.sellingPrice)!.toDouble(),
       "mrpPrice": (document.mrpPrice)!.toDouble(),
@@ -140,6 +152,7 @@ Future<List<dynamic>> addToHoldListprdGrocery(
         }
 
         if (!flag) {
+          data["srno"] = itemList.length + 1;
           itemList.add(data);
           list[index]["details"]["itemList"] = itemList;
           FFAppState().allBillsList = list;

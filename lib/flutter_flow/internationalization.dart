@@ -25011,13 +25011,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // grocery
   {
-    'm35yy1v3': {
-      'en': '1',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
     'az2ckbjv': {
       'en': '1',
       'hi': '',

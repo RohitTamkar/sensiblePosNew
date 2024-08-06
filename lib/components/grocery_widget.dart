@@ -120,9 +120,10 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                   children: [
                     Expanded(
                       child: Text(
-                        FFLocalizations.of(context).getText(
-                          'm35yy1v3' /* 1 */,
-                        ),
+                        getJsonField(
+                          widget!.jsonitem,
+                          r'''$.srno''',
+                        ).toString(),
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).labelSmall.override(
                               fontFamily:
@@ -292,7 +293,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             FFAppState().selBill.toString(),
                             FFAppState().allBillsList.toList(),
                           );
-                          _model.reuslt12 = await actions.calBillAmt(
+                          _model.reuslt12 = await actions.calBillAmtGrocery(
                             valueOrDefault<double>(
                               FFAppState().disAmt,
                               0.0,
@@ -503,7 +504,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             FFAppState().selBill.toString(),
                             FFAppState().allBillsList.toList(),
                           );
-                          _model.reuslt12Copy = await actions.calBillAmt(
+                          _model.reuslt122 = await actions.calBillAmtGrocery(
                             valueOrDefault<double>(
                               FFAppState().disAmt,
                               0.0,
@@ -685,7 +686,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             FFAppState().selBill.toString(),
                             FFAppState().allBillsList.toList(),
                           );
-                          _model.reuslt12Copy2 = await actions.calBillAmt(
+                          _model.reuslt12ss = await actions.calBillAmtGrocery(
                             valueOrDefault<double>(
                               FFAppState().disAmt,
                               0.0,
@@ -833,7 +834,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             FFAppState().selBill.toString(),
                             FFAppState().allBillsList.toList(),
                           );
-                          _model.reuslt12Copy2Copy = await actions.calBillAmt(
+                          _model.reuslt1245 = await actions.calBillAmtGrocery(
                             valueOrDefault<double>(
                               FFAppState().disAmt,
                               0.0,
@@ -981,7 +982,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             FFAppState().selBill.toString(),
                             FFAppState().allBillsList.toList(),
                           );
-                          _model.reuslt12Copy2Copy2 = await actions.calBillAmt(
+                          _model.reuslt12m = await actions.calBillAmtGrocery(
                             valueOrDefault<double>(
                               FFAppState().disAmt,
                               0.0,
@@ -1129,8 +1130,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             FFAppState().selBill.toString(),
                             FFAppState().allBillsList.toList(),
                           );
-                          _model.reuslt12Copy2Copy2Copy =
-                              await actions.calBillAmt(
+                          _model.reuslt12g = await actions.calBillAmtGrocery(
                             valueOrDefault<double>(
                               FFAppState().disAmt,
                               0.0,
