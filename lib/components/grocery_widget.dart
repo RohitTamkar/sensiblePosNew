@@ -240,9 +240,57 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             double.parse(
                                 _model.textFieldTaxAmtTextController.text),
                           );
-                          _model.res13 = await actions.calSubTotalForHoldList(
+                          setState(() {
+                            _model.textFielddisAmtTextController?.text =
+                                getJsonField(
+                              _model.allbillist!
+                                  .where((e) =>
+                                      getJsonField(
+                                        widget!.jsonitem,
+                                        r'''$.id''',
+                                      ) ==
+                                      getJsonField(
+                                        e,
+                                        r'''$.id''',
+                                      ))
+                                  .toList()
+                                  .first,
+                              r'''$.disAmt''',
+                            ).toString();
+                            _model.textFielddisAmtTextController?.selection =
+                                TextSelection.collapsed(
+                                    offset: _model
+                                        .textFielddisAmtTextController!
+                                        .text
+                                        .length);
+                          });
+                          setState(() {
+                            _model.textFieldTaxAmtTextController?.text =
+                                getJsonField(
+                              _model.allbillist!
+                                  .where((e) =>
+                                      getJsonField(
+                                        widget!.jsonitem,
+                                        r'''$.id''',
+                                      ) ==
+                                      getJsonField(
+                                        e,
+                                        r'''$.id''',
+                                      ))
+                                  .toList()
+                                  .first,
+                              r'''$.taxAmt''',
+                            ).toString();
+                            _model.textFieldTaxAmtTextController?.selection =
+                                TextSelection.collapsed(
+                                    offset: _model
+                                        .textFieldTaxAmtTextController!
+                                        .text
+                                        .length);
+                          });
+                          _model.output = await actions.calSubTotalForGrocery(
                             FFAppState().selBill.toString(),
-                            FFAppState().resultList.toList(),
+                            FFAppState().allBillsList.toList(),
                           );
                           _model.reuslt12 = await actions.calBillAmt(
                             valueOrDefault<double>(
@@ -399,21 +447,24 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                           );
                           setState(() {
                             _model.textFieldTaxAmtTextController?.text =
-                                getJsonField(
-                              _model.ratechanged!
-                                  .where((e) =>
-                                      getJsonField(
-                                        e,
-                                        r'''$.id''',
-                                      ) ==
-                                      getJsonField(
-                                        widget!.jsonitem,
-                                        r'''$.id''',
-                                      ))
-                                  .toList()
-                                  .first,
-                              r'''$.taxAmt''',
-                            ).toString();
+                                valueOrDefault<String>(
+                              getJsonField(
+                                _model.ratechanged
+                                    ?.where((e) =>
+                                        getJsonField(
+                                          e,
+                                          r'''$.id''',
+                                        ) ==
+                                        getJsonField(
+                                          widget!.jsonitem,
+                                          r'''$.id''',
+                                        ))
+                                    .toList()
+                                    ?.first,
+                                r'''$.taxAmt''',
+                              )?.toString(),
+                              '0',
+                            );
                             _model.textFieldTaxAmtTextController?.selection =
                                 TextSelection.collapsed(
                                     offset: _model
@@ -421,10 +472,36 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                         .text
                                         .length);
                           });
-                          _model.res13Copy =
-                              await actions.calSubTotalForHoldList(
+                          setState(() {
+                            _model.textFielddisAmtTextController?.text =
+                                valueOrDefault<String>(
+                              getJsonField(
+                                _model.ratechanged
+                                    ?.where((e) =>
+                                        getJsonField(
+                                          e,
+                                          r'''$.id''',
+                                        ) ==
+                                        getJsonField(
+                                          widget!.jsonitem,
+                                          r'''$.id''',
+                                        ))
+                                    .toList()
+                                    ?.first,
+                                r'''$.disAmt''',
+                              )?.toString(),
+                              '0',
+                            );
+                            _model.textFielddisAmtTextController?.selection =
+                                TextSelection.collapsed(
+                                    offset: _model
+                                        .textFielddisAmtTextController!
+                                        .text
+                                        .length);
+                          });
+                          _model.outputr2 = await actions.calSubTotalForGrocery(
                             FFAppState().selBill.toString(),
-                            FFAppState().resultList.toList(),
+                            FFAppState().allBillsList.toList(),
                           );
                           _model.reuslt12Copy = await actions.calBillAmt(
                             valueOrDefault<double>(
@@ -603,10 +680,10 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                         .text
                                         .length);
                           });
-                          _model.res13Copy2 =
-                              await actions.calSubTotalForHoldList(
+                          _model.outputdisper =
+                              await actions.calSubTotalForGrocery(
                             FFAppState().selBill.toString(),
-                            FFAppState().resultList.toList(),
+                            FFAppState().allBillsList.toList(),
                           );
                           _model.reuslt12Copy2 = await actions.calBillAmt(
                             valueOrDefault<double>(
@@ -752,10 +829,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                         .text
                                         .length);
                           });
-                          _model.res13Copy2Copy =
-                              await actions.calSubTotalForHoldList(
+                          _model.output5 = await actions.calSubTotalForGrocery(
                             FFAppState().selBill.toString(),
-                            FFAppState().resultList.toList(),
+                            FFAppState().allBillsList.toList(),
                           );
                           _model.reuslt12Copy2Copy = await actions.calBillAmt(
                             valueOrDefault<double>(
@@ -901,10 +977,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                         .text
                                         .length);
                           });
-                          _model.res13Copy2Copy2 =
-                              await actions.calSubTotalForHoldList(
+                          _model.output2 = await actions.calSubTotalForGrocery(
                             FFAppState().selBill.toString(),
-                            FFAppState().resultList.toList(),
+                            FFAppState().allBillsList.toList(),
                           );
                           _model.reuslt12Copy2Copy2 = await actions.calBillAmt(
                             valueOrDefault<double>(
@@ -1050,10 +1125,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                         .text
                                         .length);
                           });
-                          _model.res13Copy2Copy2Copy =
-                              await actions.calSubTotalForHoldList(
+                          _model.output3 = await actions.calSubTotalForGrocery(
                             FFAppState().selBill.toString(),
-                            FFAppState().resultList.toList(),
+                            FFAppState().allBillsList.toList(),
                           );
                           _model.reuslt12Copy2Copy2Copy =
                               await actions.calBillAmt(

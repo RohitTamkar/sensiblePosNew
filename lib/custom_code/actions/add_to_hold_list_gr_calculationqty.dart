@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-// Imports other custom actions
 Future<List<dynamic>> addToHoldListGrCalculationqty(
   ProductStructStruct document,
   int billno,
@@ -24,35 +23,34 @@ Future<List<dynamic>> addToHoldListGrCalculationqty(
   double taxAmt,
 ) async {
   List<dynamic> list = FFAppState().allBillsList;
-  print(document);
   List<dynamic> itemList = [];
 
-  String? unitId = '';
-  if (document?.unitId == null) {
-    unitId = 'HjExWViQAwNJCUiUPwBz';
-  } else {
-    unitId = document?.unitId;
-  }
+  // Default unitId if none provided
+  String? unitId = document?.unitId ?? 'HjExWViQAwNJCUiUPwBz';
+
+  // Fetch unit record
   UnitTypeRecord? unitRecord = unitcollection.firstWhere(
     (element) => element.id == unitId,
-    orElse: null,
   );
 
   double price = ratePrice;
   double quantity = qty.toDouble();
 
   // Calculate taxPer if taxAmt is provided
-  if (taxAmt > 0) {
+/*  if (taxAmt > 0) {
     taxPer = (inclusiveorexclusive.toLowerCase() == 'inclusive')
         ? (taxAmt * 100 / (price * quantity - taxAmt)).toInt()
         : (taxAmt * 100 / (price * quantity)).toInt();
-  }
+  }*/
 
   // Calculate disPer if disAmt is provided
-  if (disAmt > 0) {
-    disPer = (disAmt * 100 / price).toInt();
+  /* if (disAmt > 0) {
+    disPer = (disAmt * 100 / (price * quantity)).toInt();
   } else if (disPer > 0) {
-    disAmt = (price * disPer) / 100.0;
+    disAmt = (price * quantity * disPer) / 100.0;
+  }*/
+  if (disAmt > 0) {
+    disAmt = (price * quantity * disPer) / 100.0;
   }
 
   // Calculate taxAmt for each item separately
@@ -66,10 +64,10 @@ Future<List<dynamic>> addToHoldListGrCalculationqty(
   // Calculate total amount considering discounts and tax
   double total = (inclusiveorexclusive.toLowerCase() == 'exclusive')
       ? (price * quantity)
-      : (price * quantity) + double.parse(totalTaxAmt.toStringAsFixed(2));
+      : (price * quantity) + totalTaxAmt;
 
   // Deduct discount amount from total
-  total -= disAmt * quantity;
+  total -= disAmt;
 
   // Add tax amount for exclusive tax
   if (inclusiveorexclusive.toLowerCase() == 'exclusive') {
@@ -81,72 +79,70 @@ Future<List<dynamic>> addToHoldListGrCalculationqty(
     "price": price,
     "mrpPrice": (document.mrpPrice)!.toDouble(),
     "quantity": quantity,
-    "unit": unitRecord.unitType,
+    "unit": unitRecord?.unitType,
     "total": total,
     "id": document.id,
     "catId": document.categoryId,
     "taxId": document.taxId,
     "taxPer": taxPer,
-    "taxAmt": double.parse(totalTaxAmt.toStringAsFixed(2)),
+    "taxAmt": totalTaxAmt,
     "disPer": disPer,
     "disAmt": disAmt,
   };
 
-  var index;
-  var flag = false;
-  var flag1 = false;
+  bool billExists = false;
+  int billIndex = -1;
 
-  if (list.isNotEmpty) {
-    for (int i = 0; i < list.length; i++) {
-      if (list[i]["billno"] == billno) {
-        if (list[i]["details"]["itemList"].length > 0) {
-          itemList = (list[i]["details"]["itemList"]);
-          index = i;
-          flag1 = true;
-          break;
-        } else {
-          itemList.add(data);
-          list[i]["details"]["itemList"] = itemList;
-
-          FFAppState().allBillsList = list;
-          break;
-        }
-      }
-    }
-
-    if (flag1) {
-      for (int j = 0; j < itemList.length; j++) {
-        if (itemList[j]["name"] == data["name"]) {
-          itemList[j]["taxPer"] = taxPer;
-          itemList[j]["price"] = ratePrice;
-          itemList[j]["taxAmt"] =
-              taxAmtPerItem * qty; // Update taxAmt for each item
-          itemList[j]["disPer"] = disPer;
-          itemList[j]["disAmt"] = disAmt;
-          itemList[j]["quantity"] = qty;
-
-          if (inclusiveorexclusive.toLowerCase() == 'inclusive') {
-            itemList[j]["total"] = qty * itemList[j]["price"];
-          } else {
-            itemList[j]["total"] = qty * itemList[j]["price"] + taxAmtPerItem;
-          }
-          itemList[j]["total"] -= disAmt * qty;
-
-          list[index]["details"]["itemList"] = itemList;
-          FFAppState().allBillsList = list;
-          flag = true;
-          break;
-        }
-      }
-
-      if (!flag) {
-        itemList.add(data);
-        list[index]["details"]["itemList"] = itemList;
-        FFAppState().allBillsList = list;
-      }
+  // Iterate over existing bills
+  for (int i = 0; i < list.length; i++) {
+    if (list[i]["billno"] == billno) {
+      billExists = true;
+      billIndex = i;
+      itemList = list[i]["details"]["itemList"];
+      break;
     }
   }
 
+  if (billExists) {
+    bool itemExists = false;
+
+    // Iterate over existing items in the bill
+    for (int j = 0; j < itemList.length; j++) {
+      if (itemList[j]["name"] == data["name"]) {
+        itemExists = true;
+        itemList[j]["taxPer"] = taxPer;
+        itemList[j]["price"] = price;
+        itemList[j]["quantity"] = quantity;
+        itemList[j]["taxAmt"] = totalTaxAmt;
+        itemList[j]["disPer"] = disPer;
+        itemList[j]["disAmt"] = disAmt;
+
+        if (inclusiveorexclusive.toLowerCase() == 'inclusive') {
+          itemList[j]["total"] = (price * quantity) - disAmt;
+        } else {
+          itemList[j]["total"] = (price * quantity) + totalTaxAmt - disAmt;
+        }
+
+        list[billIndex]["details"]["itemList"] = itemList;
+        break;
+      }
+    }
+
+    if (!itemExists) {
+      itemList.add(data);
+      list[billIndex]["details"]["itemList"] = itemList;
+    }
+  } else {
+    // Create a new bill if it doesn't exist
+    list.add({
+      "billno": billno,
+      "details": {
+        "itemList": [data],
+      },
+    });
+  }
+
+  FFAppState().allBillsList = list;
   print(FFAppState().allBillsList);
   return itemList;
 }

@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom actions
+
 // Imports other custom actions
 Future<List<dynamic>> taxAmtChangedFunctiongrocery(
   ProductStructStruct document,
@@ -56,12 +58,12 @@ Future<List<dynamic>> taxAmtChangedFunctiongrocery(
   }
 
   // Calculate taxAmt for each item separately
-  double taxAmtPerItem = (inclusiveorexclusive.toLowerCase() == 'inclusive')
+  /* double taxAmtPerItem = (inclusiveorexclusive.toLowerCase() == 'inclusive')
       ? (price * taxPer) / (100.0 + taxPer)
-      : (price * taxPer) / 100.0;
+      : (price * taxPer) / 100.0;*/
 
   // Calculate total tax amount based on quantity
-  double totalTaxAmt = taxAmtPerItem * quantity;
+  double totalTaxAmt = taxAmt * quantity;
 
   // Calculate total amount considering discounts and tax
   double total = (inclusiveorexclusive.toLowerCase() == 'exclusive')
@@ -119,8 +121,7 @@ Future<List<dynamic>> taxAmtChangedFunctiongrocery(
         if (itemList[j]["name"] == data["name"]) {
           itemList[j]["taxPer"] = taxPer;
           itemList[j]["price"] = ratePrice;
-          itemList[j]["taxAmt"] =
-              taxAmtPerItem * qty; // Update taxAmt for each item
+          itemList[j]["taxAmt"] = taxAmt * qty; // Update taxAmt for each item
           itemList[j]["disPer"] = disPer;
           itemList[j]["disAmt"] = disAmt;
           itemList[j]["quantity"] = qty;
@@ -128,7 +129,7 @@ Future<List<dynamic>> taxAmtChangedFunctiongrocery(
           if (inclusiveorexclusive.toLowerCase() == 'inclusive') {
             itemList[j]["total"] = qty * itemList[j]["price"];
           } else {
-            itemList[j]["total"] = qty * itemList[j]["price"] + taxAmtPerItem;
+            itemList[j]["total"] = qty * itemList[j]["price"] + taxAmt;
           }
           itemList[j]["total"] -= disAmt * qty;
 
