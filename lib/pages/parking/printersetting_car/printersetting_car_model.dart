@@ -14,7 +14,6 @@ import 'package:provider/provider.dart';
 class PrintersettingCarModel extends FlutterFlowModel<PrintersettingCarWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for DropDown widget.
   String? dropDownValue1;
   FormFieldController<String>? dropDownValueController1;
@@ -32,7 +31,5 @@ class PrintersettingCarModel extends FlutterFlowModel<PrintersettingCarWidget> {
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 }

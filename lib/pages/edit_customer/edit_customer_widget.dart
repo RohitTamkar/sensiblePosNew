@@ -100,9 +100,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
         title: 'EditCustomer',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -1461,14 +1459,14 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                               credit: _model
                                                   .checkboxListTileCreditValue,
                                               birthday: dateTimeFormat(
-                                                'd/M/y',
+                                                "d/M/y",
                                                 _model.datePicked1,
                                                 locale:
                                                     FFLocalizations.of(context)
                                                         .languageCode,
                                               ),
                                               anniversary: dateTimeFormat(
-                                                'd/M/y',
+                                                "d/M/y",
                                                 _model.datePicked2,
                                                 locale:
                                                     FFLocalizations.of(context)

@@ -19,7 +19,6 @@ import 'package:provider/provider.dart';
 class KioskPaymentCopyModel extends FlutterFlowModel<KioskPaymentCopyWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   InstantTimer? instantTimer;
   // Stores action output result for [Backend Call - API (phonepeStatus)] action in KioskPaymentCopy widget.
   ApiCallResponse? status;
@@ -33,7 +32,6 @@ class KioskPaymentCopyModel extends FlutterFlowModel<KioskPaymentCopyWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     instantTimer?.cancel();
     kioskHeaderModel.dispose();
   }

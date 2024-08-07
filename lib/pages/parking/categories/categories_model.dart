@@ -16,7 +16,6 @@ import 'package:provider/provider.dart';
 class CategoriesModel extends FlutterFlowModel<CategoriesWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - genarateCategoryCode] action in Button widget.
   int? catcode;
 
@@ -24,7 +23,5 @@ class CategoriesModel extends FlutterFlowModel<CategoriesWidget> {
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 }

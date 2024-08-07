@@ -16,7 +16,6 @@ import 'package:provider/provider.dart';
 class ProductListNewMModel extends FlutterFlowModel<ProductListNewMWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - genarateProductCode] action in Button widget.
   int? len;
 
@@ -24,7 +23,5 @@ class ProductListNewMModel extends FlutterFlowModel<ProductListNewMWidget> {
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 }

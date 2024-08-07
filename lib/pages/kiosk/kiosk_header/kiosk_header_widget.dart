@@ -78,7 +78,7 @@ class _KioskHeaderWidgetState extends State<KioskHeaderWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
                     child: Text(
                       dateTimeFormat(
-                        'd MMM y',
+                        "d MMM y",
                         getCurrentTimestamp,
                         locale: FFLocalizations.of(context).languageCode,
                       ),

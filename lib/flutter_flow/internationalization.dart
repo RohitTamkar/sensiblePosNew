@@ -21766,7 +21766,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     'br1zkkgj': {
-      'en': 'Save',
+      'en': 'Payment Mode',
       'hi': '',
       'kn': '',
       'mr': '',

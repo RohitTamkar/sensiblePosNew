@@ -22,7 +22,6 @@ class LoadingScreenkiosknewModel
     extends FlutterFlowModel<LoadingScreenkiosknewWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - checkInternetConnection] action in loadingScreenkiosknew widget.
   bool? internetconnection;
   // Stores action output result for [Firestore Query - Query a collection] action in loadingScreenkiosknew widget.
@@ -54,7 +53,5 @@ class LoadingScreenkiosknewModel
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 }

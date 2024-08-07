@@ -48,9 +48,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
         title: 'FullScreenBill',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -1418,7 +1416,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                   children: [
                                                     Text(
                                                       dateTimeFormat(
-                                                        'jm',
+                                                        "jm",
                                                         getCurrentTimestamp,
                                                         locale:
                                                             FFLocalizations.of(
@@ -1452,7 +1450,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                                   0.0),
                                                       child: Text(
                                                         dateTimeFormat(
-                                                          'yMMMd',
+                                                          "yMMMd",
                                                           getCurrentTimestamp,
                                                           locale:
                                                               FFLocalizations.of(

@@ -23,7 +23,6 @@ import 'package:text_search/text_search.dart';
 class TableScreenModel extends FlutterFlowModel<TableScreenWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for MenuDrawer component.
   late MenuDrawerModel menuDrawerModel;
   // State field(s) for TextField widget.
@@ -80,7 +79,6 @@ class TableScreenModel extends FlutterFlowModel<TableScreenWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     menuDrawerModel.dispose();
     textFieldFocusNode1?.dispose();
     textController1?.dispose();

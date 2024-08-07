@@ -12,6 +12,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom widgets
 
+import 'index.dart'; // Imports other custom widgets
+
 import '../../flutter_flow/flutter_flow_drop_down.dart';
 import '../../flutter_flow/form_field_controller.dart';
 import 'index.dart'; // Imports other custom widgets
@@ -147,6 +149,9 @@ class _SearchHiveprdGroceryState extends State<SearchHiveprdGrocery> {
                     _productNameController.clear();
                     await Future.delayed(Duration(milliseconds: 100));
                     FocusScope.of(context).requestFocus(_focusNode);
+                    FFAppState().update(() {});
+
+                    setState(() {});
                   }
                 },
               ),
@@ -192,10 +197,15 @@ class _SearchHiveprdGroceryState extends State<SearchHiveprdGrocery> {
                   FFAppState().selBill.toString(),
                   FFAppState().allBillsList!.toList(),
                 );
+
                 _model.calbillAmt = await actions.calBillAmtGrocery(
                   FFAppState().disAmt,
                   FFAppState().delCharges,
                 );
+
+                FFAppState().update(() {});
+
+                setState(() {});
                 /* await _model.listViewprd?.animateTo(
                   _model.listViewprd!.position.maxScrollExtent,
                   duration: Duration(milliseconds: 100),

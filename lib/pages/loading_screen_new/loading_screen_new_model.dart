@@ -21,7 +21,6 @@ import 'package:provider/provider.dart';
 class LoadingScreenNewModel extends FlutterFlowModel<LoadingScreenNewWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - checkInternetConnection] action in loadingScreenNew widget.
   bool? internetconnection;
   // Stores action output result for [Firestore Query - Query a collection] action in loadingScreenNew widget.
@@ -37,7 +36,5 @@ class LoadingScreenNewModel extends FlutterFlowModel<LoadingScreenNewWidget> {
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 }

@@ -96,9 +96,7 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
         title: 'ParkingCustomers',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).parkingPrimary,
@@ -241,14 +239,9 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                                                     .resolve(Directionality.of(
                                                         context)),
                                                 child: GestureDetector(
-                                                  onTap: () => _model
-                                                          .unfocusNode
-                                                          .canRequestFocus
-                                                      ? FocusScope.of(context)
-                                                          .requestFocus(_model
-                                                              .unfocusNode)
-                                                      : FocusScope.of(context)
-                                                          .unfocus(),
+                                                  onTap: () => FocusScope.of(
+                                                          dialogContext)
+                                                      .unfocus(),
                                                   child: QrparkingWidget(
                                                     usrref: widget!.userRef,
                                                     invdoc: _model.getinvout,
@@ -257,7 +250,7 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                                                 ),
                                               );
                                             },
-                                          ).then((value) => setState(() {}));
+                                          );
                                         } else {
                                           await showDialog(
                                             context: context,
@@ -919,7 +912,7 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                                                                   ),
                                                                   Text(
                                                                     dateTimeFormat(
-                                                                      'h:mm a',
+                                                                      "h:mm a",
                                                                       getCurrentTimestamp,
                                                                       locale: FFLocalizations.of(
                                                                               context)

@@ -18,7 +18,6 @@ import 'package:provider/provider.dart';
 class RegularAppSettingModel extends FlutterFlowModel<RegularAppSettingWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for Header component.
   late HeaderModel headerModel;
   // State field(s) for SwitchListTileRfidSet widget.
@@ -127,7 +126,6 @@ class RegularAppSettingModel extends FlutterFlowModel<RegularAppSettingWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     headerModel.dispose();
   }
 }

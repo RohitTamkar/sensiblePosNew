@@ -40,7 +40,6 @@ class ReportScreenNewModel extends FlutterFlowModel<ReportScreenNewWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Stores action output result for [Firestore Query - Query a collection] action in ReportScreenNew widget.
   List<TaxMasterRecord>? taxcollection;
   // Model for Header component.
@@ -53,7 +52,6 @@ class ReportScreenNewModel extends FlutterFlowModel<ReportScreenNewWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     headerModel.dispose();
   }
 }

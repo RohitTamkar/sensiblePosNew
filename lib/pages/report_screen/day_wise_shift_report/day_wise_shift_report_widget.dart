@@ -90,9 +90,7 @@ class _DayWiseShiftReportWidgetState extends State<DayWiseShiftReportWidget> {
             title: 'DayWiseShiftReport',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
-              onTap: () => _model.unfocusNode.canRequestFocus
-                  ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-                  : FocusScope.of(context).unfocus(),
+              onTap: () => FocusScope.of(context).unfocus(),
               child: Scaffold(
                 key: scaffoldKey,
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -288,7 +286,7 @@ class _DayWiseShiftReportWidgetState extends State<DayWiseShiftReportWidget> {
                                                         0.0, 0.0, 15.0, 0.0),
                                                 child: Text(
                                                   dateTimeFormat(
-                                                    'yMMMd',
+                                                    "yMMMd",
                                                     getCurrentTimestamp,
                                                     locale: FFLocalizations.of(
                                                             context)
@@ -332,14 +330,8 @@ class _DayWiseShiftReportWidgetState extends State<DayWiseShiftReportWidget> {
                                                     context: context,
                                                     builder: (context) {
                                                       return GestureDetector(
-                                                        onTap: () => _model
-                                                                .unfocusNode
-                                                                .canRequestFocus
-                                                            ? FocusScope.of(
-                                                                    context)
-                                                                .requestFocus(_model
-                                                                    .unfocusNode)
-                                                            : FocusScope.of(
+                                                        onTap: () =>
+                                                            FocusScope.of(
                                                                     context)
                                                                 .unfocus(),
                                                         child: Padding(

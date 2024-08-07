@@ -27,7 +27,6 @@ class UpdateProductNewModel extends FlutterFlowModel<UpdateProductNewWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - hiveGetProduct] action in UpdateProductNew widget.
   ProductStructStruct? getproductForupdate;
   // Model for Header component.
@@ -140,7 +139,6 @@ class UpdateProductNewModel extends FlutterFlowModel<UpdateProductNewWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     headerModel.dispose();
     textFieldFocusNode1?.dispose();
     textController1?.dispose();

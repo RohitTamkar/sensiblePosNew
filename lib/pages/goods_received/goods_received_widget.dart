@@ -65,9 +65,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
         title: 'GoodsReceived',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -260,7 +258,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                   0.0, 0.0, 6.0, 0.0),
                                           child: Text(
                                             dateTimeFormat(
-                                              'yMMMd',
+                                              "yMMMd",
                                               getCurrentTimestamp,
                                               locale:
                                                   FFLocalizations.of(context)
@@ -288,7 +286,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                         ),
                                         Text(
                                           dateTimeFormat(
-                                            'jm',
+                                            "jm",
                                             getCurrentTimestamp,
                                             locale: FFLocalizations.of(context)
                                                 .languageCode,
@@ -1218,7 +1216,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 child: SelectionArea(
                                                                                     child: Text(
                                                                                   dateTimeFormat(
-                                                                                    'relative',
+                                                                                    "relative",
                                                                                     purchaceOrderListItem.orderTime!,
                                                                                     locale: FFLocalizations.of(context).languageCode,
                                                                                   ),
@@ -2868,7 +2866,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                       child: SelectionArea(
                                                                                           child: Text(
                                                                                         dateTimeFormat(
-                                                                                          'relative',
+                                                                                          "relative",
                                                                                           purchaceGoodsRecvItem.orderTime!,
                                                                                           locale: FFLocalizations.of(context).languageCode,
                                                                                         ),
@@ -4335,7 +4333,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                       child: SelectionArea(
                                                                                           child: Text(
                                                                                         dateTimeFormat(
-                                                                                          'relative',
+                                                                                          "relative",
                                                                                           purchaceQcItem.orderTime!,
                                                                                           locale: FFLocalizations.of(context).languageCode,
                                                                                         ),
@@ -5485,9 +5483,8 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     builder:
                                                                         (context) {
                                                                       return GestureDetector(
-                                                                        onTap: () => _model.unfocusNode.canRequestFocus
-                                                                            ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-                                                                            : FocusScope.of(context).unfocus(),
+                                                                        onTap: () =>
+                                                                            FocusScope.of(context).unfocus(),
                                                                         child:
                                                                             Padding(
                                                                           padding:
@@ -5850,7 +5847,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                       child: SelectionArea(
                                                                                           child: Text(
                                                                                         dateTimeFormat(
-                                                                                          'relative',
+                                                                                          "relative",
                                                                                           purchaceSIItem.orderTime!,
                                                                                           locale: FFLocalizations.of(context).languageCode,
                                                                                         ),
@@ -7300,7 +7297,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                                 context: context,
                                                                                                 builder: (context) {
                                                                                                   return GestureDetector(
-                                                                                                    onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                                    onTap: () => FocusScope.of(context).unfocus(),
                                                                                                     child: Padding(
                                                                                                       padding: MediaQuery.viewInsetsOf(context),
                                                                                                       child: RejectionDetailsWidget(
@@ -7409,7 +7406,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                       child: SelectionArea(
                                                                                           child: Text(
                                                                                         dateTimeFormat(
-                                                                                          'relative',
+                                                                                          "relative",
                                                                                           rejectPurchaceItem.orderTime!,
                                                                                           locale: FFLocalizations.of(context).languageCode,
                                                                                         ),
@@ -8802,7 +8799,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                       child: SelectionArea(
                                                                                           child: Text(
                                                                                         dateTimeFormat(
-                                                                                          'relative',
+                                                                                          "relative",
                                                                                           purchaceFinalItem.orderTime!,
                                                                                           locale: FFLocalizations.of(context).languageCode,
                                                                                         ),

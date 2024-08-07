@@ -18,7 +18,6 @@ class ProductSaleTestingModel
     extends FlutterFlowModel<ProductSaleTestingWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - productSaleReport] action in productSaleTesting widget.
   List<dynamic>? productList;
   // Stores action output result for [Custom Action - productSaleReport] action in Container widget.
@@ -38,7 +37,6 @@ class ProductSaleTestingModel
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     headerModel.dispose();
   }
 }

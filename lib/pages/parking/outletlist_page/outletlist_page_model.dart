@@ -18,14 +18,11 @@ import 'package:provider/provider.dart';
 class OutletlistPageModel extends FlutterFlowModel<OutletlistPageWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   var result = '';
 
   @override
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 }

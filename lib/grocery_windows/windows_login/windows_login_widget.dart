@@ -58,7 +58,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
           _model.textController1?.text = dateTimeFormat(
-            'MMMEd',
+            "MMMEd",
             getCurrentTimestamp,
             locale: FFLocalizations.of(context).languageCode,
           );
@@ -80,9 +80,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
         title: 'WindowsLogin',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: Colors.transparent,

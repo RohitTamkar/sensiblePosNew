@@ -19,7 +19,6 @@ import 'package:provider/provider.dart';
 class KioskDineParcelModel extends FlutterFlowModel<KioskDineParcelWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Stores action output result for [Firestore Query - Query a collection] action in KioskDineParcel widget.
   FooterRecord? footer;
   // Model for KioskHeader component.
@@ -32,7 +31,6 @@ class KioskDineParcelModel extends FlutterFlowModel<KioskDineParcelWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     kioskHeaderModel.dispose();
   }
 }

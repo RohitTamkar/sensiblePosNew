@@ -12,14 +12,11 @@ import 'package:provider/provider.dart';
 class FsqrModel extends FlutterFlowModel<FsqrWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   List<QrTransactionsRecord>? listViewPreviousSnapshot;
 
   @override
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 }

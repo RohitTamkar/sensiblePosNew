@@ -57,9 +57,7 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
         title: 'imsProduction',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -252,7 +250,7 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                                   0.0, 0.0, 6.0, 0.0),
                                           child: Text(
                                             dateTimeFormat(
-                                              'yMMMd',
+                                              "yMMMd",
                                               getCurrentTimestamp,
                                               locale:
                                                   FFLocalizations.of(context)
@@ -280,7 +278,7 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                         ),
                                         Text(
                                           dateTimeFormat(
-                                            'jm',
+                                            "jm",
                                             getCurrentTimestamp,
                                             locale: FFLocalizations.of(context)
                                                 .languageCode,

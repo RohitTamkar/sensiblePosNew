@@ -21,7 +21,6 @@ import 'package:provider/provider.dart';
 class EditproductNewMModel extends FlutterFlowModel<EditproductNewMWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
   // State field(s) for TextFieldCode widget.
   FocusNode? textFieldCodeFocusNode;
@@ -108,7 +107,6 @@ class EditproductNewMModel extends FlutterFlowModel<EditproductNewMWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     textFieldCodeFocusNode?.dispose();
     textFieldCodeTextController?.dispose();
 

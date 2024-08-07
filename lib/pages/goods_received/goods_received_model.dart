@@ -20,7 +20,6 @@ import 'package:provider/provider.dart';
 class GoodsReceivedModel extends FlutterFlowModel<GoodsReceivedWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for TabBar widget.
   TabController? tabBarController;
   int get tabBarCurrentIndex =>
@@ -56,7 +55,6 @@ class GoodsReceivedModel extends FlutterFlowModel<GoodsReceivedWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     tabBarController?.dispose();
     textFieldFocusNode1?.dispose();
     textController1?.dispose();

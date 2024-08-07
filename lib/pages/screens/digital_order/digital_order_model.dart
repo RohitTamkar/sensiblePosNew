@@ -20,7 +20,6 @@ import 'package:provider/provider.dart';
 class DigitalOrderModel extends FlutterFlowModel<DigitalOrderWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   InstantTimer? instantTimer;
   // Stores action output result for [Custom Action - getDigitalOrders] action in DigitalOrder widget.
   bool? res;
@@ -52,7 +51,6 @@ class DigitalOrderModel extends FlutterFlowModel<DigitalOrderWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     instantTimer?.cancel();
     textFieldFocusNode1?.dispose();
     textController1?.dispose();

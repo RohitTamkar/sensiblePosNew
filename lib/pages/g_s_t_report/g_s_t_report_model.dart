@@ -13,7 +13,6 @@ import 'package:provider/provider.dart';
 class GSTReportModel extends FlutterFlowModel<GSTReportWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for Header component.
   late HeaderModel headerModel;
 
@@ -24,7 +23,6 @@ class GSTReportModel extends FlutterFlowModel<GSTReportWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     headerModel.dispose();
   }
 }

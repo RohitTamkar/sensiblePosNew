@@ -11,7 +11,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'dart:math';
-import '/backend/schema/structs/index.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
@@ -68,7 +67,6 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - getProductlistHive] action in ProductAndListNew widget.
   List<ProductStructStruct>? hiveProductList;
   // Stores action output result for [Custom Action - getCategorylistHive] action in ProductAndListNew widget.
@@ -196,7 +194,6 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     menuDrawerModel.dispose();
     listViewController1?.dispose();
     listViewController2?.dispose();

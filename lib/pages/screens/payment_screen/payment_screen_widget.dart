@@ -88,9 +88,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
         title: 'PaymentScreen',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -5215,7 +5213,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                               child: Text(
                                                                                 valueOrDefault<String>(
                                                                                   dateTimeFormat(
-                                                                                    'yMMMd',
+                                                                                    "yMMMd",
                                                                                     DateTime.fromMillisecondsSinceEpoch(listViewPaymentRecord.createdDate),
                                                                                     locale: FFLocalizations.of(context).languageCode,
                                                                                   ),
@@ -5232,7 +5230,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                               padding: EdgeInsetsDirectional.fromSTEB(3.0, 0.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 dateTimeFormat(
-                                                                                  'jm',
+                                                                                  "jm",
                                                                                   DateTime.fromMillisecondsSinceEpoch(listViewPaymentRecord.createdDate),
                                                                                   locale: FFLocalizations.of(context).languageCode,
                                                                                 ),

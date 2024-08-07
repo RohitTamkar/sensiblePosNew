@@ -26,7 +26,6 @@ import 'package:provider/provider.dart';
 class LoginPageNewModel extends FlutterFlowModel<LoginPageNewWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - getPlatformDetails] action in LoginPageNew widget.
   dynamic? docRes;
   // Stores action output result for [Custom Action - checkPlatform] action in LoginPageNew widget.
@@ -76,7 +75,6 @@ class LoginPageNewModel extends FlutterFlowModel<LoginPageNewWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     quickPinFocusNode?.dispose();
     quickPinTextController?.dispose();
   }

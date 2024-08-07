@@ -22,7 +22,6 @@ import 'package:provider/provider.dart';
 class AboutUsModel extends FlutterFlowModel<AboutUsWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Stores action output result for [Firestore Query - Query a collection] action in AboutUs widget.
   CompanyDetailsRecord? companyDetails;
   // Stores action output result for [Firestore Query - Query a collection] action in AboutUs widget.
@@ -47,7 +46,6 @@ class AboutUsModel extends FlutterFlowModel<AboutUsWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     headerModel.dispose();
   }
 }

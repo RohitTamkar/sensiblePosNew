@@ -14,6 +14,12 @@ import 'package:provider/provider.dart';
 class GroceryModel extends FlutterFlowModel<GroceryWidget> {
   ///  State fields for stateful widgets in this component.
 
+  // Stores action output result for [Custom Action - addToHoldListGrCalculation] action in IconButton widget.
+  List<dynamic>? allbillistplusCopy;
+  // Stores action output result for [Custom Action - calSubTotalForGrocery] action in IconButton widget.
+  double? output1Copy;
+  // Stores action output result for [Custom Action - calBillAmtGrocery] action in IconButton widget.
+  double? reuslt121Copy;
   // State field(s) for TextFieldqt widget.
   FocusNode? textFieldqtFocusNode;
   TextEditingController? textFieldqtTextController;
@@ -24,6 +30,12 @@ class GroceryModel extends FlutterFlowModel<GroceryWidget> {
   double? output;
   // Stores action output result for [Custom Action - calBillAmtGrocery] action in TextFieldqt widget.
   double? reuslt12;
+  // Stores action output result for [Custom Action - addToHoldListGrCalculationqty] action in IconButton widget.
+  List<dynamic>? all;
+  // Stores action output result for [Custom Action - calSubTotalForGrocery] action in IconButton widget.
+  double? output1;
+  // Stores action output result for [Custom Action - calBillAmtGrocery] action in IconButton widget.
+  double? reuslt121;
   // State field(s) for TextFieldrate widget.
   FocusNode? textFieldrateFocusNode;
   TextEditingController? textFieldrateTextController;

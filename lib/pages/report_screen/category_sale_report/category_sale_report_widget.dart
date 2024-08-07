@@ -61,9 +61,7 @@ class _CategorySaleReportWidgetState extends State<CategorySaleReportWidget> {
         title: 'categorySaleReport',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -222,7 +220,7 @@ class _CategorySaleReportWidgetState extends State<CategorySaleReportWidget> {
                                           0.0, 0.0, 15.0, 0.0),
                                       child: Text(
                                         dateTimeFormat(
-                                          'yMMMd',
+                                          "yMMMd",
                                           getCurrentTimestamp,
                                           locale: FFLocalizations.of(context)
                                               .languageCode,
@@ -259,12 +257,8 @@ class _CategorySaleReportWidgetState extends State<CategorySaleReportWidget> {
                                           context: context,
                                           builder: (context) {
                                             return GestureDetector(
-                                              onTap: () => _model.unfocusNode
-                                                      .canRequestFocus
-                                                  ? FocusScope.of(context)
-                                                      .requestFocus(
-                                                          _model.unfocusNode)
-                                                  : FocusScope.of(context)
+                                              onTap: () =>
+                                                  FocusScope.of(context)
                                                       .unfocus(),
                                               child: Padding(
                                                 padding:

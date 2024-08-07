@@ -20,7 +20,6 @@ class SplashScreenWindowsModel
     extends FlutterFlowModel<SplashScreenWindowsWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - getPlatformDetails] action in SplashScreenWindows widget.
   dynamic? docRes;
   // Stores action output result for [Custom Action - checkPlatform] action in SplashScreenWindows widget.
@@ -34,7 +33,5 @@ class SplashScreenWindowsModel
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 }

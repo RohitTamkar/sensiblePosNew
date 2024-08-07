@@ -9,7 +9,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:math';
-import '/backend/schema/structs/index.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'edit_bill_new_widget.dart' show EditBillNewWidget;
@@ -26,7 +25,6 @@ import 'package:provider/provider.dart';
 class EditBillNewModel extends FlutterFlowModel<EditBillNewWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - hiveGetInvoicestoday] action in EditBillNew widget.
   List<InvoiceStructStruct>? invoicebyday;
   // Model for Header component.
@@ -68,7 +66,6 @@ class EditBillNewModel extends FlutterFlowModel<EditBillNewWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     headerModel.dispose();
     expandableExpandableController.dispose();
   }

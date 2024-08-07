@@ -14,7 +14,6 @@ import 'package:provider/provider.dart';
 class PurchaseGroceryModel extends FlutterFlowModel<PurchaseGroceryWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for GroceryHeader component.
   late GroceryHeaderModel groceryHeaderModel;
   // State field(s) for TextField widget.
@@ -81,7 +80,6 @@ class PurchaseGroceryModel extends FlutterFlowModel<PurchaseGroceryWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     groceryHeaderModel.dispose();
     textFieldFocusNode1?.dispose();
     textController1?.dispose();

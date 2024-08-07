@@ -20,7 +20,6 @@ class MiniKioskDineParcelModel
     extends FlutterFlowModel<MiniKioskDineParcelWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Stores action output result for [Firestore Query - Query a collection] action in MiniKioskDineParcel widget.
   FooterRecord? footer;
 
@@ -28,7 +27,5 @@ class MiniKioskDineParcelModel
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 }

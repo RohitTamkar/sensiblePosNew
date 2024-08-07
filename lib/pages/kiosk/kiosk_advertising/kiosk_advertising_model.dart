@@ -18,7 +18,6 @@ import 'package:provider/provider.dart';
 class KioskAdvertisingModel extends FlutterFlowModel<KioskAdvertisingWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - scanPrinter] action in KioskAdvertising widget.
   bool? resDevice2Copy;
   // Stores action output result for [Custom Action - connectDevice] action in KioskAdvertising widget.
@@ -36,7 +35,6 @@ class KioskAdvertisingModel extends FlutterFlowModel<KioskAdvertisingWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     kioskHeaderModel.dispose();
   }
 }

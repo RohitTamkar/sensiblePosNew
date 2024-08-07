@@ -14,7 +14,6 @@ import 'package:provider/provider.dart';
 class LoginPageSettingModel extends FlutterFlowModel<LoginPageSettingWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for Header component.
   late HeaderModel headerModel;
   // State field(s) for RadioButton widget.
@@ -35,7 +34,6 @@ class LoginPageSettingModel extends FlutterFlowModel<LoginPageSettingWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     headerModel.dispose();
   }
 

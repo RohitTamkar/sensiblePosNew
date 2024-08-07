@@ -25,7 +25,6 @@ import 'package:provider/provider.dart';
 class WindowsLoginModel extends FlutterFlowModel<WindowsLoginWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - getPlatformDetails] action in WindowsLogin widget.
   dynamic? docRes;
   // Stores action output result for [Custom Action - checkPlatform] action in WindowsLogin widget.
@@ -83,7 +82,6 @@ class WindowsLoginModel extends FlutterFlowModel<WindowsLoginWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     textFieldFocusNode1?.dispose();
     textController1?.dispose();
 

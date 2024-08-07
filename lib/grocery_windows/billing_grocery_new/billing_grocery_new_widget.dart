@@ -71,7 +71,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
             'of97wgqp' /* Sensible Connect */,
           );
           _model.textController3?.text = dateTimeFormat(
-            'd/M/y',
+            "d/M/y",
             getCurrentTimestamp,
             locale: FFLocalizations.of(context).languageCode,
           );
@@ -115,9 +115,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
             title: 'BillingGroceryNew',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
-              onTap: () => _model.unfocusNode.canRequestFocus
-                  ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-                  : FocusScope.of(context).unfocus(),
+              onTap: () => FocusScope.of(context).unfocus(),
               child: Scaffold(
                 key: scaffoldKey,
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -698,15 +696,8 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                   context: context,
                                                   builder: (context) {
                                                     return GestureDetector(
-                                                      onTap: () => _model
-                                                              .unfocusNode
-                                                              .canRequestFocus
-                                                          ? FocusScope.of(
-                                                                  context)
-                                                              .requestFocus(_model
-                                                                  .unfocusNode)
-                                                          : FocusScope.of(
-                                                                  context)
+                                                      onTap: () =>
+                                                          FocusScope.of(context)
                                                               .unfocus(),
                                                       child: Padding(
                                                         padding: MediaQuery
@@ -2211,7 +2202,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                           borderRadius: 10.0,
                                           buttonSize: 35.0,
                                           icon: Icon(
-                                            Icons.delete_sharp,
+                                            Icons.close,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBtnText,
                                             size: 16.0,
@@ -2289,7 +2280,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                     borderWidth: 0.0,
                                                     buttonSize: 35.0,
                                                     icon: Icon(
-                                                      Icons.close,
+                                                      Icons.delete_outline,
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -2447,10 +2438,10 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                       print('Button pressed ...');
                                     },
                                     text: FFLocalizations.of(context).getText(
-                                      'br1zkkgj' /* Save */,
+                                      'br1zkkgj' /* Payment Mode */,
                                     ),
                                     icon: Icon(
-                                      Icons.save_sharp,
+                                      Icons.payment,
                                       size: 15.0,
                                     ),
                                     options: FFButtonOptions(

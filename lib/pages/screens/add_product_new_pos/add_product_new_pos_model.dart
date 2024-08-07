@@ -18,7 +18,6 @@ import 'package:provider/provider.dart';
 class AddProductNewPosModel extends FlutterFlowModel<AddProductNewPosWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
   // Model for Header component.
   late HeaderModel headerModel;
@@ -125,7 +124,6 @@ class AddProductNewPosModel extends FlutterFlowModel<AddProductNewPosWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     headerModel.dispose();
     textFieldFocusNode1?.dispose();
     textController1?.dispose();

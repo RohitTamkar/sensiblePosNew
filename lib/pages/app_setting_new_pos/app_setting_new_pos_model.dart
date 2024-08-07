@@ -17,7 +17,6 @@ import 'package:provider/provider.dart';
 class AppSettingNewPosModel extends FlutterFlowModel<AppSettingNewPosWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for Header component.
   late HeaderModel headerModel;
 
@@ -28,7 +27,6 @@ class AppSettingNewPosModel extends FlutterFlowModel<AppSettingNewPosWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     headerModel.dispose();
   }
 }

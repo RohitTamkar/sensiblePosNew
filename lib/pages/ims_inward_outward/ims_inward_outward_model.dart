@@ -12,7 +12,6 @@ import 'package:provider/provider.dart';
 class ImsInwardOutwardModel extends FlutterFlowModel<ImsInwardOutwardWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for TabBar widget.
   TabController? tabBarController;
   int get tabBarCurrentIndex =>
@@ -36,7 +35,6 @@ class ImsInwardOutwardModel extends FlutterFlowModel<ImsInwardOutwardWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     tabBarController?.dispose();
     textFieldFocusNode1?.dispose();
     textController1?.dispose();

@@ -22,7 +22,6 @@ import 'package:provider/provider.dart';
 class AddproductAPPModel extends FlutterFlowModel<AddproductAPPWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
   // State field(s) for TextFieldCode widget.
   FocusNode? textFieldCodeFocusNode;
@@ -117,7 +116,6 @@ class AddproductAPPModel extends FlutterFlowModel<AddproductAPPWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     textFieldCodeFocusNode?.dispose();
     textFieldCodeTextController?.dispose();
 

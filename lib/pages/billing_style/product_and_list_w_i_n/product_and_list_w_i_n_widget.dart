@@ -285,9 +285,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
         title: 'ProductAndListWIN',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -1198,7 +1196,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                       0.0, 0.0, 6.0, 0.0),
                                   child: Text(
                                     dateTimeFormat(
-                                      'yMMMd',
+                                      "yMMMd",
                                       getCurrentTimestamp,
                                       locale: FFLocalizations.of(context)
                                           .languageCode,
@@ -1221,7 +1219,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                 ),
                                 Text(
                                   dateTimeFormat(
-                                    'jm',
+                                    "jm",
                                     getCurrentTimestamp,
                                     locale: FFLocalizations.of(context)
                                         .languageCode,
@@ -4446,15 +4444,8 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                       context: context,
                                                       builder: (context) {
                                                         return GestureDetector(
-                                                          onTap: () => _model
-                                                                  .unfocusNode
-                                                                  .canRequestFocus
-                                                              ? FocusScope.of(
-                                                                      context)
-                                                                  .requestFocus(
-                                                                      _model
-                                                                          .unfocusNode)
-                                                              : FocusScope.of(
+                                                          onTap: () =>
+                                                              FocusScope.of(
                                                                       context)
                                                                   .unfocus(),
                                                           child: Padding(

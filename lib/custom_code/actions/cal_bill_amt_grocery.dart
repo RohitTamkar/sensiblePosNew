@@ -11,26 +11,29 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 Future<double> calBillAmtGrocery(
   double disAmt,
   double delChargs,
 ) async {
   double billAmt;
-  print(
+/*  print(
       "----------------------------------------------------3C---------------------------------------------------------------");
+  */
   billAmt = FFAppState().billAmt;
 
   if (delChargs > 0) {
     // FFAppState().delCharges = delChargs * FFAppState().noOfItems;
     billAmt += delChargs * FFAppState().noOfItems;
-    print(delChargs);
+/*    print(delChargs);*/
   }
 
   FFAppState().finalAmt = billAmt.roundToDouble();
-  print("==================================================================");
-  print(FFAppState().finalAmt);
+/*  print("==================================================================");
+  print(FFAppState().finalAmt);*/
   // FFAppState().subTotal = billAmt;
 
-  print(billAmt);
+/*  print(billAmt);*/
   return billAmt.roundToDouble();
 }

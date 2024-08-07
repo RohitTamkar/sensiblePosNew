@@ -51,9 +51,7 @@ class _ImsOpeningStockWidgetState extends State<ImsOpeningStockWidget> {
         title: 'imsOpeningStock',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -246,7 +244,7 @@ class _ImsOpeningStockWidgetState extends State<ImsOpeningStockWidget> {
                                                   0.0, 0.0, 6.0, 0.0),
                                           child: Text(
                                             dateTimeFormat(
-                                              'yMMMd',
+                                              "yMMMd",
                                               getCurrentTimestamp,
                                               locale:
                                                   FFLocalizations.of(context)
@@ -274,7 +272,7 @@ class _ImsOpeningStockWidgetState extends State<ImsOpeningStockWidget> {
                                         ),
                                         Text(
                                           dateTimeFormat(
-                                            'jm',
+                                            "jm",
                                             getCurrentTimestamp,
                                             locale: FFLocalizations.of(context)
                                                 .languageCode,

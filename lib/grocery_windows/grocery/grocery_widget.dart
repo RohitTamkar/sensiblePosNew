@@ -225,12 +225,116 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                       buttonSize: 25.0,
                       fillColor: FlutterFlowTheme.of(context).alternate,
                       icon: Icon(
-                        Icons.minimize_rounded,
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        Icons.remove,
+                        color: FlutterFlowTheme.of(context).primaryText,
                         size: 10.0,
                       ),
-                      onPressed: () {
-                        print('IconButton pressed ...');
+                      onPressed: () async {
+                        if (_model.textFieldqtTextController.text != '1') {
+                          setState(() {
+                            _model.textFieldqtTextController
+                                ?.text = (double.parse(
+                                        _model.textFieldqtTextController.text) -
+                                    1)
+                                .toString();
+                            _model.textFieldqtTextController?.selection =
+                                TextSelection.collapsed(
+                                    offset: _model.textFieldqtTextController!
+                                        .text.length);
+                          });
+                          _model.allbillistplusCopy =
+                              await actions.addToHoldListGrCalculationqty(
+                            widget!.parameter2!,
+                            FFAppState().selBill,
+                            widget!.parameter3!.toList(),
+                            functions.enabletaxinclusive(widget!.parameter4!),
+                            widget!.unitList!.toList(),
+                            int.parse(
+                                _model.textFielddisPerTextController.text),
+                            double.parse(
+                                _model.textFielddisAmtTextController.text),
+                            double.parse(
+                                _model.textFieldrateTextController.text),
+                            double.parse(_model.textFieldqtTextController.text),
+                            int.parse(
+                                _model.textFieldtaxPerTextController.text),
+                            double.parse(
+                                _model.textFieldTaxAmtTextController.text),
+                          );
+                          setState(() {
+                            _model.textFielddisAmtTextController?.text =
+                                getJsonField(
+                              _model.allbillistplusCopy!
+                                  .where((e) =>
+                                      getJsonField(
+                                        e,
+                                        r'''$.id''',
+                                      ) ==
+                                      getJsonField(
+                                        widget!.jsonitem,
+                                        r'''$.id''',
+                                      ))
+                                  .toList()
+                                  .first,
+                              r'''$.disAmt''',
+                            ).toString();
+                            _model.textFielddisAmtTextController?.selection =
+                                TextSelection.collapsed(
+                                    offset: _model
+                                        .textFielddisAmtTextController!
+                                        .text
+                                        .length);
+                          });
+                          setState(() {
+                            _model.textFieldTaxAmtTextController?.text =
+                                getJsonField(
+                              _model.allbillistplusCopy!
+                                  .where((e) =>
+                                      getJsonField(
+                                        e,
+                                        r'''$.id''',
+                                      ) ==
+                                      getJsonField(
+                                        widget!.jsonitem,
+                                        r'''$.id''',
+                                      ))
+                                  .toList()
+                                  .first,
+                              r'''$.taxAmt''',
+                            ).toString();
+                            _model.textFieldTaxAmtTextController?.selection =
+                                TextSelection.collapsed(
+                                    offset: _model
+                                        .textFieldTaxAmtTextController!
+                                        .text
+                                        .length);
+                          });
+                          _model.output1Copy =
+                              await actions.calSubTotalForGrocery(
+                            FFAppState().selBill.toString(),
+                            FFAppState().allBillsList.toList(),
+                          );
+                          _model.reuslt121Copy =
+                              await actions.calBillAmtGrocery(
+                            valueOrDefault<double>(
+                              FFAppState().disAmt,
+                              0.0,
+                            ),
+                            FFAppState().delCharges,
+                          );
+                          FFAppState().finalAmt = FFAppState().finalAmt;
+                          FFAppState().update(() {});
+                        } else {
+                          setState(() {
+                            _model.textFieldqtTextController?.text = '1';
+                            _model.textFieldqtTextController?.selection =
+                                TextSelection.collapsed(
+                                    offset: _model.textFieldqtTextController!
+                                        .text.length);
+                          });
+                        }
+
+                        setState(() {});
                       },
                     ),
                     Expanded(
@@ -397,11 +501,96 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                       fillColor: FlutterFlowTheme.of(context).alternate,
                       icon: Icon(
                         Icons.add,
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        color: FlutterFlowTheme.of(context).primaryText,
                         size: 10.0,
                       ),
-                      onPressed: () {
-                        print('IconButton pressed ...');
+                      onPressed: () async {
+                        setState(() {
+                          _model
+                              .textFieldqtTextController?.text = (double.parse(
+                                      _model.textFieldqtTextController.text) +
+                                  1)
+                              .toString();
+                          _model.textFieldqtTextController?.selection =
+                              TextSelection.collapsed(
+                                  offset: _model
+                                      .textFieldqtTextController!.text.length);
+                        });
+                        _model.all =
+                            await actions.addToHoldListGrCalculationqty(
+                          widget!.parameter2!,
+                          FFAppState().selBill,
+                          widget!.parameter3!.toList(),
+                          functions.enabletaxinclusive(widget!.parameter4!),
+                          widget!.unitList!.toList(),
+                          int.parse(_model.textFielddisPerTextController.text),
+                          double.parse(
+                              _model.textFieldtaxPerTextController.text),
+                          double.parse(_model.textFieldrateTextController.text),
+                          double.parse(_model.textFieldqtTextController.text),
+                          int.parse(_model.textFieldtaxPerTextController.text),
+                          double.parse(
+                              _model.textFieldTaxAmtTextController.text),
+                        );
+                        setState(() {
+                          _model.textFielddisAmtTextController?.text =
+                              getJsonField(
+                            _model.all!
+                                .where((e) =>
+                                    getJsonField(
+                                      widget!.jsonitem,
+                                      r'''$.id''',
+                                    ) ==
+                                    getJsonField(
+                                      e,
+                                      r'''$.id''',
+                                    ))
+                                .toList()
+                                .first,
+                            r'''$.disAmt''',
+                          ).toString();
+                          _model.textFielddisAmtTextController?.selection =
+                              TextSelection.collapsed(
+                                  offset: _model.textFielddisAmtTextController!
+                                      .text.length);
+                        });
+                        setState(() {
+                          _model.textFieldTaxAmtTextController?.text =
+                              getJsonField(
+                            _model.all!
+                                .where((e) =>
+                                    getJsonField(
+                                      widget!.jsonitem,
+                                      r'''$.id''',
+                                    ) ==
+                                    getJsonField(
+                                      e,
+                                      r'''$.id''',
+                                    ))
+                                .toList()
+                                .first,
+                            r'''$.taxAmt''',
+                          ).toString();
+                          _model.textFieldTaxAmtTextController?.selection =
+                              TextSelection.collapsed(
+                                  offset: _model.textFieldTaxAmtTextController!
+                                      .text.length);
+                        });
+                        _model.output1 = await actions.calSubTotalForGrocery(
+                          FFAppState().selBill.toString(),
+                          FFAppState().allBillsList.toList(),
+                        );
+                        _model.reuslt121 = await actions.calBillAmtGrocery(
+                          valueOrDefault<double>(
+                            FFAppState().disAmt,
+                            0.0,
+                          ),
+                          FFAppState().delCharges,
+                        );
+                        FFAppState().finalAmt = FFAppState().finalAmt;
+                        FFAppState().update(() {});
+
+                        setState(() {});
                       },
                     ),
                     SizedBox(

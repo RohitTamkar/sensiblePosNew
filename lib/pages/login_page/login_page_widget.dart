@@ -93,12 +93,12 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
           _model.textController1?.text = dateTimeFormat(
-            'MMMEd',
+            "MMMEd",
             getCurrentTimestamp,
             locale: FFLocalizations.of(context).languageCode,
           );
           _model.textController3?.text = dateTimeFormat(
-            'MMMEd',
+            "MMMEd",
             getCurrentTimestamp,
             locale: FFLocalizations.of(context).languageCode,
           );
@@ -120,9 +120,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
         title: 'LoginPage',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -2937,13 +2935,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         context: context,
                                         builder: (context) {
                                           return GestureDetector(
-                                            onTap: () => _model
-                                                    .unfocusNode.canRequestFocus
-                                                ? FocusScope.of(context)
-                                                    .requestFocus(
-                                                        _model.unfocusNode)
-                                                : FocusScope.of(context)
-                                                    .unfocus(),
+                                            onTap: () => FocusScope.of(context)
+                                                .unfocus(),
                                             child: Padding(
                                               padding: MediaQuery.viewInsetsOf(
                                                   context),

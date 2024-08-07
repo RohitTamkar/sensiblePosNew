@@ -23,7 +23,6 @@ import 'package:provider/provider.dart';
 class AddOutletPageModel extends FlutterFlowModel<AddOutletPageWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
   TextEditingController? textController1;
@@ -51,7 +50,6 @@ class AddOutletPageModel extends FlutterFlowModel<AddOutletPageWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     textFieldFocusNode1?.dispose();
     textController1?.dispose();
 

@@ -15,7 +15,6 @@ import 'package:provider/provider.dart';
 class FullScreenBillModel extends FlutterFlowModel<FullScreenBillWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - addToListCopy] action in Container widget.
   List<dynamic>? result1;
   // Stores action output result for [Custom Action - calSubTotal] action in Container widget.
@@ -36,7 +35,6 @@ class FullScreenBillModel extends FlutterFlowModel<FullScreenBillWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     menuDrawerModel.dispose();
   }
 }

@@ -17,7 +17,6 @@ class TodaySummerReportNewModel
     extends FlutterFlowModel<TodaySummerReportNewWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - todaysSummary] action in TodaySummerReportNew widget.
   dynamic? json;
   // Model for Header component.
@@ -38,7 +37,6 @@ class TodaySummerReportNewModel
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     headerModel.dispose();
     textFieldFocusNode?.dispose();
     textController?.dispose();
