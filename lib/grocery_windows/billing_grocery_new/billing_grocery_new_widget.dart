@@ -16,6 +16,7 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -48,6 +49,37 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => BillingGroceryNewModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      await actions.hideStatusBar();
+      FFAppState().shiftDocExists = getJsonField(
+        widget!.shiftdetail,
+        r'''$.shiftExists''',
+      );
+      FFAppState().update(() {});
+      FFAppState().shiftDetailsNEw = widget!.shiftdetail!;
+      setState(() {});
+      FFAppState().shiftDetailsJson = widget!.shiftdetail!;
+      setState(() {});
+      _model.hiveProductList = await actions.getProductlistHive();
+      _model.categoryListHive = await actions.getCategorylistHive();
+      FFAppState().productHive =
+          _model.hiveProductList!.toList().cast<ProductStructStruct>();
+      setState(() {});
+      FFAppState().categoryHive =
+          _model.categoryListHive!.toList().cast<CategoryStructStruct>();
+      setState(() {});
+      if (!functions.isPrinterSelected(FFAppState().printerDevice)!) {
+        _model.resDevice2Copy = await actions.scanPrinter(
+          FFAppState().posMode,
+        );
+      }
+      _model.isConnected = await actions.connectDevice(
+        FFAppState().printerDevice,
+        FFAppState().printerIndex,
+      );
+    });
 
     _model.textFieldinvoicnoTextController ??= TextEditingController();
     _model.textFieldinvoicnoFocusNode ??= FocusNode();
@@ -724,7 +756,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'o5quu6a6' /* Please select customer... */,
+                                                        'ysbcogvy' /*   Please select customer... */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(

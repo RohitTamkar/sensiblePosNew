@@ -17,6 +17,7 @@ import 'billing_grocery_new_widget.dart' show BillingGroceryNewWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -24,6 +25,14 @@ import 'package:provider/provider.dart';
 class BillingGroceryNewModel extends FlutterFlowModel<BillingGroceryNewWidget> {
   ///  State fields for stateful widgets in this page.
 
+  // Stores action output result for [Custom Action - getProductlistHive] action in BillingGroceryNew widget.
+  List<ProductStructStruct>? hiveProductList;
+  // Stores action output result for [Custom Action - getCategorylistHive] action in BillingGroceryNew widget.
+  List<CategoryStructStruct>? categoryListHive;
+  // Stores action output result for [Custom Action - scanPrinter] action in BillingGroceryNew widget.
+  bool? resDevice2Copy;
+  // Stores action output result for [Custom Action - connectDevice] action in BillingGroceryNew widget.
+  bool? isConnected;
   // Model for GroceryHeader component.
   late GroceryHeaderModel groceryHeaderModel;
   // State field(s) for TextFieldinvoicno widget.

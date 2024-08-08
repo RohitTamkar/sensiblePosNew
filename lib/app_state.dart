@@ -612,6 +612,9 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _tokenNo = prefs.getInt('ff_tokenNo') ?? _tokenNo;
     });
+    _safeInit(() {
+      _internet = prefs.getBool('ff_internet') ?? _internet;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -3341,6 +3344,13 @@ class FFAppState extends ChangeNotifier {
   set tokenNo(int value) {
     _tokenNo = value;
     prefs.setInt('ff_tokenNo', value);
+  }
+
+  bool _internet = false;
+  bool get internet => _internet;
+  set internet(bool value) {
+    _internet = value;
+    prefs.setBool('ff_internet', value);
   }
 }
 

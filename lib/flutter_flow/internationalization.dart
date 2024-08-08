@@ -21604,8 +21604,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'o5quu6a6': {
-      'en': 'Please select customer...',
+    'ysbcogvy': {
+      'en': '  Please select customer...',
       'hi': '',
       'kn': '',
       'mr': '',

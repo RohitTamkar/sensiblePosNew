@@ -16,7 +16,6 @@ import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:collection/collection.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -5728,16 +5727,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                 );
                                                                 _shouldSetState =
                                                                     true;
-                                                                _model.appsettingnew =
-                                                                    await queryAppSettingsRecordOnce(
-                                                                  parent: FFAppState()
-                                                                      .outletIdRef,
-                                                                  singleRecord:
-                                                                      true,
-                                                                ).then((s) => s
-                                                                        .firstOrNull);
-                                                                _shouldSetState =
-                                                                    true;
                                                                 if (_model
                                                                         .dropDownValue ==
                                                                     'CREDIT') {
@@ -6161,8 +6150,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                         .hiveInvoiceData!,
                                                                     FFAppState()
                                                                         .paperSize,
-                                                                    _model
-                                                                        .appsettingnew!,
+                                                                    productAndListNewAppSettingsRecord!,
                                                                   );
                                                                   await actions
                                                                       .removeFromAllBillList(

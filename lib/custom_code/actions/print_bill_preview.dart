@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:typed_data';
 
 import 'package:flutter/services.dart';
@@ -60,18 +62,18 @@ Future printBillPreview(
     String bill_column = "S.N ITEM_NAME  QTY RATE TOTAL";
     String bill_column1 = "1.  TEA       1.00 20.00 20.00";
     String bill_column2 = "2.  COFFEE    2.00 30.00 60.00";
+    if (FFAppState().internet) {
+      QuerySnapshot querySnapshot;
+      querySnapshot = await FirebaseFirestore.instance
+          .collection('OUTLET')
+          .doc(FFAppState().outletIdRef?.id)
+          .collection('HEADER')
+          .get();
 
-    QuerySnapshot querySnapshot;
-    querySnapshot = await FirebaseFirestore.instance
-        .collection('OUTLET')
-        .doc(FFAppState().outletIdRef?.id)
-        .collection('HEADER')
-        .get();
+      for (var doc in querySnapshot.docs) {
+        print(doc);
 
-    for (var doc in querySnapshot.docs) {
-      print(doc);
-
-      if (doc["recepitLogoUrl"] != null && doc["recepitLogoUrl"].isNotEmpty) {
+/*      if (doc["recepitLogoUrl"] != null && doc["recepitLogoUrl"].isNotEmpty) {
         final ByteData data =
             await NetworkAssetBundle(Uri.parse(doc["recepitLogoUrl"])).load("");
         final Uint8List imgBytes = data.buffer.asUint8List();
@@ -80,105 +82,106 @@ Future printBillPreview(
         //   bytes += generator.imageRaster(image, imageFn: PosImageFn.graphics);
         bytes += generator.image(image);
         // bytes += generator.imageRaster(image);
-      }
-      if (doc["title"] != null && doc["title"].isNotEmpty) {
-        bytes += generator.text(doc["title"],
-            styles: PosStyles(
-                height: PosTextSize.size2,
-                width: PosTextSize.size2,
-                align: PosAlign.center));
-      }
-      if (doc["address"] != null && doc["address"].isNotEmpty) {
-        bytes += generator.text(doc["address"],
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: true,
-                align: PosAlign.center));
-      }
-      if (doc["gstNo"] != null && doc["gstNo"].isNotEmpty) {
-        bytes += generator.text(doc["gstNo"],
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: true,
-                align: PosAlign.center));
-      }
-      if (doc["contactNo"] != null && doc["contactNo"].isNotEmpty) {
-        bytes += generator.text(doc["contactNo"],
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: true,
-                align: PosAlign.center));
-      }
-      if (doc["email"] != null && doc["email"].isNotEmpty) {
-        bytes += generator.text(doc["email"],
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: true,
-                align: PosAlign.center));
-      }
-      if (doc["serialNo"] != null && doc["serialNo"].isNotEmpty) {
-        bytes += generator.text(doc["serialNo"],
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: true,
-                align: PosAlign.center));
-      }
-      if (doc["taxInvoice"] != null && doc["taxInvoice"].isNotEmpty) {
-        bytes += generator.text(doc["taxInvoice"],
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: true,
-                align: PosAlign.center));
-      }
-      if (doc["bankName"] != null && doc["bankName"].isNotEmpty) {
-        bytes += generator.text(doc["bankName"],
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: true,
-                align: PosAlign.center));
-      }
-      if (doc["bankBranch"] != null && doc["bankBranch"].isNotEmpty) {
-        bytes += generator.text(doc["bankBranch"],
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: true,
-                align: PosAlign.center));
-      }
+      }*/
+        if (doc["title"] != null && doc["title"].isNotEmpty) {
+          bytes += generator.text(doc["title"],
+              styles: PosStyles(
+                  height: PosTextSize.size2,
+                  width: PosTextSize.size2,
+                  align: PosAlign.center));
+        }
+        if (doc["address"] != null && doc["address"].isNotEmpty) {
+          bytes += generator.text(doc["address"],
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: true,
+                  align: PosAlign.center));
+        }
+        if (doc["gstNo"] != null && doc["gstNo"].isNotEmpty) {
+          bytes += generator.text(doc["gstNo"],
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: true,
+                  align: PosAlign.center));
+        }
+        if (doc["contactNo"] != null && doc["contactNo"].isNotEmpty) {
+          bytes += generator.text(doc["contactNo"],
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: true,
+                  align: PosAlign.center));
+        }
+        if (doc["email"] != null && doc["email"].isNotEmpty) {
+          bytes += generator.text(doc["email"],
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: true,
+                  align: PosAlign.center));
+        }
+        if (doc["serialNo"] != null && doc["serialNo"].isNotEmpty) {
+          bytes += generator.text(doc["serialNo"],
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: true,
+                  align: PosAlign.center));
+        }
+        if (doc["taxInvoice"] != null && doc["taxInvoice"].isNotEmpty) {
+          bytes += generator.text(doc["taxInvoice"],
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: true,
+                  align: PosAlign.center));
+        }
+        if (doc["bankName"] != null && doc["bankName"].isNotEmpty) {
+          bytes += generator.text(doc["bankName"],
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: true,
+                  align: PosAlign.center));
+        }
+        if (doc["bankBranch"] != null && doc["bankBranch"].isNotEmpty) {
+          bytes += generator.text(doc["bankBranch"],
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: true,
+                  align: PosAlign.center));
+        }
 
-      if (doc["accountNumber"] != null && doc["accountNumber"].isNotEmpty) {
-        bytes += generator.text(doc["accountNumber"],
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: true,
-                align: PosAlign.center));
+        if (doc["accountNumber"] != null && doc["accountNumber"].isNotEmpty) {
+          bytes += generator.text(doc["accountNumber"],
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: true,
+                  align: PosAlign.center));
+        }
+        if (doc["ifscCode"] != null && doc["ifscCode"].isNotEmpty) {
+          bytes += generator.text(doc["ifscCode"],
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: true,
+                  align: PosAlign.center));
+        }
+        if (doc["subtitleAddress"] != null &&
+            doc["subtitleAddress"].isNotEmpty) {
+          bytes += generator.text(doc["subtitleAddress"],
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: true,
+                  align: PosAlign.center));
+        }
       }
-      if (doc["ifscCode"] != null && doc["ifscCode"].isNotEmpty) {
-        bytes += generator.text(doc["ifscCode"],
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: true,
-                align: PosAlign.center));
-      }
-      if (doc["subtitleAddress"] != null && doc["subtitleAddress"].isNotEmpty) {
-        bytes += generator.text(doc["subtitleAddress"],
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: true,
-                align: PosAlign.center));
-      }
-    }
-    /*   bytes += generator.text("SK's CAFE",
+    } /*   bytes += generator.text("SK's CAFE",
         styles: PosStyles(
             height: PosTextSize.size2,
             width: PosTextSize.size2,
@@ -356,16 +359,16 @@ Future printBillPreview(
     String bill_column = "S.N  ITEM_NAME         QTY    RATE   TOTAL";
     String bill_column1 = "1.  TEA               1.00    20.00   20.00";
     String bill_column2 = "2.  COFFEE            2.00    30.00   60.00";
-
-    QuerySnapshot querySnapshot;
-    querySnapshot = await FirebaseFirestore.instance
-        .collection('OUTLET')
-        .doc(FFAppState().outletIdRef?.id)
-        .collection('HEADER')
-        .get();
-    for (var doc in querySnapshot.docs) {
-      print(doc);
-      if (doc["recepitLogoUrl"] != null && doc["recepitLogoUrl"].isNotEmpty) {
+    if (FFAppState().internet) {
+      QuerySnapshot querySnapshot;
+      querySnapshot = await FirebaseFirestore.instance
+          .collection('OUTLET')
+          .doc(FFAppState().outletIdRef?.id)
+          .collection('HEADER')
+          .get();
+      for (var doc in querySnapshot.docs) {
+        print(doc);
+        /*    if (doc["recepitLogoUrl"] != null && doc["recepitLogoUrl"].isNotEmpty) {
         final ByteData data =
             await NetworkAssetBundle(Uri.parse('doc["recepitLogoUrl"]'))
                 .load("");
@@ -375,102 +378,104 @@ Future printBillPreview(
         //bytes += generator.imageRaster(image, imageFn: PosImageFn.graphics);
         bytes += generator.image(image);
         // bytes += generator.imageRaster(image);
-      }
-      if (doc["title"] != null && doc["title"].isNotEmpty) {
-        bytes += generator.text(doc["title"],
-            styles: PosStyles(
-                height: PosTextSize.size2,
-                width: PosTextSize.size2,
-                align: PosAlign.center));
-      }
-      if (doc["address"] != null && doc["address"].isNotEmpty) {
-        bytes += generator.text(doc["address"],
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: true,
-                align: PosAlign.center));
-      }
-      if (doc["gstNo"] != null && doc["gstNo"].isNotEmpty) {
-        bytes += generator.text(doc["gstNo"],
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: true,
-                align: PosAlign.center));
-      }
-      if (doc["contactNo"] != null && doc["contactNo"].isNotEmpty) {
-        bytes += generator.text(doc["contactNo"],
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: true,
-                align: PosAlign.center));
-      }
-      if (doc["email"] != null && doc["email"].isNotEmpty) {
-        bytes += generator.text(doc["email"],
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: true,
-                align: PosAlign.center));
-      }
-      if (doc["serialNo"] != null && doc["serialNo"].isNotEmpty) {
-        bytes += generator.text(doc["serialNo"],
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: true,
-                align: PosAlign.center));
-      }
-      if (doc["taxInvoice"] != null && doc["taxInvoice"].isNotEmpty) {
-        bytes += generator.text(doc["taxInvoice"],
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: true,
-                align: PosAlign.center));
-      }
-      if (doc["bankName"] != null && doc["bankName"].isNotEmpty) {
-        bytes += generator.text(doc["bankName"],
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: true,
-                align: PosAlign.center));
-      }
-      if (doc["bankBranch"] != null && doc["bankBranch"].isNotEmpty) {
-        bytes += generator.text(doc["bankBranch"],
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: true,
-                align: PosAlign.center));
-      }
+      }*/
+        if (doc["title"] != null && doc["title"].isNotEmpty) {
+          bytes += generator.text(doc["title"],
+              styles: PosStyles(
+                  height: PosTextSize.size2,
+                  width: PosTextSize.size2,
+                  align: PosAlign.center));
+        }
+        if (doc["address"] != null && doc["address"].isNotEmpty) {
+          bytes += generator.text(doc["address"],
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: true,
+                  align: PosAlign.center));
+        }
+        if (doc["gstNo"] != null && doc["gstNo"].isNotEmpty) {
+          bytes += generator.text(doc["gstNo"],
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: true,
+                  align: PosAlign.center));
+        }
+        if (doc["contactNo"] != null && doc["contactNo"].isNotEmpty) {
+          bytes += generator.text(doc["contactNo"],
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: true,
+                  align: PosAlign.center));
+        }
+        if (doc["email"] != null && doc["email"].isNotEmpty) {
+          bytes += generator.text(doc["email"],
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: true,
+                  align: PosAlign.center));
+        }
+        if (doc["serialNo"] != null && doc["serialNo"].isNotEmpty) {
+          bytes += generator.text(doc["serialNo"],
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: true,
+                  align: PosAlign.center));
+        }
+        if (doc["taxInvoice"] != null && doc["taxInvoice"].isNotEmpty) {
+          bytes += generator.text(doc["taxInvoice"],
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: true,
+                  align: PosAlign.center));
+        }
+        if (doc["bankName"] != null && doc["bankName"].isNotEmpty) {
+          bytes += generator.text(doc["bankName"],
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: true,
+                  align: PosAlign.center));
+        }
+        if (doc["bankBranch"] != null && doc["bankBranch"].isNotEmpty) {
+          bytes += generator.text(doc["bankBranch"],
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: true,
+                  align: PosAlign.center));
+        }
 
-      if (doc["accountNumber"] != null && doc["accountNumber"].isNotEmpty) {
-        bytes += generator.text(doc["accountNumber"],
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: true,
-                align: PosAlign.center));
-      }
-      if (doc["ifscCode"] != null && doc["ifscCode"].isNotEmpty) {
-        bytes += generator.text(doc["ifscCode"],
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: true,
-                align: PosAlign.center));
-      }
-      if (doc["subtitleAddress"] != null && doc["subtitleAddress"].isNotEmpty) {
-        bytes += generator.text(doc["subtitleAddress"],
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: true,
-                align: PosAlign.center));
+        if (doc["accountNumber"] != null && doc["accountNumber"].isNotEmpty) {
+          bytes += generator.text(doc["accountNumber"],
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: true,
+                  align: PosAlign.center));
+        }
+        if (doc["ifscCode"] != null && doc["ifscCode"].isNotEmpty) {
+          bytes += generator.text(doc["ifscCode"],
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: true,
+                  align: PosAlign.center));
+        }
+        if (doc["subtitleAddress"] != null &&
+            doc["subtitleAddress"].isNotEmpty) {
+          bytes += generator.text(doc["subtitleAddress"],
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: true,
+                  align: PosAlign.center));
+        }
       }
     }
     bytes += generator.text("----------------------------------------------",
