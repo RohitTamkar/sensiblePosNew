@@ -15,6 +15,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 Future<List<dynamic>> addToHoldListprdGrocery(
   ProductStructStruct document,
   int billno,
@@ -96,6 +98,7 @@ Future<List<dynamic>> addToHoldListprdGrocery(
     final data = {
       "srno": srNo,
       "name": document!.name,
+      "barcode": document!.barcode,
       "price": (document.sellingPrice)!.toDouble(),
       "mrpPrice": (document.mrpPrice)!.toDouble(),
       "quantity": quantity,

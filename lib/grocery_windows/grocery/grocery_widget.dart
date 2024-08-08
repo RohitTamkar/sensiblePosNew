@@ -154,9 +154,10 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                   children: [
                     Expanded(
                       child: Text(
-                        FFLocalizations.of(context).getText(
-                          'az2ckbjv' /* 1 */,
-                        ),
+                        getJsonField(
+                          widget!.jsonitem,
+                          r'''$.barcode''',
+                        ).toString(),
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).labelSmall.override(
                               fontFamily:

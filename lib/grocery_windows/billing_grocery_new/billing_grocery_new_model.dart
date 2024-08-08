@@ -35,18 +35,13 @@ class BillingGroceryNewModel extends FlutterFlowModel<BillingGroceryNewWidget> {
   bool? isConnected;
   // Model for GroceryHeader component.
   late GroceryHeaderModel groceryHeaderModel;
-  // State field(s) for TextFieldinvoicno widget.
-  FocusNode? textFieldinvoicnoFocusNode;
-  TextEditingController? textFieldinvoicnoTextController;
-  String? Function(BuildContext, String?)?
-      textFieldinvoicnoTextControllerValidator;
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
-  TextEditingController? textController2;
-  String? Function(BuildContext, String?)? textController2Validator;
+  TextEditingController? textController1;
+  String? Function(BuildContext, String?)? textController1Validator;
   // State field(s) for custmob widget.
   FocusNode? custmobFocusNode;
   TextEditingController? custmobTextController;
@@ -96,11 +91,8 @@ class BillingGroceryNewModel extends FlutterFlowModel<BillingGroceryNewWidget> {
   @override
   void dispose() {
     groceryHeaderModel.dispose();
-    textFieldinvoicnoFocusNode?.dispose();
-    textFieldinvoicnoTextController?.dispose();
-
     textFieldFocusNode?.dispose();
-    textController2?.dispose();
+    textController1?.dispose();
 
     custmobFocusNode?.dispose();
     custmobTextController?.dispose();

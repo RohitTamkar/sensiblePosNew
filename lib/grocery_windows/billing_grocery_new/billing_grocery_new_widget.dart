@@ -81,10 +81,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
       );
     });
 
-    _model.textFieldinvoicnoTextController ??= TextEditingController();
-    _model.textFieldinvoicnoFocusNode ??= FocusNode();
-
-    _model.textController2 ??= TextEditingController();
+    _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
 
     _model.custmobTextController ??= TextEditingController();
@@ -97,11 +94,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
     _model.custEancodeFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
-          _model.textFieldinvoicnoTextController?.text =
-              FFLocalizations.of(context).getText(
-            'ubi4ucmh' /* 54623189 */,
-          );
-          _model.textController2?.text = dateTimeFormat(
+          _model.textController1?.text = dateTimeFormat(
             "d/M/y",
             getCurrentTimestamp,
             locale: FFLocalizations.of(context).languageCode,
@@ -413,106 +406,10 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 15.0, 0.0),
-                                                child: TextFormField(
-                                                  controller: _model
-                                                      .textFieldinvoicnoTextController,
-                                                  focusNode: _model
-                                                      .textFieldinvoicnoFocusNode,
-                                                  autofocus: false,
-                                                  obscureText: false,
-                                                  decoration: InputDecoration(
-                                                    isDense: true,
-                                                    labelStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelMediumFamily,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMediumFamily),
-                                                        ),
-                                                    hintStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelMediumFamily,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMediumFamily),
-                                                        ),
-                                                    enabledBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .customColor1,
-                                                        width: 1.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                    focusedBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .info,
-                                                        width: 1.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                    errorBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .error,
-                                                        width: 1.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                    focusedErrorBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .error,
-                                                        width: 1.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                    filled: true,
-                                                    fillColor: FlutterFlowTheme
-                                                            .of(context)
-                                                        .secondaryBackground,
-                                                    contentPadding:
-                                                        EdgeInsets.all(12.0),
-                                                  ),
+                                                child: Text(
+                                                  functions.genInvoiceNum(
+                                                      FFAppState().count,
+                                                      FFAppState().shiftCount),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelLarge
@@ -529,9 +426,6 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                         context)
                                                                     .labelLargeFamily),
                                                       ),
-                                                  validator: _model
-                                                      .textFieldinvoicnoTextControllerValidator
-                                                      .asValidator(context),
                                                 ),
                                               ),
                                             ),
@@ -882,7 +776,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                               flex: 1,
                                               child: TextFormField(
                                                 controller:
-                                                    _model.textController2,
+                                                    _model.textController1,
                                                 focusNode:
                                                     _model.textFieldFocusNode,
                                                 autofocus: false,
@@ -1000,7 +894,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                       .labelLargeFamily),
                                                         ),
                                                 validator: _model
-                                                    .textController2Validator
+                                                    .textController1Validator
                                                     .asValidator(context),
                                               ),
                                             ),

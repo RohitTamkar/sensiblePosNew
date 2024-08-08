@@ -21569,20 +21569,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'n5depakz': {
-      'en': '',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    'ubi4ucmh': {
-      'en': '54623189',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
     '8rd548od': {
       'en': 'Customer\'s Name',
       'hi': '',
@@ -23644,16 +23630,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'vfk9s8di': {
       'en': 'Version : ',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-  },
-  // grocery
-  {
-    'az2ckbjv': {
-      'en': '1',
       'hi': '',
       'kn': '',
       'mr': '',
