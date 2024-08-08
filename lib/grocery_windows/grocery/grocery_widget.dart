@@ -525,7 +525,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                           widget!.unitList!.toList(),
                           int.parse(_model.textFielddisPerTextController.text),
                           double.parse(
-                              _model.textFieldtaxPerTextController.text),
+                              _model.textFielddisAmtTextController.text),
                           double.parse(_model.textFieldrateTextController.text),
                           double.parse(_model.textFieldqtTextController.text),
                           int.parse(_model.textFieldtaxPerTextController.text),

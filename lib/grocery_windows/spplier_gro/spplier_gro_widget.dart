@@ -128,7 +128,7 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                         size: 24.0,
                       ),
                       onPressed: () async {
-                        context.pushNamed('PurchaseGrocery');
+                        Navigator.pop(context);
                       },
                     ),
                   ],

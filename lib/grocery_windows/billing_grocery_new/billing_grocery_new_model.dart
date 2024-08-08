@@ -1,17 +1,21 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
+import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/form_field_controller.dart';
 import '/grocery_windows/grocery/grocery_widget.dart';
 import '/grocery_windows/grocery_header/grocery_header_widget.dart';
 import '/grocery_windows/spplier_gro/spplier_gro_widget.dart';
-import '/backend/schema/structs/index.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'billing_grocery_new_widget.dart' show BillingGroceryNewWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -22,36 +26,58 @@ class BillingGroceryNewModel extends FlutterFlowModel<BillingGroceryNewWidget> {
 
   // Model for GroceryHeader component.
   late GroceryHeaderModel groceryHeaderModel;
+  // State field(s) for TextFieldinvoicno widget.
+  FocusNode? textFieldinvoicnoFocusNode;
+  TextEditingController? textFieldinvoicnoTextController;
+  String? Function(BuildContext, String?)?
+      textFieldinvoicnoTextControllerValidator;
+  // State field(s) for DropDown widget.
+  String? dropDownValue;
+  FormFieldController<String>? dropDownValueController;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
+  FocusNode? textFieldFocusNode;
   TextEditingController? textController2;
   String? Function(BuildContext, String?)? textController2Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
-  TextEditingController? textController3;
-  String? Function(BuildContext, String?)? textController3Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode4;
-  TextEditingController? textController4;
-  String? Function(BuildContext, String?)? textController4Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode5;
-  TextEditingController? textController5;
-  String? Function(BuildContext, String?)? textController5Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode6;
-  TextEditingController? textController6;
-  String? Function(BuildContext, String?)? textController6Validator;
+  // State field(s) for custmob widget.
+  FocusNode? custmobFocusNode;
+  TextEditingController? custmobTextController;
+  String? Function(BuildContext, String?)? custmobTextControllerValidator;
+  // State field(s) for custAddress widget.
+  FocusNode? custAddressFocusNode;
+  TextEditingController? custAddressTextController;
+  String? Function(BuildContext, String?)? custAddressTextControllerValidator;
+  // State field(s) for custEancode widget.
+  FocusNode? custEancodeFocusNode;
+  TextEditingController? custEancodeTextController;
+  String? Function(BuildContext, String?)? custEancodeTextControllerValidator;
   // Stores action output result for [Custom Action - removeHoldListItem] action in IconButton widget.
   List<dynamic>? res20;
   // Stores action output result for [Custom Action - calSubTotalForGrocery] action in IconButton widget.
   double? ret;
   // Stores action output result for [Custom Action - calBillAmtGrocery] action in IconButton widget.
   double? ads;
+  // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
+  List<SelItemListStruct>? prdlinstnewtx;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  AppSettingsRecord? appsettingnew;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  OutletRecord? outletdoc;
+  // Stores action output result for [Custom Action - oldbalanceplusamt] action in Button widget.
+  int? totalcredit;
+  // Stores action output result for [Custom Action - addInvoiceBillhive] action in Button widget.
+  InvoiceStructStruct? hiveInvoiceData;
+  // Stores action output result for [Custom Action - calShiftSummaryNew] action in Button widget.
+  dynamic? shiftSummarResultsNew;
+  // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
+  ShiftDetailsStruct? updatedShiftDetails;
+  // Stores action output result for [Custom Action - scanPrinter] action in Button widget.
+  bool? resDevice2;
+  // Stores action output result for [Custom Action - connectDevice] action in Button widget.
+  bool? isconnected;
+  // Stores action output result for [Custom Action - selectBillPrint] action in Button widget.
+  List<dynamic>? returnedList2;
+  // Stores action output result for [Custom Action - newCustomAction] action in Button widget.
+  List<dynamic>? device;
 
   @override
   void initState(BuildContext context) {
@@ -61,22 +87,19 @@ class BillingGroceryNewModel extends FlutterFlowModel<BillingGroceryNewWidget> {
   @override
   void dispose() {
     groceryHeaderModel.dispose();
-    textFieldFocusNode1?.dispose();
-    textController1?.dispose();
+    textFieldinvoicnoFocusNode?.dispose();
+    textFieldinvoicnoTextController?.dispose();
 
-    textFieldFocusNode2?.dispose();
+    textFieldFocusNode?.dispose();
     textController2?.dispose();
 
-    textFieldFocusNode3?.dispose();
-    textController3?.dispose();
+    custmobFocusNode?.dispose();
+    custmobTextController?.dispose();
 
-    textFieldFocusNode4?.dispose();
-    textController4?.dispose();
+    custAddressFocusNode?.dispose();
+    custAddressTextController?.dispose();
 
-    textFieldFocusNode5?.dispose();
-    textController5?.dispose();
-
-    textFieldFocusNode6?.dispose();
-    textController6?.dispose();
+    custEancodeFocusNode?.dispose();
+    custEancodeTextController?.dispose();
   }
 }

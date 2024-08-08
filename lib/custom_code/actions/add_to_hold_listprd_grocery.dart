@@ -76,10 +76,10 @@ Future<List<dynamic>> addToHoldListprdGrocery(
     total -= disAmt * quantity;
 
     // Add tax amount for exclusive tax
-    if (inclusiveorexclusive.toLowerCase() == 'exclusive') {
+    /* if (inclusiveorexclusive.toLowerCase() == 'exclusive') {
       total += taxAmt;
     }
-
+*/
     int srNo = 1;
     if (list.isNotEmpty) {
       for (var bill in list) {

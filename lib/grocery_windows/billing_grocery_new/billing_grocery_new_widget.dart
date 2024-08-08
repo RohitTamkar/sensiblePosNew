@@ -1,16 +1,20 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
+import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/form_field_controller.dart';
 import '/grocery_windows/grocery/grocery_widget.dart';
 import '/grocery_windows/grocery_header/grocery_header_widget.dart';
 import '/grocery_windows/spplier_gro/spplier_gro_widget.dart';
-import '/backend/schema/structs/index.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -45,32 +49,27 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
     super.initState();
     _model = createModel(context, () => BillingGroceryNewModel());
 
-    _model.textController1 ??= TextEditingController();
-    _model.textFieldFocusNode1 ??= FocusNode();
+    _model.textFieldinvoicnoTextController ??= TextEditingController();
+    _model.textFieldinvoicnoFocusNode ??= FocusNode();
 
     _model.textController2 ??= TextEditingController();
-    _model.textFieldFocusNode2 ??= FocusNode();
+    _model.textFieldFocusNode ??= FocusNode();
 
-    _model.textController3 ??= TextEditingController();
-    _model.textFieldFocusNode3 ??= FocusNode();
+    _model.custmobTextController ??= TextEditingController();
+    _model.custmobFocusNode ??= FocusNode();
 
-    _model.textController4 ??= TextEditingController();
-    _model.textFieldFocusNode4 ??= FocusNode();
+    _model.custAddressTextController ??= TextEditingController();
+    _model.custAddressFocusNode ??= FocusNode();
 
-    _model.textController5 ??= TextEditingController();
-    _model.textFieldFocusNode5 ??= FocusNode();
-
-    _model.textController6 ??= TextEditingController();
-    _model.textFieldFocusNode6 ??= FocusNode();
+    _model.custEancodeTextController ??= TextEditingController();
+    _model.custEancodeFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
-          _model.textController1?.text = FFLocalizations.of(context).getText(
+          _model.textFieldinvoicnoTextController?.text =
+              FFLocalizations.of(context).getText(
             'ubi4ucmh' /* 54623189 */,
           );
-          _model.textController2?.text = FFLocalizations.of(context).getText(
-            'of97wgqp' /* Sensible Connect */,
-          );
-          _model.textController3?.text = dateTimeFormat(
+          _model.textController2?.text = dateTimeFormat(
             "d/M/y",
             getCurrentTimestamp,
             locale: FFLocalizations.of(context).languageCode,
@@ -383,10 +382,10 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                     .fromSTEB(
                                                         0.0, 0.0, 15.0, 0.0),
                                                 child: TextFormField(
-                                                  controller:
-                                                      _model.textController1,
+                                                  controller: _model
+                                                      .textFieldinvoicnoTextController,
                                                   focusNode: _model
-                                                      .textFieldFocusNode1,
+                                                      .textFieldinvoicnoFocusNode,
                                                   autofocus: false,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
@@ -499,7 +498,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                     .labelLargeFamily),
                                                       ),
                                                   validator: _model
-                                                      .textController1Validator
+                                                      .textFieldinvoicnoTextControllerValidator
                                                       .asValidator(context),
                                                 ),
                                               ),
@@ -548,125 +547,223 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 10.0, 0.0),
-                                                child: TextFormField(
-                                                  controller:
-                                                      _model.textController2,
-                                                  focusNode: _model
-                                                      .textFieldFocusNode2,
-                                                  autofocus: false,
-                                                  obscureText: false,
-                                                  decoration: InputDecoration(
-                                                    isDense: true,
-                                                    labelStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelMediumFamily,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMediumFamily),
-                                                        ),
-                                                    hintStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelMediumFamily,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMediumFamily),
-                                                        ),
-                                                    enabledBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .customColor1,
-                                                        width: 1.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                    focusedBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .info,
-                                                        width: 1.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                    errorBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .error,
-                                                        width: 1.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                    focusedErrorBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .error,
-                                                        width: 1.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                    filled: true,
-                                                    fillColor: FlutterFlowTheme
-                                                            .of(context)
-                                                        .secondaryBackground,
-                                                    contentPadding:
-                                                        EdgeInsets.all(12.0),
+                                                child: StreamBuilder<
+                                                    List<PartyRecord>>(
+                                                  stream: queryPartyRecord(
+                                                    parent: FFAppState()
+                                                        .outletIdRef,
                                                   ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .labelLarge
-                                                      .override(
-                                                        fontFamily:
+                                                  builder: (context, snapshot) {
+                                                    // Customize what your widget looks like when it's loading.
+                                                    if (!snapshot.hasData) {
+                                                      return Center(
+                                                        child: SizedBox(
+                                                          width: 40.0,
+                                                          height: 40.0,
+                                                          child:
+                                                              SpinKitFadingCircle(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                            size: 40.0,
+                                                          ),
+                                                        ),
+                                                      );
+                                                    }
+                                                    List<PartyRecord>
+                                                        dropDownPartyRecordList =
+                                                        snapshot.data!;
+
+                                                    return FlutterFlowDropDown<
+                                                        String>(
+                                                      controller: _model
+                                                              .dropDownValueController ??=
+                                                          FormFieldController<
+                                                              String>(
+                                                        _model.dropDownValue ??=
+                                                            '',
+                                                      ),
+                                                      options: List<
+                                                              String>.from(
+                                                          dropDownPartyRecordList
+                                                              .map((e) => e.id)
+                                                              .toList()),
+                                                      optionLabels:
+                                                          dropDownPartyRecordList
+                                                              .map(
+                                                                  (e) => e.name)
+                                                              .toList(),
+                                                      onChanged: (val) async {
+                                                        setState(() => _model
+                                                                .dropDownValue =
+                                                            val);
+                                                        await showDialog(
+                                                          context: context,
+                                                          builder:
+                                                              (alertDialogContext) {
+                                                            return AlertDialog(
+                                                              content: Text(_model
+                                                                  .dropDownValue!),
+                                                              actions: [
+                                                                TextButton(
+                                                                  onPressed: () =>
+                                                                      Navigator.pop(
+                                                                          alertDialogContext),
+                                                                  child: Text(
+                                                                      'Ok'),
+                                                                ),
+                                                              ],
+                                                            );
+                                                          },
+                                                        );
+                                                        FFAppState()
+                                                                .custNameRef =
+                                                            dropDownPartyRecordList
+                                                                .where((e) =>
+                                                                    e.id ==
+                                                                    _model
+                                                                        .dropDownValue)
+                                                                .toList()
+                                                                .first
+                                                                .reference;
+                                                        setState(() {});
+                                                        setState(() {
+                                                          _model.custmobTextController
+                                                                  ?.text =
+                                                              valueOrDefault<
+                                                                  String>(
+                                                            dropDownPartyRecordList
+                                                                .where((e) =>
+                                                                    e.id ==
+                                                                    _model
+                                                                        .dropDownValue)
+                                                                .toList()
+                                                                .first
+                                                                .mobile,
+                                                            '0',
+                                                          );
+                                                          _model.custmobTextController
+                                                                  ?.selection =
+                                                              TextSelection.collapsed(
+                                                                  offset: _model
+                                                                      .custmobTextController!
+                                                                      .text
+                                                                      .length);
+                                                        });
+                                                        setState(() {
+                                                          _model.custAddressTextController
+                                                                  ?.text =
+                                                              dropDownPartyRecordList
+                                                                  .where((e) =>
+                                                                      e.id ==
+                                                                      _model
+                                                                          .dropDownValue)
+                                                                  .toList()
+                                                                  .first
+                                                                  .area;
+                                                          _model.custAddressTextController
+                                                                  ?.selection =
+                                                              TextSelection.collapsed(
+                                                                  offset: _model
+                                                                      .custAddressTextController!
+                                                                      .text
+                                                                      .length);
+                                                        });
+                                                      },
+                                                      width: 300.0,
+                                                      height: 40.0,
+                                                      searchHintTextStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMediumFamily,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelMediumFamily),
+                                                              ),
+                                                      searchTextStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
+                                                              ),
+                                                      textStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
+                                                              ),
+                                                      hintText:
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                        'o5quu6a6' /* Please select customer... */,
+                                                      ),
+                                                      searchHintText:
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                        'ghd1ngf1' /* Search for an item... */,
+                                                      ),
+                                                      icon: Icon(
+                                                        Icons
+                                                            .keyboard_arrow_down_rounded,
+                                                        color:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .labelLargeFamily,
-                                                        letterSpacing: 0.0,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelLargeFamily),
+                                                                .secondaryText,
+                                                        size: 24.0,
                                                       ),
-                                                  validator: _model
-                                                      .textController2Validator
-                                                      .asValidator(context),
+                                                      fillColor: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
+                                                      elevation: 2.0,
+                                                      borderColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .alternate,
+                                                      borderWidth: 2.0,
+                                                      borderRadius: 8.0,
+                                                      margin:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      hidesUnderline: true,
+                                                      isOverButton: true,
+                                                      isSearchable: true,
+                                                      isMultiSelect: false,
+                                                    );
+                                                  },
                                                 ),
                                               ),
                                             ),
@@ -753,9 +850,9 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                               flex: 1,
                                               child: TextFormField(
                                                 controller:
-                                                    _model.textController3,
+                                                    _model.textController2,
                                                 focusNode:
-                                                    _model.textFieldFocusNode3,
+                                                    _model.textFieldFocusNode,
                                                 autofocus: false,
                                                 obscureText: false,
                                                 decoration: InputDecoration(
@@ -871,7 +968,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                       .labelLargeFamily),
                                                         ),
                                                 validator: _model
-                                                    .textController3Validator
+                                                    .textController2Validator
                                                     .asValidator(context),
                                               ),
                                             ),
@@ -928,10 +1025,10 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                     .fromSTEB(
                                                         0.0, 0.0, 15.0, 0.0),
                                                 child: TextFormField(
-                                                  controller:
-                                                      _model.textController4,
-                                                  focusNode: _model
-                                                      .textFieldFocusNode4,
+                                                  controller: _model
+                                                      .custmobTextController,
+                                                  focusNode:
+                                                      _model.custmobFocusNode,
                                                   autofocus: false,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
@@ -1044,7 +1141,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                     .labelLargeFamily),
                                                       ),
                                                   validator: _model
-                                                      .textController4Validator
+                                                      .custmobTextControllerValidator
                                                       .asValidator(context),
                                                 ),
                                               ),
@@ -1090,10 +1187,10 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                             Expanded(
                                               flex: 4,
                                               child: TextFormField(
-                                                controller:
-                                                    _model.textController5,
+                                                controller: _model
+                                                    .custAddressTextController,
                                                 focusNode:
-                                                    _model.textFieldFocusNode5,
+                                                    _model.custAddressFocusNode,
                                                 autofocus: false,
                                                 obscureText: false,
                                                 decoration: InputDecoration(
@@ -1209,7 +1306,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                       .labelLargeFamily),
                                                         ),
                                                 validator: _model
-                                                    .textController5Validator
+                                                    .custAddressTextControllerValidator
                                                     .asValidator(context),
                                               ),
                                             ),
@@ -1375,10 +1472,10 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                           Expanded(
                                             flex: 4,
                                             child: TextFormField(
-                                              controller:
-                                                  _model.textController6,
+                                              controller: _model
+                                                  .custEancodeTextController,
                                               focusNode:
-                                                  _model.textFieldFocusNode6,
+                                                  _model.custEancodeFocusNode,
                                               autofocus: false,
                                               obscureText: false,
                                               decoration: InputDecoration(
@@ -1486,7 +1583,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                     .labelLargeFamily),
                                                       ),
                                               validator: _model
-                                                  .textController6Validator
+                                                  .custEancodeTextControllerValidator
                                                   .asValidator(context),
                                             ),
                                           ),
@@ -2480,8 +2577,392 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                     ),
                                   ),
                                   FFButtonWidget(
-                                    onPressed: () {
-                                      print('Button pressed ...');
+                                    onPressed: () async {
+                                      var _shouldSetState = false;
+                                      if (getJsonField(
+                                        FFAppState().shiftDetailsJson,
+                                        r'''$.shiftExists''',
+                                      )) {
+                                        FFAppState().count =
+                                            FFAppState().count + 1;
+                                        setState(() {});
+                                      } else {
+                                        FFAppState().count =
+                                            FFAppState().count + 1;
+                                        setState(() {});
+                                      }
+
+                                      _model.prdlinstnewtx =
+                                          await actions.filterProducts2(
+                                        FFAppState().selBill,
+                                        FFAppState().allBillsList.toList(),
+                                      );
+                                      _shouldSetState = true;
+                                      _model.appsettingnew =
+                                          await queryAppSettingsRecordOnce(
+                                        parent: FFAppState().outletIdRef,
+                                        singleRecord: true,
+                                      ).then((s) => s.firstOrNull);
+                                      _shouldSetState = true;
+                                      _model.outletdoc =
+                                          await queryOutletRecordOnce(
+                                        queryBuilder: (outletRecord) =>
+                                            outletRecord.where(
+                                          'id',
+                                          isEqualTo:
+                                              FFAppState().outletIdRef?.id,
+                                        ),
+                                        singleRecord: true,
+                                      ).then((s) => s.firstOrNull);
+                                      _shouldSetState = true;
+                                      if (_model.dropDownValue == 'CREDIT') {
+                                        if (FFAppState().setCustRef?.id !=
+                                                null &&
+                                            FFAppState().setCustRef?.id != '') {
+                                          if (FFAppState().oldBalance <
+                                              FFAppState().custCredit) {
+                                            _model.totalcredit =
+                                                await actions.oldbalanceplusamt(
+                                              FFAppState().oldBalance,
+                                              FFAppState().finalAmt,
+                                            );
+                                            _shouldSetState = true;
+
+                                            await FFAppState()
+                                                .setCustRef!
+                                                .update(createPartyRecordData(
+                                                  credit: true,
+                                                  oldBalance: 0,
+                                                  lastVisit: getCurrentTimestamp
+                                                      .millisecondsSinceEpoch
+                                                      .toString(),
+                                                ));
+                                          } else {
+                                            await showDialog(
+                                              context: context,
+                                              builder: (alertDialogContext) {
+                                                return AlertDialog(
+                                                  content: Text(
+                                                      'Credit Limit Exceeded !'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext),
+                                                      child: Text('Ok'),
+                                                    ),
+                                                  ],
+                                                );
+                                              },
+                                            );
+                                            if (_shouldSetState)
+                                              setState(() {});
+                                            return;
+                                          }
+                                        } else {
+                                          await showDialog(
+                                            context: context,
+                                            builder: (alertDialogContext) {
+                                              return AlertDialog(
+                                                content:
+                                                    Text('Select Customer '),
+                                                actions: [
+                                                  TextButton(
+                                                    onPressed: () =>
+                                                        Navigator.pop(
+                                                            alertDialogContext),
+                                                    child: Text('Ok'),
+                                                  ),
+                                                ],
+                                              );
+                                            },
+                                          );
+                                          scaffoldKey.currentState!
+                                              .openEndDrawer();
+                                          if (_shouldSetState) setState(() {});
+                                          return;
+                                        }
+                                      }
+                                      _model.hiveInvoiceData =
+                                          await actions.addInvoiceBillhive(
+                                        '',
+                                        functions.genInvoiceNum(
+                                            FFAppState().count,
+                                            FFAppState().shiftCount),
+                                        valueOrDefault<String>(
+                                          FFAppState().setCustRef?.id,
+                                          '0',
+                                        ),
+                                        functions.timestampToMili(
+                                            getCurrentTimestamp),
+                                        functions.getDayId(),
+                                        'cash',
+                                        valueOrDefault<double>(
+                                          FFAppState().disAmt,
+                                          0.0,
+                                        ),
+                                        valueOrDefault<double>(
+                                          FFAppState().disPer,
+                                          0.0,
+                                        ),
+                                        valueOrDefault<double>(
+                                          FFAppState().delCharges,
+                                          0.0,
+                                        ),
+                                        FFAppState().taxamt,
+                                        valueOrDefault<double>(
+                                          FFAppState().billAmt,
+                                          0.0,
+                                        ),
+                                        valueOrDefault<double>(
+                                          FFAppState().finalAmt,
+                                          0.0,
+                                        ),
+                                        0.0,
+                                        _model.prdlinstnewtx?.toList(),
+                                        getJsonField(
+                                          FFAppState().shiftDetailsJson,
+                                          r'''$.shiftId''',
+                                        ).toString(),
+                                        false,
+                                        FFAppState().invoiceStructVersion,
+                                      );
+                                      _shouldSetState = true;
+                                      if (getJsonField(
+                                        FFAppState().shiftDetailsJson,
+                                        r'''$.shiftExists''',
+                                      )) {
+                                        _model.shiftSummarResultsNew =
+                                            await actions.calShiftSummaryNew(
+                                          _model.hiveInvoiceData!,
+                                          FFAppState().shiftDetailsJson,
+                                        );
+                                        _shouldSetState = true;
+                                        FFAppState().updateShiftDetailsStruct(
+                                          (e) => e
+                                            ..billCount = valueOrDefault<int>(
+                                              functions.lastBillCount(
+                                                  FFAppState()
+                                                      .shiftDetails
+                                                      .billCount),
+                                              0,
+                                            )
+                                            ..totalSale = getJsonField(
+                                              _model.shiftSummarResultsNew,
+                                              r'''$.totalSale''',
+                                            )
+                                            ..deliveryCharges = getJsonField(
+                                              _model.shiftSummarResultsNew,
+                                              r'''$.deliveryCharges''',
+                                            )
+                                            ..tax = getJsonField(
+                                              _model.shiftSummarResultsNew,
+                                              r'''$.tax''',
+                                            )
+                                            ..lastBillNo = getJsonField(
+                                              _model.shiftSummarResultsNew,
+                                              r'''$.lastBillNo''',
+                                            ).toString()
+                                            ..discount = getJsonField(
+                                              _model.shiftSummarResultsNew,
+                                              r'''$.discount''',
+                                            )
+                                            ..lastBillTime =
+                                                functions.timestampToMili(
+                                                    getCurrentTimestamp)
+                                            ..cashSale = getJsonField(
+                                              _model.shiftSummarResultsNew,
+                                              r'''$.cashSale''',
+                                            )
+                                            ..paymentJson = getJsonField(
+                                              _model.shiftSummarResultsNew,
+                                              r'''$.paymentJson''',
+                                            ).toString()
+                                            ..dayId = getJsonField(
+                                              _model.shiftSummarResultsNew,
+                                              r'''$.dayId''',
+                                            ).toString()
+                                            ..shiftId = getJsonField(
+                                              _model.shiftSummarResultsNew,
+                                              r'''$.shiftId''',
+                                            ).toString()
+                                            ..hivekey = FFAppState()
+                                                .shiftDetails
+                                                .hivekey
+                                            ..newIDShift = FFAppState()
+                                                .shiftDetails
+                                                .newIDShift
+                                            ..code =
+                                                FFAppState().shiftDetails.code
+                                            ..endTime = FFAppState()
+                                                .shiftDetails
+                                                .endTime
+                                            ..advanceAmtTotal = FFAppState()
+                                                .shiftDetails
+                                                .advanceAmtTotal
+                                            ..customerReciveAmtTotal =
+                                                FFAppState()
+                                                    .shiftDetails
+                                                    .customerReciveAmtTotal
+                                            ..expensesAmtTotal = FFAppState()
+                                                .shiftDetails
+                                                .expensesAmtTotal
+                                            ..openingAmt = FFAppState()
+                                                .shiftDetails
+                                                .openingAmt
+                                            ..receiveAmtTotal = FFAppState()
+                                                .shiftDetails
+                                                .receiveAmtTotal
+                                            ..refoundAmount = FFAppState()
+                                                .shiftDetails
+                                                .refoundAmount
+                                            ..roundOff = FFAppState()
+                                                .shiftDetails
+                                                .roundOff
+                                            ..cashInHand = FFAppState()
+                                                .shiftDetails
+                                                .cashInHand
+                                            ..startTime = FFAppState()
+                                                .shiftDetails
+                                                .startTime
+                                            ..inActive = FFAppState()
+                                                .shiftDetails
+                                                .inActive
+                                            ..shiftNo = FFAppState()
+                                                .shiftDetails
+                                                .shiftNo
+                                            ..subTotalBill = FFAppState()
+                                                .shiftDetails
+                                                .subTotalBill
+                                            ..version = FFAppState()
+                                                .shiftDetails
+                                                .version
+                                            ..userId =
+                                                FFAppState().shiftDetails.userId
+                                            ..deviceId = FFAppState()
+                                                .shiftDetails
+                                                .deviceId
+                                            ..synC =
+                                                FFAppState().shiftDetails.synC
+                                            ..id = FFAppState().shiftDetails.id,
+                                        );
+                                        setState(() {});
+                                        _model.updatedShiftDetails =
+                                            await actions.hiveShiftCrud(
+                                          FFAppState().shiftDetails.newIDShift,
+                                          FFAppState().shiftDetails,
+                                          'update',
+                                        );
+                                        _shouldSetState = true;
+                                      } else {
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          SnackBar(
+                                            content: Text(
+                                              'Login again to start Shift ',
+                                              style: TextStyle(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                              ),
+                                            ),
+                                            duration:
+                                                Duration(milliseconds: 4000),
+                                            backgroundColor: Color(0x00000000),
+                                          ),
+                                        );
+                                        if (_shouldSetState) setState(() {});
+                                        return;
+                                      }
+
+                                      if (!functions.isPrinterSelected(
+                                          FFAppState().printerDevice)!) {
+                                        _model.resDevice2 =
+                                            await actions.scanPrinter(
+                                          FFAppState().posMode,
+                                        );
+                                        _shouldSetState = true;
+                                      }
+                                      _model.isconnected =
+                                          await actions.connectDevice(
+                                        FFAppState().printerDevice,
+                                        FFAppState().printerIndex,
+                                      );
+                                      _shouldSetState = true;
+                                      if (_model.isconnected!) {
+                                        FFAppState().lastBill =
+                                            FFAppState().finalAmt;
+                                        FFAppState().update(() {});
+                                        _model.returnedList2 =
+                                            await actions.selectBillPrint(
+                                          FFAppState().selBill.toString(),
+                                          FFAppState().allBillsList.toList(),
+                                        );
+                                        _shouldSetState = true;
+                                        _model.device =
+                                            await actions.newCustomAction(
+                                          FFAppState().printerIndex,
+                                        );
+                                        _shouldSetState = true;
+                                        await actions.printBillnewhive(
+                                          _model.returnedList2!.toList(),
+                                          _model.device!.toList(),
+                                          FFAppState().isPrinterConnected,
+                                          FFAppState().printerName,
+                                          getJsonField(
+                                            functions.outletDocToJson(
+                                                _model.outletdoc!),
+                                            r'''$''',
+                                          ),
+                                          _model.hiveInvoiceData!,
+                                          FFAppState().paperSize,
+                                          _model.appsettingnew!,
+                                        );
+                                        await actions.removeFromAllBillList(
+                                          FFAppState().selBill,
+                                        );
+                                        await actions.clearValue();
+                                        FFAppState().subTotal = 0.0;
+                                        FFAppState().delCharges = 0.0;
+                                        FFAppState().oldBalance = 0;
+                                        FFAppState().custCredit = 0;
+                                        FFAppState().custNameRef = null;
+                                        FFAppState().setCustRef = null;
+                                        FFAppState().setCustName = '';
+                                        FFAppState().setCustMobNo = '';
+                                        FFAppState().noOfItems = 0;
+                                        FFAppState().update(() {});
+                                        FFAppState().finalAmt = 0.0;
+                                        FFAppState().billAmt = 0.0;
+                                        FFAppState().count = _model
+                                            .updatedShiftDetails!.billCount;
+                                        FFAppState().update(() {});
+                                        if (_shouldSetState) setState(() {});
+                                        return;
+                                      } else {
+                                        await showDialog(
+                                          context: context,
+                                          builder: (alertDialogContext) {
+                                            return AlertDialog(
+                                              title: Text('printer connection'),
+                                              content:
+                                                  Text('printer not connected'),
+                                              actions: [
+                                                TextButton(
+                                                  onPressed: () =>
+                                                      Navigator.pop(
+                                                          alertDialogContext),
+                                                  child: Text('Ok'),
+                                                ),
+                                              ],
+                                            );
+                                          },
+                                        );
+                                        if (_shouldSetState) setState(() {});
+                                        return;
+                                      }
+
+                                      if (_shouldSetState) setState(() {});
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'vp148rd4' /* Print */,
