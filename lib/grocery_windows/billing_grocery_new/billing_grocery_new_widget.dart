@@ -1648,7 +1648,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                          'f4k215vt' /* Product ID */,
+                                                          'f4k215vt' /* Barcode */,
                                                         ),
                                                         textAlign:
                                                             TextAlign.center,

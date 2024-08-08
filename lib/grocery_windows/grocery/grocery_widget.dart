@@ -153,7 +153,8 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Expanded(
-                      child: Text(
+                      child: SelectionArea(
+                          child: Text(
                         getJsonField(
                           widget!.jsonitem,
                           r'''$.barcode''',
@@ -167,7 +168,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                   FlutterFlowTheme.of(context)
                                       .labelSmallFamily),
                             ),
-                      ),
+                      )),
                     ),
                     SizedBox(
                       height: 100.0,

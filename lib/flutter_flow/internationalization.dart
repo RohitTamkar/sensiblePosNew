@@ -21675,7 +21675,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     'f4k215vt': {
-      'en': 'Product ID',
+      'en': 'Barcode',
       'hi': '',
       'kn': '',
       'mr': '',
