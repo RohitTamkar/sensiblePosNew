@@ -81,6 +81,7 @@ class _NewCustomWidgetState extends State<NewCustomWidget> {
     setState(() {
       isOnline = connectivityResult != ConnectivityResult.none;
     });
+    FFAppState().internet = isOnline;
   }
 
   Future<void> _runBackgroundTask() async {
