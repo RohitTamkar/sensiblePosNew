@@ -1,3 +1,4 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -10,7 +11,12 @@ import 'payment_mode_grocery_model.dart';
 export 'payment_mode_grocery_model.dart';
 
 class PaymentModeGroceryWidget extends StatefulWidget {
-  const PaymentModeGroceryWidget({super.key});
+  const PaymentModeGroceryWidget({
+    super.key,
+    this.paymentMode,
+  });
+
+  final List<PaymentModeRecord>? paymentMode;
 
   @override
   State<PaymentModeGroceryWidget> createState() =>
@@ -46,6 +52,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Align(
       alignment: AlignmentDirectional(0.0, 0.0),
       child: Container(
@@ -90,7 +98,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                         size: 24.0,
                       ),
                       onPressed: () async {
-                        context.pushNamed('PurchaseGrocery');
+                        Navigator.pop(context);
                       },
                     ),
                   ],
@@ -131,57 +139,79 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                   ),
                                   child: Padding(
                                     padding: EdgeInsets.all(10.0),
-                                    child: GridView(
-                                      padding: EdgeInsets.zero,
-                                      gridDelegate:
-                                          SliverGridDelegateWithFixedCrossAxisCount(
-                                        crossAxisCount: 2,
-                                        crossAxisSpacing: 5.0,
-                                        mainAxisSpacing: 10.0,
-                                        childAspectRatio: 1.75,
-                                      ),
-                                      scrollDirection: Axis.vertical,
-                                      children: [
-                                        Container(
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            borderRadius:
-                                                BorderRadius.circular(10.0),
+                                    child: Builder(
+                                      builder: (context) {
+                                        final paymentMode =
+                                            widget!.paymentMode?.toList() ?? [];
+
+                                        return GridView.builder(
+                                          padding: EdgeInsets.zero,
+                                          gridDelegate:
+                                              SliverGridDelegateWithFixedCrossAxisCount(
+                                            crossAxisCount: 2,
+                                            crossAxisSpacing: 5.0,
+                                            mainAxisSpacing: 10.0,
+                                            childAspectRatio: 1.75,
                                           ),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            children: [
-                                              Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'lgmof2cv' /* Cash */,
-                                                ),
-                                                style:
+                                          scrollDirection: Axis.vertical,
+                                          itemCount: paymentMode.length,
+                                          itemBuilder:
+                                              (context, paymentModeIndex) {
+                                            final paymentModeItem =
+                                                paymentMode[paymentModeIndex];
+                                            return Container(
+                                              decoration: BoxDecoration(
+                                                color:
                                                     FlutterFlowTheme.of(context)
-                                                        .headlineSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .headlineSmallFamily,
-                                                          letterSpacing: 0.0,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .headlineSmallFamily),
-                                                        ),
+                                                        .secondaryBackground,
+                                                borderRadius:
+                                                    BorderRadius.circular(10.0),
                                               ),
-                                            ],
-                                          ),
-                                        ),
-                                      ],
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  FFAppState().PayMode =
+                                                      paymentModeItem.name;
+                                                  setState(() {});
+                                                },
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.center,
+                                                  children: [
+                                                    Text(
+                                                      paymentModeItem.name,
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .headlineSmall
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmallFamily,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .headlineSmallFamily),
+                                                              ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            );
+                                          },
+                                        );
+                                      },
                                     ),
                                   ),
                                 ),
@@ -200,8 +230,9 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          FFLocalizations.of(context).getText(
-                                            'e8z77qw4' /* PAYTM */,
+                                          valueOrDefault<String>(
+                                            FFAppState().PayMode,
+                                            'Cash',
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .headlineSmall
@@ -337,8 +368,18 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                           children: [
                                             Expanded(
                                               child: FFButtonWidget(
-                                                onPressed: () {
-                                                  print('Button pressed ...');
+                                                onPressed: () async {
+                                                  setState(() {
+                                                    _model.textController
+                                                        ?.text = '1';
+                                                    _model.textController
+                                                            ?.selection =
+                                                        TextSelection.collapsed(
+                                                            offset: _model
+                                                                .textController!
+                                                                .text
+                                                                .length);
+                                                  });
                                                 },
                                                 text:
                                                     FFLocalizations.of(context)
@@ -391,8 +432,18 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             ),
                                             Expanded(
                                               child: FFButtonWidget(
-                                                onPressed: () {
-                                                  print('Button pressed ...');
+                                                onPressed: () async {
+                                                  setState(() {
+                                                    _model.textController
+                                                        ?.text = '2';
+                                                    _model.textController
+                                                            ?.selection =
+                                                        TextSelection.collapsed(
+                                                            offset: _model
+                                                                .textController!
+                                                                .text
+                                                                .length);
+                                                  });
                                                 },
                                                 text:
                                                     FFLocalizations.of(context)
@@ -445,8 +496,18 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             ),
                                             Expanded(
                                               child: FFButtonWidget(
-                                                onPressed: () {
-                                                  print('Button pressed ...');
+                                                onPressed: () async {
+                                                  setState(() {
+                                                    _model.textController
+                                                        ?.text = '3';
+                                                    _model.textController
+                                                            ?.selection =
+                                                        TextSelection.collapsed(
+                                                            offset: _model
+                                                                .textController!
+                                                                .text
+                                                                .length);
+                                                  });
                                                 },
                                                 text:
                                                     FFLocalizations.of(context)
@@ -506,8 +567,18 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                           children: [
                                             Expanded(
                                               child: FFButtonWidget(
-                                                onPressed: () {
-                                                  print('Button pressed ...');
+                                                onPressed: () async {
+                                                  setState(() {
+                                                    _model.textController
+                                                        ?.text = '4';
+                                                    _model.textController
+                                                            ?.selection =
+                                                        TextSelection.collapsed(
+                                                            offset: _model
+                                                                .textController!
+                                                                .text
+                                                                .length);
+                                                  });
                                                 },
                                                 text:
                                                     FFLocalizations.of(context)
@@ -560,8 +631,18 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             ),
                                             Expanded(
                                               child: FFButtonWidget(
-                                                onPressed: () {
-                                                  print('Button pressed ...');
+                                                onPressed: () async {
+                                                  setState(() {
+                                                    _model.textController
+                                                        ?.text = '5';
+                                                    _model.textController
+                                                            ?.selection =
+                                                        TextSelection.collapsed(
+                                                            offset: _model
+                                                                .textController!
+                                                                .text
+                                                                .length);
+                                                  });
                                                 },
                                                 text:
                                                     FFLocalizations.of(context)
@@ -614,8 +695,18 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             ),
                                             Expanded(
                                               child: FFButtonWidget(
-                                                onPressed: () {
-                                                  print('Button pressed ...');
+                                                onPressed: () async {
+                                                  setState(() {
+                                                    _model.textController
+                                                        ?.text = '6';
+                                                    _model.textController
+                                                            ?.selection =
+                                                        TextSelection.collapsed(
+                                                            offset: _model
+                                                                .textController!
+                                                                .text
+                                                                .length);
+                                                  });
                                                 },
                                                 text:
                                                     FFLocalizations.of(context)
@@ -675,8 +766,18 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                           children: [
                                             Expanded(
                                               child: FFButtonWidget(
-                                                onPressed: () {
-                                                  print('Button pressed ...');
+                                                onPressed: () async {
+                                                  setState(() {
+                                                    _model.textController
+                                                        ?.text = '7';
+                                                    _model.textController
+                                                            ?.selection =
+                                                        TextSelection.collapsed(
+                                                            offset: _model
+                                                                .textController!
+                                                                .text
+                                                                .length);
+                                                  });
                                                 },
                                                 text:
                                                     FFLocalizations.of(context)
@@ -729,8 +830,18 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             ),
                                             Expanded(
                                               child: FFButtonWidget(
-                                                onPressed: () {
-                                                  print('Button pressed ...');
+                                                onPressed: () async {
+                                                  setState(() {
+                                                    _model.textController
+                                                        ?.text = '8';
+                                                    _model.textController
+                                                            ?.selection =
+                                                        TextSelection.collapsed(
+                                                            offset: _model
+                                                                .textController!
+                                                                .text
+                                                                .length);
+                                                  });
                                                 },
                                                 text:
                                                     FFLocalizations.of(context)
@@ -783,8 +894,18 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             ),
                                             Expanded(
                                               child: FFButtonWidget(
-                                                onPressed: () {
-                                                  print('Button pressed ...');
+                                                onPressed: () async {
+                                                  setState(() {
+                                                    _model.textController
+                                                        ?.text = '9';
+                                                    _model.textController
+                                                            ?.selection =
+                                                        TextSelection.collapsed(
+                                                            offset: _model
+                                                                .textController!
+                                                                .text
+                                                                .length);
+                                                  });
                                                 },
                                                 text:
                                                     FFLocalizations.of(context)
@@ -844,13 +965,89 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                           children: [
                                             Expanded(
                                               child: FFButtonWidget(
-                                                onPressed: () {
-                                                  print('Button pressed ...');
+                                                onPressed: () async {
+                                                  setState(() {
+                                                    _model.textController
+                                                        ?.text = '.';
+                                                    _model.textController
+                                                            ?.selection =
+                                                        TextSelection.collapsed(
+                                                            offset: _model
+                                                                .textController!
+                                                                .text
+                                                                .length);
+                                                  });
                                                 },
                                                 text:
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                  'ngwrzo40' /* 0 */,
+                                                  'ngwrzo40' /* . */,
+                                                ),
+                                                options: FFButtonOptions(
+                                                  height: 50.0,
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 0.0),
+                                                  iconPadding:
+                                                      EdgeInsetsDirectional
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .customColor2,
+                                                  textStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmallFamily,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        fontSize: 28.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallFamily),
+                                                      ),
+                                                  elevation: 3.0,
+                                                  borderSide: BorderSide(
+                                                    color: Colors.transparent,
+                                                    width: 1.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
+                                              ),
+                                            ),
+                                            Expanded(
+                                              child: FFButtonWidget(
+                                                onPressed: () async {
+                                                  setState(() {
+                                                    _model.textController
+                                                        ?.text = '0';
+                                                    _model.textController
+                                                            ?.selection =
+                                                        TextSelection.collapsed(
+                                                            offset: _model
+                                                                .textController!
+                                                                .text
+                                                                .length);
+                                                  });
+                                                },
+                                                text:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  '5z3tx4m3' /* 0 */,
                                                 ),
                                                 options: FFButtonOptions(
                                                   height: 50.0,
@@ -898,60 +1095,11 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             ),
                                             Expanded(
                                               child: FFButtonWidget(
-                                                onPressed: () {
-                                                  print('Button pressed ...');
-                                                },
-                                                text:
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                  '5z3tx4m3' /* . */,
-                                                ),
-                                                options: FFButtonOptions(
-                                                  height: 50.0,
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 0.0, 0.0),
-                                                  iconPadding:
-                                                      EdgeInsetsDirectional
-                                                          .fromSTEB(0.0, 0.0,
-                                                              0.0, 0.0),
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .customColor2,
-                                                  textStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .displayMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .displayMediumFamily,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                            useGoogleFonts: GoogleFonts
-                                                                    .asMap()
-                                                                .containsKey(
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .displayMediumFamily),
-                                                          ),
-                                                  elevation: 3.0,
-                                                  borderSide: BorderSide(
-                                                    color: Colors.transparent,
-                                                    width: 1.0,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                ),
-                                              ),
-                                            ),
-                                            Expanded(
-                                              child: FFButtonWidget(
-                                                onPressed: () {
-                                                  print('Button pressed ...');
+                                                onPressed: () async {
+                                                  setState(() {
+                                                    _model.textController
+                                                        ?.clear();
+                                                  });
                                                 },
                                                 text: '',
                                                 icon: Icon(
@@ -1233,7 +1381,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'wqkk5ub3' /* Balence */,
+                                                'wqkk5ub3' /* Balance */,
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)

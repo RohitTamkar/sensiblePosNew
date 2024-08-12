@@ -26,6 +26,8 @@ class OpeningBalNewModel extends FlutterFlowModel<OpeningBalNewWidget> {
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   List<TaxMasterRecord>? taxcollection;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  List<PaymentModeRecord>? paymentmode;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   List<AppSettingsMasterRecord>? masterAppsetting;
   // Stores action output result for [Custom Action - returnAppsetting] action in Button widget.
   List<AppSettingsStruct>? returnAppsettiing;

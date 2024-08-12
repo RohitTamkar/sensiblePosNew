@@ -9,6 +9,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/grocery_windows/grocery/grocery_widget.dart';
 import '/grocery_windows/grocery_header/grocery_header_widget.dart';
+import '/grocery_windows/payment_mode_grocery/payment_mode_grocery_widget.dart';
 import '/grocery_windows/spplier_gro/spplier_gro_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
@@ -26,6 +27,17 @@ class BillingGroceryNewModel extends FlutterFlowModel<BillingGroceryNewWidget> {
   ///  Local state fields for this page.
 
   bool show = false;
+
+  List<PaymentModeRecord> paymentMode = [];
+  void addToPaymentMode(PaymentModeRecord item) => paymentMode.add(item);
+  void removeFromPaymentMode(PaymentModeRecord item) =>
+      paymentMode.remove(item);
+  void removeAtIndexFromPaymentMode(int index) => paymentMode.removeAt(index);
+  void insertAtIndexInPaymentMode(int index, PaymentModeRecord item) =>
+      paymentMode.insert(index, item);
+  void updatePaymentModeAtIndex(
+          int index, Function(PaymentModeRecord) updateFn) =>
+      paymentMode[index] = updateFn(paymentMode[index]);
 
   ///  State fields for stateful widgets in this page.
 

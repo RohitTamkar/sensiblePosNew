@@ -1406,6 +1406,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               asyncParams: {
                 'taxDetails':
                     getDocList(['TAX_MASTER'], TaxMasterRecord.fromSnapshot),
+                'paymentMode': getDocList(
+                    ['PAYMENT_MODE'], PaymentModeRecord.fromSnapshot),
               },
               builder: (context, params) => BillingGroceryNewWidget(
                 shiftdetail: params.getParam(
@@ -1422,6 +1424,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   ParamType.DocumentReference,
                   isList: false,
                   collectionNamePath: ['USER_PROFILE'],
+                ),
+                paymentMode: params.getParam<PaymentModeRecord>(
+                  'paymentMode',
+                  ParamType.Document,
+                  isList: true,
                 ),
               ),
             ),

@@ -9,6 +9,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/grocery_windows/grocery/grocery_widget.dart';
 import '/grocery_windows/grocery_header/grocery_header_widget.dart';
+import '/grocery_windows/payment_mode_grocery/payment_mode_grocery_widget.dart';
 import '/grocery_windows/spplier_gro/spplier_gro_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
@@ -29,11 +30,13 @@ class BillingGroceryNewWidget extends StatefulWidget {
     this.shiftdetail,
     this.taxDetails,
     this.userref,
+    this.paymentMode,
   });
 
   final dynamic shiftdetail;
   final List<TaxMasterRecord>? taxDetails;
   final DocumentReference? userref;
+  final List<PaymentModeRecord>? paymentMode;
 
   @override
   State<BillingGroceryNewWidget> createState() =>
@@ -61,6 +64,9 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
       FFAppState().shiftDetailsNEw = widget!.shiftdetail!;
       setState(() {});
       FFAppState().shiftDetailsJson = widget!.shiftdetail!;
+      setState(() {});
+      _model.paymentMode =
+          widget!.paymentMode!.toList().cast<PaymentModeRecord>();
       setState(() {});
       _model.hiveProductList = await actions.getProductlistHive();
       _model.categoryListHive = await actions.getCategorylistHive();
@@ -2457,8 +2463,26 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                     ),
                                   ),
                                   FFButtonWidget(
-                                    onPressed: () {
-                                      print('Button pressed ...');
+                                    onPressed: () async {
+                                      await showModalBottomSheet(
+                                        isScrollControlled: true,
+                                        backgroundColor: Colors.transparent,
+                                        enableDrag: false,
+                                        context: context,
+                                        builder: (context) {
+                                          return GestureDetector(
+                                            onTap: () => FocusScope.of(context)
+                                                .unfocus(),
+                                            child: Padding(
+                                              padding: MediaQuery.viewInsetsOf(
+                                                  context),
+                                              child: PaymentModeGroceryWidget(
+                                                paymentMode: _model.paymentMode,
+                                              ),
+                                            ),
+                                          );
+                                        },
+                                      ).then((value) => safeSetState(() {}));
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'br1zkkgj' /* Payment Mode */,

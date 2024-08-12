@@ -584,6 +584,9 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                   _model.taxcollection =
                                                       await queryTaxMasterRecordOnce();
                                                   _shouldSetState = true;
+                                                  _model.paymentmode =
+                                                      await queryPaymentModeRecordOnce();
+                                                  _shouldSetState = true;
                                                   _model.masterAppsetting =
                                                       await queryAppSettingsMasterRecordOnce();
                                                   _shouldSetState = true;
@@ -1216,11 +1219,19 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                             ParamType
                                                                 .DocumentReference,
                                                           ),
+                                                          'paymentMode':
+                                                              serializeParam(
+                                                            _model.paymentmode,
+                                                            ParamType.Document,
+                                                            isList: true,
+                                                          ),
                                                         }.withoutNulls,
                                                         extra: <String,
                                                             dynamic>{
                                                           'taxDetails': _model
                                                               .taxcollection,
+                                                          'paymentMode': _model
+                                                              .paymentmode,
                                                         },
                                                       );
                                                     } else {
@@ -1487,11 +1498,19 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                             ParamType
                                                                 .DocumentReference,
                                                           ),
+                                                          'paymentMode':
+                                                              serializeParam(
+                                                            _model.paymentmode,
+                                                            ParamType.Document,
+                                                            isList: true,
+                                                          ),
                                                         }.withoutNulls,
                                                         extra: <String,
                                                             dynamic>{
                                                           'taxDetails': _model
                                                               .taxcollection,
+                                                          'paymentMode': _model
+                                                              .paymentmode,
                                                         },
                                                       );
                                                     } else {
