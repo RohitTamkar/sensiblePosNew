@@ -2257,96 +2257,90 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                         itemBuilder: (context, prdlistIndex) {
                                           final prdlistItem =
                                               prdlist[prdlistIndex];
-                                          return Visibility(
-                                            visible: FFAppState().groceryshow,
-                                            child: Container(
-                                              height: 45.0,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                              ),
-                                              child: Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 15.0, 0.0),
-                                                child: Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Expanded(
-                                                      child: GroceryWidget(
-                                                        key: Key(
-                                                            'Keydd7_${prdlistIndex}_of_${prdlist.length}'),
-                                                        parameter2:
-                                                            ProductStructStruct
-                                                                .maybeFromMap(
-                                                                    prdlistItem),
-                                                        parameter3:
-                                                            widget!.taxDetails,
-                                                        parameter4:
-                                                            columnAppSettingsRecord
-                                                                ?.settingList
-                                                                ?.where((e) =>
-                                                                    e.title ==
-                                                                    'enableInclusiveTax')
-                                                                .toList()
-                                                                ?.first
-                                                                ?.value,
-                                                        unitList:
-                                                            billingGroceryNewUnitTypeRecordList,
-                                                        jsonitem: getJsonField(
+                                          return Container(
+                                            height: 45.0,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                            ),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 15.0, 0.0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Expanded(
+                                                    child: GroceryWidget(
+                                                      key: Key(
+                                                          'Keydd7_${prdlistIndex}_of_${prdlist.length}'),
+                                                      parameter2:
+                                                          ProductStructStruct
+                                                              .maybeFromMap(
+                                                                  prdlistItem),
+                                                      parameter3:
+                                                          widget!.taxDetails,
+                                                      parameter4:
+                                                          columnAppSettingsRecord
+                                                              ?.settingList
+                                                              ?.where((e) =>
+                                                                  e.title ==
+                                                                  'enableInclusiveTax')
+                                                              .toList()
+                                                              ?.first
+                                                              ?.value,
+                                                      unitList:
+                                                          billingGroceryNewUnitTypeRecordList,
+                                                      jsonitem: getJsonField(
+                                                        prdlistItem,
+                                                        r'''$''',
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  FlutterFlowIconButton(
+                                                    borderRadius: 10.0,
+                                                    borderWidth: 0.0,
+                                                    buttonSize: 35.0,
+                                                    icon: Icon(
+                                                      Icons.delete_outline,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      size: 20.0,
+                                                    ),
+                                                    onPressed: () async {
+                                                      _model.res20 = await actions
+                                                          .removeHoldListItem(
+                                                        getJsonField(
                                                           prdlistItem,
                                                           r'''$''',
                                                         ),
-                                                      ),
-                                                    ),
-                                                    FlutterFlowIconButton(
-                                                      borderRadius: 10.0,
-                                                      borderWidth: 0.0,
-                                                      buttonSize: 35.0,
-                                                      icon: Icon(
-                                                        Icons.delete_outline,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        size: 20.0,
-                                                      ),
-                                                      onPressed: () async {
-                                                        _model.res20 = await actions
-                                                            .removeHoldListItem(
-                                                          getJsonField(
-                                                            prdlistItem,
-                                                            r'''$''',
-                                                          ),
-                                                          FFAppState().selBill,
-                                                        );
-                                                        _model.ret = await actions
-                                                            .calSubTotalForGrocery(
-                                                          FFAppState()
-                                                              .selBill
-                                                              .toString(),
-                                                          FFAppState()
-                                                              .allBillsList
-                                                              .toList(),
-                                                        );
-                                                        _model.ads = await actions
-                                                            .calBillAmtGrocery(
-                                                          valueOrDefault<
-                                                              double>(
-                                                            FFAppState().disAmt,
-                                                            0.0,
-                                                          ),
-                                                          FFAppState()
-                                                              .delCharges,
-                                                        );
+                                                        FFAppState().selBill,
+                                                      );
+                                                      _model.ret = await actions
+                                                          .calSubTotalForGrocery(
+                                                        FFAppState()
+                                                            .selBill
+                                                            .toString(),
+                                                        FFAppState()
+                                                            .allBillsList
+                                                            .toList(),
+                                                      );
+                                                      _model.ads = await actions
+                                                          .calBillAmtGrocery(
+                                                        valueOrDefault<double>(
+                                                          FFAppState().disAmt,
+                                                          0.0,
+                                                        ),
+                                                        FFAppState().delCharges,
+                                                      );
 
-                                                        setState(() {});
-                                                      },
-                                                    ),
-                                                  ],
-                                                ),
+                                                      setState(() {});
+                                                    },
+                                                  ),
+                                                ],
                                               ),
                                             ),
                                           );
