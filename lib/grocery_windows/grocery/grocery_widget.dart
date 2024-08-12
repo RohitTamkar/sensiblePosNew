@@ -1615,6 +1615,132 @@ class _GroceryWidgetState extends State<GroceryWidget> {
               onTap: () async {
                 FFAppState().show = true;
                 setState(() {});
+                setState(() {
+                  _model.textFieldqtTextController?.text = getJsonField(
+                    _model.allbillist!
+                        .where((e) =>
+                            getJsonField(
+                              widget!.jsonitem,
+                              r'''$.id''',
+                            ) ==
+                            getJsonField(
+                              e,
+                              r'''$.id''',
+                            ))
+                        .toList()
+                        .first,
+                    r'''$.quantity''',
+                  ).toString();
+                  _model.textFieldqtTextController?.selection =
+                      TextSelection.collapsed(
+                          offset:
+                              _model.textFieldqtTextController!.text.length);
+                });
+                setState(() {
+                  _model.textFieldrateTextController?.text = getJsonField(
+                    _model.allbillist!
+                        .where((e) =>
+                            getJsonField(
+                              widget!.jsonitem,
+                              r'''$.id''',
+                            ) ==
+                            getJsonField(
+                              e,
+                              r'''$.id''',
+                            ))
+                        .toList()
+                        .first,
+                    r'''$.price''',
+                  ).toString();
+                  _model.textFieldrateTextController?.selection =
+                      TextSelection.collapsed(
+                          offset:
+                              _model.textFieldrateTextController!.text.length);
+                });
+                setState(() {
+                  _model.textFielddisAmtTextController?.text = getJsonField(
+                    _model.allbillist!
+                        .where((e) =>
+                            getJsonField(
+                              widget!.jsonitem,
+                              r'''$.id''',
+                            ) ==
+                            getJsonField(
+                              e,
+                              r'''$.id''',
+                            ))
+                        .toList()
+                        .first,
+                    r'''$.disAmt''',
+                  ).toString();
+                  _model.textFielddisAmtTextController?.selection =
+                      TextSelection.collapsed(
+                          offset: _model
+                              .textFielddisAmtTextController!.text.length);
+                });
+                setState(() {
+                  _model.textFieldTaxAmtTextController?.text = getJsonField(
+                    _model.allbillist!
+                        .where((e) =>
+                            getJsonField(
+                              widget!.jsonitem,
+                              r'''$.id''',
+                            ) ==
+                            getJsonField(
+                              e,
+                              r'''$.id''',
+                            ))
+                        .toList()
+                        .first,
+                    r'''$.taxAmt''',
+                  ).toString();
+                  _model.textFieldTaxAmtTextController?.selection =
+                      TextSelection.collapsed(
+                          offset: _model
+                              .textFieldTaxAmtTextController!.text.length);
+                });
+                setState(() {
+                  _model.textFielddisPerTextController?.text = getJsonField(
+                    _model.allbillistdiscper!
+                        .where((e) =>
+                            getJsonField(
+                              widget!.jsonitem,
+                              r'''$.id''',
+                            ) ==
+                            getJsonField(
+                              e,
+                              r'''$.id''',
+                            ))
+                        .toList()
+                        .first,
+                    r'''$.disPer''',
+                  ).toString();
+                  _model.textFielddisPerTextController?.selection =
+                      TextSelection.collapsed(
+                          offset: _model
+                              .textFielddisPerTextController!.text.length);
+                });
+                setState(() {
+                  _model.textFieldtaxPerTextController?.text = getJsonField(
+                    _model.taxamtchanged!
+                        .where((e) =>
+                            getJsonField(
+                              widget!.jsonitem,
+                              r'''$.id''',
+                            ) ==
+                            getJsonField(
+                              e,
+                              r'''$.id''',
+                            ))
+                        .toList()
+                        .first,
+                    r'''$.taxPer''',
+                  ).toString();
+                  _model.textFieldtaxPerTextController?.selection =
+                      TextSelection.collapsed(
+                          offset: _model
+                              .textFieldtaxPerTextController!.text.length);
+                });
               },
               child: Container(
                 height: 40.0,
