@@ -52,7 +52,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
       r'''$.quantity''',
     ).toString().toString());
     _model.textFieldqtFocusNode ??= FocusNode();
-
+    _model.textFieldqtFocusNode!.addListener(() => setState(() {}));
     _model.textFieldrateTextController ??= TextEditingController(
         text: getJsonField(
       widget!.jsonitem,

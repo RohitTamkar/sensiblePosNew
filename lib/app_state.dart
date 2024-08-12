@@ -3352,6 +3352,12 @@ class FFAppState extends ChangeNotifier {
     _internet = value;
     prefs.setBool('ff_internet', value);
   }
+
+  bool _groceryshow = false;
+  bool get groceryshow => _groceryshow;
+  set groceryshow(bool value) {
+    _groceryshow = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

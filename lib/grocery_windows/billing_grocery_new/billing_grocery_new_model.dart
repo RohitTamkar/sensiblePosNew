@@ -23,6 +23,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class BillingGroceryNewModel extends FlutterFlowModel<BillingGroceryNewWidget> {
+  ///  Local state fields for this page.
+
+  bool show = false;
+
   ///  State fields for stateful widgets in this page.
 
   // Stores action output result for [Custom Action - getProductlistHive] action in BillingGroceryNew widget.
