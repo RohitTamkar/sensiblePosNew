@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -37,6 +38,14 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => PaymentModeGroceryModel());
+
+    // On component load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.balance = FFAppState().finalAmt;
+      _model.amount = FFAppState().finalAmt.toString();
+      _model.paymentM = widget!.paymentMode!.toList().cast<PaymentModeRecord>();
+      setState(() {});
+    });
 
     _model.textController ??= TextEditingController(text: _model.amount);
     _model.textFieldFocusNode ??= FocusNode();
@@ -143,7 +152,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                     child: Builder(
                                       builder: (context) {
                                         final paymentMode =
-                                            widget!.paymentMode?.toList() ?? [];
+                                            _model.paymentM.toList();
 
                                         return GridView.builder(
                                           padding: EdgeInsets.zero,
@@ -1232,7 +1241,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                     _model.result,
                                                     r'''$.returnAmt''',
                                                   );
-                                                  setState(() {});
+                                                  _model.updatePage(() {});
 
                                                   setState(() {});
                                                 },
