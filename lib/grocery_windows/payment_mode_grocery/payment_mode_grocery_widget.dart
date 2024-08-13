@@ -37,7 +37,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
     super.initState();
     _model = createModel(context, () => PaymentModeGroceryModel());
 
-    _model.textController ??= TextEditingController();
+    _model.textController ??= TextEditingController(text: _model.amount);
     _model.textFieldFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -161,8 +161,13 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 paymentMode[paymentModeIndex];
                                             return Container(
                                               decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
+                                                color: paymentModeItem.name ==
+                                                        FFAppState().PayMode
+                                                    ? FlutterFlowTheme.of(
+                                                            context)
+                                                        .alternate
+                                                    : FlutterFlowTheme.of(
+                                                            context)
                                                         .secondaryBackground,
                                                 borderRadius:
                                                     BorderRadius.circular(10.0),
@@ -369,9 +374,12 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             Expanded(
                                               child: FFButtonWidget(
                                                 onPressed: () async {
+                                                  _model.amount =
+                                                      '${_model.textController.text}1';
+                                                  setState(() {});
                                                   setState(() {
                                                     _model.textController
-                                                        ?.text = '1';
+                                                        ?.text = _model.amount!;
                                                     _model.textController
                                                             ?.selection =
                                                         TextSelection.collapsed(
@@ -433,9 +441,12 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             Expanded(
                                               child: FFButtonWidget(
                                                 onPressed: () async {
+                                                  _model.amount =
+                                                      '${_model.textController.text}2';
+                                                  setState(() {});
                                                   setState(() {
                                                     _model.textController
-                                                        ?.text = '2';
+                                                        ?.text = _model.amount!;
                                                     _model.textController
                                                             ?.selection =
                                                         TextSelection.collapsed(
@@ -497,9 +508,12 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             Expanded(
                                               child: FFButtonWidget(
                                                 onPressed: () async {
+                                                  _model.amount =
+                                                      '${_model.textController.text}3';
+                                                  setState(() {});
                                                   setState(() {
                                                     _model.textController
-                                                        ?.text = '3';
+                                                        ?.text = _model.amount!;
                                                     _model.textController
                                                             ?.selection =
                                                         TextSelection.collapsed(
@@ -568,9 +582,12 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             Expanded(
                                               child: FFButtonWidget(
                                                 onPressed: () async {
+                                                  _model.amount =
+                                                      '${_model.textController.text}4';
+                                                  setState(() {});
                                                   setState(() {
                                                     _model.textController
-                                                        ?.text = '4';
+                                                        ?.text = _model.amount!;
                                                     _model.textController
                                                             ?.selection =
                                                         TextSelection.collapsed(
@@ -632,9 +649,12 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             Expanded(
                                               child: FFButtonWidget(
                                                 onPressed: () async {
+                                                  _model.amount =
+                                                      '${_model.textController.text}5';
+                                                  setState(() {});
                                                   setState(() {
                                                     _model.textController
-                                                        ?.text = '5';
+                                                        ?.text = _model.amount!;
                                                     _model.textController
                                                             ?.selection =
                                                         TextSelection.collapsed(
@@ -696,9 +716,12 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             Expanded(
                                               child: FFButtonWidget(
                                                 onPressed: () async {
+                                                  _model.amount =
+                                                      '${_model.textController.text}6';
+                                                  setState(() {});
                                                   setState(() {
                                                     _model.textController
-                                                        ?.text = '6';
+                                                        ?.text = _model.amount!;
                                                     _model.textController
                                                             ?.selection =
                                                         TextSelection.collapsed(
@@ -767,9 +790,12 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             Expanded(
                                               child: FFButtonWidget(
                                                 onPressed: () async {
+                                                  _model.amount =
+                                                      '${_model.textController.text}7';
+                                                  setState(() {});
                                                   setState(() {
                                                     _model.textController
-                                                        ?.text = '7';
+                                                        ?.text = _model.amount!;
                                                     _model.textController
                                                             ?.selection =
                                                         TextSelection.collapsed(
@@ -831,9 +857,12 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             Expanded(
                                               child: FFButtonWidget(
                                                 onPressed: () async {
+                                                  _model.amount =
+                                                      '${_model.textController.text}8';
+                                                  setState(() {});
                                                   setState(() {
                                                     _model.textController
-                                                        ?.text = '8';
+                                                        ?.text = _model.amount!;
                                                     _model.textController
                                                             ?.selection =
                                                         TextSelection.collapsed(
@@ -895,9 +924,12 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             Expanded(
                                               child: FFButtonWidget(
                                                 onPressed: () async {
+                                                  _model.amount =
+                                                      '${_model.textController.text}9';
+                                                  setState(() {});
                                                   setState(() {
                                                     _model.textController
-                                                        ?.text = '9';
+                                                        ?.text = _model.amount!;
                                                     _model.textController
                                                             ?.selection =
                                                         TextSelection.collapsed(
@@ -966,9 +998,12 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             Expanded(
                                               child: FFButtonWidget(
                                                 onPressed: () async {
+                                                  _model.amount =
+                                                      '${_model.textController.text}.';
+                                                  setState(() {});
                                                   setState(() {
                                                     _model.textController
-                                                        ?.text = '.';
+                                                        ?.text = _model.amount!;
                                                     _model.textController
                                                             ?.selection =
                                                         TextSelection.collapsed(
@@ -1032,9 +1067,12 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             Expanded(
                                               child: FFButtonWidget(
                                                 onPressed: () async {
+                                                  _model.amount =
+                                                      '${_model.textController.text}0';
+                                                  setState(() {});
                                                   setState(() {
                                                     _model.textController
-                                                        ?.text = '0';
+                                                        ?.text = _model.amount!;
                                                     _model.textController
                                                             ?.selection =
                                                         TextSelection.collapsed(
@@ -1096,15 +1134,79 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             Expanded(
                                               child: FFButtonWidget(
                                                 onPressed: () async {
+                                                  _model.amount = '';
+                                                  setState(() {});
                                                   setState(() {
                                                     _model.textController
-                                                        ?.clear();
+                                                        ?.text = _model.amount!;
+                                                    _model.textController
+                                                            ?.selection =
+                                                        TextSelection.collapsed(
+                                                            offset: _model
+                                                                .textController!
+                                                                .text
+                                                                .length);
                                                   });
                                                 },
                                                 text: '',
                                                 icon: Icon(
                                                   Icons.backspace_rounded,
                                                   size: 15.0,
+                                                ),
+                                                options: FFButtonOptions(
+                                                  height: 50.0,
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 0.0),
+                                                  iconPadding:
+                                                      EdgeInsetsDirectional
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .customColor2,
+                                                  textStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmallFamily,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        fontSize: 19.0,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallFamily),
+                                                      ),
+                                                  elevation: 3.0,
+                                                  borderSide: BorderSide(
+                                                    color: Colors.transparent,
+                                                    width: 1.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
+                                                showLoadingIndicator: false,
+                                              ),
+                                            ),
+                                            Expanded(
+                                              child: FFButtonWidget(
+                                                onPressed: () {
+                                                  print('Button pressed ...');
+                                                },
+                                                text: '',
+                                                icon: Icon(
+                                                  Icons.done_sharp,
+                                                  size: 25.0,
                                                 ),
                                                 options: FFButtonOptions(
                                                   height: 50.0,

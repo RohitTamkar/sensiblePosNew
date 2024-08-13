@@ -11,6 +11,10 @@ import 'package:provider/provider.dart';
 
 class PaymentModeGroceryModel
     extends FlutterFlowModel<PaymentModeGroceryWidget> {
+  ///  Local state fields for this component.
+
+  String? amount = '';
+
   ///  State fields for stateful widgets in this component.
 
   // State field(s) for TextField widget.

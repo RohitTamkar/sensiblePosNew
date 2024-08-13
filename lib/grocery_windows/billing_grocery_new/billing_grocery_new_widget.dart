@@ -2565,7 +2565,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                         singleRecord: true,
                                       ).then((s) => s.firstOrNull);
                                       _shouldSetState = true;
-                                      if (_model.dropDownValue == 'CREDIT') {
+                                      if (FFAppState().PayMode == 'CREDIT') {
                                         if (FFAppState().setCustRef?.id !=
                                                 null &&
                                             FFAppState().setCustRef?.id != '') {

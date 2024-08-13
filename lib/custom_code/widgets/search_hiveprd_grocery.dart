@@ -10,6 +10,13 @@ import 'package:flutter/material.dart';
 // Begin custom widget code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:provider/provider.dart';
+
+import '../../grocery_windows/billing_grocery_new/billing_grocery_new_widget.dart';
+import '../../grocery_windows/grocery/grocery_widget.dart';
+import 'index.dart'; // Imports other custom widgets
+
 import 'index.dart'; // Imports other custom widgets
 
 import 'index.dart'; // Imports other custom widgets
@@ -68,12 +75,14 @@ class _SearchHiveprdGroceryState extends State<SearchHiveprdGrocery> {
   TextEditingController _productNameController = TextEditingController();
 
   late LoadingScreenNewModel _model;
+  late GroceryWidget _model2;
   FocusNode _focusNode = FocusNode();
   @override
   void initState() {
     super.initState();
 
     _model = createModel(context, () => LoadingScreenNewModel());
+    _model2 = GroceryWidget();
   }
 
   LoadingScreenNewModel createModel(
@@ -145,6 +154,27 @@ class _SearchHiveprdGroceryState extends State<SearchHiveprdGrocery> {
                       FFAppState().delCharges,
                     );
 
+                    /* setState(() {
+                      print(_model2.textFieldqtTextController?.text);
+
+                      _model2.textFieldqtTextController?.text =
+                          getJsonField(
+                            _model.addtosavebill!
+                                .where((e) =>
+                            getJsonField(
+                              e,
+                              r'''$.barcode''',
+                            ) ==
+                              value )
+                                .toList()
+                                .first,
+                            r'''$.quantity''',
+                          ).toString();
+
+
+                    });*/
+                    FFAppState().groceryshow = false;
+                    setState(() {});
                     _model.submitForm();
                     _productNameController.clear();
                     await Future.delayed(Duration(milliseconds: 100));
@@ -202,17 +232,20 @@ class _SearchHiveprdGroceryState extends State<SearchHiveprdGrocery> {
                   FFAppState().disAmt,
                   FFAppState().delCharges,
                 );
-
+                FFAppState().groceryshow = false;
                 FFAppState().update(() {});
 
                 setState(() {});
-                /* await _model.listViewprd?.animateTo(
+                /*
+
+                  await _model.listViewprd?.animateTo
+                  (
                   _model.listViewprd!.position.maxScrollExtent,
                   duration: Duration(milliseconds: 100),
                   curve: Curves.ease,
+                  );
 
-
-                );*/
+                  */
               },
             ),
           ),
