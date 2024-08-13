@@ -1100,3 +1100,31 @@ int? doubleToInt(double? amt) {
     return amt.toInt();
   }
 }
+
+dynamic calculateGroceryAmt(
+  String paymentMode,
+  double totalAmount,
+  double advanceAmt,
+) {
+  Map<String, double> paymentModes = {};
+  double balanceAmt = 0;
+  double returnAmt = 0;
+  //Add the payment mode and amount to the Map
+  if (totalAmount > advanceAmt) {
+    balanceAmt = totalAmount - advanceAmt;
+  } else {
+    returnAmt = advanceAmt - totalAmount;
+  }
+
+  // Create the final JSON structure
+  Map<String, dynamic> result = {
+    'paymentMode': paymentModes,
+    'totalAmt': totalAmount,
+    'advanceAmt': advanceAmt,
+    'balanceAmt': balanceAmt,
+    'returnAmt': returnAmt,
+  };
+
+  // Return the JSON as a string
+  return jsonEncode(result);
+}

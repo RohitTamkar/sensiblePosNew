@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -1200,8 +1201,40 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             ),
                                             Expanded(
                                               child: FFButtonWidget(
-                                                onPressed: () {
-                                                  print('Button pressed ...');
+                                                onPressed: () async {
+                                                  _model.result = await actions
+                                                      .calculateGroceryAmtaction(
+                                                    FFAppState().PayMode,
+                                                    valueOrDefault<double>(
+                                                      FFAppState().finalAmt,
+                                                      0.0,
+                                                    ),
+                                                    valueOrDefault<double>(
+                                                      double.tryParse(_model
+                                                          .textController.text),
+                                                      0.0,
+                                                    ),
+                                                  );
+                                                  _model.advance = getJsonField(
+                                                    _model.result,
+                                                    r'''$.advanceAmt''',
+                                                  );
+                                                  _model.paid = getJsonField(
+                                                    _model.result,
+                                                    r'''$.advanceAmt''',
+                                                  );
+                                                  _model.balance = getJsonField(
+                                                    _model.result,
+                                                    r'''$.balanceAmt''',
+                                                  );
+                                                  _model.returnAmt =
+                                                      getJsonField(
+                                                    _model.result,
+                                                    r'''$.returnAmt''',
+                                                  );
+                                                  setState(() {});
+
+                                                  setState(() {});
                                                 },
                                                 text: '',
                                                 icon: Icon(
@@ -1344,9 +1377,9 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             alignment:
                                                 AlignmentDirectional(0.0, 0.0),
                                             child: Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'dfxn7r6g' /* 0.0 */,
+                                              valueOrDefault<String>(
+                                                _model.advance?.toString(),
+                                                '0',
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -1434,8 +1467,9 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                           alignment:
                                               AlignmentDirectional(0.0, 0.0),
                                           child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              '062v5ld9' /* 1200.00 */,
+                                            valueOrDefault<String>(
+                                              _model.paid?.toString(),
+                                              '0',
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .labelLarge
@@ -1529,9 +1563,9 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             alignment:
                                                 AlignmentDirectional(0.0, 0.0),
                                             child: Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                '2cg7czwt' /* 600.00 */,
+                                              valueOrDefault<String>(
+                                                _model.balance?.toString(),
+                                                '0',
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -1619,8 +1653,9 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                           alignment:
                                               AlignmentDirectional(0.0, 0.0),
                                           child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              'fdma93pt' /* 0.00 */,
+                                            valueOrDefault<String>(
+                                              _model.returnAmt?.toString(),
+                                              '0',
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .labelLarge
