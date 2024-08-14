@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom actions
+
 dynamic calculateGroceryAmtaction(
   String paymentMode,
   double totalAmount,
@@ -21,15 +23,15 @@ dynamic calculateGroceryAmtaction(
   double returnAmt = 0;
   double advanceAmt = 0;
   //Add the payment mode and amount to the Map
-  if (totalAmount > advanceAmt) {
-    balanceAmt = totalAmount - advanceAmt;
+  if (totalAmount > paidAmt) {
+    balanceAmt = totalAmount - paidAmt;
   } else {
     advanceAmt = paidAmt;
     returnAmt = advanceAmt - totalAmount;
   }
 
   // Create the final JSON structure
-  Map<String, dynamic> result = {
+  return {
     'paymentMode': paymentModes,
     'paidAmt': paidAmt,
     'totalAmt': totalAmount,
@@ -39,7 +41,8 @@ dynamic calculateGroceryAmtaction(
   };
 
   // Return the JSON as a string
-  return jsonEncode(result);
+/*  print(jsonEncode(result));
+  return jsonEncode(result);*/
 
   /// MODIFY CODE ONLY ABOVE THIS LINE
 }
