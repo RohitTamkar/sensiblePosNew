@@ -41,7 +41,7 @@ class PaymentModeGroceryModel
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
   // Stores action output result for [Custom Action - calculateGroceryAmtaction] action in Button widget.
-  dynamic? result;
+  dynamic? result233;
 
   @override
   void initState(BuildContext context) {}

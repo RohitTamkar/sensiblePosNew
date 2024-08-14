@@ -3358,6 +3358,12 @@ class FFAppState extends ChangeNotifier {
   set groceryshow(bool value) {
     _groceryshow = value;
   }
+
+  dynamic _groceryJson;
+  dynamic get groceryJson => _groceryJson;
+  set groceryJson(dynamic value) {
+    _groceryJson = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {
