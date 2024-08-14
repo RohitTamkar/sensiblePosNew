@@ -18,31 +18,52 @@ dynamic calculateGroceryAmtaction(
 ) {
   /// MODIFY CODE ONLY BELOW THIS LINE
 
-  Map<String, double> paymentModes = {};
+  if (FFAppState().groceryJson == null) {
+    FFAppState().groceryJson = {
+      'paymentMode': {paymentMode: 0.00},
+      'paidAmt': '0',
+      'totalAmt': '0',
+      'advanceAmt': '0',
+      'balanceAmt': '0',
+      'returnAmt': '0',
+    };
+  }
+  print(FFAppState().groceryJson['paymentMode']);
+  // Get the existing paymentModes map
+  Map<String, double> paymentModes = FFAppState().groceryJson['paymentMode'];
+
+  // Calculate the total paid amount by summing previous payments and the current one
+  double previousPaidAmt = paymentModes.values.fold(0, (sum, amt) => sum + amt);
+  double newTotalPaidAmt = previousPaidAmt + paidAmt;
+
   double balanceAmt = 0;
   double returnAmt = 0;
   double advanceAmt = 0;
-  //Add the payment mode and amount to the Map
-  if (totalAmount > paidAmt) {
-    balanceAmt = totalAmount - paidAmt;
+
+  // Update the payment mode and amount in the Map
+  paymentModes[paymentMode] = (paymentModes[paymentMode] ?? 0) + paidAmt;
+
+  // Calculate the balance, return, and advance amounts
+  if (newTotalPaidAmt <= totalAmount) {
+    balanceAmt = totalAmount - newTotalPaidAmt;
   } else {
-    advanceAmt = paidAmt;
+    advanceAmt = newTotalPaidAmt;
     returnAmt = advanceAmt - totalAmount;
   }
 
-  // Create the final JSON structure
-  return {
+  // Update groceryJson with the latest data
+  FFAppState().groceryJson = {
     'paymentMode': paymentModes,
-    'paidAmt': paidAmt,
+    'paidAmt': newTotalPaidAmt,
     'totalAmt': totalAmount,
     'advanceAmt': advanceAmt,
     'balanceAmt': balanceAmt,
     'returnAmt': returnAmt,
   };
 
-  // Return the JSON as a string
-/*  print(jsonEncode(result));
-  return jsonEncode(result);*/
+  // Print the JSON structure
+  print(FFAppState().groceryJson);
+  return FFAppState().groceryJson;
 
   /// MODIFY CODE ONLY ABOVE THIS LINE
 }

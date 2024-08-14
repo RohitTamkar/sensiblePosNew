@@ -1371,6 +1371,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                       FFAppState().groceryJson =
                                                           _model.result233!;
                                                       setState(() {});
+                                                      _model.amount = '';
+                                                      setState(() {});
 
                                                       setState(() {});
                                                     },
