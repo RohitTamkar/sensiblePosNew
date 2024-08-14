@@ -12,23 +12,26 @@ import 'package:flutter/material.dart';
 dynamic calculateGroceryAmtaction(
   String paymentMode,
   double totalAmount,
-  double advanceAmt,
+  double paidAmt,
 ) {
   /// MODIFY CODE ONLY BELOW THIS LINE
 
   Map<String, double> paymentModes = {};
   double balanceAmt = 0;
   double returnAmt = 0;
+  double advanceAmt = 0;
   //Add the payment mode and amount to the Map
   if (totalAmount > advanceAmt) {
     balanceAmt = totalAmount - advanceAmt;
   } else {
+    advanceAmt = paidAmt;
     returnAmt = advanceAmt - totalAmount;
   }
 
   // Create the final JSON structure
   Map<String, dynamic> result = {
     'paymentMode': paymentModes,
+    'paidAmt': paidAmt,
     'totalAmt': totalAmount,
     'advanceAmt': advanceAmt,
     'balanceAmt': balanceAmt,

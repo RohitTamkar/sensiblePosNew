@@ -1218,11 +1218,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                       FFAppState().finalAmt,
                                                       0.0,
                                                     ),
-                                                    valueOrDefault<double>(
-                                                      double.tryParse(_model
-                                                          .textController.text),
-                                                      0.0,
-                                                    ),
+                                                    double.parse(_model
+                                                        .textController.text),
                                                   );
                                                   _model.advance = getJsonField(
                                                     _model.result,
@@ -1241,7 +1238,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                     _model.result,
                                                     r'''$.returnAmt''',
                                                   );
-                                                  _model.updatePage(() {});
+                                                  setState(() {});
 
                                                   setState(() {});
                                                 },
