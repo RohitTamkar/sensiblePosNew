@@ -88,8 +88,11 @@ class _ExitConfirmWidgetState extends State<ExitConfirmWidget> {
                       _model.result = await actions.checkPlatform(
                         isWeb.toString(),
                       );
-
-                      context.pushNamed('WindowsLogin');
+                      if (isAndroid == true) {
+                        context.pushNamed('LoginPageNew');
+                      } else {
+                        context.pushNamed('WindowsLogin');
+                      }
 
                       setState(() {});
                     },
