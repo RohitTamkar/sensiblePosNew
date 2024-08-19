@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
@@ -54,10 +56,16 @@ Future<bool> connectDevice(dynamic printers, String index) async {
               name: selectedPrinter[0]!["deviceName"],
               productId: selectedPrinter[0]!["productId"],
               vendorId: selectedPrinter[0]!["vendorId"]));
-      if (printerManager.usbPrinterConnector.status.index == 0) {
-        _isConnected = false;
+      if (Platform.isAndroid) {
+        if (printerManager.usbPrinterConnector.status.index == 0) {
+          _isConnected = false;
 
-        FFAppState().isPrinterConnected = false;
+          FFAppState().isPrinterConnected = false;
+        } else {
+          _isConnected = true;
+          FFAppState().printerName = "USBStatus.connected";
+          FFAppState().isPrinterConnected = true;
+        }
       } else {
         _isConnected = true;
         FFAppState().printerName = "USBStatus.connected";

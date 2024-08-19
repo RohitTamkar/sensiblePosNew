@@ -29,7 +29,11 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (FFAppState().navigate == 'REGULAR') {
-        context.pushNamed('SplashScreenWindows');
+        if (isAndroid == true) {
+          context.pushNamed('welcomeScreenNew');
+        } else {
+          context.pushNamed('SplashScreenWindows');
+        }
       } else if (FFAppState().navigate == 'PARKING') {
         context.pushNamed('phoneAuthPage');
       } else if (FFAppState().navigate == 'KIOSK') {
@@ -79,8 +83,11 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
                             onTap: () async {
                               FFAppState().navigate = 'REGULAR';
                               setState(() {});
-
-                              context.pushNamed('SplashScreenWindows');
+                              if (isAndroid == true) {
+                                context.pushNamed('welcomeScreenNew');
+                              } else {
+                                context.pushNamed('SplashScreenWindows');
+                              }
                             },
                             child: Material(
                               color: Colors.transparent,

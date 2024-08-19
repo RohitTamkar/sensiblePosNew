@@ -1945,7 +1945,10 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                         functions.timestampToMili(
                                             getCurrentTimestamp),
                                         functions.getDayId(),
-                                        FFAppState().groceryJson.toString(),
+                                        getJsonField(
+                                          FFAppState().groceryJson,
+                                          r'''$.paymentMode''',
+                                        ).toString(),
                                         valueOrDefault<double>(
                                           FFAppState().disAmt,
                                           0.0,
@@ -2316,7 +2319,10 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                       functions
                                           .timestampToMili(getCurrentTimestamp),
                                       functions.getDayId(),
-                                      FFAppState().groceryJson.toString(),
+                                      getJsonField(
+                                        FFAppState().groceryJson,
+                                        r'''$.paymentMode''',
+                                      ).toString(),
                                       valueOrDefault<double>(
                                         FFAppState().disAmt,
                                         0.0,

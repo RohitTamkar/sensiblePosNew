@@ -91,8 +91,9 @@ class _WelcomeScreenNewWidgetState extends State<WelcomeScreenNewWidget>
           outletName: '',
           outletId: '',
           board: '',
-          serial: '',
+          serial: FFAppState().dId,
           branch: '',
+          billingType: FFAppState().navigate,
         ));
         _model.refnew = DeviceRecord.getDocumentFromData(
             createDeviceRecordData(
@@ -117,8 +118,9 @@ class _WelcomeScreenNewWidgetState extends State<WelcomeScreenNewWidget>
               outletName: '',
               outletId: '',
               board: '',
-              serial: '',
+              serial: FFAppState().dId,
               branch: '',
+              billingType: FFAppState().navigate,
             ),
             deviceRecordReference);
 
@@ -150,11 +152,11 @@ class _WelcomeScreenNewWidgetState extends State<WelcomeScreenNewWidget>
         0.0,
       );
       setState(() {});
-      if (FFAppState().targetPlatform != 'android') {
+      if (FFAppState().targetPlatform == 'android') {
+        context.pushNamed('WindowsLogin');
+      } else {
         context.pushNamed('LoginPageNew');
       }
-
-      context.pushNamed('LoginPageNew');
     });
 
     // On shake action.
