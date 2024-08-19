@@ -44,7 +44,7 @@ class PaymentModeGroceryModel
   int? totalcredit2;
   // Stores action output result for [Custom Action - addInvoiceBillhive] action in Button widget.
   InvoiceStructStruct? hiveInvoiceDataCopyCopy;
-  // Stores action output result for [Custom Action - calShiftSummaryNew] action in Button widget.
+  // Stores action output result for [Custom Action - calShiftSummaryNewgrocery] action in Button widget.
   dynamic? shiftSummarResultsNew2;
   // Stores action output result for [Custom Action - shiftIdtoInt] action in Button widget.
   int? shiftidhive2;
@@ -62,7 +62,7 @@ class PaymentModeGroceryModel
   int? totalcredit;
   // Stores action output result for [Custom Action - addInvoiceBillhive] action in Button widget.
   InvoiceStructStruct? hiveInvoiceData;
-  // Stores action output result for [Custom Action - calShiftSummaryNew] action in Button widget.
+  // Stores action output result for [Custom Action - calShiftSummaryNewgrocery] action in Button widget.
   dynamic? shiftSummarResultsNew;
   // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
   ShiftDetailsStruct? updatedShiftDetails;

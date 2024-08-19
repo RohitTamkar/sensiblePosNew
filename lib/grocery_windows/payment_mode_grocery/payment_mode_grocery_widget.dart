@@ -1945,7 +1945,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                         functions.timestampToMili(
                                             getCurrentTimestamp),
                                         functions.getDayId(),
-                                        FFAppState().PayMode,
+                                        FFAppState().groceryJson.toString(),
                                         valueOrDefault<double>(
                                           FFAppState().disAmt,
                                           0.0,
@@ -1982,7 +1982,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                         r'''$.shiftExists''',
                                       )) {
                                         _model.shiftSummarResultsNew2 =
-                                            await actions.calShiftSummaryNew(
+                                            await actions
+                                                .calShiftSummaryNewgrocery(
                                           _model.hiveInvoiceDataCopyCopy!,
                                           FFAppState().shiftDetailsJson,
                                         );
@@ -2315,7 +2316,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                       functions
                                           .timestampToMili(getCurrentTimestamp),
                                       functions.getDayId(),
-                                      'cash',
+                                      FFAppState().groceryJson.toString(),
                                       valueOrDefault<double>(
                                         FFAppState().disAmt,
                                         0.0,
@@ -2352,7 +2353,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                       r'''$.shiftExists''',
                                     )) {
                                       _model.shiftSummarResultsNew =
-                                          await actions.calShiftSummaryNew(
+                                          await actions
+                                              .calShiftSummaryNewgrocery(
                                         _model.hiveInvoiceData!,
                                         FFAppState().shiftDetailsJson,
                                       );
@@ -2515,7 +2517,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                         FFAppState().printerIndex,
                                       );
                                       _shouldSetState = true;
-                                      await actions.printBillnewhive(
+                                      await actions.printBillnewhivegrocery(
                                         _model.returnedList2!.toList(),
                                         _model.device!.toList(),
                                         FFAppState().isPrinterConnected,
