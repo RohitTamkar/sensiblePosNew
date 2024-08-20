@@ -1520,10 +1520,12 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                             queryBuilder: (outletRecord) =>
                                                 outletRecord.where(
                                               'id',
-                                              isEqualTo:
-                                                  FFAppState().outletId != ''
-                                                      ? FFAppState().outletId
-                                                      : null,
+                                              isEqualTo: containerDeviceRecord
+                                                          ?.outletRef?.id !=
+                                                      ''
+                                                  ? containerDeviceRecord
+                                                      ?.outletRef?.id
+                                                  : null,
                                             ),
                                             singleRecord: true,
                                           ),

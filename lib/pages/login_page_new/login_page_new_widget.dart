@@ -1378,8 +1378,11 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                         queryBuilder: (outletRecord) =>
                                             outletRecord.where(
                                           'id',
-                                          isEqualTo: FFAppState().outletId != ''
-                                              ? FFAppState().outletId
+                                          isEqualTo: containerDeviceRecord
+                                                      ?.outletRef?.id !=
+                                                  ''
+                                              ? containerDeviceRecord
+                                                  ?.outletRef?.id
                                               : null,
                                         ),
                                         singleRecord: true,
