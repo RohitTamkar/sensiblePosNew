@@ -1423,67 +1423,30 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 3.0, 0.0),
-                                                child: InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    context.pushNamed(
-                                                      'BillingGroceryNew',
-                                                      queryParameters: {
-                                                        'shiftdetail':
-                                                            serializeParam(
-                                                          widget!.shiftDetails,
-                                                          ParamType.JSON,
-                                                        ),
-                                                        'taxDetails':
-                                                            serializeParam(
-                                                          widget!.taxcollection,
-                                                          ParamType.Document,
-                                                          isList: true,
-                                                        ),
-                                                        'userref':
-                                                            serializeParam(
-                                                          widget!.doc,
-                                                          ParamType
-                                                              .DocumentReference,
-                                                        ),
-                                                      }.withoutNulls,
-                                                      extra: <String, dynamic>{
-                                                        'taxDetails': widget!
-                                                            .taxcollection,
-                                                      },
-                                                    );
-                                                  },
-                                                  child: Text(
-                                                    FFAppState().outletName,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleSmallFamily,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBtnText,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleSmallFamily),
-                                                        ),
-                                                  ),
+                                                child: Text(
+                                                  FFAppState().outletName,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmallFamily,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryBtnText,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallFamily),
+                                                      ),
                                                 ),
                                               ),
                                               Padding(

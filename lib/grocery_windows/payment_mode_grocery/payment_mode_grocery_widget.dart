@@ -10,6 +10,7 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -42,6 +43,12 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => PaymentModeGroceryModel());
+
+    // On component load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.amount = FFAppState().finalAmt.toString();
+      setState(() {});
+    });
 
     _model.textController ??= TextEditingController(text: _model.amount);
     _model.textFieldFocusNode ??= FocusNode();
@@ -1373,6 +1380,18 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                       setState(() {});
                                                       _model.amount = '';
                                                       setState(() {});
+                                                      setState(() {
+                                                        _model.textController
+                                                                ?.text =
+                                                            _model.amount!;
+                                                        _model.textController
+                                                                ?.selection =
+                                                            TextSelection.collapsed(
+                                                                offset: _model
+                                                                    .textController!
+                                                                    .text
+                                                                    .length);
+                                                      });
 
                                                       setState(() {});
                                                     },
@@ -1868,14 +1887,11 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                 child: FFButtonWidget(
                                   onPressed: () async {
                                     var _shouldSetState = false;
-                                    if (functions
-                                            .filterBillList(
-                                                FFAppState().selBill,
-                                                FFAppState()
-                                                    .allBillsList
-                                                    .toList())
-                                            .length >
-                                        0) {
+                                    if (FFAppState().finalAmt ==
+                                        getJsonField(
+                                          FFAppState().groceryJson,
+                                          r'''$.paidAmt''',
+                                        )) {
                                       if (!getJsonField(
                                         FFAppState().shiftDetailsJson,
                                         r'''$.shiftExists''',
@@ -2143,6 +2159,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                         FFAppState().billAmt = 0.0;
                                         FFAppState().groceryJson = null;
                                         FFAppState().update(() {});
+                                        Navigator.pop(context);
                                         if (_shouldSetState) setState(() {});
                                         return;
                                       } else {
@@ -2166,6 +2183,24 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                         return;
                                       }
                                     } else {
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        SnackBar(
+                                          content: Text(
+                                            'Pay All Amount  !',
+                                            style: TextStyle(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                            ),
+                                          ),
+                                          duration:
+                                              Duration(milliseconds: 1900),
+                                          backgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .alternate,
+                                        ),
+                                      );
                                       if (_shouldSetState) setState(() {});
                                       return;
                                     }
@@ -2208,69 +2243,98 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                 child: FFButtonWidget(
                                   onPressed: () async {
                                     var _shouldSetState = false;
-                                    if (getJsonField(
-                                      FFAppState().shiftDetailsJson,
-                                      r'''$.shiftExists''',
-                                    )) {
-                                      FFAppState().count =
-                                          FFAppState().count + 1;
-                                      setState(() {});
-                                    } else {
-                                      FFAppState().count =
-                                          FFAppState().count + 1;
-                                      setState(() {});
-                                    }
+                                    if (FFAppState().finalAmt ==
+                                        getJsonField(
+                                          FFAppState().groceryJson,
+                                          r'''$.paidAmt''',
+                                        )) {
+                                      if (getJsonField(
+                                        FFAppState().shiftDetailsJson,
+                                        r'''$.shiftExists''',
+                                      )) {
+                                        FFAppState().count =
+                                            FFAppState().count + 1;
+                                        setState(() {});
+                                      } else {
+                                        FFAppState().count =
+                                            FFAppState().count + 1;
+                                        setState(() {});
+                                      }
 
-                                    _model.prdlinstnewtx =
-                                        await actions.filterProducts2(
-                                      FFAppState().selBill,
-                                      FFAppState().allBillsList.toList(),
-                                    );
-                                    _shouldSetState = true;
-                                    _model.appsettingnew =
-                                        await queryAppSettingsRecordOnce(
-                                      parent: FFAppState().outletIdRef,
-                                      singleRecord: true,
-                                    ).then((s) => s.firstOrNull);
-                                    _shouldSetState = true;
-                                    _model.outletdoc =
-                                        await queryOutletRecordOnce(
-                                      queryBuilder: (outletRecord) =>
-                                          outletRecord.where(
-                                        'id',
-                                        isEqualTo: FFAppState().outletIdRef?.id,
-                                      ),
-                                      singleRecord: true,
-                                    ).then((s) => s.firstOrNull);
-                                    _shouldSetState = true;
-                                    if (FFAppState().PayMode == 'CREDIT') {
-                                      if (FFAppState().setCustRef?.id != null &&
-                                          FFAppState().setCustRef?.id != '') {
-                                        if (FFAppState().oldBalance <
-                                            FFAppState().custCredit) {
-                                          _model.totalcredit =
-                                              await actions.oldbalanceplusamt(
-                                            FFAppState().oldBalance,
-                                            FFAppState().finalAmt,
-                                          );
-                                          _shouldSetState = true;
+                                      _model.prdlinstnewtx =
+                                          await actions.filterProducts2(
+                                        FFAppState().selBill,
+                                        FFAppState().allBillsList.toList(),
+                                      );
+                                      _shouldSetState = true;
+                                      _model.appsettingnew =
+                                          await queryAppSettingsRecordOnce(
+                                        parent: FFAppState().outletIdRef,
+                                        singleRecord: true,
+                                      ).then((s) => s.firstOrNull);
+                                      _shouldSetState = true;
+                                      _model.outletdoc =
+                                          await queryOutletRecordOnce(
+                                        queryBuilder: (outletRecord) =>
+                                            outletRecord.where(
+                                          'id',
+                                          isEqualTo:
+                                              FFAppState().outletIdRef?.id,
+                                        ),
+                                        singleRecord: true,
+                                      ).then((s) => s.firstOrNull);
+                                      _shouldSetState = true;
+                                      if (FFAppState().PayMode == 'CREDIT') {
+                                        if (FFAppState().setCustRef?.id !=
+                                                null &&
+                                            FFAppState().setCustRef?.id != '') {
+                                          if (FFAppState().oldBalance <
+                                              FFAppState().custCredit) {
+                                            _model.totalcredit =
+                                                await actions.oldbalanceplusamt(
+                                              FFAppState().oldBalance,
+                                              FFAppState().finalAmt,
+                                            );
+                                            _shouldSetState = true;
 
-                                          await FFAppState()
-                                              .setCustRef!
-                                              .update(createPartyRecordData(
-                                                credit: true,
-                                                oldBalance: 0,
-                                                lastVisit: getCurrentTimestamp
-                                                    .millisecondsSinceEpoch
-                                                    .toString(),
-                                              ));
+                                            await FFAppState()
+                                                .setCustRef!
+                                                .update(createPartyRecordData(
+                                                  credit: true,
+                                                  oldBalance: 0,
+                                                  lastVisit: getCurrentTimestamp
+                                                      .millisecondsSinceEpoch
+                                                      .toString(),
+                                                ));
+                                          } else {
+                                            await showDialog(
+                                              context: context,
+                                              builder: (alertDialogContext) {
+                                                return AlertDialog(
+                                                  content: Text(
+                                                      'Credit Limit Exceeded !'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext),
+                                                      child: Text('Ok'),
+                                                    ),
+                                                  ],
+                                                );
+                                              },
+                                            );
+                                            if (_shouldSetState)
+                                              setState(() {});
+                                            return;
+                                          }
                                         } else {
                                           await showDialog(
                                             context: context,
                                             builder: (alertDialogContext) {
                                               return AlertDialog(
-                                                content: Text(
-                                                    'Credit Limit Exceeded !'),
+                                                content:
+                                                    Text('Select Customer '),
                                                 actions: [
                                                   TextButton(
                                                     onPressed: () =>
@@ -2285,12 +2349,277 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                           if (_shouldSetState) setState(() {});
                                           return;
                                         }
+                                      }
+                                      _model.hiveInvoiceData =
+                                          await actions.addInvoiceBillhive(
+                                        '',
+                                        functions.genInvoiceNum(
+                                            FFAppState().count,
+                                            FFAppState().shiftCount),
+                                        valueOrDefault<String>(
+                                          FFAppState().setCustRef?.id,
+                                          '0',
+                                        ),
+                                        functions.timestampToMili(
+                                            getCurrentTimestamp),
+                                        functions.getDayId(),
+                                        getJsonField(
+                                          FFAppState().groceryJson,
+                                          r'''$.paymentMode''',
+                                        ).toString(),
+                                        valueOrDefault<double>(
+                                          FFAppState().disAmt,
+                                          0.0,
+                                        ),
+                                        valueOrDefault<double>(
+                                          FFAppState().disPer,
+                                          0.0,
+                                        ),
+                                        valueOrDefault<double>(
+                                          FFAppState().delCharges,
+                                          0.0,
+                                        ),
+                                        FFAppState().taxamt,
+                                        valueOrDefault<double>(
+                                          FFAppState().billAmt,
+                                          0.0,
+                                        ),
+                                        valueOrDefault<double>(
+                                          FFAppState().finalAmt,
+                                          0.0,
+                                        ),
+                                        0.0,
+                                        _model.prdlinstnewtx?.toList(),
+                                        getJsonField(
+                                          FFAppState().shiftDetailsJson,
+                                          r'''$.shiftId''',
+                                        ).toString(),
+                                        false,
+                                        FFAppState().invoiceStructVersion,
+                                      );
+                                      _shouldSetState = true;
+                                      if (getJsonField(
+                                        FFAppState().shiftDetailsJson,
+                                        r'''$.shiftExists''',
+                                      )) {
+                                        _model.shiftSummarResultsNew =
+                                            await actions
+                                                .calShiftSummaryNewgrocery(
+                                          _model.hiveInvoiceData!,
+                                          FFAppState().shiftDetailsJson,
+                                        );
+                                        _shouldSetState = true;
+                                        FFAppState().updateShiftDetailsStruct(
+                                          (e) => e
+                                            ..billCount = valueOrDefault<int>(
+                                              functions.lastBillCount(
+                                                  FFAppState()
+                                                      .shiftDetails
+                                                      .billCount),
+                                              0,
+                                            )
+                                            ..totalSale = getJsonField(
+                                              _model.shiftSummarResultsNew,
+                                              r'''$.totalSale''',
+                                            )
+                                            ..deliveryCharges = getJsonField(
+                                              _model.shiftSummarResultsNew,
+                                              r'''$.deliveryCharges''',
+                                            )
+                                            ..tax = getJsonField(
+                                              _model.shiftSummarResultsNew,
+                                              r'''$.tax''',
+                                            )
+                                            ..lastBillNo = getJsonField(
+                                              _model.shiftSummarResultsNew,
+                                              r'''$.lastBillno''',
+                                            ).toString()
+                                            ..discount = getJsonField(
+                                              _model.shiftSummarResultsNew,
+                                              r'''$.discount''',
+                                            )
+                                            ..lastBillTime =
+                                                functions.timestampToMili(
+                                                    getCurrentTimestamp)
+                                            ..cashSale = getJsonField(
+                                              _model.shiftSummarResultsNew,
+                                              r'''$.cashSale''',
+                                            )
+                                            ..paymentJson = getJsonField(
+                                              _model.shiftSummarResultsNew,
+                                              r'''$.paymentJson''',
+                                            ).toString()
+                                            ..dayId = getJsonField(
+                                              _model.shiftSummarResultsNew,
+                                              r'''$.dayId''',
+                                            ).toString()
+                                            ..shiftId = getJsonField(
+                                              _model.shiftSummarResultsNew,
+                                              r'''$.shiftId''',
+                                            ).toString()
+                                            ..hivekey = FFAppState()
+                                                .shiftDetails
+                                                .hivekey
+                                            ..newIDShift = FFAppState()
+                                                .shiftDetails
+                                                .newIDShift
+                                            ..code =
+                                                FFAppState().shiftDetails.code
+                                            ..endTime = FFAppState()
+                                                .shiftDetails
+                                                .endTime
+                                            ..advanceAmtTotal = FFAppState()
+                                                .shiftDetails
+                                                .advanceAmtTotal
+                                            ..customerReciveAmtTotal =
+                                                FFAppState()
+                                                    .shiftDetails
+                                                    .customerReciveAmtTotal
+                                            ..expensesAmtTotal = FFAppState()
+                                                .shiftDetails
+                                                .expensesAmtTotal
+                                            ..openingAmt = FFAppState()
+                                                .shiftDetails
+                                                .openingAmt
+                                            ..receiveAmtTotal = FFAppState()
+                                                .shiftDetails
+                                                .receiveAmtTotal
+                                            ..refoundAmount = FFAppState()
+                                                .shiftDetails
+                                                .refoundAmount
+                                            ..roundOff = FFAppState()
+                                                .shiftDetails
+                                                .roundOff
+                                            ..cashInHand = FFAppState()
+                                                .shiftDetails
+                                                .cashInHand
+                                            ..startTime = FFAppState()
+                                                .shiftDetails
+                                                .startTime
+                                            ..inActive = FFAppState()
+                                                .shiftDetails
+                                                .inActive
+                                            ..shiftNo = FFAppState()
+                                                .shiftDetails
+                                                .shiftNo
+                                            ..subTotalBill = FFAppState()
+                                                .shiftDetails
+                                                .subTotalBill
+                                            ..version = FFAppState()
+                                                .shiftDetails
+                                                .version
+                                            ..userId =
+                                                FFAppState().shiftDetails.userId
+                                            ..deviceId = FFAppState()
+                                                .shiftDetails
+                                                .deviceId
+                                            ..synC =
+                                                FFAppState().shiftDetails.synC
+                                            ..id = FFAppState().shiftDetails.id,
+                                        );
+                                        setState(() {});
+                                        _model.updatedShiftDetails =
+                                            await actions.hiveShiftCrud(
+                                          FFAppState().shiftDetails.newIDShift,
+                                          FFAppState().shiftDetails,
+                                          'update',
+                                        );
+                                        _shouldSetState = true;
+                                      } else {
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          SnackBar(
+                                            content: Text(
+                                              'Login again to start Shift ',
+                                              style: TextStyle(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                              ),
+                                            ),
+                                            duration:
+                                                Duration(milliseconds: 4000),
+                                            backgroundColor: Color(0x00000000),
+                                          ),
+                                        );
+                                        if (_shouldSetState) setState(() {});
+                                        return;
+                                      }
+
+                                      if (!functions.isPrinterSelected(
+                                          FFAppState().printerDevice)!) {
+                                        _model.resDevice2 =
+                                            await actions.scanPrinter(
+                                          FFAppState().posMode,
+                                        );
+                                        _shouldSetState = true;
+                                      }
+                                      _model.isconnected =
+                                          await actions.connectDevice(
+                                        FFAppState().printerDevice,
+                                        FFAppState().printerIndex,
+                                      );
+                                      _shouldSetState = true;
+                                      if (_model.isconnected!) {
+                                        FFAppState().lastBill =
+                                            FFAppState().finalAmt;
+                                        FFAppState().update(() {});
+                                        _model.returnedList2 =
+                                            await actions.selectBillPrint(
+                                          FFAppState().selBill.toString(),
+                                          FFAppState().allBillsList.toList(),
+                                        );
+                                        _shouldSetState = true;
+                                        _model.device =
+                                            await actions.newCustomAction(
+                                          FFAppState().printerIndex,
+                                        );
+                                        _shouldSetState = true;
+                                        await actions.printBillnewhivegrocery(
+                                          _model.returnedList2!.toList(),
+                                          _model.device!.toList(),
+                                          FFAppState().isPrinterConnected,
+                                          FFAppState().printerName,
+                                          getJsonField(
+                                            functions.outletDocToJson(
+                                                _model.outletdoc!),
+                                            r'''$''',
+                                          ),
+                                          _model.hiveInvoiceData!,
+                                          FFAppState().paperSize,
+                                          _model.appsettingnew!,
+                                        );
+                                        await actions.removeFromAllBillList(
+                                          FFAppState().selBill,
+                                        );
+                                        await actions.clearValue();
+                                        FFAppState().subTotal = 0.0;
+                                        FFAppState().delCharges = 0.0;
+                                        FFAppState().oldBalance = 0;
+                                        FFAppState().custCredit = 0;
+                                        FFAppState().custNameRef = null;
+                                        FFAppState().setCustRef = null;
+                                        FFAppState().setCustName = '';
+                                        FFAppState().setCustMobNo = '';
+                                        FFAppState().noOfItems = 0;
+                                        FFAppState().update(() {});
+                                        FFAppState().finalAmt = 0.0;
+                                        FFAppState().billAmt = 0.0;
+                                        FFAppState().count = _model
+                                            .updatedShiftDetails!.billCount;
+                                        FFAppState().groceryJson = null;
+                                        FFAppState().update(() {});
+                                        Navigator.pop(context);
+                                        if (_shouldSetState) setState(() {});
+                                        return;
                                       } else {
                                         await showDialog(
                                           context: context,
                                           builder: (alertDialogContext) {
                                             return AlertDialog(
-                                              content: Text('Select Customer '),
+                                              title: Text('printer connection'),
+                                              content:
+                                                  Text('printer not connected'),
                                               actions: [
                                                 TextButton(
                                                   onPressed: () =>
@@ -2305,180 +2634,12 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                         if (_shouldSetState) setState(() {});
                                         return;
                                       }
-                                    }
-                                    _model.hiveInvoiceData =
-                                        await actions.addInvoiceBillhive(
-                                      '',
-                                      functions.genInvoiceNum(
-                                          FFAppState().count,
-                                          FFAppState().shiftCount),
-                                      valueOrDefault<String>(
-                                        FFAppState().setCustRef?.id,
-                                        '0',
-                                      ),
-                                      functions
-                                          .timestampToMili(getCurrentTimestamp),
-                                      functions.getDayId(),
-                                      getJsonField(
-                                        FFAppState().groceryJson,
-                                        r'''$.paymentMode''',
-                                      ).toString(),
-                                      valueOrDefault<double>(
-                                        FFAppState().disAmt,
-                                        0.0,
-                                      ),
-                                      valueOrDefault<double>(
-                                        FFAppState().disPer,
-                                        0.0,
-                                      ),
-                                      valueOrDefault<double>(
-                                        FFAppState().delCharges,
-                                        0.0,
-                                      ),
-                                      FFAppState().taxamt,
-                                      valueOrDefault<double>(
-                                        FFAppState().billAmt,
-                                        0.0,
-                                      ),
-                                      valueOrDefault<double>(
-                                        FFAppState().finalAmt,
-                                        0.0,
-                                      ),
-                                      0.0,
-                                      _model.prdlinstnewtx?.toList(),
-                                      getJsonField(
-                                        FFAppState().shiftDetailsJson,
-                                        r'''$.shiftId''',
-                                      ).toString(),
-                                      false,
-                                      FFAppState().invoiceStructVersion,
-                                    );
-                                    _shouldSetState = true;
-                                    if (getJsonField(
-                                      FFAppState().shiftDetailsJson,
-                                      r'''$.shiftExists''',
-                                    )) {
-                                      _model.shiftSummarResultsNew =
-                                          await actions
-                                              .calShiftSummaryNewgrocery(
-                                        _model.hiveInvoiceData!,
-                                        FFAppState().shiftDetailsJson,
-                                      );
-                                      _shouldSetState = true;
-                                      FFAppState().updateShiftDetailsStruct(
-                                        (e) => e
-                                          ..billCount = valueOrDefault<int>(
-                                            functions.lastBillCount(FFAppState()
-                                                .shiftDetails
-                                                .billCount),
-                                            0,
-                                          )
-                                          ..totalSale = getJsonField(
-                                            _model.shiftSummarResultsNew,
-                                            r'''$.totalSale''',
-                                          )
-                                          ..deliveryCharges = getJsonField(
-                                            _model.shiftSummarResultsNew,
-                                            r'''$.deliveryCharges''',
-                                          )
-                                          ..tax = getJsonField(
-                                            _model.shiftSummarResultsNew,
-                                            r'''$.tax''',
-                                          )
-                                          ..lastBillNo = getJsonField(
-                                            _model.shiftSummarResultsNew,
-                                            r'''$.lastBillno''',
-                                          ).toString()
-                                          ..discount = getJsonField(
-                                            _model.shiftSummarResultsNew,
-                                            r'''$.discount''',
-                                          )
-                                          ..lastBillTime =
-                                              functions.timestampToMili(
-                                                  getCurrentTimestamp)
-                                          ..cashSale = getJsonField(
-                                            _model.shiftSummarResultsNew,
-                                            r'''$.cashSale''',
-                                          )
-                                          ..paymentJson = getJsonField(
-                                            _model.shiftSummarResultsNew,
-                                            r'''$.paymentJson''',
-                                          ).toString()
-                                          ..dayId = getJsonField(
-                                            _model.shiftSummarResultsNew,
-                                            r'''$.dayId''',
-                                          ).toString()
-                                          ..shiftId = getJsonField(
-                                            _model.shiftSummarResultsNew,
-                                            r'''$.shiftId''',
-                                          ).toString()
-                                          ..hivekey =
-                                              FFAppState().shiftDetails.hivekey
-                                          ..newIDShift = FFAppState()
-                                              .shiftDetails
-                                              .newIDShift
-                                          ..code =
-                                              FFAppState().shiftDetails.code
-                                          ..endTime =
-                                              FFAppState().shiftDetails.endTime
-                                          ..advanceAmtTotal = FFAppState()
-                                              .shiftDetails
-                                              .advanceAmtTotal
-                                          ..customerReciveAmtTotal =
-                                              FFAppState()
-                                                  .shiftDetails
-                                                  .customerReciveAmtTotal
-                                          ..expensesAmtTotal = FFAppState()
-                                              .shiftDetails
-                                              .expensesAmtTotal
-                                          ..openingAmt = FFAppState()
-                                              .shiftDetails
-                                              .openingAmt
-                                          ..receiveAmtTotal = FFAppState()
-                                              .shiftDetails
-                                              .receiveAmtTotal
-                                          ..refoundAmount = FFAppState()
-                                              .shiftDetails
-                                              .refoundAmount
-                                          ..roundOff =
-                                              FFAppState().shiftDetails.roundOff
-                                          ..cashInHand = FFAppState()
-                                              .shiftDetails
-                                              .cashInHand
-                                          ..startTime = FFAppState()
-                                              .shiftDetails
-                                              .startTime
-                                          ..inActive =
-                                              FFAppState().shiftDetails.inActive
-                                          ..shiftNo =
-                                              FFAppState().shiftDetails.shiftNo
-                                          ..subTotalBill = FFAppState()
-                                              .shiftDetails
-                                              .subTotalBill
-                                          ..version =
-                                              FFAppState().shiftDetails.version
-                                          ..userId =
-                                              FFAppState().shiftDetails.userId
-                                          ..deviceId =
-                                              FFAppState().shiftDetails.deviceId
-                                          ..synC =
-                                              FFAppState().shiftDetails.synC
-                                          ..id = FFAppState().shiftDetails.id,
-                                      );
-                                      setState(() {});
-                                      _model.updatedShiftDetails =
-                                          await actions.hiveShiftCrud(
-                                        FFAppState().shiftDetails.newIDShift,
-                                        FFAppState().shiftDetails,
-                                        'update',
-                                      );
-                                      _shouldSetState = true;
                                     } else {
                                       ScaffoldMessenger.of(context)
                                           .showSnackBar(
                                         SnackBar(
                                           content: Text(
-                                            'Login again to start Shift ',
+                                            'Pay All Amount  !',
                                             style: TextStyle(
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -2486,99 +2647,12 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             ),
                                           ),
                                           duration:
-                                              Duration(milliseconds: 4000),
-                                          backgroundColor: Color(0x00000000),
+                                              Duration(milliseconds: 1900),
+                                          backgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .alternate,
                                         ),
                                       );
-                                      if (_shouldSetState) setState(() {});
-                                      return;
-                                    }
-
-                                    if (!functions.isPrinterSelected(
-                                        FFAppState().printerDevice)!) {
-                                      _model.resDevice2 =
-                                          await actions.scanPrinter(
-                                        FFAppState().posMode,
-                                      );
-                                      _shouldSetState = true;
-                                    }
-                                    _model.isconnected =
-                                        await actions.connectDevice(
-                                      FFAppState().printerDevice,
-                                      FFAppState().printerIndex,
-                                    );
-                                    _shouldSetState = true;
-                                    if (_model.isconnected!) {
-                                      FFAppState().lastBill =
-                                          FFAppState().finalAmt;
-                                      FFAppState().update(() {});
-                                      _model.returnedList2 =
-                                          await actions.selectBillPrint(
-                                        FFAppState().selBill.toString(),
-                                        FFAppState().allBillsList.toList(),
-                                      );
-                                      _shouldSetState = true;
-                                      _model.device =
-                                          await actions.newCustomAction(
-                                        FFAppState().printerIndex,
-                                      );
-                                      _shouldSetState = true;
-                                      await actions.printBillnewhivegrocery(
-                                        _model.returnedList2!.toList(),
-                                        _model.device!.toList(),
-                                        FFAppState().isPrinterConnected,
-                                        FFAppState().printerName,
-                                        getJsonField(
-                                          functions.outletDocToJson(
-                                              _model.outletdoc!),
-                                          r'''$''',
-                                        ),
-                                        _model.hiveInvoiceData!,
-                                        FFAppState().paperSize,
-                                        _model.appsettingnew!,
-                                      );
-                                      await actions.removeFromAllBillList(
-                                        FFAppState().selBill,
-                                      );
-                                      await actions.clearValue();
-                                      FFAppState().subTotal = 0.0;
-                                      FFAppState().delCharges = 0.0;
-                                      FFAppState().oldBalance = 0;
-                                      FFAppState().custCredit = 0;
-                                      FFAppState().custNameRef = null;
-                                      FFAppState().setCustRef = null;
-                                      FFAppState().setCustName = '';
-                                      FFAppState().setCustMobNo = '';
-                                      FFAppState().noOfItems = 0;
-                                      FFAppState().update(() {});
-                                      FFAppState().finalAmt = 0.0;
-                                      FFAppState().billAmt = 0.0;
-                                      FFAppState().count =
-                                          _model.updatedShiftDetails!.billCount;
-                                      FFAppState().groceryJson = null;
-                                      FFAppState().update(() {});
-                                      if (_shouldSetState) setState(() {});
-                                      return;
-                                    } else {
-                                      await showDialog(
-                                        context: context,
-                                        builder: (alertDialogContext) {
-                                          return AlertDialog(
-                                            title: Text('printer connection'),
-                                            content:
-                                                Text('printer not connected'),
-                                            actions: [
-                                              TextButton(
-                                                onPressed: () => Navigator.pop(
-                                                    alertDialogContext),
-                                                child: Text('Ok'),
-                                              ),
-                                            ],
-                                          );
-                                        },
-                                      );
-                                      if (_shouldSetState) setState(() {});
-                                      return;
                                     }
 
                                     if (_shouldSetState) setState(() {});

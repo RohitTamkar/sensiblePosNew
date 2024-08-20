@@ -1197,7 +1197,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                       if (true) {
                                                                                         if (_model.outletdoc?.active == true) {
                                                                                           if (containerDeviceRecord?.active == true) {
-                                                                                            if ((_model.userProfile != null) == true) {
+                                                                                            if (((_model.userProfile != null) == true) && (_model.outletdoc!.createdDate <= _model.outletdoc!.renewalDate)) {
                                                                                               _model.shiftdetailsnewonline = await actions.shiftDetailNewpark(
                                                                                                 _model.shiftlistonline?.toList(),
                                                                                               );

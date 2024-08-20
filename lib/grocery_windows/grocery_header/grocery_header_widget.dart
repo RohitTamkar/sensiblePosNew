@@ -1,3 +1,4 @@
+import '/components/exit_confirm/exit_confirm_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -239,8 +240,8 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
           ),
           Expanded(
             child: FFButtonWidget(
-              onPressed: () {
-                print('Button pressed ...');
+              onPressed: () async {
+                context.pushNamed('PrinterSelectionScreen');
               },
               text: FFLocalizations.of(context).getText(
                 'u7ti7eko' /* Print Settings */,
@@ -350,8 +351,22 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
           ),
           Expanded(
             child: FFButtonWidget(
-              onPressed: () {
-                print('Button pressed ...');
+              onPressed: () async {
+                await showModalBottomSheet(
+                  isScrollControlled: true,
+                  backgroundColor: Colors.transparent,
+                  barrierColor: Color(0x00000000),
+                  context: context,
+                  builder: (context) {
+                    return Padding(
+                      padding: MediaQuery.viewInsetsOf(context),
+                      child: Container(
+                        height: double.infinity,
+                        child: ExitConfirmWidget(),
+                      ),
+                    );
+                  },
+                ).then((value) => safeSetState(() {}));
               },
               text: FFLocalizations.of(context).getText(
                 'h66bkli9' /* Logout */,

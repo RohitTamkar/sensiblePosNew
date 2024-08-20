@@ -1164,7 +1164,7 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                                     _shouldSetState = true;
                                                                                     if (_model.internetconnection!) {
                                                                                       if ((containerDeviceRecord?.active == true) && (_model.outletdoc?.active == true)) {
-                                                                                        if ((_model.userProfile != null) == true) {
+                                                                                        if ((_model.userProfile != null) && (_model.outletdoc!.createdDate <= _model.outletdoc!.renewalDate)) {
                                                                                           _model.shiftdetailsnewonline = await actions.shiftDetailNewpark(
                                                                                             _model.shiftlistonline?.toList(),
                                                                                           );

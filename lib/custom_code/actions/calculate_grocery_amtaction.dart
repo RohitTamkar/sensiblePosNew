@@ -9,8 +9,6 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-import 'index.dart'; // Imports other custom actions
-
 dynamic calculateGroceryAmtaction(
   String paymentMode,
   double totalAmount,
@@ -20,7 +18,7 @@ dynamic calculateGroceryAmtaction(
 
   if (FFAppState().groceryJson == null) {
     FFAppState().groceryJson = {
-      'paymentMode': {paymentMode: 0.00},
+      'paymentMode': {"$paymentMode": 0.00},
       'paidAmt': '0',
       'totalAmt': '0',
       'advanceAmt': '0',
