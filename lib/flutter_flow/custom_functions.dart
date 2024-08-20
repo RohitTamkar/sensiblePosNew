@@ -1128,3 +1128,8 @@ dynamic calculateGroceryAmt(
   // Return the JSON as a string
   return jsonEncode(result);
 }
+
+DateTime dateinmilli(int dateinmillisecond) {
+  // convert dateinmillisecond to datetime
+  return DateTime.fromMillisecondsSinceEpoch(dateinmillisecond);
+}

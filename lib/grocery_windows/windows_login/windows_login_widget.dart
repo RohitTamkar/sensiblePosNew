@@ -1196,7 +1196,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                       if (true) {
                                                                                         if (_model.outletdoc?.active == true) {
                                                                                           if (containerDeviceRecord?.active == true) {
-                                                                                            if (getCurrentTimestamp.millisecondsSinceEpoch >= _model.outletdoc!.renewalDate) {
+                                                                                            if (getCurrentTimestamp.millisecondsSinceEpoch <= _model.outletdoc!.renewalDate) {
                                                                                               if (_model.userProfile?.reference != null) {
                                                                                                 FFAppState().userName = _model.userProfile!.name;
                                                                                                 setState(() {});
@@ -1254,7 +1254,6 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                                 context: context,
                                                                                                 builder: (alertDialogContext) {
                                                                                                   return AlertDialog(
-                                                                                                    title: Text('Invalid Password'),
                                                                                                     content: Text('Subscription Expired !'),
                                                                                                     actions: [
                                                                                                       TextButton(
@@ -1614,9 +1613,15 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                           ),
                                                         ),
                                                         AutoSizeText(
-                                                          functions.milisecToTimestamp(
-                                                              subscriptionOutletRecord
-                                                                  ?.renewalDate),
+                                                          dateTimeFormat(
+                                                            "yMMMd",
+                                                            functions.dateinmilli(
+                                                                subscriptionOutletRecord!
+                                                                    .renewalDate),
+                                                            locale: FFLocalizations
+                                                                    .of(context)
+                                                                .languageCode,
+                                                          ),
                                                           textAlign:
                                                               TextAlign.center,
                                                           style: FlutterFlowTheme

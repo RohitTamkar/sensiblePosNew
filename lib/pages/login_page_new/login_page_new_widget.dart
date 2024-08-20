@@ -1160,7 +1160,7 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                                     _shouldSetState = true;
                                                                                     if (_model.internetconnection!) {
                                                                                       if ((containerDeviceRecord?.active == true) && (_model.outletdoc?.active == true)) {
-                                                                                        if (getCurrentTimestamp.millisecondsSinceEpoch >= _model.outletdoc!.renewalDate) {
+                                                                                        if (getCurrentTimestamp.millisecondsSinceEpoch <= _model.outletdoc!.renewalDate) {
                                                                                           if (_model.userProfile?.reference != null) {
                                                                                             FFAppState().userName = _model.userProfile!.name;
                                                                                             setState(() {});
@@ -1475,9 +1475,16 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                       ),
                                                     ),
                                                     AutoSizeText(
-                                                      functions.milisecToTimestamp(
-                                                          subscriptionOutletRecord
-                                                              ?.renewalDate),
+                                                      dateTimeFormat(
+                                                        "yMMMd",
+                                                        functions.dateinmilli(
+                                                            subscriptionOutletRecord!
+                                                                .renewalDate),
+                                                        locale:
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .languageCode,
+                                                      ),
                                                       textAlign:
                                                           TextAlign.center,
                                                       style:
