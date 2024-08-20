@@ -1180,7 +1180,6 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                       _shouldSetState = true;
                                                                                       _model.shiftdetailhive = await actions.hiveGetShiftDetails();
                                                                                       _shouldSetState = true;
-                                                                                      FFAppState().userName = _model.userProfile!.name;
                                                                                       FFAppState().outletName = containerDeviceRecord!.outletName;
                                                                                       FFAppState().outletIdRef = containerDeviceRecord?.outletRef;
                                                                                       setState(() {});
@@ -1197,46 +1196,66 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                       if (true) {
                                                                                         if (_model.outletdoc?.active == true) {
                                                                                           if (containerDeviceRecord?.active == true) {
-                                                                                            if (((_model.userProfile != null) == true) && (_model.outletdoc!.createdDate <= _model.outletdoc!.renewalDate)) {
-                                                                                              _model.shiftdetailsnewonline = await actions.shiftDetailNewpark(
-                                                                                                _model.shiftlistonline?.toList(),
-                                                                                              );
-                                                                                              _shouldSetState = true;
+                                                                                            if (getCurrentTimestamp.millisecondsSinceEpoch >= _model.outletdoc!.renewalDate) {
+                                                                                              if (_model.userProfile?.reference != null) {
+                                                                                                FFAppState().userName = _model.userProfile!.name;
+                                                                                                setState(() {});
+                                                                                                _model.shiftdetailsnewonline = await actions.shiftDetailNewpark(
+                                                                                                  _model.shiftlistonline?.toList(),
+                                                                                                );
+                                                                                                _shouldSetState = true;
 
-                                                                                              context.pushNamed(
-                                                                                                'loadingScreenNew',
-                                                                                                queryParameters: {
-                                                                                                  'shiftDoc': serializeParam(
-                                                                                                    _model.shiftdetailsnewonline,
-                                                                                                    ParamType.JSON,
-                                                                                                  ),
-                                                                                                  'userDoc': serializeParam(
-                                                                                                    _model.userProfile?.reference,
-                                                                                                    ParamType.DocumentReference,
-                                                                                                  ),
-                                                                                                  'appSettingDoc': serializeParam(
-                                                                                                    buttonAppSettingsRecord,
-                                                                                                    ParamType.Document,
-                                                                                                  ),
-                                                                                                  'outletRef': serializeParam(
-                                                                                                    FFAppState().outletIdRef,
-                                                                                                    ParamType.DocumentReference,
-                                                                                                  ),
-                                                                                                }.withoutNulls,
-                                                                                                extra: <String, dynamic>{
-                                                                                                  'appSettingDoc': buttonAppSettingsRecord,
-                                                                                                },
-                                                                                              );
+                                                                                                context.pushNamed(
+                                                                                                  'loadingScreenNew',
+                                                                                                  queryParameters: {
+                                                                                                    'shiftDoc': serializeParam(
+                                                                                                      _model.shiftdetailsnewonline,
+                                                                                                      ParamType.JSON,
+                                                                                                    ),
+                                                                                                    'userDoc': serializeParam(
+                                                                                                      _model.userProfile?.reference,
+                                                                                                      ParamType.DocumentReference,
+                                                                                                    ),
+                                                                                                    'appSettingDoc': serializeParam(
+                                                                                                      buttonAppSettingsRecord,
+                                                                                                      ParamType.Document,
+                                                                                                    ),
+                                                                                                    'outletRef': serializeParam(
+                                                                                                      FFAppState().outletIdRef,
+                                                                                                      ParamType.DocumentReference,
+                                                                                                    ),
+                                                                                                  }.withoutNulls,
+                                                                                                  extra: <String, dynamic>{
+                                                                                                    'appSettingDoc': buttonAppSettingsRecord,
+                                                                                                  },
+                                                                                                );
 
-                                                                                              if (_shouldSetState) setState(() {});
-                                                                                              return;
+                                                                                                if (_shouldSetState) setState(() {});
+                                                                                                return;
+                                                                                              } else {
+                                                                                                await showDialog(
+                                                                                                  context: context,
+                                                                                                  builder: (alertDialogContext) {
+                                                                                                    return AlertDialog(
+                                                                                                      title: Text('Invalid Password'),
+                                                                                                      content: Text('Authentication faild! Invalid Password!'),
+                                                                                                      actions: [
+                                                                                                        TextButton(
+                                                                                                          onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                                          child: Text('Ok'),
+                                                                                                        ),
+                                                                                                      ],
+                                                                                                    );
+                                                                                                  },
+                                                                                                );
+                                                                                              }
                                                                                             } else {
                                                                                               await showDialog(
                                                                                                 context: context,
                                                                                                 builder: (alertDialogContext) {
                                                                                                   return AlertDialog(
                                                                                                     title: Text('Invalid Password'),
-                                                                                                    content: Text('Authentication faild! Invalid Password!'),
+                                                                                                    content: Text('Subscription Expired !'),
                                                                                                     actions: [
                                                                                                       TextButton(
                                                                                                         onPressed: () => Navigator.pop(alertDialogContext),
