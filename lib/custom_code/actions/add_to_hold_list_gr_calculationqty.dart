@@ -15,11 +15,11 @@ Future<List<dynamic>> addToHoldListGrCalculationqty(
   List<TaxMasterRecord> taxcollection,
   String inclusiveorexclusive,
   List<UnitTypeRecord> unitcollection,
-  int disPer,
+  double disPer,
   double disAmt,
   double ratePrice,
   double qty,
-  int taxPer,
+  double taxPer,
   double taxAmt,
 ) async {
   List<dynamic> list = FFAppState().allBillsList;

@@ -269,7 +269,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                   functions
                                       .enabletaxinclusive(widget!.parameter4!),
                                   widget!.unitList!.toList(),
-                                  int.parse(_model
+                                  double.parse(_model
                                       .textFielddisPerTextController.text),
                                   double.parse(_model
                                       .textFielddisAmtTextController.text),
@@ -277,7 +277,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                       _model.textFieldrateTextController.text),
                                   double.parse(
                                       _model.textFieldqtTextController.text),
-                                  int.parse(_model
+                                  double.parse(_model
                                       .textFieldtaxPerTextController.text),
                                   double.parse(_model
                                       .textFieldTaxAmtTextController.text),
@@ -375,7 +375,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                   functions
                                       .enabletaxinclusive(widget!.parameter4!),
                                   widget!.unitList!.toList(),
-                                  int.parse(_model
+                                  double.parse(_model
                                       .textFielddisPerTextController.text),
                                   double.parse(_model
                                       .textFielddisAmtTextController.text),
@@ -383,7 +383,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                       _model.textFieldrateTextController.text),
                                   double.parse(
                                       _model.textFieldqtTextController.text),
-                                  int.parse(_model
+                                  double.parse(_model
                                       .textFieldtaxPerTextController.text),
                                   double.parse(_model
                                       .textFieldTaxAmtTextController.text),
@@ -566,7 +566,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                 functions
                                     .enabletaxinclusive(widget!.parameter4!),
                                 widget!.unitList!.toList(),
-                                int.parse(
+                                double.parse(
                                     _model.textFielddisPerTextController.text),
                                 double.parse(
                                     _model.textFielddisAmtTextController.text),
@@ -574,7 +574,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                     _model.textFieldrateTextController.text),
                                 double.parse(
                                     _model.textFieldqtTextController.text),
-                                int.parse(
+                                double.parse(
                                     _model.textFieldtaxPerTextController.text),
                                 double.parse(
                                     _model.textFieldTaxAmtTextController.text),
@@ -713,7 +713,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                   functions
                                       .enabletaxinclusive(widget!.parameter4!),
                                   widget!.unitList!.toList(),
-                                  int.parse(_model
+                                  double.parse(_model
                                       .textFielddisPerTextController.text),
                                   double.parse(_model
                                       .textFielddisAmtTextController.text),
@@ -721,7 +721,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                       _model.textFieldrateTextController.text),
                                   double.parse(
                                       _model.textFieldqtTextController.text),
-                                  int.parse(_model
+                                  double.parse(_model
                                       .textFieldtaxPerTextController.text),
                                   double.parse(_model
                                       .textFieldTaxAmtTextController.text),
@@ -940,7 +940,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                   functions
                                       .enabletaxinclusive(widget!.parameter4!),
                                   widget!.unitList!.toList(),
-                                  int.parse(_model
+                                  double.parse(_model
                                       .textFielddisPerTextController.text),
                                   double.parse(_model
                                       .textFielddisAmtTextController.text),
@@ -948,7 +948,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                       _model.textFieldrateTextController.text),
                                   double.parse(
                                       _model.textFieldqtTextController.text),
-                                  int.parse(_model
+                                  double.parse(_model
                                       .textFieldtaxPerTextController.text),
                                   double.parse(_model
                                       .textFieldTaxAmtTextController.text),
@@ -1100,7 +1100,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                   functions
                                       .enabletaxinclusive(widget!.parameter4!),
                                   widget!.unitList!.toList(),
-                                  int.parse(_model
+                                  double.parse(_model
                                       .textFielddisPerTextController.text),
                                   double.parse(_model
                                       .textFielddisAmtTextController.text),
@@ -1108,7 +1108,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                       _model.textFieldrateTextController.text),
                                   double.parse(
                                       _model.textFieldqtTextController.text),
-                                  int.parse(_model
+                                  double.parse(_model
                                       .textFieldtaxPerTextController.text),
                                   double.parse(_model
                                       .textFieldTaxAmtTextController.text),
@@ -1260,7 +1260,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                   functions
                                       .enabletaxinclusive(widget!.parameter4!),
                                   widget!.unitList!.toList(),
-                                  int.parse(_model
+                                  double.parse(_model
                                       .textFielddisPerTextController.text),
                                   double.parse(_model
                                       .textFielddisAmtTextController.text),
@@ -1268,7 +1268,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                       _model.textFieldrateTextController.text),
                                   double.parse(
                                       _model.textFieldqtTextController.text),
-                                  int.parse(_model
+                                  double.parse(_model
                                       .textFieldtaxPerTextController.text),
                                   double.parse(_model
                                       .textFieldTaxAmtTextController.text),
@@ -1420,7 +1420,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                   functions
                                       .enabletaxinclusive(widget!.parameter4!),
                                   widget!.unitList!.toList(),
-                                  int.parse(_model
+                                  double.parse(_model
                                       .textFielddisPerTextController.text),
                                   double.parse(_model
                                       .textFielddisAmtTextController.text),
@@ -1428,7 +1428,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                       _model.textFieldrateTextController.text),
                                   double.parse(
                                       _model.textFieldqtTextController.text),
-                                  int.parse(_model
+                                  double.parse(_model
                                       .textFieldtaxPerTextController.text),
                                   double.parse(_model
                                       .textFieldTaxAmtTextController.text),
