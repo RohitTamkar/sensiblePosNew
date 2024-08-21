@@ -153,9 +153,9 @@ class _WelcomeScreenNewWidgetState extends State<WelcomeScreenNewWidget>
       );
       setState(() {});
       if (FFAppState().targetPlatform == 'android') {
-        context.pushNamed('WindowsLogin');
-      } else {
         context.pushNamed('LoginPageNew');
+      } else {
+        context.pushNamed('WindowsLogin');
       }
     });
 

@@ -427,15 +427,6 @@ class _OTPverificationNewPWidgetState extends State<OTPverificationNewPWidget> {
                                                 selectedColor:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
-                                                activeFillColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondary,
-                                                inactiveFillColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .customColor2,
-                                                selectedFillColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryText,
                                               ),
                                               controller:
                                                   _model.pinCodeController,
