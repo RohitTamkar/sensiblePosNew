@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom actions
+
 Future<dynamic> shiftDetailNewpark(List<ShiftRecord>? shiftlist) async {
   List<dynamic> docRecord = [];
   bool flag = false;
@@ -19,10 +21,14 @@ Future<dynamic> shiftDetailNewpark(List<ShiftRecord>? shiftlist) async {
     if (doc.endTime == 0) {
       // Check if the startTime is in a new day
       DateTime currentDateTime = DateTime.now();
+      var formatter = DateFormat('yyyy-MM-dd');
+      String currentDate = formatter.format(currentDateTime);
+
       DateTime shiftStartTime =
           DateTime.fromMillisecondsSinceEpoch(doc.startTime);
-
-      if (shiftStartTime.day == currentDateTime.day) {
+      String shiftDate = formatter.format(shiftStartTime);
+      if (currentDate == shiftDate) {
+        // Same day, the shift is resumed
         // Same day, the shift is resumed
         flag = true;
         docRecord.add({

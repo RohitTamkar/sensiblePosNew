@@ -604,9 +604,15 @@ class _LoadingScreenNewWidgetState extends State<LoadingScreenNewWidget> {
                                                     ),
                                                   ),
                                                   Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      'solopz1n' /* 04/08/2022 */,
+                                                    dateTimeFormat(
+                                                      "yMMMd",
+                                                      functions.dateinmilli(
+                                                          containerOutletRecord!
+                                                              .renewalDate),
+                                                      locale:
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .languageCode,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)

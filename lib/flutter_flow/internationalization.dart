@@ -14493,13 +14493,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'solopz1n': {
-      'en': '04/08/2022',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
     'onuoxq4m': {
       'en': 'Home',
       'hi': '',
@@ -20549,13 +20542,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'pbzlid0u': {
       'en': 'Due Date :',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    '1ftmbr2s': {
-      'en': '04/08/2022',
       'hi': '',
       'kn': '',
       'mr': '',

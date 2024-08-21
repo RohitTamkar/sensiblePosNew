@@ -1123,10 +1123,6 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                           billingType: FFAppState().navigate,
                                                                                         ));
                                                                                       }
-                                                                                      FFAppState().userName = valueOrDefault<String>(
-                                                                                        _model.userProfile?.name,
-                                                                                        'null',
-                                                                                      );
                                                                                       FFAppState().outletName = containerDeviceRecord!.outletName;
                                                                                       FFAppState().outletIdRef = containerDeviceRecord?.outletRef;
                                                                                       FFAppState().mid = _model.outletDoc!.merchantId;
@@ -1145,11 +1141,13 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                       _shouldSetState = true;
                                                                                       if (true) {
                                                                                         if ((containerDeviceRecord?.active == true) && (_model.outletDoc?.active == true)) {
-                                                                                          if ((_model.userProfile != null) == true) {
+                                                                                          if (_model.userProfile?.reference != null) {
                                                                                             _model.shiftDetailsNew = await actions.shiftDetailNewpark(
                                                                                               _model.shiftlist?.toList(),
                                                                                             );
                                                                                             _shouldSetState = true;
+                                                                                            FFAppState().userName = _model.userProfile!.name;
+                                                                                            setState(() {});
                                                                                             if (containerDeviceRecord?.billingType == 'KOT') {
                                                                                               context.pushNamed('KotOrderScreen');
                                                                                             } else if (containerDeviceRecord?.billingType == 'TOKEN') {
@@ -1378,10 +1376,12 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                           queryBuilder: (outletRecord) =>
                                               outletRecord.where(
                                             'id',
-                                            isEqualTo:
-                                                FFAppState().outletId != ''
-                                                    ? FFAppState().outletId
-                                                    : null,
+                                            isEqualTo: containerDeviceRecord
+                                                        ?.outletRef?.id !=
+                                                    ''
+                                                ? containerDeviceRecord
+                                                    ?.outletRef?.id
+                                                : null,
                                           ),
                                           singleRecord: true,
                                         ),

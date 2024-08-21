@@ -1082,9 +1082,15 @@ class _LoadingScreenkiosknewWidgetState
                                                     ),
                                                   ),
                                                   Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      '1ftmbr2s' /* 04/08/2022 */,
+                                                    dateTimeFormat(
+                                                      "yMMMd",
+                                                      functions.dateinmilli(
+                                                          containerOutletRecord!
+                                                              .renewalDate),
+                                                      locale:
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .languageCode,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
