@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom actions
+
 import 'package:hive_flutter/hive_flutter.dart';
 import 'setup_item_hive.dart';
 
@@ -101,13 +103,11 @@ Future<List<ProductStructStruct>?> getProductlistHive() async {
     );
     // **If the item is not deleted, add it to the list**
 
-    /*
     if (!itemPreConvert.isDeleted) {
       itemFlowConverted.add(itemPreConvert);
     }
-    */
 
-    itemFlowConverted.add(itemPreConvert);
+    // itemFlowConverted.add(itemPreConvert);
   }
 
   // this MAKES the most recent ITEM on top OF THE LIST PAGE...using 'reversed'

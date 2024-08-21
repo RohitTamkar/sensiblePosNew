@@ -786,6 +786,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                 focusNode:
                                                     _model.textFieldFocusNode,
                                                 autofocus: false,
+                                                readOnly: true,
                                                 obscureText: false,
                                                 decoration: InputDecoration(
                                                   isDense: true,

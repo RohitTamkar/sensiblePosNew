@@ -51,13 +51,11 @@ Future<List<CategoryStructStruct>?> getCategorylistHive() async {
     );
     // **If the item is not deleted, add it to the list**
 
-    /*
     if (!itemPreConvert.isDeleted) {
       itemFlowConverted.add(itemPreConvert);
     }
-    */
 
-    itemFlowConverted.add(itemPreConvert);
+    // itemFlowConverted.add(itemPreConvert);
   }
 
   // this MAKES the most recent ITEM on top OF THE LIST PAGE...using 'reversed'

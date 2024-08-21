@@ -1141,53 +1141,71 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                       _shouldSetState = true;
                                                                                       if (true) {
                                                                                         if ((containerDeviceRecord?.active == true) && (_model.outletDoc?.active == true)) {
-                                                                                          if (_model.userProfile?.reference != null) {
-                                                                                            _model.shiftDetailsNew = await actions.shiftDetailNewpark(
-                                                                                              _model.shiftlist?.toList(),
-                                                                                            );
-                                                                                            _shouldSetState = true;
-                                                                                            FFAppState().userName = _model.userProfile!.name;
-                                                                                            setState(() {});
-                                                                                            if (containerDeviceRecord?.billingType == 'KOT') {
-                                                                                              context.pushNamed('KotOrderScreen');
-                                                                                            } else if (containerDeviceRecord?.billingType == 'TOKEN') {
-                                                                                              context.pushNamed('TokenDisplay');
+                                                                                          if (getCurrentTimestamp.millisecondsSinceEpoch <= _model.outletDoc!.renewalDate) {
+                                                                                            if (_model.userProfile?.reference != null) {
+                                                                                              _model.shiftDetailsNew = await actions.shiftDetailNewpark(
+                                                                                                _model.shiftlist?.toList(),
+                                                                                              );
+                                                                                              _shouldSetState = true;
+                                                                                              FFAppState().userName = _model.userProfile!.name;
+                                                                                              setState(() {});
+                                                                                              if (containerDeviceRecord?.billingType == 'KOT') {
+                                                                                                context.pushNamed('KotOrderScreen');
+                                                                                              } else if (containerDeviceRecord?.billingType == 'TOKEN') {
+                                                                                                context.pushNamed('TokenDisplay');
+                                                                                              } else {
+                                                                                                context.pushNamed(
+                                                                                                  'loadingScreenkiosknew',
+                                                                                                  queryParameters: {
+                                                                                                    'shiftDoc': serializeParam(
+                                                                                                      _model.shiftdetailskiosknew,
+                                                                                                      ParamType.JSON,
+                                                                                                    ),
+                                                                                                    'userDoc': serializeParam(
+                                                                                                      widget!.doc,
+                                                                                                      ParamType.DocumentReference,
+                                                                                                    ),
+                                                                                                    'appSettingDoc': serializeParam(
+                                                                                                      buttonAppSettingsRecord,
+                                                                                                      ParamType.Document,
+                                                                                                    ),
+                                                                                                    'outletRef': serializeParam(
+                                                                                                      FFAppState().outletIdRef,
+                                                                                                      ParamType.DocumentReference,
+                                                                                                    ),
+                                                                                                  }.withoutNulls,
+                                                                                                  extra: <String, dynamic>{
+                                                                                                    'appSettingDoc': buttonAppSettingsRecord,
+                                                                                                  },
+                                                                                                );
+                                                                                              }
+
+                                                                                              if (_shouldSetState) setState(() {});
+                                                                                              return;
                                                                                             } else {
-                                                                                              context.pushNamed(
-                                                                                                'loadingScreenkiosknew',
-                                                                                                queryParameters: {
-                                                                                                  'shiftDoc': serializeParam(
-                                                                                                    _model.shiftdetailskiosknew,
-                                                                                                    ParamType.JSON,
-                                                                                                  ),
-                                                                                                  'userDoc': serializeParam(
-                                                                                                    widget!.doc,
-                                                                                                    ParamType.DocumentReference,
-                                                                                                  ),
-                                                                                                  'appSettingDoc': serializeParam(
-                                                                                                    buttonAppSettingsRecord,
-                                                                                                    ParamType.Document,
-                                                                                                  ),
-                                                                                                  'outletRef': serializeParam(
-                                                                                                    FFAppState().outletIdRef,
-                                                                                                    ParamType.DocumentReference,
-                                                                                                  ),
-                                                                                                }.withoutNulls,
-                                                                                                extra: <String, dynamic>{
-                                                                                                  'appSettingDoc': buttonAppSettingsRecord,
+                                                                                              await showDialog(
+                                                                                                context: context,
+                                                                                                builder: (alertDialogContext) {
+                                                                                                  return AlertDialog(
+                                                                                                    title: Text('Invalid Password'),
+                                                                                                    content: Text('Authentication faild! Invalid Password!'),
+                                                                                                    actions: [
+                                                                                                      TextButton(
+                                                                                                        onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                                        child: Text('Ok'),
+                                                                                                      ),
+                                                                                                    ],
+                                                                                                  );
                                                                                                 },
                                                                                               );
                                                                                             }
-
-                                                                                            if (_shouldSetState) setState(() {});
-                                                                                            return;
                                                                                           } else {
                                                                                             await showDialog(
                                                                                               context: context,
                                                                                               builder: (alertDialogContext) {
                                                                                                 return AlertDialog(
                                                                                                   title: Text('Invalid Password'),
-                                                                                                  content: Text('Authentication faild! Invalid Password!'),
+                                                                                                  content: Text('Subscription Expired  Contact Support !'),
                                                                                                   actions: [
                                                                                                     TextButton(
                                                                                                       onPressed: () => Navigator.pop(alertDialogContext),
