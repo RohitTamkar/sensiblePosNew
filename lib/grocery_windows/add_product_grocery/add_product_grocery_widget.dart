@@ -2713,6 +2713,14 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                           'create',
                         );
                         _shouldSetState = true;
+                        _model.hiveProductList =
+                            await actions.getProductlistHive();
+                        _shouldSetState = true;
+                        FFAppState().productHive = _model.hiveProductList!
+                            .toList()
+                            .cast<ProductStructStruct>();
+                        setState(() {});
+                        Navigator.pop(context);
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
                             content: Text(
@@ -2734,7 +2742,6 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                             backgroundColor: Color(0x00000000),
                           ),
                         );
-                        Navigator.pop(context);
                       } else {
                         if (_shouldSetState) setState(() {});
                         return;

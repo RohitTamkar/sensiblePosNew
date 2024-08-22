@@ -99,6 +99,8 @@ class AddProductGroceryModel extends FlutterFlowModel<AddProductGroceryWidget> {
   String? Function(BuildContext, String?)? textController16Validator;
   // Stores action output result for [Custom Action - hiveProductCrud] action in Button widget.
   ProductStructStruct? createddocument;
+  // Stores action output result for [Custom Action - getProductlistHive] action in Button widget.
+  List<ProductStructStruct>? hiveProductList;
 
   @override
   void initState(BuildContext context) {}
