@@ -9,8 +9,6 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-import 'index.dart'; // Imports other custom actions
-
 // Imports other custom actions
 Future<List<dynamic>> taxAmtChangedFunctiongrocery(
   ProductStructStruct document,
@@ -46,13 +44,13 @@ Future<List<dynamic>> taxAmtChangedFunctiongrocery(
   // Calculate taxPer if taxAmt is provided
   if (taxAmt > 0) {
     taxPer = (inclusiveorexclusive.toLowerCase() == 'inclusive')
-        ? (taxAmt * 100 / (price * quantity - taxAmt)).toInt()
-        : (taxAmt * 100 / (price * quantity)).toInt();
+        ? taxAmt * 100 / (price * quantity - taxAmt)
+        : taxAmt * 100 / (price * quantity);
   }
 
   // Calculate disPer if disAmt is provided
   if (disAmt > 0) {
-    disPer = (disAmt * 100 / price).toInt();
+    disPer = disAmt * 100 / price;
   } else if (disPer > 0) {
     disAmt = (price * disPer) / 100.0;
   }
