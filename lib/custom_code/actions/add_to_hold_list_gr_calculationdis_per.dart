@@ -40,10 +40,10 @@ Future<List<dynamic>> addToHoldListGrCalculationdisPer(
   double quantity = qty.toDouble();
 
   // Calculate taxPer if taxAmt is provided
-  if (taxAmt > 0) {
+  if (taxAmt > 0.0) {
     taxPer = (inclusiveorexclusive.toLowerCase() == 'inclusive')
-        ? (taxAmt * 100 / (price * quantity - taxAmt)).toInt()
-        : (taxAmt * 100 / (price * quantity)).toInt();
+        ? taxAmt * 100 / (price * quantity - taxAmt)
+        : taxAmt * 100 / (price * quantity);
   }
 
   // Calculate disAmt based on disPer

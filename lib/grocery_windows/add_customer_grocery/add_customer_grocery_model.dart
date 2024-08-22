@@ -51,8 +51,8 @@ class AddCustomerGroceryModel
   TextEditingController? textController9;
   String? Function(BuildContext, String?)? textController9Validator;
   // State field(s) for DropDown widget.
-  String? dropDownValue;
-  FormFieldController<String>? dropDownValueController;
+  String? dropDownValue1;
+  FormFieldController<String>? dropDownValueController1;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode10;
   TextEditingController? textController10;
@@ -65,10 +65,6 @@ class AddCustomerGroceryModel
   FocusNode? textFieldFocusNode12;
   TextEditingController? textController12;
   String? Function(BuildContext, String?)? textController12Validator;
-  // State field(s) for CheckboxListTile widget.
-  bool? checkboxListTileValue1;
-  // State field(s) for CheckboxListTile widget.
-  bool? checkboxListTileValue2;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode13;
   TextEditingController? textController13;
@@ -85,6 +81,36 @@ class AddCustomerGroceryModel
   FocusNode? textFieldFocusNode16;
   TextEditingController? textController16;
   String? Function(BuildContext, String?)? textController16Validator;
+  // State field(s) for DropDown widget.
+  String? dropDownValue2;
+  FormFieldController<String>? dropDownValueController2;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode17;
+  TextEditingController? textController17;
+  String? Function(BuildContext, String?)? textController17Validator;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode18;
+  TextEditingController? textController18;
+  String? Function(BuildContext, String?)? textController18Validator;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode19;
+  TextEditingController? textController19;
+  String? Function(BuildContext, String?)? textController19Validator;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode20;
+  TextEditingController? textController20;
+  String? Function(BuildContext, String?)? textController20Validator;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode21;
+  TextEditingController? textController21;
+  String? Function(BuildContext, String?)? textController21Validator;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode22;
+  TextEditingController? textController22;
+  String? Function(BuildContext, String?)? textController22Validator;
+  // State field(s) for DropDown widget.
+  String? dropDownValue3;
+  FormFieldController<String>? dropDownValueController3;
 
   @override
   void initState(BuildContext context) {}
@@ -138,5 +164,23 @@ class AddCustomerGroceryModel
 
     textFieldFocusNode16?.dispose();
     textController16?.dispose();
+
+    textFieldFocusNode17?.dispose();
+    textController17?.dispose();
+
+    textFieldFocusNode18?.dispose();
+    textController18?.dispose();
+
+    textFieldFocusNode19?.dispose();
+    textController19?.dispose();
+
+    textFieldFocusNode20?.dispose();
+    textController20?.dispose();
+
+    textFieldFocusNode21?.dispose();
+    textController21?.dispose();
+
+    textFieldFocusNode22?.dispose();
+    textController22?.dispose();
   }
 }
