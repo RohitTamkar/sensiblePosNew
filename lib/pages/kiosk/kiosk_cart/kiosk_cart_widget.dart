@@ -679,7 +679,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                               listviewItem,
                                                                                               r'''$.currentStock''',
                                                                                             ))!
-                                                                                                .stock <
+                                                                                                .stock <=
                                                                                             getJsonField(
                                                                                               listviewItem,
                                                                                               r'''$.quantity''',

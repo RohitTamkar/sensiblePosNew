@@ -13,6 +13,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 // Imports other custom actions
 Future<List<dynamic>> disAmtChangedFunctiongrocery(
   ProductStructStruct document,
@@ -43,12 +45,12 @@ Future<List<dynamic>> disAmtChangedFunctiongrocery(
   // Calculate taxPer if taxAmt is provided
   if (taxAmt > 0) {
     taxPer = (inclusiveorexclusive.toLowerCase() == 'inclusive')
-        ? (taxAmt * 100 / (price * quantity - taxAmt)).toInt()
-        : (taxAmt * 100 / (price * quantity)).toInt();
+        ? taxAmt * 100 / (price * quantity - taxAmt)
+        : taxAmt * 100 / (price * quantity);
   }
 
   // Calculate disPer based on disAmt and quantity
-  disPer = (disAmt * 100 / (price * quantity)).toInt();
+  disPer = disAmt * 100 / (price * quantity);
 
   // Calculate taxAmt for each item separately
   double taxAmtPerItem = (inclusiveorexclusive.toLowerCase() == 'inclusive')
