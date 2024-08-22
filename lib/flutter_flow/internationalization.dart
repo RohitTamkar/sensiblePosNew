@@ -23883,7 +23883,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    '2op17m4y': {
+    'davf45iz': {
       'en': 'search code',
       'hi': '',
       'kn': '',
@@ -23904,7 +23904,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'pcgsayyu': {
+    'neccpjrh': {
       'en': 'short name',
       'hi': '',
       'kn': '',
@@ -23946,7 +23946,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'f0mbgbvu': {
+    'pcgsayyu': {
       'en': 'sell price',
       'hi': '',
       'kn': '',

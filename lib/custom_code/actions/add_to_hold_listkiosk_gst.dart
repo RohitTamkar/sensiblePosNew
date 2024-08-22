@@ -68,6 +68,7 @@ Future<List<dynamic>> addToHoldListkioskGst(
       "taxAmt": double.parse(taxAmt.toStringAsFixed(2)),
       "regionalName": document!.regionalName,
       "imageUrl": document!.imageUrl,
+      "currentStock": document!.currentStock ?? 0,
     };
 
     var index;

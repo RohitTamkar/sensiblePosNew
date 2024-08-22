@@ -85,14 +85,7 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
     _model.textController16 ??= TextEditingController();
     _model.textFieldFocusNode16 ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
-          _model.textController4?.text = FFLocalizations.of(context).getText(
-            '2op17m4y' /* search code */,
-          );
-          _model.textController5?.text = FFLocalizations.of(context).getText(
-            'pcgsayyu' /* short name */,
-          );
-        }));
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -590,7 +583,11 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                   controller:
                                       _model.dropDownValueController1 ??=
                                           FormFieldController<String>(null),
-                                  options: containerCategoryRecordList
+                                  options: List<String>.from(
+                                      containerCategoryRecordList
+                                          .map((e) => e.id)
+                                          .toList()),
+                                  optionLabels: containerCategoryRecordList
                                       .map((e) => e.name)
                                       .toList(),
                                   onChanged: (val) => setState(
@@ -703,7 +700,11 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                   controller:
                                       _model.dropDownValueController2 ??=
                                           FormFieldController<String>(null),
-                                  options: containerTaxMasterRecordList
+                                  options: List<String>.from(
+                                      containerTaxMasterRecordList
+                                          .map((e) => e.id)
+                                          .toList()),
+                                  optionLabels: containerTaxMasterRecordList
                                       .map((e) => e.name)
                                       .toList(),
                                   onChanged: (val) => setState(
@@ -817,7 +818,11 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                   controller:
                                       _model.dropDownValueController3 ??=
                                           FormFieldController<String>(null),
-                                  options: containerUnitTypeRecordList
+                                  options: List<String>.from(
+                                      containerUnitTypeRecordList
+                                          .map((e) => e.id)
+                                          .toList()),
+                                  optionLabels: containerUnitTypeRecordList
                                       .map((e) => e.name)
                                       .toList(),
                                   onChanged: (val) => setState(
@@ -1050,6 +1055,9 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .labelMediumFamily),
                                     ),
+                                hintText: FFLocalizations.of(context).getText(
+                                  'davf45iz' /* search code */,
+                                ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -1160,6 +1168,9 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .labelMediumFamily),
                                     ),
+                                hintText: FFLocalizations.of(context).getText(
+                                  'neccpjrh' /* short name */,
+                                ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -1391,7 +1402,7 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                                   .labelMediumFamily),
                                     ),
                                 hintText: FFLocalizations.of(context).getText(
-                                  'f0mbgbvu' /* sell price */,
+                                  'pcgsayyu' /* sell price */,
                                 ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium

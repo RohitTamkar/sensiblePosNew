@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/kiosk/kiosk_header/kiosk_header_widget.dart';
+import '/backend/schema/structs/index.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -672,6 +673,35 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                       size: 20.0,
                                                                                     ),
                                                                                     onPressed: () async {
+                                                                                      var _shouldSetState = false;
+                                                                                      if (widget!.appsetting!.settingList.where((e) => e.title == 'enableStock').toList().first.value) {
+                                                                                        if (ProductStructStruct.maybeFromMap(getJsonField(
+                                                                                              listviewItem,
+                                                                                              r'''$.currentStock''',
+                                                                                            ))!
+                                                                                                .stock <
+                                                                                            getJsonField(
+                                                                                              listviewItem,
+                                                                                              r'''$.quantity''',
+                                                                                            )) {
+                                                                                          await showDialog(
+                                                                                            context: context,
+                                                                                            builder: (alertDialogContext) {
+                                                                                              return AlertDialog(
+                                                                                                content: Text('Item  Out Of Stock.'),
+                                                                                                actions: [
+                                                                                                  TextButton(
+                                                                                                    onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                                    child: Text('Ok'),
+                                                                                                  ),
+                                                                                                ],
+                                                                                              );
+                                                                                            },
+                                                                                          );
+                                                                                          if (_shouldSetState) setState(() {});
+                                                                                          return;
+                                                                                        }
+                                                                                      }
                                                                                       _model.resultkioskcart = await actions.plusQuantityHoldListkiosk(
                                                                                         getJsonField(
                                                                                           listviewItem,
@@ -684,6 +714,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                           false,
                                                                                         )),
                                                                                       );
+                                                                                      _shouldSetState = true;
                                                                                       _model.res23456 = await actions.calSubTotalForHoldListkiosk(
                                                                                         valueOrDefault<String>(
                                                                                           FFAppState().selBill.toString(),
@@ -695,6 +726,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                           false,
                                                                                         )),
                                                                                       );
+                                                                                      _shouldSetState = true;
                                                                                       _model.reuslt12 = await actions.calBillAmt(
                                                                                         valueOrDefault<double>(
                                                                                           FFAppState().disAmt,
@@ -702,8 +734,8 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                         ),
                                                                                         FFAppState().delCharges,
                                                                                       );
-
-                                                                                      setState(() {});
+                                                                                      _shouldSetState = true;
+                                                                                      if (_shouldSetState) setState(() {});
                                                                                     },
                                                                                   ),
                                                                                 ),
