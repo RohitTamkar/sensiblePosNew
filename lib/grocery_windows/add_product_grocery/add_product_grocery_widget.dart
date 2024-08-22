@@ -1,9 +1,13 @@
+import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -81,7 +85,14 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
     _model.textController16 ??= TextEditingController();
     _model.textFieldFocusNode16 ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
+          _model.textController4?.text = FFLocalizations.of(context).getText(
+            '2op17m4y' /* search code */,
+          );
+          _model.textController5?.text = FFLocalizations.of(context).getText(
+            'pcgsayyu' /* short name */,
+          );
+        }));
   }
 
   @override
@@ -93,6 +104,8 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Align(
       alignment: AlignmentDirectional(0.0, 0.0),
       child: Container(
@@ -138,7 +151,7 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                         size: 24.0,
                       ),
                       onPressed: () async {
-                        context.pushNamed('PurchaseGrocery');
+                        Navigator.pop(context);
                       },
                     ),
                   ],
@@ -175,6 +188,28 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                   ),
                             ),
                           ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 10.0, 0.0),
+                            child: Text(
+                              FFLocalizations.of(context).getText(
+                                'cy68tpu8' /* * */,
+                              ),
+                              textAlign: TextAlign.start,
+                              style: FlutterFlowTheme.of(context)
+                                  .labelSmall
+                                  .override(
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .labelSmallFamily,
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    letterSpacing: 0.0,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .labelSmallFamily),
+                                  ),
+                            ),
+                          ),
                           Expanded(
                             flex: 3,
                             child: TextFormField(
@@ -195,6 +230,9 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .labelMediumFamily),
                                     ),
+                                hintText: FFLocalizations.of(context).getText(
+                                  '980giq6z' /* name */,
+                                ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -306,6 +344,9 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .labelMediumFamily),
                                     ),
+                                hintText: FFLocalizations.of(context).getText(
+                                  '6agv6pb9' /* regional name */,
+                                ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -417,6 +458,9 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .labelMediumFamily),
                                     ),
+                                hintText: FFLocalizations.of(context).getText(
+                                  '4w3cocyt' /* barcode */,
+                                ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -514,64 +558,96 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                   ),
                             ),
                           ),
-                          Container(
-                            child: FlutterFlowDropDown<String>(
-                              controller: _model.dropDownValueController1 ??=
-                                  FormFieldController<String>(null),
-                              options: [
-                                FFLocalizations.of(context).getText(
-                                  'xdgi97p1' /*  */,
-                                )
-                              ],
-                              onChanged: (val) =>
-                                  setState(() => _model.dropDownValue1 = val),
-                              width: 300.0,
-                              height: 45.0,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .labelLarge
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelLargeFamily,
-                                    letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelLargeFamily),
-                                  ),
-                              icon: Icon(
-                                Icons.keyboard_arrow_down_rounded,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                size: 24.0,
+                          StreamBuilder<List<CategoryRecord>>(
+                            stream: queryCategoryRecord(
+                              parent: FFAppState().outletIdRef,
+                              queryBuilder: (categoryRecord) =>
+                                  categoryRecord.where(
+                                'isDeleted',
+                                isEqualTo: false,
                               ),
-                              fillColor: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              elevation: 2.0,
-                              borderColor:
-                                  FlutterFlowTheme.of(context).customColor1,
-                              borderWidth: 1.0,
-                              borderRadius: 8.0,
-                              margin: EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 0.0, 16.0, 0.0),
-                              hidesUnderline: true,
-                              isOverButton: true,
-                              isSearchable: false,
-                              isMultiSelect: false,
-                              labelText: FFLocalizations.of(context).getText(
-                                'k07s6nxo' /*  */,
-                              ),
-                              labelTextStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelMediumFamily,
-                                    letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelMediumFamily),
-                                  ),
                             ),
+                            builder: (context, snapshot) {
+                              // Customize what your widget looks like when it's loading.
+                              if (!snapshot.hasData) {
+                                return Center(
+                                  child: SizedBox(
+                                    width: 40.0,
+                                    height: 40.0,
+                                    child: SpinKitFadingCircle(
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      size: 40.0,
+                                    ),
+                                  ),
+                                );
+                              }
+                              List<CategoryRecord> containerCategoryRecordList =
+                                  snapshot.data!;
+
+                              return Container(
+                                child: FlutterFlowDropDown<String>(
+                                  controller:
+                                      _model.dropDownValueController1 ??=
+                                          FormFieldController<String>(null),
+                                  options: containerCategoryRecordList
+                                      .map((e) => e.name)
+                                      .toList(),
+                                  onChanged: (val) => setState(
+                                      () => _model.dropDownValue1 = val),
+                                  width: 300.0,
+                                  height: 45.0,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .labelLarge
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelLargeFamily,
+                                        letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .labelLargeFamily),
+                                      ),
+                                  hintText: FFLocalizations.of(context).getText(
+                                    'ccvt5ax1' /* category */,
+                                  ),
+                                  icon: Icon(
+                                    Icons.keyboard_arrow_down_rounded,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    size: 24.0,
+                                  ),
+                                  fillColor: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  elevation: 2.0,
+                                  borderColor:
+                                      FlutterFlowTheme.of(context).customColor1,
+                                  borderWidth: 1.0,
+                                  borderRadius: 8.0,
+                                  margin: EdgeInsetsDirectional.fromSTEB(
+                                      16.0, 0.0, 16.0, 0.0),
+                                  hidesUnderline: true,
+                                  isOverButton: true,
+                                  isSearchable: false,
+                                  isMultiSelect: false,
+                                  labelText:
+                                      FFLocalizations.of(context).getText(
+                                    'k07s6nxo' /*  */,
+                                  ),
+                                  labelTextStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelMediumFamily,
+                                        letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMediumFamily),
+                                      ),
+                                ),
+                              );
+                            },
                           ),
                         ],
                       ),
@@ -602,64 +678,89 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                   ),
                             ),
                           ),
-                          Container(
-                            child: FlutterFlowDropDown<String>(
-                              controller: _model.dropDownValueController2 ??=
-                                  FormFieldController<String>(null),
-                              options: [
-                                FFLocalizations.of(context).getText(
-                                  '2a7qk5p4' /*  */,
-                                )
-                              ],
-                              onChanged: (val) =>
-                                  setState(() => _model.dropDownValue2 = val),
-                              width: 300.0,
-                              height: 45.0,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .labelLarge
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelLargeFamily,
-                                    letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelLargeFamily),
+                          StreamBuilder<List<TaxMasterRecord>>(
+                            stream: queryTaxMasterRecord(),
+                            builder: (context, snapshot) {
+                              // Customize what your widget looks like when it's loading.
+                              if (!snapshot.hasData) {
+                                return Center(
+                                  child: SizedBox(
+                                    width: 40.0,
+                                    height: 40.0,
+                                    child: SpinKitFadingCircle(
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      size: 40.0,
+                                    ),
                                   ),
-                              icon: Icon(
-                                Icons.keyboard_arrow_down_rounded,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                size: 24.0,
-                              ),
-                              fillColor: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              elevation: 2.0,
-                              borderColor:
-                                  FlutterFlowTheme.of(context).customColor1,
-                              borderWidth: 1.0,
-                              borderRadius: 8.0,
-                              margin: EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 0.0, 16.0, 0.0),
-                              hidesUnderline: true,
-                              isOverButton: true,
-                              isSearchable: false,
-                              isMultiSelect: false,
-                              labelText: FFLocalizations.of(context).getText(
-                                'jh62tnll' /*  */,
-                              ),
-                              labelTextStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelMediumFamily,
-                                    letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelMediumFamily),
+                                );
+                              }
+                              List<TaxMasterRecord>
+                                  containerTaxMasterRecordList = snapshot.data!;
+
+                              return Container(
+                                child: FlutterFlowDropDown<String>(
+                                  controller:
+                                      _model.dropDownValueController2 ??=
+                                          FormFieldController<String>(null),
+                                  options: containerTaxMasterRecordList
+                                      .map((e) => e.name)
+                                      .toList(),
+                                  onChanged: (val) => setState(
+                                      () => _model.dropDownValue2 = val),
+                                  width: 300.0,
+                                  height: 45.0,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .labelLarge
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelLargeFamily,
+                                        letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .labelLargeFamily),
+                                      ),
+                                  hintText: FFLocalizations.of(context).getText(
+                                    'oqa1y46t' /* gst */,
                                   ),
-                            ),
+                                  icon: Icon(
+                                    Icons.keyboard_arrow_down_rounded,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    size: 24.0,
+                                  ),
+                                  fillColor: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  elevation: 2.0,
+                                  borderColor:
+                                      FlutterFlowTheme.of(context).customColor1,
+                                  borderWidth: 1.0,
+                                  borderRadius: 8.0,
+                                  margin: EdgeInsetsDirectional.fromSTEB(
+                                      16.0, 0.0, 16.0, 0.0),
+                                  hidesUnderline: true,
+                                  isOverButton: true,
+                                  isSearchable: false,
+                                  isMultiSelect: false,
+                                  labelText:
+                                      FFLocalizations.of(context).getText(
+                                    'jh62tnll' /*  */,
+                                  ),
+                                  labelTextStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelMediumFamily,
+                                        letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMediumFamily),
+                                      ),
+                                ),
+                              );
+                            },
                           ),
                         ],
                       ),
@@ -690,65 +791,92 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                   ),
                             ),
                           ),
-                          Container(
-                            decoration: BoxDecoration(),
-                            child: FlutterFlowDropDown<String>(
-                              controller: _model.dropDownValueController3 ??=
-                                  FormFieldController<String>(null),
-                              options: [
-                                FFLocalizations.of(context).getText(
-                                  'ocfhkrox' /*  */,
-                                )
-                              ],
-                              onChanged: (val) =>
-                                  setState(() => _model.dropDownValue3 = val),
-                              width: 300.0,
-                              height: 45.0,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .labelLarge
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelLargeFamily,
-                                    letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelLargeFamily),
+                          StreamBuilder<List<UnitTypeRecord>>(
+                            stream: queryUnitTypeRecord(),
+                            builder: (context, snapshot) {
+                              // Customize what your widget looks like when it's loading.
+                              if (!snapshot.hasData) {
+                                return Center(
+                                  child: SizedBox(
+                                    width: 40.0,
+                                    height: 40.0,
+                                    child: SpinKitFadingCircle(
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      size: 40.0,
+                                    ),
                                   ),
-                              icon: Icon(
-                                Icons.keyboard_arrow_down_rounded,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                size: 24.0,
-                              ),
-                              fillColor: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              elevation: 2.0,
-                              borderColor:
-                                  FlutterFlowTheme.of(context).customColor1,
-                              borderWidth: 1.0,
-                              borderRadius: 8.0,
-                              margin: EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 0.0, 16.0, 0.0),
-                              hidesUnderline: true,
-                              isOverButton: true,
-                              isSearchable: false,
-                              isMultiSelect: false,
-                              labelText: FFLocalizations.of(context).getText(
-                                'r3z1h5vn' /*  */,
-                              ),
-                              labelTextStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelMediumFamily,
-                                    letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelMediumFamily),
+                                );
+                              }
+                              List<UnitTypeRecord> containerUnitTypeRecordList =
+                                  snapshot.data!;
+
+                              return Container(
+                                decoration: BoxDecoration(),
+                                child: FlutterFlowDropDown<String>(
+                                  controller:
+                                      _model.dropDownValueController3 ??=
+                                          FormFieldController<String>(null),
+                                  options: [
+                                    FFLocalizations.of(context).getText(
+                                      'ocfhkrox' /*  */,
+                                    )
+                                  ],
+                                  onChanged: (val) => setState(
+                                      () => _model.dropDownValue3 = val),
+                                  width: 300.0,
+                                  height: 45.0,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .labelLarge
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelLargeFamily,
+                                        letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .labelLargeFamily),
+                                      ),
+                                  hintText: FFLocalizations.of(context).getText(
+                                    'knso4nb7' /* unit */,
                                   ),
-                            ),
+                                  icon: Icon(
+                                    Icons.keyboard_arrow_down_rounded,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    size: 24.0,
+                                  ),
+                                  fillColor: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  elevation: 2.0,
+                                  borderColor:
+                                      FlutterFlowTheme.of(context).customColor1,
+                                  borderWidth: 1.0,
+                                  borderRadius: 8.0,
+                                  margin: EdgeInsetsDirectional.fromSTEB(
+                                      16.0, 0.0, 16.0, 0.0),
+                                  hidesUnderline: true,
+                                  isOverButton: true,
+                                  isSearchable: false,
+                                  isMultiSelect: false,
+                                  labelText:
+                                      FFLocalizations.of(context).getText(
+                                    'r3z1h5vn' /*  */,
+                                  ),
+                                  labelTextStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelMediumFamily,
+                                        letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMediumFamily),
+                                      ),
+                                ),
+                              );
+                            },
                           ),
                         ],
                       ),
@@ -779,65 +907,93 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                   ),
                             ),
                           ),
-                          Container(
-                            decoration: BoxDecoration(),
-                            child: FlutterFlowDropDown<String>(
-                              controller: _model.dropDownValueController4 ??=
-                                  FormFieldController<String>(null),
-                              options: [
-                                FFLocalizations.of(context).getText(
-                                  'jra8ia1g' /*  */,
-                                )
-                              ],
-                              onChanged: (val) =>
-                                  setState(() => _model.dropDownValue4 = val),
-                              width: 300.0,
-                              height: 45.0,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .labelLarge
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelLargeFamily,
-                                    letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelLargeFamily),
-                                  ),
-                              icon: Icon(
-                                Icons.keyboard_arrow_down_rounded,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                size: 24.0,
-                              ),
-                              fillColor: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              elevation: 2.0,
-                              borderColor:
-                                  FlutterFlowTheme.of(context).customColor1,
-                              borderWidth: 1.0,
-                              borderRadius: 8.0,
-                              margin: EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 0.0, 16.0, 0.0),
-                              hidesUnderline: true,
-                              isOverButton: true,
-                              isSearchable: false,
-                              isMultiSelect: false,
-                              labelText: FFLocalizations.of(context).getText(
-                                '03r79h16' /*  */,
-                              ),
-                              labelTextStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .labelMediumFamily,
-                                    letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .labelMediumFamily),
-                                  ),
+                          StreamBuilder<List<ServicePointOutletRecord>>(
+                            stream: queryServicePointOutletRecord(
+                              parent: FFAppState().outletIdRef,
                             ),
+                            builder: (context, snapshot) {
+                              // Customize what your widget looks like when it's loading.
+                              if (!snapshot.hasData) {
+                                return Center(
+                                  child: SizedBox(
+                                    width: 40.0,
+                                    height: 40.0,
+                                    child: SpinKitFadingCircle(
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      size: 40.0,
+                                    ),
+                                  ),
+                                );
+                              }
+                              List<ServicePointOutletRecord>
+                                  containerServicePointOutletRecordList =
+                                  snapshot.data!;
+
+                              return Container(
+                                decoration: BoxDecoration(),
+                                child: FlutterFlowDropDown<String>(
+                                  controller:
+                                      _model.dropDownValueController4 ??=
+                                          FormFieldController<String>(null),
+                                  options: containerServicePointOutletRecordList
+                                      .map((e) => e.name)
+                                      .toList(),
+                                  onChanged: (val) => setState(
+                                      () => _model.dropDownValue4 = val),
+                                  width: 300.0,
+                                  height: 45.0,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .labelLarge
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelLargeFamily,
+                                        letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .labelLargeFamily),
+                                      ),
+                                  hintText: FFLocalizations.of(context).getText(
+                                    '34lmilw9' /* service point */,
+                                  ),
+                                  icon: Icon(
+                                    Icons.keyboard_arrow_down_rounded,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    size: 24.0,
+                                  ),
+                                  fillColor: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  elevation: 2.0,
+                                  borderColor:
+                                      FlutterFlowTheme.of(context).customColor1,
+                                  borderWidth: 1.0,
+                                  borderRadius: 8.0,
+                                  margin: EdgeInsetsDirectional.fromSTEB(
+                                      16.0, 0.0, 16.0, 0.0),
+                                  hidesUnderline: true,
+                                  isOverButton: true,
+                                  isSearchable: false,
+                                  isMultiSelect: false,
+                                  labelText:
+                                      FFLocalizations.of(context).getText(
+                                    '03r79h16' /*  */,
+                                  ),
+                                  labelTextStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelMediumFamily,
+                                        letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMediumFamily),
+                                      ),
+                                ),
+                              );
+                            },
                           ),
                         ],
                       ),
@@ -1116,6 +1272,9 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .labelMediumFamily),
                                     ),
+                                hintText: FFLocalizations.of(context).getText(
+                                  'rt9oev2q' /* hsn code */,
+                                ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -1233,6 +1392,9 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .labelMediumFamily),
                                     ),
+                                hintText: FFLocalizations.of(context).getText(
+                                  'f0mbgbvu' /* sell price */,
+                                ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -1343,6 +1505,9 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .labelMediumFamily),
                                     ),
+                                hintText: FFLocalizations.of(context).getText(
+                                  'do7xquli' /* purchase price */,
+                                ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -1453,6 +1618,9 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .labelMediumFamily),
                                     ),
+                                hintText: FFLocalizations.of(context).getText(
+                                  'q93xxdi9' /* mrp price */,
+                                ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -1570,6 +1738,9 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .labelMediumFamily),
                                     ),
+                                hintText: FFLocalizations.of(context).getText(
+                                  'swk3fitn' /* discount% */,
+                                ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -1680,6 +1851,9 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .labelMediumFamily),
                                     ),
+                                hintText: FFLocalizations.of(context).getText(
+                                  '58xulacq' /* discount Amt */,
+                                ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -1790,6 +1964,9 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .labelMediumFamily),
                                     ),
+                                hintText: FFLocalizations.of(context).getText(
+                                  'bsk483my' /* current Stock */,
+                                ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -1876,7 +2053,7 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                   FlutterFlowTheme.of(context).secondaryText,
                             ),
                             child: CheckboxListTile(
-                              value: _model.checkboxListTileValue1 ??= true,
+                              value: _model.checkboxListTileValue1 ??= false,
                               onChanged: (newValue) async {
                                 setState(() =>
                                     _model.checkboxListTileValue1 = newValue!);
@@ -1901,7 +2078,8 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                               tileColor: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
                               activeColor: FlutterFlowTheme.of(context).primary,
-                              checkColor: FlutterFlowTheme.of(context).info,
+                              checkColor: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
                               dense: false,
                               controlAffinity: ListTileControlAffinity.leading,
                             ),
@@ -1928,7 +2106,7 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                     FlutterFlowTheme.of(context).secondaryText,
                               ),
                               child: CheckboxListTile(
-                                value: _model.checkboxListTileValue2 ??= true,
+                                value: _model.checkboxListTileValue2 ??= false,
                                 onChanged: (newValue) async {
                                   setState(() => _model.checkboxListTileValue2 =
                                       newValue!);
@@ -1953,7 +2131,8 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                     .secondaryBackground,
                                 activeColor:
                                     FlutterFlowTheme.of(context).primary,
-                                checkColor: FlutterFlowTheme.of(context).info,
+                                checkColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
                                 dense: false,
                                 controlAffinity:
                                     ListTileControlAffinity.leading,
@@ -2491,8 +2670,83 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 35.0, 0.0, 0.0),
                 child: FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
+                  onPressed: () async {
+                    var _shouldSetState = false;
+                    if (_model.textController1.text != null &&
+                        _model.textController1.text != '') {
+                      if ((_model.textController7.text != null &&
+                              _model.textController7.text != '') &&
+                          (_model.dropDownValue1 != null &&
+                              _model.dropDownValue1 != '')) {
+                        FFAppState().updateProductHiveputStruct(
+                          (e) => e
+                            ..price =
+                                double.tryParse(_model.textController7.text)
+                            ..category = _model.dropDownValue1
+                            ..code = random_data.randomInteger(0, 1000)
+                            ..name = _model.textController1.text
+                            ..sellingPrice =
+                                double.tryParse(_model.textController7.text)
+                            ..mrpPrice =
+                                double.tryParse(_model.textController9.text)
+                            ..purchasePrice =
+                                double.tryParse(_model.textController8.text)
+                            ..regionalName = _model.textController2.text
+                            ..barcode = _model.textController3.text
+                            ..hsncode =
+                                int.tryParse(_model.textController6.text)
+                            ..searchcode =
+                                int.tryParse(_model.textController4.text)
+                            ..shortName = _model.textController5.text
+                            ..weightable = _model.checkboxListTileValue1
+                            ..stockable = _model.checkboxListTileValue2
+                            ..discountPer =
+                                double.tryParse(_model.textController10.text)
+                            ..discountAmt =
+                                double.tryParse(_model.textController11.text)
+                            ..isDeleted = false
+                            ..synC = false
+                            ..version = FFAppState().productStructVersion,
+                        );
+                        setState(() {});
+                        _model.createddocument = await actions.hiveProductCrud(
+                          9999,
+                          FFAppState().productHiveput,
+                          'create',
+                        );
+                        _shouldSetState = true;
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              'Product Added  Successfully...!',
+                              style: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .titleSmallFamily,
+                                    color: Color(0x00000000),
+                                    letterSpacing: 0.0,
+                                    useGoogleFonts: GoogleFonts.asMap()
+                                        .containsKey(
+                                            FlutterFlowTheme.of(context)
+                                                .titleSmallFamily),
+                                  ),
+                            ),
+                            duration: Duration(milliseconds: 3000),
+                            backgroundColor: Color(0x00000000),
+                          ),
+                        );
+                        Navigator.pop(context);
+                      } else {
+                        if (_shouldSetState) setState(() {});
+                        return;
+                      }
+                    } else {
+                      if (_shouldSetState) setState(() {});
+                      return;
+                    }
+
+                    if (_shouldSetState) setState(() {});
                   },
                   text: FFLocalizations.of(context).getText(
                     'g5p1i9g0' /* Submit */,

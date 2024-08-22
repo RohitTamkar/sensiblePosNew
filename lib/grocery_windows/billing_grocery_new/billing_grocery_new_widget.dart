@@ -7,10 +7,11 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/grocery_windows/add_customer_grocery/add_customer_grocery_widget.dart';
+import '/grocery_windows/add_product_grocery/add_product_grocery_widget.dart';
 import '/grocery_windows/grocery/grocery_widget.dart';
 import '/grocery_windows/grocery_header/grocery_header_widget.dart';
 import '/grocery_windows/payment_mode_grocery/payment_mode_grocery_widget.dart';
-import '/grocery_windows/spplier_gro/spplier_gro_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
@@ -733,7 +734,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                             .viewInsetsOf(
                                                                 context),
                                                         child:
-                                                            SpplierGroWidget(),
+                                                            AddCustomerGroceryWidget(),
                                                       ),
                                                     );
                                                   },
@@ -952,11 +953,11 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                               ),
                                             ),
                                             Expanded(
-                                              flex: 3,
+                                              flex: 2,
                                               child: Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        0.0, 0.0, 15.0, 0.0),
+                                                        0.0, 0.0, 8.0, 0.0),
                                                 child: TextFormField(
                                                   controller: _model
                                                       .custmobTextController,
@@ -1409,27 +1410,6 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                 ),
                                               ),
                                             ),
-                                            FlutterFlowIconButton(
-                                              borderColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .customColor1,
-                                              borderRadius: 5.0,
-                                              borderWidth: 1.0,
-                                              buttonSize: 35.0,
-                                              fillColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .tertiary,
-                                              icon: Icon(
-                                                Icons.add,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                size: 18.0,
-                                              ),
-                                              onPressed: () {
-                                                print('IconButton pressed ...');
-                                              },
-                                            ),
                                           ],
                                         ),
                                       ),
@@ -1546,8 +1526,28 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                 size: 18.0,
                                               ),
                                               onPressed: () async {
-                                                context.pushNamed(
-                                                    'AddProductNewPos');
+                                                await showModalBottomSheet(
+                                                  isScrollControlled: true,
+                                                  backgroundColor:
+                                                      Colors.transparent,
+                                                  enableDrag: false,
+                                                  context: context,
+                                                  builder: (context) {
+                                                    return GestureDetector(
+                                                      onTap: () =>
+                                                          FocusScope.of(context)
+                                                              .unfocus(),
+                                                      child: Padding(
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
+                                                        child:
+                                                            AddProductGroceryWidget(),
+                                                      ),
+                                                    );
+                                                  },
+                                                ).then((value) =>
+                                                    safeSetState(() {}));
                                               },
                                             ),
                                           ),

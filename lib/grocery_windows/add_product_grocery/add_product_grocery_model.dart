@@ -1,9 +1,13 @@
+import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/random_data_util.dart' as random_data;
 import 'add_product_grocery_widget.dart' show AddProductGroceryWidget;
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -93,6 +97,8 @@ class AddProductGroceryModel extends FlutterFlowModel<AddProductGroceryWidget> {
   FocusNode? textFieldFocusNode16;
   TextEditingController? textController16;
   String? Function(BuildContext, String?)? textController16Validator;
+  // Stores action output result for [Custom Action - hiveProductCrud] action in Button widget.
+  ProductStructStruct? createddocument;
 
   @override
   void initState(BuildContext context) {}

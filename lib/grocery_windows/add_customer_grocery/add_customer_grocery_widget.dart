@@ -1,9 +1,12 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -111,6 +114,8 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Align(
       alignment: AlignmentDirectional(0.0, 0.0),
       child: Container(
@@ -155,7 +160,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                         size: 24.0,
                       ),
                       onPressed: () async {
-                        context.pushNamed('PurchaseGrocery');
+                        Navigator.pop(context);
                       },
                     ),
                   ],
@@ -258,6 +263,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                               context)
                                                           .labelMediumFamily),
                                             ),
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'p32m4xv3' /* name */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -383,6 +392,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                               context)
                                                           .labelMediumFamily),
                                             ),
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'pct94fjg' /* mobile */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -508,6 +521,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                               context)
                                                           .labelMediumFamily),
                                             ),
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          '37v2ugjq' /* alt Mobile */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -641,6 +658,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                               context)
                                                           .labelMediumFamily),
                                             ),
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'n8os09rd' /* email */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -766,6 +787,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                               context)
                                                           .labelMediumFamily),
                                             ),
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'oknjghn3' /* ref name */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -891,6 +916,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                               context)
                                                           .labelMediumFamily),
                                             ),
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          '7ir946di' /* Vechicle No */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -1059,6 +1088,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                               context)
                                                           .labelMediumFamily),
                                             ),
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          '54zxz9tm' /* Adhaar */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -1184,6 +1217,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                               context)
                                                           .labelMediumFamily),
                                             ),
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'jb7lpobi' /* Pan */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -1309,6 +1346,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                               context)
                                                           .labelMediumFamily),
                                             ),
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'dl67v3op' /* gst no */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -1425,7 +1466,13 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                             FormFieldController<String>(null),
                                     options: [
                                       FFLocalizations.of(context).getText(
-                                        'grwd8vg1' /* Option 1 */,
+                                        'grwd8vg1' /* Adhaar */,
+                                      ),
+                                      FFLocalizations.of(context).getText(
+                                        'v1kwn68k' /* Pan card */,
+                                      ),
+                                      FFLocalizations.of(context).getText(
+                                        '8icqh8e5' /* Driving licensc */,
                                       )
                                     ],
                                     onChanged: (val) => setState(
@@ -1444,6 +1491,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .labelSmallFamily),
                                         ),
+                                    hintText:
+                                        FFLocalizations.of(context).getText(
+                                      '4vatx29i' /* proof */,
+                                    ),
                                     icon: Icon(
                                       Icons.keyboard_arrow_down_rounded,
                                       color: FlutterFlowTheme.of(context)
@@ -1575,6 +1626,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                               context)
                                                           .labelMediumFamily),
                                             ),
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'sqlc0ubc' /* card limit */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -1701,6 +1756,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                               context)
                                                           .labelMediumFamily),
                                             ),
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'uz6a1u3f' /* old balance */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -1827,6 +1886,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                               context)
                                                           .labelMediumFamily),
                                             ),
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'wslijmld' /* credit */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -1996,6 +2059,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                               context)
                                                           .labelMediumFamily),
                                             ),
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'xj8ngzcl' /* birthdate */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -2122,6 +2189,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                               context)
                                                           .labelMediumFamily),
                                             ),
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'jxrpbyl6' /* anniversery */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -2248,6 +2319,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                               context)
                                                           .labelMediumFamily),
                                             ),
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'pdacm8dn' /* firmname */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -2382,6 +2457,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                               context)
                                                           .labelMediumFamily),
                                             ),
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          '1y4bi91g' /* extra details */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -2494,7 +2573,13 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                             FormFieldController<String>(null),
                                     options: [
                                       FFLocalizations.of(context).getText(
-                                        '6r6i1avs' /* Option 1 */,
+                                        '6r6i1avs' /* Male */,
+                                      ),
+                                      FFLocalizations.of(context).getText(
+                                        'okb6k1kf' /* Female */,
+                                      ),
+                                      FFLocalizations.of(context).getText(
+                                        'injbzbys' /* Other */,
                                       )
                                     ],
                                     onChanged: (val) => setState(
@@ -2513,6 +2598,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .labelSmallFamily),
                                         ),
+                                    hintText:
+                                        FFLocalizations.of(context).getText(
+                                      'ikkk99lv' /* Gender */,
+                                    ),
                                     icon: Icon(
                                       Icons.keyboard_arrow_down_rounded,
                                       color: FlutterFlowTheme.of(context)
@@ -2587,6 +2676,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                               context)
                                                           .labelMediumFamily),
                                             ),
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'peepo14n' /* family size */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -2721,6 +2814,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                               context)
                                                           .labelMediumFamily),
                                             ),
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          '10gf827p' /* address */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -2847,6 +2944,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                               context)
                                                           .labelMediumFamily),
                                             ),
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'v00bmzi3' /* city */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -2973,6 +3074,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                               context)
                                                           .labelMediumFamily),
                                             ),
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'v9i2ng8h' /* postalcode */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -3107,6 +3212,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                               context)
                                                           .labelMediumFamily),
                                             ),
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'uhg4dtiw' /* first visit */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -3233,6 +3342,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                               context)
                                                           .labelMediumFamily),
                                             ),
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'psz3biu6' /* last visit */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -3364,6 +3477,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .labelSmallFamily),
                                         ),
+                                    hintText:
+                                        FFLocalizations.of(context).getText(
+                                      'v84rwzkf' /* type */,
+                                    ),
                                     icon: Icon(
                                       Icons.keyboard_arrow_down_rounded,
                                       color: FlutterFlowTheme.of(context)
@@ -3394,8 +3511,160 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                         padding: EdgeInsetsDirectional.fromSTEB(
                             0.0, 25.0, 0.0, 25.0),
                         child: FFButtonWidget(
-                          onPressed: () {
-                            print('Button pressed ...');
+                          onPressed: () async {
+                            var _shouldSetState = false;
+                            if (_model.textController1.text != null &&
+                                _model.textController1.text != '') {
+                              if (_model.textController2.text != null &&
+                                  _model.textController2.text != '') {
+                                var partyRecordReference =
+                                    PartyRecord.createDoc(
+                                        FFAppState().outletIdRef!);
+                                await partyRecordReference
+                                    .set(createPartyRecordData(
+                                  name: _model.textController1.text,
+                                  mobile: _model.textController2.text,
+                                  alternateNumber: _model.textController3.text,
+                                  email: _model.textController4.text,
+                                  refName: _model.textController5.text,
+                                  adharCardNo: _model.textController7.text,
+                                  vehicleNo: _model.textController6.text,
+                                  panCardNo: _model.textController8.text,
+                                  gstNo: _model.textController9.text,
+                                  address: _model.textController18.text,
+                                  proofOfIdentity: _model.dropDownValue1,
+                                  creditLimit: int.tryParse(
+                                      _model.textController10.text),
+                                  oldBalance: int.tryParse(
+                                      _model.textController11.text),
+                                  birthday: _model.textController13.text,
+                                  anniversary: _model.textController14.text,
+                                  firmName: _model.textController15.text,
+                                  familySize: int.tryParse(
+                                      _model.textController17.text),
+                                  city: _model.textController19.text,
+                                  credit: /* NOT RECOMMENDED */
+                                      _model.textController12.text == 'true',
+                                  postalCode: _model.textController20.text,
+                                  extraDetails: _model.textController16.text,
+                                  gender: _model.dropDownValue2,
+                                  role: 'CUSTOMER',
+                                  type: _model.dropDownValue3,
+                                  firstVisit: _model.textController21.text,
+                                  lastVisit: _model.textController22.text,
+                                ));
+                                _model.custDoc =
+                                    PartyRecord.getDocumentFromData(
+                                        createPartyRecordData(
+                                          name: _model.textController1.text,
+                                          mobile: _model.textController2.text,
+                                          alternateNumber:
+                                              _model.textController3.text,
+                                          email: _model.textController4.text,
+                                          refName: _model.textController5.text,
+                                          adharCardNo:
+                                              _model.textController7.text,
+                                          vehicleNo:
+                                              _model.textController6.text,
+                                          panCardNo:
+                                              _model.textController8.text,
+                                          gstNo: _model.textController9.text,
+                                          address: _model.textController18.text,
+                                          proofOfIdentity:
+                                              _model.dropDownValue1,
+                                          creditLimit: int.tryParse(
+                                              _model.textController10.text),
+                                          oldBalance: int.tryParse(
+                                              _model.textController11.text),
+                                          birthday:
+                                              _model.textController13.text,
+                                          anniversary:
+                                              _model.textController14.text,
+                                          firmName:
+                                              _model.textController15.text,
+                                          familySize: int.tryParse(
+                                              _model.textController17.text),
+                                          city: _model.textController19.text,
+                                          credit: /* NOT RECOMMENDED */
+                                              _model.textController12.text ==
+                                                  'true',
+                                          postalCode:
+                                              _model.textController20.text,
+                                          extraDetails:
+                                              _model.textController16.text,
+                                          gender: _model.dropDownValue2,
+                                          role: 'CUSTOMER',
+                                          type: _model.dropDownValue3,
+                                          firstVisit:
+                                              _model.textController21.text,
+                                          lastVisit:
+                                              _model.textController22.text,
+                                        ),
+                                        partyRecordReference);
+                                _shouldSetState = true;
+
+                                await _model.custDoc!.reference
+                                    .update(createPartyRecordData(
+                                  id: _model.custDoc?.reference.id,
+                                ));
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      'Customer added Successfully...!',
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmallFamily,
+                                            color: Color(0x00000000),
+                                            letterSpacing: 0.0,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmallFamily),
+                                          ),
+                                    ),
+                                    duration: Duration(milliseconds: 3000),
+                                    backgroundColor:
+                                        FlutterFlowTheme.of(context).alternate,
+                                  ),
+                                );
+                                setState(() {
+                                  _model.textController1?.clear();
+                                  _model.textController2?.clear();
+                                  _model.textController3?.clear();
+                                  _model.textController4?.clear();
+                                  _model.textController5?.clear();
+                                  _model.textController6?.clear();
+                                  _model.textController7?.clear();
+                                  _model.textController9?.clear();
+                                  _model.textController10?.clear();
+                                  _model.textController8?.clear();
+                                  _model.textController11?.clear();
+                                  _model.textController14?.clear();
+                                  _model.textController13?.clear();
+                                  _model.textController16?.clear();
+                                  _model.textController12?.clear();
+                                  _model.textController17?.clear();
+                                  _model.textController21?.clear();
+                                  _model.textController15?.clear();
+                                  _model.textController19?.clear();
+                                  _model.textController22?.clear();
+                                  _model.textController18?.clear();
+                                  _model.textController20?.clear();
+                                });
+                                context.pop();
+                              } else {
+                                if (_shouldSetState) setState(() {});
+                                return;
+                              }
+                            } else {
+                              if (_shouldSetState) setState(() {});
+                              return;
+                            }
+
+                            if (_shouldSetState) setState(() {});
                           },
                           text: FFLocalizations.of(context).getText(
                             '1rpgsm22' /* Submit */,

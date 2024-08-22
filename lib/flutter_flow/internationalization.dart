@@ -23638,8 +23638,22 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
+    'cy68tpu8': {
+      'en': '*',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
     'd687yq5k': {
       'en': '',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '980giq6z': {
+      'en': 'name',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -23659,6 +23673,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
+    '6agv6pb9': {
+      'en': 'regional name',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
     'cn0weuoy': {
       'en': 'Barcode',
       'hi': '',
@@ -23668,6 +23689,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'fffg8fb5': {
       'en': '',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '4w3cocyt': {
+      'en': 'barcode',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -23695,7 +23723,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     'ccvt5ax1': {
-      'en': '',
+      'en': 'category',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -23737,7 +23765,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     'oqa1y46t': {
-      'en': '',
+      'en': 'gst',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -23779,7 +23807,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     'knso4nb7': {
-      'en': '',
+      'en': 'unit',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -23821,7 +23849,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     '34lmilw9': {
-      'en': '',
+      'en': 'service point',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -23855,6 +23883,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
+    '2op17m4y': {
+      'en': 'search code',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
     'lud6dgn8': {
       'en': 'Short Name',
       'hi': '',
@@ -23864,6 +23899,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'sz0lj4cz': {
       'en': '',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'pcgsayyu': {
+      'en': 'short name',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -23883,6 +23925,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
+    'rt9oev2q': {
+      'en': 'hsn code',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
     'j8oy52tw': {
       'en': 'Selling Price',
       'hi': '',
@@ -23892,6 +23941,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '9sfy6rue': {
       'en': '',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'f0mbgbvu': {
+      'en': 'sell price',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -23911,6 +23967,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
+    'do7xquli': {
+      'en': 'purchase price',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
     'epya0mpe': {
       'en': 'MRP Price',
       'hi': '',
@@ -23920,6 +23983,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'myjnzyw0': {
       'en': '',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'q93xxdi9': {
+      'en': 'mrp price',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -23939,6 +24009,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
+    'swk3fitn': {
+      'en': 'discount%',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
     'zfahmfvy': {
       'en': 'Discount Amount',
       'hi': '',
@@ -23953,6 +24030,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
+    '58xulacq': {
+      'en': 'discount Amt',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
     'k4uua30k': {
       'en': 'Current Stock',
       'hi': '',
@@ -23962,6 +24046,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'pbw7ugnw': {
       'en': '',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'bsk483my': {
+      'en': 'current Stock',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -24246,6 +24337,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
+    'p32m4xv3': {
+      'en': 'name',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
     'f0ajnwwh': {
       'en': 'Mobile',
       'hi': '',
@@ -24255,6 +24353,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'e3vuvyqz': {
       'en': '',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'pct94fjg': {
+      'en': 'mobile',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -24274,6 +24379,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
+    '37v2ugjq': {
+      'en': 'alt Mobile',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
     '4l7f6b7g': {
       'en': 'Email',
       'hi': '',
@@ -24283,6 +24395,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'nc9wisdf': {
       'en': '',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'n8os09rd': {
+      'en': 'email',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -24302,6 +24421,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
+    'oknjghn3': {
+      'en': 'ref name',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
     '6oq1hjtd': {
       'en': 'Vehicle Number',
       'hi': '',
@@ -24311,6 +24437,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '5k76vegs': {
       'en': '',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '7ir946di': {
+      'en': 'Vechicle No',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -24337,6 +24470,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
+    '54zxz9tm': {
+      'en': 'Adhaar',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
     'oojopt82': {
       'en': 'PAN Card',
       'hi': '',
@@ -24346,6 +24486,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'u6rtuvos': {
       'en': '',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'jb7lpobi': {
+      'en': 'Pan',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -24365,6 +24512,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
+    'dl67v3op': {
+      'en': 'gst no',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
     'yzk7nusb': {
       'en': 'Proof of Identity',
       'hi': '',
@@ -24373,14 +24527,28 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     'grwd8vg1': {
-      'en': 'Option 1',
+      'en': 'Adhaar',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'v1kwn68k': {
+      'en': 'Pan card',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '8icqh8e5': {
+      'en': 'Driving licensc',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
     '4vatx29i': {
-      'en': '',
+      'en': 'proof',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -24414,6 +24582,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
+    'sqlc0ubc': {
+      'en': 'card limit',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
     '29wz6ki5': {
       'en': 'Old Balance',
       'hi': '',
@@ -24428,6 +24603,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
+    'uz6a1u3f': {
+      'en': 'old balance',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
     'ftqbycb4': {
       'en': 'Credit',
       'hi': '',
@@ -24437,6 +24619,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ujptxi8d': {
       'en': '',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'wslijmld': {
+      'en': 'credit',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -24463,6 +24652,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
+    'xj8ngzcl': {
+      'en': 'birthdate',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
     'u3u1wc2h': {
       'en': 'Anniversary',
       'hi': '',
@@ -24472,6 +24668,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ag2hf5jh': {
       'en': '',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'jxrpbyl6': {
+      'en': 'anniversery',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -24491,6 +24694,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
+    'pdacm8dn': {
+      'en': 'firmname',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
     'hvk9m21r': {
       'en': 'Extra Detail',
       'hi': '',
@@ -24505,6 +24715,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
+    '1y4bi91g': {
+      'en': 'extra details',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
     'g7rc52ly': {
       'en': 'Gender',
       'hi': '',
@@ -24513,14 +24730,28 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     '6r6i1avs': {
-      'en': 'Option 1',
+      'en': 'Male',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'okb6k1kf': {
+      'en': 'Female',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'injbzbys': {
+      'en': 'Other',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
     'ikkk99lv': {
-      'en': '',
+      'en': 'Gender',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -24547,6 +24778,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
+    'peepo14n': {
+      'en': 'family size',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
     'gne0c9xi': {
       'en': 'Address',
       'hi': '',
@@ -24556,6 +24794,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'bm0hq44q': {
       'en': '',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '10gf827p': {
+      'en': 'address',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -24575,6 +24820,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
+    'v00bmzi3': {
+      'en': 'city',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
     'd4ehcq9i': {
       'en': 'Postal Code',
       'hi': '',
@@ -24584,6 +24836,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'rbdhn8q7': {
       'en': '',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'v9i2ng8h': {
+      'en': 'postalcode',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -24603,6 +24862,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
+    'uhg4dtiw': {
+      'en': 'first visit',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
     'l2fu23bp': {
       'en': 'Last Visit',
       'hi': '',
@@ -24612,6 +24878,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ywwro7y0': {
       'en': '',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'psz3biu6': {
+      'en': 'last visit',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -24632,7 +24905,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     'v84rwzkf': {
-      'en': '',
+      'en': 'type',
       'hi': '',
       'kn': '',
       'mr': '',
