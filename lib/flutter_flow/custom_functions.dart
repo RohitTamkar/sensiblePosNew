@@ -1133,3 +1133,14 @@ DateTime dateinmilli(int dateinmillisecond) {
   // convert dateinmillisecond to datetime
   return DateTime.fromMillisecondsSinceEpoch(dateinmillisecond);
 }
+
+int jsontoint(dynamic json) {
+  // convert jsonvalue to int
+  if (json is int) {
+    return json;
+  } else if (json is String) {
+    return int.parse(json);
+  } else {
+    return 0;
+  }
+}

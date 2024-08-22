@@ -1410,8 +1410,8 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                               onPressed: () async {
                                                                                 var _shouldSetState = false;
                                                                                 if (widget!.appsetting!.settingList.where((e) => e.title == 'enableStock').toList().first.value) {
-                                                                                  if (kioskBillScreenVarItem.currentStock <=
-                                                                                      valueOrDefault<int>(
+                                                                                  if (kioskBillScreenVarItem.currentStock >
+                                                                                      functions.doubleToInt(valueOrDefault<double>(
                                                                                         getJsonField(
                                                                                           functions
                                                                                               .filterBillList(FFAppState().selBill, FFAppState().allBillsList.toList())
@@ -1428,8 +1428,53 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                                               .first,
                                                                                           r'''$.quantity''',
                                                                                         ),
-                                                                                        0,
-                                                                                      )) {
+                                                                                        0.0,
+                                                                                      ))!) {
+                                                                                    FFAppState().qty = FFAppState().qty + 1.0;
+                                                                                    setState(() {});
+                                                                                    _model.kioskresult = await actions.plusQuantityHoldListkiosk(
+                                                                                      functions
+                                                                                          .filterBillList(FFAppState().selBill, FFAppState().allBillsList.toList())
+                                                                                          .where((e) =>
+                                                                                              kioskBillScreenVarItem.id ==
+                                                                                              valueOrDefault<String>(
+                                                                                                getJsonField(
+                                                                                                  e,
+                                                                                                  r'''$.id''',
+                                                                                                )?.toString(),
+                                                                                                '0',
+                                                                                              ))
+                                                                                          .toList()
+                                                                                          .first,
+                                                                                      FFAppState().selBill,
+                                                                                      widget!.taxcollection!.toList(),
+                                                                                      functions.enabletaxinclusive(valueOrDefault<bool>(
+                                                                                        widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.first?.value,
+                                                                                        false,
+                                                                                      )),
+                                                                                    );
+                                                                                    _shouldSetState = true;
+                                                                                    _model.res234 = await actions.calSubTotalForHoldListkiosk(
+                                                                                      valueOrDefault<String>(
+                                                                                        FFAppState().selBill.toString(),
+                                                                                        '1',
+                                                                                      ),
+                                                                                      FFAppState().allBillsList.toList(),
+                                                                                      functions.enabletaxinclusive(valueOrDefault<bool>(
+                                                                                        widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.first?.value,
+                                                                                        false,
+                                                                                      )),
+                                                                                    );
+                                                                                    _shouldSetState = true;
+                                                                                    _model.reuslt12 = await actions.calBillAmt(
+                                                                                      valueOrDefault<double>(
+                                                                                        FFAppState().disAmt,
+                                                                                        0.0,
+                                                                                      ),
+                                                                                      FFAppState().delCharges,
+                                                                                    );
+                                                                                    _shouldSetState = true;
+                                                                                  } else {
                                                                                     await showDialog(
                                                                                       context: context,
                                                                                       builder: (alertDialogContext) {
@@ -1448,50 +1493,6 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                                     return;
                                                                                   }
                                                                                 }
-                                                                                FFAppState().qty = FFAppState().qty + 1.0;
-                                                                                setState(() {});
-                                                                                _model.kioskresult = await actions.plusQuantityHoldListkiosk(
-                                                                                  functions
-                                                                                      .filterBillList(FFAppState().selBill, FFAppState().allBillsList.toList())
-                                                                                      .where((e) =>
-                                                                                          kioskBillScreenVarItem.id ==
-                                                                                          valueOrDefault<String>(
-                                                                                            getJsonField(
-                                                                                              e,
-                                                                                              r'''$.id''',
-                                                                                            )?.toString(),
-                                                                                            '0',
-                                                                                          ))
-                                                                                      .toList()
-                                                                                      .first,
-                                                                                  FFAppState().selBill,
-                                                                                  widget!.taxcollection!.toList(),
-                                                                                  functions.enabletaxinclusive(valueOrDefault<bool>(
-                                                                                    widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.first?.value,
-                                                                                    false,
-                                                                                  )),
-                                                                                );
-                                                                                _shouldSetState = true;
-                                                                                _model.res234 = await actions.calSubTotalForHoldListkiosk(
-                                                                                  valueOrDefault<String>(
-                                                                                    FFAppState().selBill.toString(),
-                                                                                    '1',
-                                                                                  ),
-                                                                                  FFAppState().allBillsList.toList(),
-                                                                                  functions.enabletaxinclusive(valueOrDefault<bool>(
-                                                                                    widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.first?.value,
-                                                                                    false,
-                                                                                  )),
-                                                                                );
-                                                                                _shouldSetState = true;
-                                                                                _model.reuslt12 = await actions.calBillAmt(
-                                                                                  valueOrDefault<double>(
-                                                                                    FFAppState().disAmt,
-                                                                                    0.0,
-                                                                                  ),
-                                                                                  FFAppState().delCharges,
-                                                                                );
-                                                                                _shouldSetState = true;
                                                                                 if (_shouldSetState) setState(() {});
                                                                               },
                                                                             ),

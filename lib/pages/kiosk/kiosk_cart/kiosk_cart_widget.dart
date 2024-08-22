@@ -6,7 +6,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/kiosk/kiosk_header/kiosk_header_widget.dart';
-import '/backend/schema/structs/index.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -675,15 +674,14 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                     onPressed: () async {
                                                                                       var _shouldSetState = false;
                                                                                       if (widget!.appsetting!.settingList.where((e) => e.title == 'enableStock').toList().first.value) {
-                                                                                        if (ProductStructStruct.maybeFromMap(getJsonField(
+                                                                                        if (functions.jsontoint(getJsonField(
                                                                                               listviewItem,
                                                                                               r'''$.currentStock''',
-                                                                                            ))!
-                                                                                                .stock <=
-                                                                                            getJsonField(
+                                                                                            )) <=
+                                                                                            functions.jsontoint(getJsonField(
                                                                                               listviewItem,
                                                                                               r'''$.quantity''',
-                                                                                            )) {
+                                                                                            ))) {
                                                                                           await showDialog(
                                                                                             context: context,
                                                                                             builder: (alertDialogContext) {
