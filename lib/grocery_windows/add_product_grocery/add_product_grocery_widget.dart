@@ -817,11 +817,9 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                   controller:
                                       _model.dropDownValueController3 ??=
                                           FormFieldController<String>(null),
-                                  options: [
-                                    FFLocalizations.of(context).getText(
-                                      'ocfhkrox' /*  */,
-                                    )
-                                  ],
+                                  options: containerUnitTypeRecordList
+                                      .map((e) => e.name)
+                                      .toList(),
                                   onChanged: (val) => setState(
                                       () => _model.dropDownValue3 = val),
                                   width: 300.0,
