@@ -165,6 +165,40 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
               .update(createInvoiceRecordData(
             id: _model.docInvoicekiosk?.reference.id,
           ));
+          if (widget!.appsetting!.settingList
+              .where((e) => e.title == 'enableStock')
+              .toList()
+              .first
+              .value) {
+            _model.prddocstck = await queryProductRecordOnce(
+              parent: FFAppState().outletIdRef,
+              queryBuilder: (productRecord) => productRecord.where(
+                'currentStock',
+                isGreaterThan: 0,
+              ),
+            );
+            FFAppState().startLoop = 0;
+            setState(() {});
+            while (FFAppState().startLoop < _model.prddocstck!.length) {
+              await _model.prddocstck![FFAppState().startLoop].reference
+                  .update({
+                ...mapToFirestore(
+                  {
+                    'currentStock': FieldValue.increment(
+                        -(functions.doubleToInt(_model.prdListkiosk
+                            ?.where((e) =>
+                                e.id ==
+                                _model.prddocstck?[FFAppState().startLoop]?.id)
+                            .toList()
+                            ?.first
+                            ?.quantity)!)),
+                  },
+                ),
+              });
+              FFAppState().startLoop = FFAppState().startLoop + 1;
+              setState(() {});
+            }
+          }
           if (getJsonField(
             widget!.shiftdetails,
             r'''$.shiftExists''',
