@@ -674,14 +674,46 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                     onPressed: () async {
                                                                                       var _shouldSetState = false;
                                                                                       if (widget!.appsetting!.settingList.where((e) => e.title == 'enableStock').toList().first.value) {
-                                                                                        if (functions.jsontoint(getJsonField(
+                                                                                        if (!functions.greatethanlesskiosk(
+                                                                                            functions.jsontoint(getJsonField(
                                                                                               listviewItem,
                                                                                               r'''$.currentStock''',
-                                                                                            )) <=
+                                                                                            )),
                                                                                             functions.jsontoint(getJsonField(
                                                                                               listviewItem,
                                                                                               r'''$.quantity''',
-                                                                                            ))) {
+                                                                                            )))) {
+                                                                                          await showDialog(
+                                                                                            context: context,
+                                                                                            builder: (alertDialogContext) {
+                                                                                              return AlertDialog(
+                                                                                                title: Text(valueOrDefault<String>(
+                                                                                                  functions
+                                                                                                      .jsontoint(getJsonField(
+                                                                                                        listviewItem,
+                                                                                                        r'''$.currentStock''',
+                                                                                                      ))
+                                                                                                      .toString(),
+                                                                                                  '0',
+                                                                                                )),
+                                                                                                content: Text(valueOrDefault<String>(
+                                                                                                  functions
+                                                                                                      .jsontoint(getJsonField(
+                                                                                                        listviewItem,
+                                                                                                        r'''$.quantity''',
+                                                                                                      ))
+                                                                                                      .toString(),
+                                                                                                  '0',
+                                                                                                )),
+                                                                                                actions: [
+                                                                                                  TextButton(
+                                                                                                    onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                                    child: Text('Ok'),
+                                                                                                  ),
+                                                                                                ],
+                                                                                              );
+                                                                                            },
+                                                                                          );
                                                                                           await showDialog(
                                                                                             context: context,
                                                                                             builder: (alertDialogContext) {

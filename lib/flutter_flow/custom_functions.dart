@@ -1135,12 +1135,26 @@ DateTime dateinmilli(int dateinmillisecond) {
 }
 
 int jsontoint(dynamic json) {
-  // convert jsonvalue to int
   if (json is int) {
     return json;
   } else if (json is String) {
-    return int.parse(json);
+    return int.tryParse(json) ?? 0; // Safely parse string to int
+  } else if (json is double) {
+    return json.toInt(); // Convert double to int
   } else {
     return 0;
   }
+}
+
+bool greatethanlesskiosk(
+  int first,
+  int secont,
+) {
+  bool val = false;
+  if (first > secont) {
+    val = true;
+  } else {
+    val = false;
+  }
+  return val;
 }
