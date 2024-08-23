@@ -462,6 +462,21 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                   size: 30.0,
                                                 ),
                                                 onPressed: () async {
+                                                  _model.appsettingresfresh =
+                                                      await queryAppSettingsRecordOnce(
+                                                    parent: FFAppState()
+                                                        .outletIdRef,
+                                                    queryBuilder:
+                                                        (appSettingsRecord) =>
+                                                            appSettingsRecord
+                                                                .where(
+                                                      'deviceId',
+                                                      isEqualTo:
+                                                          FFAppState().dId,
+                                                    ),
+                                                    singleRecord: true,
+                                                  ).then((s) => s.firstOrNull);
+
                                                   context.pushNamed(
                                                     'KioskBillScreen',
                                                     queryParameters: {
@@ -477,7 +492,8 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                       ),
                                                       'appsetting':
                                                           serializeParam(
-                                                        widget!.appsetting,
+                                                        _model
+                                                            .appsettingresfresh,
                                                         ParamType.Document,
                                                       ),
                                                       'taxcollection':
@@ -488,12 +504,14 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                       ),
                                                     }.withoutNulls,
                                                     extra: <String, dynamic>{
-                                                      'appsetting':
-                                                          widget!.appsetting,
+                                                      'appsetting': _model
+                                                          .appsettingresfresh,
                                                       'taxcollection':
                                                           widget!.taxcollection,
                                                     },
                                                   );
+
+                                                  setState(() {});
                                                 },
                                               ),
                                               FlutterFlowIconButton(

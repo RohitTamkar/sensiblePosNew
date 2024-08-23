@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -8,6 +9,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/random_data_util.dart' as random_data;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -2723,6 +2725,62 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                           FFAppState().productHiveput,
                           'create',
                         );
+                        _shouldSetState = true;
+
+                        var productRecordReference =
+                            ProductRecord.createDoc(FFAppState().outletIdRef!);
+                        await productRecordReference
+                            .set(createProductRecordData(
+                          name: _model.textController1.text,
+                          regionalName: _model.textController2.text,
+                          searchcode: int.tryParse(_model.textController4.text),
+                          shortName: _model.textController5.text,
+                          hsncode: int.tryParse(_model.textController6.text),
+                          price: double.tryParse(_model.textController9.text),
+                          sellingPrice:
+                              double.tryParse(_model.textController7.text),
+                          purchasePrice:
+                              double.tryParse(_model.textController8.text),
+                          mrpPrice:
+                              double.tryParse(_model.textController9.text),
+                          discountPer:
+                              double.tryParse(_model.textController10.text),
+                          discountAmt:
+                              double.tryParse(_model.textController11.text),
+                          stockable: _model.checkboxListTileValue1,
+                          weightable: _model.checkboxListTileValue2,
+                          code: int.tryParse(_model.textController4.text),
+                          barcode: _model.textController3.text,
+                          category: _model.dropDownValue1,
+                        ));
+                        _model.proDoc = ProductRecord.getDocumentFromData(
+                            createProductRecordData(
+                              name: _model.textController1.text,
+                              regionalName: _model.textController2.text,
+                              searchcode:
+                                  int.tryParse(_model.textController4.text),
+                              shortName: _model.textController5.text,
+                              hsncode:
+                                  int.tryParse(_model.textController6.text),
+                              price:
+                                  double.tryParse(_model.textController9.text),
+                              sellingPrice:
+                                  double.tryParse(_model.textController7.text),
+                              purchasePrice:
+                                  double.tryParse(_model.textController8.text),
+                              mrpPrice:
+                                  double.tryParse(_model.textController9.text),
+                              discountPer:
+                                  double.tryParse(_model.textController10.text),
+                              discountAmt:
+                                  double.tryParse(_model.textController11.text),
+                              stockable: _model.checkboxListTileValue1,
+                              weightable: _model.checkboxListTileValue2,
+                              code: int.tryParse(_model.textController4.text),
+                              barcode: _model.textController3.text,
+                              category: _model.dropDownValue1,
+                            ),
+                            productRecordReference);
                         _shouldSetState = true;
                         _model.hiveProductList =
                             await actions.getProductlistHive();

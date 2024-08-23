@@ -48,6 +48,8 @@ class KioskBillScreenModel extends FlutterFlowModel<KioskBillScreenWidget> {
   bool? connectdeviceCOPY23;
   // Model for KioskHeader component.
   late KioskHeaderModel kioskHeaderModel;
+  // Stores action output result for [Firestore Query - Query a collection] action in IconButton widget.
+  AppSettingsRecord? appsettingresfresh;
   // Stores action output result for [Custom Action - addToHoldListkioskGst] action in Container widget.
   List<dynamic>? result;
   // Stores action output result for [Custom Action - calSubTotalForHoldListkiosk] action in Container widget.
