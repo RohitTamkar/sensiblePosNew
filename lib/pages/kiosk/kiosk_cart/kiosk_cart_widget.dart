@@ -687,38 +687,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                             context: context,
                                                                                             builder: (alertDialogContext) {
                                                                                               return AlertDialog(
-                                                                                                title: Text(valueOrDefault<String>(
-                                                                                                  functions
-                                                                                                      .jsontoint(getJsonField(
-                                                                                                        listviewItem,
-                                                                                                        r'''$.currentStock''',
-                                                                                                      ))
-                                                                                                      .toString(),
-                                                                                                  '0',
-                                                                                                )),
-                                                                                                content: Text(valueOrDefault<String>(
-                                                                                                  functions
-                                                                                                      .jsontoint(getJsonField(
-                                                                                                        listviewItem,
-                                                                                                        r'''$.quantity''',
-                                                                                                      ))
-                                                                                                      .toString(),
-                                                                                                  '0',
-                                                                                                )),
-                                                                                                actions: [
-                                                                                                  TextButton(
-                                                                                                    onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                    child: Text('Ok'),
-                                                                                                  ),
-                                                                                                ],
-                                                                                              );
-                                                                                            },
-                                                                                          );
-                                                                                          await showDialog(
-                                                                                            context: context,
-                                                                                            builder: (alertDialogContext) {
-                                                                                              return AlertDialog(
-                                                                                                content: Text('Item  Out Of Stock.'),
+                                                                                                content: Text('Item Out Of Stock.'),
                                                                                                 actions: [
                                                                                                   TextButton(
                                                                                                     onPressed: () => Navigator.pop(alertDialogContext),

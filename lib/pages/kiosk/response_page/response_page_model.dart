@@ -28,8 +28,6 @@ class ResponsePageModel extends FlutterFlowModel<ResponsePageWidget> {
   List<SelItemListStruct>? prdListkiosk;
   // Stores action output result for [Backend Call - Create Document] action in responsePage widget.
   InvoiceRecord? docInvoicekiosk;
-  // Stores action output result for [Firestore Query - Query a collection] action in responsePage widget.
-  List<ProductRecord>? prddocstck;
   // Stores action output result for [Custom Action - calShiftSummary] action in responsePage widget.
   dynamic? shiftSummarRkiosk;
   // Stores action output result for [Firestore Query - Query a collection] action in responsePage widget.
@@ -48,6 +46,8 @@ class ResponsePageModel extends FlutterFlowModel<ResponsePageWidget> {
   OutletRecord? outletdoc;
   // Stores action output result for [Firestore Query - Query a collection] action in responsePage widget.
   List<ServicePointOutletRecord>? spoutlet;
+  // Stores action output result for [Firestore Query - Query a collection] action in responsePage widget.
+  ProductRecord? stockupdateprd;
   // Stores action output result for [Firestore Query - Query a collection] action in responsePage widget.
   List<TaxMasterRecord>? taxmaster;
   // Stores action output result for [Firestore Query - Query a collection] action in responsePage widget.

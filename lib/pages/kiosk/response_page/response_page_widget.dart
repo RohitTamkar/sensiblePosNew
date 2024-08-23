@@ -165,40 +165,6 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
               .update(createInvoiceRecordData(
             id: _model.docInvoicekiosk?.reference.id,
           ));
-          if (widget!.appsetting!.settingList
-              .where((e) => e.title == 'enableStock')
-              .toList()
-              .first
-              .value) {
-            _model.prddocstck = await queryProductRecordOnce(
-              parent: FFAppState().outletIdRef,
-              queryBuilder: (productRecord) => productRecord.where(
-                'currentStock',
-                isGreaterThan: 0,
-              ),
-            );
-            FFAppState().startLoop = 0;
-            setState(() {});
-            while (FFAppState().startLoop < _model.prddocstck!.length) {
-              await _model.prddocstck![FFAppState().startLoop].reference
-                  .update({
-                ...mapToFirestore(
-                  {
-                    'currentStock': FieldValue.increment(
-                        -(functions.doubleToInt(_model.prdListkiosk
-                            ?.where((e) =>
-                                e.id ==
-                                _model.prddocstck?[FFAppState().startLoop]?.id)
-                            .toList()
-                            ?.first
-                            ?.quantity)!)),
-                  },
-                ),
-              });
-              FFAppState().startLoop = FFAppState().startLoop + 1;
-              setState(() {});
-            }
-          }
           if (getJsonField(
             widget!.shiftdetails,
             r'''$.shiftExists''',
@@ -286,7 +252,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
             FFAppState().printerDevice,
             FFAppState().printerIndex,
           );
-          await Future.delayed(const Duration(milliseconds: 2000));
+          await Future.delayed(const Duration(milliseconds: 1000));
           if (_model.isConnected!) {
             FFAppState().lastBill = FFAppState().finalAmt;
             FFAppState().update(() {});
@@ -380,6 +346,38 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                 _model.spoutlet!.toList(),
                 _model.appsetting!,
               );
+            }
+            if (widget!.appsetting!.settingList
+                .where((e) => e.title == 'enableStock')
+                .toList()
+                .first
+                .value) {
+              FFAppState().startLoop = 0;
+              setState(() {});
+              while (FFAppState().startLoop < _model.prdListkiosk!.length) {
+                _model.stockupdateprd = await queryProductRecordOnce(
+                  parent: FFAppState().outletIdRef,
+                  queryBuilder: (productRecord) => productRecord.where(
+                    'id',
+                    isEqualTo:
+                        (_model.prdListkiosk?[FFAppState().startLoop])?.id,
+                  ),
+                  singleRecord: true,
+                ).then((s) => s.firstOrNull);
+
+                await _model.stockupdateprd!.reference.update({
+                  ...mapToFirestore(
+                    {
+                      'currentStock': FieldValue.increment(
+                          -(functions.doubleToInt(
+                              (_model.prdListkiosk?[FFAppState().startLoop])
+                                  ?.quantity)!)),
+                    },
+                  ),
+                });
+                FFAppState().startLoop = FFAppState().startLoop + 1;
+                setState(() {});
+              }
             }
             await actions.removeFromAllBillList(
               FFAppState().selBill,

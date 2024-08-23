@@ -1089,8 +1089,117 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                             1.0;
                                                                         setState(
                                                                             () {});
-                                                                        if (kioskBillScreenVarItem.currentStock >
-                                                                            0) {
+                                                                        if (widget!
+                                                                            .appsetting!
+                                                                            .settingList
+                                                                            .where((e) =>
+                                                                                e.title ==
+                                                                                'enableStock')
+                                                                            .toList()
+                                                                            .first
+                                                                            .value) {
+                                                                          if (kioskBillScreenVarItem.currentStock >
+                                                                              0) {
+                                                                            if (FFAppState().holdBillCount ==
+                                                                                0) {
+                                                                              FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
+                                                                              FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));
+                                                                              FFAppState().selBill = 1;
+                                                                            }
+                                                                            _model.result =
+                                                                                await actions.addToHoldListkioskGst(
+                                                                              kioskBillScreenVarItem,
+                                                                              valueOrDefault<int>(
+                                                                                FFAppState().selBill,
+                                                                                1,
+                                                                              ),
+                                                                              widget!.taxcollection!.toList(),
+                                                                              functions.enabletaxinclusive(valueOrDefault<bool>(
+                                                                                widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.first?.value,
+                                                                                false,
+                                                                              )),
+                                                                            );
+                                                                            _shouldSetState =
+                                                                                true;
+                                                                            _model.res =
+                                                                                await actions.calSubTotalForHoldListkiosk(
+                                                                              valueOrDefault<String>(
+                                                                                FFAppState().selBill.toString(),
+                                                                                '1',
+                                                                              ),
+                                                                              _model.result!.toList(),
+                                                                              functions.enabletaxinclusive(valueOrDefault<bool>(
+                                                                                widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.first?.value,
+                                                                                false,
+                                                                              )),
+                                                                            );
+                                                                            _shouldSetState =
+                                                                                true;
+                                                                            _model.res10 =
+                                                                                await actions.calBillAmt(
+                                                                              FFAppState().disAmt,
+                                                                              FFAppState().delCharges,
+                                                                            );
+                                                                            _shouldSetState =
+                                                                                true;
+                                                                            FFAppState().addToCartItem(kioskBillScreenVarItem.reference);
+                                                                            setState(() {});
+                                                                            if (widget!.appsetting!.settingList.where((e) => e.title == 'enableStock').toList().first.value) {
+                                                                              if (kioskBillScreenVarItem.currentStock <=
+                                                                                  valueOrDefault<int>(
+                                                                                    getJsonField(
+                                                                                      functions
+                                                                                          .filterBillList(FFAppState().selBill, FFAppState().allBillsList.toList())
+                                                                                          .where((e) =>
+                                                                                              kioskBillScreenVarItem.id ==
+                                                                                              valueOrDefault<String>(
+                                                                                                getJsonField(
+                                                                                                  e,
+                                                                                                  r'''$.id''',
+                                                                                                )?.toString(),
+                                                                                                '0',
+                                                                                              ))
+                                                                                          .toList()
+                                                                                          .first,
+                                                                                      r'''$.quantity''',
+                                                                                    ),
+                                                                                    0,
+                                                                                  )) {
+                                                                                await showDialog(
+                                                                                  context: context,
+                                                                                  builder: (alertDialogContext) {
+                                                                                    return AlertDialog(
+                                                                                      content: Text('Item  Out Of Stock.'),
+                                                                                      actions: [
+                                                                                        TextButton(
+                                                                                          onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                          child: Text('Ok'),
+                                                                                        ),
+                                                                                      ],
+                                                                                    );
+                                                                                  },
+                                                                                );
+                                                                                if (_shouldSetState) setState(() {});
+                                                                                return;
+                                                                              }
+                                                                            }
+                                                                          } else {
+                                                                            await showDialog(
+                                                                              context: context,
+                                                                              builder: (alertDialogContext) {
+                                                                                return AlertDialog(
+                                                                                  content: Text('Item  Out Of Stock.'),
+                                                                                  actions: [
+                                                                                    TextButton(
+                                                                                      onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                      child: Text('Ok'),
+                                                                                    ),
+                                                                                  ],
+                                                                                );
+                                                                              },
+                                                                            );
+                                                                          }
+                                                                        } else {
                                                                           if (FFAppState().holdBillCount ==
                                                                               0) {
                                                                             FFAppState().holdBillCount =
@@ -1111,7 +1220,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                             FFAppState().selBill =
                                                                                 1;
                                                                           }
-                                                                          _model.result =
+                                                                          _model.result2 =
                                                                               await actions.addToHoldListkioskGst(
                                                                             kioskBillScreenVarItem,
                                                                             valueOrDefault<int>(
@@ -1126,13 +1235,13 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                           );
                                                                           _shouldSetState =
                                                                               true;
-                                                                          _model.res =
+                                                                          _model.res25a =
                                                                               await actions.calSubTotalForHoldListkiosk(
                                                                             valueOrDefault<String>(
                                                                               FFAppState().selBill.toString(),
                                                                               '1',
                                                                             ),
-                                                                            _model.result!.toList(),
+                                                                            _model.result2!.toList(),
                                                                             functions.enabletaxinclusive(valueOrDefault<bool>(
                                                                               widget!.appsetting?.settingList?.where((e) => e.title == 'enableInclusiveTax').toList()?.first?.value,
                                                                               false,
@@ -1140,7 +1249,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                           );
                                                                           _shouldSetState =
                                                                               true;
-                                                                          _model.res10 =
+                                                                          _model.res102 =
                                                                               await actions.calBillAmt(
                                                                             FFAppState().disAmt,
                                                                             FFAppState().delCharges,
@@ -1151,69 +1260,6 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                               .addToCartItem(kioskBillScreenVarItem.reference);
                                                                           setState(
                                                                               () {});
-                                                                          if (widget!
-                                                                              .appsetting!
-                                                                              .settingList
-                                                                              .where((e) => e.title == 'enableStock')
-                                                                              .toList()
-                                                                              .first
-                                                                              .value) {
-                                                                            if (kioskBillScreenVarItem.currentStock <=
-                                                                                valueOrDefault<int>(
-                                                                                  getJsonField(
-                                                                                    functions
-                                                                                        .filterBillList(FFAppState().selBill, FFAppState().allBillsList.toList())
-                                                                                        .where((e) =>
-                                                                                            kioskBillScreenVarItem.id ==
-                                                                                            valueOrDefault<String>(
-                                                                                              getJsonField(
-                                                                                                e,
-                                                                                                r'''$.id''',
-                                                                                              )?.toString(),
-                                                                                              '0',
-                                                                                            ))
-                                                                                        .toList()
-                                                                                        .first,
-                                                                                    r'''$.quantity''',
-                                                                                  ),
-                                                                                  0,
-                                                                                )) {
-                                                                              await showDialog(
-                                                                                context: context,
-                                                                                builder: (alertDialogContext) {
-                                                                                  return AlertDialog(
-                                                                                    content: Text('Item  Out Of Stock.'),
-                                                                                    actions: [
-                                                                                      TextButton(
-                                                                                        onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                        child: Text('Ok'),
-                                                                                      ),
-                                                                                    ],
-                                                                                  );
-                                                                                },
-                                                                              );
-                                                                              if (_shouldSetState)
-                                                                                setState(() {});
-                                                                              return;
-                                                                            }
-                                                                          }
-                                                                        } else {
-                                                                          await showDialog(
-                                                                            context:
-                                                                                context,
-                                                                            builder:
-                                                                                (alertDialogContext) {
-                                                                              return AlertDialog(
-                                                                                content: Text('Item  Out Of Stock.'),
-                                                                                actions: [
-                                                                                  TextButton(
-                                                                                    onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                    child: Text('Ok'),
-                                                                                  ),
-                                                                                ],
-                                                                              );
-                                                                            },
-                                                                          );
                                                                         }
 
                                                                         if (_shouldSetState)
@@ -1828,87 +1874,88 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                               borderRadius: BorderRadius.circular(8.0),
                             ),
                           ),
-                          FFButtonWidget(
-                            onPressed: () async {
-                              _model.phonePedata = await PhonePeQRCall.call(
-                                merchantId: 'SENSIBLEQRTESTUAT',
-                                transactionId: getCurrentTimestamp
-                                    .millisecondsSinceEpoch
-                                    .toString(),
-                                merchantOrderId: FFAppState().paytmOrderId,
-                                amount:
-                                    functions.toDecimal(FFAppState().finalAmt),
-                                storeId: valueOrDefault(
-                                    currentUserDocument?.outletId, ''),
-                                expiresIn: 1800,
-                              );
-
-                              if ((_model.phonePedata?.succeeded ?? true)) {
-                                await showDialog(
-                                  context: context,
-                                  builder: (alertDialogContext) {
-                                    return AlertDialog(
-                                      title: Text(getJsonField(
-                                        (_model.phonePedata?.jsonBody ?? ''),
-                                        r'''$''',
-                                      ).toString()),
-                                      actions: [
-                                        TextButton(
-                                          onPressed: () =>
-                                              Navigator.pop(alertDialogContext),
-                                          child: Text('Ok'),
-                                        ),
-                                      ],
-                                    );
-                                  },
+                          if (false)
+                            FFButtonWidget(
+                              onPressed: () async {
+                                _model.phonePedata = await PhonePeQRCall.call(
+                                  merchantId: 'SENSIBLEQRTESTUAT',
+                                  transactionId: getCurrentTimestamp
+                                      .millisecondsSinceEpoch
+                                      .toString(),
+                                  merchantOrderId: FFAppState().paytmOrderId,
+                                  amount: functions
+                                      .toDecimal(FFAppState().finalAmt),
+                                  storeId: valueOrDefault(
+                                      currentUserDocument?.outletId, ''),
+                                  expiresIn: 1800,
                                 );
 
-                                context.pushNamed(
-                                  'KioskPaymentCopy',
-                                  queryParameters: {
-                                    'data': serializeParam(
-                                      getJsonField(
-                                        (_model.phonePedata?.jsonBody ?? ''),
-                                        r'''$.data.qrString''',
-                                      ).toString(),
-                                      ParamType.String,
-                                    ),
-                                  }.withoutNulls,
-                                );
-                              }
+                                if ((_model.phonePedata?.succeeded ?? true)) {
+                                  await showDialog(
+                                    context: context,
+                                    builder: (alertDialogContext) {
+                                      return AlertDialog(
+                                        title: Text(getJsonField(
+                                          (_model.phonePedata?.jsonBody ?? ''),
+                                          r'''$''',
+                                        ).toString()),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () => Navigator.pop(
+                                                alertDialogContext),
+                                            child: Text('Ok'),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
 
-                              setState(() {});
-                            },
-                            text: FFLocalizations.of(context).getText(
-                              'f5wun5so' /* PhonePe */,
-                            ),
-                            options: FFButtonOptions(
-                              height: 80.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  24.0, 0.0, 24.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              color: FlutterFlowTheme.of(context).primary,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .titleSmallFamily,
-                                    color: Colors.white,
-                                    letterSpacing: 0.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .titleSmallFamily),
-                                  ),
-                              elevation: 3.0,
-                              borderSide: BorderSide(
-                                color: Colors.transparent,
-                                width: 1.0,
+                                  context.pushNamed(
+                                    'KioskPaymentCopy',
+                                    queryParameters: {
+                                      'data': serializeParam(
+                                        getJsonField(
+                                          (_model.phonePedata?.jsonBody ?? ''),
+                                          r'''$.data.qrString''',
+                                        ).toString(),
+                                        ParamType.String,
+                                      ),
+                                    }.withoutNulls,
+                                  );
+                                }
+
+                                setState(() {});
+                              },
+                              text: FFLocalizations.of(context).getText(
+                                'f5wun5so' /* PhonePe */,
                               ),
-                              borderRadius: BorderRadius.circular(8.0),
+                              options: FFButtonOptions(
+                                height: 80.0,
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    24.0, 0.0, 24.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: FlutterFlowTheme.of(context).primary,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .titleSmallFamily,
+                                      color: Colors.white,
+                                      letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmallFamily),
+                                    ),
+                                elevation: 3.0,
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
                             ),
-                          ),
                         ],
                       ),
                     ),
