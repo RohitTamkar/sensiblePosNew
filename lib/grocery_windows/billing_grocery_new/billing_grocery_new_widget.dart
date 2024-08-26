@@ -153,6 +153,11 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                 body: StreamBuilder<List<AppSettingsRecord>>(
                   stream: queryAppSettingsRecord(
                     parent: FFAppState().outletIdRef,
+                    queryBuilder: (appSettingsRecord) =>
+                        appSettingsRecord.where(
+                      'deviceId',
+                      isEqualTo: FFAppState().dId,
+                    ),
                     singleRecord: true,
                   ),
                   builder: (context, snapshot) {

@@ -239,7 +239,8 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             size: 10.0,
                           ),
                           onPressed: () async {
-                            if (_model.textFieldqtTextController.text != '1') {
+                            if (_model.textFieldqtTextController.text !=
+                                '1.0') {
                               setState(() {
                                 _model.textFieldqtTextController?.text =
                                     (double.parse(_model
@@ -342,7 +343,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                               FFAppState().update(() {});
                             } else {
                               setState(() {
-                                _model.textFieldqtTextController?.text = '1';
+                                _model.textFieldqtTextController?.text = '1.0';
                                 _model.textFieldqtTextController?.selection =
                                     TextSelection.collapsed(
                                         offset: _model
