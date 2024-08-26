@@ -648,93 +648,39 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                                         ),
                                               ),
                                             ),
-                                            StreamBuilder<
-                                                List<QrTransactionsRecord>>(
-                                              stream: queryQrTransactionsRecord(
-                                                parent:
-                                                    FFAppState().outletIdRef,
-                                                queryBuilder:
-                                                    (qrTransactionsRecord) =>
-                                                        qrTransactionsRecord
-                                                            .where(
-                                                  'orderId',
-                                                  isEqualTo:
-                                                      widget!.paytmOrderId != ''
-                                                          ? widget!.paytmOrderId
-                                                          : null,
-                                                  isNull:
-                                                      (widget!.paytmOrderId !=
-                                                                  ''
-                                                              ? widget!
-                                                                  .paytmOrderId
-                                                              : null) ==
-                                                          null,
-                                                ),
-                                                singleRecord: true,
-                                              ),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 40.0,
-                                                      height: 40.0,
-                                                      child:
-                                                          SpinKitFadingCircle(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        size: 40.0,
-                                                      ),
+                                            Stack(
+                                              children: [
+                                                if (widget!.isPaytm ?? true)
+                                                  Container(
+                                                    width: 400.0,
+                                                    height: 400.0,
+                                                    child: custom_widgets
+                                                        .DynamicQR(
+                                                      width: 400.0,
+                                                      height: 400.0,
+                                                      data: getJsonField(
+                                                        widget!.qrJson,
+                                                        r'''$.body.qrData''',
+                                                      ).toString(),
+                                                      size: 200.0,
                                                     ),
-                                                  );
-                                                }
-                                                List<QrTransactionsRecord>
-                                                    stackQrTransactionsRecordList =
-                                                    snapshot.data!;
-                                                final stackQrTransactionsRecord =
-                                                    stackQrTransactionsRecordList
-                                                            .isNotEmpty
-                                                        ? stackQrTransactionsRecordList
-                                                            .first
-                                                        : null;
-
-                                                return Stack(
-                                                  children: [
-                                                    if (widget!.isPaytm ?? true)
-                                                      Container(
-                                                        width: 400.0,
-                                                        height: 400.0,
-                                                        child: custom_widgets
-                                                            .DynamicQR(
-                                                          width: 400.0,
-                                                          height: 400.0,
-                                                          data: getJsonField(
-                                                            widget!.qrJson,
-                                                            r'''$.body.qrData''',
-                                                          ).toString(),
-                                                          size: 200.0,
-                                                        ),
-                                                      ),
-                                                    if (!widget!.isPaytm!)
-                                                      ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(8.0),
-                                                        child: Image.network(
-                                                          getJsonField(
-                                                            widget!.qrJson,
-                                                            r'''$.image_url''',
-                                                          ).toString(),
-                                                          width: 400.0,
-                                                          height: 400.0,
-                                                          fit: BoxFit.cover,
-                                                        ),
-                                                      ),
-                                                  ],
-                                                );
-                                              },
+                                                  ),
+                                                if (!widget!.isPaytm!)
+                                                  ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                    child: Image.network(
+                                                      getJsonField(
+                                                        widget!.qrJson,
+                                                        r'''$.image_url''',
+                                                      ).toString(),
+                                                      width: 400.0,
+                                                      height: 400.0,
+                                                      fit: BoxFit.cover,
+                                                    ),
+                                                  ),
+                                              ],
                                             ),
                                             Text(
                                               FFLocalizations.of(context)

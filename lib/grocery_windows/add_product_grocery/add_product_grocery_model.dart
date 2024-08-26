@@ -11,7 +11,9 @@ import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'add_product_grocery_widget.dart' show AddProductGroceryWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -19,6 +21,10 @@ import 'package:provider/provider.dart';
 class AddProductGroceryModel extends FlutterFlowModel<AddProductGroceryWidget> {
   ///  State fields for stateful widgets in this component.
 
+  // Stores action output result for [Firestore Query - Query a collection] action in AddProductGrocery widget.
+  List<ProductRecord>? prdlist;
+  // Stores action output result for [Custom Action - genarateProductCode] action in AddProductGrocery widget.
+  int? len;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
   TextEditingController? textController1;
@@ -101,6 +107,12 @@ class AddProductGroceryModel extends FlutterFlowModel<AddProductGroceryWidget> {
   String? Function(BuildContext, String?)? textController16Validator;
   // Stores action output result for [Custom Action - hiveProductCrud] action in Button widget.
   ProductStructStruct? createddocument;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  TaxMasterRecord? taxref;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  UnitTypeRecord? unitref;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  CategoryRecord? catref;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   ProductRecord? proDoc;
   // Stores action output result for [Custom Action - getProductlistHive] action in Button widget.

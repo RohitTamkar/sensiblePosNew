@@ -10,7 +10,9 @@ import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -39,6 +41,18 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
     super.initState();
     _model = createModel(context, () => AddProductGroceryModel());
 
+    // On component load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.prdlist = await queryProductRecordOnce(
+        parent: FFAppState().outletIdRef,
+      );
+      _model.len = await actions.genarateProductCode(
+        _model.prdlist?.toList(),
+      );
+      FFAppState().codeLenght = _model.len!;
+      FFAppState().update(() {});
+    });
+
     _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
 
@@ -48,7 +62,8 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
     _model.textController3 ??= TextEditingController();
     _model.textFieldFocusNode3 ??= FocusNode();
 
-    _model.textController4 ??= TextEditingController();
+    _model.textController4 ??=
+        TextEditingController(text: FFAppState().codeLenght.toString());
     _model.textFieldFocusNode4 ??= FocusNode();
 
     _model.textController5 ??= TextEditingController();
@@ -1042,7 +1057,7 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                             child: TextFormField(
                               controller: _model.textController4,
                               focusNode: _model.textFieldFocusNode4,
-                              autofocus: true,
+                              autofocus: false,
                               obscureText: false,
                               decoration: InputDecoration(
                                 isDense: true,
@@ -2717,7 +2732,13 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                 double.tryParse(_model.textController11.text)
                             ..isDeleted = false
                             ..synC = false
-                            ..version = FFAppState().productStructVersion,
+                            ..version = FFAppState().productStructVersion
+                            ..categoryId = _model.dropDownValue1
+                            ..taxId = _model.dropDownValue2
+                            ..unitId = _model.dropDownValue3
+                            ..serviceOutletId = _model.dropDownValue4
+                            ..stock =
+                                int.tryParse(_model.textController12.text),
                         );
                         setState(() {});
                         _model.createddocument = await actions.hiveProductCrud(
@@ -2725,6 +2746,34 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                           FFAppState().productHiveput,
                           'create',
                         );
+                        _shouldSetState = true;
+                        _model.taxref = await queryTaxMasterRecordOnce(
+                          queryBuilder: (taxMasterRecord) =>
+                              taxMasterRecord.where(
+                            'id',
+                            isEqualTo: _model.dropDownValue2,
+                          ),
+                          singleRecord: true,
+                        ).then((s) => s.firstOrNull);
+                        _shouldSetState = true;
+                        _model.unitref = await queryUnitTypeRecordOnce(
+                          queryBuilder: (unitTypeRecord) =>
+                              unitTypeRecord.where(
+                            'id',
+                            isEqualTo: _model.dropDownValue3,
+                          ),
+                          singleRecord: true,
+                        ).then((s) => s.firstOrNull);
+                        _shouldSetState = true;
+                        _model.catref = await queryCategoryRecordOnce(
+                          parent: FFAppState().outletIdRef,
+                          queryBuilder: (categoryRecord) =>
+                              categoryRecord.where(
+                            'id',
+                            isEqualTo: _model.dropDownValue1,
+                          ),
+                          singleRecord: true,
+                        ).then((s) => s.firstOrNull);
                         _shouldSetState = true;
 
                         var productRecordReference =
@@ -2752,6 +2801,15 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                           code: int.tryParse(_model.textController4.text),
                           barcode: _model.textController3.text,
                           category: _model.dropDownValue1,
+                          isDeleted: false,
+                          taxRef: _model.taxref?.reference,
+                          unitRef: _model.unitref?.reference,
+                          categoryRef: _model.catref?.reference,
+                          stock: int.tryParse(_model.textController12.text),
+                          currentStock:
+                              int.tryParse(_model.textController12.text),
+                          isEnable: true,
+                          type: 0,
                         ));
                         _model.proDoc = ProductRecord.getDocumentFromData(
                             createProductRecordData(
@@ -2779,9 +2837,23 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                               code: int.tryParse(_model.textController4.text),
                               barcode: _model.textController3.text,
                               category: _model.dropDownValue1,
+                              isDeleted: false,
+                              taxRef: _model.taxref?.reference,
+                              unitRef: _model.unitref?.reference,
+                              categoryRef: _model.catref?.reference,
+                              stock: int.tryParse(_model.textController12.text),
+                              currentStock:
+                                  int.tryParse(_model.textController12.text),
+                              isEnable: true,
+                              type: 0,
                             ),
                             productRecordReference);
                         _shouldSetState = true;
+
+                        await _model.proDoc!.reference
+                            .update(createProductRecordData(
+                          id: _model.proDoc?.reference.id,
+                        ));
                         _model.hiveProductList =
                             await actions.getProductlistHive();
                         _shouldSetState = true;
@@ -2799,7 +2871,8 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                   .override(
                                     fontFamily: FlutterFlowTheme.of(context)
                                         .titleSmallFamily,
-                                    color: Color(0x00000000),
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
                                     letterSpacing: 0.0,
                                     useGoogleFonts: GoogleFonts.asMap()
                                         .containsKey(
@@ -2807,8 +2880,9 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                                 .titleSmallFamily),
                                   ),
                             ),
-                            duration: Duration(milliseconds: 3000),
-                            backgroundColor: Color(0x00000000),
+                            duration: Duration(milliseconds: 1950),
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).alternate,
                           ),
                         );
                       } else {
