@@ -252,7 +252,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
             FFAppState().printerDevice,
             FFAppState().printerIndex,
           );
-          await Future.delayed(const Duration(milliseconds: 1000));
+          await Future.delayed(const Duration(milliseconds: 2000));
           if (_model.isConnected!) {
             FFAppState().lastBill = FFAppState().finalAmt;
             FFAppState().update(() {});

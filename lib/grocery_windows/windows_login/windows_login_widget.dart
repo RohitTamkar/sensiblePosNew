@@ -1435,6 +1435,8 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                 await actions
                                                     .deleteAllproduct();
                                                 await actions.deleteAllshift();
+                                                FFAppState().navigate = '';
+                                                setState(() {});
                                                 await showDialog(
                                                   context: context,
                                                   builder:

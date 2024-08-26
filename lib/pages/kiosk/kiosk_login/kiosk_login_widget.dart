@@ -1725,6 +1725,8 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                 await actions.deleteAllinvoice();
                                 await actions.deleteAllproduct();
                                 await actions.deleteAllshift();
+                                FFAppState().navigate = '';
+                                setState(() {});
                                 await showDialog(
                                   context: context,
                                   builder: (alertDialogContext) {
