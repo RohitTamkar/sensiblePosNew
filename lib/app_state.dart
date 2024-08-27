@@ -615,6 +615,12 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _internet = prefs.getBool('ff_internet') ?? _internet;
     });
+    _safeInit(() {
+      _disAmtPay = prefs.getDouble('ff_disAmtPay') ?? _disAmtPay;
+    });
+    _safeInit(() {
+      _taxAmtPay = prefs.getDouble('ff_taxAmtPay') ?? _taxAmtPay;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -3363,6 +3369,20 @@ class FFAppState extends ChangeNotifier {
   dynamic get groceryJson => _groceryJson;
   set groceryJson(dynamic value) {
     _groceryJson = value;
+  }
+
+  double _disAmtPay = 0.0;
+  double get disAmtPay => _disAmtPay;
+  set disAmtPay(double value) {
+    _disAmtPay = value;
+    prefs.setDouble('ff_disAmtPay', value);
+  }
+
+  double _taxAmtPay = 0.0;
+  double get taxAmtPay => _taxAmtPay;
+  set taxAmtPay(double value) {
+    _taxAmtPay = value;
+    prefs.setDouble('ff_taxAmtPay', value);
   }
 }
 

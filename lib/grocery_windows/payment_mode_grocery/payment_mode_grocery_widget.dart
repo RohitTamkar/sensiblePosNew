@@ -365,7 +365,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                   _model.textController1,
                                               focusNode:
                                                   _model.textFieldFocusNode,
-                                              autofocus: true,
+                                              autofocus: false,
                                               obscureText: false,
                                               decoration: InputDecoration(
                                                 labelText:
@@ -2113,7 +2113,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                           .textFielddisperFocusNode,
                                                       onFieldSubmitted:
                                                           (_) async {
-                                                        FFAppState().disAmt =
+                                                        FFAppState().disAmtPay =
                                                             functions.disAmtPer(
                                                                 double.tryParse(
                                                                     _model
@@ -2125,7 +2125,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                             .update(() {});
                                                         await actions
                                                             .calBillAmtGrocery(
-                                                          FFAppState().disAmt,
+                                                          FFAppState()
+                                                              .disAmtPay,
                                                           FFAppState()
                                                               .delCharges,
                                                         );
@@ -2133,7 +2134,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                           _model.textFielddisamtTextController
                                                                   ?.text =
                                                               FFAppState()
-                                                                  .disAmt
+                                                                  .disAmtPay
                                                                   .toString();
                                                           _model.textFielddisamtTextController
                                                                   ?.selection =
@@ -2144,7 +2145,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                       .length);
                                                         });
                                                       },
-                                                      autofocus: true,
+                                                      autofocus: false,
                                                       obscureText: false,
                                                       decoration:
                                                           InputDecoration(
@@ -2351,13 +2352,13 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                         .textFielddisamtFocusNode,
                                                     onFieldSubmitted:
                                                         (_) async {
-                                                      FFAppState().disAmt =
-                                                          double.parse(_model
-                                                              .textFielddisamtTextController
-                                                              .text);
                                                       FFAppState().delCharges =
                                                           double.parse(_model
                                                               .textFieldextraTextController
+                                                              .text);
+                                                      FFAppState().disAmtPay =
+                                                          double.parse(_model
+                                                              .textFielddisamtTextController
                                                               .text);
                                                       FFAppState()
                                                           .update(() {});
@@ -2372,7 +2373,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                           .update(() {});
                                                       await actions
                                                           .calBillAmtGrocery(
-                                                        FFAppState().disAmt,
+                                                        FFAppState().disAmtPay,
                                                         FFAppState().delCharges,
                                                       );
                                                       setState(() {
@@ -2390,7 +2391,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                     .length);
                                                       });
                                                     },
-                                                    autofocus: true,
+                                                    autofocus: false,
                                                     obscureText: false,
                                                     decoration: InputDecoration(
                                                       labelStyle:
@@ -2587,7 +2588,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                           .textFieldgstperTextController,
                                                       focusNode: _model
                                                           .textFieldgstperFocusNode,
-                                                      autofocus: true,
+                                                      autofocus: false,
                                                       obscureText: false,
                                                       decoration:
                                                           InputDecoration(
@@ -2791,13 +2792,13 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                         .textFieldextraFocusNode,
                                                     onFieldSubmitted:
                                                         (_) async {
-                                                      FFAppState().disAmt =
-                                                          double.parse(_model
-                                                              .textFielddisamtTextController
-                                                              .text);
                                                       FFAppState().delCharges =
                                                           double.parse(_model
                                                               .textFieldextraTextController
+                                                              .text);
+                                                      FFAppState().disAmtPay =
+                                                          double.parse(_model
+                                                              .textFielddisamtTextController
                                                               .text);
                                                       FFAppState()
                                                           .update(() {});
@@ -2811,7 +2812,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                             .text),
                                                       );
                                                     },
-                                                    autofocus: true,
+                                                    autofocus: false,
                                                     obscureText: false,
                                                     decoration: InputDecoration(
                                                       labelStyle:

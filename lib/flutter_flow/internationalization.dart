@@ -21867,6 +21867,37 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
   },
+  // KioskChoosePaymentMode
+  {
+    'sw0ojh01': {
+      'en': 'Choose Payment Type ',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'el435bod': {
+      'en': 'UPI Payment',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'ppahxy75': {
+      'en': 'Pay At Counter',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'of3dvu80': {
+      'en': 'Home',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+  },
   // OutletDetailsHeader
   {
     'dk8fulps': {

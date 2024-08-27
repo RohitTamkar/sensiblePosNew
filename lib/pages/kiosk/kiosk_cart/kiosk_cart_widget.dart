@@ -1413,7 +1413,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                 );
 
                                                 context.pushNamed(
-                                                  'KioskPayment',
+                                                  'KioskChoosePaymentMode',
                                                   queryParameters: {
                                                     'doc': serializeParam(
                                                       widget!.doc,
@@ -1424,6 +1424,17 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                         serializeParam(
                                                       widget!.shiftdetails,
                                                       ParamType.JSON,
+                                                    ),
+                                                    'appSettings':
+                                                        serializeParam(
+                                                      widget!.appsetting,
+                                                      ParamType.Document,
+                                                    ),
+                                                    'taxcollection':
+                                                        serializeParam(
+                                                      widget!.taxcollection,
+                                                      ParamType.Document,
+                                                      isList: true,
                                                     ),
                                                     'qrJson': serializeParam(
                                                       (_model.paymentQrResponse
@@ -1440,20 +1451,9 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                       true,
                                                       ParamType.bool,
                                                     ),
-                                                    'appsettings':
-                                                        serializeParam(
-                                                      widget!.appsetting,
-                                                      ParamType.Document,
-                                                    ),
-                                                    'taxcollection':
-                                                        serializeParam(
-                                                      widget!.taxcollection,
-                                                      ParamType.Document,
-                                                      isList: true,
-                                                    ),
                                                   }.withoutNulls,
                                                   extra: <String, dynamic>{
-                                                    'appsettings':
+                                                    'appSettings':
                                                         widget!.appsetting,
                                                     'taxcollection':
                                                         widget!.taxcollection,

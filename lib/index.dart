@@ -203,3 +203,5 @@ export '/grocery_windows/billing_grocery_new/billing_grocery_new_widget.dart'
     show BillingGroceryNewWidget;
 export '/pages/kiosk/kiosk_payment_copy/kiosk_payment_copy_widget.dart'
     show KioskPaymentCopyWidget;
+export '/pages/kiosk/kiosk_choose_payment_mode/kiosk_choose_payment_mode_widget.dart'
+    show KioskChoosePaymentModeWidget;
