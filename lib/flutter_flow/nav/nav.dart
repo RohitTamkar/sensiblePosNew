@@ -1484,6 +1484,31 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   ParamType.bool,
                 ),
               ),
+            ),
+            FFRoute(
+              name: 'cashResponsePage',
+              path: 'cashResponsePage',
+              asyncParams: {
+                'appsetting': getDoc(
+                    ['OUTLET', 'APP_SETTINGS'], AppSettingsRecord.fromSnapshot),
+                'taxcoollectipon':
+                    getDocList(['TAX_MASTER'], TaxMasterRecord.fromSnapshot),
+              },
+              builder: (context, params) => CashResponsePageWidget(
+                shiftdetails: params.getParam(
+                  'shiftdetails',
+                  ParamType.JSON,
+                ),
+                appsetting: params.getParam(
+                  'appsetting',
+                  ParamType.Document,
+                ),
+                taxcoollectipon: params.getParam<TaxMasterRecord>(
+                  'taxcoollectipon',
+                  ParamType.Document,
+                  isList: true,
+                ),
+              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

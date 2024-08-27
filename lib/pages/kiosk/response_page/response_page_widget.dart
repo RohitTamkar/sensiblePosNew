@@ -641,7 +641,9 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                               wrapWithModel(
                                 model: _model.transactionStatusModel,
                                 updateCallback: () => setState(() {}),
-                                child: TransactionStatusWidget(),
+                                child: TransactionStatusWidget(
+                                  doc: widget!.doc,
+                                ),
                               ).animateOnPageLoad(animationsMap[
                                   'transactionStatusOnPageLoadAnimation']!),
                               InkWell(

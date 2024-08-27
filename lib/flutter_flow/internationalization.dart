@@ -21898,6 +21898,30 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
   },
+  // cashResponsePage
+  {
+    'le02ktpk': {
+      'en': 'Thank You !',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'vb43iai8': {
+      'en': 'If bill is not printed click here to print again !',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'wb7wnmgn': {
+      'en': 'Home',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+  },
   // OutletDetailsHeader
   {
     'dk8fulps': {
@@ -25063,6 +25087,37 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '1rpgsm22': {
       'en': 'Submit',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+  },
+  // cashConfirmOrder
+  {
+    '6jvdyqvg': {
+      'en': 'Receipt ',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '856hsbad': {
+      'en': 'Order Placed\nSuccessfully.',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'em078l4s': {
+      'en': 'Please Pay At Counter..',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '0gqlcefu': {
+      'en': 'Redirects Automatically',
       'hi': '',
       'kn': '',
       'mr': '',
