@@ -194,7 +194,46 @@ class _KioskChoosePaymentModeWidgetState
                                 focusColor: Colors.transparent,
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
-                                onTap: () async {},
+                                onTap: () async {
+                                  context.pushNamed(
+                                    'KioskPayment',
+                                    queryParameters: {
+                                      'doc': serializeParam(
+                                        widget!.doc,
+                                        ParamType.DocumentReference,
+                                      ),
+                                      'shiftdetails': serializeParam(
+                                        widget!.shiftdetails,
+                                        ParamType.JSON,
+                                      ),
+                                      'qrJson': serializeParam(
+                                        widget!.qrJson,
+                                        ParamType.JSON,
+                                      ),
+                                      'paytmOrderId': serializeParam(
+                                        widget!.paytmOrderId,
+                                        ParamType.String,
+                                      ),
+                                      'isPaytm': serializeParam(
+                                        widget!.isPaytm,
+                                        ParamType.bool,
+                                      ),
+                                      'appsettings': serializeParam(
+                                        widget!.appSettings,
+                                        ParamType.Document,
+                                      ),
+                                      'taxcollection': serializeParam(
+                                        widget!.taxcollection,
+                                        ParamType.Document,
+                                        isList: true,
+                                      ),
+                                    }.withoutNulls,
+                                    extra: <String, dynamic>{
+                                      'appsettings': widget!.appSettings,
+                                      'taxcollection': widget!.taxcollection,
+                                    },
+                                  );
+                                },
                                 child: Container(
                                   width: MediaQuery.sizeOf(context).width * 0.6,
                                   height:
@@ -220,7 +259,7 @@ class _KioskChoosePaymentModeWidgetState
                                       children: [
                                         Expanded(
                                           child: Icon(
-                                            Icons.dinner_dining,
+                                            Icons.qr_code,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBtnText,
                                             size: 50.0,

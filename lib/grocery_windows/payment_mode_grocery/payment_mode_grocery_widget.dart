@@ -2124,11 +2124,14 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                         FFAppState()
                                                             .update(() {});
                                                         await actions
-                                                            .calBillAmtGrocery(
+                                                            .calBillAmtGroceryPay(
                                                           FFAppState()
                                                               .disAmtPay,
                                                           FFAppState()
                                                               .delCharges,
+                                                          double.parse(_model
+                                                              .textFieldgstperTextController
+                                                              .text),
                                                         );
                                                         setState(() {
                                                           _model.textFielddisamtTextController
@@ -2372,9 +2375,12 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                       FFAppState()
                                                           .update(() {});
                                                       await actions
-                                                          .calBillAmtGrocery(
+                                                          .calBillAmtGroceryPay(
                                                         FFAppState().disAmtPay,
                                                         FFAppState().delCharges,
+                                                        double.parse(_model
+                                                            .textFieldgstperTextController
+                                                            .text),
                                                       );
                                                       setState(() {
                                                         _model.textFielddisperTextController
@@ -2588,6 +2594,19 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                           .textFieldgstperTextController,
                                                       focusNode: _model
                                                           .textFieldgstperFocusNode,
+                                                      onFieldSubmitted:
+                                                          (_) async {
+                                                        await actions
+                                                            .calBillAmtGroceryPay(
+                                                          FFAppState()
+                                                              .disAmtPay,
+                                                          FFAppState()
+                                                              .delCharges,
+                                                          double.parse(_model
+                                                              .textFieldgstperTextController
+                                                              .text),
+                                                        );
+                                                      },
                                                       autofocus: false,
                                                       obscureText: false,
                                                       decoration:
@@ -2803,12 +2822,15 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                       FFAppState()
                                                           .update(() {});
                                                       await actions
-                                                          .calBillAmtGrocery(
+                                                          .calBillAmtGroceryPay(
                                                         double.parse(_model
                                                             .textFielddisamtTextController
                                                             .text),
                                                         double.parse(_model
                                                             .textFieldextraTextController
+                                                            .text),
+                                                        double.parse(_model
+                                                            .textFieldgstperTextController
                                                             .text),
                                                       );
                                                     },
