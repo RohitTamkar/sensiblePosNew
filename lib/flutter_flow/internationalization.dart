@@ -24361,15 +24361,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'a6wxgtmq': {
+    'ryp0gp49': {
       'en': '',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'hf76irji': {
-      'en': '0.00',
+    'afq50yu0': {
+      'en': '0',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -24389,15 +24389,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'f5xdm5oj': {
+    'tp6gsbf7': {
       'en': '',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'qo7zvxe4': {
-      'en': '0.00',
+    'w3da44b1': {
+      'en': '0',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -24425,14 +24425,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     'f1t3ahui': {
-      'en': '0.00',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    '173zff2o': {
-      'en': 'GST AMT',
+      'en': '0',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -24459,8 +24452,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'afq50yu0': {
-      'en': '0.00',
+    'hf76irji': {
+      'en': '0',
       'hi': '',
       'kn': '',
       'mr': '',

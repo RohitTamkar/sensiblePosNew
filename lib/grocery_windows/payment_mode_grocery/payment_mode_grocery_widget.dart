@@ -68,19 +68,19 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
           _model.textFielddisperTextController?.text =
               FFLocalizations.of(context).getText(
-            'hf76irji' /* 0.00 */,
+            'afq50yu0' /* 0 */,
           );
           _model.textFielddisamtTextController?.text =
               FFLocalizations.of(context).getText(
-            'qo7zvxe4' /* 0.00 */,
+            'w3da44b1' /* 0 */,
           );
           _model.textFieldgstperTextController?.text =
               FFLocalizations.of(context).getText(
-            'f1t3ahui' /* 0.00 */,
+            'f1t3ahui' /* 0 */,
           );
           _model.textFieldextraTextController?.text =
               FFLocalizations.of(context).getText(
-            'hf76irji' /* 0.00 */,
+            'hf76irji' /* 0 */,
           );
         }));
   }
@@ -1469,6 +1469,41 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                 .textFielddisperTextController
                                                                 ?.clear();
                                                           });
+                                                          _model.ret = await actions
+                                                              .calSubTotalForGrocery(
+                                                            FFAppState()
+                                                                .selBill
+                                                                .toString(),
+                                                            FFAppState()
+                                                                .allBillsList
+                                                                .toList(),
+                                                          );
+                                                          _model.add = await actions
+                                                              .calBillAmtGroceryPay(
+                                                            FFAppState()
+                                                                .disAmtPay,
+                                                            valueOrDefault<
+                                                                double>(
+                                                              FFAppState()
+                                                                  .delCharges,
+                                                              0.0,
+                                                            ),
+                                                            0.0,
+                                                            containerAppSettingsRecord!
+                                                                .settingList
+                                                                .where((e) =>
+                                                                    e.title ==
+                                                                    'enableInclusiveTax')
+                                                                .toList()
+                                                                .first
+                                                                .value
+                                                                .toString(),
+                                                          );
+
+                                                          FFAppState()
+                                                              .update(() {});
+
+                                                          setState(() {});
                                                         },
                                                         text:
                                                             FFLocalizations.of(
@@ -2731,19 +2766,25 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                               .customColor1,
                                                     ),
                                                   ),
-                                                  child: Align(
-                                                    alignment:
-                                                        AlignmentDirectional(
-                                                            0.0, 0.0),
-                                                    child: Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        '44z24rq4' /* GST(%) */,
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Align(
+                                                        alignment:
+                                                            AlignmentDirectional(
+                                                                0.0, 0.0),
+                                                        child: Text(
+                                                          FFLocalizations.of(
                                                                   context)
+                                                              .getText(
+                                                            '44z24rq4' /* GST(%) */,
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
                                                               .labelLarge
                                                               .override(
                                                                 fontFamily: FlutterFlowTheme.of(
@@ -2761,7 +2802,41 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                         FlutterFlowTheme.of(context)
                                                                             .labelLargeFamily),
                                                               ),
-                                                    ),
+                                                        ),
+                                                      ),
+                                                      Align(
+                                                        alignment:
+                                                            AlignmentDirectional(
+                                                                0.0, 0.0),
+                                                        child: Text(
+                                                          '(${valueOrDefault<String>(
+                                                            FFAppState()
+                                                                .taxAmtPay
+                                                                .toString(),
+                                                            '0',
+                                                          )})',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelLarge
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelLargeFamily,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                                fontSize: 17.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelLargeFamily),
+                                                              ),
+                                                        ),
+                                                      ),
+                                                    ],
                                                   ),
                                                 ),
                                               ),
@@ -2823,6 +2898,9 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                   .value
                                                                   .toString(),
                                                             );
+
+                                                            FFAppState()
+                                                                .update(() {});
                                                           },
                                                           autofocus: false,
                                                           obscureText: false,
@@ -2939,114 +3017,6 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                               .textFieldgstperTextControllerValidator
                                                               .asValidator(
                                                                   context),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                              Expanded(
-                                                flex: 7,
-                                                child: Container(
-                                                  width: 100.0,
-                                                  height: 31.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryBackground,
-                                                    border: Border.all(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .customColor1,
-                                                    ),
-                                                  ),
-                                                  child: Align(
-                                                    alignment:
-                                                        AlignmentDirectional(
-                                                            0.0, 0.0),
-                                                    child: Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        '173zff2o' /* GST AMT */,
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelLarge
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelLargeFamily,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText,
-                                                                fontSize: 17.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .labelLargeFamily),
-                                                              ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                              Expanded(
-                                                flex: 4,
-                                                child: Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 5.0, 0.0),
-                                                  child: Container(
-                                                    width: 100.0,
-                                                    height: 31.0,
-                                                    decoration: BoxDecoration(
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryBackground,
-                                                      border: Border.all(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .customColor1,
-                                                      ),
-                                                    ),
-                                                    child: Align(
-                                                      alignment:
-                                                          AlignmentDirectional(
-                                                              0.0, 0.0),
-                                                      child: Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    8.0,
-                                                                    0.0,
-                                                                    8.0,
-                                                                    0.0),
-                                                        child: Text(
-                                                          FFAppState()
-                                                              .taxAmtPay
-                                                              .toString(),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMediumFamily,
-                                                                fontSize: 17.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodyMediumFamily),
-                                                              ),
                                                         ),
                                                       ),
                                                     ),

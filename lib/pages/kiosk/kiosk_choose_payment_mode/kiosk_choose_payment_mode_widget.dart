@@ -259,7 +259,7 @@ class _KioskChoosePaymentModeWidgetState
                                       children: [
                                         Expanded(
                                           child: Icon(
-                                            Icons.qr_code,
+                                            Icons.qr_code_scanner,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBtnText,
                                             size: 50.0,

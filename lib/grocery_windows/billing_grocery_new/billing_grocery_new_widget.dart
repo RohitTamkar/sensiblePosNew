@@ -550,25 +550,6 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                           setState(() => _model
                                                                   .dropDownValue =
                                                               val);
-                                                          await showDialog(
-                                                            context: context,
-                                                            builder:
-                                                                (alertDialogContext) {
-                                                              return AlertDialog(
-                                                                content: Text(_model
-                                                                    .dropDownValue!),
-                                                                actions: [
-                                                                  TextButton(
-                                                                    onPressed: () =>
-                                                                        Navigator.pop(
-                                                                            alertDialogContext),
-                                                                    child: Text(
-                                                                        'Ok'),
-                                                                  ),
-                                                                ],
-                                                              );
-                                                            },
-                                                          );
                                                           FFAppState()
                                                                   .custNameRef =
                                                               dropDownPartyRecordList
@@ -579,7 +560,59 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                   .toList()
                                                                   .first
                                                                   .reference;
+                                                          FFAppState()
+                                                                  .setCustRef =
+                                                              dropDownPartyRecordList
+                                                                  .where((e) =>
+                                                                      e.id ==
+                                                                      _model
+                                                                          .dropDownValue)
+                                                                  .toList()
+                                                                  .first
+                                                                  .reference;
                                                           setState(() {});
+                                                          FFAppState()
+                                                                  .setCustName =
+                                                              dropDownPartyRecordList
+                                                                  .where((e) =>
+                                                                      e.id ==
+                                                                      _model
+                                                                          .dropDownValue)
+                                                                  .toList()
+                                                                  .first
+                                                                  .name;
+                                                          FFAppState()
+                                                                  .setCustMobNo =
+                                                              dropDownPartyRecordList
+                                                                  .where((e) =>
+                                                                      e.id ==
+                                                                      _model
+                                                                          .dropDownValue)
+                                                                  .toList()
+                                                                  .first
+                                                                  .mobile;
+                                                          FFAppState()
+                                                                  .oldBalance =
+                                                              dropDownPartyRecordList
+                                                                  .where((e) =>
+                                                                      e.id ==
+                                                                      _model
+                                                                          .dropDownValue)
+                                                                  .toList()
+                                                                  .first
+                                                                  .oldBalance;
+                                                          FFAppState()
+                                                                  .custCredit =
+                                                              dropDownPartyRecordList
+                                                                  .where((e) =>
+                                                                      e.id ==
+                                                                      _model
+                                                                          .dropDownValue)
+                                                                  .toList()
+                                                                  .first
+                                                                  .creditLimit;
+                                                          FFAppState()
+                                                              .update(() {});
                                                           setState(() {
                                                             _model.custmobTextController
                                                                     ?.text =
@@ -613,7 +646,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                             .dropDownValue)
                                                                     .toList()
                                                                     .first
-                                                                    .area;
+                                                                    .address;
                                                             _model.custAddressTextController
                                                                     ?.selection =
                                                                 TextSelection.collapsed(

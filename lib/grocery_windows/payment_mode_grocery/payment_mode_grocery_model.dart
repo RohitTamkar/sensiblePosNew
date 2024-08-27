@@ -37,6 +37,10 @@ class PaymentModeGroceryModel
   FocusNode? textFieldFocusNode;
   TextEditingController? textController1;
   String? Function(BuildContext, String?)? textController1Validator;
+  // Stores action output result for [Custom Action - calSubTotalForGrocery] action in Button widget.
+  double? ret;
+  // Stores action output result for [Custom Action - calBillAmtGroceryPay] action in Button widget.
+  double? add;
   // Stores action output result for [Custom Action - calculateGroceryAmtaction] action in Button widget.
   dynamic? result233;
   // State field(s) for TextFielddisper widget.
