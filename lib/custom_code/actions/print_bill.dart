@@ -15,6 +15,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
@@ -492,13 +494,30 @@ Future printBill(
               bold: false,
               align: PosAlign.center));
 
-      bytes += generator.text(
-          "PAYMENT MODE :" + invoiceDetails.paymentMode.toString(),
-          styles: const PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: false,
-              align: PosAlign.center));
+      if (invoiceDetails.paymentMode.toString() == "CASH") {
+        bytes += generator.text(
+            "PAYMENT MODE :" + invoiceDetails.paymentMode.toString(),
+            styles: const PosStyles(
+                height: PosTextSize.size2,
+                width: PosTextSize.size2,
+                align: PosAlign.center));
+      } else {
+        bytes += generator.text(
+            "PAYMENT MODE :" + invoiceDetails.paymentMode.toString(),
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.center));
+      }
+
+      // bytes += generator.text(
+      //     "PAYMENT MODE :" + invoiceDetails.paymentMode.toString(),
+      //     styles: const PosStyles(
+      //         height:PosTextSize.size2,
+      //         width: PosTextSize.size2,
+      //         bold: false,
+      //         align: PosAlign.center));
 
       bytes += generator.text("-----------------------------------------------",
           styles: const PosStyles(

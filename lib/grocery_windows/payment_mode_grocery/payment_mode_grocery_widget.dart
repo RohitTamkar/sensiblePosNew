@@ -1448,7 +1448,27 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                           FFAppState()
                                                                   .groceryJson =
                                                               null;
+                                                          FFAppState()
+                                                              .disAmtPay = 0.0;
+                                                          FFAppState()
+                                                              .taxAmtPay = 0.0;
+                                                          FFAppState()
+                                                              .delCharges = 0.0;
                                                           setState(() {});
+                                                          setState(() {
+                                                            _model
+                                                                .textFielddisamtTextController
+                                                                ?.clear();
+                                                            _model
+                                                                .textFieldgstperTextController
+                                                                ?.clear();
+                                                            _model
+                                                                .textFieldextraTextController
+                                                                ?.clear();
+                                                            _model
+                                                                .textFielddisperTextController
+                                                                ?.clear();
+                                                          });
                                                         },
                                                         text:
                                                             FFLocalizations.of(
