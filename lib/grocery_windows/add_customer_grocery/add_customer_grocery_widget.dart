@@ -3607,29 +3607,6 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                     .update(createPartyRecordData(
                                   id: _model.custDoc?.reference.id,
                                 ));
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(
-                                      'Customer added Successfully...!',
-                                      style: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmallFamily,
-                                            color: Color(0x00000000),
-                                            letterSpacing: 0.0,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmallFamily),
-                                          ),
-                                    ),
-                                    duration: Duration(milliseconds: 3000),
-                                    backgroundColor:
-                                        FlutterFlowTheme.of(context).alternate,
-                                  ),
-                                );
                                 setState(() {
                                   _model.textController1?.clear();
                                   _model.textController2?.clear();
@@ -3654,7 +3631,6 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                   _model.textController18?.clear();
                                   _model.textController20?.clear();
                                 });
-                                context.pop();
                               } else {
                                 if (_shouldSetState) setState(() {});
                                 return;

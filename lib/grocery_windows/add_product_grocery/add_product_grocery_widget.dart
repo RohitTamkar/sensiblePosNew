@@ -2704,49 +2704,6 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                               _model.textController7.text != '') &&
                           (_model.dropDownValue1 != null &&
                               _model.dropDownValue1 != '')) {
-                        FFAppState().updateProductHiveputStruct(
-                          (e) => e
-                            ..price =
-                                double.tryParse(_model.textController7.text)
-                            ..category = _model.dropDownValue1
-                            ..code = random_data.randomInteger(0, 1000)
-                            ..name = _model.textController1.text
-                            ..sellingPrice =
-                                double.tryParse(_model.textController7.text)
-                            ..mrpPrice =
-                                double.tryParse(_model.textController9.text)
-                            ..purchasePrice =
-                                double.tryParse(_model.textController8.text)
-                            ..regionalName = _model.textController2.text
-                            ..barcode = _model.textController3.text
-                            ..hsncode =
-                                int.tryParse(_model.textController6.text)
-                            ..searchcode =
-                                int.tryParse(_model.textController4.text)
-                            ..shortName = _model.textController5.text
-                            ..weightable = _model.checkboxListTileValue1
-                            ..stockable = _model.checkboxListTileValue2
-                            ..discountPer =
-                                double.tryParse(_model.textController10.text)
-                            ..discountAmt =
-                                double.tryParse(_model.textController11.text)
-                            ..isDeleted = false
-                            ..synC = false
-                            ..version = FFAppState().productStructVersion
-                            ..categoryId = _model.dropDownValue1
-                            ..taxId = _model.dropDownValue2
-                            ..unitId = _model.dropDownValue3
-                            ..serviceOutletId = _model.dropDownValue4
-                            ..stock =
-                                int.tryParse(_model.textController12.text),
-                        );
-                        setState(() {});
-                        _model.createddocument = await actions.hiveProductCrud(
-                          9999,
-                          FFAppState().productHiveput,
-                          'create',
-                        );
-                        _shouldSetState = true;
                         _model.taxref = await queryTaxMasterRecordOnce(
                           queryBuilder: (taxMasterRecord) =>
                               taxMasterRecord.where(
@@ -2854,6 +2811,49 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                             .update(createProductRecordData(
                           id: _model.proDoc?.reference.id,
                         ));
+                        FFAppState().updateProductHiveputStruct(
+                          (e) => e
+                            ..price =
+                                double.tryParse(_model.textController7.text)
+                            ..category = _model.dropDownValue1
+                            ..code = random_data.randomInteger(0, 1000)
+                            ..name = _model.textController1.text
+                            ..sellingPrice =
+                                double.tryParse(_model.textController7.text)
+                            ..mrpPrice =
+                                double.tryParse(_model.textController9.text)
+                            ..purchasePrice =
+                                double.tryParse(_model.textController8.text)
+                            ..regionalName = _model.textController2.text
+                            ..barcode = _model.textController3.text
+                            ..hsncode =
+                                int.tryParse(_model.textController6.text)
+                            ..searchcode =
+                                int.tryParse(_model.textController4.text)
+                            ..shortName = _model.textController5.text
+                            ..weightable = _model.checkboxListTileValue1
+                            ..stockable = _model.checkboxListTileValue2
+                            ..discountPer =
+                                double.tryParse(_model.textController10.text)
+                            ..discountAmt =
+                                double.tryParse(_model.textController11.text)
+                            ..isDeleted = false
+                            ..synC = false
+                            ..version = FFAppState().productStructVersion
+                            ..categoryId = _model.dropDownValue1
+                            ..taxId = _model.dropDownValue2
+                            ..unitId = _model.dropDownValue3
+                            ..serviceOutletId = _model.dropDownValue4
+                            ..stock = int.tryParse(_model.textController12.text)
+                            ..id = _model.proDoc?.reference.id,
+                        );
+                        setState(() {});
+                        _model.createddocument = await actions.hiveProductCrud(
+                          9999,
+                          FFAppState().productHiveput,
+                          'create',
+                        );
+                        _shouldSetState = true;
                         _model.hiveProductList =
                             await actions.getProductlistHive();
                         _shouldSetState = true;

@@ -105,8 +105,6 @@ class AddProductGroceryModel extends FlutterFlowModel<AddProductGroceryWidget> {
   FocusNode? textFieldFocusNode16;
   TextEditingController? textController16;
   String? Function(BuildContext, String?)? textController16Validator;
-  // Stores action output result for [Custom Action - hiveProductCrud] action in Button widget.
-  ProductStructStruct? createddocument;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   TaxMasterRecord? taxref;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
@@ -115,6 +113,8 @@ class AddProductGroceryModel extends FlutterFlowModel<AddProductGroceryWidget> {
   CategoryRecord? catref;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   ProductRecord? proDoc;
+  // Stores action output result for [Custom Action - hiveProductCrud] action in Button widget.
+  ProductStructStruct? createddocument;
   // Stores action output result for [Custom Action - getProductlistHive] action in Button widget.
   List<ProductStructStruct>? hiveProductList;
 
