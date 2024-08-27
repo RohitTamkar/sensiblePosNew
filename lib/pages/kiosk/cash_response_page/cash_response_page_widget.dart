@@ -72,7 +72,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
             party: FFAppState().setCustName,
             invoiceDate: functions.timestampToMili(getCurrentTimestamp),
             dayId: functions.getDayId(),
-            paymentMode: 'UPI QR',
+            paymentMode: 'CASH',
             discountAmt: valueOrDefault<double>(
               FFAppState().disAmt,
               0.0,
@@ -116,7 +116,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
             party: FFAppState().setCustName,
             invoiceDate: functions.timestampToMili(getCurrentTimestamp),
             dayId: functions.getDayId(),
-            paymentMode: 'UPI QR',
+            paymentMode: 'CASH',
             discountAmt: valueOrDefault<double>(
               FFAppState().disAmt,
               0.0,
@@ -433,6 +433,8 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
           );
 
           context.pushNamed('printSettingkiosk');
+
+          return;
         }
       } else {
         return;

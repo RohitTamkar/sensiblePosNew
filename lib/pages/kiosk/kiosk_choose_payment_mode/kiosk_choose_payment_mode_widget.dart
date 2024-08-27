@@ -300,119 +300,104 @@ class _KioskChoosePaymentModeWidgetState
                                 ),
                               ),
                             ),
-                            if (!valueOrDefault<bool>(
-                              widget!.appSettings?.settingList
-                                  ?.where((e) => e.title == 'hideParcelButton')
-                                  .toList()
-                                  ?.first
-                                  ?.value,
-                              false,
-                            ))
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 50.0),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    context.pushNamed(
-                                      'cashResponsePage',
-                                      queryParameters: {
-                                        'shiftdetails': serializeParam(
-                                          widget!.shiftdetails,
-                                          ParamType.JSON,
-                                        ),
-                                        'appsetting': serializeParam(
-                                          widget!.appSettings,
-                                          ParamType.Document,
-                                        ),
-                                        'taxcoollectipon': serializeParam(
-                                          widget!.taxcollection,
-                                          ParamType.Document,
-                                          isList: true,
-                                        ),
-                                      }.withoutNulls,
-                                      extra: <String, dynamic>{
-                                        'appsetting': widget!.appSettings,
-                                        'taxcoollectipon':
-                                            widget!.taxcollection,
-                                      },
-                                    );
-                                  },
-                                  child: Container(
-                                    width:
-                                        MediaQuery.sizeOf(context).width * 0.6,
-                                    height: MediaQuery.sizeOf(context).height *
-                                        0.15,
-                                    decoration: BoxDecoration(
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      boxShadow: [
-                                        BoxShadow(
-                                          blurRadius: 12.0,
-                                          color: Color(0x27000000),
-                                          offset: Offset(
-                                            9.0,
-                                            9.0,
-                                          ),
-                                        )
-                                      ],
-                                      borderRadius: BorderRadius.circular(30.0),
-                                    ),
-                                    child: Padding(
-                                      padding: EdgeInsets.all(60.0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Expanded(
-                                            child: Icon(
-                                              Icons.takeout_dining_rounded,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBtnText,
-                                              size: 45.0,
-                                            ).animateOnPageLoad(animationsMap[
-                                                'iconOnPageLoadAnimation2']!),
-                                          ),
-                                          Expanded(
-                                            flex: 2,
-                                            child: Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'ppahxy75' /* Pay At Counter */,
-                                              ),
-                                              textAlign: TextAlign.center,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .displayLarge
-                                                      .override(
-                                                        fontFamily:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .displayLargeFamily,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryBtnText,
-                                                        fontSize: 36.0,
-                                                        letterSpacing: 0.0,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .displayLargeFamily),
-                                                      ),
-                                            ),
-                                          ),
-                                        ],
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 50.0),
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed(
+                                    'cashResponsePage',
+                                    queryParameters: {
+                                      'shiftdetails': serializeParam(
+                                        widget!.shiftdetails,
+                                        ParamType.JSON,
                                       ),
+                                      'appsetting': serializeParam(
+                                        widget!.appSettings,
+                                        ParamType.Document,
+                                      ),
+                                      'taxcoollectipon': serializeParam(
+                                        widget!.taxcollection,
+                                        ParamType.Document,
+                                        isList: true,
+                                      ),
+                                    }.withoutNulls,
+                                    extra: <String, dynamic>{
+                                      'appsetting': widget!.appSettings,
+                                      'taxcoollectipon': widget!.taxcollection,
+                                    },
+                                  );
+                                },
+                                child: Container(
+                                  width: MediaQuery.sizeOf(context).width * 0.6,
+                                  height:
+                                      MediaQuery.sizeOf(context).height * 0.15,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    boxShadow: [
+                                      BoxShadow(
+                                        blurRadius: 12.0,
+                                        color: Color(0x27000000),
+                                        offset: Offset(
+                                          9.0,
+                                          9.0,
+                                        ),
+                                      )
+                                    ],
+                                    borderRadius: BorderRadius.circular(30.0),
+                                  ),
+                                  child: Padding(
+                                    padding: EdgeInsets.all(60.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Expanded(
+                                          child: Icon(
+                                            Icons.takeout_dining_rounded,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBtnText,
+                                            size: 45.0,
+                                          ).animateOnPageLoad(animationsMap[
+                                              'iconOnPageLoadAnimation2']!),
+                                        ),
+                                        Expanded(
+                                          flex: 2,
+                                          child: Text(
+                                            FFLocalizations.of(context).getText(
+                                              'ppahxy75' /* Pay At Counter */,
+                                            ),
+                                            textAlign: TextAlign.center,
+                                            style: FlutterFlowTheme.of(context)
+                                                .displayLarge
+                                                .override(
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .displayLargeFamily,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryBtnText,
+                                                  fontSize: 36.0,
+                                                  letterSpacing: 0.0,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .displayLargeFamily),
+                                                ),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
                               ),
+                            ),
                           ],
                         ),
                       ),

@@ -17,6 +17,7 @@ Future<double> calBillAmtGroceryPay(
   double disAmt,
   double delChargs,
   double gstPer,
+  String inclusiveorexclusive,
 ) async {
   double billAmt;
 /*  print(
