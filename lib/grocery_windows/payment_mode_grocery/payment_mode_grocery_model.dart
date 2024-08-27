@@ -35,10 +35,30 @@ class PaymentModeGroceryModel
 
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
-  TextEditingController? textController;
-  String? Function(BuildContext, String?)? textControllerValidator;
+  TextEditingController? textController1;
+  String? Function(BuildContext, String?)? textController1Validator;
   // Stores action output result for [Custom Action - calculateGroceryAmtaction] action in Button widget.
   dynamic? result233;
+  // State field(s) for TextFielddisper widget.
+  FocusNode? textFielddisperFocusNode;
+  TextEditingController? textFielddisperTextController;
+  String? Function(BuildContext, String?)?
+      textFielddisperTextControllerValidator;
+  // State field(s) for TextFielddisamt widget.
+  FocusNode? textFielddisamtFocusNode;
+  TextEditingController? textFielddisamtTextController;
+  String? Function(BuildContext, String?)?
+      textFielddisamtTextControllerValidator;
+  // State field(s) for TextFieldgstper widget.
+  FocusNode? textFieldgstperFocusNode;
+  TextEditingController? textFieldgstperTextController;
+  String? Function(BuildContext, String?)?
+      textFieldgstperTextControllerValidator;
+  // State field(s) for TextFieldextra widget.
+  FocusNode? textFieldextraFocusNode;
+  TextEditingController? textFieldextraTextController;
+  String? Function(BuildContext, String?)?
+      textFieldextraTextControllerValidator;
   // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
   List<SelItemListStruct>? prdlistsavebill;
   // Stores action output result for [Custom Action - oldbalanceplusamt] action in Button widget.
@@ -82,6 +102,18 @@ class PaymentModeGroceryModel
   @override
   void dispose() {
     textFieldFocusNode?.dispose();
-    textController?.dispose();
+    textController1?.dispose();
+
+    textFielddisperFocusNode?.dispose();
+    textFielddisperTextController?.dispose();
+
+    textFielddisamtFocusNode?.dispose();
+    textFielddisamtTextController?.dispose();
+
+    textFieldgstperFocusNode?.dispose();
+    textFieldgstperTextController?.dispose();
+
+    textFieldextraFocusNode?.dispose();
+    textFieldextraTextController?.dispose();
   }
 }
