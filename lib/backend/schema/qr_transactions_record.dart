@@ -111,6 +111,11 @@ class QrTransactionsRecord extends FirestoreRecord {
   String get resultStatus => _resultStatus ?? '';
   bool hasResultStatus() => _resultStatus != null;
 
+  // "dayId" field.
+  String? _dayId;
+  String get dayId => _dayId ?? '';
+  bool hasDayId() => _dayId != null;
+
   DocumentReference get parentReference => reference.parent.parent!;
 
   void _initializeFields() {
@@ -133,6 +138,7 @@ class QrTransactionsRecord extends FirestoreRecord {
     _resJsonString = snapshotData['resJsonString'] as String?;
     _createdDate = castToType<int>(snapshotData['createdDate']);
     _resultStatus = snapshotData['resultStatus'] as String?;
+    _dayId = snapshotData['dayId'] as String?;
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -194,6 +200,7 @@ Map<String, dynamic> createQrTransactionsRecordData({
   String? resJsonString,
   int? createdDate,
   String? resultStatus,
+  String? dayId,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -216,6 +223,7 @@ Map<String, dynamic> createQrTransactionsRecordData({
       'resJsonString': resJsonString,
       'createdDate': createdDate,
       'resultStatus': resultStatus,
+      'dayId': dayId,
     }.withoutNulls,
   );
 
@@ -246,7 +254,8 @@ class QrTransactionsRecordDocumentEquality
         e1?.mid == e2?.mid &&
         e1?.resJsonString == e2?.resJsonString &&
         e1?.createdDate == e2?.createdDate &&
-        e1?.resultStatus == e2?.resultStatus;
+        e1?.resultStatus == e2?.resultStatus &&
+        e1?.dayId == e2?.dayId;
   }
 
   @override
@@ -269,7 +278,8 @@ class QrTransactionsRecordDocumentEquality
         e?.mid,
         e?.resJsonString,
         e?.createdDate,
-        e?.resultStatus
+        e?.resultStatus,
+        e?.dayId
       ]);
 
   @override

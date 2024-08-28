@@ -41,7 +41,7 @@ class OnlineSync extends StatefulWidget {
   _OnlineSyncState createState() => _OnlineSyncState();
 }
 
-class __OnlineSyncState extends State<OnlineSync> {
+class _OnlineSyncState extends State<OnlineSync> {
   bool isOnline = false;
   late StreamSubscription<ConnectivityResult> _subscription;
   late LoadingScreenNewModel _model;

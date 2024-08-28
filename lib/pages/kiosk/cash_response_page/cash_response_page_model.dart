@@ -27,6 +27,8 @@ class CashResponsePageModel extends FlutterFlowModel<CashResponsePageWidget> {
   List<SelItemListStruct>? prdListkiosk;
   // Stores action output result for [Backend Call - Create Document] action in cashResponsePage widget.
   InvoiceRecord? docInvoicekiosk;
+  // Stores action output result for [Backend Call - Create Document] action in cashResponsePage widget.
+  QrTransactionsRecord? qRTransDocOut;
   // Stores action output result for [Custom Action - calShiftSummary] action in cashResponsePage widget.
   dynamic? shiftSummarRkiosk;
   // Stores action output result for [Firestore Query - Query a collection] action in cashResponsePage widget.

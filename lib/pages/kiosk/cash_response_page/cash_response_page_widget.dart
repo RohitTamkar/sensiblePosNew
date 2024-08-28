@@ -158,6 +158,44 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
         await _model.docInvoicekiosk!.reference.update(createInvoiceRecordData(
           id: _model.docInvoicekiosk?.reference.id,
         ));
+
+        var qrTransactionsRecordReference =
+            QrTransactionsRecord.createDoc(FFAppState().outletIdRef!);
+        await qrTransactionsRecordReference.set(createQrTransactionsRecordData(
+          orderId: FFAppState().paytmOrderId,
+          createdDate: functions.timestampToMili(getCurrentTimestamp),
+          dayId: functions.getDayId(),
+          mid: FFAppState().mid,
+          mode: 'CASH',
+          msg: 'Txn Success',
+          posId: FFAppState().deviceqrId,
+          resultStatus: 'TXN_SUCCESS',
+          status: true,
+          txAmount: FFAppState().finalAmt,
+          txDateTime: functions.timestampToMili(getCurrentTimestamp),
+          txType: 'SALE',
+        ));
+        _model.qRTransDocOut = QrTransactionsRecord.getDocumentFromData(
+            createQrTransactionsRecordData(
+              orderId: FFAppState().paytmOrderId,
+              createdDate: functions.timestampToMili(getCurrentTimestamp),
+              dayId: functions.getDayId(),
+              mid: FFAppState().mid,
+              mode: 'CASH',
+              msg: 'Txn Success',
+              posId: FFAppState().deviceqrId,
+              resultStatus: 'TXN_SUCCESS',
+              status: true,
+              txAmount: FFAppState().finalAmt,
+              txDateTime: functions.timestampToMili(getCurrentTimestamp),
+              txType: 'SALE',
+            ),
+            qrTransactionsRecordReference);
+
+        await _model.qRTransDocOut!.reference
+            .update(createQrTransactionsRecordData(
+          id: _model.qRTransDocOut?.reference.id,
+        ));
         if (getJsonField(
           widget!.shiftdetails,
           r'''$.shiftExists''',
