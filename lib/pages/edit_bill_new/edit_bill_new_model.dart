@@ -25,6 +25,7 @@ import 'package:provider/provider.dart';
 class EditBillNewModel extends FlutterFlowModel<EditBillNewWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - hiveGetInvoicestoday] action in EditBillNew widget.
   List<InvoiceStructStruct>? invoicebyday;
   // Model for Header component.

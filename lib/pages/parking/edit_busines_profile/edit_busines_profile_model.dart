@@ -19,6 +19,7 @@ class EditBusinesProfileModel
     extends FlutterFlowModel<EditBusinesProfileWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
   // State field(s) for TextBusinessName widget.
   FocusNode? textBusinessNameFocusNode;

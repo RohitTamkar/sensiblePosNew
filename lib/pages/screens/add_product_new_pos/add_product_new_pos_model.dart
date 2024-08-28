@@ -18,6 +18,7 @@ import 'package:provider/provider.dart';
 class AddProductNewPosModel extends FlutterFlowModel<AddProductNewPosWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
   // Model for Header component.
   late HeaderModel headerModel;

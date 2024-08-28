@@ -33,6 +33,7 @@ class ParkingCustomersModel extends FlutterFlowModel<ParkingCustomersWidget> {
 
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // Stores action output result for [Firestore Query - Query a collection] action in ParkingCustomers widget.
   List<InvoiceRecord>? listcars2;
   // Stores action output result for [Custom Action - scanPrinter] action in ParkingCustomers widget.

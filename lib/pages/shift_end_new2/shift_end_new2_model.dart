@@ -18,6 +18,7 @@ import 'package:provider/provider.dart';
 class ShiftEndNew2Model extends FlutterFlowModel<ShiftEndNew2Widget> {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - hiveShiftCrud] action in ShiftEndNew2 widget.
   ShiftDetailsStruct? shiftDatalocalnew;
   // State field(s) for TextField widget.

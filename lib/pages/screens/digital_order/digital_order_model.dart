@@ -20,6 +20,7 @@ import 'package:provider/provider.dart';
 class DigitalOrderModel extends FlutterFlowModel<DigitalOrderWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   InstantTimer? instantTimer;
   // Stores action output result for [Custom Action - getDigitalOrders] action in DigitalOrder widget.
   bool? res;

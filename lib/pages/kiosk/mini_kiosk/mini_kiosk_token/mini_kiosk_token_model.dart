@@ -14,6 +14,7 @@ import 'package:provider/provider.dart';
 class MiniKioskTokenModel extends FlutterFlowModel<MiniKioskTokenWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - scanPrinter] action in token widget.
   bool? resDevice2;
   // Stores action output result for [Custom Action - newCustomAction] action in token widget.

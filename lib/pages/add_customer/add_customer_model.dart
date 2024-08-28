@@ -19,6 +19,7 @@ import 'package:provider/provider.dart';
 class AddCustomerModel extends FlutterFlowModel<AddCustomerWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
   // Model for Header component.
   late HeaderModel headerModel;

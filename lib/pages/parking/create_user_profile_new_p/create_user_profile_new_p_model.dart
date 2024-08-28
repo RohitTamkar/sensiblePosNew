@@ -18,6 +18,7 @@ class CreateUserProfileNewPModel
     extends FlutterFlowModel<CreateUserProfileNewPWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
   // State field(s) for TextFieldName widget.
   FocusNode? textFieldNameFocusNode;

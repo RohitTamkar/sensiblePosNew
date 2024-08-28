@@ -14,6 +14,7 @@ import 'package:provider/provider.dart';
 class SubscriptionNewModel extends FlutterFlowModel<SubscriptionNewWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // Model for Header component.
   late HeaderModel headerModel;
 

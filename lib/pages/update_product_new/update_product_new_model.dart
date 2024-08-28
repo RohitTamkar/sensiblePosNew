@@ -27,6 +27,7 @@ class UpdateProductNewModel extends FlutterFlowModel<UpdateProductNewWidget> {
 
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - hiveGetProduct] action in UpdateProductNew widget.
   ProductStructStruct? getproductForupdate;
   // Model for Header component.

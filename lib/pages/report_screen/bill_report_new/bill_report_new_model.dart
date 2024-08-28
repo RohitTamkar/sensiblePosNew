@@ -21,6 +21,7 @@ import 'package:provider/provider.dart';
 class BillReportNewModel extends FlutterFlowModel<BillReportNewWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - checkInternetConnection] action in BillReportNew widget.
   bool? internetCheck;
   // Model for Header component.

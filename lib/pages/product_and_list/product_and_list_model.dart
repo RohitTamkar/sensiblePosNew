@@ -31,6 +31,7 @@ import 'package:text_search/text_search.dart';
 class ProductAndListModel extends FlutterFlowModel<ProductAndListWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // Model for MenuDrawer component.
   late MenuDrawerModel menuDrawerModel;
   // State field(s) for TextField widget.

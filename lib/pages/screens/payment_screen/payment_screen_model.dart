@@ -22,6 +22,7 @@ import 'package:text_search/text_search.dart';
 class PaymentScreenModel extends FlutterFlowModel<PaymentScreenWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // Model for Header component.
   late HeaderModel headerModel;
   // State field(s) for TabBar widget.

@@ -13,6 +13,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 Future<double> calBillAmtGroceryPay(
   double disAmt,
   double delChargs,
@@ -20,22 +22,27 @@ Future<double> calBillAmtGroceryPay(
   String inclusiveorexclusive,
 ) async {
   double billAmt;
-/*  print(
-      "----------------------------------------------------3C---------------------------------------------------------------");
+/*  print("----------------------------------------------------3C---------------------------------------------------------------");
   */
   billAmt = FFAppState().billAmt;
-
+  if (disAmt > 0) {
+    billAmt -= disAmt;
+    print(disAmt);
+  }
   if (delChargs > 0) {
     // FFAppState().delCharges = delChargs * FFAppState().noOfItems;
-    billAmt += delChargs * FFAppState().noOfItems;
-/*    print(delChargs);*/
+    billAmt += delChargs;
+/* print(delChargs); */
   }
-
+  if (gstPer > 0) {
+    double taxAmtPerItem = (inclusiveorexclusive.toLowerCase() == 'inclusive')
+        ? (billAmt * gstPer) / (100.0 + gstPer)
+        : (billAmt * gstPer) / 100.0;
+    FFAppState().taxAmtPay = taxAmtPerItem;
+    billAmt += taxAmtPerItem;
+  }
   FFAppState().finalAmt = billAmt.roundToDouble();
-/*  print("==================================================================");
-  print(FFAppState().finalAmt);*/
-  // FFAppState().subTotal = billAmt;
 
-/*  print(billAmt);*/
+  print(billAmt);
   return billAmt.roundToDouble();
 }

@@ -42,6 +42,7 @@ class BillingGroceryNewModel extends FlutterFlowModel<BillingGroceryNewWidget> {
 
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - getProductlistHive] action in BillingGroceryNew widget.
   List<ProductStructStruct>? hiveProductList;
   // Stores action output result for [Custom Action - getCategorylistHive] action in BillingGroceryNew widget.

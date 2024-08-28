@@ -11,6 +11,10 @@ import 'package:provider/provider.dart';
 
 class ParkingProductCopyModel
     extends FlutterFlowModel<ParkingProductCopyWidget> {
+  ///  State fields for stateful widgets in this page.
+
+  final unfocusNode = FocusNode();
+
   @override
   void initState(BuildContext context) {}
 

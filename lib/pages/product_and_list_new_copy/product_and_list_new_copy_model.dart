@@ -67,6 +67,7 @@ class ProductAndListNewCopyModel
 
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - getProductlistHive] action in ProductAndListNewCopy widget.
   List<ProductStructStruct>? hiveProductList;
   // Stores action output result for [Custom Action - getCategorylistHive] action in ProductAndListNewCopy widget.

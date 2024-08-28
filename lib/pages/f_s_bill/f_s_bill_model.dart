@@ -21,6 +21,7 @@ import 'package:text_search/text_search.dart';
 class FSBillModel extends FlutterFlowModel<FSBillWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // Model for HeaderCopy component.
   late HeaderCopyModel headerCopyModel;
   // State field(s) for TextFieldDis widget.

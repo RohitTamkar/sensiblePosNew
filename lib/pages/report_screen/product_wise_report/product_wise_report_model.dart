@@ -17,6 +17,7 @@ import 'package:provider/provider.dart';
 class ProductWiseReportModel extends FlutterFlowModel<ProductWiseReportWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // Model for Header component.
   late HeaderModel headerModel;
   // Stores action output result for [Custom Action - scanPrinter] action in FloatingActionButton widget.
