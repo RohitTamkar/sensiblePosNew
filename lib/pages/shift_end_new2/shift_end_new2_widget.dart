@@ -3766,8 +3766,13 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                               );
                                             },
                                           );
-
-                                          context.pushNamed('WindowsLogin');
+                                          FFAppState().quickPin = '';
+                                          FFAppState().update(() {});
+                                          if (isAndroid == true) {
+                                            context.pushNamed('LoginPageNew');
+                                          } else {
+                                            context.pushNamed('WindowsLogin');
+                                          }
                                         } else {
                                           if (_shouldSetState) setState(() {});
                                           return;

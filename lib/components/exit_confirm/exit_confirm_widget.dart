@@ -83,11 +83,11 @@ class _ExitConfirmWidgetState extends State<ExitConfirmWidget> {
                     hoverColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     onTap: () async {
-                      FFAppState().quickPin = '';
-                      FFAppState().update(() {});
                       _model.result = await actions.checkPlatform(
                         isWeb.toString(),
                       );
+                      FFAppState().quickPin = '';
+                      FFAppState().update(() {});
                       if (isAndroid == true) {
                         context.pushNamed('LoginPageNew');
                       } else {

@@ -1,7 +1,9 @@
+import '/backend/backend.dart';
 import '/components/exit_confirm/exit_confirm_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -10,7 +12,20 @@ import 'grocery_header_model.dart';
 export 'grocery_header_model.dart';
 
 class GroceryHeaderWidget extends StatefulWidget {
-  const GroceryHeaderWidget({super.key});
+  const GroceryHeaderWidget({
+    super.key,
+    this.shiftdetails,
+    this.userref,
+    this.taxdetails,
+    this.appsettings,
+    this.paymentmode,
+  });
+
+  final dynamic shiftdetails;
+  final DocumentReference? userref;
+  final List<TaxMasterRecord>? taxdetails;
+  final AppSettingsRecord? appsettings;
+  final List<PaymentModeRecord>? paymentmode;
 
   @override
   State<GroceryHeaderWidget> createState() => _GroceryHeaderWidgetState();
@@ -128,8 +143,34 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
           ),
           Expanded(
             child: FFButtonWidget(
-              onPressed: () {
-                print('Button pressed ...');
+              onPressed: () async {
+                context.pushNamed(
+                  'BillingGroceryNew',
+                  queryParameters: {
+                    'shiftdetail': serializeParam(
+                      widget!.shiftdetails,
+                      ParamType.JSON,
+                    ),
+                    'taxDetails': serializeParam(
+                      widget!.taxdetails,
+                      ParamType.Document,
+                      isList: true,
+                    ),
+                    'userref': serializeParam(
+                      widget!.userref,
+                      ParamType.DocumentReference,
+                    ),
+                    'paymentMode': serializeParam(
+                      widget!.paymentmode,
+                      ParamType.Document,
+                      isList: true,
+                    ),
+                  }.withoutNulls,
+                  extra: <String, dynamic>{
+                    'taxDetails': widget!.taxdetails,
+                    'paymentMode': widget!.paymentmode,
+                  },
+                );
               },
               text: FFLocalizations.of(context).getText(
                 'qbrchsco' /* Sales */,
@@ -170,7 +211,7 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
                 print('Button pressed ...');
               },
               text: FFLocalizations.of(context).getText(
-                'h36mmqdv' /* Reports */,
+                'qu3146yq' /* Payment */,
               ),
               icon: Icon(
                 Icons.bar_chart,
@@ -241,7 +282,7 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
           Expanded(
             child: FFButtonWidget(
               onPressed: () async {
-                context.pushNamed('PrinterSelectionScreen');
+                context.pushNamed('printSettingkiosk');
               },
               text: FFLocalizations.of(context).getText(
                 'u7ti7eko' /* Print Settings */,
@@ -277,8 +318,8 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
           ),
           Expanded(
             child: FFButtonWidget(
-              onPressed: () {
-                print('Button pressed ...');
+              onPressed: () async {
+                context.pushNamed('AppSettingNewPos');
               },
               text: FFLocalizations.of(context).getText(
                 'h6cu660m' /* Settings */,

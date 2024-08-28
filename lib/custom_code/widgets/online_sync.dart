@@ -23,8 +23,8 @@ import 'dart:async';
 import 'dart:isolate';
 import 'package:connectivity_plus/connectivity_plus.dart';
 
-class NewCustomWidget extends StatefulWidget {
-  const NewCustomWidget({
+class OnlineSync extends StatefulWidget {
+  const OnlineSync({
     Key? key,
     this.width,
     this.height,
@@ -38,10 +38,10 @@ class NewCustomWidget extends StatefulWidget {
   final DocumentReference userDoc;
 
   @override
-  _NewCustomWidgetState createState() => _NewCustomWidgetState();
+  _OnlineSyncState createState() => _OnlineSyncState();
 }
 
-class _NewCustomWidgetState extends State<NewCustomWidget> {
+class _OnlineSync extends State<OnlineSync> {
   bool isOnline = false;
   late StreamSubscription<ConnectivityResult> _subscription;
   late LoadingScreenNewModel _model;

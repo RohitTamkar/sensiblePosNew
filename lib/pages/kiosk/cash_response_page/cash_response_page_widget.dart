@@ -538,7 +538,9 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
                             wrapWithModel(
                               model: _model.cashConfirmOrderModel,
                               updateCallback: () => setState(() {}),
-                              child: CashConfirmOrderWidget(),
+                              child: CashConfirmOrderWidget(
+                                orderId: 'ORD',
+                              ),
                             ),
                             InkWell(
                               splashColor: Colors.transparent,

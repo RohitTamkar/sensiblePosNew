@@ -286,14 +286,23 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.center,
                                       children: [
+                                        Container(
+                                          width: 100.0,
+                                          height: 45.0,
+                                          child: custom_widgets.OnlineSync(
+                                            width: 100.0,
+                                            height: 45.0,
+                                            outletRef:
+                                                FFAppState().outletIdRef!,
+                                            userDoc: widget!.userref!,
+                                          ),
+                                        ),
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 10.0, 0.0),
                                           child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              'agwiq5zl' /* Outlet Name */,
-                                            ),
+                                            FFAppState().outletName,
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineSmall
                                                 .override(
@@ -318,9 +327,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 15.0, 0.0),
                                           child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              'w2ozvaqe' /* Branch */,
-                                            ),
+                                            FFAppState().userName,
                                             style: FlutterFlowTheme.of(context)
                                                 .labelSmall
                                                 .override(
@@ -371,7 +378,13 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                           wrapWithModel(
                             model: _model.groceryHeaderModel,
                             updateCallback: () => setState(() {}),
-                            child: GroceryHeaderWidget(),
+                            child: GroceryHeaderWidget(
+                              shiftdetails: widget!.shiftdetail,
+                              userref: widget!.userref,
+                              taxdetails: widget!.taxDetails,
+                              paymentmode: widget!.paymentMode,
+                              appsettings: containerAppSettingsRecord,
+                            ),
                           ),
                           Container(
                             width: double.infinity,

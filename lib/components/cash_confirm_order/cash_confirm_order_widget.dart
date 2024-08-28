@@ -10,11 +10,9 @@ export 'cash_confirm_order_model.dart';
 class CashConfirmOrderWidget extends StatefulWidget {
   const CashConfirmOrderWidget({
     super.key,
-    this.char,
     this.orderId,
   });
 
-  final String? char;
   final String? orderId;
 
   @override

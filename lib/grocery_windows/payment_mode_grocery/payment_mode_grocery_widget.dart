@@ -2357,6 +2357,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                           obscureText: false,
                                                           decoration:
                                                               InputDecoration(
+                                                            isDense: false,
                                                             labelStyle:
                                                                 FlutterFlowTheme.of(
                                                                         context)
@@ -2377,6 +2378,12 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                           .containsKey(
                                                                               FlutterFlowTheme.of(context).labelLargeFamily),
                                                                     ),
+                                                            hintText:
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                              'aq6m7rj3' /* 0 */,
+                                                            ),
                                                             hintStyle:
                                                                 FlutterFlowTheme.of(
                                                                         context)
@@ -2403,7 +2410,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          8.0),
+                                                                          0.0),
                                                             ),
                                                             focusedBorder:
                                                                 UnderlineInputBorder(
@@ -2417,7 +2424,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          8.0),
+                                                                          0.0),
                                                             ),
                                                             errorBorder:
                                                                 UnderlineInputBorder(
@@ -2431,7 +2438,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          8.0),
+                                                                          0.0),
                                                             ),
                                                             focusedErrorBorder:
                                                                 UnderlineInputBorder(
@@ -2445,7 +2452,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          8.0),
+                                                                          0.0),
                                                             ),
                                                           ),
                                                           style: FlutterFlowTheme
@@ -2467,6 +2474,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                         FlutterFlowTheme.of(context)
                                                                             .bodyMediumFamily),
                                                               ),
+                                                          textAlign:
+                                                              TextAlign.center,
                                                           validator: _model
                                                               .textFielddisperTextControllerValidator
                                                               .asValidator(
@@ -2647,6 +2656,12 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                         .containsKey(
                                                                             FlutterFlowTheme.of(context).labelLargeFamily),
                                                                   ),
+                                                          hintText:
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                            '158f912w' /* 0 */,
+                                                          ),
                                                           hintStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -2671,9 +2686,15 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                               width: 2.0,
                                                             ),
                                                             borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8.0),
+                                                                const BorderRadius
+                                                                    .only(
+                                                              topLeft: Radius
+                                                                  .circular(
+                                                                      4.0),
+                                                              topRight: Radius
+                                                                  .circular(
+                                                                      4.0),
+                                                            ),
                                                           ),
                                                           focusedBorder:
                                                               UnderlineInputBorder(
@@ -2685,9 +2706,15 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                               width: 2.0,
                                                             ),
                                                             borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8.0),
+                                                                const BorderRadius
+                                                                    .only(
+                                                              topLeft: Radius
+                                                                  .circular(
+                                                                      4.0),
+                                                              topRight: Radius
+                                                                  .circular(
+                                                                      4.0),
+                                                            ),
                                                           ),
                                                           errorBorder:
                                                               UnderlineInputBorder(
@@ -2699,9 +2726,15 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                               width: 2.0,
                                                             ),
                                                             borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8.0),
+                                                                const BorderRadius
+                                                                    .only(
+                                                              topLeft: Radius
+                                                                  .circular(
+                                                                      4.0),
+                                                              topRight: Radius
+                                                                  .circular(
+                                                                      4.0),
+                                                            ),
                                                           ),
                                                           focusedErrorBorder:
                                                               UnderlineInputBorder(
@@ -2713,9 +2746,15 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                               width: 2.0,
                                                             ),
                                                             borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8.0),
+                                                                const BorderRadius
+                                                                    .only(
+                                                              topLeft: Radius
+                                                                  .circular(
+                                                                      4.0),
+                                                              topRight: Radius
+                                                                  .circular(
+                                                                      4.0),
+                                                            ),
                                                           ),
                                                         ),
                                                         style:
@@ -2736,6 +2775,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                           FlutterFlowTheme.of(context)
                                                                               .bodyMediumFamily),
                                                                 ),
+                                                        textAlign:
+                                                            TextAlign.center,
                                                         validator: _model
                                                             .textFielddisamtTextControllerValidator
                                                             .asValidator(
@@ -2926,6 +2967,12 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                           .containsKey(
                                                                               FlutterFlowTheme.of(context).labelLargeFamily),
                                                                     ),
+                                                            hintText:
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                              'ktl5il7h' /* 0 */,
+                                                            ),
                                                             hintStyle:
                                                                 FlutterFlowTheme.of(
                                                                         context)
@@ -2950,9 +2997,15 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                 width: 2.0,
                                                               ),
                                                               borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          8.0),
+                                                                  const BorderRadius
+                                                                      .only(
+                                                                topLeft: Radius
+                                                                    .circular(
+                                                                        4.0),
+                                                                topRight: Radius
+                                                                    .circular(
+                                                                        4.0),
+                                                              ),
                                                             ),
                                                             focusedBorder:
                                                                 UnderlineInputBorder(
@@ -2964,9 +3017,15 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                 width: 2.0,
                                                               ),
                                                               borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          8.0),
+                                                                  const BorderRadius
+                                                                      .only(
+                                                                topLeft: Radius
+                                                                    .circular(
+                                                                        4.0),
+                                                                topRight: Radius
+                                                                    .circular(
+                                                                        4.0),
+                                                              ),
                                                             ),
                                                             errorBorder:
                                                                 UnderlineInputBorder(
@@ -2978,9 +3037,15 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                 width: 2.0,
                                                               ),
                                                               borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          8.0),
+                                                                  const BorderRadius
+                                                                      .only(
+                                                                topLeft: Radius
+                                                                    .circular(
+                                                                        4.0),
+                                                                topRight: Radius
+                                                                    .circular(
+                                                                        4.0),
+                                                              ),
                                                             ),
                                                             focusedErrorBorder:
                                                                 UnderlineInputBorder(
@@ -2992,9 +3057,15 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                 width: 2.0,
                                                               ),
                                                               borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          8.0),
+                                                                  const BorderRadius
+                                                                      .only(
+                                                                topLeft: Radius
+                                                                    .circular(
+                                                                        4.0),
+                                                                topRight: Radius
+                                                                    .circular(
+                                                                        4.0),
+                                                              ),
                                                             ),
                                                           ),
                                                           style: FlutterFlowTheme
@@ -3013,6 +3084,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                         FlutterFlowTheme.of(context)
                                                                             .bodyMediumFamily),
                                                               ),
+                                                          textAlign:
+                                                              TextAlign.center,
                                                           validator: _model
                                                               .textFieldgstperTextControllerValidator
                                                               .asValidator(
@@ -3172,6 +3245,12 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                         .containsKey(
                                                                             FlutterFlowTheme.of(context).labelLargeFamily),
                                                                   ),
+                                                          hintText:
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                            'i1njmwfu' /* 0 */,
+                                                          ),
                                                           hintStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -3196,9 +3275,15 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                               width: 2.0,
                                                             ),
                                                             borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8.0),
+                                                                const BorderRadius
+                                                                    .only(
+                                                              topLeft: Radius
+                                                                  .circular(
+                                                                      4.0),
+                                                              topRight: Radius
+                                                                  .circular(
+                                                                      4.0),
+                                                            ),
                                                           ),
                                                           focusedBorder:
                                                               UnderlineInputBorder(
@@ -3210,9 +3295,15 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                               width: 2.0,
                                                             ),
                                                             borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8.0),
+                                                                const BorderRadius
+                                                                    .only(
+                                                              topLeft: Radius
+                                                                  .circular(
+                                                                      4.0),
+                                                              topRight: Radius
+                                                                  .circular(
+                                                                      4.0),
+                                                            ),
                                                           ),
                                                           errorBorder:
                                                               UnderlineInputBorder(
@@ -3224,9 +3315,15 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                               width: 2.0,
                                                             ),
                                                             borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8.0),
+                                                                const BorderRadius
+                                                                    .only(
+                                                              topLeft: Radius
+                                                                  .circular(
+                                                                      4.0),
+                                                              topRight: Radius
+                                                                  .circular(
+                                                                      4.0),
+                                                            ),
                                                           ),
                                                           focusedErrorBorder:
                                                               UnderlineInputBorder(
@@ -3238,9 +3335,15 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                               width: 2.0,
                                                             ),
                                                             borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8.0),
+                                                                const BorderRadius
+                                                                    .only(
+                                                              topLeft: Radius
+                                                                  .circular(
+                                                                      4.0),
+                                                              topRight: Radius
+                                                                  .circular(
+                                                                      4.0),
+                                                            ),
                                                           ),
                                                         ),
                                                         style:
@@ -3264,6 +3367,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                           FlutterFlowTheme.of(context)
                                                                               .bodyMediumFamily),
                                                                 ),
+                                                        textAlign:
+                                                            TextAlign.center,
                                                         validator: _model
                                                             .textFieldextraTextControllerValidator
                                                             .asValidator(
@@ -3559,7 +3664,6 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             FFAppState().subTotal = 0.0;
                                             FFAppState().count =
                                                 _model.updatedShift!.billCount;
-                                            FFAppState().delCharges = 0.0;
                                             FFAppState().update(() {});
                                             FFAppState().oldBalance = 0;
                                             FFAppState().custCredit = 0;
@@ -3567,10 +3671,18 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             FFAppState().setCustRef = null;
                                             FFAppState().setCustName = '';
                                             FFAppState().setCustMobNo = '';
+                                            FFAppState().taxamt = 0.0;
+                                            FFAppState().taxAmtPay = 0.0;
+                                            FFAppState().disPer = 0.0;
+                                            FFAppState().disAmtPay = 0.0;
+                                            FFAppState().disAmt = 0.0;
                                             FFAppState().update(() {});
                                             FFAppState().finalAmt = 0.0;
                                             FFAppState().billAmt = 0.0;
                                             FFAppState().groceryJson = null;
+                                            FFAppState().delCharges = 0.0;
+                                            FFAppState().disAmtPay = 0.0;
+                                            FFAppState().taxAmtPay = 0.0;
                                             FFAppState().update(() {});
                                             Navigator.pop(context);
                                             if (_shouldSetState)
@@ -4044,6 +4156,11 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             FFAppState().setCustName = '';
                                             FFAppState().setCustMobNo = '';
                                             FFAppState().noOfItems = 0;
+                                            FFAppState().taxAmtPay = 0.0;
+                                            FFAppState().taxamt = 0.0;
+                                            FFAppState().disAmtPay = 0.0;
+                                            FFAppState().disPer = 0.0;
+                                            FFAppState().disAmt = 0.0;
                                             FFAppState().update(() {});
                                             FFAppState().finalAmt = 0.0;
                                             FFAppState().billAmt = 0.0;
