@@ -164,7 +164,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
         await qrTransactionsRecordReference.set(createQrTransactionsRecordData(
           orderId: FFAppState().paytmOrderId,
           createdDate: functions.timestampToMili(getCurrentTimestamp),
-          dayId: functions.getDayId(),
+          dayId: functions.getDayIdDDMMYYYY(),
           mid: FFAppState().mid,
           mode: 'CASH',
           msg: 'Txn Success',
@@ -179,7 +179,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
             createQrTransactionsRecordData(
               orderId: FFAppState().paytmOrderId,
               createdDate: functions.timestampToMili(getCurrentTimestamp),
-              dayId: functions.getDayId(),
+              dayId: functions.getDayIdDDMMYYYY(),
               mid: FFAppState().mid,
               mode: 'CASH',
               msg: 'Txn Success',

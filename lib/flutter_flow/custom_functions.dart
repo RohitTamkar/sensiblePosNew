@@ -255,6 +255,31 @@ bool toggleLogin(bool? state) {
   return state;
 }
 
+String getDayIdDDMMYYYY() {
+  // Add your function code here!
+
+  DateTime date = DateTime.now();
+  var day, month;
+
+  if (date.day.toString().length == 1) {
+    day = "0" + date.day.toString();
+  } else {
+    day = date.day.toString();
+  }
+
+  if (date.month.toString().length == 1) {
+    month = "0" + date.month.toString();
+  } else {
+    month = date.month.toString();
+  }
+
+  var invNum = day + "-" + month + "-" + date.year.toString();
+
+  print(invNum);
+
+  return invNum.toString();
+}
+
 bool setFlag(bool? value) {
   // Add your function code here!
   if (value == true) {
