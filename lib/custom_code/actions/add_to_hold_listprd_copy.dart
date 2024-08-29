@@ -23,10 +23,11 @@ Future<List<dynamic>> addToHoldListprdCopy(
   var y = 1.0;
 
   String? taxId = '';
-  if (document?.taxId == null) {
-    taxId = 'QPIz6c63YKBYVKT80oPv';
+
+  if (document!.taxId.isNotEmpty) {
+    taxId = document.taxId;
   } else {
-    taxId = document?.taxId;
+    taxId = 'QPIz6c63YKBYVKT80oPv';
   }
   TaxMasterRecord? taxRecord = taxcollection.firstWhere(
     (element) => element.id == taxId,

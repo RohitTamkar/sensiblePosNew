@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 Future<List<dynamic>> addToHoldListprdGrocery(
   ProductStructStruct document,
   int billno,
@@ -24,10 +26,10 @@ Future<List<dynamic>> addToHoldListprdGrocery(
   var y = 1.0;
 
   String? taxId = '';
-  if (document?.taxId == null) {
-    taxId = 'QPIz6c63YKBYVKT80oPv';
+  if (document!.taxId.isNotEmpty) {
+    taxId = document.taxId;
   } else {
-    taxId = document?.taxId;
+    taxId = 'QPIz6c63YKBYVKT80oPv';
   }
   TaxMasterRecord? taxRecord = taxcollection.firstWhere(
     (element) => element.id == taxId,
@@ -35,10 +37,10 @@ Future<List<dynamic>> addToHoldListprdGrocery(
   );
 
   String? unitId = '';
-  if (document?.unitId == null) {
-    unitId = 'HjExWViQAwNJCUiUPwBz';
-  } else {
+  if (document!.unitId.isNotEmpty) {
     unitId = document?.unitId;
+  } else {
+    unitId = 'HjExWViQAwNJCUiUPwBz';
   }
   UnitTypeRecord? unitRecord = unitcollection.firstWhere(
     (element) => element.id == unitId,

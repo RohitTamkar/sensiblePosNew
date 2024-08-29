@@ -745,8 +745,8 @@ Future printBillFormatTwo(
       bytes += generator.text(
           "PAYMENT MODE :" + invoiceDetails.paymentMode.toString(),
           styles: const PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
+              height: PosTextSize.size2,
+              width: PosTextSize.size2,
               bold: false,
               align: PosAlign.center));
 
