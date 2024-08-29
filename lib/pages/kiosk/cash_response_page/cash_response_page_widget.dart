@@ -577,7 +577,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
                               model: _model.cashConfirmOrderModel,
                               updateCallback: () => setState(() {}),
                               child: CashConfirmOrderWidget(
-                                orderId: 'ORD',
+                                orderId: FFAppState().paytmOrderId,
                               ),
                             ),
                             InkWell(

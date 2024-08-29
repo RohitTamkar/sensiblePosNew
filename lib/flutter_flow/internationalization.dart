@@ -21618,20 +21618,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    '5ck6mggg': {
-      'en': 'EAN code',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    'car3pwc3': {
-      'en': '',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
     'zixyh8el': {
       'en': 'Product ID',
       'hi': '',

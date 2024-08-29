@@ -93,6 +93,6 @@ Future<ProductStructStruct> hiveGetProduct(int hivekey) async {
     synC: capturedsynC,
     version: capturedversion,
   ); // if key is somehow null, it gets the id number 9999
-  print(product);
+  //print(product);
   return product;
 }

@@ -68,10 +68,6 @@ class BillingGroceryNewModel extends FlutterFlowModel<BillingGroceryNewWidget> {
   FocusNode? custAddressFocusNode;
   TextEditingController? custAddressTextController;
   String? Function(BuildContext, String?)? custAddressTextControllerValidator;
-  // State field(s) for custEancode widget.
-  FocusNode? custEancodeFocusNode;
-  TextEditingController? custEancodeTextController;
-  String? Function(BuildContext, String?)? custEancodeTextControllerValidator;
   // Stores action output result for [Custom Action - removeHoldListItem] action in IconButton widget.
   List<dynamic>? res20;
   // Stores action output result for [Custom Action - calSubTotalForGrocery] action in IconButton widget.
@@ -117,8 +113,5 @@ class BillingGroceryNewModel extends FlutterFlowModel<BillingGroceryNewWidget> {
 
     custAddressFocusNode?.dispose();
     custAddressTextController?.dispose();
-
-    custEancodeFocusNode?.dispose();
-    custEancodeTextController?.dispose();
   }
 }
