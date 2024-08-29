@@ -87,6 +87,28 @@ Future<void> printEthernet(
       List<int> bytes = [];
       if (size == 46) {
         String billColumn3 = "ITEM NAME                                  QTY";
+        bytes += generator.text(
+            "-----------------------------------------------",
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.center));
+
+        bytes += generator.text(FFAppState().PayMode,
+            styles: const PosStyles(
+                height: PosTextSize.size2,
+                width: PosTextSize.size2,
+                bold: false,
+                align: PosAlign.center));
+
+        bytes += generator.text(
+            "-----------------------------------------------",
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.center));
         bytes += generator.text("# NEW KOT #",
             styles: PosStyles(
                 height: PosTextSize.size2,

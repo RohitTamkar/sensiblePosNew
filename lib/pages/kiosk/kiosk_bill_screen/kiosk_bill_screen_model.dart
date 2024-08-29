@@ -52,24 +52,6 @@ class KioskBillScreenModel extends FlutterFlowModel<KioskBillScreenWidget> {
   // Stores action output result for [Firestore Query - Query a collection] action in IconButton widget.
   AppSettingsRecord? appsettingresfresh;
   // Stores action output result for [Custom Action - addToHoldListkioskGst] action in Container widget.
-  List<dynamic>? resul987;
-  // Stores action output result for [Custom Action - calSubTotalForHoldListkiosk] action in Container widget.
-  double? res98;
-  // Stores action output result for [Custom Action - calBillAmt] action in Container widget.
-  double? res109;
-  // Stores action output result for [Custom Action - addToHoldListkioskGst] action in Container widget.
-  List<dynamic>? result29;
-  // Stores action output result for [Custom Action - calSubTotalForHoldListkiosk] action in Container widget.
-  double? res25a;
-  // Stores action output result for [Custom Action - calBillAmt] action in Container widget.
-  double? res102;
-  // Stores action output result for [Custom Action - plusQuantityHoldListkiosk] action in Container widget.
-  List<dynamic>? kioskresult2;
-  // Stores action output result for [Custom Action - calSubTotalForHoldListkiosk] action in Container widget.
-  double? res2342;
-  // Stores action output result for [Custom Action - calBillAmt] action in Container widget.
-  double? reuslt122;
-  // Stores action output result for [Custom Action - addToHoldListkioskGst] action in Container widget.
   List<dynamic>? result1;
   // Stores action output result for [Custom Action - calSubTotalForHoldListkiosk] action in Container widget.
   double? resp2;

@@ -1485,8 +1485,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                               Container(
                                                 width: 100.0,
                                                 height: 45.0,
-                                                child: custom_widgets
-                                                    .NewCustomWidget(
+                                                child:
+                                                    custom_widgets.OnlineSync(
                                                   width: 100.0,
                                                   height: 45.0,
                                                   outletRef:

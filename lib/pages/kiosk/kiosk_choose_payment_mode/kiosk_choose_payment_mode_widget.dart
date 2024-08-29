@@ -214,6 +214,9 @@ class _KioskChoosePaymentModeWidgetState
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
+                                FFAppState().PayMode = 'UPI QR';
+                                setState(() {});
+
                                 context.pushNamed(
                                   'KioskPayment',
                                   queryParameters: {
@@ -350,6 +353,9 @@ class _KioskChoosePaymentModeWidgetState
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
+                                  FFAppState().PayMode = 'CASH';
+                                  setState(() {});
+
                                   context.pushNamed(
                                     'cashResponsePage',
                                     queryParameters: {
