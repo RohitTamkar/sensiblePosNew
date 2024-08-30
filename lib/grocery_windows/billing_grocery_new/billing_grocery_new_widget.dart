@@ -476,6 +476,9 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                               FlutterFlowTheme.of(
                                                                       context)
                                                                   .bodyMediumFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
                                                           letterSpacing: 0.0,
                                                           useGoogleFonts: GoogleFonts
                                                                   .asMap()
@@ -577,83 +580,80 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                         final containerVarItem =
                                                             containerVar[
                                                                 containerVarIndex];
-                                                        return Container(
-                                                          height: 80.0,
-                                                          decoration:
-                                                              BoxDecoration(),
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsets.all(
-                                                                    2.0),
-                                                            child: InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                FFAppState()
-                                                                        .setCustName =
-                                                                    containerVarItem
-                                                                        .name;
-                                                                FFAppState()
-                                                                        .setCustMobNo =
-                                                                    containerVarItem
-                                                                        .mobile;
-                                                                FFAppState()
-                                                                        .oldBalance =
-                                                                    containerVarItem
-                                                                        .oldBalance;
-                                                                FFAppState()
-                                                                        .custCredit =
-                                                                    containerVarItem
-                                                                        .creditLimit;
-                                                                FFAppState()
-                                                                    .update(
-                                                                        () {});
-                                                                FFAppState()
-                                                                        .setCustRef =
-                                                                    containerVarItem
-                                                                        .reference;
-                                                                FFAppState()
-                                                                        .isCustListShown =
-                                                                    true;
-                                                                FFAppState()
-                                                                    .update(
-                                                                        () {});
-                                                                setState(() {
-                                                                  _model.custnameTextController
-                                                                          ?.text =
-                                                                      containerVarItem
-                                                                          .name;
-                                                                  _model.custnameTextController
-                                                                          ?.selection =
-                                                                      TextSelection.collapsed(
-                                                                          offset: _model
-                                                                              .custnameTextController!
-                                                                              .text
-                                                                              .length);
-                                                                });
-                                                                setState(() {
-                                                                  _model.custmobTextController
-                                                                          ?.text =
-                                                                      containerVarItem
-                                                                          .mobile;
-                                                                  _model.custmobTextController
-                                                                          ?.selection =
-                                                                      TextSelection.collapsed(
-                                                                          offset: _model
-                                                                              .custmobTextController!
-                                                                              .text
-                                                                              .length);
-                                                                });
-                                                                Navigator.pop(
-                                                                    context);
-                                                              },
+                                                        return InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            FFAppState()
+                                                                    .setCustName =
+                                                                containerVarItem
+                                                                    .name;
+                                                            FFAppState()
+                                                                    .setCustMobNo =
+                                                                containerVarItem
+                                                                    .mobile;
+                                                            FFAppState()
+                                                                    .oldBalance =
+                                                                containerVarItem
+                                                                    .oldBalance;
+                                                            FFAppState()
+                                                                    .custCredit =
+                                                                containerVarItem
+                                                                    .creditLimit;
+                                                            FFAppState()
+                                                                .update(() {});
+                                                            FFAppState()
+                                                                    .setCustRef =
+                                                                containerVarItem
+                                                                    .reference;
+                                                            FFAppState()
+                                                                    .isCustListShown =
+                                                                true;
+                                                            FFAppState()
+                                                                .update(() {});
+                                                            setState(() {
+                                                              _model.custnameTextController
+                                                                      ?.text =
+                                                                  containerVarItem
+                                                                      .name;
+                                                              _model.custnameTextController
+                                                                      ?.selection =
+                                                                  TextSelection.collapsed(
+                                                                      offset: _model
+                                                                          .custnameTextController!
+                                                                          .text
+                                                                          .length);
+                                                            });
+                                                            setState(() {
+                                                              _model.custmobTextController
+                                                                      ?.text =
+                                                                  containerVarItem
+                                                                      .mobile;
+                                                              _model.custmobTextController
+                                                                      ?.selection =
+                                                                  TextSelection.collapsed(
+                                                                      offset: _model
+                                                                          .custmobTextController!
+                                                                          .text
+                                                                          .length);
+                                                            });
+                                                            Navigator.pop(
+                                                                context);
+                                                          },
+                                                          child: Container(
+                                                            height: 80.0,
+                                                            decoration:
+                                                                BoxDecoration(),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsets
+                                                                      .all(2.0),
                                                               child: Card(
                                                                 clipBehavior: Clip
                                                                     .antiAliasWithSaveLayer,
@@ -837,83 +837,77 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                           (context, listIndex) {
                                                         final listItem =
                                                             list[listIndex];
-                                                        return Container(
-                                                          height: 80.0,
-                                                          decoration:
-                                                              BoxDecoration(),
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsets.all(
-                                                                    2.0),
-                                                            child: InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                FFAppState()
-                                                                        .setCustName =
-                                                                    listItem
-                                                                        .name;
-                                                                FFAppState()
-                                                                        .setCustMobNo =
-                                                                    listItem
-                                                                        .mobile;
-                                                                FFAppState()
-                                                                        .oldBalance =
-                                                                    listItem
-                                                                        .oldBalance;
-                                                                FFAppState()
-                                                                        .custCredit =
-                                                                    listItem
-                                                                        .creditLimit;
-                                                                FFAppState()
-                                                                    .update(
-                                                                        () {});
-                                                                FFAppState()
-                                                                        .setCustRef =
-                                                                    listItem
-                                                                        .reference;
-                                                                FFAppState()
-                                                                        .isCustListShown =
-                                                                    true;
-                                                                FFAppState()
-                                                                    .update(
-                                                                        () {});
-                                                                setState(() {
-                                                                  _model.custnameTextController
-                                                                          ?.text =
-                                                                      listItem
-                                                                          .name;
-                                                                  _model.custnameTextController
-                                                                          ?.selection =
-                                                                      TextSelection.collapsed(
-                                                                          offset: _model
-                                                                              .custnameTextController!
-                                                                              .text
-                                                                              .length);
-                                                                });
-                                                                setState(() {
-                                                                  _model.custmobTextController
-                                                                          ?.text =
-                                                                      listItem
-                                                                          .mobile;
-                                                                  _model.custmobTextController
-                                                                          ?.selection =
-                                                                      TextSelection.collapsed(
-                                                                          offset: _model
-                                                                              .custmobTextController!
-                                                                              .text
-                                                                              .length);
-                                                                });
-                                                                Navigator.pop(
-                                                                    context);
-                                                              },
+                                                        return InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            FFAppState()
+                                                                    .setCustName =
+                                                                listItem.name;
+                                                            FFAppState()
+                                                                    .setCustMobNo =
+                                                                listItem.mobile;
+                                                            FFAppState()
+                                                                    .oldBalance =
+                                                                listItem
+                                                                    .oldBalance;
+                                                            FFAppState()
+                                                                    .custCredit =
+                                                                listItem
+                                                                    .creditLimit;
+                                                            FFAppState()
+                                                                .update(() {});
+                                                            FFAppState()
+                                                                    .setCustRef =
+                                                                listItem
+                                                                    .reference;
+                                                            FFAppState()
+                                                                    .isCustListShown =
+                                                                true;
+                                                            FFAppState()
+                                                                .update(() {});
+                                                            setState(() {
+                                                              _model.custnameTextController
+                                                                      ?.text =
+                                                                  listItem.name;
+                                                              _model.custnameTextController
+                                                                      ?.selection =
+                                                                  TextSelection.collapsed(
+                                                                      offset: _model
+                                                                          .custnameTextController!
+                                                                          .text
+                                                                          .length);
+                                                            });
+                                                            setState(() {
+                                                              _model.custmobTextController
+                                                                      ?.text =
+                                                                  listItem
+                                                                      .mobile;
+                                                              _model.custmobTextController
+                                                                      ?.selection =
+                                                                  TextSelection.collapsed(
+                                                                      offset: _model
+                                                                          .custmobTextController!
+                                                                          .text
+                                                                          .length);
+                                                            });
+                                                            Navigator.pop(
+                                                                context);
+                                                          },
+                                                          child: Container(
+                                                            height: 80.0,
+                                                            decoration:
+                                                                BoxDecoration(),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsets
+                                                                      .all(2.0),
                                                               child: Card(
                                                                 clipBehavior: Clip
                                                                     .antiAliasWithSaveLayer,
