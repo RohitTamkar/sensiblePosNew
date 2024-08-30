@@ -48,6 +48,11 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       _model.amount = FFAppState().finalAmt.toString();
       setState(() {});
+      setState(() {
+        _model.textController1?.text = _model.amount!;
+        _model.textController1?.selection = TextSelection.collapsed(
+            offset: _model.textController1!.text.length);
+      });
     });
 
     _model.textController1 ??= TextEditingController(text: _model.amount);
