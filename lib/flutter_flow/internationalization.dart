@@ -21534,57 +21534,57 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'g2eoglo9': {
+    'zixyh8el': {
+      'en': 'Product ID',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    's1v6ouy5': {
       'en': 'Invoice No.',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'y78s8qtf': {
+    'dkb7x9zn': {
       'en': 'Date ',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'nhvz3b01': {
+    'ldphhmdz': {
       'en': '',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    '8rd548od': {
+    '1yu51r9c': {
       'en': 'Customer\'s Name',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'io0ixdna': {
+    'oelbb1wu': {
       'en': '',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'citjsxfm': {
+    'kh2v3c6h': {
       'en': 'Customer Mob No.',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'yaii1yfx': {
+    'yn97cn1h': {
       'en': '',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    'zixyh8el': {
-      'en': 'Product ID',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -21751,29 +21751,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    '57njrgec': {
+    '39im4n06': {
       'en': 'CUSTOMER DETAILS',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    '0u2edvqm': {
+    'y1ksir0r': {
       'en': 'Search Customer',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    '92ipz0tf': {
-      'en': 'Balance: ',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    '4gcd4oec': {
-      'en': 'Balance: ',
       'hi': '',
       'kn': '',
       'mr': '',
