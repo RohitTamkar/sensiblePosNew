@@ -9,6 +9,7 @@ import '/flutter_flow/form_field_controller.dart';
 import 'add_customer_grocery_widget.dart' show AddCustomerGroceryWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -17,103 +18,119 @@ class AddCustomerGroceryModel
     extends FlutterFlowModel<AddCustomerGroceryWidget> {
   ///  State fields for stateful widgets in this component.
 
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textController2;
-  String? Function(BuildContext, String?)? textController2Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
-  TextEditingController? textController3;
-  String? Function(BuildContext, String?)? textController3Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode4;
-  TextEditingController? textController4;
-  String? Function(BuildContext, String?)? textController4Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode5;
-  TextEditingController? textController5;
-  String? Function(BuildContext, String?)? textController5Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode6;
-  TextEditingController? textController6;
-  String? Function(BuildContext, String?)? textController6Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode7;
-  TextEditingController? textController7;
-  String? Function(BuildContext, String?)? textController7Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode8;
-  TextEditingController? textController8;
-  String? Function(BuildContext, String?)? textController8Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode9;
-  TextEditingController? textController9;
-  String? Function(BuildContext, String?)? textController9Validator;
-  // State field(s) for DropDown widget.
-  String? dropDownValue1;
-  FormFieldController<String>? dropDownValueController1;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode10;
-  TextEditingController? textController10;
-  String? Function(BuildContext, String?)? textController10Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode11;
-  TextEditingController? textController11;
-  String? Function(BuildContext, String?)? textController11Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode12;
-  TextEditingController? textController12;
-  String? Function(BuildContext, String?)? textController12Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode13;
-  TextEditingController? textController13;
-  String? Function(BuildContext, String?)? textController13Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode14;
-  TextEditingController? textController14;
-  String? Function(BuildContext, String?)? textController14Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode15;
-  TextEditingController? textController15;
-  String? Function(BuildContext, String?)? textController15Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode16;
-  TextEditingController? textController16;
-  String? Function(BuildContext, String?)? textController16Validator;
-  // State field(s) for DropDown widget.
-  String? dropDownValue2;
-  FormFieldController<String>? dropDownValueController2;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode17;
-  TextEditingController? textController17;
-  String? Function(BuildContext, String?)? textController17Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode18;
-  TextEditingController? textController18;
-  String? Function(BuildContext, String?)? textController18Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode19;
-  TextEditingController? textController19;
-  String? Function(BuildContext, String?)? textController19Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode20;
-  TextEditingController? textController20;
-  String? Function(BuildContext, String?)? textController20Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode21;
-  TextEditingController? textController21;
-  String? Function(BuildContext, String?)? textController21Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode22;
-  TextEditingController? textController22;
-  String? Function(BuildContext, String?)? textController22Validator;
-  // State field(s) for DropDown widget.
-  String? dropDownValue3;
-  FormFieldController<String>? dropDownValueController3;
+  // State field(s) for TextFieldname widget.
+  FocusNode? textFieldnameFocusNode;
+  TextEditingController? textFieldnameTextController;
+  String? Function(BuildContext, String?)? textFieldnameTextControllerValidator;
+  // State field(s) for TextFieldmob widget.
+  FocusNode? textFieldmobFocusNode;
+  TextEditingController? textFieldmobTextController;
+  String? Function(BuildContext, String?)? textFieldmobTextControllerValidator;
+  // State field(s) for TextFieldaltmob widget.
+  FocusNode? textFieldaltmobFocusNode;
+  TextEditingController? textFieldaltmobTextController;
+  String? Function(BuildContext, String?)?
+      textFieldaltmobTextControllerValidator;
+  // State field(s) for TextFieldemail widget.
+  FocusNode? textFieldemailFocusNode;
+  TextEditingController? textFieldemailTextController;
+  String? Function(BuildContext, String?)?
+      textFieldemailTextControllerValidator;
+  // State field(s) for TextFieldrefname widget.
+  FocusNode? textFieldrefnameFocusNode;
+  TextEditingController? textFieldrefnameTextController;
+  String? Function(BuildContext, String?)?
+      textFieldrefnameTextControllerValidator;
+  // State field(s) for TextFieldvechno widget.
+  FocusNode? textFieldvechnoFocusNode;
+  TextEditingController? textFieldvechnoTextController;
+  String? Function(BuildContext, String?)?
+      textFieldvechnoTextControllerValidator;
+  // State field(s) for TextFieldadharno widget.
+  FocusNode? textFieldadharnoFocusNode;
+  TextEditingController? textFieldadharnoTextController;
+  String? Function(BuildContext, String?)?
+      textFieldadharnoTextControllerValidator;
+  // State field(s) for TextFieldpanno widget.
+  FocusNode? textFieldpannoFocusNode;
+  TextEditingController? textFieldpannoTextController;
+  String? Function(BuildContext, String?)?
+      textFieldpannoTextControllerValidator;
+  // State field(s) for TextFieldgstno widget.
+  FocusNode? textFieldgstnoFocusNode;
+  TextEditingController? textFieldgstnoTextController;
+  String? Function(BuildContext, String?)?
+      textFieldgstnoTextControllerValidator;
+  // State field(s) for DropDownproof widget.
+  String? dropDownproofValue;
+  FormFieldController<String>? dropDownproofValueController;
+  // State field(s) for TextFieldcredli widget.
+  FocusNode? textFieldcredliFocusNode;
+  TextEditingController? textFieldcredliTextController;
+  String? Function(BuildContext, String?)?
+      textFieldcredliTextControllerValidator;
+  // State field(s) for TextFieldoldbal widget.
+  FocusNode? textFieldoldbalFocusNode;
+  TextEditingController? textFieldoldbalTextController;
+  String? Function(BuildContext, String?)?
+      textFieldoldbalTextControllerValidator;
+  // State field(s) for Switch widget.
+  bool? switchValue;
+  // State field(s) for TextFieldbdate widget.
+  FocusNode? textFieldbdateFocusNode;
+  TextEditingController? textFieldbdateTextController;
+  String? Function(BuildContext, String?)?
+      textFieldbdateTextControllerValidator;
+  // State field(s) for TextFieldannive widget.
+  FocusNode? textFieldanniveFocusNode;
+  TextEditingController? textFieldanniveTextController;
+  String? Function(BuildContext, String?)?
+      textFieldanniveTextControllerValidator;
+  // State field(s) for TextFieldfirmname widget.
+  FocusNode? textFieldfirmnameFocusNode;
+  TextEditingController? textFieldfirmnameTextController;
+  String? Function(BuildContext, String?)?
+      textFieldfirmnameTextControllerValidator;
+  // State field(s) for TextFieldextdet widget.
+  FocusNode? textFieldextdetFocusNode;
+  TextEditingController? textFieldextdetTextController;
+  String? Function(BuildContext, String?)?
+      textFieldextdetTextControllerValidator;
+  // State field(s) for DropDowngender widget.
+  String? dropDowngenderValue;
+  FormFieldController<String>? dropDowngenderValueController;
+  // State field(s) for TextFieldfamsize widget.
+  FocusNode? textFieldfamsizeFocusNode;
+  TextEditingController? textFieldfamsizeTextController;
+  String? Function(BuildContext, String?)?
+      textFieldfamsizeTextControllerValidator;
+  // State field(s) for TextFieldaddress widget.
+  FocusNode? textFieldaddressFocusNode;
+  TextEditingController? textFieldaddressTextController;
+  String? Function(BuildContext, String?)?
+      textFieldaddressTextControllerValidator;
+  // State field(s) for TextFieldcity widget.
+  FocusNode? textFieldcityFocusNode;
+  TextEditingController? textFieldcityTextController;
+  String? Function(BuildContext, String?)? textFieldcityTextControllerValidator;
+  // State field(s) for TextFieldpostlcode widget.
+  FocusNode? textFieldpostlcodeFocusNode;
+  TextEditingController? textFieldpostlcodeTextController;
+  String? Function(BuildContext, String?)?
+      textFieldpostlcodeTextControllerValidator;
+  // State field(s) for TextFieldfrmvisit widget.
+  FocusNode? textFieldfrmvisitFocusNode;
+  TextEditingController? textFieldfrmvisitTextController;
+  String? Function(BuildContext, String?)?
+      textFieldfrmvisitTextControllerValidator;
+  // State field(s) for TextFieldlastvisit widget.
+  FocusNode? textFieldlastvisitFocusNode;
+  TextEditingController? textFieldlastvisitTextController;
+  String? Function(BuildContext, String?)?
+      textFieldlastvisitTextControllerValidator;
+  // State field(s) for DropDowntype widget.
+  String? dropDowntypeValue;
+  FormFieldController<String>? dropDowntypeValueController;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   PartyRecord? custDoc;
 
@@ -122,70 +139,67 @@ class AddCustomerGroceryModel
 
   @override
   void dispose() {
-    textFieldFocusNode1?.dispose();
-    textController1?.dispose();
+    textFieldnameFocusNode?.dispose();
+    textFieldnameTextController?.dispose();
 
-    textFieldFocusNode2?.dispose();
-    textController2?.dispose();
+    textFieldmobFocusNode?.dispose();
+    textFieldmobTextController?.dispose();
 
-    textFieldFocusNode3?.dispose();
-    textController3?.dispose();
+    textFieldaltmobFocusNode?.dispose();
+    textFieldaltmobTextController?.dispose();
 
-    textFieldFocusNode4?.dispose();
-    textController4?.dispose();
+    textFieldemailFocusNode?.dispose();
+    textFieldemailTextController?.dispose();
 
-    textFieldFocusNode5?.dispose();
-    textController5?.dispose();
+    textFieldrefnameFocusNode?.dispose();
+    textFieldrefnameTextController?.dispose();
 
-    textFieldFocusNode6?.dispose();
-    textController6?.dispose();
+    textFieldvechnoFocusNode?.dispose();
+    textFieldvechnoTextController?.dispose();
 
-    textFieldFocusNode7?.dispose();
-    textController7?.dispose();
+    textFieldadharnoFocusNode?.dispose();
+    textFieldadharnoTextController?.dispose();
 
-    textFieldFocusNode8?.dispose();
-    textController8?.dispose();
+    textFieldpannoFocusNode?.dispose();
+    textFieldpannoTextController?.dispose();
 
-    textFieldFocusNode9?.dispose();
-    textController9?.dispose();
+    textFieldgstnoFocusNode?.dispose();
+    textFieldgstnoTextController?.dispose();
 
-    textFieldFocusNode10?.dispose();
-    textController10?.dispose();
+    textFieldcredliFocusNode?.dispose();
+    textFieldcredliTextController?.dispose();
 
-    textFieldFocusNode11?.dispose();
-    textController11?.dispose();
+    textFieldoldbalFocusNode?.dispose();
+    textFieldoldbalTextController?.dispose();
 
-    textFieldFocusNode12?.dispose();
-    textController12?.dispose();
+    textFieldbdateFocusNode?.dispose();
+    textFieldbdateTextController?.dispose();
 
-    textFieldFocusNode13?.dispose();
-    textController13?.dispose();
+    textFieldanniveFocusNode?.dispose();
+    textFieldanniveTextController?.dispose();
 
-    textFieldFocusNode14?.dispose();
-    textController14?.dispose();
+    textFieldfirmnameFocusNode?.dispose();
+    textFieldfirmnameTextController?.dispose();
 
-    textFieldFocusNode15?.dispose();
-    textController15?.dispose();
+    textFieldextdetFocusNode?.dispose();
+    textFieldextdetTextController?.dispose();
 
-    textFieldFocusNode16?.dispose();
-    textController16?.dispose();
+    textFieldfamsizeFocusNode?.dispose();
+    textFieldfamsizeTextController?.dispose();
 
-    textFieldFocusNode17?.dispose();
-    textController17?.dispose();
+    textFieldaddressFocusNode?.dispose();
+    textFieldaddressTextController?.dispose();
 
-    textFieldFocusNode18?.dispose();
-    textController18?.dispose();
+    textFieldcityFocusNode?.dispose();
+    textFieldcityTextController?.dispose();
 
-    textFieldFocusNode19?.dispose();
-    textController19?.dispose();
+    textFieldpostlcodeFocusNode?.dispose();
+    textFieldpostlcodeTextController?.dispose();
 
-    textFieldFocusNode20?.dispose();
-    textController20?.dispose();
+    textFieldfrmvisitFocusNode?.dispose();
+    textFieldfrmvisitTextController?.dispose();
 
-    textFieldFocusNode21?.dispose();
-    textController21?.dispose();
-
-    textFieldFocusNode22?.dispose();
-    textController22?.dispose();
+    textFieldlastvisitFocusNode?.dispose();
+    textFieldlastvisitTextController?.dispose();
   }
 }

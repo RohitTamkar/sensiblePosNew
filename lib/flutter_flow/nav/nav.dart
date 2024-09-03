@@ -1509,6 +1509,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   isList: true,
                 ),
               ),
+            ),
+            FFRoute(
+              name: 'CreditPaymentPage',
+              path: 'creditPaymentPage',
+              builder: (context, params) => CreditPaymentPageWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

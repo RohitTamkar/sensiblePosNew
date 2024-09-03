@@ -3821,8 +3821,15 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             singleRecord: true,
                                           ).then((s) => s.firstOrNull);
                                           _shouldSetState = true;
-                                          if (FFAppState().PayMode ==
-                                              'CREDIT') {
+                                          if ((double.parse(
+                                                  valueOrDefault<String>(
+                                                getJsonField(
+                                                  FFAppState().groceryJson,
+                                                  r'''$.paymentMode.CREDIT''',
+                                                )?.toString(),
+                                                '0',
+                                              ))) >
+                                              0.0) {
                                             if (FFAppState().setCustRef?.id !=
                                                     null &&
                                                 FFAppState().setCustRef?.id !=
@@ -3833,7 +3840,13 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                     await actions
                                                         .oldbalanceplusamt(
                                                   FFAppState().oldBalance,
-                                                  FFAppState().finalAmt,
+                                                  valueOrDefault<double>(
+                                                    getJsonField(
+                                                      FFAppState().groceryJson,
+                                                      r'''$.paymentMode.CREDIT''',
+                                                    ),
+                                                    0.0,
+                                                  ),
                                                 );
                                                 _shouldSetState = true;
 
@@ -3842,7 +3855,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                     .update(
                                                         createPartyRecordData(
                                                       credit: true,
-                                                      oldBalance: 0,
+                                                      oldBalance:
+                                                          _model.totalcredit,
                                                       lastVisit: getCurrentTimestamp
                                                           .millisecondsSinceEpoch
                                                           .toString(),
@@ -3892,7 +3906,25 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 setState(() {});
                                               return;
                                             }
+                                          } else {
+                                            await showDialog(
+                                              context: context,
+                                              builder: (alertDialogContext) {
+                                                return AlertDialog(
+                                                  content: Text('done'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext),
+                                                      child: Text('Ok'),
+                                                    ),
+                                                  ],
+                                                );
+                                              },
+                                            );
                                           }
+
                                           _model.hiveInvoiceData =
                                               await actions.addInvoiceBillhive(
                                             '',

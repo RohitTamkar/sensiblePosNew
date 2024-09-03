@@ -207,8 +207,8 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
           ),
           Expanded(
             child: FFButtonWidget(
-              onPressed: () {
-                print('Button pressed ...');
+              onPressed: () async {
+                context.pushNamed('CreditPaymentPage');
               },
               text: FFLocalizations.of(context).getText(
                 'qu3146yq' /* Payment */,

@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -15,7 +14,6 @@ import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'billing_grocery_new_widget.dart' show BillingGroceryNewWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:collection/collection.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -71,28 +69,6 @@ class BillingGroceryNewModel extends FlutterFlowModel<BillingGroceryNewWidget> {
   double? ret;
   // Stores action output result for [Custom Action - calBillAmtGrocery] action in IconButton widget.
   double? ads;
-  // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
-  List<SelItemListStruct>? prdlinstnewtx;
-  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
-  AppSettingsRecord? appsettingnew;
-  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
-  OutletRecord? outletdoc;
-  // Stores action output result for [Custom Action - oldbalanceplusamt] action in Button widget.
-  int? totalcredit;
-  // Stores action output result for [Custom Action - addInvoiceBillhive] action in Button widget.
-  InvoiceStructStruct? hiveInvoiceData;
-  // Stores action output result for [Custom Action - calShiftSummaryNew] action in Button widget.
-  dynamic? shiftSummarResultsNew;
-  // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
-  ShiftDetailsStruct? updatedShiftDetails;
-  // Stores action output result for [Custom Action - scanPrinter] action in Button widget.
-  bool? resDevice2;
-  // Stores action output result for [Custom Action - connectDevice] action in Button widget.
-  bool? isconnected;
-  // Stores action output result for [Custom Action - selectBillPrint] action in Button widget.
-  List<dynamic>? returnedList2;
-  // Stores action output result for [Custom Action - newCustomAction] action in Button widget.
-  List<dynamic>? device;
   // State field(s) for TextFieldsearch widget.
   FocusNode? textFieldsearchFocusNode;
   TextEditingController? textFieldsearchTextController;

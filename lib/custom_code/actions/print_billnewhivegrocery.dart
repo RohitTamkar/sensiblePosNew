@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom actions
+
 // Imports other custom actions
 
 import 'dart:async';
@@ -486,7 +488,7 @@ Future printBillnewhivegrocery(
               align: PosAlign.center));
 
       bytes += generator.text(
-          "PAYMENT MODE :" + invoiceDetails.paymentMode.toString(),
+          "PAYMENT MODE :" + FFAppState().groceryJson['paymentMode'].toString(),
           styles: const PosStyles(
               height: PosTextSize.size1,
               width: PosTextSize.size1,
@@ -707,7 +709,7 @@ Future printBillnewhivegrocery(
         ////////////////////////////////////////////////////////////////////
       }
 
-      if (invoiceDetails.paymentMode.toString() == 'CREDIT') {
+      if (FFAppState().setCustName.isNotEmpty) {
         QuerySnapshot querySnapshotparty;
         querySnapshotparty = await FirebaseFirestore.instance
             .collection('OUTLET')
@@ -745,23 +747,29 @@ Future printBillnewhivegrocery(
                     bold: true,
                     align: PosAlign.center));
           }
-          if (invoiceDetails.paymentMode.toString() == 'CREDIT') {
-            bytes += generator.text(
-                "New Credit :" + FFAppState().finalAmt.toString(),
-                styles: const PosStyles(
-                    height: PosTextSize.size1,
-                    width: PosTextSize.size1,
-                    bold: true,
-                    align: PosAlign.center));
-            bytes += generator.text(
-                "Total Credit :" +
-                    (FFAppState().finalAmt + FFAppState().oldBalance)
-                        .toString(),
-                styles: const PosStyles(
-                    height: PosTextSize.size1,
-                    width: PosTextSize.size1,
-                    bold: true,
-                    align: PosAlign.center));
+
+          if (FFAppState().groceryJson['paymentMode']['CREDIT'] != null) {
+            if (FFAppState().groceryJson['paymentMode']['CREDIT'] > 0) {
+              bytes += generator.text(
+                  "New Credit :" +
+                      (FFAppState().groceryJson['paymentMode']['CREDIT'])
+                          .toString(),
+                  styles: const PosStyles(
+                      height: PosTextSize.size1,
+                      width: PosTextSize.size1,
+                      bold: true,
+                      align: PosAlign.center));
+              bytes += generator.text(
+                  "Total Credit :" +
+                      (FFAppState().groceryJson['paymentMode']['CREDIT'] +
+                              FFAppState().oldBalance)
+                          .toString(),
+                  styles: const PosStyles(
+                      height: PosTextSize.size1,
+                      width: PosTextSize.size1,
+                      bold: true,
+                      align: PosAlign.center));
+            }
           }
         }
         bytes += generator.text(
@@ -1498,7 +1506,7 @@ Future printBillnewhivegrocery(
       }
       ////////////////////////////////////////////////////////////////////
 
-      if (invoiceDetails.paymentMode.toString() == 'CREDIT') {
+      if (FFAppState().setCustName.isNotEmpty) {
         QuerySnapshot querySnapshotparty;
         querySnapshotparty = await FirebaseFirestore.instance
             .collection('OUTLET')
@@ -1536,23 +1544,29 @@ Future printBillnewhivegrocery(
                     bold: true,
                     align: PosAlign.center));
           }
-          if (invoiceDetails.paymentMode.toString() == 'CREDIT') {
-            bytes += generator.text(
-                "New Credit :" + FFAppState().finalAmt.toString(),
-                styles: const PosStyles(
-                    height: PosTextSize.size1,
-                    width: PosTextSize.size1,
-                    bold: true,
-                    align: PosAlign.center));
-            bytes += generator.text(
-                "Total Credit :" +
-                    (FFAppState().finalAmt + FFAppState().oldBalance)
-                        .toString(),
-                styles: const PosStyles(
-                    height: PosTextSize.size1,
-                    width: PosTextSize.size1,
-                    bold: true,
-                    align: PosAlign.center));
+
+          if (FFAppState().groceryJson['paymentMode']['CREDIT'] != null) {
+            if (FFAppState().groceryJson['paymentMode']['CREDIT'] > 0) {
+              bytes += generator.text(
+                  "New Credit :" +
+                      (FFAppState().groceryJson['paymentMode']['CREDIT'])
+                          .toString(),
+                  styles: const PosStyles(
+                      height: PosTextSize.size1,
+                      width: PosTextSize.size1,
+                      bold: true,
+                      align: PosAlign.center));
+              bytes += generator.text(
+                  "Total Credit :" +
+                      (FFAppState().groceryJson['paymentMode']['CREDIT'] +
+                              FFAppState().oldBalance)
+                          .toString(),
+                  styles: const PosStyles(
+                      height: PosTextSize.size1,
+                      width: PosTextSize.size1,
+                      bold: true,
+                      align: PosAlign.center));
+            }
           }
         }
         bytes += generator.text("--------------------------------",

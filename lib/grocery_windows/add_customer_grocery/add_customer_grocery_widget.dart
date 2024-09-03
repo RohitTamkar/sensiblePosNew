@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -15,7 +16,12 @@ import 'add_customer_grocery_model.dart';
 export 'add_customer_grocery_model.dart';
 
 class AddCustomerGroceryWidget extends StatefulWidget {
-  const AddCustomerGroceryWidget({super.key});
+  const AddCustomerGroceryWidget({
+    super.key,
+    this.custref,
+  });
+
+  final DocumentReference? custref;
 
   @override
   State<AddCustomerGroceryWidget> createState() =>
@@ -36,71 +42,72 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
     super.initState();
     _model = createModel(context, () => AddCustomerGroceryModel());
 
-    _model.textController1 ??= TextEditingController();
-    _model.textFieldFocusNode1 ??= FocusNode();
+    // On component load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {});
 
-    _model.textController2 ??= TextEditingController();
-    _model.textFieldFocusNode2 ??= FocusNode();
+    _model.textFieldnameTextController ??= TextEditingController();
+    _model.textFieldnameFocusNode ??= FocusNode();
 
-    _model.textController3 ??= TextEditingController();
-    _model.textFieldFocusNode3 ??= FocusNode();
+    _model.textFieldmobTextController ??= TextEditingController();
+    _model.textFieldmobFocusNode ??= FocusNode();
 
-    _model.textController4 ??= TextEditingController();
-    _model.textFieldFocusNode4 ??= FocusNode();
+    _model.textFieldaltmobTextController ??= TextEditingController();
+    _model.textFieldaltmobFocusNode ??= FocusNode();
 
-    _model.textController5 ??= TextEditingController();
-    _model.textFieldFocusNode5 ??= FocusNode();
+    _model.textFieldemailTextController ??= TextEditingController();
+    _model.textFieldemailFocusNode ??= FocusNode();
 
-    _model.textController6 ??= TextEditingController();
-    _model.textFieldFocusNode6 ??= FocusNode();
+    _model.textFieldrefnameTextController ??= TextEditingController();
+    _model.textFieldrefnameFocusNode ??= FocusNode();
 
-    _model.textController7 ??= TextEditingController();
-    _model.textFieldFocusNode7 ??= FocusNode();
+    _model.textFieldvechnoTextController ??= TextEditingController();
+    _model.textFieldvechnoFocusNode ??= FocusNode();
 
-    _model.textController8 ??= TextEditingController();
-    _model.textFieldFocusNode8 ??= FocusNode();
+    _model.textFieldadharnoTextController ??= TextEditingController();
+    _model.textFieldadharnoFocusNode ??= FocusNode();
 
-    _model.textController9 ??= TextEditingController();
-    _model.textFieldFocusNode9 ??= FocusNode();
+    _model.textFieldpannoTextController ??= TextEditingController();
+    _model.textFieldpannoFocusNode ??= FocusNode();
 
-    _model.textController10 ??= TextEditingController();
-    _model.textFieldFocusNode10 ??= FocusNode();
+    _model.textFieldgstnoTextController ??= TextEditingController();
+    _model.textFieldgstnoFocusNode ??= FocusNode();
 
-    _model.textController11 ??= TextEditingController();
-    _model.textFieldFocusNode11 ??= FocusNode();
+    _model.textFieldcredliTextController ??= TextEditingController();
+    _model.textFieldcredliFocusNode ??= FocusNode();
 
-    _model.textController12 ??= TextEditingController();
-    _model.textFieldFocusNode12 ??= FocusNode();
+    _model.textFieldoldbalTextController ??= TextEditingController();
+    _model.textFieldoldbalFocusNode ??= FocusNode();
 
-    _model.textController13 ??= TextEditingController();
-    _model.textFieldFocusNode13 ??= FocusNode();
+    _model.switchValue = false;
+    _model.textFieldbdateTextController ??= TextEditingController();
+    _model.textFieldbdateFocusNode ??= FocusNode();
 
-    _model.textController14 ??= TextEditingController();
-    _model.textFieldFocusNode14 ??= FocusNode();
+    _model.textFieldanniveTextController ??= TextEditingController();
+    _model.textFieldanniveFocusNode ??= FocusNode();
 
-    _model.textController15 ??= TextEditingController();
-    _model.textFieldFocusNode15 ??= FocusNode();
+    _model.textFieldfirmnameTextController ??= TextEditingController();
+    _model.textFieldfirmnameFocusNode ??= FocusNode();
 
-    _model.textController16 ??= TextEditingController();
-    _model.textFieldFocusNode16 ??= FocusNode();
+    _model.textFieldextdetTextController ??= TextEditingController();
+    _model.textFieldextdetFocusNode ??= FocusNode();
 
-    _model.textController17 ??= TextEditingController();
-    _model.textFieldFocusNode17 ??= FocusNode();
+    _model.textFieldfamsizeTextController ??= TextEditingController();
+    _model.textFieldfamsizeFocusNode ??= FocusNode();
 
-    _model.textController18 ??= TextEditingController();
-    _model.textFieldFocusNode18 ??= FocusNode();
+    _model.textFieldaddressTextController ??= TextEditingController();
+    _model.textFieldaddressFocusNode ??= FocusNode();
 
-    _model.textController19 ??= TextEditingController();
-    _model.textFieldFocusNode19 ??= FocusNode();
+    _model.textFieldcityTextController ??= TextEditingController();
+    _model.textFieldcityFocusNode ??= FocusNode();
 
-    _model.textController20 ??= TextEditingController();
-    _model.textFieldFocusNode20 ??= FocusNode();
+    _model.textFieldpostlcodeTextController ??= TextEditingController();
+    _model.textFieldpostlcodeFocusNode ??= FocusNode();
 
-    _model.textController21 ??= TextEditingController();
-    _model.textFieldFocusNode21 ??= FocusNode();
+    _model.textFieldfrmvisitTextController ??= TextEditingController();
+    _model.textFieldfrmvisitFocusNode ??= FocusNode();
 
-    _model.textController22 ??= TextEditingController();
-    _model.textFieldFocusNode22 ??= FocusNode();
+    _model.textFieldlastvisitTextController ??= TextEditingController();
+    _model.textFieldlastvisitFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -243,8 +250,9 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                   Container(
                                     width: double.infinity,
                                     child: TextFormField(
-                                      controller: _model.textController1,
-                                      focusNode: _model.textFieldFocusNode1,
+                                      controller:
+                                          _model.textFieldnameTextController,
+                                      focusNode: _model.textFieldnameFocusNode,
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -334,7 +342,8 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .labelLargeFamily),
                                           ),
-                                      validator: _model.textController1Validator
+                                      validator: _model
+                                          .textFieldnameTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -372,8 +381,9 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                     width: double.infinity,
                                     decoration: BoxDecoration(),
                                     child: TextFormField(
-                                      controller: _model.textController2,
-                                      focusNode: _model.textFieldFocusNode2,
+                                      controller:
+                                          _model.textFieldmobTextController,
+                                      focusNode: _model.textFieldmobFocusNode,
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -463,7 +473,8 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .labelLargeFamily),
                                           ),
-                                      validator: _model.textController2Validator
+                                      validator: _model
+                                          .textFieldmobTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -501,8 +512,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                     width: double.infinity,
                                     decoration: BoxDecoration(),
                                     child: TextFormField(
-                                      controller: _model.textController3,
-                                      focusNode: _model.textFieldFocusNode3,
+                                      controller:
+                                          _model.textFieldaltmobTextController,
+                                      focusNode:
+                                          _model.textFieldaltmobFocusNode,
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -592,7 +605,8 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .labelLargeFamily),
                                           ),
-                                      validator: _model.textController3Validator
+                                      validator: _model
+                                          .textFieldaltmobTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -638,8 +652,9 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                   Container(
                                     width: double.infinity,
                                     child: TextFormField(
-                                      controller: _model.textController4,
-                                      focusNode: _model.textFieldFocusNode4,
+                                      controller:
+                                          _model.textFieldemailTextController,
+                                      focusNode: _model.textFieldemailFocusNode,
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -729,7 +744,8 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .labelLargeFamily),
                                           ),
-                                      validator: _model.textController4Validator
+                                      validator: _model
+                                          .textFieldemailTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -767,8 +783,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                     width: double.infinity,
                                     decoration: BoxDecoration(),
                                     child: TextFormField(
-                                      controller: _model.textController5,
-                                      focusNode: _model.textFieldFocusNode5,
+                                      controller:
+                                          _model.textFieldrefnameTextController,
+                                      focusNode:
+                                          _model.textFieldrefnameFocusNode,
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -858,7 +876,8 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .labelLargeFamily),
                                           ),
-                                      validator: _model.textController5Validator
+                                      validator: _model
+                                          .textFieldrefnameTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -896,8 +915,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                     width: double.infinity,
                                     decoration: BoxDecoration(),
                                     child: TextFormField(
-                                      controller: _model.textController6,
-                                      focusNode: _model.textFieldFocusNode6,
+                                      controller:
+                                          _model.textFieldvechnoTextController,
+                                      focusNode:
+                                          _model.textFieldvechnoFocusNode,
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -987,7 +1008,8 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .labelLargeFamily),
                                           ),
-                                      validator: _model.textController6Validator
+                                      validator: _model
+                                          .textFieldvechnoTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -1068,8 +1090,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                   Container(
                                     width: double.infinity,
                                     child: TextFormField(
-                                      controller: _model.textController7,
-                                      focusNode: _model.textFieldFocusNode7,
+                                      controller:
+                                          _model.textFieldadharnoTextController,
+                                      focusNode:
+                                          _model.textFieldadharnoFocusNode,
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -1159,7 +1183,8 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .labelLargeFamily),
                                           ),
-                                      validator: _model.textController7Validator
+                                      validator: _model
+                                          .textFieldadharnoTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -1197,8 +1222,9 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                     width: double.infinity,
                                     decoration: BoxDecoration(),
                                     child: TextFormField(
-                                      controller: _model.textController8,
-                                      focusNode: _model.textFieldFocusNode8,
+                                      controller:
+                                          _model.textFieldpannoTextController,
+                                      focusNode: _model.textFieldpannoFocusNode,
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -1288,7 +1314,8 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .labelLargeFamily),
                                           ),
-                                      validator: _model.textController8Validator
+                                      validator: _model
+                                          .textFieldpannoTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -1326,8 +1353,9 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                     width: double.infinity,
                                     decoration: BoxDecoration(),
                                     child: TextFormField(
-                                      controller: _model.textController9,
-                                      focusNode: _model.textFieldFocusNode9,
+                                      controller:
+                                          _model.textFieldgstnoTextController,
+                                      focusNode: _model.textFieldgstnoFocusNode,
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -1417,7 +1445,8 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .labelLargeFamily),
                                           ),
-                                      validator: _model.textController9Validator
+                                      validator: _model
+                                          .textFieldgstnoTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -1462,7 +1491,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                   ),
                                   FlutterFlowDropDown<String>(
                                     controller:
-                                        _model.dropDownValueController1 ??=
+                                        _model.dropDownproofValueController ??=
                                             FormFieldController<String>(null),
                                     options: [
                                       FFLocalizations.of(context).getText(
@@ -1476,7 +1505,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                       )
                                     ],
                                     onChanged: (val) => setState(
-                                        () => _model.dropDownValue1 = val),
+                                        () => _model.dropDownproofValue = val),
                                     width: double.infinity,
                                     height: 45.0,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -1606,8 +1635,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                   Container(
                                     width: double.infinity,
                                     child: TextFormField(
-                                      controller: _model.textController10,
-                                      focusNode: _model.textFieldFocusNode10,
+                                      controller:
+                                          _model.textFieldcredliTextController,
+                                      focusNode:
+                                          _model.textFieldcredliFocusNode,
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -1698,7 +1729,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                         .labelLargeFamily),
                                           ),
                                       validator: _model
-                                          .textController10Validator
+                                          .textFieldcredliTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -1736,8 +1767,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                     width: double.infinity,
                                     decoration: BoxDecoration(),
                                     child: TextFormField(
-                                      controller: _model.textController11,
-                                      focusNode: _model.textFieldFocusNode11,
+                                      controller:
+                                          _model.textFieldoldbalTextController,
+                                      focusNode:
+                                          _model.textFieldoldbalFocusNode,
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -1828,7 +1861,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                         .labelLargeFamily),
                                           ),
                                       validator: _model
-                                          .textController11Validator
+                                          .textFieldoldbalTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -1865,102 +1898,22 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                   Container(
                                     width: double.infinity,
                                     decoration: BoxDecoration(),
-                                    child: TextFormField(
-                                      controller: _model.textController12,
-                                      focusNode: _model.textFieldFocusNode12,
-                                      autofocus: true,
-                                      obscureText: false,
-                                      decoration: InputDecoration(
-                                        isDense: true,
-                                        labelStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMediumFamily,
-                                              letterSpacing: 0.0,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelMediumFamily),
-                                            ),
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          'wslijmld' /* credit */,
-                                        ),
-                                        hintStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMediumFamily,
-                                              letterSpacing: 0.0,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelMediumFamily),
-                                            ),
-                                        enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .customColor1,
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .info,
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        errorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        focusedErrorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        filled: true,
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        contentPadding: EdgeInsets.all(14.0),
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelLargeFamily,
-                                            letterSpacing: 0.0,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLargeFamily),
-                                          ),
-                                      validator: _model
-                                          .textController12Validator
-                                          .asValidator(context),
-                                    ),
+                                  ),
+                                  Switch.adaptive(
+                                    value: _model.switchValue!,
+                                    onChanged: (newValue) async {
+                                      setState(
+                                          () => _model.switchValue = newValue!);
+                                    },
+                                    activeColor:
+                                        FlutterFlowTheme.of(context).primary,
+                                    activeTrackColor:
+                                        FlutterFlowTheme.of(context).accent1,
+                                    inactiveTrackColor:
+                                        FlutterFlowTheme.of(context).alternate,
+                                    inactiveThumbColor:
+                                        FlutterFlowTheme.of(context)
+                                            .secondaryText,
                                   ),
                                 ],
                               ),
@@ -2039,8 +1992,9 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                   Container(
                                     width: double.infinity,
                                     child: TextFormField(
-                                      controller: _model.textController13,
-                                      focusNode: _model.textFieldFocusNode13,
+                                      controller:
+                                          _model.textFieldbdateTextController,
+                                      focusNode: _model.textFieldbdateFocusNode,
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -2131,7 +2085,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                         .labelLargeFamily),
                                           ),
                                       validator: _model
-                                          .textController13Validator
+                                          .textFieldbdateTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -2169,8 +2123,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                     width: double.infinity,
                                     decoration: BoxDecoration(),
                                     child: TextFormField(
-                                      controller: _model.textController14,
-                                      focusNode: _model.textFieldFocusNode14,
+                                      controller:
+                                          _model.textFieldanniveTextController,
+                                      focusNode:
+                                          _model.textFieldanniveFocusNode,
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -2261,7 +2217,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                         .labelLargeFamily),
                                           ),
                                       validator: _model
-                                          .textController14Validator
+                                          .textFieldanniveTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -2299,8 +2255,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                     width: double.infinity,
                                     decoration: BoxDecoration(),
                                     child: TextFormField(
-                                      controller: _model.textController15,
-                                      focusNode: _model.textFieldFocusNode15,
+                                      controller: _model
+                                          .textFieldfirmnameTextController,
+                                      focusNode:
+                                          _model.textFieldfirmnameFocusNode,
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -2391,7 +2349,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                         .labelLargeFamily),
                                           ),
                                       validator: _model
-                                          .textController15Validator
+                                          .textFieldfirmnameTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -2437,8 +2395,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                   Container(
                                     width: double.infinity,
                                     child: TextFormField(
-                                      controller: _model.textController16,
-                                      focusNode: _model.textFieldFocusNode16,
+                                      controller:
+                                          _model.textFieldextdetTextController,
+                                      focusNode:
+                                          _model.textFieldextdetFocusNode,
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -2529,7 +2489,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                         .labelLargeFamily),
                                           ),
                                       validator: _model
-                                          .textController16Validator
+                                          .textFieldextdetTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -2569,7 +2529,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                   ),
                                   FlutterFlowDropDown<String>(
                                     controller:
-                                        _model.dropDownValueController2 ??=
+                                        _model.dropDowngenderValueController ??=
                                             FormFieldController<String>(null),
                                     options: [
                                       FFLocalizations.of(context).getText(
@@ -2583,7 +2543,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                       )
                                     ],
                                     onChanged: (val) => setState(
-                                        () => _model.dropDownValue2 = val),
+                                        () => _model.dropDowngenderValue = val),
                                     width: double.infinity,
                                     height: 45.0,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -2656,8 +2616,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                     width: double.infinity,
                                     decoration: BoxDecoration(),
                                     child: TextFormField(
-                                      controller: _model.textController17,
-                                      focusNode: _model.textFieldFocusNode17,
+                                      controller:
+                                          _model.textFieldfamsizeTextController,
+                                      focusNode:
+                                          _model.textFieldfamsizeFocusNode,
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -2748,7 +2710,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                         .labelLargeFamily),
                                           ),
                                       validator: _model
-                                          .textController17Validator
+                                          .textFieldfamsizeTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -2794,8 +2756,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                   Container(
                                     width: double.infinity,
                                     child: TextFormField(
-                                      controller: _model.textController18,
-                                      focusNode: _model.textFieldFocusNode18,
+                                      controller:
+                                          _model.textFieldaddressTextController,
+                                      focusNode:
+                                          _model.textFieldaddressFocusNode,
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -2886,7 +2850,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                         .labelLargeFamily),
                                           ),
                                       validator: _model
-                                          .textController18Validator
+                                          .textFieldaddressTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -2924,8 +2888,9 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                     width: double.infinity,
                                     decoration: BoxDecoration(),
                                     child: TextFormField(
-                                      controller: _model.textController19,
-                                      focusNode: _model.textFieldFocusNode19,
+                                      controller:
+                                          _model.textFieldcityTextController,
+                                      focusNode: _model.textFieldcityFocusNode,
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -2946,7 +2911,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
-                                          'v00bmzi3' /* city */,
+                                          'wslijmld' /* city */,
                                         ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
@@ -3016,7 +2981,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                         .labelLargeFamily),
                                           ),
                                       validator: _model
-                                          .textController19Validator
+                                          .textFieldcityTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -3054,8 +3019,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                     width: double.infinity,
                                     decoration: BoxDecoration(),
                                     child: TextFormField(
-                                      controller: _model.textController20,
-                                      focusNode: _model.textFieldFocusNode20,
+                                      controller: _model
+                                          .textFieldpostlcodeTextController,
+                                      focusNode:
+                                          _model.textFieldpostlcodeFocusNode,
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -3146,7 +3113,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                         .labelLargeFamily),
                                           ),
                                       validator: _model
-                                          .textController20Validator
+                                          .textFieldpostlcodeTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -3192,8 +3159,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                   Container(
                                     width: double.infinity,
                                     child: TextFormField(
-                                      controller: _model.textController21,
-                                      focusNode: _model.textFieldFocusNode21,
+                                      controller: _model
+                                          .textFieldfrmvisitTextController,
+                                      focusNode:
+                                          _model.textFieldfrmvisitFocusNode,
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -3284,7 +3253,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                         .labelLargeFamily),
                                           ),
                                       validator: _model
-                                          .textController21Validator
+                                          .textFieldfrmvisitTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -3322,8 +3291,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                     width: double.infinity,
                                     decoration: BoxDecoration(),
                                     child: TextFormField(
-                                      controller: _model.textController22,
-                                      focusNode: _model.textFieldFocusNode22,
+                                      controller: _model
+                                          .textFieldlastvisitTextController,
+                                      focusNode:
+                                          _model.textFieldlastvisitFocusNode,
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -3414,7 +3385,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                                         .labelLargeFamily),
                                           ),
                                       validator: _model
-                                          .textController22Validator
+                                          .textFieldlastvisitTextControllerValidator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -3454,7 +3425,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                   ),
                                   FlutterFlowDropDown<String>(
                                     controller:
-                                        _model.dropDownValueController3 ??=
+                                        _model.dropDowntypeValueController ??=
                                             FormFieldController<String>(null),
                                     options: [
                                       FFLocalizations.of(context).getText(
@@ -3462,7 +3433,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                       )
                                     ],
                                     onChanged: (val) => setState(
-                                        () => _model.dropDownValue3 = val),
+                                        () => _model.dropDowntypeValue = val),
                                     width: double.infinity,
                                     height: 45.0,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -3513,92 +3484,133 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                         child: FFButtonWidget(
                           onPressed: () async {
                             var _shouldSetState = false;
-                            if (_model.textController1.text != null &&
-                                _model.textController1.text != '') {
-                              if (_model.textController2.text != null &&
-                                  _model.textController2.text != '') {
+                            if (_model.textFieldnameTextController.text !=
+                                    null &&
+                                _model.textFieldnameTextController.text != '') {
+                              if (_model.textFieldmobTextController.text !=
+                                      null &&
+                                  _model.textFieldmobTextController.text !=
+                                      '') {
                                 var partyRecordReference =
                                     PartyRecord.createDoc(
                                         FFAppState().outletIdRef!);
                                 await partyRecordReference
                                     .set(createPartyRecordData(
-                                  name: _model.textController1.text,
-                                  mobile: _model.textController2.text,
-                                  alternateNumber: _model.textController3.text,
-                                  email: _model.textController4.text,
-                                  refName: _model.textController5.text,
-                                  adharCardNo: _model.textController7.text,
-                                  vehicleNo: _model.textController6.text,
-                                  panCardNo: _model.textController8.text,
-                                  gstNo: _model.textController9.text,
-                                  address: _model.textController18.text,
-                                  proofOfIdentity: _model.dropDownValue1,
-                                  creditLimit: int.tryParse(
-                                      _model.textController10.text),
-                                  oldBalance: int.tryParse(
-                                      _model.textController11.text),
-                                  birthday: _model.textController13.text,
-                                  anniversary: _model.textController14.text,
-                                  firmName: _model.textController15.text,
-                                  familySize: int.tryParse(
-                                      _model.textController17.text),
-                                  city: _model.textController19.text,
-                                  credit: /* NOT RECOMMENDED */
-                                      _model.textController12.text == 'true',
-                                  postalCode: _model.textController20.text,
-                                  extraDetails: _model.textController16.text,
-                                  gender: _model.dropDownValue2,
+                                  name: _model.textFieldnameTextController.text,
+                                  mobile:
+                                      _model.textFieldmobTextController.text,
+                                  alternateNumber:
+                                      _model.textFieldaltmobTextController.text,
+                                  email:
+                                      _model.textFieldemailTextController.text,
+                                  refName: _model
+                                      .textFieldrefnameTextController.text,
+                                  adharCardNo: _model
+                                      .textFieldadharnoTextController.text,
+                                  vehicleNo:
+                                      _model.textFieldvechnoTextController.text,
+                                  panCardNo:
+                                      _model.textFieldpannoTextController.text,
+                                  gstNo:
+                                      _model.textFieldgstnoTextController.text,
+                                  address: _model
+                                      .textFieldaddressTextController.text,
+                                  proofOfIdentity: _model.dropDownproofValue,
+                                  creditLimit: int.tryParse(_model
+                                      .textFieldcredliTextController.text),
+                                  oldBalance: int.tryParse(_model
+                                      .textFieldoldbalTextController.text),
+                                  birthday:
+                                      _model.textFieldbdateTextController.text,
+                                  anniversary:
+                                      _model.textFieldanniveTextController.text,
+                                  firmName: _model
+                                      .textFieldfirmnameTextController.text,
+                                  familySize: int.tryParse(_model
+                                      .textFieldfamsizeTextController.text),
+                                  city: _model.textFieldcityTextController.text,
+                                  credit: _model.switchValue,
+                                  postalCode: _model
+                                      .textFieldpostlcodeTextController.text,
+                                  extraDetails:
+                                      _model.textFieldextdetTextController.text,
+                                  gender: _model.dropDowngenderValue,
                                   role: 'CUSTOMER',
-                                  type: _model.dropDownValue3,
-                                  firstVisit: _model.textController21.text,
-                                  lastVisit: _model.textController22.text,
+                                  type: _model.dropDowntypeValue,
+                                  firstVisit: _model
+                                      .textFieldfrmvisitTextController.text,
+                                  lastVisit: _model
+                                      .textFieldlastvisitTextController.text,
                                 ));
                                 _model.custDoc =
                                     PartyRecord.getDocumentFromData(
                                         createPartyRecordData(
-                                          name: _model.textController1.text,
-                                          mobile: _model.textController2.text,
-                                          alternateNumber:
-                                              _model.textController3.text,
-                                          email: _model.textController4.text,
-                                          refName: _model.textController5.text,
-                                          adharCardNo:
-                                              _model.textController7.text,
-                                          vehicleNo:
-                                              _model.textController6.text,
-                                          panCardNo:
-                                              _model.textController8.text,
-                                          gstNo: _model.textController9.text,
-                                          address: _model.textController18.text,
+                                          name: _model
+                                              .textFieldnameTextController.text,
+                                          mobile: _model
+                                              .textFieldmobTextController.text,
+                                          alternateNumber: _model
+                                              .textFieldaltmobTextController
+                                              .text,
+                                          email: _model
+                                              .textFieldemailTextController
+                                              .text,
+                                          refName: _model
+                                              .textFieldrefnameTextController
+                                              .text,
+                                          adharCardNo: _model
+                                              .textFieldadharnoTextController
+                                              .text,
+                                          vehicleNo: _model
+                                              .textFieldvechnoTextController
+                                              .text,
+                                          panCardNo: _model
+                                              .textFieldpannoTextController
+                                              .text,
+                                          gstNo: _model
+                                              .textFieldgstnoTextController
+                                              .text,
+                                          address: _model
+                                              .textFieldaddressTextController
+                                              .text,
                                           proofOfIdentity:
-                                              _model.dropDownValue1,
-                                          creditLimit: int.tryParse(
-                                              _model.textController10.text),
-                                          oldBalance: int.tryParse(
-                                              _model.textController11.text),
-                                          birthday:
-                                              _model.textController13.text,
-                                          anniversary:
-                                              _model.textController14.text,
-                                          firmName:
-                                              _model.textController15.text,
-                                          familySize: int.tryParse(
-                                              _model.textController17.text),
-                                          city: _model.textController19.text,
-                                          credit: /* NOT RECOMMENDED */
-                                              _model.textController12.text ==
-                                                  'true',
-                                          postalCode:
-                                              _model.textController20.text,
-                                          extraDetails:
-                                              _model.textController16.text,
-                                          gender: _model.dropDownValue2,
+                                              _model.dropDownproofValue,
+                                          creditLimit: int.tryParse(_model
+                                              .textFieldcredliTextController
+                                              .text),
+                                          oldBalance: int.tryParse(_model
+                                              .textFieldoldbalTextController
+                                              .text),
+                                          birthday: _model
+                                              .textFieldbdateTextController
+                                              .text,
+                                          anniversary: _model
+                                              .textFieldanniveTextController
+                                              .text,
+                                          firmName: _model
+                                              .textFieldfirmnameTextController
+                                              .text,
+                                          familySize: int.tryParse(_model
+                                              .textFieldfamsizeTextController
+                                              .text),
+                                          city: _model
+                                              .textFieldcityTextController.text,
+                                          credit: _model.switchValue,
+                                          postalCode: _model
+                                              .textFieldpostlcodeTextController
+                                              .text,
+                                          extraDetails: _model
+                                              .textFieldextdetTextController
+                                              .text,
+                                          gender: _model.dropDowngenderValue,
                                           role: 'CUSTOMER',
-                                          type: _model.dropDownValue3,
-                                          firstVisit:
-                                              _model.textController21.text,
-                                          lastVisit:
-                                              _model.textController22.text,
+                                          type: _model.dropDowntypeValue,
+                                          firstVisit: _model
+                                              .textFieldfrmvisitTextController
+                                              .text,
+                                          lastVisit: _model
+                                              .textFieldlastvisitTextController
+                                              .text,
                                         ),
                                         partyRecordReference);
                                 _shouldSetState = true;
@@ -3608,28 +3620,35 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                   id: _model.custDoc?.reference.id,
                                 ));
                                 setState(() {
-                                  _model.textController1?.clear();
-                                  _model.textController2?.clear();
-                                  _model.textController3?.clear();
-                                  _model.textController4?.clear();
-                                  _model.textController5?.clear();
-                                  _model.textController6?.clear();
-                                  _model.textController7?.clear();
-                                  _model.textController9?.clear();
-                                  _model.textController10?.clear();
-                                  _model.textController8?.clear();
-                                  _model.textController11?.clear();
-                                  _model.textController14?.clear();
-                                  _model.textController13?.clear();
-                                  _model.textController16?.clear();
-                                  _model.textController12?.clear();
-                                  _model.textController17?.clear();
-                                  _model.textController21?.clear();
-                                  _model.textController15?.clear();
-                                  _model.textController19?.clear();
-                                  _model.textController22?.clear();
-                                  _model.textController18?.clear();
-                                  _model.textController20?.clear();
+                                  _model.textFieldnameTextController?.clear();
+                                  _model.textFieldmobTextController?.clear();
+                                  _model.textFieldaltmobTextController?.clear();
+                                  _model.textFieldemailTextController?.clear();
+                                  _model.textFieldrefnameTextController
+                                      ?.clear();
+                                  _model.textFieldvechnoTextController?.clear();
+                                  _model.textFieldadharnoTextController
+                                      ?.clear();
+                                  _model.textFieldgstnoTextController?.clear();
+                                  _model.textFieldcredliTextController?.clear();
+                                  _model.textFieldpannoTextController?.clear();
+                                  _model.textFieldoldbalTextController?.clear();
+                                  _model.textFieldanniveTextController?.clear();
+                                  _model.textFieldbdateTextController?.clear();
+                                  _model.textFieldextdetTextController?.clear();
+                                  _model.textFieldfamsizeTextController
+                                      ?.clear();
+                                  _model.textFieldfrmvisitTextController
+                                      ?.clear();
+                                  _model.textFieldfirmnameTextController
+                                      ?.clear();
+                                  _model.textFieldcityTextController?.clear();
+                                  _model.textFieldlastvisitTextController
+                                      ?.clear();
+                                  _model.textFieldaddressTextController
+                                      ?.clear();
+                                  _model.textFieldpostlcodeTextController
+                                      ?.clear();
                                 });
                               } else {
                                 if (_shouldSetState) setState(() {});

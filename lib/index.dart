@@ -45,7 +45,7 @@ export '/pages/full_screen_bill/full_screen_bill_widget.dart'
 export '/pages/screens/printer_selection_screen/printer_selection_screen_widget.dart'
     show PrinterSelectionScreenWidget;
 export '/pages/f_s_bill/f_s_bill_widget.dart' show FSBillWidget;
-export '/pages/screens/barcode_printing/barcode_printing_widget.dart'
+export '/pages/barcode_printing/barcode_printing_widget.dart'
     show BarcodePrintingWidget;
 export '/pages/update_product/update_product_widget.dart'
     show UpdateProductWidget;
@@ -207,3 +207,5 @@ export '/pages/kiosk/kiosk_choose_payment_mode/kiosk_choose_payment_mode_widget.
     show KioskChoosePaymentModeWidget;
 export '/pages/kiosk/cash_response_page/cash_response_page_widget.dart'
     show CashResponsePageWidget;
+export '/credit_payment_page/credit_payment_page_widget.dart'
+    show CreditPaymentPageWidget;

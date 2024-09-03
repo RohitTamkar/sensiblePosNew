@@ -1183,3 +1183,7 @@ bool greatethanlesskiosk(
   }
   return val;
 }
+
+List<dynamic> returnmonthjson(String jsonString) {
+  return jsonDecode(jsonString);
+}

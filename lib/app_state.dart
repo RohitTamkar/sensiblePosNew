@@ -3384,6 +3384,35 @@ class FFAppState extends ChangeNotifier {
     _taxAmtPay = value;
     prefs.setDouble('ff_taxAmtPay', value);
   }
+
+  List<dynamic> _months = [];
+  List<dynamic> get months => _months;
+  set months(List<dynamic> value) {
+    _months = value;
+  }
+
+  void addToMonths(dynamic value) {
+    months.add(value);
+  }
+
+  void removeFromMonths(dynamic value) {
+    months.remove(value);
+  }
+
+  void removeAtIndexFromMonths(int index) {
+    months.removeAt(index);
+  }
+
+  void updateMonthsAtIndex(
+    int index,
+    dynamic Function(dynamic) updateFn,
+  ) {
+    months[index] = updateFn(_months[index]);
+  }
+
+  void insertAtIndexInMonths(int index, dynamic value) {
+    months.insert(index, value);
+  }
 }
 
 void _safeInit(Function() initializeField) {
