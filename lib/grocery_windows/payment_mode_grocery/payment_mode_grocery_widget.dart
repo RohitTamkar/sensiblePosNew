@@ -3906,25 +3906,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 setState(() {});
                                               return;
                                             }
-                                          } else {
-                                            await showDialog(
-                                              context: context,
-                                              builder: (alertDialogContext) {
-                                                return AlertDialog(
-                                                  content: Text('done'),
-                                                  actions: [
-                                                    TextButton(
-                                                      onPressed: () =>
-                                                          Navigator.pop(
-                                                              alertDialogContext),
-                                                      child: Text('Ok'),
-                                                    ),
-                                                  ],
-                                                );
-                                              },
-                                            );
                                           }
-
                                           _model.hiveInvoiceData =
                                               await actions.addInvoiceBillhive(
                                             '',

@@ -7,7 +7,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/grocery_windows/grocery_header/grocery_header_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'credit_payment_page_widget.dart' show CreditPaymentPageWidget;
@@ -35,8 +34,6 @@ class CreditPaymentPageModel extends FlutterFlowModel<CreditPaymentPageWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  // Model for GroceryHeader component.
-  late GroceryHeaderModel groceryHeaderModel;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
   TextEditingController? textController1;
@@ -63,13 +60,10 @@ class CreditPaymentPageModel extends FlutterFlowModel<CreditPaymentPageWidget> {
   PartyRecord? custmerf;
 
   @override
-  void initState(BuildContext context) {
-    groceryHeaderModel = createModel(context, () => GroceryHeaderModel());
-  }
+  void initState(BuildContext context) {}
 
   @override
   void dispose() {
-    groceryHeaderModel.dispose();
     textFieldFocusNode?.dispose();
     textController1?.dispose();
 
