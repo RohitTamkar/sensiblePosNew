@@ -371,7 +371,7 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                           },
                                           text: FFLocalizations.of(context)
                                               .getText(
-                                            '6gjpa29u' /* Parcel */,
+                                            '82k7x89c' /* Parcel */,
                                           ),
                                           icon: Icon(
                                             Icons.takeout_dining_rounded,

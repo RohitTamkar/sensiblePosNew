@@ -430,7 +430,7 @@ class _EditUserprofileWidgetState extends State<EditUserprofileWidget> {
                                                 AutoSizeText(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    '7w8xnk9f' /* Email ID */,
+                                                    'mz0k3kdr' /* Email ID */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)

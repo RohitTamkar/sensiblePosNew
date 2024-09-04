@@ -512,7 +512,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                  '0kqzz46x' /* Please select... */,
+                                                                  'y9wpy4kr' /* Please select... */,
                                                                 ),
                                                                 icon: Icon(
                                                                   Icons
@@ -780,7 +780,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                     setState(() {});
                                                                                   },
                                                                                   text: FFLocalizations.of(context).getText(
-                                                                                    'dfrta3n7' /* 7 */,
+                                                                                    'wpo6g609' /* 7 */,
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     width: double.infinity,
@@ -908,7 +908,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                     setState(() {});
                                                                                   },
                                                                                   text: FFLocalizations.of(context).getText(
-                                                                                    'ib64jgoj' /* 5 */,
+                                                                                    '8immd7e7' /* 5 */,
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     width: double.infinity,
@@ -945,7 +945,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                     setState(() {});
                                                                                   },
                                                                                   text: FFLocalizations.of(context).getText(
-                                                                                    'ynaxk2eg' /* 8 */,
+                                                                                    'arppljt9' /* 8 */,
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     width: double.infinity,
@@ -980,7 +980,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                   setState(() {});
                                                                                 },
                                                                                 text: FFLocalizations.of(context).getText(
-                                                                                  'avsaz7f0' /* 0 */,
+                                                                                  'fauta6ir' /* 0 */,
                                                                                 ),
                                                                                 options: FFButtonOptions(
                                                                                   width: double.infinity,
@@ -1029,7 +1029,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                   setState(() {});
                                                                                 },
                                                                                 text: FFLocalizations.of(context).getText(
-                                                                                  '8uqrwlxt' /* 3 */,
+                                                                                  'nb5yx6ek' /* 3 */,
                                                                                 ),
                                                                                 options: FFButtonOptions(
                                                                                   width: double.infinity,
@@ -1067,7 +1067,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                   setState(() {});
                                                                                 },
                                                                                 text: FFLocalizations.of(context).getText(
-                                                                                  'vv6xosfd' /* 6 */,
+                                                                                  'swrinu4v' /* 6 */,
                                                                                 ),
                                                                                 options: FFButtonOptions(
                                                                                   width: double.infinity,
@@ -1105,7 +1105,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                   setState(() {});
                                                                                 },
                                                                                 text: FFLocalizations.of(context).getText(
-                                                                                  '9lq1m1ry' /* 9 */,
+                                                                                  'a53gcoms' /* 9 */,
                                                                                 ),
                                                                                 options: FFButtonOptions(
                                                                                   width: double.infinity,
@@ -1720,7 +1720,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                   Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'ael6u5jl' /* Remaining Days */,
+                                                      '72js7025' /* Remaining Days */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)

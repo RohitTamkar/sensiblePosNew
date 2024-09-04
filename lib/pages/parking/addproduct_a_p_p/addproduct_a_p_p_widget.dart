@@ -2785,7 +2785,7 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                                 FFLocalizations.of(
                                                                         context)
                                                                     .getText(
-                                                                  'b4xtsipa' /* Cancel */,
+                                                                  '5f3xo6ax' /* Cancel */,
                                                                 ), // cancel button text
                                                                 true, // whether to show the flash icon
                                                                 ScanMode.QR,

@@ -211,7 +211,7 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
                 context.pushNamed('CreditPaymentPage');
               },
               text: FFLocalizations.of(context).getText(
-                'qu3146yq' /* Payment */,
+                'uirfxvxn' /* Payment */,
               ),
               icon: Icon(
                 Icons.bar_chart,

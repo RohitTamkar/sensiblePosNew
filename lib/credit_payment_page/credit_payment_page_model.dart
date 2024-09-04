@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -7,9 +8,12 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/grocery_windows/grocery_header/grocery_header_widget.dart';
+import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'credit_payment_page_widget.dart' show CreditPaymentPageWidget;
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -45,6 +49,18 @@ class CreditPaymentPageModel extends FlutterFlowModel<CreditPaymentPageWidget> {
   // State field(s) for DropDownCustCred widget.
   String? dropDownCustCredValue;
   FormFieldController<String>? dropDownCustCredValueController;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  PaymentRecord? paymentDoc2;
+  // Stores action output result for [Custom Action - scanPrinter] action in Button widget.
+  bool? resDevice23;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  PaymentRecord? paymentDoc3a;
+  // Stores action output result for [Custom Action - connectDevice] action in Button widget.
+  bool? isconnectedb;
+  // Stores action output result for [Custom Action - newCustomAction] action in Button widget.
+  List<dynamic>? devicef;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  PartyRecord? custmerf;
 
   @override
   void initState(BuildContext context) {

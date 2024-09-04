@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -7,8 +8,11 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/grocery_windows/grocery_header/grocery_header_widget.dart';
+import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -73,26 +77,6 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-            floatingActionButton: FloatingActionButton(
-              onPressed: () {
-                print('FloatingActionButton pressed ...');
-              },
-              backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-              elevation: 8.0,
-              child: FlutterFlowIconButton(
-                borderColor: Colors.transparent,
-                borderRadius: 30.0,
-                buttonSize: 60.0,
-                icon: Icon(
-                  Icons.print,
-                  color: FlutterFlowTheme.of(context).primary,
-                  size: 24.0,
-                ),
-                onPressed: () {
-                  print('IconButton pressed ...');
-                },
-              ),
-            ),
             body: Padding(
               padding: EdgeInsets.all(3.0),
               child: Column(
@@ -255,32 +239,173 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                     child: GroceryHeaderWidget(),
                   ),
                   Container(
+                    width: double.infinity,
                     height: 40.0,
                     decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).info,
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
-                          FFLocalizations.of(context).getText(
-                            'dfu7egb1' /* Customer  */,
-                          ),
-                          style: FlutterFlowTheme.of(context)
-                              .bodyMedium
-                              .override(
-                                fontFamily: FlutterFlowTheme.of(context)
-                                    .bodyMediumFamily,
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                fontSize: 20.0,
-                                letterSpacing: 0.0,
-                                fontWeight: FontWeight.w600,
-                                useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                    FlutterFlowTheme.of(context)
-                                        .bodyMediumFamily),
+                        Expanded(
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 5.0, 0.0),
+                            child: Container(
+                              width: 100.0,
+                              height: 100.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context).info,
                               ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'dfu7egb1' /* Customer Details */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          fontSize: 20.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w600,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily),
+                                        ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 5.0, 0.0),
+                            child: Container(
+                              width: 100.0,
+                              height: 100.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context).info,
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      '2qb8hf4h' /* Bills */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          fontSize: 20.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w600,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily),
+                                        ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 5.0, 0.0),
+                            child: Container(
+                              width: 100.0,
+                              height: 100.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context).info,
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      '6pqqxppn' /* Payment */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          fontSize: 20.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w600,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily),
+                                        ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 5.0, 0.0),
+                            child: Container(
+                              width: 100.0,
+                              height: 100.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context).info,
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      '7t7zoxz9' /* Items */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          fontSize: 20.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w600,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily),
+                                        ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
                         ),
                       ],
                     ),
@@ -1170,7 +1295,131 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                   MainAxisAlignment.spaceEvenly,
                                               children: [
                                                 FFButtonWidget(
-                                                  onPressed: () async {},
+                                                  onPressed: () async {
+                                                    if (FFAppState()
+                                                            .setCustRef !=
+                                                        null) {
+                                                      var paymentRecordReference =
+                                                          PaymentRecord.createDoc(
+                                                              FFAppState()
+                                                                  .outletIdRef!);
+                                                      await paymentRecordReference
+                                                          .set(
+                                                              createPaymentRecordData(
+                                                        note: _model
+                                                            .textController1
+                                                            .text,
+                                                        amount: double.tryParse(
+                                                            _model
+                                                                .textFieldCustCredAmtTextController
+                                                                .text),
+                                                        paymentType: _model
+                                                            .dropDownCustCredValue,
+                                                        createdBy: FFAppState()
+                                                            .userdoc,
+                                                        createdDate:
+                                                            getCurrentTimestamp
+                                                                .millisecondsSinceEpoch,
+                                                        party: FFAppState()
+                                                            .setCustRef,
+                                                        expenceType:
+                                                            'Customer Credit',
+                                                        oldBalance:
+                                                            valueOrDefault<int>(
+                                                          FFAppState()
+                                                              .oldBalance,
+                                                          0,
+                                                        ),
+                                                      ));
+                                                      _model.paymentDoc2 = PaymentRecord
+                                                          .getDocumentFromData(
+                                                              createPaymentRecordData(
+                                                                note: _model
+                                                                    .textController1
+                                                                    .text,
+                                                                amount: double
+                                                                    .tryParse(_model
+                                                                        .textFieldCustCredAmtTextController
+                                                                        .text),
+                                                                paymentType: _model
+                                                                    .dropDownCustCredValue,
+                                                                createdBy:
+                                                                    FFAppState()
+                                                                        .userdoc,
+                                                                createdDate:
+                                                                    getCurrentTimestamp
+                                                                        .millisecondsSinceEpoch,
+                                                                party: FFAppState()
+                                                                    .setCustRef,
+                                                                expenceType:
+                                                                    'Customer Credit',
+                                                                oldBalance:
+                                                                    valueOrDefault<
+                                                                        int>(
+                                                                  FFAppState()
+                                                                      .oldBalance,
+                                                                  0,
+                                                                ),
+                                                              ),
+                                                              paymentRecordReference);
+
+                                                      await FFAppState()
+                                                          .setCustRef!
+                                                          .update(
+                                                              createPartyRecordData(
+                                                            oldBalance:
+                                                                valueOrDefault<
+                                                                    int>(
+                                                              FFAppState()
+                                                                      .oldBalance -
+                                                                  valueOrDefault<
+                                                                      int>(
+                                                                    int.tryParse(_model
+                                                                        .textFieldCustCredAmtTextController
+                                                                        .text),
+                                                                    0,
+                                                                  ),
+                                                              0,
+                                                            ),
+                                                          ));
+                                                      FFAppState().oldBalance =
+                                                          0;
+                                                      FFAppState().setCustRef =
+                                                          null;
+                                                      FFAppState().setCustName =
+                                                          '';
+                                                      setState(() {});
+                                                      setState(() {
+                                                        _model.textController1
+                                                            ?.clear();
+                                                        _model
+                                                            .textFieldCustCredAmtTextController
+                                                            ?.clear();
+                                                      });
+                                                    } else {
+                                                      await showDialog(
+                                                        context: context,
+                                                        builder:
+                                                            (alertDialogContext) {
+                                                          return AlertDialog(
+                                                            content: Text(
+                                                                'Customer Is Not Selected !'),
+                                                            actions: [
+                                                              TextButton(
+                                                                onPressed: () =>
+                                                                    Navigator.pop(
+                                                                        alertDialogContext),
+                                                                child:
+                                                                    Text('Ok'),
+                                                              ),
+                                                            ],
+                                                          );
+                                                        },
+                                                      );
+                                                    }
+
+                                                    setState(() {});
+                                                  },
                                                   text: FFLocalizations.of(
                                                           context)
                                                       .getText(
@@ -1219,7 +1468,222 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                   ),
                                                 ),
                                                 FFButtonWidget(
-                                                  onPressed: () async {},
+                                                  onPressed: () async {
+                                                    var _shouldSetState = false;
+                                                    if (!functions
+                                                        .isPrinterSelected(
+                                                            FFAppState()
+                                                                .printerDevice)!) {
+                                                      _model.resDevice23 =
+                                                          await actions
+                                                              .scanPrinter(
+                                                        FFAppState().posMode,
+                                                      );
+                                                      _shouldSetState = true;
+                                                    }
+                                                    if (FFAppState()
+                                                            .setCustRef !=
+                                                        null) {
+                                                      var paymentRecordReference =
+                                                          PaymentRecord.createDoc(
+                                                              FFAppState()
+                                                                  .outletIdRef!);
+                                                      await paymentRecordReference
+                                                          .set(
+                                                              createPaymentRecordData(
+                                                        note: _model
+                                                            .textController1
+                                                            .text,
+                                                        amount: double.tryParse(
+                                                            _model
+                                                                .textFieldCustCredAmtTextController
+                                                                .text),
+                                                        paymentType: _model
+                                                            .dropDownCustCredValue,
+                                                        createdBy: FFAppState()
+                                                            .userdoc,
+                                                        createdDate:
+                                                            getCurrentTimestamp
+                                                                .millisecondsSinceEpoch,
+                                                        party: FFAppState()
+                                                            .setCustRef,
+                                                        expenceType:
+                                                            'Customer Credit',
+                                                        oldBalance:
+                                                            valueOrDefault<int>(
+                                                          FFAppState()
+                                                              .oldBalance,
+                                                          0,
+                                                        ),
+                                                      ));
+                                                      _model.paymentDoc3a = PaymentRecord
+                                                          .getDocumentFromData(
+                                                              createPaymentRecordData(
+                                                                note: _model
+                                                                    .textController1
+                                                                    .text,
+                                                                amount: double
+                                                                    .tryParse(_model
+                                                                        .textFieldCustCredAmtTextController
+                                                                        .text),
+                                                                paymentType: _model
+                                                                    .dropDownCustCredValue,
+                                                                createdBy:
+                                                                    FFAppState()
+                                                                        .userdoc,
+                                                                createdDate:
+                                                                    getCurrentTimestamp
+                                                                        .millisecondsSinceEpoch,
+                                                                party: FFAppState()
+                                                                    .setCustRef,
+                                                                expenceType:
+                                                                    'Customer Credit',
+                                                                oldBalance:
+                                                                    valueOrDefault<
+                                                                        int>(
+                                                                  FFAppState()
+                                                                      .oldBalance,
+                                                                  0,
+                                                                ),
+                                                              ),
+                                                              paymentRecordReference);
+                                                      _shouldSetState = true;
+
+                                                      await FFAppState()
+                                                          .setCustRef!
+                                                          .update(
+                                                              createPartyRecordData(
+                                                            oldBalance:
+                                                                valueOrDefault<
+                                                                    int>(
+                                                              FFAppState()
+                                                                      .oldBalance -
+                                                                  valueOrDefault<
+                                                                      int>(
+                                                                    int.tryParse(_model
+                                                                        .textFieldCustCredAmtTextController
+                                                                        .text),
+                                                                    0,
+                                                                  ),
+                                                              0,
+                                                            ),
+                                                          ));
+                                                    } else {
+                                                      await showDialog(
+                                                        context: context,
+                                                        builder:
+                                                            (alertDialogContext) {
+                                                          return AlertDialog(
+                                                            content: Text(
+                                                                'Customer Is Not Selected !'),
+                                                            actions: [
+                                                              TextButton(
+                                                                onPressed: () =>
+                                                                    Navigator.pop(
+                                                                        alertDialogContext),
+                                                                child:
+                                                                    Text('Ok'),
+                                                              ),
+                                                            ],
+                                                          );
+                                                        },
+                                                      );
+                                                    }
+
+                                                    _model.isconnectedb =
+                                                        await actions
+                                                            .connectDevice(
+                                                      FFAppState()
+                                                          .printerDevice,
+                                                      FFAppState().printerIndex,
+                                                    );
+                                                    _shouldSetState = true;
+                                                    if (_model.isconnectedb!) {
+                                                      _model.devicef =
+                                                          await actions
+                                                              .newCustomAction(
+                                                        FFAppState()
+                                                            .printerIndex,
+                                                      );
+                                                      _shouldSetState = true;
+                                                      _model.custmerf =
+                                                          await queryPartyRecordOnce(
+                                                        parent: FFAppState()
+                                                            .outletIdRef,
+                                                        queryBuilder:
+                                                            (partyRecord) =>
+                                                                partyRecord
+                                                                    .where(
+                                                          'id',
+                                                          isEqualTo:
+                                                              FFAppState()
+                                                                  .setCustRef
+                                                                  ?.id,
+                                                        ),
+                                                        singleRecord: true,
+                                                      ).then((s) =>
+                                                              s.firstOrNull);
+                                                      _shouldSetState = true;
+                                                      await actions
+                                                          .printbillcreditPayment(
+                                                        _model.custmerf,
+                                                        _model.devicef!
+                                                            .toList(),
+                                                        FFAppState()
+                                                            .isPrinterConnected,
+                                                        FFAppState()
+                                                            .printerName,
+                                                        FFAppState().paperSize,
+                                                        _model.textController1
+                                                            .text,
+                                                        _model
+                                                            .textFieldCustCredAmtTextController
+                                                            .text,
+                                                      );
+                                                      FFAppState().oldBalance =
+                                                          0;
+                                                      FFAppState().setCustRef =
+                                                          null;
+                                                      FFAppState().setCustName =
+                                                          '';
+                                                      setState(() {});
+                                                      setState(() {
+                                                        _model
+                                                            .textFieldCustCredAmtTextController
+                                                            ?.clear();
+                                                        _model.textController1
+                                                            ?.clear();
+                                                      });
+                                                    } else {
+                                                      await showDialog(
+                                                        context: context,
+                                                        builder:
+                                                            (alertDialogContext) {
+                                                          return AlertDialog(
+                                                            title: Text(
+                                                                'printer connection'),
+                                                            content: Text(
+                                                                'printer not connected'),
+                                                            actions: [
+                                                              TextButton(
+                                                                onPressed: () =>
+                                                                    Navigator.pop(
+                                                                        alertDialogContext),
+                                                                child:
+                                                                    Text('Ok'),
+                                                              ),
+                                                            ],
+                                                          );
+                                                        },
+                                                      );
+                                                      if (_shouldSetState)
+                                                        setState(() {});
+                                                      return;
+                                                    }
+
+                                                    if (_shouldSetState)
+                                                      setState(() {});
+                                                  },
                                                   text: FFLocalizations.of(
                                                           context)
                                                       .getText(
@@ -1474,9 +1938,15 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                             ),
                                                           ),
                                                           Text(
-                                                            listViewInvoiceRecord
-                                                                .invoiceDate
-                                                                .toString(),
+                                                            dateTimeFormat(
+                                                              "d/M/y",
+                                                              DateTime.fromMillisecondsSinceEpoch(
+                                                                  listViewInvoiceRecord
+                                                                      .invoiceDate),
+                                                              locale: FFLocalizations
+                                                                      .of(context)
+                                                                  .languageCode,
+                                                            ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium
@@ -1880,7 +2350,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      '6x8plpdq' /* Customer Name :  */,
+                                                                      'x8v2t60s' /* Customer Name :  */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -1930,7 +2400,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'q3pjsy1z' /* Note:  */,
+                                                                      'x5l4o7m9' /* Note:  */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -1980,7 +2450,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      '6dg87fr6' /* Pay.Mode:  */,
+                                                                      'e0lmxysw' /* Pay.Mode:  */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -2030,7 +2500,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'c4qvorkm' /* Balance:  */,
+                                                                      'iugpc2me' /* Balance:  */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -2085,7 +2555,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      '8u2mnb6a' /* Amount paid:  */,
+                                                                      '1uvptsoe' /* Amount paid:  */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -2106,7 +2576,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                   FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                    'miy5k4wh' /* ₹  */,
+                                                                    '8ttta04b' /* ₹  */,
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
@@ -2178,50 +2648,51 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.center,
                                     children: [
-                                      Container(
-                                        width:
-                                            MediaQuery.sizeOf(context).width *
-                                                1.0,
-                                        height:
-                                            MediaQuery.sizeOf(context).height *
-                                                0.04,
-                                        decoration: BoxDecoration(
-                                          color:
-                                              FlutterFlowTheme.of(context).info,
-                                        ),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            AutoSizeText(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'hzayotlx' /* Items */,
+                                      if (false)
+                                        Container(
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  1.0,
+                                          height: MediaQuery.sizeOf(context)
+                                                  .height *
+                                              0.04,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .info,
+                                          ),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              AutoSizeText(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'hzayotlx' /* Items */,
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmallFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineSmallFamily),
+                                                        ),
                                               ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .override(
-                                                        fontFamily:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .headlineSmallFamily,
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                        letterSpacing: 0.0,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .headlineSmallFamily),
-                                                      ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
-                                      ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 2.0),

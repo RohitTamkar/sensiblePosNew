@@ -187,7 +187,7 @@ class _TransactionStatusPendingWidgetState
             children: [
               Text(
                 FFLocalizations.of(context).getText(
-                  'jp7p7j79' /* Redirects automaticaly */,
+                  'a3sev9uo' /* Redirects automaticaly */,
                 ),
                 style: FlutterFlowTheme.of(context).labelLarge.override(
                       fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,

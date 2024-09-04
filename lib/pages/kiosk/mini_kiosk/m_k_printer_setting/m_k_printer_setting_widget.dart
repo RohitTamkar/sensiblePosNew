@@ -150,7 +150,7 @@ class _MKPrinterSettingWidgetState extends State<MKPrinterSettingWidget> {
                                     0.0, 10.0, 0.0, 3.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'ihksw6bi' /* Paper Size */,
+                                    'qnppgz98' /* Paper Size */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyLarge
@@ -191,7 +191,7 @@ class _MKPrinterSettingWidgetState extends State<MKPrinterSettingWidget> {
                                                     .titleSmallFamily),
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
-                                    '866e4u4q' /* Select Paper Size... */,
+                                    'wq26yvpr' /* Select Paper Size... */,
                                   ),
                                   icon: Icon(
                                     Icons.keyboard_arrow_down,
@@ -215,7 +215,7 @@ class _MKPrinterSettingWidgetState extends State<MKPrinterSettingWidget> {
                                 padding: EdgeInsets.all(5.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'g1maj5j2' /* Printer Mode */,
+                                    'a61hx786' /* Printer Mode */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyLarge
@@ -268,7 +268,7 @@ class _MKPrinterSettingWidgetState extends State<MKPrinterSettingWidget> {
                                                     .titleSmallFamily),
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
-                                    'efnrt8f8' /* Select printer mode */,
+                                    'a04vhqw3' /* Select printer mode */,
                                   ),
                                   icon: Icon(
                                     Icons.keyboard_arrow_down,
@@ -292,7 +292,7 @@ class _MKPrinterSettingWidgetState extends State<MKPrinterSettingWidget> {
                                 padding: EdgeInsets.all(5.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    '86of77fi' /* Available Device */,
+                                    'f0sq8uzn' /* Available Device */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyLarge
