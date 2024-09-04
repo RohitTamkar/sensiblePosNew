@@ -1184,8 +1184,16 @@ bool greatethanlesskiosk(
   return val;
 }
 
-double returnpaymentjson(String jsonString) {
+double? returnpaymentjson(String jsonString) {
+  // Add quotes around the keys
+  jsonString = jsonString.replaceAllMapped(
+    RegExp(r'(\w+):'),
+    (match) => '"${match[1]}":',
+  );
+
   dynamic json = jsonDecode(jsonString);
-  double amt = double.parse(json['paymentMode']['CREDIT']);
-  return amt;
+  double? amt = json['CREDIT'] != null
+      ? double.tryParse(json['CREDIT'].toString())
+      : null;
+  return amt ?? 0.00;
 }

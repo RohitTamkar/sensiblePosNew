@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 dynamic calculateGroceryAmtaction(
   String paymentMode,
   double totalAmount,
@@ -31,17 +33,25 @@ dynamic calculateGroceryAmtaction(
   print(FFAppState().groceryJson['paymentMode']);
   // Get the existing paymentModes map
   Map<String, double> paymentModes = FFAppState().groceryJson['paymentMode'];
+  double newTotalPaidAmt = 0;
+  if (paidAmt > totalAmount) {
+    double previousPaidAmt =
+        paymentModes.values.fold(0, (sum, amt) => sum + amt);
 
+    newTotalPaidAmt = previousPaidAmt + paidAmt;
+    paidAmt = totalAmount;
+  } else {
+    double previousPaidAmt =
+        paymentModes.values.fold(0, (sum, amt) => sum + amt);
+    newTotalPaidAmt = previousPaidAmt + paidAmt;
+  }
   // Calculate the total paid amount by summing previous payments and the current one
-  double previousPaidAmt = paymentModes.values.fold(0, (sum, amt) => sum + amt);
-  double newTotalPaidAmt = previousPaidAmt + paidAmt;
 
   double balanceAmt = 0;
   double returnAmt = 0;
   double advanceAmt = 0;
 
   // Update the payment mode and amount in the Map
-  paymentModes[paymentMode] = (paymentModes[paymentMode] ?? 0) + paidAmt;
 
   // Calculate the balance, return, and advance amounts
   if (newTotalPaidAmt <= totalAmount) {
@@ -52,6 +62,11 @@ dynamic calculateGroceryAmtaction(
   }
   if (newTotalPaidAmt > totalAmount) {
     newTotalPaidAmt = totalAmount;
+  }
+  if (advanceAmt < paidAmt) {
+    paymentModes[paymentMode] = (paymentModes[paymentMode] ?? 0) + paidAmt;
+  } else {
+    paymentModes[paymentMode] = (paymentModes[paymentMode] ?? 0) + paidAmt;
   }
   // Update groceryJson with the latest data
   FFAppState().groceryJson = {
