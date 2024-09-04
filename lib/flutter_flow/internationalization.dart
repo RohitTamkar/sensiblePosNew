@@ -21897,14 +21897,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     '2qb8hf4h': {
-      'en': 'Bills',
+      'en': 'Pending Bills',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
     '6pqqxppn': {
-      'en': 'Transactions',
+      'en': 'Last Transactions',
       'hi': '',
       'kn': '',
       'mr': '',

@@ -1184,6 +1184,8 @@ bool greatethanlesskiosk(
   return val;
 }
 
-List<dynamic> returnmonthjson(String jsonString) {
-  return jsonDecode(jsonString);
+double returnpaymentjson(String jsonString) {
+  dynamic json = jsonDecode(jsonString);
+  double amt = double.parse(json['paymentMode']['CREDIT']);
+  return amt;
 }
