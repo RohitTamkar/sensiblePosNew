@@ -3139,8 +3139,12 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                     ),
                                     FFButtonWidget(
                                       onPressed: () async {
-                                        if (FFAppState()
-                                            .allBillsList
+                                        if (functions
+                                            .filterBillList(
+                                                FFAppState().selBill,
+                                                FFAppState()
+                                                    .allBillsList
+                                                    .toList())
                                             .isNotEmpty) {
                                           await showModalBottomSheet(
                                             isScrollControlled: true,

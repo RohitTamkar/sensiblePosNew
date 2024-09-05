@@ -230,7 +230,7 @@ Future printBillParking(
               align: PosAlign.center));
 
       bytes += generator.qrcode(invoiceDetails.reference.id,
-          size: QRSize.Size5); // Adjust the QR size as needed
+          size: QRSize.size4); // Adjust the QR size as needed
       // Adjust the QR size as needed
     } else {
       bytes += generator.text('Test Print',
@@ -414,7 +414,7 @@ Future printBillParking(
               align: PosAlign.center));
 
       bytes += generator.qrcode(invoiceDetails.reference.id,
-          size: QRSize.Size5); // Adjust the QR size as needed
+          size: QRSize.size5); // Adjust the QR size as needed
       // Adjust the QR size as needed
       /* bytes += generator.text("--------------------------------",
           styles: const PosStyles(

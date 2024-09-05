@@ -69,6 +69,7 @@ Future<List<dynamic>> addToHoldListkioskGst(
       "regionalName": document!.regionalName,
       "imageUrl": document!.imageUrl,
       "currentStock": document!.currentStock ?? 0,
+      "stockable": document!.stockable ?? false,
     };
 
     var index;

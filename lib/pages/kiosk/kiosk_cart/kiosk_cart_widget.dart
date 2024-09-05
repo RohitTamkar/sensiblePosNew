@@ -673,7 +673,10 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                     ),
                                                                                     onPressed: () async {
                                                                                       var _shouldSetState = false;
-                                                                                      if (widget!.appsetting!.settingList.where((e) => e.title == 'enableStock').toList().first.value) {
+                                                                                      if (getJsonField(
+                                                                                        listviewItem,
+                                                                                        r'''$.stockable''',
+                                                                                      )) {
                                                                                         if (!functions.greatethanlesskiosk(
                                                                                             functions.jsontoint(getJsonField(
                                                                                               listviewItem,

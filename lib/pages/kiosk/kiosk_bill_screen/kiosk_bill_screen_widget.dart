@@ -1107,15 +1107,8 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                             1.0;
                                                                         safeSetState(
                                                                             () {});
-                                                                        if (widget!
-                                                                            .appsetting!
-                                                                            .settingList
-                                                                            .where((e) =>
-                                                                                e.title ==
-                                                                                'enableStock')
-                                                                            .toList()
-                                                                            .first
-                                                                            .value) {
+                                                                        if (kioskBillScreenVarItem
+                                                                            .stockable) {
                                                                           if (kioskBillScreenVarItem.currentStock >
                                                                               0) {
                                                                             if (FFAppState().holdBillCount ==
@@ -1162,7 +1155,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                                 true;
                                                                             FFAppState().addToCartItem(kioskBillScreenVarItem.reference);
                                                                             safeSetState(() {});
-                                                                            if (widget!.appsetting!.settingList.where((e) => e.title == 'enableStock').toList().first.value) {
+                                                                            if (kioskBillScreenVarItem.stockable) {
                                                                               if (kioskBillScreenVarItem.currentStock <=
                                                                                   valueOrDefault<int>(
                                                                                     getJsonField(
@@ -1473,7 +1466,7 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                                               ),
                                                                               onPressed: () async {
                                                                                 var _shouldSetState = false;
-                                                                                if (widget!.appsetting!.settingList.where((e) => e.title == 'enableStock').toList().first.value) {
+                                                                                if (kioskBillScreenVarItem.stockable) {
                                                                                   if (kioskBillScreenVarItem.currentStock <=
                                                                                       functions.doubleToInt(valueOrDefault<double>(
                                                                                         getJsonField(
