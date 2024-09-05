@@ -94,8 +94,8 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: 0,
-            end: 1,
+            begin: 0.0,
+            end: 1.0,
           ),
         ],
       ),
@@ -194,8 +194,8 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: 0,
-            end: 1,
+            begin: 0.0,
+            end: 1.0,
           ),
         ],
       ),
@@ -214,8 +214,8 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 120.0.ms,
-            begin: 0,
-            end: 1,
+            begin: 0.0,
+            end: 1.0,
           ),
         ],
       ),
@@ -234,8 +234,8 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: 0,
-            end: 1,
+            begin: 0.0,
+            end: 1.0,
           ),
         ],
       ),
@@ -254,8 +254,8 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: 0,
-            end: 1,
+            begin: 0.0,
+            end: 1.0,
           ),
         ],
       ),
@@ -292,7 +292,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
             drawer: Container(
               width: MediaQuery.sizeOf(context).width * 0.11,
               child: Drawer(
-                elevation: 16,
+                elevation: 16.0,
                 child: wrapWithModel(
                   model: _model.menuDrawerModel,
                   updateCallback: () => safeSetState(() {}),
@@ -303,19 +303,19 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
             endDrawer: Container(
               width: MediaQuery.sizeOf(context).width * 0.45,
               child: Drawer(
-                elevation: 16,
+                elevation: 16.0,
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Container(
-                      width: MediaQuery.sizeOf(context).width,
-                      height: MediaQuery.sizeOf(context).height * 1,
+                      width: MediaQuery.sizeOf(context).width * 1.0,
+                      height: MediaQuery.sizeOf(context).height * 1.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primaryBackground,
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(10),
+                        padding: EdgeInsets.all(10.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -335,14 +335,14 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                 children: [
                                   FlutterFlowIconButton(
                                     borderColor: Colors.transparent,
-                                    borderRadius: 30,
-                                    borderWidth: 1,
-                                    buttonSize: 40,
+                                    borderRadius: 30.0,
+                                    borderWidth: 1.0,
+                                    buttonSize: 40.0,
                                     icon: Icon(
                                       Icons.chevron_left,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
-                                      size: 22,
+                                      size: 22.0,
                                     ),
                                     onPressed: () async {
                                       context.pop();
@@ -357,7 +357,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  20, 0, 0, 0),
+                                                  20.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'gp4dbvox' /* CUSTOMER DETAILS */,
@@ -383,14 +383,14 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                   ),
                                   FlutterFlowIconButton(
                                     borderColor: Colors.transparent,
-                                    borderRadius: 30,
-                                    borderWidth: 1,
-                                    buttonSize: 40,
+                                    borderRadius: 30.0,
+                                    borderWidth: 1.0,
+                                    buttonSize: 40.0,
                                     icon: Icon(
                                       Icons.person_add,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
-                                      size: 22,
+                                      size: 22.0,
                                     ),
                                     onPressed: () async {
                                       context.pushNamed('AddCustomer');
@@ -400,11 +400,11 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                               ),
                             ),
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 10.0, 0.0, 0.0),
                               child: Material(
                                 color: Colors.transparent,
-                                elevation: 2,
+                                elevation: 2.0,
                                 child: Container(
                                   width: double.infinity,
                                   height:
@@ -422,7 +422,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  6, 0, 0, 0),
+                                                  6.0, 0.0, 0.0, 0.0),
                                           child: TextFormField(
                                             controller: _model
                                                 .textFieldsearchTextController,
@@ -536,8 +536,8 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                         ),
                                         child: FlutterFlowIconButton(
                                           borderColor: Colors.transparent,
-                                          borderWidth: 1,
-                                          buttonSize: 50,
+                                          borderWidth: 1.0,
+                                          buttonSize: 50.0,
                                           fillColor:
                                               FlutterFlowTheme.of(context)
                                                   .secondary,
@@ -545,7 +545,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                             Icons.search,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBtnText,
-                                            size: 22,
+                                            size: 22.0,
                                           ),
                                           onPressed: () {
                                             print('IconButton pressed ...');
@@ -558,8 +558,8 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                               ),
                             ),
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 5.0, 0.0, 0.0),
                               child: Container(
                                 width: double.infinity,
                                 height: MediaQuery.sizeOf(context).height * 0.7,
@@ -568,11 +568,11 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                       .secondaryBackground,
                                   boxShadow: [
                                     BoxShadow(
-                                      blurRadius: 3,
+                                      blurRadius: 3.0,
                                       color: Color(0x33000000),
                                       offset: Offset(
-                                        0,
-                                        1,
+                                        0.0,
+                                        1.0,
                                       ),
                                     )
                                   ],
@@ -594,10 +594,12 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                 .secondaryBackground,
                                             shape: RoundedRectangleBorder(
                                               borderRadius: BorderRadius.only(
-                                                bottomLeft: Radius.circular(4),
-                                                bottomRight: Radius.circular(4),
-                                                topLeft: Radius.circular(4),
-                                                topRight: Radius.circular(4),
+                                                bottomLeft:
+                                                    Radius.circular(4.0),
+                                                bottomRight:
+                                                    Radius.circular(4.0),
+                                                topLeft: Radius.circular(4.0),
+                                                topRight: Radius.circular(4.0),
                                               ),
                                             ),
                                             child: Row(
@@ -608,15 +610,15 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                 FlutterFlowIconButton(
                                                   borderColor:
                                                       Colors.transparent,
-                                                  borderRadius: 30,
-                                                  borderWidth: 1,
-                                                  buttonSize: 60,
+                                                  borderRadius: 30.0,
+                                                  borderWidth: 1.0,
+                                                  buttonSize: 60.0,
                                                   icon: Icon(
                                                     Icons.account_circle,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
-                                                    size: 30,
+                                                    size: 30.0,
                                                   ),
                                                   onPressed: () {
                                                     print(
@@ -625,7 +627,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                 ),
                                                 Expanded(
                                                   child: Container(
-                                                    width: 170,
+                                                    width: 170.0,
                                                     height: MediaQuery.sizeOf(
                                                                 context)
                                                             .height *
@@ -695,7 +697,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                 ),
                                                 Expanded(
                                                   child: Container(
-                                                    width: 100,
+                                                    width: 100.0,
                                                     height: MediaQuery.sizeOf(
                                                                 context)
                                                             .height *
@@ -714,8 +716,11 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(0,
-                                                                      8, 0, 0),
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      8.0,
+                                                                      0.0,
+                                                                      0.0),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -802,15 +807,15 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                             FlutterFlowIconButton(
                                                           borderColor: Colors
                                                               .transparent,
-                                                          borderRadius: 30,
-                                                          borderWidth: 1,
-                                                          buttonSize: 60,
+                                                          borderRadius: 30.0,
+                                                          borderWidth: 1.0,
+                                                          buttonSize: 60.0,
                                                           icon: Icon(
                                                             Icons.chevron_right,
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .secondary,
-                                                            size: 24,
+                                                            size: 24.0,
                                                           ),
                                                           onPressed: () {
                                                             print(
@@ -838,7 +843,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                 .secondaryBackground,
                                             shape: RoundedRectangleBorder(
                                               borderRadius:
-                                                  BorderRadius.circular(4),
+                                                  BorderRadius.circular(4.0),
                                             ),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -848,15 +853,15 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                 FlutterFlowIconButton(
                                                   borderColor:
                                                       Colors.transparent,
-                                                  borderRadius: 30,
-                                                  borderWidth: 1,
-                                                  buttonSize: 60,
+                                                  borderRadius: 30.0,
+                                                  borderWidth: 1.0,
+                                                  buttonSize: 60.0,
                                                   icon: Icon(
                                                     Icons.account_circle,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
-                                                    size: 30,
+                                                    size: 30.0,
                                                   ),
                                                   onPressed: () {
                                                     print(
@@ -865,7 +870,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                 ),
                                                 Expanded(
                                                   child: Container(
-                                                    width: 170,
+                                                    width: 170.0,
                                                     height: MediaQuery.sizeOf(
                                                                 context)
                                                             .height *
@@ -935,7 +940,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                 ),
                                                 Expanded(
                                                   child: Container(
-                                                    width: 100,
+                                                    width: 100.0,
                                                     height: MediaQuery.sizeOf(
                                                                 context)
                                                             .height *
@@ -954,8 +959,11 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(0,
-                                                                      8, 0, 0),
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      8.0,
+                                                                      0.0,
+                                                                      0.0),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -1042,15 +1050,15 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                             FlutterFlowIconButton(
                                                           borderColor: Colors
                                                               .transparent,
-                                                          borderRadius: 30,
-                                                          borderWidth: 1,
-                                                          buttonSize: 60,
+                                                          borderRadius: 30.0,
+                                                          borderWidth: 1.0,
+                                                          buttonSize: 60.0,
                                                           icon: Icon(
                                                             Icons.chevron_right,
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .secondary,
-                                                            size: 24,
+                                                            size: 24.0,
                                                           ),
                                                           onPressed: () {
                                                             print(
@@ -1080,7 +1088,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
               ),
             ),
             body: Padding(
-              padding: EdgeInsets.all(3),
+              padding: EdgeInsets.all(3.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1094,29 +1102,29 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                         decoration: BoxDecoration(),
                         child: Image.asset(
                           'assets/images/IMG_20220412_140945.png',
-                          width: 100,
-                          height: 100,
+                          width: 100.0,
+                          height: 100.0,
                           fit: BoxFit.contain,
                         ),
                       ),
                       Expanded(
                         child: Container(
-                          width: 100,
+                          width: 100.0,
                           height: MediaQuery.sizeOf(context).height * 0.06,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context).primary,
                           ),
                           child: Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                10.0, 0.0, 10.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Expanded(
                                   child: Container(
-                                    width: 100,
-                                    height: 100,
+                                    width: 100.0,
+                                    height: 100.0,
                                     decoration: BoxDecoration(),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -1124,7 +1132,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 3, 0),
+                                                  0.0, 0.0, 3.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'rk2u3noi' /* Sensible Cafe */,
@@ -1153,7 +1161,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 6, 0),
+                                                  0.0, 0.0, 6.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               '663nf72h' /* Admin */,
@@ -1185,7 +1193,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 6, 0),
+                                      0.0, 0.0, 6.0, 0.0),
                                   child: Text(
                                     dateTimeFormat(
                                       "yMMMd",
@@ -1232,8 +1240,8 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                 ),
                                 Expanded(
                                   child: Container(
-                                    width: 100,
-                                    height: 100,
+                                    width: 100.0,
+                                    height: 100.0,
                                     decoration: BoxDecoration(),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -1273,14 +1281,14 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                     ],
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Expanded(
                           flex: 18,
                           child: Container(
-                            width: 100,
+                            width: 100.0,
                             height: MediaQuery.sizeOf(context).height * 0.065,
                             decoration: BoxDecoration(
                               border: Border.all(
@@ -1293,7 +1301,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 3, 0),
+                                      0.0, 0.0, 3.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
                                     focusColor: Colors.transparent,
@@ -1333,7 +1341,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                             Icons.menu_rounded,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            size: 18,
+                                            size: 18.0,
                                           ),
                                         ],
                                       ),
@@ -1346,7 +1354,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                 Expanded(
                                   flex: 19,
                                   child: Container(
-                                    width: 100,
+                                    width: 100.0,
                                     height: MediaQuery.sizeOf(context).height *
                                         0.065,
                                     decoration: BoxDecoration(
@@ -1354,11 +1362,11 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                           .secondaryBackground,
                                       boxShadow: [
                                         BoxShadow(
-                                          blurRadius: 4,
+                                          blurRadius: 4.0,
                                           color: Color(0x32000000),
                                           offset: Offset(
-                                            0,
-                                            2,
+                                            0.0,
+                                            2.0,
                                           ),
                                         )
                                       ],
@@ -1478,9 +1486,10 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                         Expanded(
                           flex: 10,
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(3, 0, 0, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                3.0, 0.0, 0.0, 0.0),
                             child: Container(
-                              width: 100,
+                              width: 100.0,
                               height: MediaQuery.sizeOf(context).height * 0.065,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
@@ -1516,7 +1525,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                       FFAppState().update(() {});
                                     },
                                     child: Container(
-                                      width: 36,
+                                      width: 36.0,
                                       height: double.infinity,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
@@ -1524,10 +1533,10 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                       ),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 3, 0),
+                                            0.0, 0.0, 3.0, 0.0),
                                         child: FlutterFlowIconButton(
                                           borderColor: Colors.transparent,
-                                          buttonSize: 35,
+                                          buttonSize: 35.0,
                                           fillColor:
                                               FlutterFlowTheme.of(context)
                                                   .tertiary,
@@ -1535,7 +1544,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                             Icons.add,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            size: 16,
+                                            size: 16.0,
                                           ),
                                           onPressed: () {
                                             print('IconButton pressed ...');
@@ -1565,9 +1574,9 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                 holdList[holdListIndex];
                                             return Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 3, 0),
+                                                  .fromSTEB(0.0, 0.0, 3.0, 0.0),
                                               child: Container(
-                                                width: 40,
+                                                width: 40.0,
                                                 height: double.infinity,
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
@@ -1632,7 +1641,10 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    7, 0, 7, 0),
+                                                                    7.0,
+                                                                    0.0,
+                                                                    7.0,
+                                                                    0.0),
                                                         child: Text(
                                                           getJsonField(
                                                             holdListItem,
@@ -1668,7 +1680,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                   Container(
                                     width:
                                         MediaQuery.sizeOf(context).width * 0.04,
-                                    height: 100,
+                                    height: 100.0,
                                     decoration: BoxDecoration(
                                       border: Border.all(
                                         width: 0.5,
@@ -1679,7 +1691,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                         Icons.close_outlined,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
-                                        size: 16,
+                                        size: 16.0,
                                       ),
                                       onPressed: () {
                                         print('IconButton pressed ...');
@@ -1696,7 +1708,8 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                   ),
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -1711,12 +1724,12 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                 if (!snapshot.hasData) {
                                   return Center(
                                     child: SizedBox(
-                                      width: 40,
-                                      height: 40,
+                                      width: 40.0,
+                                      height: 40.0,
                                       child: SpinKitFadingCircle(
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
-                                        size: 40,
+                                        size: 40.0,
                                       ),
                                     ),
                                   );
@@ -1725,7 +1738,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                     snapshot.data!;
 
                                 return Container(
-                                  width: 100,
+                                  width: 100.0,
                                   height: double.infinity,
                                   decoration: BoxDecoration(),
                                   child: Column(
@@ -1758,10 +1771,10 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0,
-                                                                        0,
-                                                                        3,
-                                                                        0),
+                                                                        0.0,
+                                                                        0.0,
+                                                                        3.0,
+                                                                        0.0),
                                                             child: Container(
                                                               width: MediaQuery
                                                                           .sizeOf(
@@ -1783,9 +1796,9 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
                                                                             1.5),
                                                                     child:
                                                                         InkWell(
@@ -1833,7 +1846,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                               MainAxisAlignment.center,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(3, 12, 3, 12),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(3.0, 12.0, 3.0, 12.0),
                                                                               child: Text(
                                                                                 FFLocalizations.of(context).getText(
                                                                                   'q5gykkl2' /* All */,
@@ -1855,18 +1868,17 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              0,
-                                                                              3),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          3.0),
                                                                       child:
                                                                           Container(
                                                                         width: double
                                                                             .infinity,
                                                                         height:
-                                                                            100,
+                                                                            100.0,
                                                                         decoration:
                                                                             BoxDecoration(),
                                                                         child:
@@ -1886,7 +1898,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                               itemBuilder: (context, categoryListIndex) {
                                                                                 final categoryListItem = categoryList[categoryListIndex];
                                                                                 return Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 1.5),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.5),
                                                                                   child: InkWell(
                                                                                     splashColor: Colors.transparent,
                                                                                     focusColor: Colors.transparent,
@@ -1910,7 +1922,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                         mainAxisAlignment: MainAxisAlignment.center,
                                                                                         children: [
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(3, 12, 3, 12),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(3.0, 12.0, 3.0, 12.0),
                                                                                             child: Text(
                                                                                               getJsonField(
                                                                                                 categoryListItem,
@@ -1963,15 +1975,16 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                   return Center(
                                                                     child:
                                                                         SizedBox(
-                                                                      width: 40,
+                                                                      width:
+                                                                          40.0,
                                                                       height:
-                                                                          40,
+                                                                          40.0,
                                                                       child:
                                                                           SpinKitFadingCircle(
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primary,
                                                                         size:
-                                                                            40,
+                                                                            40.0,
                                                                       ),
                                                                     ),
                                                                   );
@@ -1981,7 +1994,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                         .data!;
 
                                                                 return Container(
-                                                                  width: 100,
+                                                                  width: 100.0,
                                                                   height: double
                                                                       .infinity,
                                                                   decoration:
@@ -1992,7 +2005,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                           .showGrid)
                                                                         Padding(
                                                                           padding:
-                                                                              EdgeInsets.all(1),
+                                                                              EdgeInsets.all(1.0),
                                                                           child:
                                                                               Container(
                                                                             decoration:
@@ -2017,8 +2030,8 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                   padding: EdgeInsets.zero,
                                                                                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                                                                                     crossAxisCount: 4,
-                                                                                    crossAxisSpacing: 3,
-                                                                                    mainAxisSpacing: 4,
+                                                                                    crossAxisSpacing: 3.0,
+                                                                                    mainAxisSpacing: 4.0,
                                                                                     childAspectRatio: 1.3,
                                                                                   ),
                                                                                   scrollDirection: Axis.vertical,
@@ -2026,14 +2039,14 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                   itemBuilder: (context, productListIndex) {
                                                                                     final productListItem = productList[productListIndex];
                                                                                     return Container(
-                                                                                      width: 100,
-                                                                                      height: 100,
+                                                                                      width: 100.0,
+                                                                                      height: 100.0,
                                                                                       decoration: BoxDecoration(
                                                                                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                        borderRadius: BorderRadius.circular(5),
+                                                                                        borderRadius: BorderRadius.circular(5.0),
                                                                                         border: Border.all(
                                                                                           color: FlutterFlowTheme.of(context).customColor2,
-                                                                                          width: 1,
+                                                                                          width: 1.0,
                                                                                         ),
                                                                                       ),
                                                                                       child: Stack(
@@ -2041,19 +2054,19 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                           Container(
                                                                                             decoration: BoxDecoration(
                                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                              borderRadius: BorderRadius.circular(5),
+                                                                                              borderRadius: BorderRadius.circular(5.0),
                                                                                               border: Border.all(
                                                                                                 color: FlutterFlowTheme.of(context).customColor2,
                                                                                               ),
                                                                                             ),
                                                                                             child: Padding(
-                                                                                              padding: EdgeInsets.all(2),
+                                                                                              padding: EdgeInsets.all(2.0),
                                                                                               child: Column(
                                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                                 mainAxisAlignment: MainAxisAlignment.end,
                                                                                                 children: [
                                                                                                   Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                                                                                                     child: Text(
                                                                                                       FFLocalizations.of(context).getText(
                                                                                                         'ovook6x0' /* Product */,
@@ -2067,13 +2080,13 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                                     ),
                                                                                                   ),
                                                                                                   Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
                                                                                                     child: Row(
                                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                                       mainAxisAlignment: MainAxisAlignment.center,
                                                                                                       children: [
                                                                                                         Align(
-                                                                                                          alignment: AlignmentDirectional(0, 0),
+                                                                                                          alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                           child: Text(
                                                                                                             FFLocalizations.of(context).getText(
                                                                                                               'emh4bwcw' /* ₹  */,
@@ -2087,7 +2100,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                                           ),
                                                                                                         ),
                                                                                                         Align(
-                                                                                                          alignment: AlignmentDirectional(0, 0),
+                                                                                                          alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                           child: Text(
                                                                                                             FFLocalizations.of(context).getText(
                                                                                                               '7878ydd0' /* 5 */,
@@ -2110,20 +2123,20 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                           Container(
                                                                                             decoration: BoxDecoration(
                                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                              borderRadius: BorderRadius.circular(5),
+                                                                                              borderRadius: BorderRadius.circular(5.0),
                                                                                               border: Border.all(
                                                                                                 color: FlutterFlowTheme.of(context).customColor2,
                                                                                               ),
                                                                                             ),
                                                                                             child: Padding(
-                                                                                              padding: EdgeInsets.all(2),
+                                                                                              padding: EdgeInsets.all(2.0),
                                                                                               child: Column(
                                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                                 mainAxisAlignment: MainAxisAlignment.end,
                                                                                                 crossAxisAlignment: CrossAxisAlignment.center,
                                                                                                 children: [
                                                                                                   Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 2),
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
                                                                                                     child: Text(
                                                                                                       FFLocalizations.of(context).getText(
                                                                                                         'zokb9s5k' /* 1.  */,
@@ -2137,7 +2150,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                                     ),
                                                                                                   ),
                                                                                                   Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 2),
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
                                                                                                     child: Text(
                                                                                                       FFLocalizations.of(context).getText(
                                                                                                         'gsasvn0g' /* Product */,
@@ -2152,13 +2165,13 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                                     ),
                                                                                                   ),
                                                                                                   Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
                                                                                                     child: Row(
                                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                                       mainAxisAlignment: MainAxisAlignment.center,
                                                                                                       children: [
                                                                                                         Align(
-                                                                                                          alignment: AlignmentDirectional(0, 0),
+                                                                                                          alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                           child: Text(
                                                                                                             FFLocalizations.of(context).getText(
                                                                                                               'yzxlj4d2' /* ₹  */,
@@ -2172,7 +2185,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                                           ),
                                                                                                         ),
                                                                                                         Align(
-                                                                                                          alignment: AlignmentDirectional(0, 0),
+                                                                                                          alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                           child: Text(
                                                                                                             FFLocalizations.of(context).getText(
                                                                                                               'gx884q3q' /* 5 */,
@@ -2195,7 +2208,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                           Container(
                                                                                             decoration: BoxDecoration(
                                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                              borderRadius: BorderRadius.circular(5),
+                                                                                              borderRadius: BorderRadius.circular(5.0),
                                                                                             ),
                                                                                             child: Padding(
                                                                                               padding: EdgeInsets.all(0.5),
@@ -2210,7 +2223,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                                       height: MediaQuery.sizeOf(context).height * 0.12,
                                                                                                       decoration: BoxDecoration(
                                                                                                         color: Color(0x1A000000),
-                                                                                                        borderRadius: BorderRadius.circular(5),
+                                                                                                        borderRadius: BorderRadius.circular(5.0),
                                                                                                       ),
                                                                                                       child: Column(
                                                                                                         mainAxisSize: MainAxisSize.max,
@@ -2219,7 +2232,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                                         children: [
                                                                                                           Expanded(
                                                                                                             child: Padding(
-                                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
+                                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                                                                                                               child: Container(
                                                                                                                 width: double.infinity,
                                                                                                                 height: MediaQuery.sizeOf(context).height * 0.15,
@@ -2229,20 +2242,20 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                                                       Colors.transparent,
                                                                                                                       Color(0xA7000000)
                                                                                                                     ],
-                                                                                                                    stops: [0, 1],
-                                                                                                                    begin: AlignmentDirectional(0, -1),
-                                                                                                                    end: AlignmentDirectional(0, 1),
+                                                                                                                    stops: [0.0, 1.0],
+                                                                                                                    begin: AlignmentDirectional(0.0, -1.0),
+                                                                                                                    end: AlignmentDirectional(0, 1.0),
                                                                                                                   ),
-                                                                                                                  borderRadius: BorderRadius.circular(5),
+                                                                                                                  borderRadius: BorderRadius.circular(5.0),
                                                                                                                 ),
                                                                                                                 child: Padding(
-                                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(2, 0, 2, 3),
+                                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 2.0, 3.0),
                                                                                                                   child: Column(
                                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                                     mainAxisAlignment: MainAxisAlignment.end,
                                                                                                                     children: [
                                                                                                                       Padding(
-                                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 2),
+                                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
                                                                                                                         child: Text(
                                                                                                                           FFLocalizations.of(context).getText(
                                                                                                                             'foqmrfah' /* Product Name */,
@@ -2258,13 +2271,13 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                                                         ),
                                                                                                                       ),
                                                                                                                       Padding(
-                                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 2),
+                                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
                                                                                                                         child: Row(
                                                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                                                           mainAxisAlignment: MainAxisAlignment.center,
                                                                                                                           children: [
                                                                                                                             Padding(
-                                                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 3, 0),
+                                                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
                                                                                                                               child: Text(
                                                                                                                                 FFLocalizations.of(context).getText(
                                                                                                                                   'od8ee1dp' /* ₹ */,
@@ -2308,16 +2321,16 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                           Container(
                                                                                             decoration: BoxDecoration(
                                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                              borderRadius: BorderRadius.circular(5),
+                                                                                              borderRadius: BorderRadius.circular(5.0),
                                                                                             ),
                                                                                             child: Padding(
-                                                                                              padding: EdgeInsets.all(2),
+                                                                                              padding: EdgeInsets.all(2.0),
                                                                                               child: Column(
                                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                                 mainAxisAlignment: MainAxisAlignment.end,
                                                                                                 children: [
                                                                                                   Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 7),
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 7.0),
                                                                                                     child: Text(
                                                                                                       getJsonField(
                                                                                                         productListItem,
@@ -2332,13 +2345,13 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                                     ),
                                                                                                   ),
                                                                                                   Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
                                                                                                     child: Row(
                                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                                       mainAxisAlignment: MainAxisAlignment.center,
                                                                                                       children: [
                                                                                                         Align(
-                                                                                                          alignment: AlignmentDirectional(0, 0),
+                                                                                                          alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                           child: Text(
                                                                                                             FFLocalizations.of(context).getText(
                                                                                                               'qvh9kyj9' /* ₹  */,
@@ -2352,7 +2365,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                                           ),
                                                                                                         ),
                                                                                                         Align(
-                                                                                                          alignment: AlignmentDirectional(0, 0),
+                                                                                                          alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                           child: Text(
                                                                                                             getJsonField(
                                                                                                               productListItem,
@@ -2386,7 +2399,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                           .showGrid)
                                                                         Padding(
                                                                           padding:
-                                                                              EdgeInsets.all(1),
+                                                                              EdgeInsets.all(1.0),
                                                                           child:
                                                                               Container(
                                                                             decoration:
@@ -2416,8 +2429,8 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                   padding: EdgeInsets.zero,
                                                                                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                                                                                     crossAxisCount: 4,
-                                                                                    crossAxisSpacing: 3,
-                                                                                    mainAxisSpacing: 4,
+                                                                                    crossAxisSpacing: 3.0,
+                                                                                    mainAxisSpacing: 4.0,
                                                                                     childAspectRatio: 1.3,
                                                                                   ),
                                                                                   scrollDirection: Axis.vertical,
@@ -2425,14 +2438,14 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                   itemBuilder: (context, productListIndex) {
                                                                                     final productListItem = productList[productListIndex];
                                                                                     return Container(
-                                                                                      width: 100,
-                                                                                      height: 100,
+                                                                                      width: 100.0,
+                                                                                      height: 100.0,
                                                                                       decoration: BoxDecoration(
                                                                                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                        borderRadius: BorderRadius.circular(5),
+                                                                                        borderRadius: BorderRadius.circular(5.0),
                                                                                         border: Border.all(
                                                                                           color: FlutterFlowTheme.of(context).customColor2,
-                                                                                          width: 1,
+                                                                                          width: 1.0,
                                                                                         ),
                                                                                       ),
                                                                                       child: Stack(
@@ -2440,19 +2453,19 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                           Container(
                                                                                             decoration: BoxDecoration(
                                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                              borderRadius: BorderRadius.circular(5),
+                                                                                              borderRadius: BorderRadius.circular(5.0),
                                                                                               border: Border.all(
                                                                                                 color: FlutterFlowTheme.of(context).customColor2,
                                                                                               ),
                                                                                             ),
                                                                                             child: Padding(
-                                                                                              padding: EdgeInsets.all(2),
+                                                                                              padding: EdgeInsets.all(2.0),
                                                                                               child: Column(
                                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                                 mainAxisAlignment: MainAxisAlignment.end,
                                                                                                 children: [
                                                                                                   Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                                                                                                     child: Text(
                                                                                                       FFLocalizations.of(context).getText(
                                                                                                         'w2tlmyze' /* Product */,
@@ -2466,13 +2479,13 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                                     ),
                                                                                                   ),
                                                                                                   Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
                                                                                                     child: Row(
                                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                                       mainAxisAlignment: MainAxisAlignment.center,
                                                                                                       children: [
                                                                                                         Align(
-                                                                                                          alignment: AlignmentDirectional(0, 0),
+                                                                                                          alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                           child: Text(
                                                                                                             FFLocalizations.of(context).getText(
                                                                                                               'xuhvawsh' /* ₹  */,
@@ -2486,7 +2499,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                                           ),
                                                                                                         ),
                                                                                                         Align(
-                                                                                                          alignment: AlignmentDirectional(0, 0),
+                                                                                                          alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                           child: Text(
                                                                                                             FFLocalizations.of(context).getText(
                                                                                                               'laff22ei' /* 5 */,
@@ -2509,20 +2522,20 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                           Container(
                                                                                             decoration: BoxDecoration(
                                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                              borderRadius: BorderRadius.circular(5),
+                                                                                              borderRadius: BorderRadius.circular(5.0),
                                                                                               border: Border.all(
                                                                                                 color: FlutterFlowTheme.of(context).customColor2,
                                                                                               ),
                                                                                             ),
                                                                                             child: Padding(
-                                                                                              padding: EdgeInsets.all(2),
+                                                                                              padding: EdgeInsets.all(2.0),
                                                                                               child: Column(
                                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                                 mainAxisAlignment: MainAxisAlignment.end,
                                                                                                 crossAxisAlignment: CrossAxisAlignment.center,
                                                                                                 children: [
                                                                                                   Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 2),
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
                                                                                                     child: Text(
                                                                                                       FFLocalizations.of(context).getText(
                                                                                                         '1t4xv0yh' /* 1.  */,
@@ -2536,7 +2549,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                                     ),
                                                                                                   ),
                                                                                                   Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 2),
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
                                                                                                     child: Text(
                                                                                                       FFLocalizations.of(context).getText(
                                                                                                         'pp8nux71' /* Product */,
@@ -2551,13 +2564,13 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                                     ),
                                                                                                   ),
                                                                                                   Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
                                                                                                     child: Row(
                                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                                       mainAxisAlignment: MainAxisAlignment.center,
                                                                                                       children: [
                                                                                                         Align(
-                                                                                                          alignment: AlignmentDirectional(0, 0),
+                                                                                                          alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                           child: Text(
                                                                                                             FFLocalizations.of(context).getText(
                                                                                                               'p46qq58r' /* ₹  */,
@@ -2571,7 +2584,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                                           ),
                                                                                                         ),
                                                                                                         Align(
-                                                                                                          alignment: AlignmentDirectional(0, 0),
+                                                                                                          alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                           child: Text(
                                                                                                             FFLocalizations.of(context).getText(
                                                                                                               '50gelsbo' /* 5 */,
@@ -2594,7 +2607,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                           Container(
                                                                                             decoration: BoxDecoration(
                                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                              borderRadius: BorderRadius.circular(5),
+                                                                                              borderRadius: BorderRadius.circular(5.0),
                                                                                             ),
                                                                                             child: Padding(
                                                                                               padding: EdgeInsets.all(0.5),
@@ -2609,7 +2622,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                                       height: MediaQuery.sizeOf(context).height * 0.12,
                                                                                                       decoration: BoxDecoration(
                                                                                                         color: Color(0x1A000000),
-                                                                                                        borderRadius: BorderRadius.circular(5),
+                                                                                                        borderRadius: BorderRadius.circular(5.0),
                                                                                                       ),
                                                                                                       child: Column(
                                                                                                         mainAxisSize: MainAxisSize.max,
@@ -2618,7 +2631,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                                         children: [
                                                                                                           Expanded(
                                                                                                             child: Padding(
-                                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
+                                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                                                                                                               child: Container(
                                                                                                                 width: double.infinity,
                                                                                                                 height: MediaQuery.sizeOf(context).height * 0.15,
@@ -2628,20 +2641,20 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                                                       Colors.transparent,
                                                                                                                       Color(0xA7000000)
                                                                                                                     ],
-                                                                                                                    stops: [0, 1],
-                                                                                                                    begin: AlignmentDirectional(0, -1),
-                                                                                                                    end: AlignmentDirectional(0, 1),
+                                                                                                                    stops: [0.0, 1.0],
+                                                                                                                    begin: AlignmentDirectional(0.0, -1.0),
+                                                                                                                    end: AlignmentDirectional(0, 1.0),
                                                                                                                   ),
-                                                                                                                  borderRadius: BorderRadius.circular(5),
+                                                                                                                  borderRadius: BorderRadius.circular(5.0),
                                                                                                                 ),
                                                                                                                 child: Padding(
-                                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(2, 0, 2, 3),
+                                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 2.0, 3.0),
                                                                                                                   child: Column(
                                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                                     mainAxisAlignment: MainAxisAlignment.end,
                                                                                                                     children: [
                                                                                                                       Padding(
-                                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 2),
+                                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
                                                                                                                         child: Text(
                                                                                                                           FFLocalizations.of(context).getText(
                                                                                                                             'q346d1ta' /* Product Name */,
@@ -2657,13 +2670,13 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                                                         ),
                                                                                                                       ),
                                                                                                                       Padding(
-                                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 2),
+                                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
                                                                                                                         child: Row(
                                                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                                                           mainAxisAlignment: MainAxisAlignment.center,
                                                                                                                           children: [
                                                                                                                             Padding(
-                                                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 3, 0),
+                                                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
                                                                                                                               child: Text(
                                                                                                                                 FFLocalizations.of(context).getText(
                                                                                                                                   'li2nv1fw' /* ₹ */,
@@ -2740,16 +2753,16 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                             child: Container(
                                                                                               decoration: BoxDecoration(
                                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                                borderRadius: BorderRadius.circular(5),
+                                                                                                borderRadius: BorderRadius.circular(5.0),
                                                                                               ),
                                                                                               child: Padding(
-                                                                                                padding: EdgeInsets.all(2),
+                                                                                                padding: EdgeInsets.all(2.0),
                                                                                                 child: Column(
                                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                                   mainAxisAlignment: MainAxisAlignment.end,
                                                                                                   children: [
                                                                                                     Padding(
-                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 7),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 7.0),
                                                                                                       child: Text(
                                                                                                         getJsonField(
                                                                                                           productListItem,
@@ -2764,13 +2777,13 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                                       ),
                                                                                                     ),
                                                                                                     Padding(
-                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
                                                                                                       child: Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.center,
                                                                                                         children: [
                                                                                                           Align(
-                                                                                                            alignment: AlignmentDirectional(0, 0),
+                                                                                                            alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                             child: Text(
                                                                                                               FFLocalizations.of(context).getText(
                                                                                                                 'xdzf5qhu' /* ₹  */,
@@ -2784,7 +2797,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                                             ),
                                                                                                           ),
                                                                                                           Align(
-                                                                                                            alignment: AlignmentDirectional(0, 0),
+                                                                                                            alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                             child: Text(
                                                                                                               getJsonField(
                                                                                                                 productListItem,
@@ -2840,10 +2853,10 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                           Expanded(
                             flex: 10,
                             child: Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(3, 0, 0, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  3.0, 0.0, 0.0, 0.0),
                               child: Container(
-                                width: 100,
+                                width: 100.0,
                                 height: double.infinity,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
@@ -2851,7 +2864,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                 ),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 5, 0, 0),
+                                      0.0, 5.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -2867,8 +2880,8 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                         child: Stack(
                                           children: [
                                             Align(
-                                              alignment:
-                                                  AlignmentDirectional(0, 0),
+                                              alignment: AlignmentDirectional(
+                                                  0.0, 0.0),
                                               child: Container(
                                                 width: double.infinity,
                                                 height:
@@ -2889,7 +2902,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                               children: [
                                                 Material(
                                                   color: Colors.transparent,
-                                                  elevation: 1,
+                                                  elevation: 1.0,
                                                   child: Container(
                                                     width: MediaQuery.sizeOf(
                                                                 context)
@@ -3047,7 +3060,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                 ),
                                                 Material(
                                                   color: Colors.transparent,
-                                                  elevation: 1,
+                                                  elevation: 1.0,
                                                   child: Container(
                                                     width: MediaQuery.sizeOf(
                                                                 context)
@@ -3205,7 +3218,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                 ),
                                                 Material(
                                                   color: Colors.transparent,
-                                                  elevation: 1,
+                                                  elevation: 1.0,
                                                   child: Container(
                                                     width: MediaQuery.sizeOf(
                                                                 context)
@@ -3368,13 +3381,13 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 0, 1),
+                                            0.0, 0.0, 0.0, 1.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Expanded(
                                               child: Container(
-                                                width: 100,
+                                                width: 100.0,
                                                 height:
                                                     MediaQuery.sizeOf(context)
                                                             .height *
@@ -3396,14 +3409,17 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                         context)
                                                                     .width *
                                                                 0.12,
-                                                        height: 100,
+                                                        height: 100.0,
                                                         decoration:
                                                             BoxDecoration(),
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(5,
-                                                                      0, 0, 0),
+                                                                  .fromSTEB(
+                                                                      5.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -3449,7 +3465,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                         context)
                                                                     .width *
                                                                 0.08,
-                                                        height: 100,
+                                                        height: 100.0,
                                                         decoration:
                                                             BoxDecoration(),
                                                         child: Column(
@@ -3492,7 +3508,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                         context)
                                                                     .width *
                                                                 0.08,
-                                                        height: 100,
+                                                        height: 100.0,
                                                         decoration:
                                                             BoxDecoration(),
                                                         child: Column(
@@ -3530,8 +3546,8 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                     Expanded(
                                                       flex: 5,
                                                       child: Container(
-                                                        width: 100,
-                                                        height: 100,
+                                                        width: 100.0,
+                                                        height: 100.0,
                                                         decoration:
                                                             BoxDecoration(
                                                           color: FlutterFlowTheme
@@ -3551,10 +3567,10 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 0, 2),
+                                                  0.0, 0.0, 0.0, 2.0),
                                           child: Container(
                                             width: double.infinity,
-                                            height: 100,
+                                            height: 100.0,
                                             decoration: BoxDecoration(),
                                             child: Builder(
                                               builder: (context) {
@@ -3580,7 +3596,10 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0, 0, 0, 2),
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  2.0),
                                                       child: Container(
                                                         width:
                                                             MediaQuery.sizeOf(
@@ -3616,10 +3635,10 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                       Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            2,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            2.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                     child:
                                                                         Container(
                                                                       width: MediaQuery.sizeOf(context)
@@ -3633,10 +3652,10 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            2,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            2.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
                                                                             Column(
                                                                           mainAxisSize:
@@ -3647,7 +3666,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                               CrossAxisAlignment.start,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 2),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
                                                                               child: Text(
                                                                                 getJsonField(
                                                                                   itemsListItem,
@@ -3660,7 +3679,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                       fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       color: FlutterFlowTheme.of(context).primaryText,
-                                                                                      fontSize: 15,
+                                                                                      fontSize: 15.0,
                                                                                       letterSpacing: 0.0,
                                                                                       useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                     ),
@@ -3675,7 +3694,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
-                                                                                        fontSize: 13,
+                                                                                        fontSize: 13.0,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                       ),
@@ -3687,7 +3706,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                   ).toString(),
                                                                                   style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
-                                                                                        fontSize: 13,
+                                                                                        fontSize: 13.0,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                       ),
@@ -3706,10 +3725,10 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                       Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            1,
-                                                                            0),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            1.0,
+                                                                            0.0),
                                                                     child:
                                                                         Container(
                                                                       width: MediaQuery.sizeOf(context)
@@ -3723,12 +3742,12 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .secondaryBackground,
                                                                         borderRadius:
-                                                                            BorderRadius.circular(5),
+                                                                            BorderRadius.circular(5.0),
                                                                       ),
                                                                       child:
                                                                           Padding(
                                                                         padding:
-                                                                            EdgeInsets.all(1),
+                                                                            EdgeInsets.all(1.0),
                                                                         child:
                                                                             Row(
                                                                           mainAxisSize:
@@ -3767,13 +3786,13 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                 },
                                                                                 child: Material(
                                                                                   color: Colors.transparent,
-                                                                                  elevation: 5,
+                                                                                  elevation: 5.0,
                                                                                   shape: RoundedRectangleBorder(
                                                                                     borderRadius: BorderRadius.only(
-                                                                                      bottomLeft: Radius.circular(5),
-                                                                                      bottomRight: Radius.circular(0),
-                                                                                      topLeft: Radius.circular(5),
-                                                                                      topRight: Radius.circular(0),
+                                                                                      bottomLeft: Radius.circular(5.0),
+                                                                                      bottomRight: Radius.circular(0.0),
+                                                                                      topLeft: Radius.circular(5.0),
+                                                                                      topRight: Radius.circular(0.0),
                                                                                     ),
                                                                                   ),
                                                                                   child: Container(
@@ -3783,25 +3802,25 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                       boxShadow: [
                                                                                         BoxShadow(
-                                                                                          blurRadius: 5,
+                                                                                          blurRadius: 5.0,
                                                                                           color: Color(0x27000000),
                                                                                           offset: Offset(
-                                                                                            1,
-                                                                                            1,
+                                                                                            1.0,
+                                                                                            1.0,
                                                                                           ),
                                                                                         )
                                                                                       ],
                                                                                       borderRadius: BorderRadius.only(
-                                                                                        bottomLeft: Radius.circular(5),
-                                                                                        bottomRight: Radius.circular(0),
-                                                                                        topLeft: Radius.circular(5),
-                                                                                        topRight: Radius.circular(0),
+                                                                                        bottomLeft: Radius.circular(5.0),
+                                                                                        bottomRight: Radius.circular(0.0),
+                                                                                        topLeft: Radius.circular(5.0),
+                                                                                        topRight: Radius.circular(0.0),
                                                                                       ),
                                                                                     ),
                                                                                     child: Icon(
                                                                                       Icons.remove,
                                                                                       color: FlutterFlowTheme.of(context).primary,
-                                                                                      size: 18,
+                                                                                      size: 18.0,
                                                                                     ),
                                                                                   ),
                                                                                 ),
@@ -3815,7 +3834,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                 decoration: BoxDecoration(
                                                                                   color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                 ),
-                                                                                alignment: AlignmentDirectional(0, 0),
+                                                                                alignment: AlignmentDirectional(0.0, 0.0),
                                                                                 child: Column(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -3829,7 +3848,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                       style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                             fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                             color: FlutterFlowTheme.of(context).primaryText,
-                                                                                            fontSize: 13,
+                                                                                            fontSize: 13.0,
                                                                                             letterSpacing: 0.0,
                                                                                             fontWeight: FontWeight.w500,
                                                                                             useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
@@ -3870,13 +3889,13 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                 },
                                                                                 child: Material(
                                                                                   color: Colors.transparent,
-                                                                                  elevation: 4,
+                                                                                  elevation: 4.0,
                                                                                   shape: RoundedRectangleBorder(
                                                                                     borderRadius: BorderRadius.only(
-                                                                                      bottomLeft: Radius.circular(0),
-                                                                                      bottomRight: Radius.circular(5),
-                                                                                      topLeft: Radius.circular(0),
-                                                                                      topRight: Radius.circular(5),
+                                                                                      bottomLeft: Radius.circular(0.0),
+                                                                                      bottomRight: Radius.circular(5.0),
+                                                                                      topLeft: Radius.circular(0.0),
+                                                                                      topRight: Radius.circular(5.0),
                                                                                     ),
                                                                                   ),
                                                                                   child: Container(
@@ -3886,25 +3905,25 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                       boxShadow: [
                                                                                         BoxShadow(
-                                                                                          blurRadius: 5,
+                                                                                          blurRadius: 5.0,
                                                                                           color: Color(0x25000000),
                                                                                           offset: Offset(
-                                                                                            1,
-                                                                                            1,
+                                                                                            1.0,
+                                                                                            1.0,
                                                                                           ),
                                                                                         )
                                                                                       ],
                                                                                       borderRadius: BorderRadius.only(
-                                                                                        bottomLeft: Radius.circular(0),
-                                                                                        bottomRight: Radius.circular(5),
-                                                                                        topLeft: Radius.circular(0),
-                                                                                        topRight: Radius.circular(5),
+                                                                                        bottomLeft: Radius.circular(0.0),
+                                                                                        bottomRight: Radius.circular(5.0),
+                                                                                        topLeft: Radius.circular(0.0),
+                                                                                        topRight: Radius.circular(5.0),
                                                                                       ),
                                                                                     ),
                                                                                     child: Icon(
                                                                                       Icons.add,
                                                                                       color: FlutterFlowTheme.of(context).primary,
-                                                                                      size: 18,
+                                                                                      size: 18.0,
                                                                                     ),
                                                                                   ),
                                                                                 ),
@@ -3922,10 +3941,10 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                       Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            1,
-                                                                            0),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            1.0,
+                                                                            0.0),
                                                                     child:
                                                                         Container(
                                                                       width: MediaQuery.sizeOf(context)
@@ -3939,8 +3958,8 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                       child:
                                                                           Align(
                                                                         alignment: AlignmentDirectional(
-                                                                            0,
-                                                                            0),
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
                                                                             Text(
                                                                           functions
@@ -3961,7 +3980,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                               .override(
                                                                                 fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                 color: FlutterFlowTheme.of(context).primaryText,
-                                                                                fontSize: 13,
+                                                                                fontSize: 13.0,
                                                                                 letterSpacing: 0.0,
                                                                                 useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                               ),
@@ -3988,7 +4007,8 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
-                                                                      size: 20,
+                                                                      size:
+                                                                          20.0,
                                                                     ),
                                                                   ),
                                                                 ),
@@ -4015,11 +4035,11 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                               .secondaryBackground,
                                           boxShadow: [
                                             BoxShadow(
-                                              blurRadius: 15,
+                                              blurRadius: 15.0,
                                               color: Color(0x40000000),
                                               offset: Offset(
-                                                2,
-                                                -2,
+                                                2.0,
+                                                -2.0,
                                               ),
                                             )
                                           ],
@@ -4027,7 +4047,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 7, 0),
+                                                  0.0, 0.0, 7.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -4035,7 +4055,8 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                 flex: 11,
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(0, 0, 2, 0),
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 2.0, 0.0),
                                                   child: InkWell(
                                                     splashColor:
                                                         Colors.transparent,
@@ -4058,7 +4079,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                       decoration: BoxDecoration(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(0),
+                                                                .circular(0.0),
                                                       ),
                                                       child: Row(
                                                         mainAxisSize:
@@ -4068,10 +4089,10 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        3,
-                                                                        0,
-                                                                        0,
-                                                                        0),
+                                                                        3.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             child: Container(
                                                               width: MediaQuery
                                                                           .sizeOf(
@@ -4103,7 +4124,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
-                                                                size: 17,
+                                                                size: 17.0,
                                                               ),
                                                             ),
                                                           ),
@@ -4112,10 +4133,10 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          3,
-                                                                          0,
-                                                                          0,
-                                                                          0),
+                                                                          3.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                               child: Column(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -4290,7 +4311,8 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                 flex: 6,
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(0, 0, 3, 0),
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 3.0, 0.0),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -4396,7 +4418,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 7, 0),
+                                                  0.0, 0.0, 7.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -4404,7 +4426,8 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                             children: [
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(5, 0, 2, 0),
+                                                    .fromSTEB(
+                                                        5.0, 0.0, 2.0, 0.0),
                                                 child: InkWell(
                                                   splashColor:
                                                       Colors.transparent,
@@ -4433,7 +4456,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                 .viewInsetsOf(
                                                                     context),
                                                             child: Container(
-                                                              height: 360,
+                                                              height: 360.0,
                                                               child:
                                                                   DiscountAndDeliveryCopyWidget(),
                                                             ),
@@ -4481,7 +4504,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                     child: Align(
                                                       alignment:
                                                           AlignmentDirectional(
-                                                              0, 0),
+                                                              0.0, 0.0),
                                                       child: FaIcon(
                                                         FontAwesomeIcons
                                                             .receipt,
@@ -4489,7 +4512,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .lineColor,
-                                                        size: 16,
+                                                        size: 16.0,
                                                       ),
                                                     ),
                                                   ),
@@ -4502,7 +4525,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                               Expanded(
                                                 flex: 3,
                                                 child: Container(
-                                                  width: 100,
+                                                  width: 100.0,
                                                   height:
                                                       MediaQuery.sizeOf(context)
                                                               .height *
@@ -4513,18 +4536,19 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                         .secondary,
                                                     boxShadow: [
                                                       BoxShadow(
-                                                        blurRadius: 3,
+                                                        blurRadius: 3.0,
                                                         color:
                                                             Color(0x33000000),
                                                         offset: Offset(
-                                                          1,
-                                                          1,
+                                                          1.0,
+                                                          1.0,
                                                         ),
                                                       )
                                                     ],
                                                   ),
                                                   child: Padding(
-                                                    padding: EdgeInsets.all(2),
+                                                    padding:
+                                                        EdgeInsets.all(2.0),
                                                     child: Column(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -4632,7 +4656,8 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                 flex: 4,
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(2, 0, 0, 0),
+                                                      .fromSTEB(
+                                                          2.0, 0.0, 0.0, 0.0),
                                                   child: Container(
                                                     width: MediaQuery.sizeOf(
                                                                 context)
@@ -4702,17 +4727,20 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .lineColor,
-                                                        size: 15,
+                                                        size: 15.0,
                                                       ),
-                                                      elevation: 2,
+                                                      elevation: 2.0,
                                                       borderColor:
                                                           Colors.transparent,
-                                                      borderWidth: 0,
-                                                      borderRadius: 0,
+                                                      borderWidth: 0.0,
+                                                      borderRadius: 0.0,
                                                       margin:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  7, 4, 5, 4),
+                                                                  7.0,
+                                                                  4.0,
+                                                                  5.0,
+                                                                  4.0),
                                                       hidesUnderline: true,
                                                       isSearchable: false,
                                                       isMultiSelect: false,
@@ -4724,7 +4752,8 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                 flex: 4,
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(0, 0, 5, 0),
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 5.0, 0.0),
                                                   child: Container(
                                                     width: MediaQuery.sizeOf(
                                                                 context)
@@ -4818,7 +4847,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                           color:
                                                                               FlutterFlowTheme.of(context).lineColor,
                                                                           fontSize:
-                                                                              23,
+                                                                              23.0,
                                                                           letterSpacing:
                                                                               0.0,
                                                                           fontWeight:
@@ -4850,7 +4879,7 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                             flex: 8,
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 1, 0),
+                                                  .fromSTEB(0.0, 0.0, 1.0, 0.0),
                                               child: Container(
                                                 width:
                                                     MediaQuery.sizeOf(context)
@@ -4898,15 +4927,21 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                       ),
                                                       options: FFButtonOptions(
                                                         width: double.infinity,
-                                                        height: 68,
+                                                        height: 68.0,
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0, 0, 0, 0),
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
                                                         iconPadding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0, 0, 0, 0),
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -4933,15 +4968,15 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                           FlutterFlowTheme.of(context)
                                                                               .headlineSmallFamily),
                                                                 ),
-                                                        elevation: 2,
+                                                        elevation: 2.0,
                                                         borderSide: BorderSide(
                                                           color: Colors
                                                               .transparent,
-                                                          width: 1,
+                                                          width: 1.0,
                                                         ),
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(8),
+                                                                .circular(8.0),
                                                       ),
                                                     ),
                                                   ],
@@ -5136,16 +5171,22 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                       '08eyrkrd' /* Print Bill */,
                                                     ),
                                                     options: FFButtonOptions(
-                                                      width: 130,
-                                                      height: 40,
+                                                      width: 130.0,
+                                                      height: 40.0,
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0, 0, 0, 0),
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
                                                       iconPadding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0, 0, 0, 0),
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -5172,15 +5213,15 @@ class _ProductAndListWINWidgetState extends State<ProductAndListWINWidget>
                                                                         FlutterFlowTheme.of(context)
                                                                             .headlineSmallFamily),
                                                               ),
-                                                      elevation: 2,
+                                                      elevation: 2.0,
                                                       borderSide: BorderSide(
                                                         color:
                                                             Colors.transparent,
-                                                        width: 1,
+                                                        width: 1.0,
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              8),
+                                                              8.0),
                                                     ),
                                                   ),
                                                 ),

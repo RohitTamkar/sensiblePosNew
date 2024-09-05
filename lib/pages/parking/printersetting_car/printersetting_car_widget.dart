@@ -58,11 +58,12 @@ class _PrintersettingCarWidgetState extends State<PrintersettingCarWidget> {
                 Expanded(
                   flex: 4,
                   child: Container(
-                    width: MediaQuery.sizeOf(context).width,
+                    width: MediaQuery.sizeOf(context).width * 1.0,
                     height: MediaQuery.sizeOf(context).height * 0.12,
                     decoration: BoxDecoration(),
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(15, 0, 15, 5),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 5.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -73,12 +74,12 @@ class _PrintersettingCarWidgetState extends State<PrintersettingCarWidget> {
                             children: [
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 30,
-                                buttonSize: 40,
+                                borderRadius: 30.0,
+                                buttonSize: 40.0,
                                 icon: Icon(
                                   Icons.keyboard_arrow_left_sharp,
                                   color: FlutterFlowTheme.of(context).lineColor,
-                                  size: 24,
+                                  size: 24.0,
                                 ),
                                 onPressed: () async {
                                   context.goNamed('account');
@@ -105,11 +106,11 @@ class _PrintersettingCarWidgetState extends State<PrintersettingCarWidget> {
                               ),
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 30,
-                                buttonSize: 40,
+                                borderRadius: 30.0,
+                                buttonSize: 40.0,
                                 icon: Icon(
                                   Icons.settings_sharp,
-                                  size: 0,
+                                  size: 0.0,
                                 ),
                                 onPressed: () {
                                   print('IconButton pressed ...');
@@ -125,24 +126,24 @@ class _PrintersettingCarWidgetState extends State<PrintersettingCarWidget> {
                 Expanded(
                   flex: 26,
                   child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
                     child: Container(
-                      width: MediaQuery.sizeOf(context).width,
-                      height: 100,
+                      width: MediaQuery.sizeOf(context).width * 1.0,
+                      height: 100.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context)
                             .parkingPrimaryBackground,
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(15),
+                        padding: EdgeInsets.all(15.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 10, 0, 3),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 10.0, 0.0, 3.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
                                   'a3ay0u7l' /* Paper Size */,
@@ -161,8 +162,8 @@ class _PrintersettingCarWidgetState extends State<PrintersettingCarWidget> {
                               ),
                             ),
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 10.0),
                               child: FlutterFlowDropDown<String>(
                                 controller: _model.dropDownValueController1 ??=
                                     FormFieldController<String>(
@@ -189,24 +190,24 @@ class _PrintersettingCarWidgetState extends State<PrintersettingCarWidget> {
                                 ),
                                 icon: Icon(
                                   Icons.keyboard_arrow_down,
-                                  size: 15,
+                                  size: 15.0,
                                 ),
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                elevation: 2,
+                                elevation: 2.0,
                                 borderColor:
                                     FlutterFlowTheme.of(context).customColor2,
-                                borderWidth: 0,
-                                borderRadius: 5,
+                                borderWidth: 0.0,
+                                borderRadius: 5.0,
                                 margin: EdgeInsetsDirectional.fromSTEB(
-                                    12, 0, 12, 0),
+                                    12.0, 0.0, 12.0, 0.0),
                                 hidesUnderline: true,
                                 isSearchable: false,
                                 isMultiSelect: false,
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsets.all(5),
+                              padding: EdgeInsets.all(5.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
                                   'nnkl28u8' /* Printer Mode */,
@@ -225,8 +226,8 @@ class _PrintersettingCarWidgetState extends State<PrintersettingCarWidget> {
                               ),
                             ),
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 20.0),
                               child: FlutterFlowDropDown<String>(
                                 controller: _model.dropDownValueController2 ??=
                                     FormFieldController<String>(
@@ -265,24 +266,24 @@ class _PrintersettingCarWidgetState extends State<PrintersettingCarWidget> {
                                 ),
                                 icon: Icon(
                                   Icons.keyboard_arrow_down,
-                                  size: 15,
+                                  size: 15.0,
                                 ),
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                elevation: 2,
+                                elevation: 2.0,
                                 borderColor:
                                     FlutterFlowTheme.of(context).customColor2,
-                                borderWidth: 0,
-                                borderRadius: 5,
+                                borderWidth: 0.0,
+                                borderRadius: 5.0,
                                 margin: EdgeInsetsDirectional.fromSTEB(
-                                    12, 0, 12, 0),
+                                    12.0, 0.0, 12.0, 0.0),
                                 hidesUnderline: true,
                                 isSearchable: false,
                                 isMultiSelect: false,
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsets.all(5),
+                              padding: EdgeInsets.all(5.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
                                   'lv5ri650' /* Available Device */,
@@ -302,8 +303,8 @@ class _PrintersettingCarWidgetState extends State<PrintersettingCarWidget> {
                             ),
                             Expanded(
                               child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 20.0),
                                 child: Container(
                                   width: double.infinity,
                                   height:
@@ -327,7 +328,8 @@ class _PrintersettingCarWidgetState extends State<PrintersettingCarWidget> {
                                                 printerList[printerListIndex];
                                             return Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 0, 10),
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 0.0, 10.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -444,13 +446,17 @@ class _PrintersettingCarWidgetState extends State<PrintersettingCarWidget> {
                                                               .secondaryBackground,
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(12),
+                                                                  .circular(
+                                                                      12.0),
                                                         ),
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(10,
-                                                                      8, 10, 8),
+                                                                  .fromSTEB(
+                                                                      10.0,
+                                                                      8.0,
+                                                                      10.0,
+                                                                      8.0),
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -463,10 +469,10 @@ class _PrintersettingCarWidgetState extends State<PrintersettingCarWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            0,
-                                                                            5),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            5.0),
                                                                 child: Row(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -476,12 +482,11 @@ class _PrintersettingCarWidgetState extends State<PrintersettingCarWidget> {
                                                                           .start,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              5,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
                                                                       child:
                                                                           Icon(
                                                                         Icons
@@ -489,7 +494,7 @@ class _PrintersettingCarWidgetState extends State<PrintersettingCarWidget> {
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         size:
-                                                                            16,
+                                                                            16.0,
                                                                       ),
                                                                     ),
                                                                     Text(
@@ -518,10 +523,10 @@ class _PrintersettingCarWidgetState extends State<PrintersettingCarWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            5,
-                                                                            0),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0),
                                                                 child: Row(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -531,12 +536,11 @@ class _PrintersettingCarWidgetState extends State<PrintersettingCarWidget> {
                                                                           .start,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              5,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
                                                                       child:
                                                                           Icon(
                                                                         Icons
@@ -544,7 +548,7 @@ class _PrintersettingCarWidgetState extends State<PrintersettingCarWidget> {
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .secondaryBackground,
                                                                         size:
-                                                                            15,
+                                                                            15.0,
                                                                       ),
                                                                     ),
                                                                     Text(
@@ -561,7 +565,7 @@ class _PrintersettingCarWidgetState extends State<PrintersettingCarWidget> {
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primaryText,
                                                                             fontSize:
-                                                                                10,
+                                                                                10.0,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             useGoogleFonts:
@@ -586,16 +590,16 @@ class _PrintersettingCarWidgetState extends State<PrintersettingCarWidget> {
                                                     FlutterFlowIconButton(
                                                       borderColor:
                                                           Colors.transparent,
-                                                      borderRadius: 30,
-                                                      borderWidth: 1,
-                                                      buttonSize: 55,
+                                                      borderRadius: 30.0,
+                                                      borderWidth: 1.0,
+                                                      buttonSize: 55.0,
                                                       icon: Icon(
                                                         Icons.check_circle,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .tertiary,
-                                                        size: 30,
+                                                        size: 30.0,
                                                       ),
                                                       onPressed: () {
                                                         print(

@@ -53,16 +53,16 @@ class _BarcodePrintingCopyWidgetState extends State<BarcodePrintingCopyWidget> {
                 print('FloatingActionButton pressed ...');
               },
               backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-              elevation: 8,
+              elevation: 8.0,
               child: FlutterFlowIconButton(
                 borderColor: Colors.transparent,
-                borderRadius: 30,
-                borderWidth: 1,
-                buttonSize: 60,
+                borderRadius: 30.0,
+                borderWidth: 1.0,
+                buttonSize: 60.0,
                 icon: Icon(
                   Icons.print_rounded,
                   color: FlutterFlowTheme.of(context).primary,
-                  size: 30,
+                  size: 30.0,
                 ),
                 onPressed: () async {
                   await showDialog(
@@ -83,14 +83,14 @@ class _BarcodePrintingCopyWidgetState extends State<BarcodePrintingCopyWidget> {
               ),
             ),
             body: Padding(
-              padding: EdgeInsets.all(3),
+              padding: EdgeInsets.all(3.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Expanded(
                     flex: 1,
                     child: Container(
-                      width: MediaQuery.sizeOf(context).width,
+                      width: MediaQuery.sizeOf(context).width * 1.0,
                       height: MediaQuery.sizeOf(context).height * 0.12,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primary,
@@ -103,22 +103,22 @@ class _BarcodePrintingCopyWidgetState extends State<BarcodePrintingCopyWidget> {
                           Expanded(
                             flex: 1,
                             child: Container(
-                              width: 100,
-                              height: 100,
+                              width: 100.0,
+                              height: 100.0,
                               decoration: BoxDecoration(),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   FlutterFlowIconButton(
                                     borderColor: Colors.transparent,
-                                    borderRadius: 30,
-                                    borderWidth: 1,
-                                    buttonSize: 60,
+                                    borderRadius: 30.0,
+                                    borderWidth: 1.0,
+                                    buttonSize: 60.0,
                                     icon: Icon(
                                       Icons.chevron_left_sharp,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBtnText,
-                                      size: 26,
+                                      size: 26.0,
                                     ),
                                     onPressed: () {
                                       print('IconButton pressed ...');
@@ -162,20 +162,21 @@ class _BarcodePrintingCopyWidgetState extends State<BarcodePrintingCopyWidget> {
                   Expanded(
                     flex: 13,
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
                       child: Container(
-                        width: MediaQuery.sizeOf(context).width,
-                        height: 100,
+                        width: MediaQuery.sizeOf(context).width * 1.0,
+                        height: 100.0,
                         decoration: BoxDecoration(),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Expanded(
                               child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(3, 0, 0, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    3.0, 0.0, 0.0, 0.0),
                                 child: Container(
-                                  width: 100,
+                                  width: 100.0,
                                   height: double.infinity,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
@@ -192,10 +193,11 @@ class _BarcodePrintingCopyWidgetState extends State<BarcodePrintingCopyWidget> {
                                           MainAxisAlignment.start,
                                       children: [
                                         Padding(
-                                          padding: EdgeInsets.all(3),
+                                          padding: EdgeInsets.all(3.0),
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
-                                                .width,
+                                                    .width *
+                                                1.0,
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
                                                 0.17,
@@ -209,10 +211,11 @@ class _BarcodePrintingCopyWidgetState extends State<BarcodePrintingCopyWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  3, 5, 3, 3),
+                                                  3.0, 5.0, 3.0, 3.0),
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
-                                                .width,
+                                                    .width *
+                                                1.0,
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -225,7 +228,8 @@ class _BarcodePrintingCopyWidgetState extends State<BarcodePrintingCopyWidget> {
                                                     CrossAxisAlignment.start,
                                                 children: [
                                                   Padding(
-                                                    padding: EdgeInsets.all(5),
+                                                    padding:
+                                                        EdgeInsets.all(5.0),
                                                     child: Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -300,11 +304,12 @@ class _BarcodePrintingCopyWidgetState extends State<BarcodePrintingCopyWidget> {
                             ),
                             Expanded(
                               child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(3, 0, 0, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    3.0, 0.0, 0.0, 0.0),
                                 child: Container(
-                                  width: 100,
-                                  height: MediaQuery.sizeOf(context).height * 1,
+                                  width: 100.0,
+                                  height:
+                                      MediaQuery.sizeOf(context).height * 1.0,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
@@ -318,11 +323,12 @@ class _BarcodePrintingCopyWidgetState extends State<BarcodePrintingCopyWidget> {
                             ),
                             Expanded(
                               child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(3, 0, 3, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    3.0, 0.0, 3.0, 0.0),
                                 child: Container(
-                                  width: 100,
-                                  height: MediaQuery.sizeOf(context).height * 1,
+                                  width: 100.0,
+                                  height:
+                                      MediaQuery.sizeOf(context).height * 1.0,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,

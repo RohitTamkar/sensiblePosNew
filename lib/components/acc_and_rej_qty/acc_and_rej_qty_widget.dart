@@ -51,22 +51,22 @@ class _AccAndRejQtyWidgetState extends State<AccAndRejQtyWidget> {
       mainAxisSize: MainAxisSize.max,
       children: [
         Container(
-          width: 270,
-          height: 28,
+          width: 270.0,
+          height: 28.0,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
           ),
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0, 1, 0, 0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(2, 0, 2, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 2.0, 0.0),
                     child: Container(
-                      height: 40,
+                      height: 40.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                       ),
@@ -74,7 +74,8 @@ class _AccAndRejQtyWidgetState extends State<AccAndRejQtyWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 5.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'xbf7u7q3' /* Accpt Qty: */,
@@ -96,7 +97,7 @@ class _AccAndRejQtyWidgetState extends State<AccAndRejQtyWidget> {
                           Expanded(
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 0.06,
-                              height: 20,
+                              height: 20.0,
                               decoration: BoxDecoration(),
                               child: TextFormField(
                                 controller: _model.textController1,
@@ -186,7 +187,7 @@ class _AccAndRejQtyWidgetState extends State<AccAndRejQtyWidget> {
                 ),
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
                     child: Container(
                       width: MediaQuery.sizeOf(context).width * 0.4,
                       decoration: BoxDecoration(),
@@ -195,7 +196,8 @@ class _AccAndRejQtyWidgetState extends State<AccAndRejQtyWidget> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 5.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'd8ms2onv' /* Rej. Qty : */,
@@ -217,7 +219,7 @@ class _AccAndRejQtyWidgetState extends State<AccAndRejQtyWidget> {
                           Expanded(
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 0.08,
-                              height: 20,
+                              height: 20.0,
                               decoration: BoxDecoration(),
                               child: TextFormField(
                                 controller: _model.textController2,
@@ -306,19 +308,19 @@ class _AccAndRejQtyWidgetState extends State<AccAndRejQtyWidget> {
                   ),
                 ),
                 Container(
-                  width: 38,
-                  height: 100,
+                  width: 38.0,
+                  height: 100.0,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                   ),
                   child: FlutterFlowIconButton(
                     borderColor: Colors.transparent,
-                    borderWidth: 1,
-                    buttonSize: 60,
+                    borderWidth: 1.0,
+                    buttonSize: 60.0,
                     icon: Icon(
                       Icons.check_circle,
                       color: FlutterFlowTheme.of(context).tertiary,
-                      size: 14,
+                      size: 14.0,
                     ),
                     onPressed: () {
                       print('IconButton pressed ...');

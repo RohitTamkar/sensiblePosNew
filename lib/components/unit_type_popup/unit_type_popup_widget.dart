@@ -55,11 +55,11 @@ class _UnitTypePopupWidgetState extends State<UnitTypePopupWidget> {
             if (!snapshot.hasData) {
               return Center(
                 child: SizedBox(
-                  width: 40,
-                  height: 40,
+                  width: 40.0,
+                  height: 40.0,
                   child: SpinKitFadingCircle(
                     color: FlutterFlowTheme.of(context).primary,
-                    size: 40,
+                    size: 40.0,
                   ),
                 ),
               );
@@ -67,8 +67,8 @@ class _UnitTypePopupWidgetState extends State<UnitTypePopupWidget> {
             List<UnitTypeRecord> containerUnitTypeRecordList = snapshot.data!;
 
             return Container(
-              width: 480,
-              height: 400,
+              width: 480.0,
+              height: 400.0,
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).primaryBackground,
               ),
@@ -78,8 +78,8 @@ class _UnitTypePopupWidgetState extends State<UnitTypePopupWidget> {
                   Expanded(
                     flex: 1,
                     child: Container(
-                      width: 480,
-                      height: 40,
+                      width: 480.0,
+                      height: 40.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                       ),
@@ -175,13 +175,13 @@ class _UnitTypePopupWidgetState extends State<UnitTypePopupWidget> {
                           ),
                           FlutterFlowIconButton(
                             borderColor: Colors.transparent,
-                            borderRadius: 30,
-                            borderWidth: 1,
-                            buttonSize: 50,
+                            borderRadius: 30.0,
+                            borderWidth: 1.0,
+                            buttonSize: 50.0,
                             icon: Icon(
                               Icons.close,
                               color: FlutterFlowTheme.of(context).primaryText,
-                              size: 24,
+                              size: 24.0,
                             ),
                             onPressed: () async {
                               context.pop();
@@ -194,8 +194,8 @@ class _UnitTypePopupWidgetState extends State<UnitTypePopupWidget> {
                   Expanded(
                     flex: 7,
                     child: Container(
-                      width: 440,
-                      height: 100,
+                      width: 440.0,
+                      height: 100.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primaryBackground,
                       ),
@@ -212,8 +212,8 @@ class _UnitTypePopupWidgetState extends State<UnitTypePopupWidget> {
                             itemBuilder: (context, unitTypeIndex) {
                               final unitTypeItem = unitType[unitTypeIndex];
                               return Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 5.0, 0.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
                                   focusColor: Colors.transparent,
@@ -223,8 +223,8 @@ class _UnitTypePopupWidgetState extends State<UnitTypePopupWidget> {
                                     Navigator.pop(context);
                                   },
                                   child: Container(
-                                    width: 100,
-                                    height: 46,
+                                    width: 100.0,
+                                    height: 46.0,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBackground,
@@ -239,7 +239,7 @@ class _UnitTypePopupWidgetState extends State<UnitTypePopupWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  10, 5, 0, 0),
+                                                  10.0, 5.0, 0.0, 0.0),
                                           child: Text(
                                             unitTypeItem.unitType,
                                             style: FlutterFlowTheme.of(context)

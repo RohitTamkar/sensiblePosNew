@@ -53,8 +53,8 @@ class _TokenDisplayWidgetState extends State<TokenDisplayWidget>
             delay: 0.0.ms,
             duration: 600.0.ms,
             color: Color(0xFF006D25),
-            begin: 0,
-            end: 1,
+            begin: 0.0,
+            end: 1.0,
           ),
         ],
       ),
@@ -89,7 +89,7 @@ class _TokenDisplayWidgetState extends State<TokenDisplayWidget>
                 children: [
                   Container(
                     width: double.infinity,
-                    height: 100,
+                    height: 100.0,
                     decoration: BoxDecoration(
                       color: Color(0xFFFEBF6A),
                     ),
@@ -98,7 +98,8 @@ class _TokenDisplayWidgetState extends State<TokenDisplayWidget>
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(50, 0, 50, 5),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              50.0, 0.0, 50.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -106,13 +107,13 @@ class _TokenDisplayWidgetState extends State<TokenDisplayWidget>
                             children: [
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 10,
-                                buttonSize: 55,
+                                borderRadius: 10.0,
+                                buttonSize: 55.0,
                                 icon: Icon(
                                   Icons.chevron_left,
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
-                                  size: 36,
+                                  size: 36.0,
                                 ),
                                 onPressed: () {
                                   print('IconButton pressed ...');
@@ -143,11 +144,11 @@ class _TokenDisplayWidgetState extends State<TokenDisplayWidget>
                                   '1ya43juu' /* Online */,
                                 ),
                                 options: FFButtonOptions(
-                                  height: 40,
+                                  height: 40.0,
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      24, 0, 24, 0),
+                                      24.0, 0.0, 24.0, 0.0),
                                   iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 0, 0),
+                                      0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).success,
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleMedium
@@ -160,12 +161,12 @@ class _TokenDisplayWidgetState extends State<TokenDisplayWidget>
                                                 FlutterFlowTheme.of(context)
                                                     .titleMediumFamily),
                                       ),
-                                  elevation: 0,
+                                  elevation: 0.0,
                                   borderSide: BorderSide(
                                     color: Colors.transparent,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(0),
+                                  borderRadius: BorderRadius.circular(0.0),
                                 ),
                               ),
                             ],
@@ -184,11 +185,11 @@ class _TokenDisplayWidgetState extends State<TokenDisplayWidget>
                         if (!snapshot.hasData) {
                           return Center(
                             child: SizedBox(
-                              width: 40,
-                              height: 40,
+                              width: 40.0,
+                              height: 40.0,
                               child: SpinKitFadingCircle(
                                 color: FlutterFlowTheme.of(context).primary,
-                                size: 40,
+                                size: 40.0,
                               ),
                             ),
                           );
@@ -198,10 +199,10 @@ class _TokenDisplayWidgetState extends State<TokenDisplayWidget>
 
                         return Container(
                           width: double.infinity,
-                          height: 100,
+                          height: 100.0,
                           decoration: BoxDecoration(),
                           child: Padding(
-                            padding: EdgeInsets.all(20),
+                            padding: EdgeInsets.all(20.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
@@ -212,14 +213,14 @@ class _TokenDisplayWidgetState extends State<TokenDisplayWidget>
                                           .secondaryBackground,
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsets.all(20),
+                                      padding: EdgeInsets.all(20.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 0, 15),
+                                                    0.0, 0.0, 0.0, 15.0),
                                             child: FFButtonWidget(
                                               onPressed: () {
                                                 print('Button pressed ...');
@@ -230,12 +231,14 @@ class _TokenDisplayWidgetState extends State<TokenDisplayWidget>
                                               ),
                                               options: FFButtonOptions(
                                                 width: double.infinity,
-                                                height: 70,
+                                                height: 70.0,
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(24, 0, 24, 0),
+                                                    .fromSTEB(
+                                                        24.0, 0.0, 24.0, 0.0),
                                                 iconPadding:
                                                     EdgeInsetsDirectional
-                                                        .fromSTEB(0, 0, 0, 0),
+                                                        .fromSTEB(
+                                                            0.0, 0.0, 0.0, 0.0),
                                                 color: Color(0xFF2B5AE1),
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
@@ -246,7 +249,7 @@ class _TokenDisplayWidgetState extends State<TokenDisplayWidget>
                                                                       context)
                                                                   .titleSmallFamily,
                                                           color: Colors.white,
-                                                          fontSize: 35,
+                                                          fontSize: 35.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
@@ -257,13 +260,13 @@ class _TokenDisplayWidgetState extends State<TokenDisplayWidget>
                                                                           context)
                                                                       .titleSmallFamily),
                                                         ),
-                                                elevation: 3,
+                                                elevation: 3.0,
                                                 borderSide: BorderSide(
                                                   color: Colors.transparent,
-                                                  width: 1,
+                                                  width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(8),
+                                                    BorderRadius.circular(8.0),
                                               ),
                                             ),
                                           ),
@@ -282,8 +285,8 @@ class _TokenDisplayWidgetState extends State<TokenDisplayWidget>
                                                   gridDelegate:
                                                       SliverGridDelegateWithFixedCrossAxisCount(
                                                     crossAxisCount: 4,
-                                                    crossAxisSpacing: 15,
-                                                    mainAxisSpacing: 10,
+                                                    crossAxisSpacing: 15.0,
+                                                    mainAxisSpacing: 10.0,
                                                     childAspectRatio: 1.35,
                                                   ),
                                                   scrollDirection:
@@ -299,14 +302,14 @@ class _TokenDisplayWidgetState extends State<TokenDisplayWidget>
                                                                   context)
                                                               .width *
                                                           0.5,
-                                                      height: 65,
+                                                      height: 65.0,
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .secondaryBackground,
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(20),
+                                                                .circular(20.0),
                                                         shape:
                                                             BoxShape.rectangle,
                                                         border: Border.all(
@@ -316,7 +319,7 @@ class _TokenDisplayWidgetState extends State<TokenDisplayWidget>
                                                       ),
                                                       alignment:
                                                           AlignmentDirectional(
-                                                              0, 0),
+                                                              0.0, 0.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -344,7 +347,8 @@ class _TokenDisplayWidgetState extends State<TokenDisplayWidget>
                                                                       'Oswald',
                                                                   color: Color(
                                                                       0xFF2B5AE1),
-                                                                  fontSize: 60,
+                                                                  fontSize:
+                                                                      60.0,
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
@@ -376,14 +380,14 @@ class _TokenDisplayWidgetState extends State<TokenDisplayWidget>
                                           .secondaryBackground,
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsets.all(20),
+                                      padding: EdgeInsets.all(20.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 0, 15),
+                                                    0.0, 0.0, 0.0, 15.0),
                                             child: FFButtonWidget(
                                               onPressed: () {
                                                 print('Button pressed ...');
@@ -394,12 +398,14 @@ class _TokenDisplayWidgetState extends State<TokenDisplayWidget>
                                               ),
                                               options: FFButtonOptions(
                                                 width: double.infinity,
-                                                height: 70,
+                                                height: 70.0,
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(24, 0, 24, 0),
+                                                    .fromSTEB(
+                                                        24.0, 0.0, 24.0, 0.0),
                                                 iconPadding:
                                                     EdgeInsetsDirectional
-                                                        .fromSTEB(0, 0, 0, 0),
+                                                        .fromSTEB(
+                                                            0.0, 0.0, 0.0, 0.0),
                                                 color: Color(0xFF26BA58),
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
@@ -410,7 +416,7 @@ class _TokenDisplayWidgetState extends State<TokenDisplayWidget>
                                                                       context)
                                                                   .titleSmallFamily,
                                                           color: Colors.white,
-                                                          fontSize: 35,
+                                                          fontSize: 35.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
@@ -421,13 +427,13 @@ class _TokenDisplayWidgetState extends State<TokenDisplayWidget>
                                                                           context)
                                                                       .titleSmallFamily),
                                                         ),
-                                                elevation: 3,
+                                                elevation: 3.0,
                                                 borderSide: BorderSide(
                                                   color: Colors.transparent,
-                                                  width: 1,
+                                                  width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(8),
+                                                    BorderRadius.circular(8.0),
                                               ),
                                             ),
                                           ),
@@ -446,8 +452,8 @@ class _TokenDisplayWidgetState extends State<TokenDisplayWidget>
                                                   gridDelegate:
                                                       SliverGridDelegateWithFixedCrossAxisCount(
                                                     crossAxisCount: 4,
-                                                    crossAxisSpacing: 10,
-                                                    mainAxisSpacing: 10,
+                                                    crossAxisSpacing: 10.0,
+                                                    mainAxisSpacing: 10.0,
                                                     childAspectRatio: 1.35,
                                                   ),
                                                   scrollDirection:
@@ -459,15 +465,15 @@ class _TokenDisplayWidgetState extends State<TokenDisplayWidget>
                                                         collectList[
                                                             collectListIndex];
                                                     return Container(
-                                                      width: 0,
-                                                      height: 65,
+                                                      width: 0.0,
+                                                      height: 65.0,
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .secondaryBackground,
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(20),
+                                                                .circular(20.0),
                                                         shape:
                                                             BoxShape.rectangle,
                                                         border: Border.all(
@@ -477,7 +483,7 @@ class _TokenDisplayWidgetState extends State<TokenDisplayWidget>
                                                       ),
                                                       alignment:
                                                           AlignmentDirectional(
-                                                              0, 0),
+                                                              0.0, 0.0),
                                                       child: Text(
                                                         valueOrDefault<String>(
                                                           functions
@@ -487,26 +493,25 @@ class _TokenDisplayWidgetState extends State<TokenDisplayWidget>
                                                               ?.toString(),
                                                           '0',
                                                         ),
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Oswald',
-                                                                  color: Color(
-                                                                      0xFF26BA58),
-                                                                  fontSize: 60,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w600,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          'Oswald'),
-                                                                ),
+                                                        style: FlutterFlowTheme
+                                                                .of(context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  'Oswald',
+                                                              color: Color(
+                                                                  0xFF26BA58),
+                                                              fontSize: 60.0,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600,
+                                                              useGoogleFonts: GoogleFonts
+                                                                      .asMap()
+                                                                  .containsKey(
+                                                                      'Oswald'),
+                                                            ),
                                                       ).animateOnPageLoad(
                                                           animationsMap[
                                                               'textOnPageLoadAnimation']!),
@@ -521,7 +526,7 @@ class _TokenDisplayWidgetState extends State<TokenDisplayWidget>
                                     ),
                                   ),
                                 ),
-                              ].divide(SizedBox(width: 25)),
+                              ].divide(SizedBox(width: 25.0)),
                             ),
                           ),
                         );

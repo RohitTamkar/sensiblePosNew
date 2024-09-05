@@ -45,21 +45,21 @@ class _BetaVersionWidgetState extends State<BetaVersionWidget> {
       mainAxisSize: MainAxisSize.max,
       children: [
         Container(
-          width: 500,
-          height: 300,
+          width: 500.0,
+          height: 300.0,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).primaryBackground,
           ),
           child: Padding(
-            padding: EdgeInsets.all(10),
+            padding: EdgeInsets.all(10.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
                 Expanded(
                   flex: 1,
                   child: Container(
-                    width: 500,
-                    height: 40,
+                    width: 500.0,
+                    height: 40.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),
@@ -68,7 +68,8 @@ class _BetaVersionWidgetState extends State<BetaVersionWidget> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              20.0, 0.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
                               'hth6z9ol' /* BETA VERSION */,
@@ -89,13 +90,13 @@ class _BetaVersionWidgetState extends State<BetaVersionWidget> {
                         ),
                         FlutterFlowIconButton(
                           borderColor: Colors.transparent,
-                          borderRadius: 50,
-                          borderWidth: 1,
-                          buttonSize: 40,
+                          borderRadius: 50.0,
+                          borderWidth: 1.0,
+                          buttonSize: 40.0,
                           icon: Icon(
                             Icons.close,
                             color: FlutterFlowTheme.of(context).primaryText,
-                            size: 21,
+                            size: 21.0,
                           ),
                           onPressed: () async {
                             context.pop();
@@ -108,8 +109,8 @@ class _BetaVersionWidgetState extends State<BetaVersionWidget> {
                 Expanded(
                   flex: 7,
                   child: Container(
-                    width: 500,
-                    height: 100,
+                    width: 500.0,
+                    height: 100.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).primaryBackground,
                     ),
@@ -118,7 +119,7 @@ class _BetaVersionWidgetState extends State<BetaVersionWidget> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsets.all(10),
+                          padding: EdgeInsets.all(10.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -145,7 +146,7 @@ class _BetaVersionWidgetState extends State<BetaVersionWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.all(5),
+                          padding: EdgeInsets.all(5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,

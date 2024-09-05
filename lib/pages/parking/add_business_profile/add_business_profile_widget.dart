@@ -73,8 +73,8 @@ class _AddBusinessProfileWidgetState extends State<AddBusinessProfileWidget> {
                 Expanded(
                   flex: 4,
                   child: Container(
-                    width: MediaQuery.sizeOf(context).width,
-                    height: 100,
+                    width: MediaQuery.sizeOf(context).width * 1.0,
+                    height: 100.0,
                     decoration: BoxDecoration(),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -82,20 +82,21 @@ class _AddBusinessProfileWidgetState extends State<AddBusinessProfileWidget> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              20.0, 0.0, 20.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 30,
-                                borderWidth: 1,
-                                buttonSize: 45,
+                                borderRadius: 30.0,
+                                borderWidth: 1.0,
+                                buttonSize: 45.0,
                                 icon: Icon(
                                   Icons.chevron_left,
                                   color: FlutterFlowTheme.of(context).lineColor,
-                                  size: 24,
+                                  size: 24.0,
                                 ),
                                 onPressed: () async {
                                   context.pop();
@@ -123,13 +124,13 @@ class _AddBusinessProfileWidgetState extends State<AddBusinessProfileWidget> {
                               ),
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 30,
-                                borderWidth: 1,
-                                buttonSize: 45,
+                                borderRadius: 30.0,
+                                borderWidth: 1.0,
+                                buttonSize: 45.0,
                                 icon: Icon(
                                   Icons.chevron_left,
                                   color: Colors.transparent,
-                                  size: 30,
+                                  size: 30.0,
                                 ),
                                 onPressed: () {
                                   print('IconButton pressed ...');
@@ -145,29 +146,30 @@ class _AddBusinessProfileWidgetState extends State<AddBusinessProfileWidget> {
                 Expanded(
                   flex: 24,
                   child: Container(
-                    width: MediaQuery.sizeOf(context).width,
-                    height: 100,
+                    width: MediaQuery.sizeOf(context).width * 1.0,
+                    height: 100.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).primaryBackground,
                       borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(0),
-                        bottomRight: Radius.circular(0),
-                        topLeft: Radius.circular(0),
-                        topRight: Radius.circular(0),
+                        bottomLeft: Radius.circular(0.0),
+                        bottomRight: Radius.circular(0.0),
+                        topLeft: Radius.circular(0.0),
+                        topRight: Radius.circular(0.0),
                       ),
                     ),
                     child: Form(
                       key: _model.formKey,
                       autovalidateMode: AutovalidateMode.disabled,
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(20, 50, 20, 30),
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            20.0, 50.0, 20.0, 30.0),
                         child: SingleChildScrollView(
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 25),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 25.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -195,8 +197,8 @@ class _AddBusinessProfileWidgetState extends State<AddBusinessProfileWidget> {
                                 ),
                               ),
                               Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -221,15 +223,15 @@ class _AddBusinessProfileWidgetState extends State<AddBusinessProfileWidget> {
                                 ),
                               ),
                               Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 15),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 15.0),
                                 child: Container(
                                   width:
                                       MediaQuery.sizeOf(context).width * 0.92,
                                   height:
                                       MediaQuery.sizeOf(context).height * 0.055,
                                   decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   child: TextFormField(
                                     controller:
@@ -259,28 +261,32 @@ class _AddBusinessProfileWidgetState extends State<AddBusinessProfileWidget> {
                                           color: Color(0x00000000),
                                           width: 1.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(0),
+                                        borderRadius:
+                                            BorderRadius.circular(0.0),
                                       ),
                                       focusedBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
                                           width: 1.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(0),
+                                        borderRadius:
+                                            BorderRadius.circular(0.0),
                                       ),
                                       errorBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
                                           width: 1.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(0),
+                                        borderRadius:
+                                            BorderRadius.circular(0.0),
                                       ),
                                       focusedErrorBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
                                           width: 1.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(0),
+                                        borderRadius:
+                                            BorderRadius.circular(0.0),
                                       ),
                                       filled: true,
                                       fillColor: FlutterFlowTheme.of(context)
@@ -305,8 +311,8 @@ class _AddBusinessProfileWidgetState extends State<AddBusinessProfileWidget> {
                                 ),
                               ),
                               Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -331,15 +337,15 @@ class _AddBusinessProfileWidgetState extends State<AddBusinessProfileWidget> {
                                 ),
                               ),
                               Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 15),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 15.0),
                                 child: Container(
                                   width:
                                       MediaQuery.sizeOf(context).width * 0.92,
                                   height:
                                       MediaQuery.sizeOf(context).height * 0.055,
                                   decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   child:
                                       StreamBuilder<List<BusinessTypeRecord>>(
@@ -355,13 +361,13 @@ class _AddBusinessProfileWidgetState extends State<AddBusinessProfileWidget> {
                                       if (!snapshot.hasData) {
                                         return Center(
                                           child: SizedBox(
-                                            width: 40,
-                                            height: 40,
+                                            width: 40.0,
+                                            height: 40.0,
                                             child: SpinKitFadingCircle(
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              size: 40,
+                                              size: 40.0,
                                             ),
                                           ),
                                         );
@@ -381,8 +387,8 @@ class _AddBusinessProfileWidgetState extends State<AddBusinessProfileWidget> {
                                         onChanged: (val) => safeSetState(() =>
                                             _model.dropDownBusinessTypeValue =
                                                 val),
-                                        width: 180,
-                                        height: 50,
+                                        width: 180.0,
+                                        height: 50.0,
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
@@ -403,14 +409,14 @@ class _AddBusinessProfileWidgetState extends State<AddBusinessProfileWidget> {
                                         ),
                                         fillColor: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
-                                        elevation: 2,
+                                        elevation: 2.0,
                                         borderColor:
                                             FlutterFlowTheme.of(context)
                                                 .customColor2,
-                                        borderWidth: 0,
-                                        borderRadius: 8,
+                                        borderWidth: 0.0,
+                                        borderRadius: 8.0,
                                         margin: EdgeInsetsDirectional.fromSTEB(
-                                            12, 4, 12, 4),
+                                            12.0, 4.0, 12.0, 4.0),
                                         hidesUnderline: true,
                                         isSearchable: false,
                                         isMultiSelect: false,
@@ -444,13 +450,13 @@ class _AddBusinessProfileWidgetState extends State<AddBusinessProfileWidget> {
                                       if (!snapshot.hasData) {
                                         return Center(
                                           child: SizedBox(
-                                            width: 40,
-                                            height: 40,
+                                            width: 40.0,
+                                            height: 40.0,
                                             child: SpinKitFadingCircle(
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              size: 40,
+                                              size: 40.0,
                                             ),
                                           ),
                                         );
@@ -653,14 +659,14 @@ class _AddBusinessProfileWidgetState extends State<AddBusinessProfileWidget> {
                                           'lpw9jwva' /* Submit */,
                                         ),
                                         options: FFButtonOptions(
-                                          width: 140,
-                                          height: 40,
+                                          width: 140.0,
+                                          height: 40.0,
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 0, 0),
+                                                  0.0, 0.0, 0.0, 0.0),
                                           iconPadding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 0, 0),
+                                                  0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .parkingSecondaryBackground,
                                           textStyle: FlutterFlowTheme.of(
@@ -680,13 +686,13 @@ class _AddBusinessProfileWidgetState extends State<AddBusinessProfileWidget> {
                                                                 context)
                                                             .titleMediumFamily),
                                               ),
-                                          elevation: 2,
+                                          elevation: 2.0,
                                           borderSide: BorderSide(
                                             color: Colors.transparent,
-                                            width: 1,
+                                            width: 1.0,
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(8),
+                                              BorderRadius.circular(8.0),
                                         ),
                                       );
                                     },

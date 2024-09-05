@@ -97,13 +97,13 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                 print('FloatingActionButton pressed ...');
               },
               backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-              elevation: 8,
+              elevation: 8.0,
               child: FlutterFlowIconButton(
-                buttonSize: 60,
+                buttonSize: 60.0,
                 icon: Icon(
                   Icons.print,
                   color: FlutterFlowTheme.of(context).primary,
-                  size: 24,
+                  size: 24.0,
                 ),
                 onPressed: () {
                   print('IconButton pressed ...');
@@ -113,7 +113,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
             endDrawer: Container(
               width: MediaQuery.sizeOf(context).width * 0.45,
               child: Drawer(
-                elevation: 16,
+                elevation: 16.0,
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -127,11 +127,11 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                         if (!snapshot.hasData) {
                           return Center(
                             child: SizedBox(
-                              width: 40,
-                              height: 40,
+                              width: 40.0,
+                              height: 40.0,
                               child: SpinKitFadingCircle(
                                 color: FlutterFlowTheme.of(context).primary,
-                                size: 40,
+                                size: 40.0,
                               ),
                             ),
                           );
@@ -140,14 +140,14 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                             snapshot.data!;
 
                         return Container(
-                          width: MediaQuery.sizeOf(context).width,
-                          height: MediaQuery.sizeOf(context).height * 1,
+                          width: MediaQuery.sizeOf(context).width * 1.0,
+                          height: MediaQuery.sizeOf(context).height * 1.0,
                           decoration: BoxDecoration(
                             color:
                                 FlutterFlowTheme.of(context).primaryBackground,
                           ),
                           child: Padding(
-                            padding: EdgeInsets.all(10),
+                            padding: EdgeInsets.all(10.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -168,14 +168,14 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                     children: [
                                       FlutterFlowIconButton(
                                         borderColor: Colors.transparent,
-                                        borderRadius: 30,
-                                        borderWidth: 1,
-                                        buttonSize: 40,
+                                        borderRadius: 30.0,
+                                        borderWidth: 1.0,
+                                        buttonSize: 40.0,
                                         icon: Icon(
                                           Icons.chevron_left,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
-                                          size: 22,
+                                          size: 22.0,
                                         ),
                                         onPressed: () async {
                                           context.pop();
@@ -189,7 +189,8 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(20, 0, 0, 0),
+                                                  .fromSTEB(
+                                                      20.0, 0.0, 0.0, 0.0),
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -218,14 +219,14 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                       ),
                                       FlutterFlowIconButton(
                                         borderColor: Colors.transparent,
-                                        borderRadius: 30,
-                                        borderWidth: 1,
-                                        buttonSize: 40,
+                                        borderRadius: 30.0,
+                                        borderWidth: 1.0,
+                                        buttonSize: 40.0,
                                         icon: Icon(
                                           Icons.person_add,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
-                                          size: 22,
+                                          size: 22.0,
                                         ),
                                         onPressed: () async {
                                           context.pushNamed('AddCustomer');
@@ -236,10 +237,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 10, 0, 0),
+                                      0.0, 10.0, 0.0, 0.0),
                                   child: Material(
                                     color: Colors.transparent,
-                                    elevation: 2,
+                                    elevation: 2.0,
                                     child: Container(
                                       width: double.infinity,
                                       height:
@@ -257,7 +258,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                           Expanded(
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(6, 0, 0, 0),
+                                                  .fromSTEB(6.0, 0.0, 0.0, 0.0),
                                               child: TextFormField(
                                                 controller: _model
                                                     .textFieldsearchTextController,
@@ -416,8 +417,8 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                             ),
                                             child: FlutterFlowIconButton(
                                               borderColor: Colors.transparent,
-                                              borderWidth: 1,
-                                              buttonSize: 50,
+                                              borderWidth: 1.0,
+                                              buttonSize: 50.0,
                                               fillColor:
                                                   FlutterFlowTheme.of(context)
                                                       .secondary,
@@ -426,7 +427,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .lineColor,
-                                                size: 22,
+                                                size: 22.0,
                                               ),
                                               onPressed: () {
                                                 print('IconButton pressed ...');
@@ -440,7 +441,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 5, 0, 0),
+                                      0.0, 5.0, 0.0, 0.0),
                                   child: Container(
                                     width: double.infinity,
                                     height:
@@ -450,11 +451,11 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                           .secondaryBackground,
                                       boxShadow: [
                                         BoxShadow(
-                                          blurRadius: 3,
+                                          blurRadius: 3.0,
                                           color: Color(0x33000000),
                                           offset: Offset(
-                                            0,
-                                            1,
+                                            0.0,
+                                            1.0,
                                           ),
                                         )
                                       ],
@@ -520,7 +521,8 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                             RoundedRectangleBorder(
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(4),
+                                                                  .circular(
+                                                                      4.0),
                                                         ),
                                                         child: Row(
                                                           mainAxisSize:
@@ -532,16 +534,17 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                             FlutterFlowIconButton(
                                                               borderColor: Colors
                                                                   .transparent,
-                                                              borderRadius: 30,
-                                                              borderWidth: 1,
-                                                              buttonSize: 60,
+                                                              borderRadius:
+                                                                  30.0,
+                                                              borderWidth: 1.0,
+                                                              buttonSize: 60.0,
                                                               icon: Icon(
                                                                 Icons
                                                                     .account_circle,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
-                                                                size: 30,
+                                                                size: 30.0,
                                                               ),
                                                               onPressed: () {
                                                                 print(
@@ -550,7 +553,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                             ),
                                                             Expanded(
                                                               child: Container(
-                                                                width: 170,
+                                                                width: 170.0,
                                                                 height: MediaQuery.sizeOf(
                                                                             context)
                                                                         .height *
@@ -608,7 +611,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                             ),
                                                             Expanded(
                                                               child: Container(
-                                                                width: 100,
+                                                                width: 100.0,
                                                                 height: MediaQuery.sizeOf(
                                                                             context)
                                                                         .height *
@@ -660,7 +663,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                       width: double
                                                                           .infinity,
                                                                       height:
-                                                                          20,
+                                                                          20.0,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -720,11 +723,11 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           Colors
                                                                               .transparent,
                                                                       borderRadius:
-                                                                          30,
+                                                                          30.0,
                                                                       borderWidth:
-                                                                          1,
+                                                                          1.0,
                                                                       buttonSize:
-                                                                          60,
+                                                                          60.0,
                                                                       icon:
                                                                           Icon(
                                                                         Icons
@@ -732,7 +735,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         size:
-                                                                            24,
+                                                                            24.0,
                                                                       ),
                                                                       onPressed:
                                                                           () async {
@@ -777,11 +780,11 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           Colors
                                                                               .transparent,
                                                                       borderRadius:
-                                                                          30,
+                                                                          30.0,
                                                                       borderWidth:
-                                                                          1,
+                                                                          1.0,
                                                                       buttonSize:
-                                                                          60,
+                                                                          60.0,
                                                                       icon:
                                                                           Icon(
                                                                         Icons
@@ -789,7 +792,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .secondary,
                                                                         size:
-                                                                            24,
+                                                                            24.0,
                                                                       ),
                                                                       onPressed:
                                                                           () async {
@@ -879,7 +882,8 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                             RoundedRectangleBorder(
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(6),
+                                                                  .circular(
+                                                                      6.0),
                                                         ),
                                                         child: Row(
                                                           mainAxisSize:
@@ -891,16 +895,17 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                             FlutterFlowIconButton(
                                                               borderColor: Colors
                                                                   .transparent,
-                                                              borderRadius: 30,
-                                                              borderWidth: 1,
-                                                              buttonSize: 60,
+                                                              borderRadius:
+                                                                  30.0,
+                                                              borderWidth: 1.0,
+                                                              buttonSize: 60.0,
                                                               icon: Icon(
                                                                 Icons
                                                                     .account_circle,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
-                                                                size: 30,
+                                                                size: 30.0,
                                                               ),
                                                               onPressed: () {
                                                                 print(
@@ -909,7 +914,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                             ),
                                                             Expanded(
                                                               child: Container(
-                                                                width: 170,
+                                                                width: 170.0,
                                                                 height: MediaQuery.sizeOf(
                                                                             context)
                                                                         .height *
@@ -967,7 +972,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                             ),
                                                             Expanded(
                                                               child: Container(
-                                                                width: 100,
+                                                                width: 100.0,
                                                                 height: MediaQuery.sizeOf(
                                                                             context)
                                                                         .height *
@@ -1019,7 +1024,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                       width: double
                                                                           .infinity,
                                                                       height:
-                                                                          20,
+                                                                          20.0,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -1079,11 +1084,11 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           Colors
                                                                               .transparent,
                                                                       borderRadius:
-                                                                          30,
+                                                                          30.0,
                                                                       borderWidth:
-                                                                          1,
+                                                                          1.0,
                                                                       buttonSize:
-                                                                          60,
+                                                                          60.0,
                                                                       icon:
                                                                           Icon(
                                                                         Icons
@@ -1091,7 +1096,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         size:
-                                                                            24,
+                                                                            24.0,
                                                                       ),
                                                                       onPressed:
                                                                           () async {
@@ -1133,11 +1138,11 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           Colors
                                                                               .transparent,
                                                                       borderRadius:
-                                                                          30,
+                                                                          30.0,
                                                                       borderWidth:
-                                                                          1,
+                                                                          1.0,
                                                                       buttonSize:
-                                                                          60,
+                                                                          60.0,
                                                                       icon:
                                                                           Icon(
                                                                         Icons
@@ -1145,7 +1150,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .secondary,
                                                                         size:
-                                                                            24,
+                                                                            24.0,
                                                                       ),
                                                                       onPressed:
                                                                           () async {
@@ -1191,14 +1196,14 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
               ),
             ),
             body: Padding(
-              padding: EdgeInsets.all(3),
+              padding: EdgeInsets.all(3.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Expanded(
                     flex: 1,
                     child: Container(
-                      width: MediaQuery.sizeOf(context).width,
+                      width: MediaQuery.sizeOf(context).width * 1.0,
                       height: MediaQuery.sizeOf(context).height * 0.12,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primary,
@@ -1211,22 +1216,22 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                           Expanded(
                             flex: 1,
                             child: Container(
-                              width: 100,
-                              height: 100,
+                              width: 100.0,
+                              height: 100.0,
                               decoration: BoxDecoration(),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   FlutterFlowIconButton(
                                     borderColor: Colors.transparent,
-                                    borderRadius: 30,
-                                    borderWidth: 1,
-                                    buttonSize: 60,
+                                    borderRadius: 30.0,
+                                    borderWidth: 1.0,
+                                    buttonSize: 60.0,
                                     icon: Icon(
                                       Icons.chevron_left_sharp,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBtnText,
-                                      size: 26,
+                                      size: 26.0,
                                     ),
                                     onPressed: () async {
                                       context.pop();
@@ -1270,15 +1275,16 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                   Expanded(
                     flex: 8,
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
                       child: Container(
                         width: double.infinity,
-                        height: 100,
+                        height: 100.0,
                         decoration: BoxDecoration(),
                         child: Column(
                           children: [
                             Align(
-                              alignment: Alignment(0, 0),
+                              alignment: Alignment(0.0, 0),
                               child: TabBar(
                                 labelColor:
                                     FlutterFlowTheme.of(context).primary,
@@ -1298,7 +1304,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                 unselectedLabelStyle: TextStyle(),
                                 indicatorColor:
                                     FlutterFlowTheme.of(context).tertiary,
-                                indicatorWeight: 2,
+                                indicatorWeight: 2.0,
                                 tabs: [
                                   Tab(
                                     text: FFLocalizations.of(context).getText(
@@ -1341,12 +1347,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                     children: [
                                       Expanded(
                                         child: Padding(
-                                          padding: EdgeInsets.all(3),
+                                          padding: EdgeInsets.all(3.0),
                                           child: Container(
-                                            width: 100,
+                                            width: 100.0,
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
-                                                1,
+                                                1.0,
                                             decoration: BoxDecoration(
                                               border: Border.all(
                                                 color:
@@ -1363,7 +1369,8 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                         .spaceEvenly,
                                                 children: [
                                                   Padding(
-                                                    padding: EdgeInsets.all(3),
+                                                    padding:
+                                                        EdgeInsets.all(3.0),
                                                     child: Container(
                                                       width: double.infinity,
                                                       height: MediaQuery.sizeOf(
@@ -1374,7 +1381,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                           BoxDecoration(),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsets.all(3),
+                                                            EdgeInsets.all(3.0),
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -1389,10 +1396,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          5,
-                                                                          0,
-                                                                          0,
-                                                                          0),
+                                                                          5.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                               child: Text(
                                                                 FFLocalizations.of(
                                                                         context)
@@ -1418,7 +1425,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                             Padding(
                                                               padding:
                                                                   EdgeInsets
-                                                                      .all(2),
+                                                                      .all(2.0),
                                                               child:
                                                                   FlutterFlowDropDown<
                                                                       String>(
@@ -1445,7 +1452,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                             val),
                                                                 width: double
                                                                     .infinity,
-                                                                height: 38,
+                                                                height: 38.0,
                                                                 textStyle: FlutterFlowTheme.of(
                                                                         context)
                                                                     .titleMedium
@@ -1466,20 +1473,21 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         .getText(
                                                                   'ocsm2k9f' /* Please select... */,
                                                                 ),
-                                                                elevation: 2,
+                                                                elevation: 2.0,
                                                                 borderColor:
                                                                     FlutterFlowTheme.of(
                                                                             context)
                                                                         .customColor2,
-                                                                borderWidth: 0,
-                                                                borderRadius: 0,
-                                                                margin:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            12,
-                                                                            4,
-                                                                            12,
-                                                                            4),
+                                                                borderWidth:
+                                                                    0.0,
+                                                                borderRadius:
+                                                                    0.0,
+                                                                margin: EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        12.0,
+                                                                        4.0,
+                                                                        12.0,
+                                                                        4.0),
                                                                 hidesUnderline:
                                                                     true,
                                                                 isSearchable:
@@ -1494,7 +1502,8 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                     ),
                                                   ),
                                                   Padding(
-                                                    padding: EdgeInsets.all(3),
+                                                    padding:
+                                                        EdgeInsets.all(3.0),
                                                     child: Container(
                                                       width: double.infinity,
                                                       height: MediaQuery.sizeOf(
@@ -1505,7 +1514,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                           BoxDecoration(),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsets.all(3),
+                                                            EdgeInsets.all(3.0),
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -1520,10 +1529,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          5,
-                                                                          0,
-                                                                          0,
-                                                                          0),
+                                                                          5.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                               child: Text(
                                                                 FFLocalizations.of(
                                                                         context)
@@ -1549,7 +1558,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                             Padding(
                                                               padding:
                                                                   EdgeInsets
-                                                                      .all(2),
+                                                                      .all(2.0),
                                                               child:
                                                                   TextFormField(
                                                                 controller: _model
@@ -1589,8 +1598,8 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           1.0,
                                                                     ),
                                                                     borderRadius:
-                                                                        BorderRadius
-                                                                            .circular(0),
+                                                                        BorderRadius.circular(
+                                                                            0.0),
                                                                   ),
                                                                   focusedBorder:
                                                                       OutlineInputBorder(
@@ -1602,8 +1611,8 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           1.0,
                                                                     ),
                                                                     borderRadius:
-                                                                        BorderRadius
-                                                                            .circular(0),
+                                                                        BorderRadius.circular(
+                                                                            0.0),
                                                                   ),
                                                                   errorBorder:
                                                                       OutlineInputBorder(
@@ -1615,8 +1624,8 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           1.0,
                                                                     ),
                                                                     borderRadius:
-                                                                        BorderRadius
-                                                                            .circular(0),
+                                                                        BorderRadius.circular(
+                                                                            0.0),
                                                                   ),
                                                                   focusedErrorBorder:
                                                                       OutlineInputBorder(
@@ -1628,8 +1637,8 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           1.0,
                                                                     ),
                                                                     borderRadius:
-                                                                        BorderRadius
-                                                                            .circular(0),
+                                                                        BorderRadius.circular(
+                                                                            0.0),
                                                                   ),
                                                                 ),
                                                                 style: FlutterFlowTheme.of(
@@ -1658,7 +1667,8 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                     ),
                                                   ),
                                                   Padding(
-                                                    padding: EdgeInsets.all(3),
+                                                    padding:
+                                                        EdgeInsets.all(3.0),
                                                     child: Container(
                                                       width: double.infinity,
                                                       height: MediaQuery.sizeOf(
@@ -1673,14 +1683,15 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                         children: [
                                                           Expanded(
                                                             child: Container(
-                                                              width: 100,
-                                                              height: 100,
+                                                              width: 100.0,
+                                                              height: 100.0,
                                                               decoration:
                                                                   BoxDecoration(),
                                                               child: Padding(
                                                                 padding:
                                                                     EdgeInsets
-                                                                        .all(3),
+                                                                        .all(
+                                                                            3.0),
                                                                 child: Column(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -1693,12 +1704,11 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           .start,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              5,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          5.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -1717,7 +1727,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                     Padding(
                                                                       padding:
                                                                           EdgeInsets.all(
-                                                                              2),
+                                                                              2.0),
                                                                       child:
                                                                           TextFormField(
                                                                         controller:
@@ -1815,14 +1825,15 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                           ),
                                                           Expanded(
                                                             child: Container(
-                                                              width: 100,
-                                                              height: 100,
+                                                              width: 100.0,
+                                                              height: 100.0,
                                                               decoration:
                                                                   BoxDecoration(),
                                                               child: Padding(
                                                                 padding:
                                                                     EdgeInsets
-                                                                        .all(3),
+                                                                        .all(
+                                                                            3.0),
                                                                 child: Column(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -1919,9 +1930,9 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                             (val) =>
                                                                                 safeSetState(() => _model.dropDownExpValue = val),
                                                                         width:
-                                                                            200,
+                                                                            200.0,
                                                                         height:
-                                                                            50,
+                                                                            50.0,
                                                                         textStyle: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .override(
@@ -1936,23 +1947,23 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           size:
-                                                                              14,
+                                                                              14.0,
                                                                         ),
                                                                         fillColor:
                                                                             FlutterFlowTheme.of(context).secondaryBackground,
                                                                         elevation:
-                                                                            2,
+                                                                            2.0,
                                                                         borderColor:
                                                                             FlutterFlowTheme.of(context).customColor2,
                                                                         borderWidth:
-                                                                            0,
+                                                                            0.0,
                                                                         borderRadius:
-                                                                            0,
+                                                                            0.0,
                                                                         margin: EdgeInsetsDirectional.fromSTEB(
-                                                                            5,
-                                                                            4,
-                                                                            5,
-                                                                            4),
+                                                                            5.0,
+                                                                            4.0,
+                                                                            5.0,
+                                                                            4.0),
                                                                         hidesUnderline:
                                                                             true,
                                                                         isSearchable:
@@ -1971,7 +1982,8 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                     ),
                                                   ),
                                                   Padding(
-                                                    padding: EdgeInsets.all(3),
+                                                    padding:
+                                                        EdgeInsets.all(3.0),
                                                     child: Container(
                                                       width: double.infinity,
                                                       height: MediaQuery.sizeOf(
@@ -2016,22 +2028,22 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                             ),
                                                             options:
                                                                 FFButtonOptions(
-                                                              width: 120,
-                                                              height: 40,
+                                                              width: 120.0,
+                                                              height: 40.0,
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          0,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                               iconPadding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          0,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .secondary,
@@ -2052,11 +2064,11 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         .containsKey(
                                                                             FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                   ),
-                                                              elevation: 2,
+                                                              elevation: 2.0,
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          0),
+                                                                          0.0),
                                                             ),
                                                           ),
                                                           FFButtonWidget(
@@ -2071,22 +2083,22 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                             ),
                                                             options:
                                                                 FFButtonOptions(
-                                                              width: 120,
-                                                              height: 40,
+                                                              width: 120.0,
+                                                              height: 40.0,
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          0,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                               iconPadding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          0,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .secondary,
@@ -2107,17 +2119,17 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         .containsKey(
                                                                             FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                   ),
-                                                              elevation: 2,
+                                                              elevation: 2.0,
                                                               borderSide:
                                                                   BorderSide(
                                                                 color: Colors
                                                                     .transparent,
-                                                                width: 1,
+                                                                width: 1.0,
                                                               ),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          0),
+                                                                          0.0),
                                                             ),
                                                           ),
                                                         ],
@@ -2132,12 +2144,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                       ),
                                       Expanded(
                                         child: Padding(
-                                          padding: EdgeInsets.all(3),
+                                          padding: EdgeInsets.all(3.0),
                                           child: Container(
-                                            width: 100,
+                                            width: 100.0,
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
-                                                1,
+                                                1.0,
                                             decoration: BoxDecoration(
                                               border: Border.all(
                                                 color:
@@ -2157,15 +2169,15 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                 if (!snapshot.hasData) {
                                                   return Center(
                                                     child: SizedBox(
-                                                      width: 40,
-                                                      height: 40,
+                                                      width: 40.0,
+                                                      height: 40.0,
                                                       child:
                                                           SpinKitFadingCircle(
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primary,
-                                                        size: 40,
+                                                        size: 40.0,
                                                       ),
                                                     ),
                                                   );
@@ -2188,9 +2200,9 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                             listViewIndex];
                                                     return Padding(
                                                       padding:
-                                                          EdgeInsets.all(3),
+                                                          EdgeInsets.all(3.0),
                                                       child: Container(
-                                                        width: 100,
+                                                        width: 100.0,
                                                         height:
                                                             MediaQuery.sizeOf(
                                                                         context)
@@ -2207,8 +2219,11 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(0,
-                                                                      2, 0, 2),
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      2.0,
+                                                                      0.0,
+                                                                      2.0),
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -2218,10 +2233,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                 child: Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          3,
-                                                                          3,
-                                                                          0),
+                                                                          0.0,
+                                                                          3.0,
+                                                                          3.0,
+                                                                          0.0),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -2232,10 +2247,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                     children: [
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            3,
-                                                                            0),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            3.0,
+                                                                            0.0),
                                                                         child:
                                                                             Text(
                                                                           FFLocalizations.of(context)
@@ -2253,10 +2268,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                       ),
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            3,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            3.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
                                                                             Text(
                                                                           FFLocalizations.of(context)
@@ -2283,12 +2298,11 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              10,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -2330,12 +2344,11 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              10,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -2376,12 +2389,11 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              10,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -2422,12 +2434,11 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              10,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -2504,12 +2515,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                     children: [
                                       Expanded(
                                         child: Padding(
-                                          padding: EdgeInsets.all(3),
+                                          padding: EdgeInsets.all(3.0),
                                           child: Container(
-                                            width: 100,
+                                            width: 100.0,
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
-                                                1,
+                                                1.0,
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -2524,7 +2535,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsets.all(3),
+                                                  padding: EdgeInsets.all(3.0),
                                                   child: Container(
                                                     width: double.infinity,
                                                     height: MediaQuery.sizeOf(
@@ -2534,7 +2545,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                     decoration: BoxDecoration(),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(3),
+                                                          EdgeInsets.all(3.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -2549,10 +2560,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        5,
-                                                                        0,
-                                                                        0,
-                                                                        0),
+                                                                        5.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             child: Text(
                                                               FFLocalizations.of(
                                                                       context)
@@ -2578,7 +2589,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                           Padding(
                                                             padding:
                                                                 EdgeInsets.all(
-                                                                    2),
+                                                                    2.0),
                                                             child:
                                                                 FlutterFlowDropDown<
                                                                     String>(
@@ -2615,7 +2626,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           val),
                                                               width: double
                                                                   .infinity,
-                                                              height: 38,
+                                                              height: 38.0,
                                                               textStyle:
                                                                   FlutterFlowTheme.of(
                                                                           context)
@@ -2634,18 +2645,18 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                       .getText(
                                                                 'ctd4pbx8' /* Please select... */,
                                                               ),
-                                                              elevation: 2,
+                                                              elevation: 2.0,
                                                               borderColor: Color(
                                                                   0xFFD4D1D1),
-                                                              borderWidth: 0,
-                                                              borderRadius: 0,
+                                                              borderWidth: 0.0,
+                                                              borderRadius: 0.0,
                                                               margin:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          12,
-                                                                          4,
-                                                                          12,
-                                                                          4),
+                                                                          12.0,
+                                                                          4.0,
+                                                                          12.0,
+                                                                          4.0),
                                                               hidesUnderline:
                                                                   true,
                                                               isSearchable:
@@ -2660,7 +2671,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsets.all(3),
+                                                  padding: EdgeInsets.all(3.0),
                                                   child: Container(
                                                     width: double.infinity,
                                                     height: MediaQuery.sizeOf(
@@ -2670,7 +2681,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                     decoration: BoxDecoration(),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(3),
+                                                          EdgeInsets.all(3.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -2685,10 +2696,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        5,
-                                                                        0,
-                                                                        0,
-                                                                        0),
+                                                                        5.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             child: Text(
                                                               FFLocalizations.of(
                                                                       context)
@@ -2714,7 +2725,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                           Padding(
                                                             padding:
                                                                 EdgeInsets.all(
-                                                                    2),
+                                                                    2.0),
                                                             child:
                                                                 TextFormField(
                                                               controller: _model
@@ -2758,7 +2769,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              0),
+                                                                              0.0),
                                                                 ),
                                                                 focusedBorder:
                                                                     OutlineInputBorder(
@@ -2771,7 +2782,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              0),
+                                                                              0.0),
                                                                 ),
                                                                 errorBorder:
                                                                     OutlineInputBorder(
@@ -2784,7 +2795,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              0),
+                                                                              0.0),
                                                                 ),
                                                                 focusedErrorBorder:
                                                                     OutlineInputBorder(
@@ -2797,7 +2808,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              0),
+                                                                              0.0),
                                                                 ),
                                                               ),
                                                               style: FlutterFlowTheme
@@ -2826,7 +2837,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsets.all(3),
+                                                  padding: EdgeInsets.all(3.0),
                                                   child: Container(
                                                     width: double.infinity,
                                                     height: MediaQuery.sizeOf(
@@ -2840,14 +2851,14 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                       children: [
                                                         Expanded(
                                                           child: Container(
-                                                            width: 100,
-                                                            height: 100,
+                                                            width: 100.0,
+                                                            height: 100.0,
                                                             decoration:
                                                                 BoxDecoration(),
                                                             child: Padding(
                                                               padding:
                                                                   EdgeInsets
-                                                                      .all(3),
+                                                                      .all(3.0),
                                                               child: Column(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -2862,10 +2873,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            5,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -2887,8 +2898,8 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                   ),
                                                                   Padding(
                                                                     padding:
-                                                                        EdgeInsets
-                                                                            .all(2),
+                                                                        EdgeInsets.all(
+                                                                            2.0),
                                                                     child:
                                                                         TextFormField(
                                                                       controller:
@@ -3009,7 +3020,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                         ),
                                                         Expanded(
                                                           child: Container(
-                                                            width: 100,
+                                                            width: 100.0,
                                                             height: MediaQuery
                                                                         .sizeOf(
                                                                             context)
@@ -3020,7 +3031,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                             child: Padding(
                                                               padding:
                                                                   EdgeInsets
-                                                                      .all(3),
+                                                                      .all(3.0),
                                                               child: Column(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -3121,9 +3132,9 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           (val) =>
                                                                               safeSetState(() => _model.dropDownValue3 = val),
                                                                       width:
-                                                                          200,
+                                                                          200.0,
                                                                       height:
-                                                                          50,
+                                                                          50.0,
                                                                       textStyle: FlutterFlowTheme.of(
                                                                               context)
                                                                           .titleSmall
@@ -3142,26 +3153,25 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         size:
-                                                                            14,
+                                                                            14.0,
                                                                       ),
                                                                       fillColor:
                                                                           FlutterFlowTheme.of(context)
                                                                               .secondaryBackground,
                                                                       elevation:
-                                                                          2,
+                                                                          2.0,
                                                                       borderColor:
                                                                           Colors
                                                                               .transparent,
                                                                       borderWidth:
-                                                                          0,
+                                                                          0.0,
                                                                       borderRadius:
-                                                                          0,
-                                                                      margin: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              5,
-                                                                              4,
-                                                                              5,
-                                                                              4),
+                                                                          0.0,
+                                                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                                                          5.0,
+                                                                          4.0,
+                                                                          5.0,
+                                                                          4.0),
                                                                       hidesUnderline:
                                                                           true,
                                                                       isSearchable:
@@ -3180,7 +3190,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsets.all(3),
+                                                  padding: EdgeInsets.all(3.0),
                                                   child: Container(
                                                     width: double.infinity,
                                                     height: MediaQuery.sizeOf(
@@ -3221,22 +3231,22 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                           ),
                                                           options:
                                                               FFButtonOptions(
-                                                            width: 120,
-                                                            height: 40,
+                                                            width: 120.0,
+                                                            height: 40.0,
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0,
-                                                                        0,
-                                                                        0,
-                                                                        0),
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             iconPadding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0,
-                                                                        0,
-                                                                        0,
-                                                                        0),
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .secondary,
@@ -3258,11 +3268,11 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           .containsKey(
                                                                               FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                     ),
-                                                            elevation: 2,
+                                                            elevation: 2.0,
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        0),
+                                                                        0.0),
                                                           ),
                                                         ),
                                                         FFButtonWidget(
@@ -3277,22 +3287,22 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                           ),
                                                           options:
                                                               FFButtonOptions(
-                                                            width: 120,
-                                                            height: 40,
+                                                            width: 120.0,
+                                                            height: 40.0,
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0,
-                                                                        0,
-                                                                        0,
-                                                                        0),
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             iconPadding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0,
-                                                                        0,
-                                                                        0,
-                                                                        0),
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .secondary,
@@ -3314,17 +3324,17 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           .containsKey(
                                                                               FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                     ),
-                                                            elevation: 2,
+                                                            elevation: 2.0,
                                                             borderSide:
                                                                 BorderSide(
                                                               color: Colors
                                                                   .transparent,
-                                                              width: 1,
+                                                              width: 1.0,
                                                             ),
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        0),
+                                                                        0.0),
                                                           ),
                                                         ),
                                                       ],
@@ -3338,12 +3348,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                       ),
                                       Expanded(
                                         child: Padding(
-                                          padding: EdgeInsets.all(3),
+                                          padding: EdgeInsets.all(3.0),
                                           child: Container(
-                                            width: 100,
+                                            width: 100.0,
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
-                                                1,
+                                                1.0,
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -3359,9 +3369,9 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                               scrollDirection: Axis.vertical,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsets.all(3),
+                                                  padding: EdgeInsets.all(3.0),
                                                   child: Container(
-                                                    width: 100,
+                                                    width: 100.0,
                                                     height: MediaQuery.sizeOf(
                                                                 context)
                                                             .height *
@@ -3382,7 +3392,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                           child: Padding(
                                                             padding:
                                                                 EdgeInsets.all(
-                                                                    2),
+                                                                    2.0),
                                                             child: Row(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -3394,10 +3404,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          3,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          3.0,
+                                                                          0.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -3420,10 +3430,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          3,
-                                                                          0,
-                                                                          0,
-                                                                          0),
+                                                                          3.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -3457,10 +3467,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            10,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            10.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                 child: Text(
                                                                   FFLocalizations.of(
                                                                           context)
@@ -3514,10 +3524,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            10,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            10.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                 child: Text(
                                                                   FFLocalizations.of(
                                                                           context)
@@ -3571,10 +3581,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            10,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            10.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                 child: Text(
                                                                   FFLocalizations.of(
                                                                           context)
@@ -3628,10 +3638,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            10,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            10.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                 child: Text(
                                                                   FFLocalizations.of(
                                                                           context)
@@ -3720,12 +3730,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                     children: [
                                       Expanded(
                                         child: Padding(
-                                          padding: EdgeInsets.all(3),
+                                          padding: EdgeInsets.all(3.0),
                                           child: Container(
-                                            width: 100,
+                                            width: 100.0,
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
-                                                1,
+                                                1.0,
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -3752,8 +3762,8 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                   child: Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                3, 0, 3, 3),
+                                                            .fromSTEB(3.0, 0.0,
+                                                                3.0, 3.0),
                                                     child: Column(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -3767,8 +3777,11 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(5,
-                                                                      0, 0, 0),
+                                                                  .fromSTEB(
+                                                                      5.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
                                                           child: Text(
                                                             FFLocalizations.of(
                                                                     context)
@@ -3794,7 +3807,8 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsets.all(3),
+                                                              EdgeInsets.all(
+                                                                  3.0),
                                                           child: InkWell(
                                                             splashColor: Colors
                                                                 .transparent,
@@ -3837,21 +3851,21 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            10,
-                                                                            0),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            10.0,
+                                                                            0.0),
                                                                     child:
                                                                         FlutterFlowIconButton(
                                                                       borderColor:
                                                                           Colors
                                                                               .transparent,
                                                                       borderRadius:
-                                                                          30,
+                                                                          30.0,
                                                                       borderWidth:
-                                                                          1,
+                                                                          1.0,
                                                                       buttonSize:
-                                                                          40,
+                                                                          40.0,
                                                                       icon:
                                                                           Icon(
                                                                         Icons
@@ -3859,7 +3873,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primary,
                                                                         size:
-                                                                            20,
+                                                                            20.0,
                                                                       ),
                                                                       onPressed:
                                                                           () {
@@ -3871,10 +3885,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            5,
-                                                                            0,
-                                                                            0),
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                     child: Text(
                                                                       FFAppState()
                                                                           .setCustName,
@@ -3902,7 +3916,8 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                 ),
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(3, 3, 3, 2),
+                                                      .fromSTEB(
+                                                          3.0, 3.0, 3.0, 2.0),
                                                   child: Container(
                                                     width: double.infinity,
                                                     height: MediaQuery.sizeOf(
@@ -3914,7 +3929,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  3, 0, 3, 3),
+                                                                  3.0,
+                                                                  0.0,
+                                                                  3.0,
+                                                                  3.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -3929,10 +3947,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        5,
-                                                                        0,
-                                                                        0,
-                                                                        0),
+                                                                        5.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             child: Text(
                                                               FFLocalizations.of(
                                                                       context)
@@ -3959,10 +3977,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        2,
-                                                                        0,
-                                                                        2,
-                                                                        2),
+                                                                        2.0,
+                                                                        0.0,
+                                                                        2.0,
+                                                                        2.0),
                                                             child:
                                                                 TextFormField(
                                                               controller: _model
@@ -4006,7 +4024,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              0),
+                                                                              0.0),
                                                                 ),
                                                                 focusedBorder:
                                                                     OutlineInputBorder(
@@ -4019,7 +4037,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              0),
+                                                                              0.0),
                                                                 ),
                                                                 errorBorder:
                                                                     OutlineInputBorder(
@@ -4032,7 +4050,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              0),
+                                                                              0.0),
                                                                 ),
                                                                 focusedErrorBorder:
                                                                     OutlineInputBorder(
@@ -4045,7 +4063,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              0),
+                                                                              0.0),
                                                                 ),
                                                               ),
                                                               style: FlutterFlowTheme
@@ -4075,7 +4093,8 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                 ),
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(3, 3, 3, 2),
+                                                      .fromSTEB(
+                                                          3.0, 3.0, 3.0, 2.0),
                                                   child: Container(
                                                     width: double.infinity,
                                                     height: MediaQuery.sizeOf(
@@ -4087,7 +4106,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  3, 0, 3, 3),
+                                                                  3.0,
+                                                                  0.0,
+                                                                  3.0,
+                                                                  3.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -4102,10 +4124,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        5,
-                                                                        0,
-                                                                        0,
-                                                                        0),
+                                                                        5.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             child: Text(
                                                               FFLocalizations.of(
                                                                       context)
@@ -4131,7 +4153,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                           Padding(
                                                             padding:
                                                                 EdgeInsets.all(
-                                                                    3),
+                                                                    3.0),
                                                             child: Container(
                                                               width: double
                                                                   .infinity,
@@ -4162,10 +4184,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            10,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            10.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                     child: Text(
                                                                       valueOrDefault<
                                                                           String>(
@@ -4197,7 +4219,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsets.all(5),
+                                                  padding: EdgeInsets.all(5.0),
                                                   child: Container(
                                                     width: double.infinity,
                                                     height: MediaQuery.sizeOf(
@@ -4211,14 +4233,14 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                       children: [
                                                         Expanded(
                                                           child: Container(
-                                                            width: 100,
-                                                            height: 100,
+                                                            width: 100.0,
+                                                            height: 100.0,
                                                             decoration:
                                                                 BoxDecoration(),
                                                             child: Padding(
                                                               padding:
                                                                   EdgeInsets
-                                                                      .all(3),
+                                                                      .all(3.0),
                                                               child: Column(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -4233,10 +4255,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            5,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -4258,8 +4280,8 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                   ),
                                                                   Padding(
                                                                     padding:
-                                                                        EdgeInsets
-                                                                            .all(2),
+                                                                        EdgeInsets.all(
+                                                                            2.0),
                                                                     child:
                                                                         TextFormField(
                                                                       controller:
@@ -4380,7 +4402,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                         ),
                                                         Expanded(
                                                           child: Container(
-                                                            width: 100,
+                                                            width: 100.0,
                                                             height: MediaQuery
                                                                         .sizeOf(
                                                                             context)
@@ -4391,7 +4413,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                             child: Padding(
                                                               padding:
                                                                   EdgeInsets
-                                                                      .all(3),
+                                                                      .all(3.0),
                                                               child: Column(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -4490,9 +4512,9 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           (val) =>
                                                                               safeSetState(() => _model.dropDownCustCredValue = val),
                                                                       width:
-                                                                          200,
+                                                                          200.0,
                                                                       height:
-                                                                          50,
+                                                                          50.0,
                                                                       textStyle: FlutterFlowTheme.of(
                                                                               context)
                                                                           .titleSmall
@@ -4511,26 +4533,25 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         size:
-                                                                            14,
+                                                                            14.0,
                                                                       ),
                                                                       fillColor:
                                                                           FlutterFlowTheme.of(context)
                                                                               .secondaryBackground,
                                                                       elevation:
-                                                                          2,
+                                                                          2.0,
                                                                       borderColor:
                                                                           Colors
                                                                               .transparent,
                                                                       borderWidth:
-                                                                          0,
+                                                                          0.0,
                                                                       borderRadius:
-                                                                          0,
-                                                                      margin: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              5,
-                                                                              4,
-                                                                              5,
-                                                                              4),
+                                                                          0.0,
+                                                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                                                          5.0,
+                                                                          4.0,
+                                                                          5.0,
+                                                                          4.0),
                                                                       hidesUnderline:
                                                                           true,
                                                                       isSearchable:
@@ -4549,7 +4570,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsets.all(3),
+                                                  padding: EdgeInsets.all(3.0),
                                                   child: Container(
                                                     width: double.infinity,
                                                     height: MediaQuery.sizeOf(
@@ -4561,7 +4582,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0, 0, 0, 5),
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  5.0),
                                                       child: Row(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -4693,22 +4717,22 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                             ),
                                                             options:
                                                                 FFButtonOptions(
-                                                              width: 120,
-                                                              height: 40,
+                                                              width: 120.0,
+                                                              height: 40.0,
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          0,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                               iconPadding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          0,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .secondary,
@@ -4729,15 +4753,15 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         .containsKey(
                                                                             FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                   ),
-                                                              elevation: 2,
+                                                              elevation: 2.0,
                                                               borderSide:
                                                                   BorderSide(
-                                                                width: 1,
+                                                                width: 1.0,
                                                               ),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          0),
+                                                                          0.0),
                                                             ),
                                                           ),
                                                           FFButtonWidget(
@@ -4969,22 +4993,22 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                             ),
                                                             options:
                                                                 FFButtonOptions(
-                                                              width: 120,
-                                                              height: 40,
+                                                              width: 120.0,
+                                                              height: 40.0,
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          0,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                               iconPadding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          0,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .secondary,
@@ -5005,17 +5029,17 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         .containsKey(
                                                                             FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                   ),
-                                                              elevation: 2,
+                                                              elevation: 2.0,
                                                               borderSide:
                                                                   BorderSide(
                                                                 color: Colors
                                                                     .transparent,
-                                                                width: 1,
+                                                                width: 1.0,
                                                               ),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          0),
+                                                                          0.0),
                                                             ),
                                                           ),
                                                         ],
@@ -5030,12 +5054,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                       ),
                                       Expanded(
                                         child: Padding(
-                                          padding: EdgeInsets.all(3),
+                                          padding: EdgeInsets.all(3.0),
                                           child: Container(
-                                            width: 100,
+                                            width: 100.0,
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
-                                                1,
+                                                1.0,
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -5057,15 +5081,15 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                 if (!snapshot.hasData) {
                                                   return Center(
                                                     child: SizedBox(
-                                                      width: 40,
-                                                      height: 40,
+                                                      width: 40.0,
+                                                      height: 40.0,
                                                       child:
                                                           SpinKitFadingCircle(
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primary,
-                                                        size: 40,
+                                                        size: 40.0,
                                                       ),
                                                     ),
                                                   );
@@ -5096,7 +5120,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                             listViewIndex];
                                                     return Padding(
                                                       padding:
-                                                          EdgeInsets.all(3),
+                                                          EdgeInsets.all(3.0),
                                                       child: StreamBuilder<
                                                           PartyRecord>(
                                                         stream: PartyRecord
@@ -5110,14 +5134,14 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                               .hasData) {
                                                             return Center(
                                                               child: SizedBox(
-                                                                width: 40,
-                                                                height: 40,
+                                                                width: 40.0,
+                                                                height: 40.0,
                                                                 child:
                                                                     SpinKitFadingCircle(
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primary,
-                                                                  size: 40,
+                                                                  size: 40.0,
                                                                 ),
                                                               ),
                                                             );
@@ -5146,7 +5170,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                       () {});
                                                             },
                                                             child: Container(
-                                                              width: 100,
+                                                              width: 100.0,
                                                               height: MediaQuery
                                                                           .sizeOf(
                                                                               context)
@@ -5166,10 +5190,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            0,
-                                                                            4),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            4.0),
                                                                 child: Column(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -5182,7 +5206,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                       child:
                                                                           Padding(
                                                                         padding:
-                                                                            EdgeInsets.all(2),
+                                                                            EdgeInsets.all(2.0),
                                                                         child:
                                                                             Row(
                                                                           mainAxisSize:
@@ -5191,7 +5215,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                               MainAxisAlignment.end,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 3, 0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
                                                                               child: Text(
                                                                                 valueOrDefault<String>(
                                                                                   dateTimeFormat(
@@ -5209,7 +5233,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                               ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(3, 0, 0, 0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(3.0, 0.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 dateTimeFormat(
                                                                                   "jm",
@@ -5235,10 +5259,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                10,
-                                                                                0,
-                                                                                0,
-                                                                                0),
+                                                                                10.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -5270,10 +5294,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                10,
-                                                                                0,
-                                                                                0,
-                                                                                0),
+                                                                                10.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -5305,10 +5329,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                10,
-                                                                                0,
-                                                                                0,
-                                                                                0),
+                                                                                10.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -5340,10 +5364,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                10,
-                                                                                0,
-                                                                                0,
-                                                                                0),
+                                                                                10.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -5378,10 +5402,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                10,
-                                                                                0,
-                                                                                0,
-                                                                                0),
+                                                                                10.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -5440,12 +5464,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                     children: [
                                       Expanded(
                                         child: Padding(
-                                          padding: EdgeInsets.all(3),
+                                          padding: EdgeInsets.all(3.0),
                                           child: Container(
-                                            width: 100,
+                                            width: 100.0,
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
-                                                1,
+                                                1.0,
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -5463,7 +5487,8 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(3, 10, 3, 3),
+                                                      .fromSTEB(
+                                                          3.0, 10.0, 3.0, 3.0),
                                                   child: Container(
                                                     width: double.infinity,
                                                     height: MediaQuery.sizeOf(
@@ -5473,7 +5498,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                     decoration: BoxDecoration(),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(3),
+                                                          EdgeInsets.all(3.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -5488,10 +5513,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        5,
-                                                                        0,
-                                                                        0,
-                                                                        0),
+                                                                        5.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             child: Text(
                                                               FFLocalizations.of(
                                                                       context)
@@ -5517,7 +5542,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                           Padding(
                                                             padding:
                                                                 EdgeInsets.all(
-                                                                    2),
+                                                                    2.0),
                                                             child:
                                                                 TextFormField(
                                                               controller: _model
@@ -5561,7 +5586,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              0),
+                                                                              0.0),
                                                                 ),
                                                                 focusedBorder:
                                                                     OutlineInputBorder(
@@ -5574,7 +5599,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              0),
+                                                                              0.0),
                                                                 ),
                                                                 errorBorder:
                                                                     OutlineInputBorder(
@@ -5587,7 +5612,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              0),
+                                                                              0.0),
                                                                 ),
                                                                 focusedErrorBorder:
                                                                     OutlineInputBorder(
@@ -5600,7 +5625,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              0),
+                                                                              0.0),
                                                                 ),
                                                               ),
                                                               style: FlutterFlowTheme
@@ -5629,7 +5654,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsets.all(3),
+                                                  padding: EdgeInsets.all(3.0),
                                                   child: Container(
                                                     width: double.infinity,
                                                     height: MediaQuery.sizeOf(
@@ -5643,14 +5668,14 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                       children: [
                                                         Expanded(
                                                           child: Container(
-                                                            width: 100,
-                                                            height: 100,
+                                                            width: 100.0,
+                                                            height: 100.0,
                                                             decoration:
                                                                 BoxDecoration(),
                                                             child: Padding(
                                                               padding:
                                                                   EdgeInsets
-                                                                      .all(3),
+                                                                      .all(3.0),
                                                               child: Column(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -5665,10 +5690,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            5,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -5690,8 +5715,8 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                   ),
                                                                   Padding(
                                                                     padding:
-                                                                        EdgeInsets
-                                                                            .all(2),
+                                                                        EdgeInsets.all(
+                                                                            2.0),
                                                                     child:
                                                                         TextFormField(
                                                                       controller:
@@ -5812,7 +5837,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                         ),
                                                         Expanded(
                                                           child: Container(
-                                                            width: 100,
+                                                            width: 100.0,
                                                             height: MediaQuery
                                                                         .sizeOf(
                                                                             context)
@@ -5823,7 +5848,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                             child: Padding(
                                                               padding:
                                                                   EdgeInsets
-                                                                      .all(3),
+                                                                      .all(3.0),
                                                               child: Column(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -5930,9 +5955,9 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           (val) =>
                                                                               safeSetState(() => _model.dropDownReceivedAmtValue = val),
                                                                       width:
-                                                                          200,
+                                                                          200.0,
                                                                       height:
-                                                                          50,
+                                                                          50.0,
                                                                       textStyle: FlutterFlowTheme.of(
                                                                               context)
                                                                           .titleSmall
@@ -5951,26 +5976,25 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         size:
-                                                                            14,
+                                                                            14.0,
                                                                       ),
                                                                       fillColor:
                                                                           FlutterFlowTheme.of(context)
                                                                               .primaryBackground,
                                                                       elevation:
-                                                                          2,
+                                                                          2.0,
                                                                       borderColor:
                                                                           Colors
                                                                               .transparent,
                                                                       borderWidth:
-                                                                          0,
+                                                                          0.0,
                                                                       borderRadius:
-                                                                          0,
-                                                                      margin: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              5,
-                                                                              4,
-                                                                              5,
-                                                                              4),
+                                                                          0.0,
+                                                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                                                          5.0,
+                                                                          4.0,
+                                                                          5.0,
+                                                                          4.0),
                                                                       hidesUnderline:
                                                                           true,
                                                                       isSearchable:
@@ -5989,7 +6013,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsets.all(3),
+                                                  padding: EdgeInsets.all(3.0),
                                                   child: Container(
                                                     width: double.infinity,
                                                     height: MediaQuery.sizeOf(
@@ -6030,22 +6054,22 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                           ),
                                                           options:
                                                               FFButtonOptions(
-                                                            width: 120,
-                                                            height: 40,
+                                                            width: 120.0,
+                                                            height: 40.0,
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0,
-                                                                        0,
-                                                                        0,
-                                                                        0),
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             iconPadding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0,
-                                                                        0,
-                                                                        0,
-                                                                        0),
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .secondary,
@@ -6067,15 +6091,15 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           .containsKey(
                                                                               FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                     ),
-                                                            elevation: 2,
+                                                            elevation: 2.0,
                                                             borderSide:
                                                                 BorderSide(
-                                                              width: 1,
+                                                              width: 1.0,
                                                             ),
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        0),
+                                                                        0.0),
                                                           ),
                                                         ),
                                                         FFButtonWidget(
@@ -6090,22 +6114,22 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                           ),
                                                           options:
                                                               FFButtonOptions(
-                                                            width: 120,
-                                                            height: 40,
+                                                            width: 120.0,
+                                                            height: 40.0,
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0,
-                                                                        0,
-                                                                        0,
-                                                                        0),
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             iconPadding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0,
-                                                                        0,
-                                                                        0,
-                                                                        0),
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .secondary,
@@ -6127,17 +6151,17 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                           .containsKey(
                                                                               FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                     ),
-                                                            elevation: 2,
+                                                            elevation: 2.0,
                                                             borderSide:
                                                                 BorderSide(
                                                               color: Colors
                                                                   .transparent,
-                                                              width: 1,
+                                                              width: 1.0,
                                                             ),
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        0),
+                                                                        0.0),
                                                           ),
                                                         ),
                                                       ],
@@ -6151,12 +6175,12 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                       ),
                                       Expanded(
                                         child: Padding(
-                                          padding: EdgeInsets.all(3),
+                                          padding: EdgeInsets.all(3.0),
                                           child: Container(
-                                            width: 100,
+                                            width: 100.0,
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
-                                                1,
+                                                1.0,
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -6172,9 +6196,9 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                               scrollDirection: Axis.vertical,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsets.all(3),
+                                                  padding: EdgeInsets.all(3.0),
                                                   child: Container(
-                                                    width: 100,
+                                                    width: 100.0,
                                                     height: MediaQuery.sizeOf(
                                                                 context)
                                                             .height *
@@ -6195,7 +6219,7 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                           child: Padding(
                                                             padding:
                                                                 EdgeInsets.all(
-                                                                    2),
+                                                                    2.0),
                                                             child: Row(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -6207,10 +6231,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          3,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          3.0,
+                                                                          0.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -6233,10 +6257,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          3,
-                                                                          0,
-                                                                          0,
-                                                                          0),
+                                                                          3.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -6270,10 +6294,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            10,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            10.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                 child: Text(
                                                                   FFLocalizations.of(
                                                                           context)
@@ -6327,10 +6351,10 @@ class _PaymentScreenWidgetState extends State<PaymentScreenWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            10,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            10.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                 child: Text(
                                                                   FFLocalizations.of(
                                                                           context)

@@ -50,14 +50,14 @@ class _SystemUpdateWidgetState extends State<SystemUpdateWidget> {
             body: SafeArea(
               top: true,
               child: Padding(
-                padding: EdgeInsets.all(3),
+                padding: EdgeInsets.all(3.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Expanded(
                       flex: 1,
                       child: Container(
-                        width: MediaQuery.sizeOf(context).width,
+                        width: MediaQuery.sizeOf(context).width * 1.0,
                         height: MediaQuery.sizeOf(context).height * 0.12,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).primary,
@@ -70,22 +70,22 @@ class _SystemUpdateWidgetState extends State<SystemUpdateWidget> {
                             Expanded(
                               flex: 1,
                               child: Container(
-                                width: 100,
-                                height: 100,
+                                width: 100.0,
+                                height: 100.0,
                                 decoration: BoxDecoration(),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     FlutterFlowIconButton(
                                       borderColor: Colors.transparent,
-                                      borderRadius: 30,
-                                      borderWidth: 1,
-                                      buttonSize: 60,
+                                      borderRadius: 30.0,
+                                      borderWidth: 1.0,
+                                      buttonSize: 60.0,
                                       icon: Icon(
                                         Icons.chevron_left_sharp,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBtnText,
-                                        size: 26,
+                                        size: 26.0,
                                       ),
                                       onPressed: () async {
                                         context.pushNamed('LoginPage');
@@ -129,10 +129,11 @@ class _SystemUpdateWidgetState extends State<SystemUpdateWidget> {
                     Expanded(
                       flex: 13,
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
                         child: Container(
                           width: double.infinity,
-                          height: 100,
+                          height: 100.0,
                           decoration: BoxDecoration(
                             color:
                                 FlutterFlowTheme.of(context).primaryBackground,
@@ -142,11 +143,11 @@ class _SystemUpdateWidgetState extends State<SystemUpdateWidget> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 40, 0, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 40.0, 0.0, 0.0),
                                 child: Container(
-                                  width: 160,
-                                  height: 160,
+                                  width: 160.0,
+                                  height: 160.0,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
@@ -158,8 +159,8 @@ class _SystemUpdateWidgetState extends State<SystemUpdateWidget> {
                                 ),
                               ),
                               Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 30.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.center,

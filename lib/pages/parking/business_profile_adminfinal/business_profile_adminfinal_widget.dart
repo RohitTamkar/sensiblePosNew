@@ -249,8 +249,8 @@ class _BusinessProfileAdminfinalWidgetState
                 Expanded(
                   flex: 4,
                   child: Container(
-                    width: MediaQuery.sizeOf(context).width,
-                    height: 100,
+                    width: MediaQuery.sizeOf(context).width * 1.0,
+                    height: 100.0,
                     decoration: BoxDecoration(),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -258,20 +258,21 @@ class _BusinessProfileAdminfinalWidgetState
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              20.0, 0.0, 20.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 30,
-                                borderWidth: 1,
-                                buttonSize: 45,
+                                borderRadius: 30.0,
+                                borderWidth: 1.0,
+                                buttonSize: 45.0,
                                 icon: Icon(
                                   Icons.chevron_left,
                                   color: FlutterFlowTheme.of(context).lineColor,
-                                  size: 24,
+                                  size: 24.0,
                                 ),
                                 onPressed: () async {
                                   context.pushNamed('account');
@@ -297,13 +298,13 @@ class _BusinessProfileAdminfinalWidgetState
                               ),
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 30,
-                                borderWidth: 1,
-                                buttonSize: 45,
+                                borderRadius: 30.0,
+                                borderWidth: 1.0,
+                                buttonSize: 45.0,
                                 icon: Icon(
                                   Icons.chevron_left,
                                   color: Colors.transparent,
-                                  size: 30,
+                                  size: 30.0,
                                 ),
                                 onPressed: () {
                                   print('IconButton pressed ...');
@@ -332,11 +333,11 @@ class _BusinessProfileAdminfinalWidgetState
                       if (!snapshot.hasData) {
                         return Center(
                           child: SizedBox(
-                            width: 40,
-                            height: 40,
+                            width: 40.0,
+                            height: 40.0,
                             child: SpinKitFadingCircle(
                               color: FlutterFlowTheme.of(context).primary,
-                              size: 40,
+                              size: 40.0,
                             ),
                           ),
                         );
@@ -349,16 +350,16 @@ class _BusinessProfileAdminfinalWidgetState
                               : null;
 
                       return Container(
-                        width: MediaQuery.sizeOf(context).width,
+                        width: MediaQuery.sizeOf(context).width * 1.0,
                         height: MediaQuery.sizeOf(context).height * 0.8,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context)
                               .parkingPrimaryBackground,
                           borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(0),
-                            bottomRight: Radius.circular(0),
-                            topLeft: Radius.circular(0),
-                            topRight: Radius.circular(0),
+                            bottomLeft: Radius.circular(0.0),
+                            bottomRight: Radius.circular(0.0),
+                            topLeft: Radius.circular(0.0),
+                            topRight: Radius.circular(0.0),
                           ),
                         ),
                         child: Container(
@@ -369,15 +370,15 @@ class _BusinessProfileAdminfinalWidgetState
                               Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(0),
-                                    bottomRight: Radius.circular(0),
-                                    topLeft: Radius.circular(0),
-                                    topRight: Radius.circular(0),
+                                    bottomLeft: Radius.circular(0.0),
+                                    bottomRight: Radius.circular(0.0),
+                                    topLeft: Radius.circular(0.0),
+                                    topRight: Radius.circular(0.0),
                                   ),
                                 ),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 15, 0, 10),
+                                      0.0, 15.0, 0.0, 10.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:
@@ -385,7 +386,7 @@ class _BusinessProfileAdminfinalWidgetState
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 0, 10),
+                                            0.0, 0.0, 0.0, 10.0),
                                         child: Container(
                                           width:
                                               MediaQuery.sizeOf(context).width *
@@ -397,12 +398,12 @@ class _BusinessProfileAdminfinalWidgetState
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
                                             borderRadius:
-                                                BorderRadius.circular(5),
+                                                BorderRadius.circular(5.0),
                                           ),
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    5, 0, 5, 0),
+                                                    5.0, 0.0, 5.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -411,10 +412,11 @@ class _BusinessProfileAdminfinalWidgetState
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(0, 0, 3, 0),
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 3.0, 0.0),
                                                   child: Container(
-                                                    width: 50,
-                                                    height: 50,
+                                                    width: 50.0,
+                                                    height: 50.0,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
@@ -426,7 +428,7 @@ class _BusinessProfileAdminfinalWidgetState
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primaryText,
-                                                      size: 30,
+                                                      size: 30.0,
                                                     ),
                                                   ),
                                                 ),
@@ -456,8 +458,8 @@ class _BusinessProfileAdminfinalWidgetState
                                                     children: [
                                                       Expanded(
                                                         child: Wrap(
-                                                          spacing: 0,
-                                                          runSpacing: 0,
+                                                          spacing: 0.0,
+                                                          runSpacing: 0.0,
                                                           alignment:
                                                               WrapAlignment
                                                                   .start,
@@ -489,10 +491,10 @@ class _BusinessProfileAdminfinalWidgetState
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          0,
-                                                                          5),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0),
                                                                   child:
                                                                       AutoSizeText(
                                                                     valueOrDefault<
@@ -563,7 +565,7 @@ class _BusinessProfileAdminfinalWidgetState
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 0, 5),
+                                            0.0, 0.0, 0.0, 5.0),
                                         child: Container(
                                           width:
                                               MediaQuery.sizeOf(context).width *
@@ -718,7 +720,7 @@ class _BusinessProfileAdminfinalWidgetState
                                                                 context)
                                                             .width *
                                                         0.3,
-                                                    height: 100,
+                                                    height: 100.0,
                                                     decoration: BoxDecoration(
                                                       color:
                                                           FlutterFlowTheme.of(
@@ -726,7 +728,7 @@ class _BusinessProfileAdminfinalWidgetState
                                                               .tertiary,
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              5),
+                                                              5.0),
                                                     ),
                                                     child: Stack(
                                                       children: [
@@ -743,7 +745,7 @@ class _BusinessProfileAdminfinalWidgetState
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          0),
+                                                                          0.0),
                                                             ),
                                                           ).animateOnActionTrigger(
                                                               animationsMap[
@@ -753,7 +755,7 @@ class _BusinessProfileAdminfinalWidgetState
                                                         Align(
                                                           alignment:
                                                               AlignmentDirectional(
-                                                                  0, 0),
+                                                                  0.0, 0.0),
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -803,7 +805,7 @@ class _BusinessProfileAdminfinalWidgetState
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 0, 4),
+                                            0.0, 0.0, 0.0, 4.0),
                                         child: Container(
                                           width:
                                               MediaQuery.sizeOf(context).width *
@@ -813,7 +815,7 @@ class _BusinessProfileAdminfinalWidgetState
                                               0.16,
                                           decoration: BoxDecoration(
                                             borderRadius:
-                                                BorderRadius.circular(15),
+                                                BorderRadius.circular(15.0),
                                           ),
                                           child: StreamBuilder<
                                               List<BusinesssMasterRecord>>(
@@ -833,14 +835,14 @@ class _BusinessProfileAdminfinalWidgetState
                                               if (!snapshot.hasData) {
                                                 return Center(
                                                   child: SizedBox(
-                                                    width: 40,
-                                                    height: 40,
+                                                    width: 40.0,
+                                                    height: 40.0,
                                                     child: SpinKitFadingCircle(
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primary,
-                                                      size: 40,
+                                                      size: 40.0,
                                                     ),
                                                   ),
                                                 );
@@ -865,8 +867,8 @@ class _BusinessProfileAdminfinalWidgetState
                                                   return Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                0, 0, 12, 0),
+                                                            .fromSTEB(0.0, 0.0,
+                                                                12.0, 0.0),
                                                     child: InkWell(
                                                       splashColor:
                                                           Colors.transparent,
@@ -885,7 +887,8 @@ class _BusinessProfileAdminfinalWidgetState
                                                             RoundedRectangleBorder(
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(15),
+                                                                  .circular(
+                                                                      15.0),
                                                         ),
                                                         child: Container(
                                                           width:
@@ -906,7 +909,7 @@ class _BusinessProfileAdminfinalWidgetState
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        15),
+                                                                        15.0),
                                                             border: Border.all(
                                                               color: listViewBusinesssMasterRecord
                                                                           .id ==
@@ -918,17 +921,17 @@ class _BusinessProfileAdminfinalWidgetState
                                                                   : FlutterFlowTheme.of(
                                                                           context)
                                                                       .customColor2,
-                                                              width: 6,
+                                                              width: 6.0,
                                                             ),
                                                           ),
                                                           child: Padding(
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        8,
-                                                                        8,
-                                                                        8,
-                                                                        5),
+                                                                        8.0,
+                                                                        8.0,
+                                                                        8.0,
+                                                                        5.0),
                                                             child: Column(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -982,18 +985,18 @@ class _BusinessProfileAdminfinalWidgetState
                                                                       Colors
                                                                           .transparent,
                                                                   borderRadius:
-                                                                      30,
+                                                                      30.0,
                                                                   borderWidth:
-                                                                      1,
+                                                                      1.0,
                                                                   buttonSize:
-                                                                      40,
+                                                                      40.0,
                                                                   icon: Icon(
                                                                     Icons
                                                                         .mode_edit,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .tertiary,
-                                                                    size: 21,
+                                                                    size: 21.0,
                                                                   ),
                                                                   onPressed:
                                                                       () async {
@@ -1052,7 +1055,7 @@ class _BusinessProfileAdminfinalWidgetState
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 0, 5),
+                                            0.0, 0.0, 0.0, 5.0),
                                         child: Container(
                                           width:
                                               MediaQuery.sizeOf(context).width *
@@ -1095,18 +1098,19 @@ class _BusinessProfileAdminfinalWidgetState
                                       Expanded(
                                         child: Container(
                                           width:
-                                              MediaQuery.sizeOf(context).width,
+                                              MediaQuery.sizeOf(context).width *
+                                                  1.0,
                                           height: MediaQuery.sizeOf(context)
                                                   .height *
                                               0.38,
                                           decoration: BoxDecoration(
                                             borderRadius:
-                                                BorderRadius.circular(5),
+                                                BorderRadius.circular(5.0),
                                           ),
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    15, 0, 15, 0),
+                                                    15.0, 0.0, 15.0, 0.0),
                                             child: StreamBuilder<
                                                 List<OutletRecord>>(
                                               stream: queryOutletRecord(
@@ -1130,15 +1134,15 @@ class _BusinessProfileAdminfinalWidgetState
                                                 if (!snapshot.hasData) {
                                                   return Center(
                                                     child: SizedBox(
-                                                      width: 40,
-                                                      height: 40,
+                                                      width: 40.0,
+                                                      height: 40.0,
                                                       child:
                                                           SpinKitFadingCircle(
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primary,
-                                                        size: 40,
+                                                        size: 40.0,
                                                       ),
                                                     ),
                                                   );
@@ -1169,10 +1173,13 @@ class _BusinessProfileAdminfinalWidgetState
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0, 0, 0, 20),
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  20.0),
                                                       child: ClipRRect(
                                                         child: Container(
-                                                          width: 100,
+                                                          width: 100.0,
                                                           height:
                                                               MediaQuery.sizeOf(
                                                                           context)
@@ -1194,7 +1201,7 @@ class _BusinessProfileAdminfinalWidgetState
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              0),
+                                                                              0.0),
                                                                 ),
                                                               ).animateOnActionTrigger(
                                                                   animationsMap[
@@ -1205,10 +1212,10 @@ class _BusinessProfileAdminfinalWidgetState
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            17,
-                                                                            0,
-                                                                            0),
+                                                                            0.0,
+                                                                            17.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                 child: InkWell(
                                                                   splashColor:
                                                                       Colors
@@ -1351,7 +1358,7 @@ class _BusinessProfileAdminfinalWidgetState
                                                                           .secondaryBackground,
                                                                       borderRadius:
                                                                           BorderRadius.circular(
-                                                                              15),
+                                                                              15.0),
                                                                     ),
                                                                     child: Row(
                                                                       mainAxisSize:
@@ -1372,7 +1379,7 @@ class _BusinessProfileAdminfinalWidgetState
                                                                                 BoxDecoration(),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                                                                               child: Row(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 crossAxisAlignment: CrossAxisAlignment.end,
@@ -1382,7 +1389,7 @@ class _BusinessProfileAdminfinalWidgetState
                                                                                     height: MediaQuery.sizeOf(context).height * 0.15,
                                                                                     decoration: BoxDecoration(),
                                                                                     child: Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
                                                                                       child: Column(
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -1427,7 +1434,7 @@ class _BusinessProfileAdminfinalWidgetState
                                                                                     height: MediaQuery.sizeOf(context).height * 0.15,
                                                                                     decoration: BoxDecoration(),
                                                                                     child: Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
                                                                                       child: Column(
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -1494,13 +1501,13 @@ class _BusinessProfileAdminfinalWidgetState
                                                                                 MediaQuery.sizeOf(context).height * 0.15,
                                                                             decoration:
                                                                                 BoxDecoration(
-                                                                              borderRadius: BorderRadius.circular(0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                             ),
                                                                             child:
                                                                                 Icon(
                                                                               Icons.navigate_next_sharp,
                                                                               color: Color(0xFF4C5135),
-                                                                              size: 24,
+                                                                              size: 24.0,
                                                                             ),
                                                                           ),
                                                                         ),
@@ -1512,16 +1519,18 @@ class _BusinessProfileAdminfinalWidgetState
                                                               Align(
                                                                 alignment:
                                                                     AlignmentDirectional(
-                                                                        0, -1),
+                                                                        0.0,
+                                                                        -1.0),
                                                                 child: Material(
                                                                   color: Colors
                                                                       .transparent,
-                                                                  elevation: 5,
+                                                                  elevation:
+                                                                      5.0,
                                                                   shape:
                                                                       RoundedRectangleBorder(
                                                                     borderRadius:
-                                                                        BorderRadius
-                                                                            .circular(5),
+                                                                        BorderRadius.circular(
+                                                                            5.0),
                                                                   ),
                                                                   child:
                                                                       Container(
@@ -1538,7 +1547,7 @@ class _BusinessProfileAdminfinalWidgetState
                                                                           .secondaryBackground,
                                                                       borderRadius:
                                                                           BorderRadius.circular(
-                                                                              5),
+                                                                              5.0),
                                                                       border:
                                                                           Border
                                                                               .all(
@@ -1548,12 +1557,11 @@ class _BusinessProfileAdminfinalWidgetState
                                                                     ),
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              7,
-                                                                              0,
-                                                                              7,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          7.0,
+                                                                          0.0,
+                                                                          7.0,
+                                                                          0.0),
                                                                       child:
                                                                           Row(
                                                                         mainAxisSize:
@@ -1568,7 +1576,7 @@ class _BusinessProfileAdminfinalWidgetState
                                                                               mainAxisAlignment: MainAxisAlignment.start,
                                                                               children: [
                                                                                 Align(
-                                                                                  alignment: AlignmentDirectional(0.92, 0),
+                                                                                  alignment: AlignmentDirectional(0.92, 0.0),
                                                                                   child: Container(
                                                                                     width: MediaQuery.sizeOf(context).width * 0.04,
                                                                                     height: MediaQuery.sizeOf(context).width * 0.04,
@@ -1579,9 +1587,9 @@ class _BusinessProfileAdminfinalWidgetState
                                                                                   ),
                                                                                 ),
                                                                                 Align(
-                                                                                  alignment: AlignmentDirectional(0, 0),
+                                                                                  alignment: AlignmentDirectional(0.0, 0.0),
                                                                                   child: Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                                                                                     child: AutoSizeText(
                                                                                       listViewOutletRecord.name,
                                                                                       textAlign: TextAlign.center,
@@ -1600,16 +1608,16 @@ class _BusinessProfileAdminfinalWidgetState
                                                                             borderColor:
                                                                                 Colors.transparent,
                                                                             borderRadius:
-                                                                                30,
+                                                                                30.0,
                                                                             borderWidth:
-                                                                                1,
+                                                                                1.0,
                                                                             buttonSize:
-                                                                                35,
+                                                                                35.0,
                                                                             icon:
                                                                                 Icon(
                                                                               Icons.mode_edit,
                                                                               color: FlutterFlowTheme.of(context).tertiary,
-                                                                              size: 18,
+                                                                              size: 18.0,
                                                                             ),
                                                                             onPressed:
                                                                                 () async {
@@ -1704,7 +1712,7 @@ class _BusinessProfileAdminfinalWidgetState
                                                       context)
                                                   .parkingSecondaryBackground,
                                               borderRadius:
-                                                  BorderRadius.circular(5),
+                                                  BorderRadius.circular(5.0),
                                             ),
                                             child: Stack(
                                               children: [
@@ -1715,7 +1723,7 @@ class _BusinessProfileAdminfinalWidgetState
                                                     color: Color(0x4C989FDE),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            0),
+                                                            0.0),
                                                   ),
                                                 ).animateOnActionTrigger(
                                                     animationsMap[
@@ -1725,9 +1733,10 @@ class _BusinessProfileAdminfinalWidgetState
                                                 Align(
                                                   alignment:
                                                       AlignmentDirectional(
-                                                          0, 0),
+                                                          0.0, 0.0),
                                                   child: Padding(
-                                                    padding: EdgeInsets.all(5),
+                                                    padding:
+                                                        EdgeInsets.all(5.0),
                                                     child: Column(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -1751,7 +1760,7 @@ class _BusinessProfileAdminfinalWidgetState
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBtnText,
-                                                                fontSize: 15,
+                                                                fontSize: 15.0,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:

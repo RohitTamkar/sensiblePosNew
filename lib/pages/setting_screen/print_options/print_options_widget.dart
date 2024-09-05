@@ -58,14 +58,14 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Padding(
-              padding: EdgeInsets.all(3),
+              padding: EdgeInsets.all(3.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Expanded(
                     flex: 1,
                     child: Container(
-                      width: MediaQuery.sizeOf(context).width,
+                      width: MediaQuery.sizeOf(context).width * 1.0,
                       height: MediaQuery.sizeOf(context).height * 0.12,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primary,
@@ -78,22 +78,22 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                           Expanded(
                             flex: 1,
                             child: Container(
-                              width: 100,
-                              height: 100,
+                              width: 100.0,
+                              height: 100.0,
                               decoration: BoxDecoration(),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   FlutterFlowIconButton(
                                     borderColor: Colors.transparent,
-                                    borderRadius: 30,
-                                    borderWidth: 1,
-                                    buttonSize: 60,
+                                    borderRadius: 30.0,
+                                    borderWidth: 1.0,
+                                    buttonSize: 60.0,
                                     icon: Icon(
                                       Icons.chevron_left_sharp,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBtnText,
-                                      size: 26,
+                                      size: 26.0,
                                     ),
                                     onPressed: () async {
                                       context.pushNamed('SettingHomepage');
@@ -136,7 +136,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                   Expanded(
                     flex: 13,
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
                       child: Stack(
                         children: [
                           StreamBuilder<List<PrintSettingsRecord>>(
@@ -149,12 +150,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                               if (!snapshot.hasData) {
                                 return Center(
                                   child: SizedBox(
-                                    width: 40,
-                                    height: 40,
+                                    width: 40.0,
+                                    height: 40.0,
                                     child: SpinKitFadingCircle(
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      size: 40,
+                                      size: 40.0,
                                     ),
                                   ),
                                 );
@@ -174,7 +175,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                       : null;
 
                               return Container(
-                                width: MediaQuery.sizeOf(context).width,
+                                width: MediaQuery.sizeOf(context).width * 1.0,
                                 decoration: BoxDecoration(),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -193,7 +194,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    7, 7, 15, 7),
+                                                    7.0, 7.0, 15.0, 7.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
                                                 await containerMainPrintSettingsRecord!
@@ -271,16 +272,18 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                               ),
                                               icon: Icon(
                                                 Icons.track_changes,
-                                                size: 15,
+                                                size: 15.0,
                                               ),
                                               options: FFButtonOptions(
-                                                width: 150,
-                                                height: 40,
+                                                width: 150.0,
+                                                height: 40.0,
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(0, 0, 0, 0),
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 0.0),
                                                 iconPadding:
                                                     EdgeInsetsDirectional
-                                                        .fromSTEB(0, 0, 0, 0),
+                                                        .fromSTEB(
+                                                            0.0, 0.0, 0.0, 0.0),
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondary,
@@ -303,13 +306,13 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                           context)
                                                                       .titleSmallFamily),
                                                         ),
-                                                elevation: 5,
+                                                elevation: 5.0,
                                                 borderSide: BorderSide(
                                                   color: Colors.transparent,
-                                                  width: 1,
+                                                  width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(0),
+                                                    BorderRadius.circular(0.0),
                                               ),
                                             ),
                                           ),
@@ -350,7 +353,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                         header: Padding(
                                                           padding:
                                                               EdgeInsets.all(
-                                                                  15),
+                                                                  15.0),
                                                           child: Text(
                                                             FFLocalizations.of(
                                                                     context)
@@ -427,8 +430,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                               ),
                                                               Divider(
                                                                 thickness: 0.5,
-                                                                indent: 10,
-                                                                endIndent: 10,
+                                                                indent: 10.0,
+                                                                endIndent: 10.0,
                                                                 color: Color(
                                                                     0xFFD4D1D1),
                                                               ),
@@ -470,8 +473,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                               ),
                                                               Divider(
                                                                 thickness: 0.5,
-                                                                indent: 10,
-                                                                endIndent: 10,
+                                                                indent: 10.0,
+                                                                endIndent: 10.0,
                                                                 color: Color(
                                                                     0xFFD4D1D1),
                                                               ),
@@ -513,8 +516,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                               ),
                                                               Divider(
                                                                 thickness: 0.5,
-                                                                indent: 10,
-                                                                endIndent: 10,
+                                                                indent: 10.0,
+                                                                endIndent: 10.0,
                                                                 color: Color(
                                                                     0xFFD4D1D1),
                                                               ),
@@ -556,8 +559,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                               ),
                                                               Divider(
                                                                 thickness: 0.5,
-                                                                indent: 10,
-                                                                endIndent: 10,
+                                                                indent: 10.0,
+                                                                endIndent: 10.0,
                                                                 color: Color(
                                                                     0xFFD4D1D1),
                                                               ),
@@ -631,7 +634,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                         header: Padding(
                                                           padding:
                                                               EdgeInsets.all(
-                                                                  15),
+                                                                  15.0),
                                                           child: Text(
                                                             FFLocalizations.of(
                                                                     context)
@@ -708,8 +711,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                               ),
                                                               Divider(
                                                                 thickness: 0.5,
-                                                                indent: 10,
-                                                                endIndent: 10,
+                                                                indent: 10.0,
+                                                                endIndent: 10.0,
                                                                 color: Color(
                                                                     0xFFD4D1D1),
                                                               ),
@@ -791,7 +794,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                             ),
                                             Container(
                                               width: MediaQuery.sizeOf(context)
-                                                  .width,
+                                                      .width *
+                                                  1.0,
                                               decoration: BoxDecoration(
                                                 color: Color(0xFFEEEEEE),
                                               ),
@@ -855,8 +859,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10,
-                                                              endIndent: 10,
+                                                              indent: 10.0,
+                                                              endIndent: 10.0,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -899,8 +903,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10,
-                                                              endIndent: 10,
+                                                              indent: 10.0,
+                                                              endIndent: 10.0,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -943,8 +947,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10,
-                                                              endIndent: 10,
+                                                              indent: 10.0,
+                                                              endIndent: 10.0,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -987,8 +991,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10,
-                                                              endIndent: 10,
+                                                              indent: 10.0,
+                                                              endIndent: 10.0,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1031,8 +1035,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10,
-                                                              endIndent: 10,
+                                                              indent: 10.0,
+                                                              endIndent: 10.0,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1075,8 +1079,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10,
-                                                              endIndent: 10,
+                                                              indent: 10.0,
+                                                              endIndent: 10.0,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1119,8 +1123,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10,
-                                                              endIndent: 10,
+                                                              indent: 10.0,
+                                                              endIndent: 10.0,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1165,13 +1169,13 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            20),
+                                                                            20.0),
                                                               ),
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10,
-                                                              endIndent: 10,
+                                                              indent: 10.0,
+                                                              endIndent: 10.0,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1214,8 +1218,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10,
-                                                              endIndent: 10,
+                                                              indent: 10.0,
+                                                              endIndent: 10.0,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1258,8 +1262,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10,
-                                                              endIndent: 10,
+                                                              indent: 10.0,
+                                                              endIndent: 10.0,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1304,13 +1308,13 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            20),
+                                                                            20.0),
                                                               ),
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10,
-                                                              endIndent: 10,
+                                                              indent: 10.0,
+                                                              endIndent: 10.0,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1353,8 +1357,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10,
-                                                              endIndent: 10,
+                                                              indent: 10.0,
+                                                              endIndent: 10.0,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1397,8 +1401,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10,
-                                                              endIndent: 10,
+                                                              indent: 10.0,
+                                                              endIndent: 10.0,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1441,8 +1445,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10,
-                                                              endIndent: 10,
+                                                              indent: 10.0,
+                                                              endIndent: 10.0,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1485,8 +1489,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10,
-                                                              endIndent: 10,
+                                                              indent: 10.0,
+                                                              endIndent: 10.0,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1531,13 +1535,13 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            20),
+                                                                            20.0),
                                                               ),
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10,
-                                                              endIndent: 10,
+                                                              indent: 10.0,
+                                                              endIndent: 10.0,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1580,8 +1584,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10,
-                                                              endIndent: 10,
+                                                              indent: 10.0,
+                                                              endIndent: 10.0,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1624,8 +1628,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10,
-                                                              endIndent: 10,
+                                                              indent: 10.0,
+                                                              endIndent: 10.0,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1670,13 +1674,13 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            20),
+                                                                            20.0),
                                                               ),
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10,
-                                                              endIndent: 10,
+                                                              indent: 10.0,
+                                                              endIndent: 10.0,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1721,13 +1725,13 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            20),
+                                                                            20.0),
                                                               ),
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10,
-                                                              endIndent: 10,
+                                                              indent: 10.0,
+                                                              endIndent: 10.0,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1772,13 +1776,13 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            20),
+                                                                            20.0),
                                                               ),
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10,
-                                                              endIndent: 10,
+                                                              indent: 10.0,
+                                                              endIndent: 10.0,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1823,13 +1827,13 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            20),
+                                                                            20.0),
                                                               ),
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10,
-                                                              endIndent: 10,
+                                                              indent: 10.0,
+                                                              endIndent: 10.0,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1874,13 +1878,13 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            20),
+                                                                            20.0),
                                                               ),
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10,
-                                                              endIndent: 10,
+                                                              indent: 10.0,
+                                                              endIndent: 10.0,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1925,7 +1929,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            20),
+                                                                            20.0),
                                                               ),
                                                             ),
                                                           ],
@@ -2017,13 +2021,13 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                       'kkhd51p8' /* Generate Default Setting */,
                                     ),
                                     options: FFButtonOptions(
-                                      width: 210,
-                                      height: 40,
+                                      width: 210.0,
+                                      height: 40.0,
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 0, 0),
+                                          0.0, 0.0, 0.0, 0.0),
                                       iconPadding:
                                           EdgeInsetsDirectional.fromSTEB(
-                                              0, 0, 0, 0),
+                                              0.0, 0.0, 0.0, 0.0),
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBackground,
                                       textStyle: FlutterFlowTheme.of(context)
@@ -2040,12 +2044,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .titleMediumFamily),
                                           ),
-                                      elevation: 3,
+                                      elevation: 3.0,
                                       borderSide: BorderSide(
                                         color: Colors.transparent,
-                                        width: 1,
+                                        width: 1.0,
                                       ),
-                                      borderRadius: BorderRadius.circular(8),
+                                      borderRadius: BorderRadius.circular(8.0),
                                     ),
                                   ),
                                 ],

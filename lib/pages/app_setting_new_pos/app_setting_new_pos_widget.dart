@@ -60,7 +60,7 @@ class _AppSettingNewPosWidgetState extends State<AppSettingNewPosWidget> {
                 Expanded(
                   flex: 1,
                   child: Container(
-                    width: MediaQuery.sizeOf(context).width,
+                    width: MediaQuery.sizeOf(context).width * 1.0,
                     height: MediaQuery.sizeOf(context).height * 0.12,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).primary,
@@ -73,22 +73,22 @@ class _AppSettingNewPosWidgetState extends State<AppSettingNewPosWidget> {
                         Expanded(
                           flex: 1,
                           child: Container(
-                            width: 100,
-                            height: 100,
+                            width: 100.0,
+                            height: 100.0,
                             decoration: BoxDecoration(),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
-                                  borderRadius: 30,
-                                  borderWidth: 1,
-                                  buttonSize: 60,
+                                  borderRadius: 30.0,
+                                  borderWidth: 1.0,
+                                  buttonSize: 60.0,
                                   icon: Icon(
                                     Icons.chevron_left_sharp,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBtnText,
-                                    size: 26,
+                                    size: 26.0,
                                   ),
                                   onPressed: () async {
                                     context.pop();
@@ -147,11 +147,11 @@ class _AppSettingNewPosWidgetState extends State<AppSettingNewPosWidget> {
                           if (!snapshot.hasData) {
                             return Center(
                               child: SizedBox(
-                                width: 40,
-                                height: 40,
+                                width: 40.0,
+                                height: 40.0,
                                 child: SpinKitFadingCircle(
                                   color: FlutterFlowTheme.of(context).primary,
-                                  size: 40,
+                                  size: 40.0,
                                 ),
                               ),
                             );
@@ -180,13 +180,13 @@ class _AppSettingNewPosWidgetState extends State<AppSettingNewPosWidget> {
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 3, 0, 0),
+                                      0.0, 3.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Expanded(
                                         child: Container(
-                                          width: 100,
+                                          width: 100.0,
                                           height: MediaQuery.sizeOf(context)
                                                   .height *
                                               0.78,
@@ -197,7 +197,7 @@ class _AppSettingNewPosWidgetState extends State<AppSettingNewPosWidget> {
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    5, 0, 10, 0),
+                                                    5.0, 0.0, 10.0, 0.0),
                                             child: Builder(
                                               builder: (context) {
                                                 final settinglist =
@@ -218,7 +218,7 @@ class _AppSettingNewPosWidgetState extends State<AppSettingNewPosWidget> {
                                                             settinglistIndex];
                                                     return Padding(
                                                       padding:
-                                                          EdgeInsets.all(5),
+                                                          EdgeInsets.all(5.0),
                                                       child: Container(
                                                         decoration:
                                                             BoxDecoration(
@@ -227,23 +227,24 @@ class _AppSettingNewPosWidgetState extends State<AppSettingNewPosWidget> {
                                                               .secondaryBackground,
                                                           boxShadow: [
                                                             BoxShadow(
-                                                              blurRadius: 5,
+                                                              blurRadius: 5.0,
                                                               color: Color(
                                                                   0x33000000),
                                                               offset: Offset(
-                                                                1,
-                                                                1,
+                                                                1.0,
+                                                                1.0,
                                                               ),
                                                             )
                                                           ],
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(10),
+                                                                  .circular(
+                                                                      10.0),
                                                         ),
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsets.all(
-                                                                  10),
+                                                                  10.0),
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -283,11 +284,11 @@ class _AppSettingNewPosWidgetState extends State<AppSettingNewPosWidget> {
                                           .secondaryBackground,
                                       boxShadow: [
                                         BoxShadow(
-                                          blurRadius: 6,
+                                          blurRadius: 6.0,
                                           color: Color(0x58000000),
                                           offset: Offset(
-                                            0,
-                                            -1,
+                                            0.0,
+                                            -1.0,
                                           ),
                                         )
                                       ],
@@ -351,10 +352,10 @@ class _AppSettingNewPosWidgetState extends State<AppSettingNewPosWidget> {
                                             'ac7fz2a0' /* Apply Changes */,
                                           ),
                                           options: FFButtonOptions(
-                                            padding: EdgeInsets.all(20),
+                                            padding: EdgeInsets.all(20.0),
                                             iconPadding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 0, 0),
+                                                    0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
                                             textStyle:
@@ -376,13 +377,13 @@ class _AppSettingNewPosWidgetState extends State<AppSettingNewPosWidget> {
                                                                       context)
                                                                   .titleSmallFamily),
                                                     ),
-                                            elevation: 2,
+                                            elevation: 2.0,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
-                                              width: 1,
+                                              width: 1.0,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(8),
+                                                BorderRadius.circular(8.0),
                                           ),
                                         ),
                                       ],

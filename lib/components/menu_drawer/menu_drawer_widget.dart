@@ -82,14 +82,14 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                     color: FlutterFlowTheme.of(context).customColor2,
                   ),
                   child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 2, 0, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 0.0, 0.0),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 1.5),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 1.5),
                             child: InkWell(
                               splashColor: Colors.transparent,
                               focusColor: Colors.transparent,
@@ -108,19 +108,19 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                 ),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      2, 6, 2, 6),
+                                      2.0, 6.0, 2.0, 6.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 0, 6),
+                                            0.0, 0.0, 0.0, 6.0),
                                         child: Icon(
                                           Icons.receipt,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
-                                          size: 20,
+                                          size: 20.0,
                                         ),
                                       ),
                                       Text(
@@ -151,8 +151,8 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                           ),
                           if (false)
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 1.5),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 1.5),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
@@ -171,7 +171,7 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        2, 6, 2, 6),
+                                        2.0, 6.0, 2.0, 6.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -180,12 +180,12 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 0, 6),
+                                                  0.0, 0.0, 0.0, 6.0),
                                           child: Icon(
                                             Icons.receipt,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            size: 20,
+                                            size: 20.0,
                                           ),
                                         ),
                                         Text(
@@ -216,8 +216,8 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                             ),
                           if (false)
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 1.5),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 1.5),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
@@ -236,7 +236,7 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        2, 6, 2, 6),
+                                        2.0, 6.0, 2.0, 6.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -245,12 +245,12 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 0, 6),
+                                                  0.0, 0.0, 0.0, 6.0),
                                           child: Icon(
                                             Icons.receipt,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            size: 20,
+                                            size: 20.0,
                                           ),
                                         ),
                                         Text(
@@ -281,8 +281,8 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                             ),
                           if (false)
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 1.5),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 1.5),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
@@ -301,7 +301,7 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        2, 6, 2, 6),
+                                        2.0, 6.0, 2.0, 6.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -310,12 +310,12 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 0, 6),
+                                                  0.0, 0.0, 0.0, 6.0),
                                           child: Icon(
                                             Icons.receipt,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            size: 20,
+                                            size: 20.0,
                                           ),
                                         ),
                                         Text(
@@ -345,8 +345,8 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                               ),
                             ),
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 1.5),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 1.5),
                             child: InkWell(
                               splashColor: Colors.transparent,
                               focusColor: Colors.transparent,
@@ -379,19 +379,19 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                 ),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      2, 6, 2, 6),
+                                      2.0, 6.0, 2.0, 6.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 0, 6),
+                                            0.0, 0.0, 0.0, 6.0),
                                         child: Icon(
                                           Icons.edit_rounded,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
-                                          size: 22,
+                                          size: 22.0,
                                         ),
                                       ),
                                       Text(
@@ -421,8 +421,8 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                             ),
                           ),
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 1.5),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 1.5),
                             child: InkWell(
                               splashColor: Colors.transparent,
                               focusColor: Colors.transparent,
@@ -471,19 +471,19 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                 ),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      2, 6, 2, 6),
+                                      2.0, 6.0, 2.0, 6.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 0, 6),
+                                            0.0, 0.0, 0.0, 6.0),
                                         child: Icon(
                                           Icons.insights_outlined,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
-                                          size: 24,
+                                          size: 24.0,
                                         ),
                                       ),
                                       InkWell(
@@ -522,8 +522,8 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                             ),
                           ),
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 1.5),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 1.5),
                             child: InkWell(
                               splashColor: Colors.transparent,
                               focusColor: Colors.transparent,
@@ -542,19 +542,19 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                 ),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      2, 6, 2, 6),
+                                      2.0, 6.0, 2.0, 6.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 0, 6),
+                                            0.0, 0.0, 0.0, 6.0),
                                         child: Icon(
                                           Icons.account_balance_wallet,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
-                                          size: 22,
+                                          size: 22.0,
                                         ),
                                       ),
                                       Text(
@@ -584,8 +584,8 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                             ),
                           ),
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 1.5),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 1.5),
                             child: InkWell(
                               splashColor: Colors.transparent,
                               focusColor: Colors.transparent,
@@ -604,19 +604,19 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                 ),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      2, 6, 2, 6),
+                                      2.0, 6.0, 2.0, 6.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 0, 6),
+                                            0.0, 0.0, 0.0, 6.0),
                                         child: Icon(
                                           Icons.local_print_shop_rounded,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
-                                          size: 24,
+                                          size: 24.0,
                                         ),
                                       ),
                                       InkWell(
@@ -656,8 +656,8 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                             ),
                           ),
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 1.5),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 1.5),
                             child: InkWell(
                               splashColor: Colors.transparent,
                               focusColor: Colors.transparent,
@@ -676,19 +676,19 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                 ),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      2, 6, 2, 6),
+                                      2.0, 6.0, 2.0, 6.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 0, 6),
+                                            0.0, 0.0, 0.0, 6.0),
                                         child: Icon(
                                           Icons.settings,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
-                                          size: 23,
+                                          size: 23.0,
                                         ),
                                       ),
                                       InkWell(
@@ -730,8 +730,8 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                           ),
                           if (false)
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 1.5),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 1.5),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
@@ -750,7 +750,7 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        2, 6, 2, 6),
+                                        2.0, 6.0, 2.0, 6.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -759,12 +759,12 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 0, 6),
+                                                  0.0, 0.0, 0.0, 6.0),
                                           child: Icon(
                                             Icons.view_column_sharp,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            size: 22,
+                                            size: 22.0,
                                           ),
                                         ),
                                         Text(
@@ -794,8 +794,8 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                               ),
                             ),
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 1.5),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 1.5),
                             child: InkWell(
                               splashColor: Colors.transparent,
                               focusColor: Colors.transparent,
@@ -823,19 +823,19 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                 ),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      2, 6, 2, 6),
+                                      2.0, 6.0, 2.0, 6.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 0, 6),
+                                            0.0, 0.0, 0.0, 6.0),
                                         child: Icon(
                                           Icons.switch_account,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
-                                          size: 22,
+                                          size: 22.0,
                                         ),
                                       ),
                                       Text(
@@ -866,8 +866,8 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                           ),
                           if (false)
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 1.5),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 1.5),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
@@ -886,7 +886,7 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        2, 6, 2, 6),
+                                        2.0, 6.0, 2.0, 6.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -895,12 +895,12 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 0, 6),
+                                                  0.0, 0.0, 0.0, 6.0),
                                           child: Icon(
                                             Icons.switch_account,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            size: 22,
+                                            size: 22.0,
                                           ),
                                         ),
                                         Text(
@@ -930,8 +930,8 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                               ),
                             ),
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 1.5),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 1.5),
                             child: Container(
                               width: double.infinity,
                               height: MediaQuery.sizeOf(context).height * 0.12,
@@ -940,20 +940,20 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                     .primaryBackground,
                               ),
                               child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(2, 6, 2, 6),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    2.0, 6.0, 2.0, 6.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 0, 6),
+                                          0.0, 0.0, 0.0, 6.0),
                                       child: Icon(
                                         Icons.receipt,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
-                                        size: 20,
+                                        size: 20.0,
                                       ),
                                     ),
                                     Text(
@@ -983,8 +983,8 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                           ),
                           if (FFAppState().show)
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 1.5),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 1.5),
                               child: Container(
                                 width: double.infinity,
                                 height:
@@ -995,19 +995,19 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                 ),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      2, 6, 2, 6),
+                                      2.0, 6.0, 2.0, 6.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 0, 6),
+                                            0.0, 0.0, 0.0, 6.0),
                                         child: Icon(
                                           Icons.screen_share_rounded,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
-                                          size: 22,
+                                          size: 22.0,
                                         ),
                                       ),
                                       Text(
@@ -1044,16 +1044,16 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                   ),
                 ),
                 Align(
-                  alignment: AlignmentDirectional(0, 1),
+                  alignment: AlignmentDirectional(0.0, 1.0),
                   child: Container(
                     width: double.infinity,
                     height: MediaQuery.sizeOf(context).height * 0.05,
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         colors: [Color(0x00FFC366), Color(0x9CFFC366)],
-                        stops: [0, 1],
-                        begin: AlignmentDirectional(0, -1),
-                        end: AlignmentDirectional(0, 1),
+                        stops: [0.0, 1.0],
+                        begin: AlignmentDirectional(0.0, -1.0),
+                        end: AlignmentDirectional(0, 1.0),
                       ),
                     ),
                     child: Column(
@@ -1063,7 +1063,7 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                         Icon(
                           Icons.keyboard_arrow_down_sharp,
                           color: FlutterFlowTheme.of(context).lineColor,
-                          size: 20,
+                          size: 20.0,
                         ),
                       ],
                     ),
@@ -1107,7 +1107,7 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                   Icon(
                     Icons.power_settings_new,
                     color: FlutterFlowTheme.of(context).primary,
-                    size: 24,
+                    size: 24.0,
                   ),
                 ],
               ),

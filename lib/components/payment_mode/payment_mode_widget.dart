@@ -50,11 +50,11 @@ class _PaymentModeWidgetState extends State<PaymentModeWidget> {
         if (!snapshot.hasData) {
           return Center(
             child: SizedBox(
-              width: 40,
-              height: 40,
+              width: 40.0,
+              height: 40.0,
               child: SpinKitFadingCircle(
                 color: FlutterFlowTheme.of(context).primary,
-                size: 40,
+                size: 40.0,
               ),
             ),
           );
@@ -66,11 +66,11 @@ class _PaymentModeWidgetState extends State<PaymentModeWidget> {
               FormFieldController<String>(null),
           options: dropDownPaymentModeRecordList.map((e) => e.name).toList(),
           onChanged: (val) => safeSetState(() => _model.dropDownValue = val),
-          width: 300,
+          width: 300.0,
           textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                 fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                 color: FlutterFlowTheme.of(context).primaryBtnText,
-                fontSize: 14,
+                fontSize: 14.0,
                 letterSpacing: 0.0,
                 useGoogleFonts: GoogleFonts.asMap()
                     .containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
@@ -81,14 +81,14 @@ class _PaymentModeWidgetState extends State<PaymentModeWidget> {
           icon: Icon(
             Icons.keyboard_arrow_down_rounded,
             color: FlutterFlowTheme.of(context).primaryBtnText,
-            size: 20,
+            size: 20.0,
           ),
           fillColor: Color(0xFF274287),
-          elevation: 2,
+          elevation: 2.0,
           borderColor: Colors.transparent,
-          borderWidth: 0,
-          borderRadius: 8,
-          margin: EdgeInsetsDirectional.fromSTEB(10, 0, 5, 0),
+          borderWidth: 0.0,
+          borderRadius: 8.0,
+          margin: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 5.0, 0.0),
           hidesUnderline: true,
           isOverButton: true,
           isSearchable: false,

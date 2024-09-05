@@ -49,14 +49,14 @@ class _ResetDataWidgetState extends State<ResetDataWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Padding(
-              padding: EdgeInsets.all(3),
+              padding: EdgeInsets.all(3.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Expanded(
                     flex: 1,
                     child: Container(
-                      width: MediaQuery.sizeOf(context).width,
+                      width: MediaQuery.sizeOf(context).width * 1.0,
                       height: MediaQuery.sizeOf(context).height * 0.12,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primary,
@@ -69,22 +69,22 @@ class _ResetDataWidgetState extends State<ResetDataWidget> {
                           Expanded(
                             flex: 1,
                             child: Container(
-                              width: 100,
-                              height: 100,
+                              width: 100.0,
+                              height: 100.0,
                               decoration: BoxDecoration(),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   FlutterFlowIconButton(
                                     borderColor: Colors.transparent,
-                                    borderRadius: 30,
-                                    borderWidth: 1,
-                                    buttonSize: 60,
+                                    borderRadius: 30.0,
+                                    borderWidth: 1.0,
+                                    buttonSize: 60.0,
                                     icon: Icon(
                                       Icons.chevron_left_sharp,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBtnText,
-                                      size: 26,
+                                      size: 26.0,
                                     ),
                                     onPressed: () async {
                                       context.pop();
@@ -116,8 +116,8 @@ class _ResetDataWidgetState extends State<ResetDataWidget> {
                           Expanded(
                             flex: 2,
                             child: Container(
-                              width: 100,
-                              height: 100,
+                              width: 100.0,
+                              height: 100.0,
                               decoration: BoxDecoration(),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -141,21 +141,22 @@ class _ResetDataWidgetState extends State<ResetDataWidget> {
                   Expanded(
                     flex: 8,
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
                       child: Container(
-                        width: MediaQuery.sizeOf(context).width,
-                        height: 100,
+                        width: MediaQuery.sizeOf(context).width * 1.0,
+                        height: 100.0,
                         decoration: BoxDecoration(),
                         child: Padding(
-                          padding: EdgeInsets.all(10),
+                          padding: EdgeInsets.all(10.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(10, 5, 0, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 5.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
                                     '3sblm5rk' /* Erase All Data (Factory Reset) */,
@@ -175,7 +176,7 @@ class _ResetDataWidgetState extends State<ResetDataWidget> {
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    10, 15, 10, 10),
+                                    10.0, 15.0, 10.0, 10.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
                                     '1sjiix5b' /* This will erase all data from ... */,
@@ -195,7 +196,7 @@ class _ResetDataWidgetState extends State<ResetDataWidget> {
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    10, 5, 10, 0),
+                                    10.0, 5.0, 10.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
                                     'w1pyzqd0' /* - System and Data Setting  */,
@@ -216,7 +217,7 @@ class _ResetDataWidgetState extends State<ResetDataWidget> {
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    10, 5, 10, 5),
+                                    10.0, 5.0, 10.0, 5.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
                                     '0glkllxc' /* - Print Setting */,
@@ -236,7 +237,7 @@ class _ResetDataWidgetState extends State<ResetDataWidget> {
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    10, 0, 10, 5),
+                                    10.0, 0.0, 10.0, 5.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
                                     'g6egi5up' /* - Report */,
@@ -256,7 +257,7 @@ class _ResetDataWidgetState extends State<ResetDataWidget> {
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    10, 0, 10, 5),
+                                    10.0, 0.0, 10.0, 5.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
                                     'xua632ja' /* - Email Id */,
@@ -275,8 +276,8 @@ class _ResetDataWidgetState extends State<ResetDataWidget> {
                                 ),
                               ),
                               Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 5.0, 0.0, 0.0),
                                 child: Theme(
                                   data: ThemeData(
                                     unselectedWidgetColor: Color(0xFF95A1AC),
@@ -317,7 +318,7 @@ class _ResetDataWidgetState extends State<ResetDataWidget> {
                               Expanded(
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 0, 5),
+                                      0.0, 0.0, 0.0, 5.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:
@@ -334,14 +335,14 @@ class _ResetDataWidgetState extends State<ResetDataWidget> {
                                           '30umkp0q' /* Cancel */,
                                         ),
                                         options: FFButtonOptions(
-                                          width: 130,
-                                          height: 40,
+                                          width: 130.0,
+                                          height: 40.0,
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 0, 0),
+                                                  0.0, 0.0, 0.0, 0.0),
                                           iconPadding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 0, 0),
+                                                  0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
                                           textStyle: FlutterFlowTheme.of(
@@ -362,14 +363,14 @@ class _ResetDataWidgetState extends State<ResetDataWidget> {
                                                                 context)
                                                             .titleMediumFamily),
                                               ),
-                                          elevation: 3,
+                                          elevation: 3.0,
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
                                                 .secondary,
                                             width: 0.5,
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(0),
+                                              BorderRadius.circular(0.0),
                                         ),
                                       ),
                                       FFButtonWidget(
@@ -410,14 +411,14 @@ class _ResetDataWidgetState extends State<ResetDataWidget> {
                                           'omqfhmw2' /* Erase Now */,
                                         ),
                                         options: FFButtonOptions(
-                                          width: 130,
-                                          height: 40,
+                                          width: 130.0,
+                                          height: 40.0,
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 0, 0),
+                                                  0.0, 0.0, 0.0, 0.0),
                                           iconPadding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 0, 0),
+                                                  0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .secondary,
                                           textStyle: FlutterFlowTheme.of(
@@ -437,17 +438,17 @@ class _ResetDataWidgetState extends State<ResetDataWidget> {
                                                             .of(context)
                                                         .headlineSmallFamily),
                                               ),
-                                          elevation: 5,
+                                          elevation: 5.0,
                                           borderSide: BorderSide(
                                             color: Color(0xFFBDBDBD),
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(0),
+                                              BorderRadius.circular(0.0),
                                         ),
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            4, 0, 0, 8),
+                                            4.0, 0.0, 0.0, 8.0),
                                         child: SvgPicture.asset(
                                           'assets/images/undraw_throw_away_re_x60k_(2).svg',
                                           width:

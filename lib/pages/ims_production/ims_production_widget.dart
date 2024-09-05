@@ -64,7 +64,7 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
             drawer: Container(
               width: MediaQuery.sizeOf(context).width * 0.11,
               child: Drawer(
-                elevation: 16,
+                elevation: 16.0,
                 child: wrapWithModel(
                   model: _model.menuDrawerModel,
                   updateCallback: () => safeSetState(() {}),
@@ -76,7 +76,7 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -101,7 +101,7 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                               Icon(
                                 Icons.menu_rounded,
                                 color: FlutterFlowTheme.of(context).primaryText,
-                                size: 18,
+                                size: 18.0,
                               ),
                             ],
                           ),
@@ -116,11 +116,11 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                             if (!snapshot.hasData) {
                               return Center(
                                 child: SizedBox(
-                                  width: 40,
-                                  height: 40,
+                                  width: 40.0,
+                                  height: 40.0,
                                   child: SpinKitFadingCircle(
                                     color: FlutterFlowTheme.of(context).primary,
-                                    size: 40,
+                                    size: 40.0,
                                   ),
                                 ),
                               );
@@ -129,14 +129,14 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                             final containerOutletRecord = snapshot.data!;
 
                             return Container(
-                              width: 100,
+                              width: 100.0,
                               height: MediaQuery.sizeOf(context).height * 0.06,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context).primary,
                               ),
                               child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    5.0, 0.0, 5.0, 0.0),
                                 child: StreamBuilder<List<UserProfileRecord>>(
                                   stream: queryUserProfileRecord(
                                     singleRecord: true,
@@ -146,12 +146,12 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                     if (!snapshot.hasData) {
                                       return Center(
                                         child: SizedBox(
-                                          width: 40,
-                                          height: 40,
+                                          width: 40.0,
+                                          height: 40.0,
                                           child: SpinKitFadingCircle(
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
-                                            size: 40,
+                                            size: 40.0,
                                           ),
                                         ),
                                       );
@@ -175,15 +175,16 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                       children: [
                                         Expanded(
                                           child: Container(
-                                            width: 100,
-                                            height: 100,
+                                            width: 100.0,
+                                            height: 100.0,
                                             decoration: BoxDecoration(),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(0, 0, 3, 0),
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 3.0, 0.0),
                                                   child: Text(
                                                     rowUserProfileRecord!.name,
                                                     style: FlutterFlowTheme.of(
@@ -211,7 +212,8 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                                 ),
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(0, 0, 6, 0),
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 6.0, 0.0),
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
@@ -245,7 +247,7 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 6, 0),
+                                                  0.0, 0.0, 6.0, 0.0),
                                           child: Text(
                                             dateTimeFormat(
                                               "yMMMd",
@@ -301,8 +303,8 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                         ),
                                         Expanded(
                                           child: Container(
-                                            width: 100,
-                                            height: 100,
+                                            width: 100.0,
+                                            height: 100.0,
                                             decoration: BoxDecoration(),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -351,8 +353,8 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                         decoration: BoxDecoration(),
                         child: Image.asset(
                           'assets/images/IMG_20220412_140945.png',
-                          width: 100,
-                          height: 100,
+                          width: 100.0,
+                          height: 100.0,
                           fit: BoxFit.contain,
                         ),
                       ),
@@ -362,16 +364,17 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                 Expanded(
                   child: Container(
                     width: double.infinity,
-                    height: 100,
+                    height: 100.0,
                     decoration: BoxDecoration(),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 5.0, 0.0),
                             child: Container(
-                              width: 100,
+                              width: 100.0,
                               height: double.infinity,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
@@ -382,7 +385,7 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                   Column(
                                     children: [
                                       Align(
-                                        alignment: Alignment(0, 0),
+                                        alignment: Alignment(0.0, 0),
                                         child: TabBar(
                                           isScrollable: true,
                                           labelColor:
@@ -417,10 +420,11 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(0, 0, 3, 0),
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 3.0, 0.0),
                                                   child: Icon(
                                                     Icons.person_rounded,
-                                                    size: 20,
+                                                    size: 20.0,
                                                   ),
                                                 ),
                                                 Tab(
@@ -438,10 +442,11 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(35, 0, 5, 0),
+                                                      .fromSTEB(
+                                                          35.0, 0.0, 5.0, 0.0),
                                                   child: Icon(
                                                     Icons.devices_rounded,
-                                                    size: 20,
+                                                    size: 20.0,
                                                   ),
                                                 ),
                                                 Tab(
@@ -459,10 +464,11 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(20, 0, 3, 0),
+                                                      .fromSTEB(
+                                                          20.0, 0.0, 3.0, 0.0),
                                                   child: Icon(
                                                     Icons.build_rounded,
-                                                    size: 16,
+                                                    size: 16.0,
                                                   ),
                                                 ),
                                                 Tab(
@@ -491,7 +497,8 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(10, 5, 10, 5),
+                                                  .fromSTEB(
+                                                      10.0, 5.0, 10.0, 5.0),
                                               child: ListView(
                                                 padding: EdgeInsets.zero,
                                                 scrollDirection: Axis.vertical,
@@ -499,19 +506,19 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                0, 0, 0, 5),
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 5.0),
                                                     child: Material(
                                                       color: Colors.transparent,
-                                                      elevation: 2,
+                                                      elevation: 2.0,
                                                       shape:
                                                           RoundedRectangleBorder(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(5),
+                                                                .circular(5.0),
                                                       ),
                                                       child: Container(
-                                                        width: 100,
+                                                        width: 100.0,
                                                         decoration:
                                                             BoxDecoration(
                                                           color: FlutterFlowTheme
@@ -519,12 +526,13 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                                               .secondaryBackground,
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(5),
+                                                                  .circular(
+                                                                      5.0),
                                                         ),
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsets.all(
-                                                                  10),
+                                                                  10.0),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -568,7 +576,7 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                                                           FlutterFlowTheme.of(context)
                                                                               .titleSmallFamily,
                                                                       fontSize:
-                                                                          11,
+                                                                          11.0,
                                                                       letterSpacing:
                                                                           0.0,
                                                                       useGoogleFonts: GoogleFonts
@@ -588,7 +596,7 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 5, 0, 0),
+                                                  .fromSTEB(0.0, 5.0, 0.0, 0.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -611,8 +619,11 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(0,
-                                                                      0, 2, 0),
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      2.0,
+                                                                      0.0),
                                                           child: Container(
                                                             decoration:
                                                                 BoxDecoration(
@@ -623,7 +634,7 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                                             child: Padding(
                                                               padding:
                                                                   EdgeInsets
-                                                                      .all(3),
+                                                                      .all(3.0),
                                                               child: Column(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -635,10 +646,10 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            5,
-                                                                            0,
-                                                                            5,
-                                                                            0),
+                                                                            5.0,
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -672,7 +683,10 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                                     padding:
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(
-                                                                10, 10, 10, 5),
+                                                                10.0,
+                                                                10.0,
+                                                                10.0,
+                                                                5.0),
                                                     child: ListView(
                                                       padding: EdgeInsets.zero,
                                                       shrinkWrap: true,
@@ -682,21 +696,24 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(0,
-                                                                      0, 0, 5),
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      5.0),
                                                           child: Material(
                                                             color: Colors
                                                                 .transparent,
-                                                            elevation: 2,
+                                                            elevation: 2.0,
                                                             shape:
                                                                 RoundedRectangleBorder(
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          5),
+                                                                          5.0),
                                                             ),
                                                             child: Container(
-                                                              width: 100,
+                                                              width: 100.0,
                                                               decoration:
                                                                   BoxDecoration(
                                                                 color: FlutterFlowTheme.of(
@@ -705,25 +722,24 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            5),
+                                                                            5.0),
                                                               ),
                                                               child: Padding(
                                                                 padding:
                                                                     EdgeInsets
                                                                         .all(
-                                                                            10),
+                                                                            10.0),
                                                                 child: Column(
                                                                   mainAxisSize:
                                                                       MainAxisSize
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              0,
-                                                                              3),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          3.0),
                                                                       child:
                                                                           Row(
                                                                         mainAxisSize:
@@ -817,7 +833,8 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                                               .tertiary,
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(5),
+                                                                  .circular(
+                                                                      5.0),
                                                         ),
                                                         child: Column(
                                                           mainAxisSize:
@@ -826,7 +843,8 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                                             Padding(
                                                               padding:
                                                                   EdgeInsets
-                                                                      .all(10),
+                                                                      .all(
+                                                                          10.0),
                                                               child: Text(
                                                                 FFLocalizations.of(
                                                                         context)
@@ -860,7 +878,8 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                                               .tertiary,
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(5),
+                                                                  .circular(
+                                                                      5.0),
                                                         ),
                                                         child: Column(
                                                           mainAxisSize:
@@ -869,7 +888,8 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                                             Padding(
                                                               padding:
                                                                   EdgeInsets
-                                                                      .all(10),
+                                                                      .all(
+                                                                          10.0),
                                                               child: Text(
                                                                 FFLocalizations.of(
                                                                         context)
@@ -903,7 +923,8 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                                               .tertiary,
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(5),
+                                                                  .circular(
+                                                                      5.0),
                                                         ),
                                                         child: Column(
                                                           mainAxisSize:
@@ -912,7 +933,8 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                                             Padding(
                                                               padding:
                                                                   EdgeInsets
-                                                                      .all(10),
+                                                                      .all(
+                                                                          10.0),
                                                               child: Text(
                                                                 FFLocalizations.of(
                                                                         context)
@@ -991,7 +1013,7 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              5),
+                                                                              5.0),
                                                                 ),
                                                                 child: Column(
                                                                   mainAxisSize:
@@ -1001,7 +1023,7 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                                                     Padding(
                                                                       padding:
                                                                           EdgeInsets.all(
-                                                                              10),
+                                                                              10.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -1048,7 +1070,7 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              5),
+                                                                              5.0),
                                                                 ),
                                                                 child: Column(
                                                                   mainAxisSize:
@@ -1058,7 +1080,7 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                                                     Padding(
                                                                       padding:
                                                                           EdgeInsets.all(
-                                                                              10),
+                                                                              10.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -1092,7 +1114,7 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                   ),
                                   if (FFAppState().show)
                                     Align(
-                                      alignment: AlignmentDirectional(0, 1),
+                                      alignment: AlignmentDirectional(0.0, 1.0),
                                       child: Container(
                                         width: double.infinity,
                                         height: double.infinity,
@@ -1101,7 +1123,7 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                               .customColor2,
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(10),
+                                          padding: EdgeInsets.all(10.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -1134,12 +1156,12 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                                         ),
                                                   ),
                                                   Container(
-                                                    width: 30,
-                                                    height: 30,
+                                                    width: 30.0,
+                                                    height: 30.0,
                                                     decoration: BoxDecoration(
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              5),
+                                                              5.0),
                                                       border: Border.all(
                                                         color:
                                                             FlutterFlowTheme.of(
@@ -1168,7 +1190,7 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primary,
-                                                        size: 16,
+                                                        size: 16.0,
                                                       ),
                                                     ),
                                                   ),
@@ -1183,7 +1205,8 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                               Expanded(
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(0, 5, 0, 5),
+                                                      .fromSTEB(
+                                                          0.0, 5.0, 0.0, 5.0),
                                                   child: ListView(
                                                     padding: EdgeInsets.zero,
                                                     shrinkWrap: true,
@@ -1194,9 +1217,12 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0, 0, 0, 3),
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    3.0),
                                                         child: Container(
-                                                          width: 100,
+                                                          width: 100.0,
                                                           decoration:
                                                               BoxDecoration(
                                                             color: FlutterFlowTheme
@@ -1205,7 +1231,7 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        5),
+                                                                        5.0),
                                                           ),
                                                           child: Column(
                                                             mainAxisSize:
@@ -1216,13 +1242,12 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                                                     .start,
                                                             children: [
                                                               Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            10,
-                                                                            5,
-                                                                            10,
-                                                                            5),
+                                                                padding: EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        10.0,
+                                                                        5.0,
+                                                                        10.0,
+                                                                        5.0),
                                                                 child: Text(
                                                                   FFLocalizations.of(
                                                                           context)
@@ -1311,22 +1336,22 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                         ),
                         Expanded(
                           child: Container(
-                            width: 100,
+                            width: 100.0,
                             height: double.infinity,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
                             ),
                             child: Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 5.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 0, 3),
+                                        0.0, 0.0, 0.0, 3.0),
                                     child: Container(
                                       width: double.infinity,
                                       decoration: BoxDecoration(
@@ -1335,13 +1360,13 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                       ),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            7, 3, 7, 3),
+                                            7.0, 3.0, 7.0, 3.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 5, 0),
+                                                  .fromSTEB(0.0, 0.0, 5.0, 0.0),
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -1358,7 +1383,7 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .lineColor,
-                                                          fontSize: 10,
+                                                          fontSize: 10.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.normal,
@@ -1404,8 +1429,8 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                                         ),
                                                   ),
                                                   Container(
-                                                    width: 25,
-                                                    height: 25,
+                                                    width: 25.0,
+                                                    height: 25.0,
                                                     decoration: BoxDecoration(),
                                                     child: Icon(
                                                       Icons.delete_outline,
@@ -1413,7 +1438,7 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primary,
-                                                      size: 24,
+                                                      size: 24.0,
                                                     ),
                                                   ),
                                                 ],
@@ -1431,7 +1456,7 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 0, 3),
+                                                  0.0, 0.0, 0.0, 3.0),
                                           child: TextFormField(
                                             controller: _model.textController1,
                                             focusNode:
@@ -1549,7 +1574,7 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                               CrossAxisAlignment.center,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsets.all(8),
+                                              padding: EdgeInsets.all(8.0),
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -1585,7 +1610,7 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 0, 3),
+                                                  0.0, 0.0, 0.0, 3.0),
                                           child: TextFormField(
                                             controller: _model.textController2,
                                             focusNode:
@@ -1701,7 +1726,7 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                               MainAxisAlignment.center,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsets.all(8),
+                                              padding: EdgeInsets.all(8.0),
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -1733,7 +1758,7 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                   Expanded(
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 7, 0, 5),
+                                          0.0, 7.0, 0.0, 5.0),
                                       child: ListView(
                                         padding: EdgeInsets.zero,
                                         shrinkWrap: true,
@@ -1742,16 +1767,16 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 0, 5),
+                                                    0.0, 0.0, 0.0, 5.0),
                                             child: Container(
-                                              width: 100,
+                                              width: 100.0,
                                               decoration: BoxDecoration(
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsets.all(10),
+                                                padding: EdgeInsets.all(10.0),
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -1769,8 +1794,11 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(0,
-                                                                      0, 0, 7),
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      7.0),
                                                           child: Text(
                                                             FFLocalizations.of(
                                                                     context)
@@ -1823,10 +1851,10 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          10,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          10.0,
+                                                                          0.0),
                                                               child: Text(
                                                                 FFLocalizations.of(
                                                                         context)
@@ -1915,7 +1943,8 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                                             BoxDecoration(
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(7),
+                                                                  .circular(
+                                                                      7.0),
                                                           border: Border.all(
                                                             color: FlutterFlowTheme
                                                                     .of(context)
@@ -1929,7 +1958,7 @@ class _ImsProductionWidgetState extends State<ImsProductionWidget>
                                                             Padding(
                                                               padding:
                                                                   EdgeInsets
-                                                                      .all(5),
+                                                                      .all(5.0),
                                                               child: Text(
                                                                 FFLocalizations.of(
                                                                         context)

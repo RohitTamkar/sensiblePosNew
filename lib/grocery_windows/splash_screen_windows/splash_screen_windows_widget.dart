@@ -195,9 +195,9 @@ class _SplashScreenWindowsWidgetState extends State<SplashScreenWindowsWidget>
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [Color(0xFF0041B6), Color(0xFF80A6EB)],
-                  stops: [0, 1],
-                  begin: AlignmentDirectional(1, 0),
-                  end: AlignmentDirectional(-1, 0),
+                  stops: [0.0, 1.0],
+                  begin: AlignmentDirectional(1.0, 0.0),
+                  end: AlignmentDirectional(-1.0, 0),
                 ),
               ),
               child: Column(
@@ -205,11 +205,11 @@ class _SplashScreenWindowsWidgetState extends State<SplashScreenWindowsWidget>
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ClipRRect(
-                    borderRadius: BorderRadius.circular(8),
+                    borderRadius: BorderRadius.circular(8.0),
                     child: Image.asset(
                       'assets/images/Sensible_Connect_Logo_White.png',
-                      width: 70,
-                      height: 70,
+                      width: 70.0,
+                      height: 70.0,
                       fit: BoxFit.cover,
                     ),
                   ).animateOnPageLoad(

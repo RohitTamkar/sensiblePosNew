@@ -71,7 +71,7 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
             key: scaffoldKey,
             backgroundColor: Color(0x2712191C),
             body: Align(
-              alignment: AlignmentDirectional(0, 0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -90,41 +90,42 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                         boxShadow: [
                           BoxShadow(
-                            blurRadius: 10,
+                            blurRadius: 10.0,
                             color: Color(0x33000000),
                             offset: Offset(
-                              3,
-                              6,
+                              3.0,
+                              6.0,
                             ),
                           )
                         ],
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.circular(15.0),
                       ),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            20.0, 20.0, 20.0, 20.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   FlutterFlowIconButton(
-                                    borderRadius: 5,
-                                    buttonSize: 40,
+                                    borderRadius: 5.0,
+                                    buttonSize: 40.0,
                                     fillColor: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
                                     icon: Icon(
                                       Icons.settings_sharp,
                                       color: FlutterFlowTheme.of(context)
                                           .parkingPrimary,
-                                      size: 20,
+                                      size: 20.0,
                                     ),
                                     onPressed: () async {
                                       context.pushNamed(
@@ -140,14 +141,14 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                     },
                                   ),
                                   FlutterFlowIconButton(
-                                    borderRadius: 5,
-                                    buttonSize: 40,
+                                    borderRadius: 5.0,
+                                    buttonSize: 40.0,
                                     fillColor: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
                                     icon: Icon(
                                       Icons.clear,
                                       color: Color(0xFFFF5963),
-                                      size: 24,
+                                      size: 24.0,
                                     ),
                                     onPressed: () async {
                                       context.pushNamed(
@@ -172,12 +173,12 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                       );
                                     },
                                   ),
-                                ].divide(SizedBox(width: 10)),
+                                ].divide(SizedBox(width: 10.0)),
                               ),
                             ),
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -197,13 +198,13 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                         if (!snapshot.hasData) {
                                           return Center(
                                             child: SizedBox(
-                                              width: 40,
-                                              height: 40,
+                                              width: 40.0,
+                                              height: 40.0,
                                               child: SpinKitFadingCircle(
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
-                                                size: 40,
+                                                size: 40.0,
                                               ),
                                             ),
                                           );
@@ -245,7 +246,7 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
 
                                             safeSetState(() {});
                                           },
-                                          width: 300,
+                                          width: 300.0,
                                           textStyle: FlutterFlowTheme.of(
                                                   context)
                                               .titleMedium
@@ -270,20 +271,20 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                             Icons.keyboard_arrow_down_rounded,
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryText,
-                                            size: 24,
+                                            size: 24.0,
                                           ),
                                           fillColor:
                                               FlutterFlowTheme.of(context)
                                                   .secondaryBackground,
-                                          elevation: 2,
+                                          elevation: 2.0,
                                           borderColor:
                                               FlutterFlowTheme.of(context)
                                                   .accent3,
-                                          borderWidth: 2,
-                                          borderRadius: 8,
+                                          borderWidth: 2.0,
+                                          borderRadius: 8.0,
                                           margin:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  16, 4, 16, 4),
+                                                  16.0, 4.0, 16.0, 4.0),
                                           hidesUnderline: true,
                                           isOverButton: true,
                                           isSearchable: false,
@@ -296,8 +297,8 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                               ),
                             ),
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 10.0),
                               child: TextFormField(
                                 controller: _model.textController1,
                                 focusNode: _model.textFieldFocusNode,
@@ -335,31 +336,31 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                     borderSide: BorderSide(
                                       color:
                                           FlutterFlowTheme.of(context).accent3,
-                                      width: 2,
+                                      width: 2.0,
                                     ),
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      width: 2,
+                                      width: 2.0,
                                     ),
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   errorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).error,
-                                      width: 2,
+                                      width: 2.0,
                                     ),
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).error,
-                                      width: 2,
+                                      width: 2.0,
                                     ),
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                 ),
                                 style: FlutterFlowTheme.of(context)
@@ -380,8 +381,8 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                               ),
                             ),
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -397,7 +398,7 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                             fontFamily:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMediumFamily,
-                                            fontSize: 16,
+                                            fontSize: 16.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                             useGoogleFonts: GoogleFonts.asMap()
@@ -411,7 +412,7 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                     flex: 2,
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          10, 0, 0, 0),
+                                          10.0, 0.0, 0.0, 0.0),
                                       child: StreamBuilder<
                                           List<PaymentModeRecord>>(
                                         stream: queryPaymentModeRecord(),
@@ -420,13 +421,13 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                           if (!snapshot.hasData) {
                                             return Center(
                                               child: SizedBox(
-                                                width: 40,
-                                                height: 40,
+                                                width: 40.0,
+                                                height: 40.0,
                                                 child: SpinKitFadingCircle(
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
-                                                  size: 40,
+                                                  size: 40.0,
                                                 ),
                                               ),
                                             );
@@ -447,7 +448,7 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                             onChanged: (val) => safeSetState(
                                                 () =>
                                                     _model.dropDownValue = val),
-                                            width: 300,
+                                            width: 300.0,
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .labelLarge
@@ -474,20 +475,20 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
-                                              size: 24,
+                                              size: 24.0,
                                             ),
                                             fillColor:
                                                 FlutterFlowTheme.of(context)
                                                     .secondaryBackground,
-                                            elevation: 2,
+                                            elevation: 2.0,
                                             borderColor:
                                                 FlutterFlowTheme.of(context)
                                                     .accent3,
-                                            borderWidth: 2,
-                                            borderRadius: 8,
+                                            borderWidth: 2.0,
+                                            borderRadius: 8.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    10, 4, 5, 4),
+                                                    10.0, 4.0, 5.0, 4.0),
                                             hidesUnderline: true,
                                             isOverButton: true,
                                             isSearchable: false,
@@ -506,7 +507,7 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                 Expanded(
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 0, 30),
+                                        0.0, 0.0, 0.0, 30.0),
                                     child: TextFormField(
                                       controller:
                                           _model.advanceAmtTextController,
@@ -550,37 +551,37 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
                                                 .accent3,
-                                            width: 2,
+                                            width: 2.0,
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(8),
+                                              BorderRadius.circular(8.0),
                                         ),
                                         focusedBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
-                                            width: 2,
+                                            width: 2.0,
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(8),
+                                              BorderRadius.circular(8.0),
                                         ),
                                         errorBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
                                                 .error,
-                                            width: 2,
+                                            width: 2.0,
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(8),
+                                              BorderRadius.circular(8.0),
                                         ),
                                         focusedErrorBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
                                                 .error,
-                                            width: 2,
+                                            width: 2.0,
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(8),
+                                              BorderRadius.circular(8.0),
                                         ),
                                       ),
                                       style: FlutterFlowTheme.of(context)
@@ -1031,14 +1032,14 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                   ),
                                   icon: Icon(
                                     Icons.print_outlined,
-                                    size: 18,
+                                    size: 18.0,
                                   ),
                                   options: FFButtonOptions(
-                                    height: 45,
+                                    height: 45.0,
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        24, 0, 24, 0),
+                                        24.0, 0.0, 24.0, 0.0),
                                     iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 0, 0),
+                                        0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context)
                                         .parkingSecondaryBackground,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -1055,12 +1056,12 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmallFamily),
                                         ),
-                                    elevation: 3,
+                                    elevation: 3.0,
                                     borderSide: BorderSide(
                                       color: Colors.transparent,
-                                      width: 1,
+                                      width: 1.0,
                                     ),
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                 ),
                                 FFButtonWidget(
@@ -1389,11 +1390,11 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                     'f34rpgfl' /* SAVE */,
                                   ),
                                   options: FFButtonOptions(
-                                    height: 45,
+                                    height: 45.0,
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        24, 0, 24, 0),
+                                        24.0, 0.0, 24.0, 0.0),
                                     iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 0, 0),
+                                        0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).info,
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
@@ -1409,15 +1410,15 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmallFamily),
                                         ),
-                                    elevation: 3,
+                                    elevation: 3.0,
                                     borderSide: BorderSide(
                                       color: Colors.transparent,
-                                      width: 1,
+                                      width: 1.0,
                                     ),
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                 ),
-                              ].divide(SizedBox(width: 6)),
+                              ].divide(SizedBox(width: 6.0)),
                             ),
                           ],
                         ),

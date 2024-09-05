@@ -84,16 +84,16 @@ class _OTPverificationNewPWidgetState extends State<OTPverificationNewPWidget> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Container(
-                    width: MediaQuery.sizeOf(context).width,
+                    width: MediaQuery.sizeOf(context).width * 1.0,
                     height: MediaQuery.sizeOf(context).height * 0.87,
                     decoration: BoxDecoration(
                       color:
                           FlutterFlowTheme.of(context).parkingPrimaryBackground,
                       borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(0),
-                        bottomRight: Radius.circular(0),
-                        topLeft: Radius.circular(0),
-                        topRight: Radius.circular(0),
+                        bottomLeft: Radius.circular(0.0),
+                        bottomRight: Radius.circular(0.0),
+                        topLeft: Radius.circular(0.0),
+                        topRight: Radius.circular(0.0),
                       ),
                     ),
                     child: Column(
@@ -103,14 +103,14 @@ class _OTPverificationNewPWidgetState extends State<OTPverificationNewPWidget> {
                         Stack(
                           children: [
                             Container(
-                              width: MediaQuery.sizeOf(context).width,
+                              width: MediaQuery.sizeOf(context).width * 1.0,
                               height: MediaQuery.sizeOf(context).height * 0.7,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.only(
-                                  bottomLeft: Radius.circular(0),
-                                  bottomRight: Radius.circular(0),
-                                  topLeft: Radius.circular(0),
-                                  topRight: Radius.circular(0),
+                                  bottomLeft: Radius.circular(0.0),
+                                  bottomRight: Radius.circular(0.0),
+                                  topLeft: Radius.circular(0.0),
+                                  topRight: Radius.circular(0.0),
                                 ),
                               ),
                               child: Column(
@@ -118,7 +118,7 @@ class _OTPverificationNewPWidgetState extends State<OTPverificationNewPWidget> {
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 15, 0, 0),
+                                        0.0, 15.0, 0.0, 0.0),
                                     child: Container(
                                       width: MediaQuery.sizeOf(context).width *
                                           0.78,
@@ -134,7 +134,7 @@ class _OTPverificationNewPWidgetState extends State<OTPverificationNewPWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 10, 0, 0),
+                                                    0.0, 10.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -168,7 +168,7 @@ class _OTPverificationNewPWidgetState extends State<OTPverificationNewPWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 10, 0, 3),
+                                                    0.0, 10.0, 0.0, 3.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -202,7 +202,7 @@ class _OTPverificationNewPWidgetState extends State<OTPverificationNewPWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    30, 0, 30, 10),
+                                                    30.0, 0.0, 30.0, 10.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -212,8 +212,8 @@ class _OTPverificationNewPWidgetState extends State<OTPverificationNewPWidget> {
                                                   child: Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                10, 0, 0, 0),
+                                                            .fromSTEB(10.0, 0.0,
+                                                                0.0, 0.0),
                                                     child: TextFormField(
                                                       controller: _model
                                                           .mObileTextFieldTextController,
@@ -345,15 +345,15 @@ class _OTPverificationNewPWidgetState extends State<OTPverificationNewPWidget> {
                                                 FlutterFlowIconButton(
                                                   borderColor:
                                                       Colors.transparent,
-                                                  borderRadius: 30,
-                                                  borderWidth: 1,
-                                                  buttonSize: 30,
+                                                  borderRadius: 30.0,
+                                                  borderWidth: 1.0,
+                                                  buttonSize: 30.0,
                                                   icon: Icon(
                                                     Icons.mode_edit,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
-                                                    size: 15,
+                                                    size: 15.0,
                                                   ),
                                                   onPressed: () async {
                                                     FFAppState()
@@ -370,7 +370,7 @@ class _OTPverificationNewPWidgetState extends State<OTPverificationNewPWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 0, 5),
+                                                    0.0, 0.0, 0.0, 5.0),
                                             child: PinCodeTextField(
                                               autoDisposeControllers: false,
                                               appContext: context,
@@ -396,7 +396,7 @@ class _OTPverificationNewPWidgetState extends State<OTPverificationNewPWidget> {
                                               enableActiveFill: false,
                                               autoFocus: true,
                                               enablePinAutofill: true,
-                                              errorTextSpace: 16,
+                                              errorTextSpace: 16.0,
                                               showCursor: true,
                                               cursorColor:
                                                   FlutterFlowTheme.of(context)
@@ -404,16 +404,18 @@ class _OTPverificationNewPWidgetState extends State<OTPverificationNewPWidget> {
                                               obscureText: false,
                                               hintCharacter: '-',
                                               pinTheme: PinTheme(
-                                                fieldHeight: 45,
-                                                fieldWidth: 45,
-                                                borderWidth: 2,
+                                                fieldHeight: 45.0,
+                                                fieldWidth: 45.0,
+                                                borderWidth: 2.0,
                                                 borderRadius: BorderRadius.only(
                                                   bottomLeft:
-                                                      Radius.circular(12),
+                                                      Radius.circular(12.0),
                                                   bottomRight:
-                                                      Radius.circular(12),
-                                                  topLeft: Radius.circular(12),
-                                                  topRight: Radius.circular(12),
+                                                      Radius.circular(12.0),
+                                                  topLeft:
+                                                      Radius.circular(12.0),
+                                                  topRight:
+                                                      Radius.circular(12.0),
                                                 ),
                                                 shape: PinCodeFieldShape.box,
                                                 activeColor:
@@ -439,7 +441,7 @@ class _OTPverificationNewPWidgetState extends State<OTPverificationNewPWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    18, 0, 18, 0),
+                                                    18.0, 0.0, 18.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -449,7 +451,8 @@ class _OTPverificationNewPWidgetState extends State<OTPverificationNewPWidget> {
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(5, 0, 0, 0),
+                                                      .fromSTEB(
+                                                          5.0, 0.0, 0.0, 0.0),
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
@@ -508,7 +511,7 @@ class _OTPverificationNewPWidgetState extends State<OTPverificationNewPWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primary,
-                                                        fontSize: 13,
+                                                        fontSize: 13.0,
                                                         letterSpacing: 0.0,
                                                         useGoogleFonts: GoogleFonts
                                                                 .asMap()
@@ -524,7 +527,7 @@ class _OTPverificationNewPWidgetState extends State<OTPverificationNewPWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 10, 0, 0),
+                                                    0.0, 10.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -542,7 +545,7 @@ class _OTPverificationNewPWidgetState extends State<OTPverificationNewPWidget> {
                                                   decoration: BoxDecoration(
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            5),
+                                                            5.0),
                                                   ),
                                                   child: FFButtonWidget(
                                                     onPressed: () async {
@@ -663,16 +666,22 @@ class _OTPverificationNewPWidgetState extends State<OTPverificationNewPWidget> {
                                                       'hsxinmem' /* Next */,
                                                     ),
                                                     options: FFButtonOptions(
-                                                      width: 130,
-                                                      height: 40,
+                                                      width: 130.0,
+                                                      height: 40.0,
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0, 0, 0, 0),
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
                                                       iconPadding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0, 0, 0, 0),
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
                                                       color: FlutterFlowTheme
                                                               .of(context)
                                                           .parkingSecondaryBackground,
@@ -697,14 +706,14 @@ class _OTPverificationNewPWidgetState extends State<OTPverificationNewPWidget> {
                                                                         FlutterFlowTheme.of(context)
                                                                             .titleMediumFamily),
                                                               ),
-                                                      elevation: 2,
+                                                      elevation: 2.0,
                                                       borderSide: BorderSide(
                                                         color:
                                                             Colors.transparent,
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              5),
+                                                              5.0),
                                                     ),
                                                   ),
                                                 ),
@@ -714,7 +723,7 @@ class _OTPverificationNewPWidgetState extends State<OTPverificationNewPWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 30, 0, 8),
+                                                    0.0, 30.0, 0.0, 8.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -732,7 +741,7 @@ class _OTPverificationNewPWidgetState extends State<OTPverificationNewPWidget> {
                                                   decoration: BoxDecoration(
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            5),
+                                                            5.0),
                                                   ),
                                                   child: Visibility(
                                                     visible: FFAppState().hide,
@@ -779,16 +788,22 @@ class _OTPverificationNewPWidgetState extends State<OTPverificationNewPWidget> {
                                                         'qsa5uejp' /* Resend OTP */,
                                                       ),
                                                       options: FFButtonOptions(
-                                                        width: 130,
-                                                        height: 40,
+                                                        width: 130.0,
+                                                        height: 40.0,
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0, 0, 0, 0),
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
                                                         iconPadding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0, 0, 0, 0),
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -809,14 +824,14 @@ class _OTPverificationNewPWidgetState extends State<OTPverificationNewPWidget> {
                                                                           FlutterFlowTheme.of(context)
                                                                               .titleMediumFamily),
                                                                 ),
-                                                        elevation: 2,
+                                                        elevation: 2.0,
                                                         borderSide: BorderSide(
                                                           color: Colors
                                                               .transparent,
                                                         ),
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(5),
+                                                                .circular(5.0),
                                                       ),
                                                     ),
                                                   ),

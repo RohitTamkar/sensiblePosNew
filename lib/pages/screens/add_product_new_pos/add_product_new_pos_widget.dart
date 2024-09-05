@@ -117,14 +117,14 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
               key: _model.formKey,
               autovalidateMode: AutovalidateMode.disabled,
               child: Padding(
-                padding: EdgeInsets.all(3),
+                padding: EdgeInsets.all(3.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Expanded(
                       flex: 1,
                       child: Container(
-                        width: MediaQuery.sizeOf(context).width,
+                        width: MediaQuery.sizeOf(context).width * 1.0,
                         height: MediaQuery.sizeOf(context).height * 0.12,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).primary,
@@ -137,22 +137,22 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                             Expanded(
                               flex: 1,
                               child: Container(
-                                width: 100,
-                                height: 100,
+                                width: 100.0,
+                                height: 100.0,
                                 decoration: BoxDecoration(),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     FlutterFlowIconButton(
                                       borderColor: Colors.transparent,
-                                      borderRadius: 30,
-                                      borderWidth: 1,
-                                      buttonSize: 60,
+                                      borderRadius: 30.0,
+                                      borderWidth: 1.0,
+                                      buttonSize: 60.0,
                                       icon: Icon(
                                         Icons.chevron_left_sharp,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBtnText,
-                                        size: 26,
+                                        size: 26.0,
                                       ),
                                       onPressed: () {
                                         print('IconButton pressed ...');
@@ -196,7 +196,8 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                     Expanded(
                       flex: 13,
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
                         child: Container(
                           width: double.infinity,
                           height: MediaQuery.sizeOf(context).height * 0.79,
@@ -217,7 +218,7 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                         .primaryBackground,
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsets.all(5),
+                                    padding: EdgeInsets.all(5.0),
                                     child: SingleChildScrollView(
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -225,10 +226,11 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    5, 7, 5, 5),
+                                                    5.0, 7.0, 5.0, 5.0),
                                             child: Container(
                                               width: MediaQuery.sizeOf(context)
-                                                  .width,
+                                                      .width *
+                                                  1.0,
                                               height: MediaQuery.sizeOf(context)
                                                       .height *
                                                   0.14,
@@ -250,8 +252,11 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(5,
-                                                                      0, 0, 0),
+                                                                  .fromSTEB(
+                                                                      5.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
                                                           child: Text(
                                                             FFLocalizations.of(
                                                                     context)
@@ -292,25 +297,28 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                 BorderRadius
                                                                     .only(
                                                               bottomLeft: Radius
-                                                                  .circular(0),
+                                                                  .circular(
+                                                                      0.0),
                                                               bottomRight:
                                                                   Radius
                                                                       .circular(
-                                                                          0),
+                                                                          0.0),
                                                               topLeft: Radius
-                                                                  .circular(5),
+                                                                  .circular(
+                                                                      5.0),
                                                               topRight: Radius
-                                                                  .circular(5),
+                                                                  .circular(
+                                                                      5.0),
                                                             ),
                                                           ),
                                                           child: Padding(
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0,
-                                                                        5,
-                                                                        0,
-                                                                        0),
+                                                                        0.0,
+                                                                        5.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             child:
                                                                 TextFormField(
                                                               controller: _model
@@ -463,8 +471,11 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(5,
-                                                                      0, 0, 0),
+                                                                  .fromSTEB(
+                                                                      5.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
                                                           child: Text(
                                                             FFLocalizations.of(
                                                                     context)
@@ -505,10 +516,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0,
-                                                                        5,
-                                                                        0,
-                                                                        0),
+                                                                        0.0,
+                                                                        5.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             child:
                                                                 TextFormField(
                                                               controller: _model
@@ -661,8 +672,11 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(5,
-                                                                      0, 0, 0),
+                                                                  .fromSTEB(
+                                                                      5.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
                                                           child: Text(
                                                             FFLocalizations.of(
                                                                     context)
@@ -703,10 +717,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0,
-                                                                        5,
-                                                                        0,
-                                                                        0),
+                                                                        0.0,
+                                                                        5.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             child:
                                                                 TextFormField(
                                                               controller: _model
@@ -854,13 +868,13 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                           ),
                                           Divider(
                                             thickness: 0.5,
-                                            indent: 10,
-                                            endIndent: 10,
+                                            indent: 10.0,
+                                            endIndent: 10.0,
                                             color: FlutterFlowTheme.of(context)
                                                 .customColor2,
                                           ),
                                           Padding(
-                                            padding: EdgeInsets.all(5),
+                                            padding: EdgeInsets.all(5.0),
                                             child: Container(
                                               width: double.infinity,
                                               decoration: BoxDecoration(),
@@ -879,10 +893,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        1,
-                                                                        0,
-                                                                        1,
-                                                                        0),
+                                                                        1.0,
+                                                                        0.0,
+                                                                        1.0,
+                                                                        0.0),
                                                             child: Container(
                                                               width: MediaQuery
                                                                           .sizeOf(
@@ -907,10 +921,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            5,
-                                                                            0,
-                                                                            0,
-                                                                            2),
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            2.0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -933,10 +947,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            2,
-                                                                            0,
-                                                                            2,
-                                                                            0),
+                                                                            2.0,
+                                                                            0.0,
+                                                                            2.0,
+                                                                            0.0),
                                                                     child:
                                                                         Container(
                                                                       width: MediaQuery.sizeOf(context)
@@ -972,11 +986,11 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                               if (!snapshot.hasData) {
                                                                                 return Center(
                                                                                   child: SizedBox(
-                                                                                    width: 40,
-                                                                                    height: 40,
+                                                                                    width: 40.0,
+                                                                                    height: 40.0,
                                                                                     child: SpinKitFadingCircle(
                                                                                       color: FlutterFlowTheme.of(context).primary,
-                                                                                      size: 40,
+                                                                                      size: 40.0,
                                                                                     ),
                                                                                   ),
                                                                                 );
@@ -987,8 +1001,8 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                                 controller: _model.dropDownValueController1 ??= FormFieldController<String>(null),
                                                                                 options: dropDownCategoryRecordList.map((e) => e.name).toList(),
                                                                                 onChanged: (val) => safeSetState(() => _model.dropDownValue1 = val),
-                                                                                width: 180,
-                                                                                height: 50,
+                                                                                width: 180.0,
+                                                                                height: 50.0,
                                                                                 textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                       fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       color: Colors.black,
@@ -998,11 +1012,11 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                                 hintText: FFLocalizations.of(context).getText(
                                                                                   '1wihbl96' /* Please select... */,
                                                                                 ),
-                                                                                elevation: 2,
+                                                                                elevation: 2.0,
                                                                                 borderColor: Colors.transparent,
-                                                                                borderWidth: 0,
-                                                                                borderRadius: 0,
-                                                                                margin: EdgeInsetsDirectional.fromSTEB(12, 4, 12, 4),
+                                                                                borderWidth: 0.0,
+                                                                                borderRadius: 0.0,
+                                                                                margin: EdgeInsetsDirectional.fromSTEB(12.0, 4.0, 12.0, 4.0),
                                                                                 hidesUnderline: true,
                                                                                 isSearchable: false,
                                                                                 isMultiSelect: false,
@@ -1023,10 +1037,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        1,
-                                                                        0,
-                                                                        1,
-                                                                        0),
+                                                                        1.0,
+                                                                        0.0,
+                                                                        1.0,
+                                                                        0.0),
                                                             child: Container(
                                                               width: MediaQuery
                                                                           .sizeOf(
@@ -1051,10 +1065,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            5,
-                                                                            0,
-                                                                            0,
-                                                                            2),
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            2.0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -1077,10 +1091,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            3,
-                                                                            0,
-                                                                            2,
-                                                                            0),
+                                                                            3.0,
+                                                                            0.0,
+                                                                            2.0,
+                                                                            0.0),
                                                                     child:
                                                                         Container(
                                                                       width: MediaQuery.sizeOf(context)
@@ -1114,11 +1128,11 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                               if (!snapshot.hasData) {
                                                                                 return Center(
                                                                                   child: SizedBox(
-                                                                                    width: 40,
-                                                                                    height: 40,
+                                                                                    width: 40.0,
+                                                                                    height: 40.0,
                                                                                     child: SpinKitFadingCircle(
                                                                                       color: FlutterFlowTheme.of(context).primary,
-                                                                                      size: 40,
+                                                                                      size: 40.0,
                                                                                     ),
                                                                                   ),
                                                                                 );
@@ -1129,8 +1143,8 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                                 controller: _model.dropDownValueController2 ??= FormFieldController<String>(null),
                                                                                 options: dropDownTaxMasterRecordList.map((e) => e.name).toList(),
                                                                                 onChanged: (val) => safeSetState(() => _model.dropDownValue2 = val),
-                                                                                width: 180,
-                                                                                height: 50,
+                                                                                width: 180.0,
+                                                                                height: 50.0,
                                                                                 textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                       fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       color: Colors.black,
@@ -1140,11 +1154,11 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                                 hintText: FFLocalizations.of(context).getText(
                                                                                   'zauxfp0p' /* Please select... */,
                                                                                 ),
-                                                                                elevation: 2,
+                                                                                elevation: 2.0,
                                                                                 borderColor: Colors.transparent,
-                                                                                borderWidth: 0,
-                                                                                borderRadius: 0,
-                                                                                margin: EdgeInsetsDirectional.fromSTEB(12, 4, 12, 4),
+                                                                                borderWidth: 0.0,
+                                                                                borderRadius: 0.0,
+                                                                                margin: EdgeInsetsDirectional.fromSTEB(12.0, 4.0, 12.0, 4.0),
                                                                                 hidesUnderline: true,
                                                                                 isSearchable: false,
                                                                                 isMultiSelect: false,
@@ -1165,10 +1179,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        1,
-                                                                        0,
-                                                                        1,
-                                                                        0),
+                                                                        1.0,
+                                                                        0.0,
+                                                                        1.0,
+                                                                        0.0),
                                                             child: Container(
                                                               width: MediaQuery
                                                                           .sizeOf(
@@ -1193,10 +1207,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            5,
-                                                                            0,
-                                                                            0,
-                                                                            2),
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            2.0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -1219,10 +1233,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            3,
-                                                                            0,
-                                                                            2,
-                                                                            0),
+                                                                            3.0,
+                                                                            0.0,
+                                                                            2.0,
+                                                                            0.0),
                                                                     child:
                                                                         Container(
                                                                       width: MediaQuery.sizeOf(context)
@@ -1256,11 +1270,11 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                               if (!snapshot.hasData) {
                                                                                 return Center(
                                                                                   child: SizedBox(
-                                                                                    width: 40,
-                                                                                    height: 40,
+                                                                                    width: 40.0,
+                                                                                    height: 40.0,
                                                                                     child: SpinKitFadingCircle(
                                                                                       color: FlutterFlowTheme.of(context).primary,
-                                                                                      size: 40,
+                                                                                      size: 40.0,
                                                                                     ),
                                                                                   ),
                                                                                 );
@@ -1271,8 +1285,8 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                                 controller: _model.dropDownValueController3 ??= FormFieldController<String>(null),
                                                                                 options: dropDownUnitTypeRecordList.map((e) => e.name).toList(),
                                                                                 onChanged: (val) => safeSetState(() => _model.dropDownValue3 = val),
-                                                                                width: 180,
-                                                                                height: 50,
+                                                                                width: 180.0,
+                                                                                height: 50.0,
                                                                                 textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                       fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       color: Colors.black,
@@ -1282,11 +1296,11 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                                 hintText: FFLocalizations.of(context).getText(
                                                                                   'vswwauaa' /* Please select... */,
                                                                                 ),
-                                                                                elevation: 2,
+                                                                                elevation: 2.0,
                                                                                 borderColor: Colors.transparent,
-                                                                                borderWidth: 0,
-                                                                                borderRadius: 0,
-                                                                                margin: EdgeInsetsDirectional.fromSTEB(12, 4, 12, 4),
+                                                                                borderWidth: 0.0,
+                                                                                borderRadius: 0.0,
+                                                                                margin: EdgeInsetsDirectional.fromSTEB(12.0, 4.0, 12.0, 4.0),
                                                                                 hidesUnderline: true,
                                                                                 isSearchable: false,
                                                                                 isMultiSelect: false,
@@ -1307,10 +1321,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        1,
-                                                                        0,
-                                                                        1,
-                                                                        0),
+                                                                        1.0,
+                                                                        0.0,
+                                                                        1.0,
+                                                                        0.0),
                                                             child: Container(
                                                               width: MediaQuery
                                                                           .sizeOf(
@@ -1335,10 +1349,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            5,
-                                                                            0,
-                                                                            0,
-                                                                            2),
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            2.0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -1361,10 +1375,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            3,
-                                                                            0,
-                                                                            3,
-                                                                            0),
+                                                                            3.0,
+                                                                            0.0,
+                                                                            3.0,
+                                                                            0.0),
                                                                     child:
                                                                         Container(
                                                                       width: MediaQuery.sizeOf(context)
@@ -1400,11 +1414,11 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                               if (!snapshot.hasData) {
                                                                                 return Center(
                                                                                   child: SizedBox(
-                                                                                    width: 40,
-                                                                                    height: 40,
+                                                                                    width: 40.0,
+                                                                                    height: 40.0,
                                                                                     child: SpinKitFadingCircle(
                                                                                       color: FlutterFlowTheme.of(context).primary,
-                                                                                      size: 40,
+                                                                                      size: 40.0,
                                                                                     ),
                                                                                   ),
                                                                                 );
@@ -1415,8 +1429,8 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                                 controller: _model.dropDownValueController4 ??= FormFieldController<String>(null),
                                                                                 options: dropDownServicePointOutletRecordList.map((e) => e.name).toList(),
                                                                                 onChanged: (val) => safeSetState(() => _model.dropDownValue4 = val),
-                                                                                width: 180,
-                                                                                height: 50,
+                                                                                width: 180.0,
+                                                                                height: 50.0,
                                                                                 textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                       fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       color: Colors.black,
@@ -1426,11 +1440,11 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                                 hintText: FFLocalizations.of(context).getText(
                                                                                   '0vd35efd' /* Please select... */,
                                                                                 ),
-                                                                                elevation: 2,
+                                                                                elevation: 2.0,
                                                                                 borderColor: Colors.transparent,
-                                                                                borderWidth: 0,
-                                                                                borderRadius: 0,
-                                                                                margin: EdgeInsetsDirectional.fromSTEB(12, 4, 12, 4),
+                                                                                borderWidth: 0.0,
+                                                                                borderRadius: 0.0,
+                                                                                margin: EdgeInsetsDirectional.fromSTEB(12.0, 4.0, 12.0, 4.0),
                                                                                 hidesUnderline: true,
                                                                                 isSearchable: false,
                                                                                 isMultiSelect: false,
@@ -1450,15 +1464,15 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                     ),
                                                   ),
                                                   Divider(
-                                                    thickness: 1,
-                                                    indent: 10,
-                                                    endIndent: 10,
+                                                    thickness: 1.0,
+                                                    indent: 10.0,
+                                                    endIndent: 10.0,
                                                   ),
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                0, 10, 0, 0),
+                                                            .fromSTEB(0.0, 10.0,
+                                                                0.0, 0.0),
                                                     child: Container(
                                                       width: double.infinity,
                                                       decoration:
@@ -1479,10 +1493,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                       Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            1,
-                                                                            0,
-                                                                            2,
-                                                                            0),
+                                                                            1.0,
+                                                                            0.0,
+                                                                            2.0,
+                                                                            0.0),
                                                                     child:
                                                                         Container(
                                                                       width: MediaQuery.sizeOf(context)
@@ -1502,10 +1516,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                8,
-                                                                                0,
-                                                                                0,
-                                                                                0),
+                                                                                8.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -1520,14 +1534,14 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                2,
-                                                                                5,
-                                                                                3,
-                                                                                0),
+                                                                                2.0,
+                                                                                5.0,
+                                                                                3.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Material(
                                                                               color: Colors.transparent,
-                                                                              elevation: 2,
+                                                                              elevation: 2.0,
                                                                               child: Container(
                                                                                 height: MediaQuery.sizeOf(context).height * 0.09,
                                                                                 decoration: BoxDecoration(
@@ -1540,7 +1554,7 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                                   mainAxisAlignment: MainAxisAlignment.start,
                                                                                   children: [
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
                                                                                       child: Text(
                                                                                         FFLocalizations.of(context).getText(
                                                                                           '205izet3' /* Days */,
@@ -1570,10 +1584,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                       Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            1,
-                                                                            0,
-                                                                            2,
-                                                                            0),
+                                                                            1.0,
+                                                                            0.0,
+                                                                            2.0,
+                                                                            0.0),
                                                                     child:
                                                                         Container(
                                                                       width: MediaQuery.sizeOf(context)
@@ -1593,10 +1607,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                8,
-                                                                                0,
-                                                                                0,
-                                                                                0),
+                                                                                8.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -1611,14 +1625,14 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                2,
-                                                                                5,
-                                                                                3,
-                                                                                0),
+                                                                                2.0,
+                                                                                5.0,
+                                                                                3.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Material(
                                                                               color: Colors.transparent,
-                                                                              elevation: 2,
+                                                                              elevation: 2.0,
                                                                               child: Container(
                                                                                 height: MediaQuery.sizeOf(context).height * 0.09,
                                                                                 decoration: BoxDecoration(
@@ -1709,10 +1723,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                 child: Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          1,
-                                                                          0,
-                                                                          2,
-                                                                          0),
+                                                                          1.0,
+                                                                          0.0,
+                                                                          2.0,
+                                                                          0.0),
                                                                   child:
                                                                       Container(
                                                                     width: MediaQuery.sizeOf(context)
@@ -1734,10 +1748,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              8,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              8.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -1752,16 +1766,16 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              2,
-                                                                              5,
-                                                                              3,
-                                                                              0),
+                                                                              2.0,
+                                                                              5.0,
+                                                                              3.0,
+                                                                              0.0),
                                                                           child:
                                                                               Material(
                                                                             color:
                                                                                 Colors.transparent,
                                                                             elevation:
-                                                                                2,
+                                                                                2.0,
                                                                             child:
                                                                                 Container(
                                                                               height: MediaQuery.sizeOf(context).height * 0.09,
@@ -1854,10 +1868,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                 child: Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          1,
-                                                                          0,
-                                                                          2,
-                                                                          0),
+                                                                          1.0,
+                                                                          0.0,
+                                                                          2.0,
+                                                                          0.0),
                                                                   child:
                                                                       Container(
                                                                     width: MediaQuery.sizeOf(context)
@@ -1879,10 +1893,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              8,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              8.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -1897,16 +1911,16 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              2,
-                                                                              5,
-                                                                              3,
-                                                                              0),
+                                                                              2.0,
+                                                                              5.0,
+                                                                              3.0,
+                                                                              0.0),
                                                                           child:
                                                                               Material(
                                                                             color:
                                                                                 Colors.transparent,
                                                                             elevation:
-                                                                                2,
+                                                                                2.0,
                                                                             child:
                                                                                 Container(
                                                                               height: MediaQuery.sizeOf(context).height * 0.09,
@@ -2017,10 +2031,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                     children: [
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            8,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            8.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
                                                                             Text(
                                                                           FFLocalizations.of(context)
@@ -2038,16 +2052,16 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                       ),
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0,
-                                                                            5,
-                                                                            0,
-                                                                            0),
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
                                                                             Material(
                                                                           color:
                                                                               Colors.transparent,
                                                                           elevation:
-                                                                              2,
+                                                                              2.0,
                                                                           child:
                                                                               Container(
                                                                             height:
@@ -2066,7 +2080,7 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                               children: [
                                                                                 Expanded(
                                                                                   child: Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(2, 0, 2, 0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 2.0, 0.0),
                                                                                     child: TextFormField(
                                                                                       controller: _model.textController7,
                                                                                       focusNode: _model.textFieldFocusNode7,
@@ -2143,9 +2157,9 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                             ],
                                                           ),
                                                           Divider(
-                                                            thickness: 1,
-                                                            indent: 10,
-                                                            endIndent: 10,
+                                                            thickness: 1.0,
+                                                            indent: 10.0,
+                                                            endIndent: 10.0,
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .customColor2,
@@ -2154,10 +2168,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0,
-                                                                        10,
-                                                                        0,
-                                                                        0),
+                                                                        0.0,
+                                                                        10.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             child: Row(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -2168,12 +2182,11 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              1,
-                                                                              0,
-                                                                              2,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          1.0,
+                                                                          0.0,
+                                                                          2.0,
+                                                                          0.0),
                                                                       child:
                                                                           Container(
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -2190,7 +2203,7 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                               CrossAxisAlignment.start,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 FFLocalizations.of(context).getText(
                                                                                   'pb1r42o4' /* CESS Percent */,
@@ -2203,10 +2216,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                               ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(2, 5, 3, 0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(2.0, 5.0, 3.0, 0.0),
                                                                               child: Material(
                                                                                 color: Colors.transparent,
-                                                                                elevation: 2,
+                                                                                elevation: 2.0,
                                                                                 child: Container(
                                                                                   height: MediaQuery.sizeOf(context).height * 0.09,
                                                                                   decoration: BoxDecoration(
@@ -2298,12 +2311,11 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              1,
-                                                                              0,
-                                                                              2,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          1.0,
+                                                                          0.0,
+                                                                          2.0,
+                                                                          0.0),
                                                                       child:
                                                                           Container(
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -2320,7 +2332,7 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                               CrossAxisAlignment.start,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 FFLocalizations.of(context).getText(
                                                                                   '34geyfxr' /* CESS Amt. */,
@@ -2333,10 +2345,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                               ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(2, 5, 3, 0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(2.0, 5.0, 3.0, 0.0),
                                                                               child: Material(
                                                                                 color: Colors.transparent,
-                                                                                elevation: 2,
+                                                                                elevation: 2.0,
                                                                                 child: Container(
                                                                                   height: MediaQuery.sizeOf(context).height * 0.09,
                                                                                   decoration: BoxDecoration(
@@ -2428,10 +2440,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                       Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            1,
-                                                                            0,
-                                                                            2,
-                                                                            0),
+                                                                            1.0,
+                                                                            0.0,
+                                                                            2.0,
+                                                                            0.0),
                                                                     child:
                                                                         Container(
                                                                       width: MediaQuery.sizeOf(context)
@@ -2451,10 +2463,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                8,
-                                                                                0,
-                                                                                0,
-                                                                                0),
+                                                                                8.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -2469,14 +2481,14 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                2,
-                                                                                5,
-                                                                                3,
-                                                                                0),
+                                                                                2.0,
+                                                                                5.0,
+                                                                                3.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Material(
                                                                               color: Colors.transparent,
-                                                                              elevation: 2,
+                                                                              elevation: 2.0,
                                                                               child: Container(
                                                                                 height: MediaQuery.sizeOf(context).height * 0.09,
                                                                                 decoration: BoxDecoration(
@@ -2569,10 +2581,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                       Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            1,
-                                                                            0,
-                                                                            2,
-                                                                            0),
+                                                                            1.0,
+                                                                            0.0,
+                                                                            2.0,
+                                                                            0.0),
                                                                     child:
                                                                         Container(
                                                                       width: MediaQuery.sizeOf(context)
@@ -2592,10 +2604,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                8,
-                                                                                0,
-                                                                                0,
-                                                                                0),
+                                                                                8.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -2610,14 +2622,14 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                2,
-                                                                                5,
-                                                                                3,
-                                                                                0),
+                                                                                2.0,
+                                                                                5.0,
+                                                                                3.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Material(
                                                                               color: Colors.transparent,
-                                                                              elevation: 2,
+                                                                              elevation: 2.0,
                                                                               child: Container(
                                                                                 height: MediaQuery.sizeOf(context).height * 0.09,
                                                                                 decoration: BoxDecoration(
@@ -2727,10 +2739,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              8,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              8.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -2745,16 +2757,16 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              2,
-                                                                              5,
-                                                                              2,
-                                                                              0),
+                                                                              2.0,
+                                                                              5.0,
+                                                                              2.0,
+                                                                              0.0),
                                                                           child:
                                                                               Material(
                                                                             color:
                                                                                 Colors.transparent,
                                                                             elevation:
-                                                                                2,
+                                                                                2.0,
                                                                             child:
                                                                                 Container(
                                                                               height: MediaQuery.sizeOf(context).height * 0.09,
@@ -2846,18 +2858,18 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                             ),
                                                           ),
                                                           Divider(
-                                                            thickness: 1,
-                                                            indent: 10,
-                                                            endIndent: 10,
+                                                            thickness: 1.0,
+                                                            indent: 10.0,
+                                                            endIndent: 10.0,
                                                           ),
                                                           Padding(
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0,
-                                                                        10,
-                                                                        0,
-                                                                        0),
+                                                                        0.0,
+                                                                        10.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             child: Row(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -2868,10 +2880,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                       Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            1,
-                                                                            0,
-                                                                            2,
-                                                                            0),
+                                                                            1.0,
+                                                                            0.0,
+                                                                            2.0,
+                                                                            0.0),
                                                                     child:
                                                                         Container(
                                                                       width: MediaQuery.sizeOf(context)
@@ -2891,10 +2903,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                8,
-                                                                                0,
-                                                                                0,
-                                                                                0),
+                                                                                8.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -2909,14 +2921,14 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                2,
-                                                                                5,
-                                                                                3,
-                                                                                0),
+                                                                                2.0,
+                                                                                5.0,
+                                                                                3.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Material(
                                                                               color: Colors.transparent,
-                                                                              elevation: 2,
+                                                                              elevation: 2.0,
                                                                               child: Container(
                                                                                 height: MediaQuery.sizeOf(context).height * 0.09,
                                                                                 decoration: BoxDecoration(
@@ -3009,10 +3021,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                       Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            1,
-                                                                            0,
-                                                                            2,
-                                                                            0),
+                                                                            1.0,
+                                                                            0.0,
+                                                                            2.0,
+                                                                            0.0),
                                                                     child:
                                                                         Container(
                                                                       width: MediaQuery.sizeOf(context)
@@ -3032,10 +3044,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                8,
-                                                                                0,
-                                                                                0,
-                                                                                0),
+                                                                                8.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -3050,14 +3062,14 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                2,
-                                                                                5,
-                                                                                3,
-                                                                                0),
+                                                                                2.0,
+                                                                                5.0,
+                                                                                3.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Material(
                                                                               color: Colors.transparent,
-                                                                              elevation: 2,
+                                                                              elevation: 2.0,
                                                                               child: Container(
                                                                                 height: MediaQuery.sizeOf(context).height * 0.09,
                                                                                 decoration: BoxDecoration(
@@ -3150,10 +3162,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                       Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            1,
-                                                                            0,
-                                                                            2,
-                                                                            0),
+                                                                            1.0,
+                                                                            0.0,
+                                                                            2.0,
+                                                                            0.0),
                                                                     child:
                                                                         Container(
                                                                       width: MediaQuery.sizeOf(context)
@@ -3173,10 +3185,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                8,
-                                                                                0,
-                                                                                0,
-                                                                                0),
+                                                                                8.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -3192,14 +3204,14 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                2,
-                                                                                5,
-                                                                                3,
-                                                                                0),
+                                                                                2.0,
+                                                                                5.0,
+                                                                                3.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Material(
                                                                               color: Colors.transparent,
-                                                                              elevation: 2,
+                                                                              elevation: 2.0,
                                                                               child: Container(
                                                                                 height: MediaQuery.sizeOf(context).height * 0.09,
                                                                                 decoration: BoxDecoration(
@@ -3292,10 +3304,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                       Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            1,
-                                                                            0,
-                                                                            2,
-                                                                            0),
+                                                                            1.0,
+                                                                            0.0,
+                                                                            2.0,
+                                                                            0.0),
                                                                     child:
                                                                         Container(
                                                                       width: MediaQuery.sizeOf(context)
@@ -3333,7 +3345,7 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                       fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                       color: FlutterFlowTheme.of(context).primaryText,
-                                                                                      fontSize: 11,
+                                                                                      fontSize: 11.0,
                                                                                       letterSpacing: 0.0,
                                                                                       useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                     ),
@@ -3393,7 +3405,7 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).headlineSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
-                                                                                    fontSize: 12,
+                                                                                    fontSize: 12.0,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                                   ),
@@ -3420,19 +3432,20 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                     ),
                                                   ),
                                                   Divider(
-                                                    thickness: 1,
-                                                    indent: 10,
-                                                    endIndent: 10,
+                                                    thickness: 1.0,
+                                                    indent: 10.0,
+                                                    endIndent: 10.0,
                                                   ),
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                5, 10, 5, 0),
+                                                            .fromSTEB(5.0, 10.0,
+                                                                5.0, 0.0),
                                                     child: Container(
                                                       width: MediaQuery.sizeOf(
-                                                              context)
-                                                          .width,
+                                                                  context)
+                                                              .width *
+                                                          1.0,
                                                       height: MediaQuery.sizeOf(
                                                                   context)
                                                               .height *
@@ -3461,12 +3474,11 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                           .start,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              5,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          5.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -3494,10 +3506,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0,
-                                                                            5,
-                                                                            0,
-                                                                            0),
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
                                                                             TextFormField(
                                                                           controller:
@@ -3598,12 +3610,11 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                           .start,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              5,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          5.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -3631,10 +3642,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0,
-                                                                            5,
-                                                                            0,
-                                                                            0),
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
                                                                             TextFormField(
                                                                           controller:
@@ -3733,12 +3744,11 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                           .start,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              5,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          5.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -3766,10 +3776,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0,
-                                                                            5,
-                                                                            0,
-                                                                            0),
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
                                                                             TextFormField(
                                                                           controller:
@@ -3866,10 +3876,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0,
-                                                                        15,
-                                                                        0,
-                                                                        0),
+                                                                        0.0,
+                                                                        15.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             child: Row(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -3886,10 +3896,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                     children: [
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            5,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
                                                                             Text(
                                                                           FFLocalizations.of(context)
@@ -3915,10 +3925,10 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                         child:
                                                                             Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0,
-                                                                              5,
-                                                                              0,
-                                                                              0),
+                                                                              0.0,
+                                                                              5.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               TextFormField(
                                                                             controller:
@@ -4077,7 +4087,8 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(0, 0, 10, 0),
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 10.0, 0.0),
                                                   child: StreamBuilder<
                                                       List<
                                                           ProductMasterRecord>>(
@@ -4091,14 +4102,14 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                       if (!snapshot.hasData) {
                                                         return Center(
                                                           child: SizedBox(
-                                                            width: 40,
-                                                            height: 40,
+                                                            width: 40.0,
+                                                            height: 40.0,
                                                             child:
                                                                 SpinKitFadingCircle(
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .primary,
-                                                              size: 40,
+                                                              size: 40.0,
                                                             ),
                                                           ),
                                                         );
@@ -4285,16 +4296,22 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                         ),
                                                         options:
                                                             FFButtonOptions(
-                                                          width: 160,
-                                                          height: 38,
+                                                          width: 160.0,
+                                                          height: 38.0,
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(0,
-                                                                      0, 0, 0),
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
                                                           iconPadding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(0,
-                                                                      0, 0, 0),
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
@@ -4316,16 +4333,17 @@ class _AddProductNewPosWidgetState extends State<AddProductNewPosWidget> {
                                                                         .containsKey(
                                                                             FlutterFlowTheme.of(context).titleSmallFamily),
                                                                   ),
-                                                          elevation: 2,
+                                                          elevation: 2.0,
                                                           borderSide:
                                                               BorderSide(
                                                             color: Colors
                                                                 .transparent,
-                                                            width: 1,
+                                                            width: 1.0,
                                                           ),
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(4),
+                                                                  .circular(
+                                                                      4.0),
                                                         ),
                                                       );
                                                     },

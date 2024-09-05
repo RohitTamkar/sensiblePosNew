@@ -49,14 +49,14 @@ class _GSTReportWidgetState extends State<GSTReportWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Padding(
-              padding: EdgeInsets.all(3),
+              padding: EdgeInsets.all(3.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Expanded(
                     flex: 1,
                     child: Container(
-                      width: MediaQuery.sizeOf(context).width,
+                      width: MediaQuery.sizeOf(context).width * 1.0,
                       height: MediaQuery.sizeOf(context).height * 0.12,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primary,
@@ -69,22 +69,22 @@ class _GSTReportWidgetState extends State<GSTReportWidget> {
                           Expanded(
                             flex: 1,
                             child: Container(
-                              width: 100,
-                              height: 100,
+                              width: 100.0,
+                              height: 100.0,
                               decoration: BoxDecoration(),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   FlutterFlowIconButton(
                                     borderColor: Colors.transparent,
-                                    borderRadius: 30,
-                                    borderWidth: 1,
-                                    buttonSize: 60,
+                                    borderRadius: 30.0,
+                                    borderWidth: 1.0,
+                                    buttonSize: 60.0,
                                     icon: Icon(
                                       Icons.chevron_left_sharp,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBtnText,
-                                      size: 26,
+                                      size: 26.0,
                                     ),
                                     onPressed: () async {
                                       context.pop();
@@ -116,8 +116,8 @@ class _GSTReportWidgetState extends State<GSTReportWidget> {
                           Expanded(
                             flex: 2,
                             child: Container(
-                              width: 100,
-                              height: 100,
+                              width: 100.0,
+                              height: 100.0,
                               decoration: BoxDecoration(),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -125,7 +125,7 @@ class _GSTReportWidgetState extends State<GSTReportWidget> {
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 5, 0),
+                                        0.0, 0.0, 5.0, 0.0),
                                     child: Text(
                                       dateTimeFormat(
                                         "yMMMd",
@@ -151,7 +151,7 @@ class _GSTReportWidgetState extends State<GSTReportWidget> {
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        5, 5, 10, 5),
+                                        5.0, 5.0, 10.0, 5.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
                                       focusColor: Colors.transparent,
@@ -180,17 +180,17 @@ class _GSTReportWidgetState extends State<GSTReportWidget> {
                                       },
                                       child: Material(
                                         color: Colors.transparent,
-                                        elevation: 2,
+                                        elevation: 2.0,
                                         shape: RoundedRectangleBorder(
                                           borderRadius:
-                                              BorderRadius.circular(5),
+                                              BorderRadius.circular(5.0),
                                         ),
                                         child: Container(
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .secondary,
                                             borderRadius:
-                                                BorderRadius.circular(5),
+                                                BorderRadius.circular(5.0),
                                           ),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.min,
@@ -199,7 +199,8 @@ class _GSTReportWidgetState extends State<GSTReportWidget> {
                                             children: [
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(10, 15, 10, 15),
+                                                    .fromSTEB(
+                                                        10.0, 15.0, 10.0, 15.0),
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
@@ -253,20 +254,21 @@ class _GSTReportWidgetState extends State<GSTReportWidget> {
                   Expanded(
                     flex: 13,
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
                       child: Container(
-                        width: MediaQuery.sizeOf(context).width,
-                        height: 100,
+                        width: MediaQuery.sizeOf(context).width * 1.0,
+                        height: 100.0,
                         decoration: BoxDecoration(),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Container(
-                              width: MediaQuery.sizeOf(context).width,
+                              width: MediaQuery.sizeOf(context).width * 1.0,
                               height: MediaQuery.sizeOf(context).height * 0.06,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context).secondary,
-                                borderRadius: BorderRadius.circular(0),
+                                borderRadius: BorderRadius.circular(0.0),
                               ),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -276,7 +278,7 @@ class _GSTReportWidgetState extends State<GSTReportWidget> {
                                     child: Container(
                                       width: MediaQuery.sizeOf(context).width *
                                           0.2,
-                                      height: 100,
+                                      height: 100.0,
                                       decoration: BoxDecoration(),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -312,7 +314,7 @@ class _GSTReportWidgetState extends State<GSTReportWidget> {
                                     child: Container(
                                       width: MediaQuery.sizeOf(context).width *
                                           0.09,
-                                      height: 100,
+                                      height: 100.0,
                                       decoration: BoxDecoration(),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -348,7 +350,7 @@ class _GSTReportWidgetState extends State<GSTReportWidget> {
                                     child: Container(
                                       width: MediaQuery.sizeOf(context).width *
                                           0.2,
-                                      height: 100,
+                                      height: 100.0,
                                       decoration: BoxDecoration(),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -384,7 +386,7 @@ class _GSTReportWidgetState extends State<GSTReportWidget> {
                                     child: Container(
                                       width: MediaQuery.sizeOf(context).width *
                                           0.07,
-                                      height: 100,
+                                      height: 100.0,
                                       decoration: BoxDecoration(),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -420,7 +422,7 @@ class _GSTReportWidgetState extends State<GSTReportWidget> {
                                     child: Container(
                                       width: MediaQuery.sizeOf(context).width *
                                           0.07,
-                                      height: 100,
+                                      height: 100.0,
                                       decoration: BoxDecoration(),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -456,7 +458,7 @@ class _GSTReportWidgetState extends State<GSTReportWidget> {
                                     child: Container(
                                       width: MediaQuery.sizeOf(context).width *
                                           0.07,
-                                      height: 100,
+                                      height: 100.0,
                                       decoration: BoxDecoration(),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -492,7 +494,7 @@ class _GSTReportWidgetState extends State<GSTReportWidget> {
                                     child: Container(
                                       width: MediaQuery.sizeOf(context).width *
                                           0.07,
-                                      height: 100,
+                                      height: 100.0,
                                       decoration: BoxDecoration(),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -528,7 +530,7 @@ class _GSTReportWidgetState extends State<GSTReportWidget> {
                                     child: Container(
                                       width: MediaQuery.sizeOf(context).width *
                                           0.12,
-                                      height: 100,
+                                      height: 100.0,
                                       decoration: BoxDecoration(),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -565,7 +567,7 @@ class _GSTReportWidgetState extends State<GSTReportWidget> {
                             ),
                             Expanded(
                               child: Container(
-                                width: MediaQuery.sizeOf(context).width,
+                                width: MediaQuery.sizeOf(context).width * 1.0,
                                 height:
                                     MediaQuery.sizeOf(context).height * 0.79,
                                 decoration: BoxDecoration(),
@@ -575,9 +577,11 @@ class _GSTReportWidgetState extends State<GSTReportWidget> {
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 0, 3),
+                                          0.0, 0.0, 0.0, 3.0),
                                       child: Container(
-                                        width: MediaQuery.sizeOf(context).width,
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
+                                                1.0,
                                         height:
                                             MediaQuery.sizeOf(context).height *
                                                 0.08,
@@ -595,7 +599,7 @@ class _GSTReportWidgetState extends State<GSTReportWidget> {
                                                     MediaQuery.sizeOf(context)
                                                             .width *
                                                         0.2,
-                                                height: 100,
+                                                height: 100.0,
                                                 decoration: BoxDecoration(),
                                                 child: Column(
                                                   mainAxisSize:
@@ -637,7 +641,7 @@ class _GSTReportWidgetState extends State<GSTReportWidget> {
                                                     MediaQuery.sizeOf(context)
                                                             .width *
                                                         0.09,
-                                                height: 100,
+                                                height: 100.0,
                                                 decoration: BoxDecoration(),
                                                 child: Column(
                                                   mainAxisSize:
@@ -679,7 +683,7 @@ class _GSTReportWidgetState extends State<GSTReportWidget> {
                                                     MediaQuery.sizeOf(context)
                                                             .width *
                                                         0.2,
-                                                height: 100,
+                                                height: 100.0,
                                                 decoration: BoxDecoration(),
                                                 child: Column(
                                                   mainAxisSize:
@@ -721,7 +725,7 @@ class _GSTReportWidgetState extends State<GSTReportWidget> {
                                                     MediaQuery.sizeOf(context)
                                                             .width *
                                                         0.07,
-                                                height: 100,
+                                                height: 100.0,
                                                 decoration: BoxDecoration(),
                                                 child: Column(
                                                   mainAxisSize:
@@ -763,7 +767,7 @@ class _GSTReportWidgetState extends State<GSTReportWidget> {
                                                     MediaQuery.sizeOf(context)
                                                             .width *
                                                         0.07,
-                                                height: 100,
+                                                height: 100.0,
                                                 decoration: BoxDecoration(),
                                                 child: Column(
                                                   mainAxisSize:
@@ -805,7 +809,7 @@ class _GSTReportWidgetState extends State<GSTReportWidget> {
                                                     MediaQuery.sizeOf(context)
                                                             .width *
                                                         0.07,
-                                                height: 100,
+                                                height: 100.0,
                                                 decoration: BoxDecoration(),
                                                 child: Column(
                                                   mainAxisSize:
@@ -847,7 +851,7 @@ class _GSTReportWidgetState extends State<GSTReportWidget> {
                                                     MediaQuery.sizeOf(context)
                                                             .width *
                                                         0.07,
-                                                height: 100,
+                                                height: 100.0,
                                                 decoration: BoxDecoration(),
                                                 child: Column(
                                                   mainAxisSize:
@@ -889,7 +893,7 @@ class _GSTReportWidgetState extends State<GSTReportWidget> {
                                                     MediaQuery.sizeOf(context)
                                                             .width *
                                                         0.12,
-                                                height: 100,
+                                                height: 100.0,
                                                 decoration: BoxDecoration(),
                                                 child: Column(
                                                   mainAxisSize:

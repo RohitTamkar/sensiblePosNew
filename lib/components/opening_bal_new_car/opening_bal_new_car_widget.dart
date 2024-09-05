@@ -61,7 +61,7 @@ class _OpeningBalNewCarWidgetState extends State<OpeningBalNewCarWidget> {
     context.watch<FFAppState>();
 
     return Align(
-      alignment: AlignmentDirectional(0, 0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -89,11 +89,11 @@ class _OpeningBalNewCarWidgetState extends State<OpeningBalNewCarWidget> {
               if (!snapshot.hasData) {
                 return Center(
                   child: SizedBox(
-                    width: 40,
-                    height: 40,
+                    width: 40.0,
+                    height: 40.0,
                     child: SpinKitFadingCircle(
                       color: FlutterFlowTheme.of(context).primary,
-                      size: 40,
+                      size: 40.0,
                     ),
                   ),
                 );
@@ -108,11 +108,11 @@ class _OpeningBalNewCarWidgetState extends State<OpeningBalNewCarWidget> {
                   : null;
 
               return Container(
-                width: 500,
-                height: 250,
+                width: 500.0,
+                height: 250.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).primaryBackground,
-                  borderRadius: BorderRadius.circular(4),
+                  borderRadius: BorderRadius.circular(4.0),
                   border: Border.all(
                     color: FlutterFlowTheme.of(context).customColor2,
                   ),
@@ -122,8 +122,8 @@ class _OpeningBalNewCarWidgetState extends State<OpeningBalNewCarWidget> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Container(
-                      width: 440,
-                      height: 210,
+                      width: 440.0,
+                      height: 210.0,
                       decoration: BoxDecoration(),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
@@ -136,11 +136,11 @@ class _OpeningBalNewCarWidgetState extends State<OpeningBalNewCarWidget> {
                               false)
                             Expanded(
                               child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(2, 5, 2, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    2.0, 5.0, 2.0, 0.0),
                                 child: Container(
-                                  width: 480,
-                                  height: 200,
+                                  width: 480.0,
+                                  height: 200.0,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
@@ -160,10 +160,10 @@ class _OpeningBalNewCarWidgetState extends State<OpeningBalNewCarWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    7, 0, 0, 0),
+                                                    7.0, 0.0, 0.0, 0.0),
                                             child: Container(
-                                              width: 250,
-                                              height: 40,
+                                              width: 250.0,
+                                              height: 40.0,
                                               decoration: BoxDecoration(),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -199,8 +199,8 @@ class _OpeningBalNewCarWidgetState extends State<OpeningBalNewCarWidget> {
                                             ),
                                           ),
                                           Container(
-                                            width: 160,
-                                            height: 37,
+                                            width: 160.0,
+                                            height: 37.0,
                                             decoration: BoxDecoration(),
                                             child: TextFormField(
                                               controller: _model.textController,
@@ -240,7 +240,8 @@ class _OpeningBalNewCarWidgetState extends State<OpeningBalNewCarWidget> {
                                                     width: 0.5,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(2),
+                                                      BorderRadius.circular(
+                                                          2.0),
                                                 ),
                                                 focusedBorder:
                                                     OutlineInputBorder(
@@ -249,7 +250,8 @@ class _OpeningBalNewCarWidgetState extends State<OpeningBalNewCarWidget> {
                                                     width: 0.5,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(2),
+                                                      BorderRadius.circular(
+                                                          2.0),
                                                 ),
                                                 errorBorder: OutlineInputBorder(
                                                   borderSide: BorderSide(
@@ -257,7 +259,8 @@ class _OpeningBalNewCarWidgetState extends State<OpeningBalNewCarWidget> {
                                                     width: 0.5,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(2),
+                                                      BorderRadius.circular(
+                                                          2.0),
                                                 ),
                                                 focusedErrorBorder:
                                                     OutlineInputBorder(
@@ -266,7 +269,8 @@ class _OpeningBalNewCarWidgetState extends State<OpeningBalNewCarWidget> {
                                                     width: 0.5,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(2),
+                                                      BorderRadius.circular(
+                                                          2.0),
                                                 ),
                                               ),
                                               style:
@@ -306,8 +310,8 @@ class _OpeningBalNewCarWidgetState extends State<OpeningBalNewCarWidget> {
                           Expanded(
                             flex: 2,
                             child: Container(
-                              width: 480,
-                              height: 100,
+                              width: 480.0,
+                              height: 100.0,
                               decoration: BoxDecoration(),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -318,15 +322,15 @@ class _OpeningBalNewCarWidgetState extends State<OpeningBalNewCarWidget> {
                                   Expanded(
                                     flex: 2,
                                     child: Container(
-                                      width: 380,
-                                      height: 100,
+                                      width: 380.0,
+                                      height: 100.0,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
                                       ),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            10, 0, 0, 0),
+                                            10.0, 0.0, 0.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -337,10 +341,11 @@ class _OpeningBalNewCarWidgetState extends State<OpeningBalNewCarWidget> {
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(5, 0, 0, 0),
+                                                      .fromSTEB(
+                                                          5.0, 0.0, 0.0, 0.0),
                                                   child: Container(
-                                                    width: 330,
-                                                    height: 30,
+                                                    width: 330.0,
+                                                    height: 30.0,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
@@ -386,10 +391,11 @@ class _OpeningBalNewCarWidgetState extends State<OpeningBalNewCarWidget> {
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(5, 0, 0, 0),
+                                                      .fromSTEB(
+                                                          5.0, 0.0, 0.0, 0.0),
                                                   child: Container(
-                                                    width: 290,
-                                                    height: 30,
+                                                    width: 290.0,
+                                                    height: 30.0,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
@@ -434,10 +440,10 @@ class _OpeningBalNewCarWidgetState extends State<OpeningBalNewCarWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        10,
-                                                                        0,
-                                                                        0,
-                                                                        0),
+                                                                        10.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             child: Text(
                                                               valueOrDefault<
                                                                   String>(
@@ -488,10 +494,10 @@ class _OpeningBalNewCarWidgetState extends State<OpeningBalNewCarWidget> {
                                   Expanded(
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 0, 5),
+                                          0.0, 0.0, 0.0, 5.0),
                                       child: Container(
-                                        width: 400,
-                                        height: 100,
+                                        width: 400.0,
+                                        height: 100.0,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
@@ -499,7 +505,7 @@ class _OpeningBalNewCarWidgetState extends State<OpeningBalNewCarWidget> {
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  30, 0, 0, 0),
+                                                  30.0, 0.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -515,13 +521,15 @@ class _OpeningBalNewCarWidgetState extends State<OpeningBalNewCarWidget> {
                                                   'rlb60l66' /* Cancel */,
                                                 ),
                                                 options: FFButtonOptions(
-                                                  width: 90,
-                                                  height: 36,
+                                                  width: 90.0,
+                                                  height: 36.0,
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(0, 0, 0, 0),
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 0.0),
                                                   iconPadding:
                                                       EdgeInsetsDirectional
-                                                          .fromSTEB(0, 0, 0, 0),
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .customColor2,
@@ -545,13 +553,14 @@ class _OpeningBalNewCarWidgetState extends State<OpeningBalNewCarWidget> {
                                                                         context)
                                                                     .titleSmallFamily),
                                                       ),
-                                                  elevation: 2,
+                                                  elevation: 2.0,
                                                   borderSide: BorderSide(
                                                     color: Colors.transparent,
-                                                    width: 1,
+                                                    width: 1.0,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(8),
+                                                      BorderRadius.circular(
+                                                          8.0),
                                                 ),
                                               ),
                                               FFButtonWidget(
@@ -1304,13 +1313,15 @@ class _OpeningBalNewCarWidgetState extends State<OpeningBalNewCarWidget> {
                                                   'r1naso2t' /* Ok */,
                                                 ),
                                                 options: FFButtonOptions(
-                                                  width: 90,
-                                                  height: 36,
+                                                  width: 90.0,
+                                                  height: 36.0,
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(0, 0, 0, 0),
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 0.0),
                                                   iconPadding:
                                                       EdgeInsetsDirectional
-                                                          .fromSTEB(0, 0, 0, 0),
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
@@ -1332,13 +1343,14 @@ class _OpeningBalNewCarWidgetState extends State<OpeningBalNewCarWidget> {
                                                                             context)
                                                                         .titleSmallFamily),
                                                           ),
-                                                  elevation: 2,
+                                                  elevation: 2.0,
                                                   borderSide: BorderSide(
                                                     color: Colors.transparent,
-                                                    width: 1,
+                                                    width: 1.0,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(8),
+                                                      BorderRadius.circular(
+                                                          8.0),
                                                 ),
                                               ),
                                             ],

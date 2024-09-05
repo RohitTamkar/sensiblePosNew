@@ -81,7 +81,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Padding(
-              padding: EdgeInsets.all(3),
+              padding: EdgeInsets.all(3.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -89,7 +89,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                   Expanded(
                     flex: 1,
                     child: Container(
-                      width: MediaQuery.sizeOf(context).width,
+                      width: MediaQuery.sizeOf(context).width * 1.0,
                       height: MediaQuery.sizeOf(context).height * 0.12,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primary,
@@ -102,22 +102,22 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                           Expanded(
                             flex: 1,
                             child: Container(
-                              width: 100,
-                              height: 100,
+                              width: 100.0,
+                              height: 100.0,
                               decoration: BoxDecoration(),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   FlutterFlowIconButton(
                                     borderColor: Colors.transparent,
-                                    borderRadius: 30,
-                                    borderWidth: 1,
-                                    buttonSize: 60,
+                                    borderRadius: 30.0,
+                                    borderWidth: 1.0,
+                                    buttonSize: 60.0,
                                     icon: Icon(
                                       Icons.chevron_left_sharp,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBtnText,
-                                      size: 26,
+                                      size: 26.0,
                                     ),
                                     onPressed: () async {
                                       context.pop();
@@ -161,7 +161,8 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                   Expanded(
                     flex: 13,
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
                       child: Stack(
                         children: [
                           StreamBuilder<List<AppSettingsRecord>>(
@@ -174,12 +175,12 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                               if (!snapshot.hasData) {
                                 return Center(
                                   child: SizedBox(
-                                    width: 40,
-                                    height: 40,
+                                    width: 40.0,
+                                    height: 40.0,
                                     child: SpinKitFadingCircle(
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      size: 40,
+                                      size: 40.0,
                                     ),
                                   ),
                                 );
@@ -193,7 +194,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                       : null;
 
                               return Container(
-                                width: MediaQuery.sizeOf(context).width,
+                                width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: double.infinity,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
@@ -206,9 +207,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          1, 0, 1, 0),
+                                          1.0, 0.0, 1.0, 0.0),
                                       child: Container(
-                                        width: MediaQuery.sizeOf(context).width,
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
+                                                1.0,
                                         height:
                                             MediaQuery.sizeOf(context).height *
                                                 0.11,
@@ -221,7 +224,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                               MainAxisAlignment.end,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsets.all(7),
+                                              padding: EdgeInsets.all(7.0),
                                               child: FFButtonWidget(
                                                 onPressed: () async {
                                                   await containerAppSettingsRecord!
@@ -370,16 +373,18 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .lineColor,
-                                                  size: 15,
+                                                  size: 15.0,
                                                 ),
                                                 options: FFButtonOptions(
-                                                  width: 150,
-                                                  height: 40,
+                                                  width: 150.0,
+                                                  height: 40.0,
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(0, 0, 0, 0),
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 0.0),
                                                   iconPadding:
                                                       EdgeInsetsDirectional
-                                                          .fromSTEB(0, 0, 0, 0),
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondary,
@@ -403,13 +408,14 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                         context)
                                                                     .titleSmallFamily),
                                                       ),
-                                                  elevation: 5,
+                                                  elevation: 5.0,
                                                   borderSide: BorderSide(
                                                     color: Colors.transparent,
-                                                    width: 1,
+                                                    width: 1.0,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(0),
+                                                      BorderRadius.circular(
+                                                          0.0),
                                                 ),
                                               ),
                                             ),
@@ -452,8 +458,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(0,
-                                                                      3, 0, 0),
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      3.0,
+                                                                      0.0,
+                                                                      0.0),
                                                           child: Container(
                                                             decoration:
                                                                 BoxDecoration(
@@ -477,7 +486,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       Padding(
                                                                     padding:
                                                                         EdgeInsets.all(
-                                                                            15),
+                                                                            15.0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -555,11 +564,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                         ),
                                                                         Divider(
                                                                           thickness:
-                                                                              1,
+                                                                              1.0,
                                                                           indent:
-                                                                              10,
+                                                                              10.0,
                                                                           endIndent:
-                                                                              10,
+                                                                              10.0,
                                                                           color:
                                                                               Color(0xFFD4D1D1),
                                                                         ),
@@ -591,11 +600,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                         ),
                                                                         Divider(
                                                                           thickness:
-                                                                              1,
+                                                                              1.0,
                                                                           indent:
-                                                                              10,
+                                                                              10.0,
                                                                           endIndent:
-                                                                              10,
+                                                                              10.0,
                                                                           color:
                                                                               Color(0xFFD4D1D1),
                                                                         ),
@@ -627,11 +636,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                         ),
                                                                         Divider(
                                                                           thickness:
-                                                                              1,
+                                                                              1.0,
                                                                           indent:
-                                                                              10,
+                                                                              10.0,
                                                                           endIndent:
-                                                                              10,
+                                                                              10.0,
                                                                           color:
                                                                               Color(0xFFD4D1D1),
                                                                         ),
@@ -705,7 +714,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                   padding:
                                                                       EdgeInsets
                                                                           .all(
-                                                                              15),
+                                                                              15.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -773,11 +782,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1,
+                                                                            1.0,
                                                                         indent:
-                                                                            10,
+                                                                            10.0,
                                                                         endIndent:
-                                                                            10,
+                                                                            10.0,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -812,11 +821,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1,
+                                                                            1.0,
                                                                         indent:
-                                                                            10,
+                                                                            10.0,
                                                                         endIndent:
-                                                                            10,
+                                                                            10.0,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -866,11 +875,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1,
+                                                                            1.0,
                                                                         indent:
-                                                                            10,
+                                                                            10.0,
                                                                         endIndent:
-                                                                            10,
+                                                                            10.0,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -905,11 +914,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1,
+                                                                            1.0,
                                                                         indent:
-                                                                            10,
+                                                                            10.0,
                                                                         endIndent:
-                                                                            10,
+                                                                            10.0,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -984,7 +993,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                   padding:
                                                                       EdgeInsets
                                                                           .all(
-                                                                              15),
+                                                                              15.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -1052,11 +1061,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                         ),
                                                                         Divider(
                                                                           thickness:
-                                                                              1,
+                                                                              1.0,
                                                                           indent:
-                                                                              10,
+                                                                              10.0,
                                                                           endIndent:
-                                                                              10,
+                                                                              10.0,
                                                                           color:
                                                                               Color(0xFFD4D1D1),
                                                                         ),
@@ -1088,11 +1097,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                         ),
                                                                         Divider(
                                                                           thickness:
-                                                                              1,
+                                                                              1.0,
                                                                           indent:
-                                                                              10,
+                                                                              10.0,
                                                                           endIndent:
-                                                                              10,
+                                                                              10.0,
                                                                           color:
                                                                               Color(0xFFD4D1D1),
                                                                         ),
@@ -1124,11 +1133,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                         ),
                                                                         Divider(
                                                                           thickness:
-                                                                              1,
+                                                                              1.0,
                                                                           indent:
-                                                                              10,
+                                                                              10.0,
                                                                           endIndent:
-                                                                              10,
+                                                                              10.0,
                                                                           color:
                                                                               Color(0xFFD4D1D1),
                                                                         ),
@@ -1160,11 +1169,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                         ),
                                                                         Divider(
                                                                           thickness:
-                                                                              1,
+                                                                              1.0,
                                                                           indent:
-                                                                              10,
+                                                                              10.0,
                                                                           endIndent:
-                                                                              10,
+                                                                              10.0,
                                                                           color:
                                                                               Color(0xFFD4D1D1),
                                                                         ),
@@ -1196,11 +1205,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                         ),
                                                                         Divider(
                                                                           thickness:
-                                                                              1,
+                                                                              1.0,
                                                                           indent:
-                                                                              10,
+                                                                              10.0,
                                                                           endIndent:
-                                                                              10,
+                                                                              10.0,
                                                                           color:
                                                                               Color(0xFFD4D1D1),
                                                                         ),
@@ -1232,11 +1241,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                         ),
                                                                         Divider(
                                                                           thickness:
-                                                                              1,
+                                                                              1.0,
                                                                           indent:
-                                                                              10,
+                                                                              10.0,
                                                                           endIndent:
-                                                                              10,
+                                                                              10.0,
                                                                           color:
                                                                               Color(0xFFD4D1D1),
                                                                         ),
@@ -1268,11 +1277,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                         ),
                                                                         Divider(
                                                                           thickness:
-                                                                              1,
+                                                                              1.0,
                                                                           indent:
-                                                                              10,
+                                                                              10.0,
                                                                           endIndent:
-                                                                              10,
+                                                                              10.0,
                                                                           color:
                                                                               Color(0xFFD4D1D1),
                                                                         ),
@@ -1345,7 +1354,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                   padding:
                                                                       EdgeInsets
                                                                           .all(
-                                                                              15),
+                                                                              15.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -1447,7 +1456,8 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                 child: Container(
                                                   width:
                                                       MediaQuery.sizeOf(context)
-                                                          .width,
+                                                              .width *
+                                                          1.0,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -1506,13 +1516,13 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        20),
+                                                                        20.0),
                                                           ),
                                                         ),
                                                         Divider(
                                                           thickness: 0.5,
-                                                          indent: 10,
-                                                          endIndent: 10,
+                                                          indent: 10.0,
+                                                          endIndent: 10.0,
                                                           color:
                                                               Color(0xFFD4D1D1),
                                                         ),
@@ -1559,8 +1569,8 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                         ),
                                                         Divider(
                                                           thickness: 0.5,
-                                                          indent: 10,
-                                                          endIndent: 10,
+                                                          indent: 10.0,
+                                                          endIndent: 10.0,
                                                           color:
                                                               Color(0xFFD4D1D1),
                                                         ),
@@ -1606,26 +1616,30 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        20),
+                                                                        20.0),
                                                           ),
                                                         ),
                                                         Divider(
                                                           thickness: 0.5,
-                                                          indent: 10,
-                                                          endIndent: 10,
+                                                          indent: 10.0,
+                                                          endIndent: 10.0,
                                                           color:
                                                               Color(0xFFD4D1D1),
                                                         ),
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(10,
-                                                                      0, 10, 0),
+                                                                  .fromSTEB(
+                                                                      10.0,
+                                                                      0.0,
+                                                                      10.0,
+                                                                      0.0),
                                                           child: Container(
                                                             width: MediaQuery
-                                                                    .sizeOf(
-                                                                        context)
-                                                                .width,
+                                                                        .sizeOf(
+                                                                            context)
+                                                                    .width *
+                                                                1.0,
                                                             height: MediaQuery
                                                                         .sizeOf(
                                                                             context)
@@ -1641,10 +1655,10 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          5,
-                                                                          0,
-                                                                          10,
-                                                                          0),
+                                                                          5.0,
+                                                                          0.0,
+                                                                          10.0,
+                                                                          0.0),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -1698,8 +1712,10 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                         safeSetState(() =>
                                                                             _model.dropDownValue1 =
                                                                                 val),
-                                                                    width: 240,
-                                                                    height: 50,
+                                                                    width:
+                                                                        240.0,
+                                                                    height:
+                                                                        50.0,
                                                                     textStyle: FlutterFlowTheme.of(
                                                                             context)
                                                                         .titleMedium
@@ -1720,20 +1736,20 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                             context)
                                                                         .primaryBackground,
                                                                     elevation:
-                                                                        2,
+                                                                        2.0,
                                                                     borderColor:
                                                                         Colors
                                                                             .transparent,
                                                                     borderWidth:
-                                                                        0,
+                                                                        0.0,
                                                                     borderRadius:
-                                                                        0,
+                                                                        0.0,
                                                                     margin: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            12,
-                                                                            4,
-                                                                            12,
-                                                                            4),
+                                                                            12.0,
+                                                                            4.0,
+                                                                            12.0,
+                                                                            4.0),
                                                                     hidesUnderline:
                                                                         true,
                                                                     isSearchable:
@@ -1748,8 +1764,8 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                         ),
                                                         Divider(
                                                           thickness: 0.5,
-                                                          indent: 10,
-                                                          endIndent: 10,
+                                                          indent: 10.0,
+                                                          endIndent: 10.0,
                                                           color:
                                                               Color(0xFFD4D1D1),
                                                         ),
@@ -1794,13 +1810,13 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        0),
+                                                                        0.0),
                                                           ),
                                                         ),
                                                         Divider(
                                                           thickness: 0.5,
-                                                          indent: 10,
-                                                          endIndent: 10,
+                                                          indent: 10.0,
+                                                          endIndent: 10.0,
                                                           color:
                                                               Color(0xFFD4D1D1),
                                                         ),
@@ -1846,13 +1862,13 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        20),
+                                                                        20.0),
                                                           ),
                                                         ),
                                                         Divider(
                                                           thickness: 0.5,
-                                                          indent: 10,
-                                                          endIndent: 10,
+                                                          indent: 10.0,
+                                                          endIndent: 10.0,
                                                           color:
                                                               Color(0xFFD4D1D1),
                                                         ),
@@ -1898,13 +1914,13 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        20),
+                                                                        20.0),
                                                           ),
                                                         ),
                                                         Divider(
                                                           thickness: 0.5,
-                                                          indent: 10,
-                                                          endIndent: 10,
+                                                          indent: 10.0,
+                                                          endIndent: 10.0,
                                                           color:
                                                               Color(0xFFC1C1C1),
                                                         ),
@@ -1950,7 +1966,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        20),
+                                                                        20.0),
                                                           ),
                                                         ),
                                                       ],
@@ -1959,7 +1975,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsets.all(10),
+                                                padding: EdgeInsets.all(10.0),
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
@@ -1984,9 +2000,9 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                 ),
                                               ),
                                               Divider(
-                                                thickness: 1,
-                                                indent: 10,
-                                                endIndent: 10,
+                                                thickness: 1.0,
+                                                indent: 10.0,
+                                                endIndent: 10.0,
                                                 color: Color(0xFFD4D1D1),
                                               ),
                                               Container(
@@ -2027,7 +2043,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                   padding:
                                                                       EdgeInsets
                                                                           .all(
-                                                                              15),
+                                                                              15.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -2095,11 +2111,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1,
+                                                                            1.0,
                                                                         indent:
-                                                                            10,
+                                                                            10.0,
                                                                         endIndent:
-                                                                            10,
+                                                                            10.0,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -2171,7 +2187,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                   padding:
                                                                       EdgeInsets
                                                                           .all(
-                                                                              15),
+                                                                              15.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -2239,11 +2255,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1,
+                                                                            1.0,
                                                                         indent:
-                                                                            10,
+                                                                            10.0,
                                                                         endIndent:
-                                                                            10,
+                                                                            10.0,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -2278,11 +2294,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1,
+                                                                            1.0,
                                                                         indent:
-                                                                            10,
+                                                                            10.0,
                                                                         endIndent:
-                                                                            10,
+                                                                            10.0,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -2317,11 +2333,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1,
+                                                                            1.0,
                                                                         indent:
-                                                                            10,
+                                                                            10.0,
                                                                         endIndent:
-                                                                            10,
+                                                                            10.0,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -2356,11 +2372,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1,
+                                                                            1.0,
                                                                         indent:
-                                                                            10,
+                                                                            10.0,
                                                                         endIndent:
-                                                                            10,
+                                                                            10.0,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -2395,11 +2411,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1,
+                                                                            1.0,
                                                                         indent:
-                                                                            10,
+                                                                            10.0,
                                                                         endIndent:
-                                                                            10,
+                                                                            10.0,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -2471,7 +2487,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                   padding:
                                                                       EdgeInsets
                                                                           .all(
-                                                                              15),
+                                                                              15.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -2539,11 +2555,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                         ),
                                                                         Divider(
                                                                           thickness:
-                                                                              1,
+                                                                              1.0,
                                                                           indent:
-                                                                              10,
+                                                                              10.0,
                                                                           endIndent:
-                                                                              10,
+                                                                              10.0,
                                                                           color:
                                                                               Color(0xFFD4D1D1),
                                                                         ),
@@ -2575,11 +2591,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                         ),
                                                                         Divider(
                                                                           thickness:
-                                                                              1,
+                                                                              1.0,
                                                                           indent:
-                                                                              10,
+                                                                              10.0,
                                                                           endIndent:
-                                                                              10,
+                                                                              10.0,
                                                                           color:
                                                                               Color(0xFFD4D1D1),
                                                                         ),
@@ -2649,7 +2665,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                   padding:
                                                                       EdgeInsets
                                                                           .all(
-                                                                              15),
+                                                                              15.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -2717,11 +2733,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                         ),
                                                                         Divider(
                                                                           thickness:
-                                                                              1,
+                                                                              1.0,
                                                                           indent:
-                                                                              10,
+                                                                              10.0,
                                                                           endIndent:
-                                                                              10,
+                                                                              10.0,
                                                                           color:
                                                                               Color(0xFFD4D1D1),
                                                                         ),
@@ -2753,11 +2769,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                         ),
                                                                         Divider(
                                                                           thickness:
-                                                                              1,
+                                                                              1.0,
                                                                           indent:
-                                                                              10,
+                                                                              10.0,
                                                                           endIndent:
-                                                                              10,
+                                                                              10.0,
                                                                           color:
                                                                               Color(0xFFD4D1D1),
                                                                         ),
@@ -2827,7 +2843,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                   padding:
                                                                       EdgeInsets
                                                                           .all(
-                                                                              15),
+                                                                              15.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -2895,11 +2911,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1,
+                                                                            1.0,
                                                                         indent:
-                                                                            10,
+                                                                            10.0,
                                                                         endIndent:
-                                                                            10,
+                                                                            10.0,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -2934,11 +2950,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1,
+                                                                            1.0,
                                                                         indent:
-                                                                            10,
+                                                                            10.0,
                                                                         endIndent:
-                                                                            10,
+                                                                            10.0,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -2973,11 +2989,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1,
+                                                                            1.0,
                                                                         indent:
-                                                                            10,
+                                                                            10.0,
                                                                         endIndent:
-                                                                            10,
+                                                                            10.0,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -3049,7 +3065,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                   padding:
                                                                       EdgeInsets
                                                                           .all(
-                                                                              15),
+                                                                              15.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -3117,11 +3133,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1,
+                                                                            1.0,
                                                                         indent:
-                                                                            10,
+                                                                            10.0,
                                                                         endIndent:
-                                                                            10,
+                                                                            10.0,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -3196,7 +3212,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                   padding:
                                                                       EdgeInsets
                                                                           .all(
-                                                                              15),
+                                                                              15.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -3264,11 +3280,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1,
+                                                                            1.0,
                                                                         indent:
-                                                                            10,
+                                                                            10.0,
                                                                         endIndent:
-                                                                            10,
+                                                                            10.0,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -3303,11 +3319,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1,
+                                                                            1.0,
                                                                         indent:
-                                                                            10,
+                                                                            10.0,
                                                                         endIndent:
-                                                                            10,
+                                                                            10.0,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -3342,11 +3358,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1,
+                                                                            1.0,
                                                                         indent:
-                                                                            10,
+                                                                            10.0,
                                                                         endIndent:
-                                                                            10,
+                                                                            10.0,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -3421,7 +3437,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                   padding:
                                                                       EdgeInsets
                                                                           .all(
-                                                                              15),
+                                                                              15.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -3460,11 +3476,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                     children: [
                                                                       Divider(
                                                                         thickness:
-                                                                            1,
+                                                                            1.0,
                                                                         indent:
-                                                                            10,
+                                                                            10.0,
                                                                         endIndent:
-                                                                            10,
+                                                                            10.0,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -3499,20 +3515,20 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1,
+                                                                            1.0,
                                                                         indent:
-                                                                            10,
+                                                                            10.0,
                                                                         endIndent:
-                                                                            10,
+                                                                            10.0,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            10,
-                                                                            0,
-                                                                            10,
-                                                                            0),
+                                                                            10.0,
+                                                                            0.0,
+                                                                            10.0,
+                                                                            0.0),
                                                                         child:
                                                                             InkWell(
                                                                           splashColor:
@@ -3554,7 +3570,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                             ),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -3578,11 +3594,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1,
+                                                                            1.0,
                                                                         indent:
-                                                                            10,
+                                                                            10.0,
                                                                         endIndent:
-                                                                            10,
+                                                                            10.0,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -3617,11 +3633,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1,
+                                                                            1.0,
                                                                         indent:
-                                                                            10,
+                                                                            10.0,
                                                                         endIndent:
-                                                                            10,
+                                                                            10.0,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -3682,7 +3698,8 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                               Container(
                                                 width:
                                                     MediaQuery.sizeOf(context)
-                                                        .width,
+                                                            .width *
+                                                        1.0,
                                                 decoration: BoxDecoration(),
                                                 child: Column(
                                                   mainAxisSize:
@@ -3732,13 +3749,13 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                           RoundedRectangleBorder(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(20),
+                                                                .circular(20.0),
                                                       ),
                                                     ),
                                                     Divider(
                                                       thickness: 0.5,
-                                                      indent: 10,
-                                                      endIndent: 10,
+                                                      indent: 10.0,
+                                                      endIndent: 10.0,
                                                       color: Color(0xFFD4D1D1),
                                                     ),
                                                     SwitchListTile(
@@ -3783,13 +3800,13 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                           RoundedRectangleBorder(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(20),
+                                                                .circular(20.0),
                                                       ),
                                                     ),
                                                     Divider(
                                                       thickness: 0.5,
-                                                      indent: 10,
-                                                      endIndent: 10,
+                                                      indent: 10.0,
+                                                      endIndent: 10.0,
                                                       color: Color(0xFFD4D1D1),
                                                     ),
                                                     SwitchListTile(
@@ -3834,13 +3851,13 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                           RoundedRectangleBorder(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(20),
+                                                                .circular(20.0),
                                                       ),
                                                     ),
                                                     Divider(
                                                       thickness: 0.5,
-                                                      indent: 10,
-                                                      endIndent: 10,
+                                                      indent: 10.0,
+                                                      endIndent: 10.0,
                                                       color: Color(0xFFD4D1D1),
                                                     ),
                                                     SwitchListTile(
@@ -3885,20 +3902,23 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                           RoundedRectangleBorder(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(20),
+                                                                .circular(20.0),
                                                       ),
                                                     ),
                                                     Divider(
                                                       thickness: 0.5,
-                                                      indent: 10,
-                                                      endIndent: 10,
+                                                      indent: 10.0,
+                                                      endIndent: 10.0,
                                                       color: Color(0xFFD4D1D1),
                                                     ),
                                                     Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  10, 5, 10, 0),
+                                                                  10.0,
+                                                                  5.0,
+                                                                  10.0,
+                                                                  0.0),
                                                       child: Container(
                                                         width: double.infinity,
                                                         height:
@@ -3919,10 +3939,10 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          10,
-                                                                          10,
-                                                                          0),
+                                                                          0.0,
+                                                                          10.0,
+                                                                          10.0,
+                                                                          0.0),
                                                               child: Text(
                                                                 FFLocalizations.of(
                                                                         context)
@@ -3973,8 +3993,8 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                   safeSetState(() =>
                                                                       _model.dropDownValue2 =
                                                                           val),
-                                                              width: 240,
-                                                              height: 50,
+                                                              width: 240.0,
+                                                              height: 50.0,
                                                               textStyle:
                                                                   FlutterFlowTheme.of(
                                                                           context)
@@ -3996,18 +4016,18 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                               fillColor: FlutterFlowTheme
                                                                       .of(context)
                                                                   .secondaryBackground,
-                                                              elevation: 2,
+                                                              elevation: 2.0,
                                                               borderColor: Colors
                                                                   .transparent,
-                                                              borderWidth: 0,
-                                                              borderRadius: 0,
+                                                              borderWidth: 0.0,
+                                                              borderRadius: 0.0,
                                                               margin:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          12,
-                                                                          4,
-                                                                          12,
-                                                                          4),
+                                                                          12.0,
+                                                                          4.0,
+                                                                          12.0,
+                                                                          4.0),
                                                               hidesUnderline:
                                                                   true,
                                                               isSearchable:
@@ -4021,8 +4041,8 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                     ),
                                                     Divider(
                                                       thickness: 0.5,
-                                                      indent: 10,
-                                                      endIndent: 10,
+                                                      indent: 10.0,
+                                                      endIndent: 10.0,
                                                       color: Color(0xFFD4D1D1),
                                                     ),
                                                     SwitchListTile(
@@ -4067,13 +4087,13 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                           RoundedRectangleBorder(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(20),
+                                                                .circular(20.0),
                                                       ),
                                                     ),
                                                     Divider(
                                                       thickness: 0.5,
-                                                      indent: 10,
-                                                      endIndent: 10,
+                                                      indent: 10.0,
+                                                      endIndent: 10.0,
                                                       color: Color(0xFFD4D1D1),
                                                     ),
                                                     SwitchListTile(
@@ -4118,13 +4138,13 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                           RoundedRectangleBorder(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(20),
+                                                                .circular(20.0),
                                                       ),
                                                     ),
                                                     Divider(
                                                       thickness: 0.5,
-                                                      indent: 10,
-                                                      endIndent: 10,
+                                                      indent: 10.0,
+                                                      endIndent: 10.0,
                                                       color: Color(0xFFD4D1D1),
                                                     ),
                                                     SwitchListTile(
@@ -4168,8 +4188,8 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                     ),
                                                     Divider(
                                                       thickness: 0.5,
-                                                      indent: 10,
-                                                      endIndent: 10,
+                                                      indent: 10.0,
+                                                      endIndent: 10.0,
                                                       color: Color(0xFFD4D1D1),
                                                     ),
                                                     SwitchListTile(
@@ -4214,13 +4234,13 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                           RoundedRectangleBorder(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(20),
+                                                                .circular(20.0),
                                                       ),
                                                     ),
                                                     Divider(
                                                       thickness: 0.5,
-                                                      indent: 10,
-                                                      endIndent: 10,
+                                                      indent: 10.0,
+                                                      endIndent: 10.0,
                                                       color: Color(0xFFD4D1D1),
                                                     ),
                                                     SwitchListTile(
@@ -4265,13 +4285,13 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                           RoundedRectangleBorder(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(20),
+                                                                .circular(20.0),
                                                       ),
                                                     ),
                                                     Divider(
                                                       thickness: 0.5,
-                                                      indent: 10,
-                                                      endIndent: 10,
+                                                      indent: 10.0,
+                                                      endIndent: 10.0,
                                                       color: Color(0xFFD4D1D1),
                                                     ),
                                                     SwitchListTile(
@@ -4316,13 +4336,13 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                           RoundedRectangleBorder(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(20),
+                                                                .circular(20.0),
                                                       ),
                                                     ),
                                                     Divider(
                                                       thickness: 0.5,
-                                                      indent: 10,
-                                                      endIndent: 10,
+                                                      indent: 10.0,
+                                                      endIndent: 10.0,
                                                       color: Color(0xFFD4D1D1),
                                                     ),
                                                     SwitchListTile(
@@ -4367,13 +4387,13 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                           RoundedRectangleBorder(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(20),
+                                                                .circular(20.0),
                                                       ),
                                                     ),
                                                     Divider(
                                                       thickness: 0.5,
-                                                      indent: 10,
-                                                      endIndent: 10,
+                                                      indent: 10.0,
+                                                      endIndent: 10.0,
                                                       color: Color(0xFFD4D1D1),
                                                     ),
                                                     SwitchListTile(
@@ -4418,7 +4438,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                           RoundedRectangleBorder(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(20),
+                                                                .circular(20.0),
                                                       ),
                                                     ),
                                                   ],
@@ -4627,13 +4647,13 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                       'f4hwledx' /* Generate Defaualt settings */,
                                     ),
                                     options: FFButtonOptions(
-                                      width: 210,
-                                      height: 40,
+                                      width: 210.0,
+                                      height: 40.0,
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 0, 0),
+                                          0.0, 0.0, 0.0, 0.0),
                                       iconPadding:
                                           EdgeInsetsDirectional.fromSTEB(
-                                              0, 0, 0, 0),
+                                              0.0, 0.0, 0.0, 0.0),
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBackground,
                                       textStyle: FlutterFlowTheme.of(context)
@@ -4650,12 +4670,12 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .titleMediumFamily),
                                           ),
-                                      elevation: 3,
+                                      elevation: 3.0,
                                       borderSide: BorderSide(
                                         color: Colors.transparent,
-                                        width: 1,
+                                        width: 1.0,
                                       ),
-                                      borderRadius: BorderRadius.circular(8),
+                                      borderRadius: BorderRadius.circular(8.0),
                                     ),
                                   ),
                                 ],

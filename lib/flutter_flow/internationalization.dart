@@ -21695,20 +21695,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'vp148rd4': {
-      'en': 'Print',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    '3c7iov2g': {
-      'en': 'Bill Footer',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
     'q7zfo3l0': {
       'en': 'Attachment',
       'hi': '',
@@ -21717,7 +21703,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     'tdosvahb': {
-      'en': 'Net Amount',
+      'en': 'Grand Total',
       'hi': '',
       'kn': '',
       'mr': '',

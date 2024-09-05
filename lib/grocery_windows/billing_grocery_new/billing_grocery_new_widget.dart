@@ -127,11 +127,11 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Center(
               child: SizedBox(
-                width: 40,
-                height: 40,
+                width: 40.0,
+                height: 40.0,
                 child: SpinKitFadingCircle(
                   color: FlutterFlowTheme.of(context).primary,
-                  size: 40,
+                  size: 40.0,
                 ),
               ),
             ),
@@ -151,7 +151,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                 endDrawer: Container(
                   width: MediaQuery.sizeOf(context).width * 0.4,
                   child: Drawer(
-                    elevation: 16,
+                    elevation: 16.0,
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.end,
@@ -165,11 +165,11 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                             if (!snapshot.hasData) {
                               return Center(
                                 child: SizedBox(
-                                  width: 40,
-                                  height: 40,
+                                  width: 40.0,
+                                  height: 40.0,
                                   child: SpinKitFadingCircle(
                                     color: FlutterFlowTheme.of(context).primary,
-                                    size: 40,
+                                    size: 40.0,
                                   ),
                                 ),
                               );
@@ -179,12 +179,12 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
 
                             return Container(
                               width: MediaQuery.sizeOf(context).width * 0.5,
-                              height: MediaQuery.sizeOf(context).height * 1,
+                              height: MediaQuery.sizeOf(context).height * 1.0,
                               decoration: BoxDecoration(
                                 color: Color(0xA8D2D2F2),
                               ),
                               child: Padding(
-                                padding: EdgeInsets.all(10),
+                                padding: EdgeInsets.all(10.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -206,15 +206,15 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                         children: [
                                           FlutterFlowIconButton(
                                             borderColor: Colors.transparent,
-                                            borderRadius: 30,
-                                            borderWidth: 1,
-                                            buttonSize: 40,
+                                            borderRadius: 30.0,
+                                            borderWidth: 1.0,
+                                            buttonSize: 40.0,
                                             icon: Icon(
                                               Icons.chevron_left,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
-                                              size: 22,
+                                              size: 22.0,
                                             ),
                                             onPressed: () async {
                                               context.pop();
@@ -228,7 +228,8 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(20, 0, 0, 0),
+                                                      .fromSTEB(
+                                                          20.0, 0.0, 0.0, 0.0),
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
@@ -260,15 +261,15 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                           ),
                                           FlutterFlowIconButton(
                                             borderColor: Colors.transparent,
-                                            borderRadius: 30,
-                                            borderWidth: 1,
-                                            buttonSize: 40,
+                                            borderRadius: 30.0,
+                                            borderWidth: 1.0,
+                                            buttonSize: 40.0,
                                             icon: Icon(
                                               Icons.person_add,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
-                                              size: 22,
+                                              size: 22.0,
                                             ),
                                             onPressed: () async {
                                               await showModalBottomSheet(
@@ -300,10 +301,10 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 10, 0, 0),
+                                          0.0, 10.0, 0.0, 0.0),
                                       child: Material(
                                         color: Colors.transparent,
-                                        elevation: 2,
+                                        elevation: 2.0,
                                         child: Container(
                                           width: double.infinity,
                                           height: MediaQuery.sizeOf(context)
@@ -321,7 +322,8 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                               Expanded(
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(6, 0, 0, 0),
+                                                      .fromSTEB(
+                                                          6.0, 0.0, 0.0, 0.0),
                                                   child: TextFormField(
                                                     controller: _model
                                                         .textFieldsearchTextController,
@@ -507,9 +509,9 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                 child: FlutterFlowIconButton(
                                                   borderColor:
                                                       Colors.transparent,
-                                                  borderRadius: 30,
-                                                  borderWidth: 1,
-                                                  buttonSize: 50,
+                                                  borderRadius: 30.0,
+                                                  borderWidth: 1.0,
+                                                  buttonSize: 50.0,
                                                   fillColor:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -519,7 +521,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryBtnText,
-                                                    size: 22,
+                                                    size: 22.0,
                                                   ),
                                                   onPressed: () {
                                                     print(
@@ -534,7 +536,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 5, 0, 0),
+                                          0.0, 5.0, 0.0, 0.0),
                                       child: Container(
                                         width: double.infinity,
                                         decoration: BoxDecoration(
@@ -567,7 +569,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                             containerVar[
                                                                 containerVarIndex];
                                                         return Container(
-                                                          height: 80,
+                                                          height: 80.0,
                                                           decoration:
                                                               BoxDecoration(),
                                                           child: InkWell(
@@ -650,7 +652,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            4),
+                                                                            4.0),
                                                               ),
                                                               child: Row(
                                                                 mainAxisSize:
@@ -665,18 +667,19 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                         Colors
                                                                             .transparent,
                                                                     borderRadius:
-                                                                        30,
+                                                                        30.0,
                                                                     borderWidth:
-                                                                        1,
+                                                                        1.0,
                                                                     buttonSize:
-                                                                        60,
+                                                                        60.0,
                                                                     icon: Icon(
                                                                       Icons
                                                                           .account_circle,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .info,
-                                                                      size: 30,
+                                                                      size:
+                                                                          30.0,
                                                                     ),
                                                                     onPressed:
                                                                         () {
@@ -688,7 +691,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          170,
+                                                                          170.0,
                                                                       height: MediaQuery.sizeOf(context)
                                                                               .height *
                                                                           0.14,
@@ -732,7 +735,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100,
+                                                                          100.0,
                                                                       height: MediaQuery.sizeOf(context)
                                                                               .height *
                                                                           0.14,
@@ -751,7 +754,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                               0)
                                                                             Flexible(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -798,16 +801,16 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                             borderColor:
                                                                                 Colors.transparent,
                                                                             borderRadius:
-                                                                                30,
+                                                                                30.0,
                                                                             borderWidth:
-                                                                                1,
+                                                                                1.0,
                                                                             buttonSize:
-                                                                                60,
+                                                                                60.0,
                                                                             icon:
                                                                                 Icon(
                                                                               Icons.chevron_right,
                                                                               color: FlutterFlowTheme.of(context).info,
-                                                                              size: 24,
+                                                                              size: 24.0,
                                                                             ),
                                                                             onPressed:
                                                                                 () async {
@@ -855,7 +858,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                         final listItem =
                                                             list[listIndex];
                                                         return Container(
-                                                          height: 80,
+                                                          height: 80.0,
                                                           decoration:
                                                               BoxDecoration(),
                                                           child: Card(
@@ -869,7 +872,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          4),
+                                                                          4.0),
                                                             ),
                                                             child: InkWell(
                                                               splashColor: Colors
@@ -955,18 +958,19 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                         Colors
                                                                             .transparent,
                                                                     borderRadius:
-                                                                        30,
+                                                                        30.0,
                                                                     borderWidth:
-                                                                        1,
+                                                                        1.0,
                                                                     buttonSize:
-                                                                        60,
+                                                                        60.0,
                                                                     icon: Icon(
                                                                       Icons
                                                                           .account_circle,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .info,
-                                                                      size: 30,
+                                                                      size:
+                                                                          30.0,
                                                                     ),
                                                                     onPressed:
                                                                         () {
@@ -978,7 +982,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          170,
+                                                                          170.0,
                                                                       height: MediaQuery.sizeOf(context)
                                                                               .height *
                                                                           0.14,
@@ -1022,7 +1026,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100,
+                                                                          100.0,
                                                                       height: MediaQuery.sizeOf(context)
                                                                               .height *
                                                                           0.14,
@@ -1041,7 +1045,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                               0)
                                                                             Flexible(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -1090,16 +1094,16 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                             borderColor:
                                                                                 Colors.transparent,
                                                                             borderRadius:
-                                                                                30,
+                                                                                30.0,
                                                                             borderWidth:
-                                                                                1,
+                                                                                1.0,
                                                                             buttonSize:
-                                                                                60,
+                                                                                60.0,
                                                                             icon:
                                                                                 Icon(
                                                                               Icons.chevron_right,
                                                                               color: FlutterFlowTheme.of(context).alternate,
-                                                                              size: 24,
+                                                                              size: 24.0,
                                                                             ),
                                                                             onPressed:
                                                                                 () async {
@@ -1157,11 +1161,11 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                     if (!snapshot.hasData) {
                       return Center(
                         child: SizedBox(
-                          width: 40,
-                          height: 40,
+                          width: 40.0,
+                          height: 40.0,
                           child: SpinKitFadingCircle(
                             color: FlutterFlowTheme.of(context).primary,
-                            size: 40,
+                            size: 40.0,
                           ),
                         ),
                       );
@@ -1188,8 +1192,8 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                               color: FlutterFlowTheme.of(context).primary,
                             ),
                             child: Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(20, 5, 20, 5),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  20.0, 5.0, 20.0, 5.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment:
@@ -1205,19 +1209,19 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 15, 0),
+                                                  0.0, 0.0, 15.0, 0.0),
                                           child: FlutterFlowIconButton(
                                             borderColor:
                                                 FlutterFlowTheme.of(context)
                                                     .accent3,
-                                            borderRadius: 10,
-                                            buttonSize: 35,
+                                            borderRadius: 10.0,
+                                            buttonSize: 35.0,
                                             icon: Icon(
                                               Icons.chevron_left,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBtnText,
-                                              size: 18,
+                                              size: 18.0,
                                             ),
                                             onPressed: () {
                                               print('IconButton pressed ...');
@@ -1240,7 +1244,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryBtnText,
-                                                  fontSize: 20,
+                                                  fontSize: 20.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
                                                   useGoogleFonts: GoogleFonts
@@ -1256,9 +1260,9 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        20, 0, 20, 0),
+                                        20.0, 0.0, 20.0, 0.0),
                                     child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(8),
+                                      borderRadius: BorderRadius.circular(8.0),
                                       child: Image.asset(
                                         'assets/images/Sensible_Connect_Logo_White.png',
                                         width:
@@ -1279,11 +1283,11 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                           CrossAxisAlignment.center,
                                       children: [
                                         Container(
-                                          width: 100,
-                                          height: 45,
+                                          width: 100.0,
+                                          height: 45.0,
                                           child: custom_widgets.OnlineSync(
-                                            width: 100,
-                                            height: 45,
+                                            width: 100.0,
+                                            height: 45.0,
                                             outletRef:
                                                 FFAppState().outletIdRef!,
                                             userDoc: widget!.userref!,
@@ -1292,7 +1296,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 10, 0),
+                                                  0.0, 0.0, 10.0, 0.0),
                                           child: Text(
                                             FFAppState().outletName,
                                             style: FlutterFlowTheme.of(context)
@@ -1317,7 +1321,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 15, 0),
+                                                  0.0, 0.0, 15.0, 0.0),
                                           child: Text(
                                             FFAppState().userName,
                                             style: FlutterFlowTheme.of(context)
@@ -1344,9 +1348,9 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                           borderColor:
                                               FlutterFlowTheme.of(context)
                                                   .secondary,
-                                          borderRadius: 10,
-                                          borderWidth: 1,
-                                          buttonSize: 35,
+                                          borderRadius: 10.0,
+                                          borderWidth: 1.0,
+                                          buttonSize: 35.0,
                                           fillColor:
                                               FlutterFlowTheme.of(context)
                                                   .primaryBtnText,
@@ -1354,7 +1358,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                             Icons.menu_rounded,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            size: 18,
+                                            size: 18.0,
                                           ),
                                           onPressed: () {
                                             print('IconButton pressed ...');
@@ -1395,14 +1399,14 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                 Flexible(
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        20, 10, 20, 10),
+                                        20.0, 10.0, 20.0, 10.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 0, 10),
+                                                  0.0, 0.0, 0.0, 10.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -1415,8 +1419,11 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                       child: Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
-                                                                .fromSTEB(0, 0,
-                                                                    10, 0),
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    10.0,
+                                                                    0.0),
                                                         child: Text(
                                                           FFLocalizations.of(
                                                                   context)
@@ -1448,8 +1455,11 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                       child: Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
-                                                                .fromSTEB(0, 0,
-                                                                    15, 0),
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    15.0,
+                                                                    0.0),
                                                         child: Text(
                                                           functions.genInvoiceNum(
                                                               FFAppState()
@@ -1480,8 +1490,11 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                       child: Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
-                                                                .fromSTEB(0, 0,
-                                                                    10, 0),
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    10.0,
+                                                                    0.0),
                                                         child: Text(
                                                           FFLocalizations.of(
                                                                   context)
@@ -1558,12 +1571,12 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .customColor1,
-                                                              width: 1,
+                                                              width: 1.0,
                                                             ),
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        8),
+                                                                        8.0),
                                                           ),
                                                           focusedBorder:
                                                               OutlineInputBorder(
@@ -1572,12 +1585,12 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .info,
-                                                              width: 1,
+                                                              width: 1.0,
                                                             ),
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        8),
+                                                                        8.0),
                                                           ),
                                                           errorBorder:
                                                               OutlineInputBorder(
@@ -1586,12 +1599,12 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .error,
-                                                              width: 1,
+                                                              width: 1.0,
                                                             ),
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        8),
+                                                                        8.0),
                                                           ),
                                                           focusedErrorBorder:
                                                               OutlineInputBorder(
@@ -1600,12 +1613,12 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .error,
-                                                              width: 1,
+                                                              width: 1.0,
                                                             ),
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        8),
+                                                                        8.0),
                                                           ),
                                                           filled: true,
                                                           fillColor: FlutterFlowTheme
@@ -1613,7 +1626,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                               .secondaryBackground,
                                                           contentPadding:
                                                               EdgeInsets.all(
-                                                                  12),
+                                                                  12.0),
                                                         ),
                                                         style:
                                                             FlutterFlowTheme.of(
@@ -1653,8 +1666,8 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                0, 0, 10, 0),
+                                                            .fromSTEB(0.0, 0.0,
+                                                                10.0, 0.0),
                                                     child: Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -1685,9 +1698,12 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0, 0, 10, 0),
+                                                                  0.0,
+                                                                  0.0,
+                                                                  10.0,
+                                                                  0.0),
                                                       child: Container(
-                                                        width: 800,
+                                                        width: 800.0,
                                                         decoration:
                                                             BoxDecoration(
                                                           color: FlutterFlowTheme
@@ -1695,7 +1711,8 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                               .secondaryBackground,
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(4),
+                                                                  .circular(
+                                                                      4.0),
                                                           border: Border.all(
                                                             color: FlutterFlowTheme
                                                                     .of(context)
@@ -1705,15 +1722,18 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(0,
-                                                                      0, 10, 0),
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      10.0,
+                                                                      0.0),
                                                           child: Container(
-                                                            width: 200,
-                                                            height: 40,
+                                                            width: 200.0,
+                                                            height: 40.0,
                                                             child: custom_widgets
                                                                 .SearchHiveprdGrocery(
-                                                              width: 200,
-                                                              height: 40,
+                                                              width: 200.0,
+                                                              height: 40.0,
                                                               billno:
                                                                   FFAppState()
                                                                       .selBill,
@@ -1746,17 +1766,17 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                0, 0, 15, 0),
+                                                            .fromSTEB(0.0, 0.0,
+                                                                15.0, 0.0),
                                                     child:
                                                         FlutterFlowIconButton(
                                                       borderColor:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .customColor1,
-                                                      borderRadius: 5,
-                                                      borderWidth: 1,
-                                                      buttonSize: 35,
+                                                      borderRadius: 5.0,
+                                                      borderWidth: 1.0,
+                                                      buttonSize: 35.0,
                                                       fillColor:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1767,7 +1787,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primaryText,
-                                                        size: 18,
+                                                        size: 18.0,
                                                       ),
                                                       onPressed: () async {
                                                         await showModalBottomSheet(
@@ -1811,14 +1831,14 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                 Flexible(
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        20, 10, 20, 10),
+                                        20.0, 10.0, 20.0, 10.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 0, 10),
+                                                  0.0, 0.0, 0.0, 10.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -1829,7 +1849,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                   mainAxisAlignment:
                                                       MainAxisAlignment.start,
                                                   children: <Widget>[].divide(
-                                                      SizedBox(width: 10)),
+                                                      SizedBox(width: 10.0)),
                                                 ),
                                               ),
                                             ],
@@ -1838,7 +1858,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 0, 10),
+                                                  0.0, 0.0, 0.0, 10.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -1853,7 +1873,10 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0, 0, 8, 0),
+                                                                    0.0,
+                                                                    0.0,
+                                                                    8.0,
+                                                                    0.0),
                                                         child: Row(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -1866,10 +1889,10 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            10,
-                                                                            0),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            10.0,
+                                                                            0.0),
                                                                 child: Text(
                                                                   FFLocalizations.of(
                                                                           context)
@@ -1937,11 +1960,12 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .customColor1,
-                                                                      width: 1,
+                                                                      width:
+                                                                          1.0,
                                                                     ),
                                                                     borderRadius:
-                                                                        BorderRadius
-                                                                            .circular(8),
+                                                                        BorderRadius.circular(
+                                                                            8.0),
                                                                   ),
                                                                   focusedBorder:
                                                                       OutlineInputBorder(
@@ -1950,11 +1974,12 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .info,
-                                                                      width: 1,
+                                                                      width:
+                                                                          1.0,
                                                                     ),
                                                                     borderRadius:
-                                                                        BorderRadius
-                                                                            .circular(8),
+                                                                        BorderRadius.circular(
+                                                                            8.0),
                                                                   ),
                                                                   errorBorder:
                                                                       OutlineInputBorder(
@@ -1963,11 +1988,12 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .error,
-                                                                      width: 1,
+                                                                      width:
+                                                                          1.0,
                                                                     ),
                                                                     borderRadius:
-                                                                        BorderRadius
-                                                                            .circular(8),
+                                                                        BorderRadius.circular(
+                                                                            8.0),
                                                                   ),
                                                                   focusedErrorBorder:
                                                                       OutlineInputBorder(
@@ -1976,11 +2002,12 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .error,
-                                                                      width: 1,
+                                                                      width:
+                                                                          1.0,
                                                                     ),
                                                                     borderRadius:
-                                                                        BorderRadius
-                                                                            .circular(8),
+                                                                        BorderRadius.circular(
+                                                                            8.0),
                                                                   ),
                                                                   filled: true,
                                                                   fillColor: FlutterFlowTheme.of(
@@ -1989,7 +2016,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                   contentPadding:
                                                                       EdgeInsets
                                                                           .all(
-                                                                              12),
+                                                                              12.0),
                                                                 ),
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
@@ -2016,9 +2043,9 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                   FlutterFlowTheme.of(
                                                                           context)
                                                                       .customColor1,
-                                                              borderRadius: 5,
-                                                              borderWidth: 1,
-                                                              buttonSize: 35,
+                                                              borderRadius: 5.0,
+                                                              borderWidth: 1.0,
+                                                              buttonSize: 35.0,
                                                               fillColor:
                                                                   FlutterFlowTheme.of(
                                                                           context)
@@ -2028,7 +2055,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
-                                                                size: 18,
+                                                                size: 18.0,
                                                               ),
                                                               onPressed:
                                                                   () async {
@@ -2042,10 +2069,10 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            10,
-                                                                            0),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            10.0,
+                                                                            0.0),
                                                                 child: Text(
                                                                   FFLocalizations.of(
                                                                           context)
@@ -2113,11 +2140,12 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .customColor1,
-                                                                      width: 1,
+                                                                      width:
+                                                                          1.0,
                                                                     ),
                                                                     borderRadius:
-                                                                        BorderRadius
-                                                                            .circular(8),
+                                                                        BorderRadius.circular(
+                                                                            8.0),
                                                                   ),
                                                                   focusedBorder:
                                                                       OutlineInputBorder(
@@ -2126,11 +2154,12 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .info,
-                                                                      width: 1,
+                                                                      width:
+                                                                          1.0,
                                                                     ),
                                                                     borderRadius:
-                                                                        BorderRadius
-                                                                            .circular(8),
+                                                                        BorderRadius.circular(
+                                                                            8.0),
                                                                   ),
                                                                   errorBorder:
                                                                       OutlineInputBorder(
@@ -2139,11 +2168,12 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .error,
-                                                                      width: 1,
+                                                                      width:
+                                                                          1.0,
                                                                     ),
                                                                     borderRadius:
-                                                                        BorderRadius
-                                                                            .circular(8),
+                                                                        BorderRadius.circular(
+                                                                            8.0),
                                                                   ),
                                                                   focusedErrorBorder:
                                                                       OutlineInputBorder(
@@ -2152,11 +2182,12 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .error,
-                                                                      width: 1,
+                                                                      width:
+                                                                          1.0,
                                                                     ),
                                                                     borderRadius:
-                                                                        BorderRadius
-                                                                            .circular(8),
+                                                                        BorderRadius.circular(
+                                                                            8.0),
                                                                   ),
                                                                   filled: true,
                                                                   fillColor: FlutterFlowTheme.of(
@@ -2165,7 +2196,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                                   contentPadding:
                                                                       EdgeInsets
                                                                           .all(
-                                                                              12),
+                                                                              12.0),
                                                                 ),
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
@@ -2188,7 +2219,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                               ),
                                                             ),
                                                           ].divide(SizedBox(
-                                                              width: 10)),
+                                                              width: 10.0)),
                                                         ),
                                                       ),
                                                     ),
@@ -2209,7 +2240,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                             flex: 16,
                             child: Container(
                               width: double.infinity,
-                              height: 100,
+                              height: 100.0,
                               decoration: BoxDecoration(
                                 image: DecorationImage(
                                   fit: BoxFit.cover,
@@ -2223,13 +2254,13 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                 children: [
                                   Container(
                                     width: double.infinity,
-                                    height: 40,
+                                    height: 40.0,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context).info,
                                     ),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          15, 5, 15, 5),
+                                          15.0, 5.0, 15.0, 5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
@@ -2278,10 +2309,10 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                         ),
                                                       ),
                                                       SizedBox(
-                                                        height: 100,
+                                                        height: 100.0,
                                                         child: VerticalDivider(
-                                                          width: 20,
-                                                          thickness: 1,
+                                                          width: 20.0,
+                                                          thickness: 1.0,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .accent4,
@@ -2329,10 +2360,10 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                         ),
                                                       ),
                                                       SizedBox(
-                                                        height: 100,
+                                                        height: 100.0,
                                                         child: VerticalDivider(
-                                                          width: 20,
-                                                          thickness: 1,
+                                                          width: 20.0,
+                                                          thickness: 1.0,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .accent4,
@@ -2378,10 +2409,10 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                         ),
                                                       ),
                                                       SizedBox(
-                                                        height: 100,
+                                                        height: 100.0,
                                                         child: VerticalDivider(
-                                                          width: 20,
-                                                          thickness: 1,
+                                                          width: 20.0,
+                                                          thickness: 1.0,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .accent4,
@@ -2429,10 +2460,10 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                         ),
                                                       ),
                                                       SizedBox(
-                                                        height: 100,
+                                                        height: 100.0,
                                                         child: VerticalDivider(
-                                                          width: 20,
-                                                          thickness: 1,
+                                                          width: 20.0,
+                                                          thickness: 1.0,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .accent4,
@@ -2480,10 +2511,10 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                         ),
                                                       ),
                                                       SizedBox(
-                                                        height: 100,
+                                                        height: 100.0,
                                                         child: VerticalDivider(
-                                                          width: 20,
-                                                          thickness: 1,
+                                                          width: 20.0,
+                                                          thickness: 1.0,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .accent4,
@@ -2531,10 +2562,10 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                         ),
                                                       ),
                                                       SizedBox(
-                                                        height: 100,
+                                                        height: 100.0,
                                                         child: VerticalDivider(
-                                                          width: 20,
-                                                          thickness: 1,
+                                                          width: 20.0,
+                                                          thickness: 1.0,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .accent4,
@@ -2582,10 +2613,10 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                         ),
                                                       ),
                                                       SizedBox(
-                                                        height: 100,
+                                                        height: 100.0,
                                                         child: VerticalDivider(
-                                                          width: 20,
-                                                          thickness: 1,
+                                                          width: 20.0,
+                                                          thickness: 1.0,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .accent4,
@@ -2633,10 +2664,10 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                         ),
                                                       ),
                                                       SizedBox(
-                                                        height: 100,
+                                                        height: 100.0,
                                                         child: VerticalDivider(
-                                                          width: 20,
-                                                          thickness: 1,
+                                                          width: 20.0,
+                                                          thickness: 1.0,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .accent4,
@@ -2684,10 +2715,10 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                         ),
                                                       ),
                                                       SizedBox(
-                                                        height: 100,
+                                                        height: 100.0,
                                                         child: VerticalDivider(
-                                                          width: 20,
-                                                          thickness: 1,
+                                                          width: 20.0,
+                                                          thickness: 1.0,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .accent4,
@@ -2735,10 +2766,10 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                         ),
                                                       ),
                                                       SizedBox(
-                                                        height: 100,
+                                                        height: 100.0,
                                                         child: VerticalDivider(
-                                                          width: 20,
-                                                          thickness: 1,
+                                                          width: 20.0,
+                                                          thickness: 1.0,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .accent4,
@@ -2786,10 +2817,10 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                         ),
                                                       ),
                                                       SizedBox(
-                                                        height: 100,
+                                                        height: 100.0,
                                                         child: VerticalDivider(
-                                                          width: 20,
-                                                          thickness: 1,
+                                                          width: 20.0,
+                                                          thickness: 1.0,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .accent4,
@@ -2837,10 +2868,10 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                         ),
                                                       ),
                                                       SizedBox(
-                                                        height: 100,
+                                                        height: 100.0,
                                                         child: VerticalDivider(
-                                                          width: 20,
-                                                          thickness: 1,
+                                                          width: 20.0,
+                                                          thickness: 1.0,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .accent4,
@@ -2853,14 +2884,14 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                             ),
                                           ),
                                           FlutterFlowIconButton(
-                                            borderRadius: 10,
-                                            buttonSize: 35,
+                                            borderRadius: 10.0,
+                                            buttonSize: 35.0,
                                             icon: Icon(
                                               Icons.close,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBtnText,
-                                              size: 16,
+                                              size: 16.0,
                                             ),
                                             onPressed: () {
                                               print('IconButton pressed ...');
@@ -2891,9 +2922,9 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                 prdlist[prdlistIndex];
                                             return Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 0, 5),
+                                                  .fromSTEB(0.0, 0.0, 0.0, 5.0),
                                               child: Container(
-                                                height: 45,
+                                                height: 45.0,
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
@@ -2901,7 +2932,8 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                 ),
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(0, 0, 15, 0),
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 15.0, 0.0),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -2935,15 +2967,15 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                         ),
                                                       ),
                                                       FlutterFlowIconButton(
-                                                        borderRadius: 10,
-                                                        borderWidth: 0,
-                                                        buttonSize: 35,
+                                                        borderRadius: 10.0,
+                                                        borderWidth: 0.0,
+                                                        buttonSize: 35.0,
                                                         icon: Icon(
                                                           Icons.delete_outline,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
-                                                          size: 20,
+                                                          size: 20.0,
                                                         ),
                                                         onPressed: () async {
                                                           _model.res20 =
@@ -3014,15 +3046,15 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                       ),
                                       icon: Icon(
                                         Icons.add,
-                                        size: 15,
+                                        size: 15.0,
                                       ),
                                       options: FFButtonOptions(
-                                        height: 35,
+                                        height: 35.0,
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            18, 0, 18, 0),
+                                            18.0, 0.0, 18.0, 0.0),
                                         iconPadding:
                                             EdgeInsetsDirectional.fromSTEB(
-                                                0, 0, 0, 0),
+                                                0.0, 0.0, 0.0, 0.0),
                                         color:
                                             FlutterFlowTheme.of(context).info,
                                         textStyle: FlutterFlowTheme.of(context)
@@ -3042,16 +3074,16 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                               context)
                                                           .labelMediumFamily),
                                             ),
-                                        elevation: 3,
+                                        elevation: 3.0,
                                         borderSide: BorderSide(
                                           color: Colors.transparent,
-                                          width: 1,
+                                          width: 1.0,
                                         ),
                                         borderRadius: BorderRadius.only(
-                                          bottomLeft: Radius.circular(0),
-                                          bottomRight: Radius.circular(0),
-                                          topLeft: Radius.circular(0),
-                                          topRight: Radius.circular(0),
+                                          bottomLeft: Radius.circular(0.0),
+                                          bottomRight: Radius.circular(0.0),
+                                          topLeft: Radius.circular(0.0),
+                                          topRight: Radius.circular(0.0),
                                         ),
                                       ),
                                     ),
@@ -3064,15 +3096,15 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                       ),
                                       icon: Icon(
                                         Icons.mode,
-                                        size: 15,
+                                        size: 15.0,
                                       ),
                                       options: FFButtonOptions(
-                                        height: 35,
+                                        height: 35.0,
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            18, 0, 18, 0),
+                                            18.0, 0.0, 18.0, 0.0),
                                         iconPadding:
                                             EdgeInsetsDirectional.fromSTEB(
-                                                0, 0, 0, 0),
+                                                0.0, 0.0, 0.0, 0.0),
                                         color:
                                             FlutterFlowTheme.of(context).info,
                                         textStyle: FlutterFlowTheme.of(context)
@@ -3092,58 +3124,83 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                               context)
                                                           .labelMediumFamily),
                                             ),
-                                        elevation: 3,
+                                        elevation: 3.0,
                                         borderSide: BorderSide(
                                           color: Colors.transparent,
-                                          width: 1,
+                                          width: 1.0,
                                         ),
                                         borderRadius: BorderRadius.only(
-                                          bottomLeft: Radius.circular(0),
-                                          bottomRight: Radius.circular(0),
-                                          topLeft: Radius.circular(0),
-                                          topRight: Radius.circular(0),
+                                          bottomLeft: Radius.circular(0.0),
+                                          bottomRight: Radius.circular(0.0),
+                                          topLeft: Radius.circular(0.0),
+                                          topRight: Radius.circular(0.0),
                                         ),
                                       ),
                                     ),
                                     FFButtonWidget(
                                       onPressed: () async {
-                                        await showModalBottomSheet(
-                                          isScrollControlled: true,
-                                          backgroundColor: Colors.transparent,
-                                          enableDrag: false,
-                                          context: context,
-                                          builder: (context) {
-                                            return GestureDetector(
-                                              onTap: () =>
-                                                  FocusScope.of(context)
-                                                      .unfocus(),
-                                              child: Padding(
-                                                padding:
-                                                    MediaQuery.viewInsetsOf(
-                                                        context),
-                                                child: PaymentModeGroceryWidget(
-                                                  paymentMode:
-                                                      _model.paymentMode,
+                                        if (FFAppState()
+                                            .allBillsList
+                                            .isNotEmpty) {
+                                          await showModalBottomSheet(
+                                            isScrollControlled: true,
+                                            backgroundColor: Colors.transparent,
+                                            enableDrag: false,
+                                            context: context,
+                                            builder: (context) {
+                                              return GestureDetector(
+                                                onTap: () =>
+                                                    FocusScope.of(context)
+                                                        .unfocus(),
+                                                child: Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child:
+                                                      PaymentModeGroceryWidget(
+                                                    paymentMode:
+                                                        _model.paymentMode,
+                                                  ),
+                                                ),
+                                              );
+                                            },
+                                          ).then(
+                                              (value) => safeSetState(() {}));
+                                        } else {
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                'Prosuct List Is Empty!',
+                                                style: TextStyle(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
                                                 ),
                                               ),
-                                            );
-                                          },
-                                        ).then((value) => safeSetState(() {}));
+                                              duration:
+                                                  Duration(milliseconds: 4000),
+                                              backgroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondary,
+                                            ),
+                                          );
+                                        }
                                       },
                                       text: FFLocalizations.of(context).getText(
                                         'br1zkkgj' /* Payment Mode */,
                                       ),
                                       icon: Icon(
                                         Icons.payment,
-                                        size: 15,
+                                        size: 15.0,
                                       ),
                                       options: FFButtonOptions(
-                                        height: 35,
+                                        height: 35.0,
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            18, 0, 18, 0),
+                                            18.0, 0.0, 18.0, 0.0),
                                         iconPadding:
                                             EdgeInsetsDirectional.fromSTEB(
-                                                0, 0, 0, 0),
+                                                0.0, 0.0, 0.0, 0.0),
                                         color:
                                             FlutterFlowTheme.of(context).info,
                                         textStyle: FlutterFlowTheme.of(context)
@@ -3163,116 +3220,16 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                               context)
                                                           .labelMediumFamily),
                                             ),
-                                        elevation: 3,
+                                        elevation: 3.0,
                                         borderSide: BorderSide(
                                           color: Colors.transparent,
-                                          width: 1,
+                                          width: 1.0,
                                         ),
                                         borderRadius: BorderRadius.only(
-                                          bottomLeft: Radius.circular(0),
-                                          bottomRight: Radius.circular(0),
-                                          topLeft: Radius.circular(0),
-                                          topRight: Radius.circular(0),
-                                        ),
-                                      ),
-                                    ),
-                                    FFButtonWidget(
-                                      onPressed: () {
-                                        print('Button pressed ...');
-                                      },
-                                      text: FFLocalizations.of(context).getText(
-                                        'vp148rd4' /* Print */,
-                                      ),
-                                      icon: Icon(
-                                        Icons.print_rounded,
-                                        size: 15,
-                                      ),
-                                      options: FFButtonOptions(
-                                        height: 35,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            18, 0, 18, 0),
-                                        iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0, 0, 0, 0),
-                                        color:
-                                            FlutterFlowTheme.of(context).info,
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMediumFamily,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBtnText,
-                                              letterSpacing: 0.0,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelMediumFamily),
-                                            ),
-                                        elevation: 3,
-                                        borderSide: BorderSide(
-                                          color: Colors.transparent,
-                                          width: 1,
-                                        ),
-                                        borderRadius: BorderRadius.only(
-                                          bottomLeft: Radius.circular(0),
-                                          bottomRight: Radius.circular(0),
-                                          topLeft: Radius.circular(0),
-                                          topRight: Radius.circular(0),
-                                        ),
-                                      ),
-                                    ),
-                                    FFButtonWidget(
-                                      onPressed: () {
-                                        print('Button pressed ...');
-                                      },
-                                      text: FFLocalizations.of(context).getText(
-                                        '3c7iov2g' /* Bill Footer */,
-                                      ),
-                                      icon: Icon(
-                                        Icons.print_rounded,
-                                        size: 15,
-                                      ),
-                                      options: FFButtonOptions(
-                                        height: 35,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            18, 0, 18, 0),
-                                        iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0, 0, 0, 0),
-                                        color:
-                                            FlutterFlowTheme.of(context).info,
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMediumFamily,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBtnText,
-                                              letterSpacing: 0.0,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelMediumFamily),
-                                            ),
-                                        elevation: 3,
-                                        borderSide: BorderSide(
-                                          color: Colors.transparent,
-                                          width: 1,
-                                        ),
-                                        borderRadius: BorderRadius.only(
-                                          bottomLeft: Radius.circular(0),
-                                          bottomRight: Radius.circular(0),
-                                          topLeft: Radius.circular(0),
-                                          topRight: Radius.circular(0),
+                                          bottomLeft: Radius.circular(0.0),
+                                          bottomRight: Radius.circular(0.0),
+                                          topLeft: Radius.circular(0.0),
+                                          topRight: Radius.circular(0.0),
                                         ),
                                       ),
                                     ),
@@ -3285,15 +3242,15 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                       ),
                                       icon: Icon(
                                         Icons.print_rounded,
-                                        size: 15,
+                                        size: 15.0,
                                       ),
                                       options: FFButtonOptions(
-                                        height: 35,
+                                        height: 35.0,
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            18, 0, 18, 0),
+                                            18.0, 0.0, 18.0, 0.0),
                                         iconPadding:
                                             EdgeInsetsDirectional.fromSTEB(
-                                                0, 0, 0, 0),
+                                                0.0, 0.0, 0.0, 0.0),
                                         color: Color(0xFF1C4494),
                                         textStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
@@ -3312,22 +3269,22 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                               context)
                                                           .labelMediumFamily),
                                             ),
-                                        elevation: 3,
+                                        elevation: 3.0,
                                         borderSide: BorderSide(
                                           color: Colors.transparent,
-                                          width: 1,
+                                          width: 1.0,
                                         ),
                                         borderRadius: BorderRadius.only(
-                                          bottomLeft: Radius.circular(0),
-                                          bottomRight: Radius.circular(0),
-                                          topLeft: Radius.circular(0),
-                                          topRight: Radius.circular(0),
+                                          bottomLeft: Radius.circular(0.0),
+                                          bottomRight: Radius.circular(0.0),
+                                          topLeft: Radius.circular(0.0),
+                                          topRight: Radius.circular(0.0),
                                         ),
                                       ),
                                     ),
                                     Expanded(
                                       child: Container(
-                                        height: 35,
+                                        height: 35.0,
                                         decoration: BoxDecoration(
                                           color: Color(0xFFE3F9CF),
                                         ),
@@ -3338,11 +3295,12 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 10, 0),
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 10.0, 0.0),
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'tdosvahb' /* Net Amount */,
+                                                  'tdosvahb' /* Grand Total */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -3387,14 +3345,14 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                         ),
                                       ),
                                     ),
-                                  ].divide(SizedBox(width: 2)),
+                                  ].divide(SizedBox(width: 2.0)),
                                 ),
                                 Container(
-                                  height: 50,
+                                  height: 50.0,
                                   decoration: BoxDecoration(),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        15, 5, 15, 5),
+                                        15.0, 5.0, 15.0, 5.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -3405,7 +3363,8 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 10, 0),
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 10.0, 0.0),
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -3451,9 +3410,9 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                       ),
                                             ),
                                             SizedBox(
-                                              height: 100,
+                                              height: 100.0,
                                               child: VerticalDivider(
-                                                thickness: 1,
+                                                thickness: 1.0,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .accent1,
@@ -3466,7 +3425,8 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 10, 0),
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 10.0, 0.0),
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -3512,9 +3472,9 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                       ),
                                             ),
                                             SizedBox(
-                                              height: 100,
+                                              height: 100.0,
                                               child: VerticalDivider(
-                                                thickness: 1,
+                                                thickness: 1.0,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .accent1,
@@ -3527,7 +3487,8 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 10, 0),
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 10.0, 0.0),
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -3575,9 +3536,9 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                                       ),
                                             ),
                                             SizedBox(
-                                              height: 100,
+                                              height: 100.0,
                                               child: VerticalDivider(
-                                                thickness: 1,
+                                                thickness: 1.0,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .accent1,
@@ -3590,7 +3551,8 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 10, 0),
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 10.0, 0.0),
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(

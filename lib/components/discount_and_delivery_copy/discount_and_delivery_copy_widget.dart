@@ -76,37 +76,38 @@ class _DiscountAndDeliveryCopyWidgetState
       children: [
         Expanded(
           child: Container(
-            width: 500,
-            height: MediaQuery.sizeOf(context).height * 3,
+            width: 500.0,
+            height: MediaQuery.sizeOf(context).height * 3.0,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
               boxShadow: [
                 BoxShadow(
-                  blurRadius: 12,
+                  blurRadius: 12.0,
                   color: Color(0x33000000),
                   offset: Offset(
-                    1,
-                    -2,
+                    1.0,
+                    -2.0,
                   ),
-                  spreadRadius: 12,
+                  spreadRadius: 12.0,
                 )
               ],
               borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(0),
-                bottomRight: Radius.circular(0),
-                topLeft: Radius.circular(10),
-                topRight: Radius.circular(10),
+                bottomLeft: Radius.circular(0.0),
+                bottomRight: Radius.circular(0.0),
+                topLeft: Radius.circular(10.0),
+                topRight: Radius.circular(10.0),
               ),
             ),
             child: Padding(
-              padding: EdgeInsets.all(15),
+              padding: EdgeInsets.all(15.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                     child: Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
@@ -127,18 +128,18 @@ class _DiscountAndDeliveryCopyWidgetState
                             child: Container(
                               decoration: BoxDecoration(),
                               child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 8, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 8.0, 0.0),
                                 child: FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
-                                  borderRadius: 30,
-                                  borderWidth: 1,
-                                  buttonSize: 35,
+                                  borderRadius: 30.0,
+                                  borderWidth: 1.0,
+                                  buttonSize: 35.0,
                                   icon: Icon(
                                     Icons.close,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
-                                    size: 21,
+                                    size: 21.0,
                                   ),
                                   onPressed: () {
                                     print('IconButton pressed ...');
@@ -152,14 +153,15 @@ class _DiscountAndDeliveryCopyWidgetState
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                5.0, 0.0, 0.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -171,7 +173,7 @@ class _DiscountAndDeliveryCopyWidgetState
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          5, 0, 0, 0),
+                                          5.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
                                           'e86i1m6f' /* Discount Amt */,
@@ -182,7 +184,7 @@ class _DiscountAndDeliveryCopyWidgetState
                                               fontFamily:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMediumFamily,
-                                              fontSize: 11,
+                                              fontSize: 11.0,
                                               letterSpacing: 0.0,
                                               useGoogleFonts: GoogleFonts
                                                       .asMap()
@@ -197,10 +199,10 @@ class _DiscountAndDeliveryCopyWidgetState
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 5, 0, 0),
+                                      0.0, 5.0, 0.0, 0.0),
                                   child: Container(
-                                    width: 180,
-                                    height: 40,
+                                    width: 180.0,
+                                    height: 40.0,
                                     decoration: BoxDecoration(
                                       border: Border.all(
                                         color: FlutterFlowTheme.of(context)
@@ -353,14 +355,14 @@ class _DiscountAndDeliveryCopyWidgetState
                                         ),
                                         FlutterFlowIconButton(
                                           borderColor: Colors.transparent,
-                                          borderRadius: 30,
-                                          borderWidth: 1,
-                                          buttonSize: 40,
+                                          borderRadius: 30.0,
+                                          borderWidth: 1.0,
+                                          buttonSize: 40.0,
                                           icon: Icon(
                                             Icons.refresh,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            size: 18,
+                                            size: 18.0,
                                           ),
                                           onPressed: () async {
                                             safeSetState(() {
@@ -392,7 +394,8 @@ class _DiscountAndDeliveryCopyWidgetState
                         ),
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                5.0, 0.0, 0.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -412,7 +415,7 @@ class _DiscountAndDeliveryCopyWidgetState
                                             fontFamily:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMediumFamily,
-                                            fontSize: 11,
+                                            fontSize: 11.0,
                                             letterSpacing: 0.0,
                                             useGoogleFonts: GoogleFonts.asMap()
                                                 .containsKey(
@@ -424,10 +427,10 @@ class _DiscountAndDeliveryCopyWidgetState
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 5, 0, 0),
+                                      0.0, 5.0, 0.0, 0.0),
                                   child: Container(
-                                    width: 180,
-                                    height: 40,
+                                    width: 180.0,
+                                    height: 40.0,
                                     decoration: BoxDecoration(
                                       border: Border.all(
                                         color: FlutterFlowTheme.of(context)
@@ -562,14 +565,14 @@ class _DiscountAndDeliveryCopyWidgetState
                                         ),
                                         FlutterFlowIconButton(
                                           borderColor: Colors.transparent,
-                                          borderRadius: 30,
-                                          borderWidth: 1,
-                                          buttonSize: 40,
+                                          borderRadius: 30.0,
+                                          borderWidth: 1.0,
+                                          buttonSize: 40.0,
                                           icon: Icon(
                                             Icons.refresh,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            size: 18,
+                                            size: 18.0,
                                           ),
                                           onPressed: () async {
                                             safeSetState(() {
@@ -602,7 +605,8 @@ class _DiscountAndDeliveryCopyWidgetState
                         ),
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                5.0, 0.0, 5.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -616,7 +620,7 @@ class _DiscountAndDeliveryCopyWidgetState
                                       .override(
                                         fontFamily: FlutterFlowTheme.of(context)
                                             .bodyMediumFamily,
-                                        fontSize: 11,
+                                        fontSize: 11.0,
                                         letterSpacing: 0.0,
                                         useGoogleFonts: GoogleFonts.asMap()
                                             .containsKey(
@@ -626,10 +630,10 @@ class _DiscountAndDeliveryCopyWidgetState
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 5, 0, 0),
+                                      0.0, 5.0, 0.0, 0.0),
                                   child: Container(
-                                    width: 180,
-                                    height: 40,
+                                    width: 180.0,
+                                    height: 40.0,
                                     decoration: BoxDecoration(
                                       border: Border.all(
                                         color: FlutterFlowTheme.of(context)
@@ -774,14 +778,14 @@ class _DiscountAndDeliveryCopyWidgetState
                                         ),
                                         FlutterFlowIconButton(
                                           borderColor: Colors.transparent,
-                                          borderRadius: 30,
-                                          borderWidth: 1,
-                                          buttonSize: 40,
+                                          borderRadius: 30.0,
+                                          borderWidth: 1.0,
+                                          buttonSize: 40.0,
                                           icon: Icon(
                                             Icons.refresh,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            size: 18,
+                                            size: 18.0,
                                           ),
                                           onPressed: () async {
                                             safeSetState(() {
@@ -813,7 +817,8 @@ class _DiscountAndDeliveryCopyWidgetState
                   ),
                   if (FFAppState().tenderRowPLScreen)
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -825,14 +830,14 @@ class _DiscountAndDeliveryCopyWidgetState
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      10, 0, 0, 0),
+                                      10.0, 0.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 5, 0, 0),
+                                            0.0, 5.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
                                             '8l0io74m' /* Tender Cash */,
@@ -858,10 +863,10 @@ class _DiscountAndDeliveryCopyWidgetState
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      5, 5, 10, 0),
+                                      5.0, 5.0, 10.0, 0.0),
                                   child: Container(
-                                    width: 180,
-                                    height: 30,
+                                    width: 180.0,
+                                    height: 30.0,
                                     decoration: BoxDecoration(
                                       border: Border.all(
                                         color: FlutterFlowTheme.of(context)
@@ -994,14 +999,14 @@ class _DiscountAndDeliveryCopyWidgetState
                                         ),
                                         FlutterFlowIconButton(
                                           borderColor: Colors.transparent,
-                                          borderRadius: 30,
-                                          borderWidth: 1,
-                                          buttonSize: 40,
+                                          borderRadius: 30.0,
+                                          borderWidth: 1.0,
+                                          buttonSize: 40.0,
                                           icon: Icon(
                                             Icons.refresh,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            size: 18,
+                                            size: 18.0,
                                           ),
                                           onPressed: () async {
                                             safeSetState(() {
@@ -1021,15 +1026,15 @@ class _DiscountAndDeliveryCopyWidgetState
                           Expanded(
                             flex: 2,
                             child: Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 15, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 15.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        10, 5, 0, 0),
+                                        10.0, 5.0, 0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
                                         's6kjr2ay' /* Return Cash */,
@@ -1050,10 +1055,10 @@ class _DiscountAndDeliveryCopyWidgetState
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        5, 5, 10, 0),
+                                        5.0, 5.0, 10.0, 0.0),
                                     child: Container(
-                                      width: 180,
-                                      height: 30,
+                                      width: 180.0,
+                                      height: 30.0,
                                       decoration: BoxDecoration(
                                         border: Border.all(
                                           color: FlutterFlowTheme.of(context)
@@ -1176,15 +1181,15 @@ class _DiscountAndDeliveryCopyWidgetState
                                           ),
                                           FlutterFlowIconButton(
                                             borderColor: Colors.transparent,
-                                            borderRadius: 30,
-                                            borderWidth: 1,
-                                            buttonSize: 40,
+                                            borderRadius: 30.0,
+                                            borderWidth: 1.0,
+                                            buttonSize: 40.0,
                                             icon: Icon(
                                               Icons.refresh,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
-                                              size: 18,
+                                              size: 18.0,
                                             ),
                                             onPressed: () async {
                                               safeSetState(() {
@@ -1206,17 +1211,18 @@ class _DiscountAndDeliveryCopyWidgetState
                       ),
                     ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                     child: Container(
-                      height: 120,
+                      height: 120.0,
                       decoration: BoxDecoration(),
                       child: ListView(
                         padding: EdgeInsets.zero,
                         scrollDirection: Axis.vertical,
                         children: [
                           Container(
-                            width: 100,
-                            height: 30,
+                            width: 100.0,
+                            height: 30.0,
                             decoration: BoxDecoration(),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -1265,8 +1271,8 @@ class _DiscountAndDeliveryCopyWidgetState
                             ),
                           ),
                           Container(
-                            width: 100,
-                            height: 30,
+                            width: 100.0,
+                            height: 30.0,
                             decoration: BoxDecoration(),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -1315,8 +1321,8 @@ class _DiscountAndDeliveryCopyWidgetState
                             ),
                           ),
                           Container(
-                            width: 100,
-                            height: 30,
+                            width: 100.0,
+                            height: 30.0,
                             decoration: BoxDecoration(),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -1365,8 +1371,8 @@ class _DiscountAndDeliveryCopyWidgetState
                             ),
                           ),
                           Container(
-                            width: 100,
-                            height: 30,
+                            width: 100.0,
+                            height: 30.0,
                             decoration: BoxDecoration(),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -1431,11 +1437,12 @@ class _DiscountAndDeliveryCopyWidgetState
                             'z96dsni2' /* Done */,
                           ),
                           options: FFButtonOptions(
-                            width: 100,
-                            height: 35,
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-                            iconPadding:
-                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                            width: 100.0,
+                            height: 35.0,
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
@@ -1443,19 +1450,19 @@ class _DiscountAndDeliveryCopyWidgetState
                                   fontFamily: FlutterFlowTheme.of(context)
                                       .titleSmallFamily,
                                   color: Colors.white,
-                                  fontSize: 14,
+                                  fontSize: 14.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
                                   useGoogleFonts: GoogleFonts.asMap()
                                       .containsKey(FlutterFlowTheme.of(context)
                                           .titleSmallFamily),
                                 ),
-                            elevation: 2,
+                            elevation: 2.0,
                             borderSide: BorderSide(
                               color: Colors.transparent,
-                              width: 1,
+                              width: 1.0,
                             ),
-                            borderRadius: BorderRadius.circular(8),
+                            borderRadius: BorderRadius.circular(8.0),
                           ),
                         ),
                       ),

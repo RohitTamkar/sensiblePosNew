@@ -540,7 +540,7 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
               key: scaffoldKey,
               backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
               body: Padding(
-                padding: EdgeInsets.all(20),
+                padding: EdgeInsets.all(20.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -555,7 +555,7 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
                           if (widget!.doc?.status ?? true)
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  50, 50, 50, 50),
+                                  50.0, 50.0, 50.0, 50.0),
                               child: Container(
                                 width: double.infinity,
                                 height: double.infinity,
@@ -563,15 +563,15 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
                                   borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(6),
-                                    bottomRight: Radius.circular(6),
-                                    topLeft: Radius.circular(6),
-                                    topRight: Radius.circular(6),
+                                    bottomLeft: Radius.circular(6.0),
+                                    bottomRight: Radius.circular(6.0),
+                                    topLeft: Radius.circular(6.0),
+                                    topRight: Radius.circular(6.0),
                                   ),
                                   border: Border.all(
                                     color:
                                         FlutterFlowTheme.of(context).tertiary,
-                                    width: 2,
+                                    width: 2.0,
                                   ),
                                 ),
                                 child: Column(
@@ -580,7 +580,7 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 0, 75),
+                                          0.0, 0.0, 0.0, 75.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
                                           '8qbzlfkm' /* Thank You ! */,
@@ -594,7 +594,7 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .success,
-                                              fontSize: 36,
+                                              fontSize: 36.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
                                               fontStyle: FontStyle.italic,
@@ -832,7 +832,7 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              fontSize: 16,
+                                              fontSize: 16.0,
                                               letterSpacing: 0.0,
                                               useGoogleFonts: GoogleFonts
                                                       .asMap()
@@ -850,7 +850,7 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
                           if (!widget!.doc!.status)
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  50, 50, 50, 50),
+                                  50.0, 50.0, 50.0, 50.0),
                               child: Container(
                                 width: double.infinity,
                                 height: double.infinity,
@@ -858,15 +858,15 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
                                   borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(6),
-                                    bottomRight: Radius.circular(6),
-                                    topLeft: Radius.circular(6),
-                                    topRight: Radius.circular(6),
+                                    bottomLeft: Radius.circular(6.0),
+                                    bottomRight: Radius.circular(6.0),
+                                    topLeft: Radius.circular(6.0),
+                                    topRight: Radius.circular(6.0),
                                   ),
                                   border: Border.all(
                                     color:
                                         FlutterFlowTheme.of(context).tertiary,
-                                    width: 2,
+                                    width: 2.0,
                                   ),
                                 ),
                                 child: Column(
@@ -887,7 +887,7 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
                           if (widget!.doc?.resultStatus == 'PENDING')
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  50, 50, 50, 50),
+                                  50.0, 50.0, 50.0, 50.0),
                               child: Container(
                                 width: double.infinity,
                                 height: double.infinity,
@@ -895,15 +895,15 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
                                   borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(6),
-                                    bottomRight: Radius.circular(6),
-                                    topLeft: Radius.circular(6),
-                                    topRight: Radius.circular(6),
+                                    bottomLeft: Radius.circular(6.0),
+                                    bottomRight: Radius.circular(6.0),
+                                    topLeft: Radius.circular(6.0),
+                                    topRight: Radius.circular(6.0),
                                   ),
                                   border: Border.all(
                                     color:
                                         FlutterFlowTheme.of(context).tertiary,
-                                    width: 2,
+                                    width: 2.0,
                                   ),
                                 ),
                                 child: Column(

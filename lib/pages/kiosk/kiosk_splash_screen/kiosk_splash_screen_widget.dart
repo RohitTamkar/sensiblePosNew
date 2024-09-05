@@ -133,9 +133,9 @@ class _KioskSplashScreenWidgetState extends State<KioskSplashScreenWidget>
                   FlutterFlowTheme.of(context).primaryBtnText,
                   FlutterFlowTheme.of(context).error
                 ],
-                stops: [1, 1],
-                begin: AlignmentDirectional(0, -1),
-                end: AlignmentDirectional(0, 1),
+                stops: [1.0, 1.0],
+                begin: AlignmentDirectional(0.0, -1.0),
+                end: AlignmentDirectional(0, 1.0),
               ),
             ),
             child: Column(
@@ -144,7 +144,7 @@ class _KioskSplashScreenWidgetState extends State<KioskSplashScreenWidget>
               children: [
                 Image.asset(
                   'assets/images/98092-loading.gif',
-                  height: 300,
+                  height: 300.0,
                   fit: BoxFit.contain,
                 ).animateOnPageLoad(animationsMap['imageOnPageLoadAnimation']!),
               ],

@@ -53,18 +53,19 @@ class _MKPrinterSettingWidgetState extends State<MKPrinterSettingWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).parkingPrimary,
             body: Transform.rotate(
-              angle: 90 * (math.pi / 180),
+              angle: 90.0 * (math.pi / 180),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Expanded(
                     flex: 4,
                     child: Container(
-                      width: MediaQuery.sizeOf(context).width,
+                      width: MediaQuery.sizeOf(context).width * 1.0,
                       height: MediaQuery.sizeOf(context).height * 0.12,
                       decoration: BoxDecoration(),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(15, 0, 15, 5),
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            15.0, 0.0, 15.0, 5.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -75,13 +76,13 @@ class _MKPrinterSettingWidgetState extends State<MKPrinterSettingWidget> {
                               children: [
                                 FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
-                                  borderRadius: 30,
-                                  buttonSize: 40,
+                                  borderRadius: 30.0,
+                                  buttonSize: 40.0,
                                   icon: Icon(
                                     Icons.keyboard_arrow_left_sharp,
                                     color:
                                         FlutterFlowTheme.of(context).lineColor,
-                                    size: 24,
+                                    size: 24.0,
                                   ),
                                   onPressed: () async {
                                     context.pop();
@@ -108,11 +109,11 @@ class _MKPrinterSettingWidgetState extends State<MKPrinterSettingWidget> {
                                 ),
                                 FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
-                                  borderRadius: 30,
-                                  buttonSize: 40,
+                                  borderRadius: 30.0,
+                                  buttonSize: 40.0,
                                   icon: Icon(
                                     Icons.settings_sharp,
-                                    size: 0,
+                                    size: 0.0,
                                   ),
                                   onPressed: () {
                                     print('IconButton pressed ...');
@@ -128,24 +129,25 @@ class _MKPrinterSettingWidgetState extends State<MKPrinterSettingWidget> {
                   Expanded(
                     flex: 26,
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
                       child: Container(
-                        width: MediaQuery.sizeOf(context).width,
-                        height: 100,
+                        width: MediaQuery.sizeOf(context).width * 1.0,
+                        height: 100.0,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context)
                               .parkingPrimaryBackground,
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(15),
+                          padding: EdgeInsets.all(15.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 10, 0, 3),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 10.0, 0.0, 3.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
                                     'qnppgz98' /* Paper Size */,
@@ -164,8 +166,8 @@ class _MKPrinterSettingWidgetState extends State<MKPrinterSettingWidget> {
                                 ),
                               ),
                               Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 10.0),
                                 child: FlutterFlowDropDown<String>(
                                   controller:
                                       _model.dropDownValueController1 ??=
@@ -193,24 +195,24 @@ class _MKPrinterSettingWidgetState extends State<MKPrinterSettingWidget> {
                                   ),
                                   icon: Icon(
                                     Icons.keyboard_arrow_down,
-                                    size: 15,
+                                    size: 15.0,
                                   ),
                                   fillColor: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  elevation: 2,
+                                  elevation: 2.0,
                                   borderColor:
                                       FlutterFlowTheme.of(context).customColor2,
-                                  borderWidth: 0,
-                                  borderRadius: 5,
+                                  borderWidth: 0.0,
+                                  borderRadius: 5.0,
                                   margin: EdgeInsetsDirectional.fromSTEB(
-                                      12, 0, 12, 0),
+                                      12.0, 0.0, 12.0, 0.0),
                                   hidesUnderline: true,
                                   isSearchable: false,
                                   isMultiSelect: false,
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsets.all(5),
+                                padding: EdgeInsets.all(5.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
                                     'a61hx786' /* Printer Mode */,
@@ -229,8 +231,8 @@ class _MKPrinterSettingWidgetState extends State<MKPrinterSettingWidget> {
                                 ),
                               ),
                               Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 20.0),
                                 child: FlutterFlowDropDown<String>(
                                   controller:
                                       _model.dropDownValueController2 ??=
@@ -271,24 +273,24 @@ class _MKPrinterSettingWidgetState extends State<MKPrinterSettingWidget> {
                                   ),
                                   icon: Icon(
                                     Icons.keyboard_arrow_down,
-                                    size: 15,
+                                    size: 15.0,
                                   ),
                                   fillColor: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  elevation: 2,
+                                  elevation: 2.0,
                                   borderColor:
                                       FlutterFlowTheme.of(context).customColor2,
-                                  borderWidth: 0,
-                                  borderRadius: 5,
+                                  borderWidth: 0.0,
+                                  borderRadius: 5.0,
                                   margin: EdgeInsetsDirectional.fromSTEB(
-                                      12, 0, 12, 0),
+                                      12.0, 0.0, 12.0, 0.0),
                                   hidesUnderline: true,
                                   isSearchable: false,
                                   isMultiSelect: false,
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsets.all(5),
+                                padding: EdgeInsets.all(5.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
                                     'f0sq8uzn' /* Available Device */,
@@ -309,7 +311,7 @@ class _MKPrinterSettingWidgetState extends State<MKPrinterSettingWidget> {
                               Expanded(
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 0, 20),
+                                      0.0, 0.0, 0.0, 20.0),
                                   child: Container(
                                     width: double.infinity,
                                     height: MediaQuery.sizeOf(context).height *
@@ -334,7 +336,8 @@ class _MKPrinterSettingWidgetState extends State<MKPrinterSettingWidget> {
                                                   printerList[printerListIndex];
                                               return Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(0, 0, 0, 10),
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 10.0),
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -453,16 +456,16 @@ class _MKPrinterSettingWidgetState extends State<MKPrinterSettingWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        12),
+                                                                        12.0),
                                                           ),
                                                           child: Padding(
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        10,
-                                                                        8,
-                                                                        10,
-                                                                        8),
+                                                                        10.0,
+                                                                        8.0,
+                                                                        10.0,
+                                                                        8.0),
                                                             child: Column(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -474,10 +477,10 @@ class _MKPrinterSettingWidgetState extends State<MKPrinterSettingWidget> {
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          0,
-                                                                          5),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -488,10 +491,10 @@ class _MKPrinterSettingWidgetState extends State<MKPrinterSettingWidget> {
                                                                     children: [
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            5,
-                                                                            0),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0),
                                                                         child:
                                                                             Icon(
                                                                           Icons
@@ -499,7 +502,7 @@ class _MKPrinterSettingWidgetState extends State<MKPrinterSettingWidget> {
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           size:
-                                                                              16,
+                                                                              16.0,
                                                                         ),
                                                                       ),
                                                                       Text(
@@ -522,10 +525,10 @@ class _MKPrinterSettingWidgetState extends State<MKPrinterSettingWidget> {
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          5,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -536,10 +539,10 @@ class _MKPrinterSettingWidgetState extends State<MKPrinterSettingWidget> {
                                                                     children: [
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            5,
-                                                                            0),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0),
                                                                         child:
                                                                             Icon(
                                                                           Icons
@@ -547,7 +550,7 @@ class _MKPrinterSettingWidgetState extends State<MKPrinterSettingWidget> {
                                                                           color:
                                                                               FlutterFlowTheme.of(context).secondaryBackground,
                                                                           size:
-                                                                              15,
+                                                                              15.0,
                                                                         ),
                                                                       ),
                                                                       Text(
@@ -560,7 +563,7 @@ class _MKPrinterSettingWidgetState extends State<MKPrinterSettingWidget> {
                                                                             .override(
                                                                               fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
-                                                                              fontSize: 10,
+                                                                              fontSize: 10.0,
                                                                               letterSpacing: 0.0,
                                                                               useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                             ),
@@ -583,15 +586,15 @@ class _MKPrinterSettingWidgetState extends State<MKPrinterSettingWidget> {
                                                       FlutterFlowIconButton(
                                                         borderColor:
                                                             Colors.transparent,
-                                                        borderRadius: 30,
-                                                        borderWidth: 1,
-                                                        buttonSize: 55,
+                                                        borderRadius: 30.0,
+                                                        borderWidth: 1.0,
+                                                        buttonSize: 55.0,
                                                         icon: Icon(
                                                           Icons.check_circle,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .tertiary,
-                                                          size: 30,
+                                                          size: 30.0,
                                                         ),
                                                         onPressed: () {
                                                           print(

@@ -65,8 +65,8 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: 0,
-            end: 1,
+            begin: 0.0,
+            end: 1.0,
           ),
         ],
       ),
@@ -78,8 +78,8 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: 0,
-            end: 1,
+            begin: 0.0,
+            end: 1.0,
           ),
         ],
       ),
@@ -91,8 +91,8 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: 0,
-            end: 1,
+            begin: 0.0,
+            end: 1.0,
           ),
         ],
       ),
@@ -104,8 +104,8 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: 0,
-            end: 1,
+            begin: 0.0,
+            end: 1.0,
           ),
         ],
       ),
@@ -117,8 +117,8 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: 0,
-            end: 1,
+            begin: 0.0,
+            end: 1.0,
           ),
         ],
       ),
@@ -130,8 +130,8 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: 0,
-            end: 1,
+            begin: 0.0,
+            end: 1.0,
           ),
         ],
       ),
@@ -168,7 +168,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
             body: SafeArea(
               top: true,
               child: Padding(
-                padding: EdgeInsets.all(3),
+                padding: EdgeInsets.all(3.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -177,7 +177,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                     Expanded(
                       flex: 1,
                       child: Container(
-                        width: MediaQuery.sizeOf(context).width,
+                        width: MediaQuery.sizeOf(context).width * 1.0,
                         height: MediaQuery.sizeOf(context).height * 0.12,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).primary,
@@ -190,22 +190,22 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                             Expanded(
                               flex: 1,
                               child: Container(
-                                width: 100,
-                                height: 100,
+                                width: 100.0,
+                                height: 100.0,
                                 decoration: BoxDecoration(),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     FlutterFlowIconButton(
                                       borderColor: Colors.transparent,
-                                      borderRadius: 30,
-                                      borderWidth: 1,
-                                      buttonSize: 60,
+                                      borderRadius: 30.0,
+                                      borderWidth: 1.0,
+                                      buttonSize: 60.0,
                                       icon: Icon(
                                         Icons.chevron_left_sharp,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBtnText,
-                                        size: 26,
+                                        size: 26.0,
                                       ),
                                       onPressed: () async {
                                         context.safePop();
@@ -249,7 +249,8 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                     Expanded(
                       flex: 13,
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
                         child: Container(
                           width: double.infinity,
                           decoration: BoxDecoration(
@@ -278,7 +279,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            5, 5, 5, 0),
+                                            5.0, 5.0, 5.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -310,7 +311,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                                     .primaryBackground,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(10),
+                                                  BorderRadius.circular(10.0),
                                               border: Border.all(
                                                 color:
                                                     FlutterFlowTheme.of(context)
@@ -325,15 +326,15 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                                 FlutterFlowIconButton(
                                                   borderColor:
                                                       Colors.transparent,
-                                                  borderRadius: 30,
-                                                  borderWidth: 1,
-                                                  buttonSize: 60,
+                                                  borderRadius: 30.0,
+                                                  borderWidth: 1.0,
+                                                  buttonSize: 60.0,
                                                   icon: Icon(
                                                     Icons.info_outline_rounded,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
-                                                    size: 20,
+                                                    size: 20.0,
                                                   ),
                                                   onPressed: () {
                                                     print(
@@ -372,7 +373,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            5, 5, 5, 0),
+                                            5.0, 5.0, 5.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -413,7 +414,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                                     .primaryBackground,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(10),
+                                                  BorderRadius.circular(10.0),
                                               border: Border.all(
                                                 color:
                                                     FlutterFlowTheme.of(context)
@@ -428,15 +429,15 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                                 FlutterFlowIconButton(
                                                   borderColor:
                                                       Colors.transparent,
-                                                  borderRadius: 30,
-                                                  borderWidth: 1,
-                                                  buttonSize: 60,
+                                                  borderRadius: 30.0,
+                                                  borderWidth: 1.0,
+                                                  buttonSize: 60.0,
                                                   icon: Icon(
                                                     Icons.info_outline_rounded,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
-                                                    size: 20,
+                                                    size: 20.0,
                                                   ),
                                                   onPressed: () {
                                                     print(
@@ -475,7 +476,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            5, 5, 5, 0),
+                                            5.0, 5.0, 5.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -512,7 +513,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                                   : FlutterFlowTheme.of(context)
                                                       .primaryBackground,
                                               borderRadius:
-                                                  BorderRadius.circular(10),
+                                                  BorderRadius.circular(10.0),
                                               border: Border.all(
                                                 color:
                                                     FlutterFlowTheme.of(context)
@@ -527,15 +528,15 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                                 FlutterFlowIconButton(
                                                   borderColor:
                                                       Colors.transparent,
-                                                  borderRadius: 30,
-                                                  borderWidth: 1,
-                                                  buttonSize: 60,
+                                                  borderRadius: 30.0,
+                                                  borderWidth: 1.0,
+                                                  buttonSize: 60.0,
                                                   icon: Icon(
                                                     Icons.info_outline_rounded,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
-                                                    size: 20,
+                                                    size: 20.0,
                                                   ),
                                                   onPressed: () {
                                                     print(
@@ -574,7 +575,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            5, 5, 5, 0),
+                                            5.0, 5.0, 5.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -609,7 +610,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                                   : FlutterFlowTheme.of(context)
                                                       .primaryBackground,
                                               borderRadius:
-                                                  BorderRadius.circular(10),
+                                                  BorderRadius.circular(10.0),
                                               border: Border.all(
                                                 color:
                                                     FlutterFlowTheme.of(context)
@@ -624,15 +625,15 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                                 FlutterFlowIconButton(
                                                   borderColor:
                                                       Colors.transparent,
-                                                  borderRadius: 30,
-                                                  borderWidth: 1,
-                                                  buttonSize: 60,
+                                                  borderRadius: 30.0,
+                                                  borderWidth: 1.0,
+                                                  buttonSize: 60.0,
                                                   icon: Icon(
                                                     Icons.info_outline_rounded,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
-                                                    size: 20,
+                                                    size: 20.0,
                                                   ),
                                                   onPressed: () {
                                                     print(
@@ -671,7 +672,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            5, 5, 5, 0),
+                                            5.0, 5.0, 5.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -706,7 +707,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                                   : FlutterFlowTheme.of(context)
                                                       .primaryBackground,
                                               borderRadius:
-                                                  BorderRadius.circular(10),
+                                                  BorderRadius.circular(10.0),
                                               border: Border.all(
                                                 color:
                                                     FlutterFlowTheme.of(context)
@@ -721,15 +722,15 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                                 FlutterFlowIconButton(
                                                   borderColor:
                                                       Colors.transparent,
-                                                  borderRadius: 30,
-                                                  borderWidth: 1,
-                                                  buttonSize: 60,
+                                                  borderRadius: 30.0,
+                                                  borderWidth: 1.0,
+                                                  buttonSize: 60.0,
                                                   icon: Icon(
                                                     Icons.info_outline_rounded,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
-                                                    size: 20,
+                                                    size: 20.0,
                                                   ),
                                                   onPressed: () {
                                                     print(
@@ -768,7 +769,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            5, 5, 5, 0),
+                                            5.0, 5.0, 5.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -803,7 +804,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                                   : FlutterFlowTheme.of(context)
                                                       .primaryBackground,
                                               borderRadius:
-                                                  BorderRadius.circular(10),
+                                                  BorderRadius.circular(10.0),
                                               border: Border.all(
                                                 color:
                                                     FlutterFlowTheme.of(context)
@@ -818,15 +819,15 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                                 FlutterFlowIconButton(
                                                   borderColor:
                                                       Colors.transparent,
-                                                  borderRadius: 30,
-                                                  borderWidth: 1,
-                                                  buttonSize: 60,
+                                                  borderRadius: 30.0,
+                                                  borderWidth: 1.0,
+                                                  buttonSize: 60.0,
                                                   icon: Icon(
                                                     Icons.info_outline_rounded,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
-                                                    size: 20,
+                                                    size: 20.0,
                                                   ),
                                                   onPressed: () {
                                                     print(

@@ -53,23 +53,23 @@ class _OutletDetailsHeaderWidgetState extends State<OutletDetailsHeaderWidget> {
         Expanded(
           flex: 1,
           child: Container(
-            width: 100,
-            height: 65,
+            width: 100.0,
+            height: 65.0,
             decoration: BoxDecoration(
               color: Colors.white,
             ),
             child: Align(
-              alignment: AlignmentDirectional(0, 0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(6, 2, 3, 2),
+                padding: EdgeInsetsDirectional.fromSTEB(6.0, 2.0, 3.0, 2.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
                       'assets/images/sensible-logo.png',
-                      width: 100,
-                      height: 60,
+                      width: 100.0,
+                      height: 60.0,
                       fit: BoxFit.contain,
                     ),
                   ],
@@ -81,17 +81,17 @@ class _OutletDetailsHeaderWidgetState extends State<OutletDetailsHeaderWidget> {
         Expanded(
           flex: 12,
           child: Container(
-            width: 100,
-            height: 65,
+            width: 100.0,
+            height: 65.0,
             decoration: BoxDecoration(),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
                   child: Container(
-                    width: MediaQuery.sizeOf(context).width,
-                    height: 65,
+                    width: MediaQuery.sizeOf(context).width * 1.0,
+                    height: 65.0,
                     decoration: BoxDecoration(),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
@@ -99,8 +99,8 @@ class _OutletDetailsHeaderWidgetState extends State<OutletDetailsHeaderWidget> {
                         Expanded(
                           flex: 4,
                           child: Container(
-                            width: 100,
-                            height: 65,
+                            width: 100.0,
+                            height: 65.0,
                             decoration: BoxDecoration(
                               color: Colors.white,
                             ),
@@ -113,26 +113,28 @@ class _OutletDetailsHeaderWidgetState extends State<OutletDetailsHeaderWidget> {
                         Expanded(
                           flex: 5,
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                5.0, 0.0, 5.0, 0.0),
                             child: Container(
-                              width: 100,
-                              height: 65,
+                              width: 100.0,
+                              height: 65.0,
                               decoration: BoxDecoration(
                                 color: Colors.white,
                               ),
                               child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 10.0, 0.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Container(
-                                      width: MediaQuery.sizeOf(context).width,
-                                      height: 41,
+                                      width: MediaQuery.sizeOf(context).width *
+                                          1.0,
+                                      height: 41.0,
                                       decoration: BoxDecoration(),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 0, 2),
+                                            0.0, 0.0, 0.0, 2.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -152,7 +154,7 @@ class _OutletDetailsHeaderWidgetState extends State<OutletDetailsHeaderWidget> {
                                                         fontFamily: 'Lora',
                                                         color:
                                                             Color(0xFFBF4500),
-                                                        fontSize: 20,
+                                                        fontSize: 20.0,
                                                         letterSpacing: 0.0,
                                                         useGoogleFonts:
                                                             GoogleFonts.asMap()
@@ -166,8 +168,10 @@ class _OutletDetailsHeaderWidgetState extends State<OutletDetailsHeaderWidget> {
                                     ),
                                     Expanded(
                                       child: Container(
-                                        width: MediaQuery.sizeOf(context).width,
-                                        height: 24,
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
+                                                1.0,
+                                        height: 24.0,
                                         decoration: BoxDecoration(),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -188,7 +192,7 @@ class _OutletDetailsHeaderWidgetState extends State<OutletDetailsHeaderWidget> {
                                                         fontFamily: 'Lora',
                                                         color:
                                                             Color(0xFFBF4500),
-                                                        fontSize: 14,
+                                                        fontSize: 14.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.normal,
@@ -211,8 +215,8 @@ class _OutletDetailsHeaderWidgetState extends State<OutletDetailsHeaderWidget> {
                         Expanded(
                           flex: 3,
                           child: Container(
-                            width: 100,
-                            height: 65,
+                            width: 100.0,
+                            height: 65.0,
                             decoration: BoxDecoration(
                               color: Colors.white,
                             ),
@@ -227,7 +231,7 @@ class _OutletDetailsHeaderWidgetState extends State<OutletDetailsHeaderWidget> {
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 5, 0),
+                                          0.0, 0.0, 5.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
                                           'd4dfhc6a' /* User :  */,
@@ -237,7 +241,7 @@ class _OutletDetailsHeaderWidgetState extends State<OutletDetailsHeaderWidget> {
                                             .override(
                                               fontFamily: 'Lora',
                                               color: Color(0xFF53655E),
-                                              fontSize: 14,
+                                              fontSize: 14.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
                                               useGoogleFonts:
@@ -248,7 +252,7 @@ class _OutletDetailsHeaderWidgetState extends State<OutletDetailsHeaderWidget> {
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 5, 0),
+                                          0.0, 0.0, 5.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
                                           'ayrj79xx' /* Rohit T */,
@@ -258,7 +262,7 @@ class _OutletDetailsHeaderWidgetState extends State<OutletDetailsHeaderWidget> {
                                             .override(
                                               fontFamily: 'Lora',
                                               color: Color(0xFF53655E),
-                                              fontSize: 16,
+                                              fontSize: 16.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
                                               useGoogleFonts:
@@ -276,7 +280,7 @@ class _OutletDetailsHeaderWidgetState extends State<OutletDetailsHeaderWidget> {
                                           .override(
                                             fontFamily: 'Lora',
                                             color: Color(0xFFBF4500),
-                                            fontSize: 14,
+                                            fontSize: 14.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.normal,
                                             useGoogleFonts: GoogleFonts.asMap()
@@ -286,8 +290,8 @@ class _OutletDetailsHeaderWidgetState extends State<OutletDetailsHeaderWidget> {
                                   ],
                                 ),
                                 Container(
-                                  width: MediaQuery.sizeOf(context).width,
-                                  height: 26,
+                                  width: MediaQuery.sizeOf(context).width * 1.0,
+                                  height: 26.0,
                                   decoration: BoxDecoration(),
                                   child: TextFormField(
                                     controller: _model.textController,
@@ -341,7 +345,7 @@ class _OutletDetailsHeaderWidgetState extends State<OutletDetailsHeaderWidget> {
                                         .override(
                                           fontFamily: 'Lora',
                                           color: Color(0xFF03291A),
-                                          fontSize: 14,
+                                          fontSize: 14.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.normal,
                                           useGoogleFonts: GoogleFonts.asMap()

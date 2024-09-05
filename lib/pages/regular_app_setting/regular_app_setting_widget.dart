@@ -62,7 +62,7 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                 Expanded(
                   flex: 1,
                   child: Container(
-                    width: MediaQuery.sizeOf(context).width,
+                    width: MediaQuery.sizeOf(context).width * 1.0,
                     height: MediaQuery.sizeOf(context).height * 0.12,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).primary,
@@ -75,22 +75,22 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                         Expanded(
                           flex: 1,
                           child: Container(
-                            width: 100,
-                            height: 100,
+                            width: 100.0,
+                            height: 100.0,
                             decoration: BoxDecoration(),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
-                                  borderRadius: 30,
-                                  borderWidth: 1,
-                                  buttonSize: 60,
+                                  borderRadius: 30.0,
+                                  borderWidth: 1.0,
+                                  buttonSize: 60.0,
                                   icon: Icon(
                                     Icons.chevron_left_sharp,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBtnText,
-                                    size: 26,
+                                    size: 26.0,
                                   ),
                                   onPressed: () async {
                                     context.pop();
@@ -144,11 +144,11 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                           if (!snapshot.hasData) {
                             return Center(
                               child: SizedBox(
-                                width: 40,
-                                height: 40,
+                                width: 40.0,
+                                height: 40.0,
                                 child: SpinKitFadingCircle(
                                   color: FlutterFlowTheme.of(context).primary,
-                                  size: 40,
+                                  size: 40.0,
                                 ),
                               ),
                             );
@@ -177,7 +177,7 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 3, 0, 0),
+                                      0.0, 3.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -185,9 +185,9 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 2, 0),
+                                                  0.0, 0.0, 2.0, 0.0),
                                           child: Container(
-                                            width: 100,
+                                            width: 100.0,
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
                                                 0.78,
@@ -198,7 +198,8 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                             ),
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(10, 0, 5, 0),
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 5.0, 0.0),
                                               child: ListView(
                                                 padding: EdgeInsets.zero,
                                                 scrollDirection: Axis.vertical,
@@ -208,9 +209,9 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                       false)
                                                     Padding(
                                                       padding:
-                                                          EdgeInsets.all(5),
+                                                          EdgeInsets.all(5.0),
                                                       child: Container(
-                                                        width: 100,
+                                                        width: 100.0,
                                                         height:
                                                             MediaQuery.sizeOf(
                                                                         context)
@@ -223,18 +224,19 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                               .secondaryBackground,
                                                           boxShadow: [
                                                             BoxShadow(
-                                                              blurRadius: 5,
+                                                              blurRadius: 5.0,
                                                               color: Color(
                                                                   0x33000000),
                                                               offset: Offset(
-                                                                1,
-                                                                1,
+                                                                1.0,
+                                                                1.0,
                                                               ),
                                                             )
                                                           ],
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(10),
+                                                                  .circular(
+                                                                      10.0),
                                                         ),
                                                         child: Row(
                                                           mainAxisSize:
@@ -311,10 +313,10 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                 child: Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          10,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          10.0,
+                                                                          0.0),
                                                                   child:
                                                                       FFButtonWidget(
                                                                     onPressed:
@@ -329,21 +331,20 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                     ),
                                                                     options:
                                                                         FFButtonOptions(
-                                                                      width: 40,
+                                                                      width:
+                                                                          40.0,
                                                                       height:
-                                                                          30,
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              0,
-                                                                              0),
-                                                                      iconPadding:
-                                                                          EdgeInsetsDirectional.fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                          30.0,
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
@@ -361,17 +362,17 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                                 GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                           ),
                                                                       elevation:
-                                                                          2,
+                                                                          2.0,
                                                                       borderSide:
                                                                           BorderSide(
                                                                         color: Colors
                                                                             .transparent,
                                                                         width:
-                                                                            1,
+                                                                            1.0,
                                                                       ),
                                                                       borderRadius:
                                                                           BorderRadius.circular(
-                                                                              8),
+                                                                              8.0),
                                                                     ),
                                                                   ),
                                                                 ),
@@ -382,7 +383,8 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                       ),
                                                     ),
                                                   Padding(
-                                                    padding: EdgeInsets.all(5),
+                                                    padding:
+                                                        EdgeInsets.all(5.0),
                                                     child: Container(
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
@@ -390,22 +392,22 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                             .secondaryBackground,
                                                         boxShadow: [
                                                           BoxShadow(
-                                                            blurRadius: 5,
+                                                            blurRadius: 5.0,
                                                             color: Color(
                                                                 0x33000000),
                                                             offset: Offset(
-                                                              1,
-                                                              1,
+                                                              1.0,
+                                                              1.0,
                                                             ),
                                                           )
                                                         ],
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(10),
+                                                                .circular(10.0),
                                                       ),
                                                       child: Padding(
-                                                        padding:
-                                                            EdgeInsets.all(10),
+                                                        padding: EdgeInsets.all(
+                                                            10.0),
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -414,10 +416,10 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          0,
-                                                                          10),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          10.0),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -440,25 +442,25 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              10,
-                                                                              0),
+                                                                              0.0,
+                                                                              0.0,
+                                                                              10.0,
+                                                                              0.0),
                                                                           child:
                                                                               Icon(
                                                                             Icons.settings_outlined,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primary,
                                                                             size:
-                                                                                15,
+                                                                                15.0,
                                                                           ),
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              15,
-                                                                              0),
+                                                                              0.0,
+                                                                              0.0,
+                                                                              15.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -478,7 +480,7 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100,
+                                                                          100.0,
                                                                       height: MediaQuery.sizeOf(context)
                                                                               .height *
                                                                           0.002,
@@ -706,7 +708,8 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                     ),
                                                   ),
                                                   Padding(
-                                                    padding: EdgeInsets.all(5),
+                                                    padding:
+                                                        EdgeInsets.all(5.0),
                                                     child: Container(
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
@@ -714,22 +717,22 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                             .secondaryBackground,
                                                         boxShadow: [
                                                           BoxShadow(
-                                                            blurRadius: 5,
+                                                            blurRadius: 5.0,
                                                             color: Color(
                                                                 0x33000000),
                                                             offset: Offset(
-                                                              1,
-                                                              1,
+                                                              1.0,
+                                                              1.0,
                                                             ),
                                                           )
                                                         ],
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(10),
+                                                                .circular(10.0),
                                                       ),
                                                       child: Padding(
-                                                        padding:
-                                                            EdgeInsets.all(10),
+                                                        padding: EdgeInsets.all(
+                                                            10.0),
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -738,10 +741,10 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          0,
-                                                                          10),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          10.0),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -764,25 +767,25 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              10,
-                                                                              0),
+                                                                              0.0,
+                                                                              0.0,
+                                                                              10.0,
+                                                                              0.0),
                                                                           child:
                                                                               Icon(
                                                                             Icons.settings_outlined,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primary,
                                                                             size:
-                                                                                15,
+                                                                                15.0,
                                                                           ),
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              15,
-                                                                              0),
+                                                                              0.0,
+                                                                              0.0,
+                                                                              15.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -802,7 +805,7 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100,
+                                                                          100.0,
                                                                       height: MediaQuery.sizeOf(context)
                                                                               .height *
                                                                           0.002,
@@ -969,7 +972,7 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                       RoundedRectangleBorder(
                                                                     borderRadius:
                                                                         BorderRadius.circular(
-                                                                            20),
+                                                                            20.0),
                                                                   ),
                                                                 ),
                                                                 SwitchListTile(
@@ -1009,16 +1012,16 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                       RoundedRectangleBorder(
                                                                     borderRadius:
                                                                         BorderRadius.circular(
-                                                                            20),
+                                                                            20.0),
                                                                   ),
                                                                 ),
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10,
-                                                                          5,
-                                                                          10,
-                                                                          0),
+                                                                          10.0,
+                                                                          5.0,
+                                                                          10.0,
+                                                                          0.0),
                                                                   child:
                                                                       Container(
                                                                     width: double
@@ -1030,12 +1033,11 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                         BoxDecoration(),
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              5,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          5.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       child:
                                                                           Row(
                                                                         mainAxisSize:
@@ -1045,10 +1047,10 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0,
-                                                                                0,
-                                                                                10,
-                                                                                0),
+                                                                                0.0,
+                                                                                0.0,
+                                                                                10.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -1079,8 +1081,8 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                                 )
                                                                               ],
                                                                               onChanged: (val) => safeSetState(() => _model.dropDownListValue = val),
-                                                                              width: 240,
-                                                                              height: 30,
+                                                                              width: 240.0,
+                                                                              height: 30.0,
                                                                               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     letterSpacing: 0.0,
@@ -1090,11 +1092,11 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                                 'p4beq9r7' /* PLEASE SELECT */,
                                                                               ),
                                                                               fillColor: FlutterFlowTheme.of(context).primaryBackground,
-                                                                              elevation: 2,
+                                                                              elevation: 2.0,
                                                                               borderColor: Colors.transparent,
-                                                                              borderWidth: 0,
-                                                                              borderRadius: 10,
-                                                                              margin: EdgeInsetsDirectional.fromSTEB(12, 4, 12, 4),
+                                                                              borderWidth: 0.0,
+                                                                              borderRadius: 10.0,
+                                                                              margin: EdgeInsetsDirectional.fromSTEB(12.0, 4.0, 12.0, 4.0),
                                                                               hidesUnderline: true,
                                                                               isSearchable: false,
                                                                               isMultiSelect: false,
@@ -1111,12 +1113,11 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              15,
-                                                                              0,
-                                                                              0,
-                                                                              10),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          15.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          10.0),
                                                                       child:
                                                                           Container(
                                                                         height: MediaQuery.sizeOf(context).height *
@@ -1132,7 +1133,7 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                               MainAxisSize.max,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 15, 1),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 15.0, 1.0),
                                                                               child: Text(
                                                                                 FFLocalizations.of(context).getText(
                                                                                   'vwt5s3mz' /* PRINT  PRODUCT SETTING */,
@@ -1188,7 +1189,7 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                       RoundedRectangleBorder(
                                                                     borderRadius:
                                                                         BorderRadius.circular(
-                                                                            20),
+                                                                            20.0),
                                                                   ),
                                                                 ),
                                                                 SwitchListTile(
@@ -1294,7 +1295,7 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                       RoundedRectangleBorder(
                                                                     borderRadius:
                                                                         BorderRadius.circular(
-                                                                            20),
+                                                                            20.0),
                                                                   ),
                                                                 ),
                                                               ],
@@ -1305,7 +1306,8 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                     ),
                                                   ),
                                                   Padding(
-                                                    padding: EdgeInsets.all(5),
+                                                    padding:
+                                                        EdgeInsets.all(5.0),
                                                     child: Container(
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
@@ -1313,22 +1315,22 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                             .secondaryBackground,
                                                         boxShadow: [
                                                           BoxShadow(
-                                                            blurRadius: 5,
+                                                            blurRadius: 5.0,
                                                             color: Color(
                                                                 0x33000000),
                                                             offset: Offset(
-                                                              1,
-                                                              1,
+                                                              1.0,
+                                                              1.0,
                                                             ),
                                                           )
                                                         ],
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(10),
+                                                                .circular(10.0),
                                                       ),
                                                       child: Padding(
-                                                        padding:
-                                                            EdgeInsets.all(10),
+                                                        padding: EdgeInsets.all(
+                                                            10.0),
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -1337,10 +1339,10 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          0,
-                                                                          10),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          10.0),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -1363,25 +1365,25 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              10,
-                                                                              0),
+                                                                              0.0,
+                                                                              0.0,
+                                                                              10.0,
+                                                                              0.0),
                                                                           child:
                                                                               Icon(
                                                                             Icons.settings_outlined,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primary,
                                                                             size:
-                                                                                15,
+                                                                                15.0,
                                                                           ),
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              15,
-                                                                              0),
+                                                                              0.0,
+                                                                              0.0,
+                                                                              15.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -1401,7 +1403,7 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100,
+                                                                          100.0,
                                                                       height: MediaQuery.sizeOf(context)
                                                                               .height *
                                                                           0.002,
@@ -1459,10 +1461,10 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10,
-                                                                          0,
-                                                                          10,
-                                                                          0),
+                                                                          10.0,
+                                                                          0.0,
+                                                                          10.0,
+                                                                          0.0),
                                                                   child:
                                                                       InkWell(
                                                                     splashColor:
@@ -1516,15 +1518,15 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryBackground,
                                                                         borderRadius:
-                                                                            BorderRadius.circular(10),
+                                                                            BorderRadius.circular(10.0),
                                                                       ),
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            5,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
                                                                             Column(
                                                                           mainAxisSize:
@@ -1601,7 +1603,7 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                       ),
                                       Expanded(
                                         child: Container(
-                                          width: 100,
+                                          width: 100.0,
                                           height: MediaQuery.sizeOf(context)
                                                   .height *
                                               0.78,
@@ -1612,13 +1614,13 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    5, 0, 10, 0),
+                                                    5.0, 0.0, 10.0, 0.0),
                                             child: ListView(
                                               padding: EdgeInsets.zero,
                                               scrollDirection: Axis.vertical,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsets.all(5),
+                                                  padding: EdgeInsets.all(5.0),
                                                   child: Container(
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
@@ -1626,22 +1628,22 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                           .secondaryBackground,
                                                       boxShadow: [
                                                         BoxShadow(
-                                                          blurRadius: 5,
+                                                          blurRadius: 5.0,
                                                           color:
                                                               Color(0x33000000),
                                                           offset: Offset(
-                                                            1,
-                                                            1,
+                                                            1.0,
+                                                            1.0,
                                                           ),
                                                         )
                                                       ],
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              10),
+                                                              10.0),
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(10),
+                                                          EdgeInsets.all(10.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -1668,12 +1670,11 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              10,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          10.0,
+                                                                          0.0),
                                                                       child:
                                                                           Icon(
                                                                         Icons
@@ -1681,16 +1682,15 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primary,
                                                                         size:
-                                                                            15,
+                                                                            15.0,
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              15,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          15.0,
+                                                                          0.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -1712,7 +1712,7 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                               Expanded(
                                                                 child:
                                                                     Container(
-                                                                  width: 100,
+                                                                  width: 100.0,
                                                                   height: MediaQuery.sizeOf(
                                                                               context)
                                                                           .height *
@@ -1808,13 +1808,12 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                         .trailing,
                                                               ),
                                                               Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            15,
-                                                                            10,
-                                                                            0,
-                                                                            10),
+                                                                padding: EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        15.0,
+                                                                        10.0,
+                                                                        0.0,
+                                                                        10.0),
                                                                 child: Text(
                                                                   FFLocalizations.of(
                                                                           context)
@@ -2031,7 +2030,7 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsets.all(5),
+                                                  padding: EdgeInsets.all(5.0),
                                                   child: Container(
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
@@ -2039,22 +2038,22 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                           .secondaryBackground,
                                                       boxShadow: [
                                                         BoxShadow(
-                                                          blurRadius: 5,
+                                                          blurRadius: 5.0,
                                                           color:
                                                               Color(0x33000000),
                                                           offset: Offset(
-                                                            1,
-                                                            2,
+                                                            1.0,
+                                                            2.0,
                                                           ),
                                                         )
                                                       ],
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              10),
+                                                              10.0),
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(10),
+                                                          EdgeInsets.all(10.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -2081,12 +2080,11 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              10,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          10.0,
+                                                                          0.0),
                                                                       child:
                                                                           Icon(
                                                                         Icons
@@ -2094,16 +2092,15 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primary,
                                                                         size:
-                                                                            15,
+                                                                            15.0,
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              15,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          15.0,
+                                                                          0.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -2190,7 +2187,7 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsets.all(5),
+                                                  padding: EdgeInsets.all(5.0),
                                                   child: Container(
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
@@ -2198,22 +2195,22 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                           .secondaryBackground,
                                                       boxShadow: [
                                                         BoxShadow(
-                                                          blurRadius: 5,
+                                                          blurRadius: 5.0,
                                                           color:
                                                               Color(0x33000000),
                                                           offset: Offset(
-                                                            1,
-                                                            1,
+                                                            1.0,
+                                                            1.0,
                                                           ),
                                                         )
                                                       ],
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              10),
+                                                              10.0),
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(10),
+                                                          EdgeInsets.all(10.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -2240,12 +2237,11 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              10,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          10.0,
+                                                                          0.0),
                                                                       child:
                                                                           Icon(
                                                                         Icons
@@ -2253,16 +2249,15 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primary,
                                                                         size:
-                                                                            15,
+                                                                            15.0,
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              15,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          15.0,
+                                                                          0.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -2284,7 +2279,7 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                               Expanded(
                                                                 child:
                                                                     Container(
-                                                                  width: 100,
+                                                                  width: 100.0,
                                                                   height: MediaQuery.sizeOf(
                                                                               context)
                                                                           .height *
@@ -2347,15 +2342,15 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10,
-                                                                          0,
-                                                                          10,
-                                                                          0),
+                                                                          10.0,
+                                                                          0.0,
+                                                                          10.0,
+                                                                          0.0),
                                                                   child:
                                                                       Container(
-                                                                    width: MediaQuery.sizeOf(
-                                                                            context)
-                                                                        .width,
+                                                                    width: MediaQuery.sizeOf(context)
+                                                                            .width *
+                                                                        1.0,
                                                                     height: MediaQuery.sizeOf(context)
                                                                             .height *
                                                                         0.06,
@@ -2367,12 +2362,11 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                     ),
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              5,
-                                                                              0,
-                                                                              10,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          5.0,
+                                                                          0.0,
+                                                                          10.0,
+                                                                          0.0),
                                                                       child:
                                                                           Row(
                                                                         mainAxisSize:
@@ -2394,10 +2388,10 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5,
-                                                                                0,
-                                                                                0,
-                                                                                0),
+                                                                                5.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
                                                                             child:
                                                                                 StreamBuilder<List<PaymentModeRecord>>(
                                                                               stream: queryPaymentModeRecord(),
@@ -2406,11 +2400,11 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                                 if (!snapshot.hasData) {
                                                                                   return Center(
                                                                                     child: SizedBox(
-                                                                                      width: 40,
-                                                                                      height: 40,
+                                                                                      width: 40.0,
+                                                                                      height: 40.0,
                                                                                       child: SpinKitFadingCircle(
                                                                                         color: FlutterFlowTheme.of(context).primary,
-                                                                                        size: 40,
+                                                                                        size: 40.0,
                                                                                       ),
                                                                                     ),
                                                                                   );
@@ -2423,8 +2417,8 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                                   ),
                                                                                   options: dropDownpayModePaymentModeRecordList.map((e) => e.name).toList(),
                                                                                   onChanged: (val) => safeSetState(() => _model.dropDownpayModeValue = val),
-                                                                                  width: 280,
-                                                                                  height: 30,
+                                                                                  width: 280.0,
+                                                                                  height: 30.0,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         letterSpacing: 0.0,
@@ -2434,11 +2428,11 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                                     'uo6ov3es' /* CASH */,
                                                                                   ),
                                                                                   fillColor: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                  elevation: 2,
+                                                                                  elevation: 2.0,
                                                                                   borderColor: Colors.transparent,
-                                                                                  borderWidth: 0,
-                                                                                  borderRadius: 10,
-                                                                                  margin: EdgeInsetsDirectional.fromSTEB(20, 4, 12, 4),
+                                                                                  borderWidth: 0.0,
+                                                                                  borderRadius: 10.0,
+                                                                                  margin: EdgeInsetsDirectional.fromSTEB(20.0, 4.0, 12.0, 4.0),
                                                                                   hidesUnderline: true,
                                                                                   isSearchable: false,
                                                                                   isMultiSelect: false,
@@ -2454,10 +2448,10 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          15,
-                                                                          10,
-                                                                          0,
-                                                                          10),
+                                                                          15.0,
+                                                                          10.0,
+                                                                          0.0,
+                                                                          10.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -2482,10 +2476,10 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          10,
-                                                                          0,
-                                                                          0),
+                                                                          0.0,
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                   child:
                                                                       SwitchListTile(
                                                                     value: _model
@@ -2534,7 +2528,7 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsets.all(5),
+                                                  padding: EdgeInsets.all(5.0),
                                                   child: Container(
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
@@ -2542,22 +2536,22 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                           .secondaryBackground,
                                                       boxShadow: [
                                                         BoxShadow(
-                                                          blurRadius: 5,
+                                                          blurRadius: 5.0,
                                                           color:
                                                               Color(0x33000000),
                                                           offset: Offset(
-                                                            1,
-                                                            1,
+                                                            1.0,
+                                                            1.0,
                                                           ),
                                                         )
                                                       ],
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              10),
+                                                              10.0),
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(10),
+                                                          EdgeInsets.all(10.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -2569,10 +2563,10 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0,
-                                                                        0,
-                                                                        0,
-                                                                        10),
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        10.0),
                                                             child: Row(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -2596,10 +2590,10 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                     children: [
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            10,
-                                                                            0),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            10.0,
+                                                                            0.0),
                                                                         child:
                                                                             Icon(
                                                                           Icons
@@ -2607,15 +2601,15 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primary,
                                                                           size:
-                                                                              15,
+                                                                              15.0,
                                                                         ),
                                                                       ),
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            15,
-                                                                            0),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            15.0,
+                                                                            0.0),
                                                                         child:
                                                                             Text(
                                                                           FFLocalizations.of(context)
@@ -2637,7 +2631,8 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                 Expanded(
                                                                   child:
                                                                       Container(
-                                                                    width: 100,
+                                                                    width:
+                                                                        100.0,
                                                                     height: MediaQuery.sizeOf(context)
                                                                             .height *
                                                                         0.002,
@@ -2848,7 +2843,7 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                           shape:
                                                                               RoundedRectangleBorder(
                                                                             borderRadius:
-                                                                                BorderRadius.circular(20),
+                                                                                BorderRadius.circular(20.0),
                                                                           ),
                                                                         ),
                                                                         SwitchListTile(
@@ -3021,7 +3016,7 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                           shape:
                                                                               RoundedRectangleBorder(
                                                                             borderRadius:
-                                                                                BorderRadius.circular(20),
+                                                                                BorderRadius.circular(20.0),
                                                                           ),
                                                                         ),
                                                                         SwitchListTile(
@@ -3050,7 +3045,7 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                           shape:
                                                                               RoundedRectangleBorder(
                                                                             borderRadius:
-                                                                                BorderRadius.circular(20),
+                                                                                BorderRadius.circular(20.0),
                                                                           ),
                                                                         ),
                                                                         SwitchListTile(
@@ -3079,7 +3074,7 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                           shape:
                                                                               RoundedRectangleBorder(
                                                                             borderRadius:
-                                                                                BorderRadius.circular(20),
+                                                                                BorderRadius.circular(20.0),
                                                                           ),
                                                                         ),
                                                                         SwitchListTile(
@@ -3108,7 +3103,7 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                           shape:
                                                                               RoundedRectangleBorder(
                                                                             borderRadius:
-                                                                                BorderRadius.circular(20),
+                                                                                BorderRadius.circular(20.0),
                                                                           ),
                                                                         ),
                                                                         SwitchListTile(
@@ -3137,7 +3132,7 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                           shape:
                                                                               RoundedRectangleBorder(
                                                                             borderRadius:
-                                                                                BorderRadius.circular(20),
+                                                                                BorderRadius.circular(20.0),
                                                                           ),
                                                                         ),
                                                                         SwitchListTile(
@@ -3166,7 +3161,7 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                           shape:
                                                                               RoundedRectangleBorder(
                                                                             borderRadius:
-                                                                                BorderRadius.circular(20),
+                                                                                BorderRadius.circular(20.0),
                                                                           ),
                                                                         ),
                                                                       ],
@@ -3200,11 +3195,11 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                           .secondaryBackground,
                                       boxShadow: [
                                         BoxShadow(
-                                          blurRadius: 6,
+                                          blurRadius: 6.0,
                                           color: Color(0x58000000),
                                           offset: Offset(
-                                            0,
-                                            -1,
+                                            0.0,
+                                            -1.0,
                                           ),
                                         )
                                       ],
@@ -3361,14 +3356,14 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                             'aadclhdp' /* Apply Changes */,
                                           ),
                                           options: FFButtonOptions(
-                                            width: 150,
-                                            height: 36,
+                                            width: 150.0,
+                                            height: 36.0,
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 0, 0),
+                                                    0.0, 0.0, 0.0, 0.0),
                                             iconPadding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 0, 0),
+                                                    0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
                                             textStyle:
@@ -3388,13 +3383,13 @@ class _RegularAppSettingWidgetState extends State<RegularAppSettingWidget> {
                                                                       context)
                                                                   .titleSmallFamily),
                                                     ),
-                                            elevation: 2,
+                                            elevation: 2.0,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
-                                              width: 1,
+                                              width: 1.0,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(8),
+                                                BorderRadius.circular(8.0),
                                           ),
                                         ),
                                       ],

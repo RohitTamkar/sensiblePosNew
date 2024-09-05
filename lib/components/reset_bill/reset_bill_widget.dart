@@ -49,15 +49,15 @@ class _ResetBillWidgetState extends State<ResetBillWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.all(10.0),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Expanded(
             child: Container(
-              width: 500,
-              height: 360,
+              width: 500.0,
+              height: 360.0,
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).primaryBackground,
               ),
@@ -67,8 +67,8 @@ class _ResetBillWidgetState extends State<ResetBillWidget> {
                   Expanded(
                     flex: 1,
                     child: Container(
-                      width: 500,
-                      height: 40,
+                      width: 500.0,
+                      height: 40.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                       ),
@@ -83,7 +83,7 @@ class _ResetBillWidgetState extends State<ResetBillWidget> {
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      20, 0, 0, 0),
+                                      20.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
                                       '1g6zi5mm' /* SET CUSTOMER BILL NUMBER */,
@@ -109,13 +109,13 @@ class _ResetBillWidgetState extends State<ResetBillWidget> {
                           ),
                           FlutterFlowIconButton(
                             borderColor: Colors.transparent,
-                            borderRadius: 30,
-                            borderWidth: 1,
-                            buttonSize: 40,
+                            borderRadius: 30.0,
+                            borderWidth: 1.0,
+                            buttonSize: 40.0,
                             icon: Icon(
                               Icons.close,
                               color: FlutterFlowTheme.of(context).primaryText,
-                              size: 22,
+                              size: 22.0,
                             ),
                             onPressed: () async {
                               context.pop();
@@ -128,20 +128,21 @@ class _ResetBillWidgetState extends State<ResetBillWidget> {
                   Expanded(
                     flex: 7,
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
                       child: Container(
-                        width: 500,
-                        height: 200,
+                        width: 500.0,
+                        height: 200.0,
                         decoration: BoxDecoration(),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(3, 0, 3, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  3.0, 0.0, 3.0, 0.0),
                               child: Container(
-                                width: 500,
-                                height: 100,
+                                width: 500.0,
+                                height: 100.0,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBackground,
@@ -154,7 +155,7 @@ class _ResetBillWidgetState extends State<ResetBillWidget> {
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          5, 0, 0, 0),
+                                          5.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
                                           'fy3nu436' /* BILL PREFIX */,
@@ -203,7 +204,7 @@ class _ResetBillWidgetState extends State<ResetBillWidget> {
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
-                                            width: 2,
+                                            width: 2.0,
                                           ),
                                           borderRadius: const BorderRadius.only(
                                             topLeft: Radius.circular(4.0),
@@ -213,7 +214,7 @@ class _ResetBillWidgetState extends State<ResetBillWidget> {
                                         focusedBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: Color(0x00000000),
-                                            width: 2,
+                                            width: 2.0,
                                           ),
                                           borderRadius: const BorderRadius.only(
                                             topLeft: Radius.circular(4.0),
@@ -223,7 +224,7 @@ class _ResetBillWidgetState extends State<ResetBillWidget> {
                                         errorBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: Color(0x00000000),
-                                            width: 2,
+                                            width: 2.0,
                                           ),
                                           borderRadius: const BorderRadius.only(
                                             topLeft: Radius.circular(4.0),
@@ -233,7 +234,7 @@ class _ResetBillWidgetState extends State<ResetBillWidget> {
                                         focusedErrorBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: Color(0x00000000),
-                                            width: 2,
+                                            width: 2.0,
                                           ),
                                           borderRadius: const BorderRadius.only(
                                             topLeft: Radius.circular(4.0),
@@ -261,11 +262,11 @@ class _ResetBillWidgetState extends State<ResetBillWidget> {
                               ),
                             ),
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(3, 0, 3, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  3.0, 0.0, 3.0, 0.0),
                               child: Container(
-                                width: 500,
-                                height: 100,
+                                width: 500.0,
+                                height: 100.0,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBackground,
@@ -278,7 +279,7 @@ class _ResetBillWidgetState extends State<ResetBillWidget> {
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          5, 0, 0, 0),
+                                          5.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
                                           'y5j8xwga' /* START BILL NUMBER */,
@@ -327,7 +328,7 @@ class _ResetBillWidgetState extends State<ResetBillWidget> {
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
-                                            width: 2,
+                                            width: 2.0,
                                           ),
                                           borderRadius: const BorderRadius.only(
                                             topLeft: Radius.circular(4.0),
@@ -337,7 +338,7 @@ class _ResetBillWidgetState extends State<ResetBillWidget> {
                                         focusedBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: Color(0x00000000),
-                                            width: 2,
+                                            width: 2.0,
                                           ),
                                           borderRadius: const BorderRadius.only(
                                             topLeft: Radius.circular(4.0),
@@ -347,7 +348,7 @@ class _ResetBillWidgetState extends State<ResetBillWidget> {
                                         errorBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: Color(0x00000000),
-                                            width: 2,
+                                            width: 2.0,
                                           ),
                                           borderRadius: const BorderRadius.only(
                                             topLeft: Radius.circular(4.0),
@@ -357,7 +358,7 @@ class _ResetBillWidgetState extends State<ResetBillWidget> {
                                         focusedErrorBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: Color(0x00000000),
-                                            width: 2,
+                                            width: 2.0,
                                           ),
                                           borderRadius: const BorderRadius.only(
                                             topLeft: Radius.circular(4.0),
@@ -385,8 +386,8 @@ class _ResetBillWidgetState extends State<ResetBillWidget> {
                               ),
                             ),
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 10.0, 0.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () {
                                   print('Button pressed ...');
@@ -395,12 +396,12 @@ class _ResetBillWidgetState extends State<ResetBillWidget> {
                                   'sy6zxxwm' /* SET */,
                                 ),
                                 options: FFButtonOptions(
-                                  width: 160,
-                                  height: 36,
+                                  width: 160.0,
+                                  height: 36.0,
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 0, 0),
+                                      0.0, 0.0, 0.0, 0.0),
                                   iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 0, 0),
+                                      0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -416,12 +417,12 @@ class _ResetBillWidgetState extends State<ResetBillWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .headlineMediumFamily),
                                       ),
-                                  elevation: 2,
+                                  elevation: 2.0,
                                   borderSide: BorderSide(
                                     color: Colors.transparent,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                               ),
                             ),

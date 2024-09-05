@@ -57,8 +57,8 @@ class _OutletlistPageWidgetState extends State<OutletlistPageWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: 0,
-            end: 1,
+            begin: 0.0,
+            end: 1.0,
           ),
         ],
       ),
@@ -101,11 +101,11 @@ class _OutletlistPageWidgetState extends State<OutletlistPageWidget>
             backgroundColor: FlutterFlowTheme.of(context).parkingPrimary,
             body: Center(
               child: SizedBox(
-                width: 40,
-                height: 40,
+                width: 40.0,
+                height: 40.0,
                 child: SpinKitFadingCircle(
                   color: FlutterFlowTheme.of(context).primary,
-                  size: 40,
+                  size: 40.0,
                 ),
               ),
             ),
@@ -127,7 +127,7 @@ class _OutletlistPageWidgetState extends State<OutletlistPageWidget>
                 key: scaffoldKey,
                 backgroundColor: FlutterFlowTheme.of(context).parkingPrimary,
                 body: Align(
-                  alignment: AlignmentDirectional(0, 0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -135,10 +135,10 @@ class _OutletlistPageWidgetState extends State<OutletlistPageWidget>
                       Expanded(
                         flex: 3,
                         child: Container(
-                          width: MediaQuery.sizeOf(context).width,
+                          width: MediaQuery.sizeOf(context).width * 1.0,
                           height: MediaQuery.sizeOf(context).height * 0.2,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(0),
+                            borderRadius: BorderRadius.circular(0.0),
                           ),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -146,8 +146,8 @@ class _OutletlistPageWidgetState extends State<OutletlistPageWidget>
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 5.0),
                                 child: Container(
                                   width:
                                       MediaQuery.sizeOf(context).width * 0.85,
@@ -174,7 +174,8 @@ class _OutletlistPageWidgetState extends State<OutletlistPageWidget>
                                             decoration: BoxDecoration(),
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(10, 0, 0, 0),
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 0.0, 0.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -241,21 +242,21 @@ class _OutletlistPageWidgetState extends State<OutletlistPageWidget>
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .lineColor,
-                                                  size: 30,
+                                                  size: 30.0,
                                                 ),
                                                 Icon(
                                                   Icons.phone,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .lineColor,
-                                                  size: 20,
+                                                  size: 20.0,
                                                 ),
                                                 Icon(
                                                   Icons.group_work_rounded,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .lineColor,
-                                                  size: 24,
+                                                  size: 24.0,
                                                 ),
                                               ],
                                             ),
@@ -372,14 +373,14 @@ class _OutletlistPageWidgetState extends State<OutletlistPageWidget>
                                                 FlutterFlowIconButton(
                                                   borderColor:
                                                       Colors.transparent,
-                                                  borderRadius: 30,
-                                                  buttonSize: 45,
+                                                  borderRadius: 30.0,
+                                                  buttonSize: 45.0,
                                                   icon: Icon(
                                                     Icons.edit_sharp,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .lineColor,
-                                                    size: 18,
+                                                    size: 18.0,
                                                   ),
                                                   onPressed: () async {},
                                                 ),
@@ -399,15 +400,15 @@ class _OutletlistPageWidgetState extends State<OutletlistPageWidget>
                       Expanded(
                         flex: 7,
                         child: Container(
-                          width: MediaQuery.sizeOf(context).width,
+                          width: MediaQuery.sizeOf(context).width * 1.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .parkingPrimaryBackground,
                             borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(0),
-                              bottomRight: Radius.circular(0),
-                              topLeft: Radius.circular(0),
-                              topRight: Radius.circular(0),
+                              bottomLeft: Radius.circular(0.0),
+                              bottomRight: Radius.circular(0.0),
+                              topLeft: Radius.circular(0.0),
+                              topRight: Radius.circular(0.0),
                             ),
                           ),
                           child: Column(
@@ -418,24 +419,26 @@ class _OutletlistPageWidgetState extends State<OutletlistPageWidget>
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 0, 3),
+                                          0.0, 0.0, 0.0, 3.0),
                                       child: Container(
-                                        width: MediaQuery.sizeOf(context).width,
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
+                                                1.0,
                                         height:
                                             MediaQuery.sizeOf(context).height *
                                                 0.6,
                                         decoration: BoxDecoration(
                                           borderRadius: BorderRadius.only(
-                                            bottomLeft: Radius.circular(0),
-                                            bottomRight: Radius.circular(0),
-                                            topLeft: Radius.circular(40),
-                                            topRight: Radius.circular(40),
+                                            bottomLeft: Radius.circular(0.0),
+                                            bottomRight: Radius.circular(0.0),
+                                            topLeft: Radius.circular(40.0),
+                                            topRight: Radius.circular(40.0),
                                           ),
                                         ),
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 20, 0, 0),
+                                                  0.0, 20.0, 0.0, 0.0),
                                           child:
                                               StreamBuilder<List<OutletRecord>>(
                                             stream: queryOutletRecord(
@@ -450,14 +453,14 @@ class _OutletlistPageWidgetState extends State<OutletlistPageWidget>
                                               if (!snapshot.hasData) {
                                                 return Center(
                                                   child: SizedBox(
-                                                    width: 40,
-                                                    height: 40,
+                                                    width: 40.0,
+                                                    height: 40.0,
                                                     child: SpinKitFadingCircle(
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primary,
-                                                      size: 40,
+                                                      size: 40.0,
                                                     ),
                                                   ),
                                                 );
@@ -488,10 +491,10 @@ class _OutletlistPageWidgetState extends State<OutletlistPageWidget>
                                                   return Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                10, 0, 10, 30),
+                                                            .fromSTEB(10.0, 0.0,
+                                                                10.0, 30.0),
                                                     child: Container(
-                                                      width: 100,
+                                                      width: 100.0,
                                                       height: MediaQuery.sizeOf(
                                                                   context)
                                                               .height *
@@ -514,10 +517,10 @@ class _OutletlistPageWidgetState extends State<OutletlistPageWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            17,
-                                                                            0,
-                                                                            0),
+                                                                            0.0,
+                                                                            17.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                 child: InkWell(
                                                                   splashColor:
                                                                       Colors
@@ -605,7 +608,7 @@ class _OutletlistPageWidgetState extends State<OutletlistPageWidget>
                                                                           .secondaryBackground,
                                                                       borderRadius:
                                                                           BorderRadius.circular(
-                                                                              15),
+                                                                              15.0),
                                                                     ),
                                                                     child: Row(
                                                                       mainAxisSize:
@@ -628,7 +631,7 @@ class _OutletlistPageWidgetState extends State<OutletlistPageWidget>
                                                                               height: MediaQuery.sizeOf(context).height * 0.12,
                                                                               decoration: BoxDecoration(),
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -638,7 +641,7 @@ class _OutletlistPageWidgetState extends State<OutletlistPageWidget>
                                                                                       height: MediaQuery.sizeOf(context).height * 0.15,
                                                                                       decoration: BoxDecoration(),
                                                                                       child: Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
                                                                                         child: Column(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -683,7 +686,7 @@ class _OutletlistPageWidgetState extends State<OutletlistPageWidget>
                                                                                       height: MediaQuery.sizeOf(context).height * 0.15,
                                                                                       decoration: BoxDecoration(),
                                                                                       child: Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
                                                                                         child: Column(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -729,12 +732,12 @@ class _OutletlistPageWidgetState extends State<OutletlistPageWidget>
                                                                               width: MediaQuery.sizeOf(context).width * 0.1,
                                                                               height: MediaQuery.sizeOf(context).height * 0.15,
                                                                               decoration: BoxDecoration(
-                                                                                borderRadius: BorderRadius.circular(0),
+                                                                                borderRadius: BorderRadius.circular(0.0),
                                                                               ),
                                                                               child: Icon(
                                                                                 Icons.navigate_next_sharp,
                                                                                 color: Color(0xFF4C5135),
-                                                                                size: 24,
+                                                                                size: 24.0,
                                                                               ),
                                                                             ),
                                                                           ],
@@ -751,16 +754,18 @@ class _OutletlistPageWidgetState extends State<OutletlistPageWidget>
                                                               Align(
                                                                 alignment:
                                                                     AlignmentDirectional(
-                                                                        0, 0),
+                                                                        0.0,
+                                                                        0.0),
                                                                 child: Material(
                                                                   color: Colors
                                                                       .transparent,
-                                                                  elevation: 5,
+                                                                  elevation:
+                                                                      5.0,
                                                                   shape:
                                                                       RoundedRectangleBorder(
                                                                     borderRadius:
-                                                                        BorderRadius
-                                                                            .circular(5),
+                                                                        BorderRadius.circular(
+                                                                            5.0),
                                                                   ),
                                                                   child:
                                                                       Container(
@@ -777,16 +782,15 @@ class _OutletlistPageWidgetState extends State<OutletlistPageWidget>
                                                                           .secondaryBackground,
                                                                       borderRadius:
                                                                           BorderRadius.circular(
-                                                                              5),
+                                                                              5.0),
                                                                     ),
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              7,
-                                                                              0,
-                                                                              7,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          7.0,
+                                                                          0.0,
+                                                                          7.0,
+                                                                          0.0),
                                                                       child:
                                                                           Row(
                                                                         mainAxisSize:
@@ -796,7 +800,7 @@ class _OutletlistPageWidgetState extends State<OutletlistPageWidget>
                                                                         children: [
                                                                           Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(0, 0),
+                                                                                AlignmentDirectional(0.0, 0.0),
                                                                             child:
                                                                                 AutoSizeText(
                                                                               listViewOutletRecord.name,
@@ -810,7 +814,7 @@ class _OutletlistPageWidgetState extends State<OutletlistPageWidget>
                                                                           ),
                                                                           Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(0.92, 0),
+                                                                                AlignmentDirectional(0.92, 0.0),
                                                                             child:
                                                                                 Container(
                                                                               width: MediaQuery.sizeOf(context).width * 0.04,
@@ -846,7 +850,7 @@ class _OutletlistPageWidgetState extends State<OutletlistPageWidget>
                               if (false)
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 3, 0, 6),
+                                      0.0, 3.0, 0.0, 6.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
                                     focusColor: Colors.transparent,
@@ -886,11 +890,12 @@ class _OutletlistPageWidgetState extends State<OutletlistPageWidget>
                                     child: Container(
                                       width: MediaQuery.sizeOf(context).width *
                                           0.6,
-                                      height: 50,
+                                      height: 50.0,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .parkingSecondaryBackground,
-                                        borderRadius: BorderRadius.circular(5),
+                                        borderRadius:
+                                            BorderRadius.circular(5.0),
                                       ),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -900,11 +905,11 @@ class _OutletlistPageWidgetState extends State<OutletlistPageWidget>
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 10, 0),
+                                                    0.0, 0.0, 10.0, 0.0),
                                             child: Icon(
                                               Icons.add_business,
                                               color: Colors.white,
-                                              size: 24,
+                                              size: 24.0,
                                             ),
                                           ),
                                           Text(

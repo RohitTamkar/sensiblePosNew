@@ -86,8 +86,8 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: 0,
-            end: 1,
+            begin: 0.0,
+            end: 1.0,
           ),
         ],
       ),
@@ -106,8 +106,8 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: 0,
-            end: 1,
+            begin: 0.0,
+            end: 1.0,
           ),
         ],
       ),
@@ -126,8 +126,8 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: 0,
-            end: 1,
+            begin: 0.0,
+            end: 1.0,
           ),
         ],
       ),
@@ -146,8 +146,8 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: 0,
-            end: 1,
+            begin: 0.0,
+            end: 1.0,
           ),
         ],
       ),
@@ -166,8 +166,8 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: 0,
-            end: 1,
+            begin: 0.0,
+            end: 1.0,
           ),
         ],
       ),
@@ -186,8 +186,8 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: 0,
-            end: 1,
+            begin: 0.0,
+            end: 1.0,
           ),
         ],
       ),
@@ -206,8 +206,8 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: 0,
-            end: 1,
+            begin: 0.0,
+            end: 1.0,
           ),
         ],
       ),
@@ -226,8 +226,8 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: 0,
-            end: 1,
+            begin: 0.0,
+            end: 1.0,
           ),
         ],
       ),
@@ -262,14 +262,14 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Padding(
-              padding: EdgeInsets.all(3),
+              padding: EdgeInsets.all(3.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Expanded(
                     flex: 1,
                     child: Container(
-                      width: MediaQuery.sizeOf(context).width,
+                      width: MediaQuery.sizeOf(context).width * 1.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primary,
                       ),
@@ -281,22 +281,22 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                           Expanded(
                             flex: 1,
                             child: Container(
-                              width: 100,
-                              height: 100,
+                              width: 100.0,
+                              height: 100.0,
                               decoration: BoxDecoration(),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   FlutterFlowIconButton(
                                     borderColor: Colors.transparent,
-                                    borderRadius: 30,
-                                    borderWidth: 1,
-                                    buttonSize: 60,
+                                    borderRadius: 30.0,
+                                    borderWidth: 1.0,
+                                    buttonSize: 60.0,
                                     icon: Icon(
                                       Icons.chevron_left_sharp,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBtnText,
-                                      size: 26,
+                                      size: 26.0,
                                     ),
                                     onPressed: () async {
                                       context.pushNamed(
@@ -365,10 +365,11 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                   Expanded(
                     flex: 11,
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
                       child: Container(
-                        width: MediaQuery.sizeOf(context).width,
-                        height: 100,
+                        width: MediaQuery.sizeOf(context).width * 1.0,
+                        height: 100.0,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).primaryBackground,
                         ),
@@ -377,20 +378,21 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                           children: [
                             Expanded(
                               child: Container(
-                                width: 100,
+                                width: 100.0,
                                 height: double.infinity,
                                 decoration: BoxDecoration(
                                   border: Border.all(
                                     color:
                                         FlutterFlowTheme.of(context).secondary,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
                                 ),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Container(
-                                      width: MediaQuery.sizeOf(context).width,
+                                      width: MediaQuery.sizeOf(context).width *
+                                          1.0,
                                       height:
                                           MediaQuery.sizeOf(context).height *
                                               0.06,
@@ -437,14 +439,14 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 10, 0, 0),
+                                                  0.0, 10.0, 0.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
                                                 MainAxisAlignment.center,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsets.all(5),
+                                                padding: EdgeInsets.all(5.0),
                                                 child: InkWell(
                                                   splashColor:
                                                       Colors.transparent,
@@ -476,8 +478,9 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                   },
                                                   child: Container(
                                                     width: MediaQuery.sizeOf(
-                                                            context)
-                                                        .width,
+                                                                context)
+                                                            .width *
+                                                        1.0,
                                                     height: MediaQuery.sizeOf(
                                                                 context)
                                                             .height *
@@ -527,14 +530,14 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                               ),
                                               Divider(
                                                 thickness: 0.2,
-                                                indent: 10,
-                                                endIndent: 10,
+                                                indent: 10.0,
+                                                endIndent: 10.0,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
                                               ),
                                               Padding(
-                                                padding: EdgeInsets.all(5),
+                                                padding: EdgeInsets.all(5.0),
                                                 child: InkWell(
                                                   splashColor:
                                                       Colors.transparent,
@@ -566,8 +569,9 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                   },
                                                   child: Container(
                                                     width: MediaQuery.sizeOf(
-                                                            context)
-                                                        .width,
+                                                                context)
+                                                            .width *
+                                                        1.0,
                                                     height: MediaQuery.sizeOf(
                                                                 context)
                                                             .height *
@@ -617,8 +621,8 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                               ),
                                               Divider(
                                                 thickness: 0.2,
-                                                indent: 10,
-                                                endIndent: 10,
+                                                indent: 10.0,
+                                                endIndent: 10.0,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
@@ -629,7 +633,7 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                       ],
                                     ),
                                     Padding(
-                                      padding: EdgeInsets.all(5),
+                                      padding: EdgeInsets.all(5.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -654,7 +658,8 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                         },
                                         child: Container(
                                           width:
-                                              MediaQuery.sizeOf(context).width,
+                                              MediaQuery.sizeOf(context).width *
+                                                  1.0,
                                           height: MediaQuery.sizeOf(context)
                                                   .height *
                                               0.08,
@@ -700,8 +705,8 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                     ),
                                     Divider(
                                       thickness: 0.2,
-                                      indent: 10,
-                                      endIndent: 10,
+                                      indent: 10.0,
+                                      endIndent: 10.0,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
                                     ),
@@ -711,10 +716,10 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                             ),
                             Expanded(
                               child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(3, 0, 3, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    3.0, 0.0, 3.0, 0.0),
                                 child: Container(
-                                  width: 100,
+                                  width: 100.0,
                                   height: double.infinity,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
@@ -722,14 +727,16 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                     border: Border.all(
                                       color: FlutterFlowTheme.of(context)
                                           .secondary,
-                                      width: 1,
+                                      width: 1.0,
                                     ),
                                   ),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Container(
-                                        width: MediaQuery.sizeOf(context).width,
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
+                                                1.0,
                                         height:
                                             MediaQuery.sizeOf(context).height *
                                                 0.06,
@@ -781,14 +788,14 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 10, 0, 0),
+                                                    0.0, 10.0, 0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsets.all(5),
+                                                  padding: EdgeInsets.all(5.0),
                                                   child: StreamBuilder<
                                                       List<ShiftRecord>>(
                                                     stream: queryShiftRecord(
@@ -812,14 +819,14 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                       if (!snapshot.hasData) {
                                                         return Center(
                                                           child: SizedBox(
-                                                            width: 40,
-                                                            height: 40,
+                                                            width: 40.0,
+                                                            height: 40.0,
                                                             child:
                                                                 SpinKitFadingCircle(
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .primary,
-                                                              size: 40,
+                                                              size: 40.0,
                                                             ),
                                                           ),
                                                         );
@@ -881,8 +888,9 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                               Curves.elasticOut,
                                                           width:
                                                               MediaQuery.sizeOf(
-                                                                      context)
-                                                                  .width,
+                                                                          context)
+                                                                      .width *
+                                                                  1.0,
                                                           height:
                                                               MediaQuery.sizeOf(
                                                                           context)
@@ -936,14 +944,14 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                 ),
                                                 Divider(
                                                   thickness: 0.2,
-                                                  indent: 10,
-                                                  endIndent: 10,
+                                                  indent: 10.0,
+                                                  endIndent: 10.0,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsets.all(5),
+                                                  padding: EdgeInsets.all(5.0),
                                                   child: InkWell(
                                                     splashColor:
                                                         Colors.transparent,
@@ -976,8 +984,9 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                     },
                                                     child: Container(
                                                       width: MediaQuery.sizeOf(
-                                                              context)
-                                                          .width,
+                                                                  context)
+                                                              .width *
+                                                          1.0,
                                                       height: MediaQuery.sizeOf(
                                                                   context)
                                                               .height *
@@ -1027,14 +1036,14 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                 ),
                                                 Divider(
                                                   thickness: 0.2,
-                                                  indent: 10,
-                                                  endIndent: 10,
+                                                  indent: 10.0,
+                                                  endIndent: 10.0,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsets.all(5),
+                                                  padding: EdgeInsets.all(5.0),
                                                   child: InkWell(
                                                     splashColor:
                                                         Colors.transparent,
@@ -1067,8 +1076,9 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                     },
                                                     child: Container(
                                                       width: MediaQuery.sizeOf(
-                                                              context)
-                                                          .width,
+                                                                  context)
+                                                              .width *
+                                                          1.0,
                                                       height: MediaQuery.sizeOf(
                                                                   context)
                                                               .height *
@@ -1123,8 +1133,8 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                 ),
                                                 Divider(
                                                   thickness: 0.2,
-                                                  indent: 10,
-                                                  endIndent: 10,
+                                                  indent: 10.0,
+                                                  endIndent: 10.0,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
@@ -1141,7 +1151,7 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                             ),
                             Expanded(
                               child: Container(
-                                width: 100,
+                                width: 100.0,
                                 height: double.infinity,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
@@ -1149,14 +1159,15 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                   border: Border.all(
                                     color:
                                         FlutterFlowTheme.of(context).secondary,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
                                 ),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Container(
-                                      width: MediaQuery.sizeOf(context).width,
+                                      width: MediaQuery.sizeOf(context).width *
+                                          1.0,
                                       height:
                                           MediaQuery.sizeOf(context).height *
                                               0.06,
@@ -1203,14 +1214,14 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 10, 0, 0),
+                                                  0.0, 10.0, 0.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
                                                 MainAxisAlignment.center,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsets.all(5),
+                                                padding: EdgeInsets.all(5.0),
                                                 child: InkWell(
                                                   splashColor:
                                                       Colors.transparent,
@@ -1267,8 +1278,9 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                   },
                                                   child: Container(
                                                     width: MediaQuery.sizeOf(
-                                                            context)
-                                                        .width,
+                                                                context)
+                                                            .width *
+                                                        1.0,
                                                     height: MediaQuery.sizeOf(
                                                                 context)
                                                             .height *
@@ -1318,14 +1330,14 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                               ),
                                               Divider(
                                                 thickness: 0.2,
-                                                indent: 10,
-                                                endIndent: 10,
+                                                indent: 10.0,
+                                                endIndent: 10.0,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
                                               ),
                                               Padding(
-                                                padding: EdgeInsets.all(5),
+                                                padding: EdgeInsets.all(5.0),
                                                 child: InkWell(
                                                   splashColor:
                                                       Colors.transparent,
@@ -1382,8 +1394,9 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                   },
                                                   child: Container(
                                                     width: MediaQuery.sizeOf(
-                                                            context)
-                                                        .width,
+                                                                context)
+                                                            .width *
+                                                        1.0,
                                                     height: MediaQuery.sizeOf(
                                                                 context)
                                                             .height *
@@ -1433,14 +1446,14 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                               ),
                                               Divider(
                                                 thickness: 0.2,
-                                                indent: 10,
-                                                endIndent: 10,
+                                                indent: 10.0,
+                                                endIndent: 10.0,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
                                               ),
                                               Padding(
-                                                padding: EdgeInsets.all(5),
+                                                padding: EdgeInsets.all(5.0),
                                                 child: InkWell(
                                                   splashColor:
                                                       Colors.transparent,
@@ -1497,8 +1510,9 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                   },
                                                   child: Container(
                                                     width: MediaQuery.sizeOf(
-                                                            context)
-                                                        .width,
+                                                                context)
+                                                            .width *
+                                                        1.0,
                                                     height: MediaQuery.sizeOf(
                                                                 context)
                                                             .height *
@@ -1547,14 +1561,14 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                               ),
                                               Divider(
                                                 thickness: 0.2,
-                                                indent: 10,
-                                                endIndent: 10,
+                                                indent: 10.0,
+                                                endIndent: 10.0,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
                                               ),
                                               Padding(
-                                                padding: EdgeInsets.all(5),
+                                                padding: EdgeInsets.all(5.0),
                                                 child: InkWell(
                                                   splashColor:
                                                       Colors.transparent,
@@ -1611,8 +1625,9 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                   },
                                                   child: Container(
                                                     width: MediaQuery.sizeOf(
-                                                            context)
-                                                        .width,
+                                                                context)
+                                                            .width *
+                                                        1.0,
                                                     height: MediaQuery.sizeOf(
                                                                 context)
                                                             .height *
@@ -1661,8 +1676,8 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                               ),
                                               Divider(
                                                 thickness: 0.2,
-                                                indent: 10,
-                                                endIndent: 10,
+                                                indent: 10.0,
+                                                endIndent: 10.0,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,

@@ -1704,11 +1704,11 @@ class FFRoute {
           final child = appStateNotifier.loading
               ? Center(
                   child: SizedBox(
-                    width: 40,
-                    height: 40,
+                    width: 40.0,
+                    height: 40.0,
                     child: SpinKitFadingCircle(
                       color: FlutterFlowTheme.of(context).primary,
-                      size: 40,
+                      size: 40.0,
                     ),
                   ),
                 )

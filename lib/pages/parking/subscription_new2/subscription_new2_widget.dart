@@ -57,8 +57,8 @@ class _SubscriptionNew2WidgetState extends State<SubscriptionNew2Widget> {
                 Expanded(
                   flex: 4,
                   child: Container(
-                    width: MediaQuery.sizeOf(context).width,
-                    height: 100,
+                    width: MediaQuery.sizeOf(context).width * 1.0,
+                    height: 100.0,
                     decoration: BoxDecoration(),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -66,20 +66,21 @@ class _SubscriptionNew2WidgetState extends State<SubscriptionNew2Widget> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              20.0, 0.0, 20.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 30,
-                                borderWidth: 1,
-                                buttonSize: 45,
+                                borderRadius: 30.0,
+                                borderWidth: 1.0,
+                                buttonSize: 45.0,
                                 icon: Icon(
                                   Icons.chevron_left,
                                   color: FlutterFlowTheme.of(context).lineColor,
-                                  size: 30,
+                                  size: 30.0,
                                 ),
                                 onPressed: () async {
                                   context.safePop();
@@ -107,13 +108,13 @@ class _SubscriptionNew2WidgetState extends State<SubscriptionNew2Widget> {
                               ),
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 30,
-                                borderWidth: 1,
-                                buttonSize: 45,
+                                borderRadius: 30.0,
+                                borderWidth: 1.0,
+                                buttonSize: 45.0,
                                 icon: Icon(
                                   Icons.chevron_left,
                                   color: Colors.transparent,
-                                  size: 30,
+                                  size: 30.0,
                                 ),
                                 onPressed: () {
                                   print('IconButton pressed ...');
@@ -143,11 +144,11 @@ class _SubscriptionNew2WidgetState extends State<SubscriptionNew2Widget> {
                       if (!snapshot.hasData) {
                         return Center(
                           child: SizedBox(
-                            width: 40,
-                            height: 40,
+                            width: 40.0,
+                            height: 40.0,
                             child: SpinKitFadingCircle(
                               color: FlutterFlowTheme.of(context).primary,
-                              size: 40,
+                              size: 40.0,
                             ),
                           ),
                         );
@@ -160,26 +161,27 @@ class _SubscriptionNew2WidgetState extends State<SubscriptionNew2Widget> {
                               : null;
 
                       return Container(
-                        width: MediaQuery.sizeOf(context).width,
-                        height: 100,
+                        width: MediaQuery.sizeOf(context).width * 1.0,
+                        height: 100.0,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context)
                               .parkingPrimaryBackground,
                           borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(0),
-                            bottomRight: Radius.circular(0),
-                            topLeft: Radius.circular(0),
-                            topRight: Radius.circular(0),
+                            bottomLeft: Radius.circular(0.0),
+                            bottomRight: Radius.circular(0.0),
+                            topLeft: Radius.circular(0.0),
+                            topRight: Radius.circular(0.0),
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 30.0, 0.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 10.0),
                                 child:
                                     StreamBuilder<List<BusinesssMasterRecord>>(
                                   stream: queryBusinesssMasterRecord(
@@ -197,12 +199,12 @@ class _SubscriptionNew2WidgetState extends State<SubscriptionNew2Widget> {
                                     if (!snapshot.hasData) {
                                       return Center(
                                         child: SizedBox(
-                                          width: 40,
-                                          height: 40,
+                                          width: 40.0,
+                                          height: 40.0,
                                           child: SpinKitFadingCircle(
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
-                                            size: 40,
+                                            size: 40.0,
                                           ),
                                         ),
                                       );
@@ -226,7 +228,8 @@ class _SubscriptionNew2WidgetState extends State<SubscriptionNew2Widget> {
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
-                                        borderRadius: BorderRadius.circular(20),
+                                        borderRadius:
+                                            BorderRadius.circular(20.0),
                                       ),
                                       child: StreamBuilder<
                                           List<BusinessTypeRecord>>(
@@ -245,13 +248,13 @@ class _SubscriptionNew2WidgetState extends State<SubscriptionNew2Widget> {
                                           if (!snapshot.hasData) {
                                             return Center(
                                               child: SizedBox(
-                                                width: 40,
-                                                height: 40,
+                                                width: 40.0,
+                                                height: 40.0,
                                                 child: SpinKitFadingCircle(
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
-                                                  size: 40,
+                                                  size: 40.0,
                                                 ),
                                               ),
                                             );
@@ -295,15 +298,15 @@ class _SubscriptionNew2WidgetState extends State<SubscriptionNew2Widget> {
                                                 if (!snapshot.hasData) {
                                                   return Center(
                                                     child: SizedBox(
-                                                      width: 40,
-                                                      height: 40,
+                                                      width: 40.0,
+                                                      height: 40.0,
                                                       child:
                                                           SpinKitFadingCircle(
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primary,
-                                                        size: 40,
+                                                        size: 40.0,
                                                       ),
                                                     ),
                                                   );
@@ -328,7 +331,10 @@ class _SubscriptionNew2WidgetState extends State<SubscriptionNew2Widget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    3, 0, 3, 0),
+                                                                    3.0,
+                                                                    0.0,
+                                                                    3.0,
+                                                                    0.0),
                                                         child: Row(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -338,7 +344,7 @@ class _SubscriptionNew2WidgetState extends State<SubscriptionNew2Widget> {
                                                           children: [
                                                             Expanded(
                                                               child: Container(
-                                                                width: 100,
+                                                                width: 100.0,
                                                                 height: MediaQuery.sizeOf(
                                                                             context)
                                                                         .height *
@@ -349,7 +355,7 @@ class _SubscriptionNew2WidgetState extends State<SubscriptionNew2Widget> {
                                                                   padding:
                                                                       EdgeInsets
                                                                           .all(
-                                                                              10),
+                                                                              10.0),
                                                                   child: Column(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -363,10 +369,10 @@ class _SubscriptionNew2WidgetState extends State<SubscriptionNew2Widget> {
                                                                     children: [
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            0,
-                                                                            8),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            8.0),
                                                                         child:
                                                                             Row(
                                                                           mainAxisSize:
@@ -375,7 +381,7 @@ class _SubscriptionNew2WidgetState extends State<SubscriptionNew2Widget> {
                                                                               MainAxisAlignment.start,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                               child: Container(
                                                                                 width: MediaQuery.sizeOf(context).width * 0.16,
                                                                                 height: MediaQuery.sizeOf(context).height * 0.02,
@@ -427,7 +433,7 @@ class _SubscriptionNew2WidgetState extends State<SubscriptionNew2Widget> {
                                                                               MainAxisAlignment.start,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                               child: Container(
                                                                                 width: MediaQuery.sizeOf(context).width * 0.16,
                                                                                 height: MediaQuery.sizeOf(context).height * 0.02,
@@ -463,10 +469,10 @@ class _SubscriptionNew2WidgetState extends State<SubscriptionNew2Widget> {
                                                                       ),
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            0,
-                                                                            20),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            20.0),
                                                                         child:
                                                                             Row(
                                                                           mainAxisSize:
@@ -475,7 +481,7 @@ class _SubscriptionNew2WidgetState extends State<SubscriptionNew2Widget> {
                                                                               MainAxisAlignment.start,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                               child: Container(
                                                                                 width: MediaQuery.sizeOf(context).width * 0.16,
                                                                                 height: MediaQuery.sizeOf(context).height * 0.02,
@@ -511,10 +517,10 @@ class _SubscriptionNew2WidgetState extends State<SubscriptionNew2Widget> {
                                                                       ),
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            6,
-                                                                            0,
-                                                                            6,
-                                                                            0),
+                                                                            6.0,
+                                                                            0.0,
+                                                                            6.0,
+                                                                            0.0),
                                                                         child:
                                                                             Row(
                                                                           mainAxisSize:
@@ -524,17 +530,17 @@ class _SubscriptionNew2WidgetState extends State<SubscriptionNew2Widget> {
                                                                           children: [
                                                                             Container(
                                                                               width: MediaQuery.sizeOf(context).width * 0.4,
-                                                                              height: 100,
+                                                                              height: 100.0,
                                                                               decoration: BoxDecoration(
                                                                                 color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                borderRadius: BorderRadius.circular(15),
+                                                                                borderRadius: BorderRadius.circular(15.0),
                                                                               ),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 mainAxisAlignment: MainAxisAlignment.center,
                                                                                 children: [
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
                                                                                     child: Text(
                                                                                       FFLocalizations.of(context).getText(
                                                                                         'lsbmq6mw' /* Created Date */,
@@ -561,17 +567,17 @@ class _SubscriptionNew2WidgetState extends State<SubscriptionNew2Widget> {
                                                                             ),
                                                                             Container(
                                                                               width: MediaQuery.sizeOf(context).width * 0.4,
-                                                                              height: 100,
+                                                                              height: 100.0,
                                                                               decoration: BoxDecoration(
                                                                                 color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                borderRadius: BorderRadius.circular(15),
+                                                                                borderRadius: BorderRadius.circular(15.0),
                                                                               ),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 mainAxisAlignment: MainAxisAlignment.center,
                                                                                 children: [
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
                                                                                     child: Text(
                                                                                       FFLocalizations.of(context).getText(
                                                                                         'iailfz8m' /* Renewal Date */,
@@ -631,10 +637,10 @@ class _SubscriptionNew2WidgetState extends State<SubscriptionNew2Widget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            5,
-                                                                            5,
-                                                                            5,
-                                                                            0),
+                                                                            5.0,
+                                                                            5.0,
+                                                                            5.0,
+                                                                            0.0),
                                                                 child: Column(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -695,12 +701,11 @@ class _SubscriptionNew2WidgetState extends State<SubscriptionNew2Widget> {
                                                                       ],
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              0,
-                                                                              10,
-                                                                              0,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       child:
                                                                           Row(
                                                                         mainAxisSize:
@@ -717,14 +722,14 @@ class _SubscriptionNew2WidgetState extends State<SubscriptionNew2Widget> {
                                                                                 BoxDecoration(),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                 children: [
                                                                                   Material(
                                                                                     color: Colors.transparent,
-                                                                                    elevation: 3,
+                                                                                    elevation: 3.0,
                                                                                     shape: const CircleBorder(),
                                                                                     child: Container(
                                                                                       width: MediaQuery.sizeOf(context).width * 0.4,
@@ -733,11 +738,11 @@ class _SubscriptionNew2WidgetState extends State<SubscriptionNew2Widget> {
                                                                                         color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                         boxShadow: [
                                                                                           BoxShadow(
-                                                                                            blurRadius: 3,
+                                                                                            blurRadius: 3.0,
                                                                                             color: Color(0x33000000),
                                                                                             offset: Offset(
-                                                                                              0,
-                                                                                              1,
+                                                                                              0.0,
+                                                                                              1.0,
                                                                                             ),
                                                                                           )
                                                                                         ],
@@ -752,7 +757,7 @@ class _SubscriptionNew2WidgetState extends State<SubscriptionNew2Widget> {
                                                                                             mainAxisAlignment: MainAxisAlignment.center,
                                                                                             children: [
                                                                                               Padding(
-                                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
                                                                                                 child: Text(
                                                                                                   FFLocalizations.of(context).getText(
                                                                                                     'ux5asa4i' /* ₹  */,
@@ -760,7 +765,7 @@ class _SubscriptionNew2WidgetState extends State<SubscriptionNew2Widget> {
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                         fontFamily: 'Lora',
                                                                                                         color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                        fontSize: 18,
+                                                                                                        fontSize: 18.0,
                                                                                                         letterSpacing: 0.0,
                                                                                                         fontWeight: FontWeight.normal,
                                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey('Lora'),
@@ -768,7 +773,7 @@ class _SubscriptionNew2WidgetState extends State<SubscriptionNew2Widget> {
                                                                                                 ),
                                                                                               ),
                                                                                               Padding(
-                                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
                                                                                                 child: Text(
                                                                                                   valueOrDefault<String>(
                                                                                                     containerSubscriptionRecord?.amount?.toString(),
@@ -798,7 +803,7 @@ class _SubscriptionNew2WidgetState extends State<SubscriptionNew2Widget> {
                                                                                   ),
                                                                                   if (FFAppState().show)
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
                                                                                       child: Row(
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -837,16 +842,16 @@ class _SubscriptionNew2WidgetState extends State<SubscriptionNew2Widget> {
                                                                                     onTap: () async {},
                                                                                     child: Material(
                                                                                       color: Colors.transparent,
-                                                                                      elevation: 3,
+                                                                                      elevation: 3.0,
                                                                                       shape: RoundedRectangleBorder(
-                                                                                        borderRadius: BorderRadius.circular(8),
+                                                                                        borderRadius: BorderRadius.circular(8.0),
                                                                                       ),
                                                                                       child: Container(
                                                                                         width: MediaQuery.sizeOf(context).width * 0.42,
                                                                                         height: MediaQuery.sizeOf(context).height * 0.04,
                                                                                         decoration: BoxDecoration(
                                                                                           color: FlutterFlowTheme.of(context).parkingSecondaryBackground,
-                                                                                          borderRadius: BorderRadius.circular(8),
+                                                                                          borderRadius: BorderRadius.circular(8.0),
                                                                                         ),
                                                                                         child: Column(
                                                                                           mainAxisSize: MainAxisSize.max,
@@ -859,7 +864,7 @@ class _SubscriptionNew2WidgetState extends State<SubscriptionNew2Widget> {
                                                                                               style: FlutterFlowTheme.of(context).titleMedium.override(
                                                                                                     fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                                     color: FlutterFlowTheme.of(context).primaryBtnText,
-                                                                                                    fontSize: 14,
+                                                                                                    fontSize: 14.0,
                                                                                                     letterSpacing: 0.0,
                                                                                                     fontWeight: FontWeight.w600,
                                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),

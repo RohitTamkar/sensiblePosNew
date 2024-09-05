@@ -47,18 +47,18 @@ class _TestWidgetState extends State<TestWidget> {
         color: FlutterFlowTheme.of(context).secondaryBackground,
         boxShadow: [
           BoxShadow(
-            blurRadius: 5,
+            blurRadius: 5.0,
             color: Color(0x4D090F13),
             offset: Offset(
               0.0,
-              2,
+              2.0,
             ),
           )
         ],
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(12.0),
       ),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(16, 12, 16, 12),
+        padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
         child: Row(
           mainAxisSize: MainAxisSize.max,
           children: [
@@ -82,7 +82,7 @@ class _TestWidgetState extends State<TestWidget> {
                             .override(
                               fontFamily: FlutterFlowTheme.of(context)
                                   .headlineMediumFamily,
-                              fontSize: 26,
+                              fontSize: 26.0,
                               letterSpacing: 0.0,
                               useGoogleFonts: GoogleFonts.asMap().containsKey(
                                   FlutterFlowTheme.of(context)
@@ -114,14 +114,14 @@ class _TestWidgetState extends State<TestWidget> {
                           fontFamily:
                               FlutterFlowTheme.of(context).titleMediumFamily,
                           color: FlutterFlowTheme.of(context).primary,
-                          fontSize: 14,
+                          fontSize: 14.0,
                           letterSpacing: 0.0,
                           useGoogleFonts: GoogleFonts.asMap().containsKey(
                               FlutterFlowTheme.of(context).titleMediumFamily),
                         ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'gxf4kntt' /* Get all the features at a disc... */,
@@ -136,7 +136,7 @@ class _TestWidgetState extends State<TestWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -151,13 +151,13 @@ class _TestWidgetState extends State<TestWidget> {
                             FFAppState().update(() {});
                           },
                           child: Container(
-                            width: 100,
-                            height: 32,
+                            width: 100.0,
+                            height: 32.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context).customColor3,
-                              borderRadius: BorderRadius.circular(30),
+                              borderRadius: BorderRadius.circular(30.0),
                             ),
-                            alignment: AlignmentDirectional(0, 0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'am2klcdo' /* Save 20% */,
@@ -185,11 +185,12 @@ class _TestWidgetState extends State<TestWidget> {
                             'j2751oqn' /* Buy Now */,
                           ),
                           options: FFButtonOptions(
-                            width: 130,
-                            height: 50,
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-                            iconPadding:
-                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                            width: 130.0,
+                            height: 50.0,
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
@@ -202,12 +203,12 @@ class _TestWidgetState extends State<TestWidget> {
                                       .containsKey(FlutterFlowTheme.of(context)
                                           .titleSmallFamily),
                                 ),
-                            elevation: 2,
+                            elevation: 2.0,
                             borderSide: BorderSide(
                               color: Colors.transparent,
-                              width: 1,
+                              width: 1.0,
                             ),
-                            borderRadius: BorderRadius.circular(50),
+                            borderRadius: BorderRadius.circular(50.0),
                           ),
                         ),
                       ],

@@ -117,7 +117,7 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
     context.watch<FFAppState>();
 
     return Align(
-      alignment: AlignmentDirectional(0, 0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: Container(
         width: MediaQuery.sizeOf(context).width * 0.8,
         height: MediaQuery.sizeOf(context).height * 0.9,
@@ -125,13 +125,13 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
           color: FlutterFlowTheme.of(context).primaryBackground,
         ),
         child: Padding(
-          padding: EdgeInsets.all(15),
+          padding: EdgeInsets.all(15.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 30),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 30.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -152,13 +152,13 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                     ),
                     FlutterFlowIconButton(
                       borderColor: Colors.transparent,
-                      borderRadius: 30,
-                      buttonSize: 40,
+                      borderRadius: 30.0,
+                      buttonSize: 40.0,
                       fillColor: FlutterFlowTheme.of(context).primary,
                       icon: Icon(
                         Icons.close_sharp,
                         color: FlutterFlowTheme.of(context).primaryBtnText,
-                        size: 24,
+                        size: 24.0,
                       ),
                       onPressed: () async {
                         Navigator.pop(context);
@@ -168,7 +168,7 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 15),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -178,8 +178,8 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 10.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'm0nbyzdz' /* Name */,
@@ -199,8 +199,8 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                             ),
                           ),
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 10.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'cy68tpu8' /* * */,
@@ -258,35 +258,35 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context)
                                         .customColor1,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).info,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 focusedErrorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                contentPadding: EdgeInsets.all(14),
+                                contentPadding: EdgeInsets.all(14.0),
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
@@ -313,8 +313,8 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                         children: [
                           Expanded(
                             child: Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 10.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
                                   'q2cl2akf' /* Regional Name */,
@@ -372,35 +372,35 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context)
                                         .customColor1,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).info,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 focusedErrorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                contentPadding: EdgeInsets.all(14),
+                                contentPadding: EdgeInsets.all(14.0),
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
@@ -427,8 +427,8 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                         children: [
                           Expanded(
                             child: Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 10.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
                                   'cn0weuoy' /* Barcode */,
@@ -486,35 +486,35 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context)
                                         .customColor1,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).info,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 focusedErrorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                contentPadding: EdgeInsets.all(14),
+                                contentPadding: EdgeInsets.all(14.0),
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
@@ -534,11 +534,11 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                         ],
                       ),
                     ),
-                  ].divide(SizedBox(width: 15)),
+                  ].divide(SizedBox(width: 15.0)),
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 35),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 35.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -548,7 +548,8 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 5.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 '6wtrj5xk' /* Category */,
@@ -581,12 +582,12 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                               if (!snapshot.hasData) {
                                 return Center(
                                   child: SizedBox(
-                                    width: 40,
-                                    height: 40,
+                                    width: 40.0,
+                                    height: 40.0,
                                     child: SpinKitFadingCircle(
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      size: 40,
+                                      size: 40.0,
                                     ),
                                   ),
                                 );
@@ -608,8 +609,8 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                       .toList(),
                                   onChanged: (val) => safeSetState(
                                       () => _model.dropDownValue1 = val),
-                                  width: 300,
-                                  height: 45,
+                                  width: 300.0,
+                                  height: 45.0,
                                   textStyle: FlutterFlowTheme.of(context)
                                       .labelLarge
                                       .override(
@@ -628,17 +629,17 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                     Icons.keyboard_arrow_down_rounded,
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
-                                    size: 24,
+                                    size: 24.0,
                                   ),
                                   fillColor: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  elevation: 2,
+                                  elevation: 2.0,
                                   borderColor:
                                       FlutterFlowTheme.of(context).customColor1,
-                                  borderWidth: 1,
-                                  borderRadius: 8,
+                                  borderWidth: 1.0,
+                                  borderRadius: 8.0,
                                   margin: EdgeInsetsDirectional.fromSTEB(
-                                      16, 0, 16, 0),
+                                      16.0, 0.0, 16.0, 0.0),
                                   hidesUnderline: true,
                                   isOverButton: true,
                                   isSearchable: false,
@@ -671,7 +672,8 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 5.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'ccw5gp9x' /* GST Rate */,
@@ -697,12 +699,12 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                               if (!snapshot.hasData) {
                                 return Center(
                                   child: SizedBox(
-                                    width: 40,
-                                    height: 40,
+                                    width: 40.0,
+                                    height: 40.0,
                                     child: SpinKitFadingCircle(
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      size: 40,
+                                      size: 40.0,
                                     ),
                                   ),
                                 );
@@ -724,8 +726,8 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                       .toList(),
                                   onChanged: (val) => safeSetState(
                                       () => _model.dropDownValue2 = val),
-                                  width: 300,
-                                  height: 45,
+                                  width: 300.0,
+                                  height: 45.0,
                                   textStyle: FlutterFlowTheme.of(context)
                                       .labelLarge
                                       .override(
@@ -744,17 +746,17 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                     Icons.keyboard_arrow_down_rounded,
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
-                                    size: 24,
+                                    size: 24.0,
                                   ),
                                   fillColor: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  elevation: 2,
+                                  elevation: 2.0,
                                   borderColor:
                                       FlutterFlowTheme.of(context).customColor1,
-                                  borderWidth: 1,
-                                  borderRadius: 8,
+                                  borderWidth: 1.0,
+                                  borderRadius: 8.0,
                                   margin: EdgeInsetsDirectional.fromSTEB(
-                                      16, 0, 16, 0),
+                                      16.0, 0.0, 16.0, 0.0),
                                   hidesUnderline: true,
                                   isOverButton: true,
                                   isSearchable: false,
@@ -787,7 +789,8 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 5.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'oej9eyue' /* Unit Type */,
@@ -813,12 +816,12 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                               if (!snapshot.hasData) {
                                 return Center(
                                   child: SizedBox(
-                                    width: 40,
-                                    height: 40,
+                                    width: 40.0,
+                                    height: 40.0,
                                     child: SpinKitFadingCircle(
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      size: 40,
+                                      size: 40.0,
                                     ),
                                   ),
                                 );
@@ -841,8 +844,8 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                       .toList(),
                                   onChanged: (val) => safeSetState(
                                       () => _model.dropDownValue3 = val),
-                                  width: 300,
-                                  height: 45,
+                                  width: 300.0,
+                                  height: 45.0,
                                   textStyle: FlutterFlowTheme.of(context)
                                       .labelLarge
                                       .override(
@@ -861,17 +864,17 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                     Icons.keyboard_arrow_down_rounded,
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
-                                    size: 24,
+                                    size: 24.0,
                                   ),
                                   fillColor: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  elevation: 2,
+                                  elevation: 2.0,
                                   borderColor:
                                       FlutterFlowTheme.of(context).customColor1,
-                                  borderWidth: 1,
-                                  borderRadius: 8,
+                                  borderWidth: 1.0,
+                                  borderRadius: 8.0,
                                   margin: EdgeInsetsDirectional.fromSTEB(
-                                      16, 0, 16, 0),
+                                      16.0, 0.0, 16.0, 0.0),
                                   hidesUnderline: true,
                                   isOverButton: true,
                                   isSearchable: false,
@@ -904,7 +907,8 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 5.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'srufprpk' /* Service Point */,
@@ -932,12 +936,12 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                               if (!snapshot.hasData) {
                                 return Center(
                                   child: SizedBox(
-                                    width: 40,
-                                    height: 40,
+                                    width: 40.0,
+                                    height: 40.0,
                                     child: SpinKitFadingCircle(
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      size: 40,
+                                      size: 40.0,
                                     ),
                                   ),
                                 );
@@ -957,8 +961,8 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                       .toList(),
                                   onChanged: (val) => safeSetState(
                                       () => _model.dropDownValue4 = val),
-                                  width: 300,
-                                  height: 45,
+                                  width: 300.0,
+                                  height: 45.0,
                                   textStyle: FlutterFlowTheme.of(context)
                                       .labelLarge
                                       .override(
@@ -977,17 +981,17 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                     Icons.keyboard_arrow_down_rounded,
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
-                                    size: 24,
+                                    size: 24.0,
                                   ),
                                   fillColor: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  elevation: 2,
+                                  elevation: 2.0,
                                   borderColor:
                                       FlutterFlowTheme.of(context).customColor1,
-                                  borderWidth: 1,
-                                  borderRadius: 8,
+                                  borderWidth: 1.0,
+                                  borderRadius: 8.0,
                                   margin: EdgeInsetsDirectional.fromSTEB(
-                                      16, 0, 16, 0),
+                                      16.0, 0.0, 16.0, 0.0),
                                   hidesUnderline: true,
                                   isOverButton: true,
                                   isSearchable: false,
@@ -1014,11 +1018,11 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                         ],
                       ),
                     ),
-                  ].divide(SizedBox(width: 10)),
+                  ].divide(SizedBox(width: 10.0)),
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 15),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -1028,7 +1032,8 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 5.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'ox153dhr' /* Search Code */,
@@ -1085,35 +1090,35 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context)
                                         .customColor1,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).info,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 focusedErrorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                contentPadding: EdgeInsets.all(14),
+                                contentPadding: EdgeInsets.all(14.0),
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
@@ -1139,7 +1144,8 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 5.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'lud6dgn8' /* Short Name */,
@@ -1197,35 +1203,35 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context)
                                         .customColor1,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).info,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 focusedErrorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                contentPadding: EdgeInsets.all(14),
+                                contentPadding: EdgeInsets.all(14.0),
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
@@ -1251,7 +1257,8 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 5.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'n17x9w3j' /* HSN Code */,
@@ -1309,35 +1316,35 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context)
                                         .customColor1,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).info,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 focusedErrorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                contentPadding: EdgeInsets.all(14),
+                                contentPadding: EdgeInsets.all(14.0),
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
@@ -1357,11 +1364,11 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                         ],
                       ),
                     ),
-                  ].divide(SizedBox(width: 10)),
+                  ].divide(SizedBox(width: 10.0)),
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 15),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -1371,7 +1378,8 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 5.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'j8oy52tw' /* Selling Price */,
@@ -1428,35 +1436,35 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context)
                                         .customColor1,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).info,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 focusedErrorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                contentPadding: EdgeInsets.all(14),
+                                contentPadding: EdgeInsets.all(14.0),
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
@@ -1482,7 +1490,8 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 5.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'lzzugdm3' /* Purchase Price */,
@@ -1540,35 +1549,35 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context)
                                         .customColor1,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).info,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 focusedErrorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                contentPadding: EdgeInsets.all(14),
+                                contentPadding: EdgeInsets.all(14.0),
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
@@ -1594,7 +1603,8 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 5.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'epya0mpe' /* MRP Price */,
@@ -1652,35 +1662,35 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context)
                                         .customColor1,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).info,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 focusedErrorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                contentPadding: EdgeInsets.all(14),
+                                contentPadding: EdgeInsets.all(14.0),
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
@@ -1700,11 +1710,11 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                         ],
                       ),
                     ),
-                  ].divide(SizedBox(width: 10)),
+                  ].divide(SizedBox(width: 10.0)),
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 15),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -1714,7 +1724,8 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 5.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'w3uyovda' /* Discount */,
@@ -1771,35 +1782,35 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context)
                                         .customColor1,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).info,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 focusedErrorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                contentPadding: EdgeInsets.all(14),
+                                contentPadding: EdgeInsets.all(14.0),
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
@@ -1825,7 +1836,8 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 5.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'zfahmfvy' /* Discount Amount */,
@@ -1883,35 +1895,35 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context)
                                         .customColor1,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).info,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 focusedErrorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                contentPadding: EdgeInsets.all(14),
+                                contentPadding: EdgeInsets.all(14.0),
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
@@ -1937,7 +1949,8 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 5.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'k4uua30k' /* Current Stock */,
@@ -1995,35 +2008,35 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context)
                                         .customColor1,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).info,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 focusedErrorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                contentPadding: EdgeInsets.all(14),
+                                contentPadding: EdgeInsets.all(14.0),
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
@@ -2043,11 +2056,11 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                         ],
                       ),
                     ),
-                  ].divide(SizedBox(width: 10)),
+                  ].divide(SizedBox(width: 10.0)),
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 250, 15),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 250.0, 15.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -2102,7 +2115,7 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                     ),
                     Expanded(
                       child: Container(
-                        width: 300,
+                        width: 300.0,
                         decoration: BoxDecoration(),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
@@ -2155,12 +2168,12 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                         ),
                       ),
                     ),
-                  ].divide(SizedBox(width: 25)),
+                  ].divide(SizedBox(width: 25.0)),
                 ),
               ),
               if (false)
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 15),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -2170,8 +2183,8 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 5.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
                                   '44qwku4l' /* Table Price */,
@@ -2225,35 +2238,35 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context)
                                           .customColor1,
-                                      width: 1,
+                                      width: 1.0,
                                     ),
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).info,
-                                      width: 1,
+                                      width: 1.0,
                                     ),
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   errorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).error,
-                                      width: 1,
+                                      width: 1.0,
                                     ),
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).error,
-                                      width: 1,
+                                      width: 1.0,
                                     ),
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   filled: true,
                                   fillColor: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  contentPadding: EdgeInsets.all(14),
+                                  contentPadding: EdgeInsets.all(14.0),
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
@@ -2279,8 +2292,8 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 5.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
                                   '6lusn1qo' /* AC Price */,
@@ -2335,35 +2348,35 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context)
                                           .customColor1,
-                                      width: 1,
+                                      width: 1.0,
                                     ),
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).info,
-                                      width: 1,
+                                      width: 1.0,
                                     ),
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   errorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).error,
-                                      width: 1,
+                                      width: 1.0,
                                     ),
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).error,
-                                      width: 1,
+                                      width: 1.0,
                                     ),
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   filled: true,
                                   fillColor: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  contentPadding: EdgeInsets.all(14),
+                                  contentPadding: EdgeInsets.all(14.0),
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
@@ -2389,8 +2402,8 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 5.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
                                   '02z5yu51' /* Hall Price */,
@@ -2445,35 +2458,35 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context)
                                           .customColor1,
-                                      width: 1,
+                                      width: 1.0,
                                     ),
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).info,
-                                      width: 1,
+                                      width: 1.0,
                                     ),
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   errorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).error,
-                                      width: 1,
+                                      width: 1.0,
                                     ),
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).error,
-                                      width: 1,
+                                      width: 1.0,
                                     ),
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   filled: true,
                                   fillColor: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  contentPadding: EdgeInsets.all(14),
+                                  contentPadding: EdgeInsets.all(14.0),
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
@@ -2493,12 +2506,12 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                           ],
                         ),
                       ),
-                    ].divide(SizedBox(width: 10)),
+                    ].divide(SizedBox(width: 10.0)),
                   ),
                 ),
               if (false)
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 15),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -2508,8 +2521,8 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 5.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
                                   'v56isge7' /* Table Price */,
@@ -2541,8 +2554,8 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 5.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
                                   '1ywj247k' /* Parcel Price */,
@@ -2597,35 +2610,35 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context)
                                           .customColor1,
-                                      width: 1,
+                                      width: 1.0,
                                     ),
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).info,
-                                      width: 1,
+                                      width: 1.0,
                                     ),
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   errorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).error,
-                                      width: 1,
+                                      width: 1.0,
                                     ),
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).error,
-                                      width: 1,
+                                      width: 1.0,
                                     ),
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   filled: true,
                                   fillColor: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  contentPadding: EdgeInsets.all(14),
+                                  contentPadding: EdgeInsets.all(14.0),
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
@@ -2651,8 +2664,8 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 5.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
                                   'pwzzet9e' /* Hall Price */,
@@ -2679,11 +2692,11 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                           ],
                         ),
                       ),
-                    ].divide(SizedBox(width: 10)),
+                    ].divide(SizedBox(width: 10.0)),
                   ),
                 ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 35, 0, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 35.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     var _shouldSetState = false;
@@ -2889,9 +2902,11 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                     'g5p1i9g0' /* Submit */,
                   ),
                   options: FFButtonOptions(
-                    height: 40,
-                    padding: EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
-                    iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                    height: 40.0,
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                    iconPadding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily:
@@ -2901,12 +2916,12 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                           useGoogleFonts: GoogleFonts.asMap().containsKey(
                               FlutterFlowTheme.of(context).titleSmallFamily),
                         ),
-                    elevation: 3,
+                    elevation: 3.0,
                     borderSide: BorderSide(
                       color: Colors.transparent,
-                      width: 1,
+                      width: 1.0,
                     ),
-                    borderRadius: BorderRadius.circular(8),
+                    borderRadius: BorderRadius.circular(8.0),
                   ),
                 ),
               ),

@@ -46,19 +46,19 @@ class _DeleteConfirmWidgetState extends State<DeleteConfirmWidget> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          width: 500,
-          height: 175,
+          width: 500.0,
+          height: 175.0,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).primaryBackground,
           ),
           child: Padding(
-            padding: EdgeInsets.all(15),
+            padding: EdgeInsets.all(15.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
                   child: Text(
                     FFLocalizations.of(context).getText(
                       'sgztz001' /* Are you sure you want to Delet... */,
@@ -74,18 +74,19 @@ class _DeleteConfirmWidgetState extends State<DeleteConfirmWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(25, 0, 25, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(25.0, 0.0, 25.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 15, 0),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 15.0, 0.0),
                         child: Container(
-                          width: 120,
-                          height: 50,
+                          width: 120.0,
+                          height: 50.0,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: FFButtonWidget(
                             onPressed: () {
@@ -95,12 +96,12 @@ class _DeleteConfirmWidgetState extends State<DeleteConfirmWidget> {
                               '4deta7q9' /* No */,
                             ),
                             options: FFButtonOptions(
-                              width: 130,
-                              height: 40,
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-                              iconPadding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                              width: 130.0,
+                              height: 40.0,
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
                               textStyle: FlutterFlowTheme.of(context)
@@ -114,21 +115,21 @@ class _DeleteConfirmWidgetState extends State<DeleteConfirmWidget> {
                                             FlutterFlowTheme.of(context)
                                                 .displaySmallFamily),
                                   ),
-                              elevation: 2,
+                              elevation: 2.0,
                               borderSide: BorderSide(
                                 color: Colors.transparent,
-                                width: 1,
+                                width: 1.0,
                               ),
-                              borderRadius: BorderRadius.circular(12),
+                              borderRadius: BorderRadius.circular(12.0),
                             ),
                           ),
                         ),
                       ),
                       Container(
-                        width: 120,
-                        height: 50,
+                        width: 120.0,
+                        height: 50.0,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(10.0),
                         ),
                         child: FFButtonWidget(
                           onPressed: () {
@@ -138,11 +139,12 @@ class _DeleteConfirmWidgetState extends State<DeleteConfirmWidget> {
                             'xzo9ds8p' /* Delete */,
                           ),
                           options: FFButtonOptions(
-                            width: 130,
-                            height: 40,
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-                            iconPadding:
-                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                            width: 130.0,
+                            height: 40.0,
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
                             textStyle: FlutterFlowTheme.of(context)
@@ -155,12 +157,12 @@ class _DeleteConfirmWidgetState extends State<DeleteConfirmWidget> {
                                       .containsKey(FlutterFlowTheme.of(context)
                                           .displayMediumFamily),
                                 ),
-                            elevation: 2,
+                            elevation: 2.0,
                             borderSide: BorderSide(
                               color: Colors.transparent,
-                              width: 1,
+                              width: 1.0,
                             ),
-                            borderRadius: BorderRadius.circular(12),
+                            borderRadius: BorderRadius.circular(12.0),
                           ),
                         ),
                       ),

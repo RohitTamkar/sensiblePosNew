@@ -56,8 +56,8 @@ class _CalenderWidgetState extends State<CalenderWidget> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          width: 450,
-          height: 370,
+          width: 450.0,
+          height: 370.0,
           decoration: BoxDecoration(
             color: Color(0xFFCFDCFF),
           ),
@@ -66,17 +66,18 @@ class _CalenderWidgetState extends State<CalenderWidget> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(10, 5, 10, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 0.0),
                 child: Container(
                   width: double.infinity,
-                  height: 34,
+                  height: 34.0,
                   decoration: BoxDecoration(),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -95,7 +96,7 @@ class _CalenderWidgetState extends State<CalenderWidget> {
                                   fontFamily: FlutterFlowTheme.of(context)
                                       .headlineMediumFamily,
                                   color: FlutterFlowTheme.of(context).primary,
-                                  fontSize: 22,
+                                  fontSize: 22.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
                                   useGoogleFonts: GoogleFonts.asMap()
@@ -106,7 +107,8 @@ class _CalenderWidgetState extends State<CalenderWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -262,7 +264,7 @@ class _CalenderWidgetState extends State<CalenderWidget> {
                                   fontFamily: FlutterFlowTheme.of(context)
                                       .headlineMediumFamily,
                                   color: FlutterFlowTheme.of(context).primary,
-                                  fontSize: 24,
+                                  fontSize: 24.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
                                   decoration: TextDecoration.underline,
@@ -278,13 +280,13 @@ class _CalenderWidgetState extends State<CalenderWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 30),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 30.0),
                 child: FlutterFlowCalendar(
                   color: Color(0xFF5E7BD4),
                   weekFormat: false,
                   weekStartsMonday: true,
                   initialDate: getCurrentTimestamp,
-                  rowHeight: 32,
+                  rowHeight: 32.0,
                   onChange: (DateTimeRange? newSelectedDate) {
                     safeSetState(
                         () => _model.calendarSelectedDay = newSelectedDate);
@@ -295,7 +297,7 @@ class _CalenderWidgetState extends State<CalenderWidget> {
                   dayOfWeekStyle: TextStyle(),
                   dateStyle: TextStyle(
                     color: FlutterFlowTheme.of(context).secondaryText,
-                    fontSize: 16,
+                    fontSize: 16.0,
                   ),
                   selectedDateStyle: TextStyle(),
                   inactiveDateStyle: TextStyle(),

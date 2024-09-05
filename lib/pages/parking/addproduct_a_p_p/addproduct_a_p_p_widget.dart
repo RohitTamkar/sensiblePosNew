@@ -100,8 +100,8 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                 Expanded(
                   flex: 4,
                   child: Container(
-                    width: MediaQuery.sizeOf(context).width,
-                    height: 100,
+                    width: MediaQuery.sizeOf(context).width * 1.0,
+                    height: 100.0,
                     decoration: BoxDecoration(),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -109,20 +109,21 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(15, 0, 15, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              15.0, 0.0, 15.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 30,
-                                borderWidth: 1,
-                                buttonSize: 45,
+                                borderRadius: 30.0,
+                                borderWidth: 1.0,
+                                buttonSize: 45.0,
                                 icon: Icon(
                                   Icons.chevron_left,
                                   color: FlutterFlowTheme.of(context).lineColor,
-                                  size: 24,
+                                  size: 24.0,
                                 ),
                                 onPressed: () async {
                                   context.pushNamed('productListNewM');
@@ -150,12 +151,12 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                               ),
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 30,
-                                borderWidth: 1,
-                                buttonSize: 45,
+                                borderRadius: 30.0,
+                                borderWidth: 1.0,
+                                buttonSize: 45.0,
                                 icon: Icon(
                                   Icons.add,
-                                  size: 0,
+                                  size: 0.0,
                                 ),
                                 onPressed: () {
                                   print('IconButton pressed ...');
@@ -188,11 +189,11 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                       if (!snapshot.hasData) {
                         return Center(
                           child: SizedBox(
-                            width: 40,
-                            height: 40,
+                            width: 40.0,
+                            height: 40.0,
                             child: SpinKitFadingCircle(
                               color: FlutterFlowTheme.of(context).primary,
-                              size: 40,
+                              size: 40.0,
                             ),
                           ),
                         );
@@ -201,16 +202,16 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                           snapshot.data!;
 
                       return Container(
-                        width: MediaQuery.sizeOf(context).width,
-                        height: 100,
+                        width: MediaQuery.sizeOf(context).width * 1.0,
+                        height: 100.0,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context)
                               .parkingPrimaryBackground,
                           borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(0),
-                            bottomRight: Radius.circular(0),
-                            topLeft: Radius.circular(0),
-                            topRight: Radius.circular(0),
+                            bottomLeft: Radius.circular(0.0),
+                            bottomRight: Radius.circular(0.0),
+                            topLeft: Radius.circular(0.0),
+                            topRight: Radius.circular(0.0),
                           ),
                         ),
                         child: Form(
@@ -221,7 +222,7 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                             height: double.infinity,
                             decoration: BoxDecoration(),
                             child: Padding(
-                              padding: EdgeInsets.all(15),
+                              padding: EdgeInsets.all(15.0),
                               child: SingleChildScrollView(
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -237,7 +238,7 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 0, 3),
+                                                    0.0, 0.0, 0.0, 3.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -332,16 +333,16 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                               BorderRadius.only(
                                                             bottomLeft:
                                                                 Radius.circular(
-                                                                    2000),
+                                                                    2000.0),
                                                             bottomRight:
                                                                 Radius.circular(
-                                                                    2000),
+                                                                    2000.0),
                                                             topLeft:
                                                                 Radius.circular(
-                                                                    100),
+                                                                    100.0),
                                                             topRight:
                                                                 Radius.circular(
-                                                                    1),
+                                                                    1.0),
                                                           ),
                                                         ),
                                                         focusedBorder:
@@ -356,16 +357,16 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                               BorderRadius.only(
                                                             bottomLeft:
                                                                 Radius.circular(
-                                                                    2000),
+                                                                    2000.0),
                                                             bottomRight:
                                                                 Radius.circular(
-                                                                    2000),
+                                                                    2000.0),
                                                             topLeft:
                                                                 Radius.circular(
-                                                                    100),
+                                                                    100.0),
                                                             topRight:
                                                                 Radius.circular(
-                                                                    1),
+                                                                    1.0),
                                                           ),
                                                         ),
                                                         errorBorder:
@@ -380,16 +381,16 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                               BorderRadius.only(
                                                             bottomLeft:
                                                                 Radius.circular(
-                                                                    2000),
+                                                                    2000.0),
                                                             bottomRight:
                                                                 Radius.circular(
-                                                                    2000),
+                                                                    2000.0),
                                                             topLeft:
                                                                 Radius.circular(
-                                                                    100),
+                                                                    100.0),
                                                             topRight:
                                                                 Radius.circular(
-                                                                    1),
+                                                                    1.0),
                                                           ),
                                                         ),
                                                         focusedErrorBorder:
@@ -404,16 +405,16 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                               BorderRadius.only(
                                                             bottomLeft:
                                                                 Radius.circular(
-                                                                    2000),
+                                                                    2000.0),
                                                             bottomRight:
                                                                 Radius.circular(
-                                                                    2000),
+                                                                    2000.0),
                                                             topLeft:
                                                                 Radius.circular(
-                                                                    100),
+                                                                    100.0),
                                                             topRight:
                                                                 Radius.circular(
-                                                                    1),
+                                                                    1.0),
                                                           ),
                                                         ),
                                                       ),
@@ -449,7 +450,7 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 0, 10),
+                                                    0.0, 0.0, 0.0, 10.0),
                                             child: StreamBuilder<
                                                 List<ProductMasterRecord>>(
                                               stream: queryProductMasterRecord(
@@ -467,15 +468,15 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                 if (!snapshot.hasData) {
                                                   return Center(
                                                     child: SizedBox(
-                                                      width: 40,
-                                                      height: 40,
+                                                      width: 40.0,
+                                                      height: 40.0,
                                                       child:
                                                           SpinKitFadingCircle(
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primary,
-                                                        size: 40,
+                                                        size: 40.0,
                                                       ),
                                                     ),
                                                   );
@@ -529,15 +530,16 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                       FlutterFlowTheme.of(
                                                               context)
                                                           .secondaryBackground,
-                                                  elevation: 0,
+                                                  elevation: 0.0,
                                                   borderColor:
                                                       FlutterFlowTheme.of(
                                                               context)
                                                           .customColor2,
-                                                  borderWidth: 0,
-                                                  borderRadius: 10,
+                                                  borderWidth: 0.0,
+                                                  borderRadius: 10.0,
                                                   margin: EdgeInsetsDirectional
-                                                      .fromSTEB(12, 4, 12, 4),
+                                                      .fromSTEB(
+                                                          12.0, 4.0, 12.0, 4.0),
                                                   hidesUnderline: true,
                                                   isSearchable: false,
                                                   isMultiSelect: false,
@@ -548,7 +550,7 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 0, 5),
+                                                    0.0, 0.0, 0.0, 5.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               crossAxisAlignment:
@@ -584,7 +586,7 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 0, 10),
+                                                    0.0, 0.0, 0.0, 10.0),
                                             child: TextFormField(
                                               controller: _model
                                                   .textFieldSellingPriceTextController,
@@ -632,7 +634,8 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                     width: 1.0,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(8),
+                                                      BorderRadius.circular(
+                                                          8.0),
                                                 ),
                                                 focusedBorder:
                                                     OutlineInputBorder(
@@ -643,7 +646,8 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                     width: 1.0,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(8),
+                                                      BorderRadius.circular(
+                                                          8.0),
                                                 ),
                                                 errorBorder: OutlineInputBorder(
                                                   borderSide: BorderSide(
@@ -653,7 +657,8 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                     width: 1.0,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(8),
+                                                      BorderRadius.circular(
+                                                          8.0),
                                                 ),
                                                 focusedErrorBorder:
                                                     OutlineInputBorder(
@@ -664,7 +669,8 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                     width: 1.0,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(8),
+                                                      BorderRadius.circular(
+                                                          8.0),
                                                 ),
                                                 filled: true,
                                                 fillColor:
@@ -695,7 +701,7 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 0, 15),
+                                                    0.0, 0.0, 0.0, 15.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -719,11 +725,11 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                             .secondaryBackground,
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(5),
+                                                                .circular(5.0),
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsets.all(3),
+                                                            EdgeInsets.all(3.0),
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -782,8 +788,8 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                                           1.0,
                                                                     ),
                                                                     borderRadius:
-                                                                        BorderRadius
-                                                                            .circular(8),
+                                                                        BorderRadius.circular(
+                                                                            8.0),
                                                                   ),
                                                                   focusedBorder:
                                                                       OutlineInputBorder(
@@ -795,8 +801,8 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                                           1.0,
                                                                     ),
                                                                     borderRadius:
-                                                                        BorderRadius
-                                                                            .circular(8),
+                                                                        BorderRadius.circular(
+                                                                            8.0),
                                                                   ),
                                                                   errorBorder:
                                                                       OutlineInputBorder(
@@ -808,8 +814,8 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                                           1.0,
                                                                     ),
                                                                     borderRadius:
-                                                                        BorderRadius
-                                                                            .circular(8),
+                                                                        BorderRadius.circular(
+                                                                            8.0),
                                                                   ),
                                                                   focusedErrorBorder:
                                                                       OutlineInputBorder(
@@ -821,8 +827,8 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                                           1.0,
                                                                     ),
                                                                     borderRadius:
-                                                                        BorderRadius
-                                                                            .circular(8),
+                                                                        BorderRadius.circular(
+                                                                            8.0),
                                                                   ),
                                                                   filled: true,
                                                                   fillColor: FlutterFlowTheme.of(
@@ -866,7 +872,10 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  3, 0, 0, 0),
+                                                                  3.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
                                                       child: Container(
                                                         width:
                                                             MediaQuery.sizeOf(
@@ -885,11 +894,13 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                               .secondaryBackground,
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(5),
+                                                                  .circular(
+                                                                      5.0),
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsets.all(3),
+                                                              EdgeInsets.all(
+                                                                  3.0),
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -951,7 +962,7 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                                       ),
                                                                       borderRadius:
                                                                           BorderRadius.circular(
-                                                                              8),
+                                                                              8.0),
                                                                     ),
                                                                     focusedBorder:
                                                                         OutlineInputBorder(
@@ -964,7 +975,7 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                                       ),
                                                                       borderRadius:
                                                                           BorderRadius.circular(
-                                                                              8),
+                                                                              8.0),
                                                                     ),
                                                                     errorBorder:
                                                                         OutlineInputBorder(
@@ -977,7 +988,7 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                                       ),
                                                                       borderRadius:
                                                                           BorderRadius.circular(
-                                                                              8),
+                                                                              8.0),
                                                                     ),
                                                                     focusedErrorBorder:
                                                                         OutlineInputBorder(
@@ -990,7 +1001,7 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                                       ),
                                                                       borderRadius:
                                                                           BorderRadius.circular(
-                                                                              8),
+                                                                              8.0),
                                                                     ),
                                                                     filled:
                                                                         true,
@@ -1033,7 +1044,7 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 0, 5),
+                                                    0.0, 0.0, 0.0, 5.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
@@ -1065,7 +1076,7 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 0, 5),
+                                                    0.0, 0.0, 0.0, 5.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               crossAxisAlignment:
@@ -1097,14 +1108,14 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                       if (!snapshot.hasData) {
                                                         return Center(
                                                           child: SizedBox(
-                                                            width: 40,
-                                                            height: 40,
+                                                            width: 40.0,
+                                                            height: 40.0,
                                                             child:
                                                                 SpinKitFadingCircle(
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .primary,
-                                                              size: 40,
+                                                              size: 40.0,
                                                             ),
                                                           ),
                                                         );
@@ -1152,15 +1163,18 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                         fillColor: FlutterFlowTheme
                                                                 .of(context)
                                                             .secondaryBackground,
-                                                        elevation: 2,
+                                                        elevation: 2.0,
                                                         borderColor:
                                                             Colors.transparent,
-                                                        borderWidth: 0,
-                                                        borderRadius: 10,
+                                                        borderWidth: 0.0,
+                                                        borderRadius: 10.0,
                                                         margin:
                                                             EdgeInsetsDirectional
-                                                                .fromSTEB(12, 4,
-                                                                    12, 4),
+                                                                .fromSTEB(
+                                                                    12.0,
+                                                                    4.0,
+                                                                    12.0,
+                                                                    4.0),
                                                         hidesUnderline: true,
                                                         isSearchable: false,
                                                         isMultiSelect: false,
@@ -1177,7 +1191,8 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                           ))
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 10, 0, 0),
+                                                  .fromSTEB(
+                                                      0.0, 10.0, 0.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -1204,8 +1219,11 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(0,
-                                                                      5, 0, 3),
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      5.0,
+                                                                      0.0,
+                                                                      3.0),
                                                           child: SelectionArea(
                                                               child: Text(
                                                             FFLocalizations.of(
@@ -1386,8 +1404,11 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(3,
-                                                                      5, 0, 3),
+                                                                  .fromSTEB(
+                                                                      3.0,
+                                                                      5.0,
+                                                                      0.0,
+                                                                      3.0),
                                                           child: SelectionArea(
                                                               child: Text(
                                                             FFLocalizations.of(
@@ -1417,10 +1438,10 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        5,
-                                                                        0,
-                                                                        5,
-                                                                        0),
+                                                                        5.0,
+                                                                        0.0,
+                                                                        5.0,
+                                                                        0.0),
                                                             child:
                                                                 TextFormField(
                                                               controller: _model
@@ -1569,7 +1590,8 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                           if (false)
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 10, 0, 10),
+                                                  .fromSTEB(
+                                                      0.0, 10.0, 0.0, 10.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -1581,7 +1603,10 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0, 0, 3, 0),
+                                                                  0.0,
+                                                                  0.0,
+                                                                  3.0,
+                                                                  0.0),
                                                       child: Container(
                                                         decoration:
                                                             BoxDecoration(),
@@ -1596,10 +1621,10 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          0,
-                                                                          5),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0),
                                                               child:
                                                                   SelectionArea(
                                                                       child:
@@ -1672,7 +1697,7 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              8),
+                                                                              8.0),
                                                                 ),
                                                                 focusedBorder:
                                                                     OutlineInputBorder(
@@ -1685,7 +1710,7 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              8),
+                                                                              8.0),
                                                                 ),
                                                                 errorBorder:
                                                                     OutlineInputBorder(
@@ -1698,7 +1723,7 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              8),
+                                                                              8.0),
                                                                 ),
                                                                 focusedErrorBorder:
                                                                     OutlineInputBorder(
@@ -1711,7 +1736,7 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              8),
+                                                                              8.0),
                                                                 ),
                                                                 filled: true,
                                                                 fillColor: FlutterFlowTheme.of(
@@ -1750,7 +1775,10 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  3, 0, 0, 0),
+                                                                  3.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
                                                       child: Container(
                                                         decoration:
                                                             BoxDecoration(),
@@ -1765,10 +1793,10 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          0,
-                                                                          5),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0),
                                                               child:
                                                                   SelectionArea(
                                                                       child:
@@ -1841,7 +1869,7 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              8),
+                                                                              8.0),
                                                                 ),
                                                                 focusedBorder:
                                                                     OutlineInputBorder(
@@ -1854,7 +1882,7 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              8),
+                                                                              8.0),
                                                                 ),
                                                                 errorBorder:
                                                                     OutlineInputBorder(
@@ -1867,7 +1895,7 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              8),
+                                                                              8.0),
                                                                 ),
                                                                 focusedErrorBorder:
                                                                     OutlineInputBorder(
@@ -1880,7 +1908,7 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              8),
+                                                                              8.0),
                                                                 ),
                                                                 filled: true,
                                                                 fillColor: FlutterFlowTheme.of(
@@ -2048,7 +2076,8 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                           if (!true)
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 20, 0, 15),
+                                                  .fromSTEB(
+                                                      0.0, 20.0, 0.0, 15.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -2146,7 +2175,10 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0, 0, 0, 8),
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  8.0),
                                                       child: StreamBuilder<
                                                           List<
                                                               SubCategoryRecord>>(
@@ -2159,14 +2191,14 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                               .hasData) {
                                                             return Center(
                                                               child: SizedBox(
-                                                                width: 40,
-                                                                height: 40,
+                                                                width: 40.0,
+                                                                height: 40.0,
                                                                 child:
                                                                     SpinKitFadingCircle(
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primary,
-                                                                  size: 40,
+                                                                  size: 40.0,
                                                                 ),
                                                               ),
                                                             );
@@ -2196,7 +2228,7 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                                             context)
                                                                     .width *
                                                                 0.44,
-                                                            height: 50,
+                                                            height: 50.0,
                                                             textStyle:
                                                                 FlutterFlowTheme.of(
                                                                         context)
@@ -2216,18 +2248,18 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                                     ),
                                                             fillColor:
                                                                 Colors.white,
-                                                            elevation: 2,
+                                                            elevation: 2.0,
                                                             borderColor: Colors
                                                                 .transparent,
-                                                            borderWidth: 0,
-                                                            borderRadius: 0,
+                                                            borderWidth: 0.0,
+                                                            borderRadius: 0.0,
                                                             margin:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        12,
-                                                                        4,
-                                                                        12,
-                                                                        4),
+                                                                        12.0,
+                                                                        4.0,
+                                                                        12.0,
+                                                                        4.0),
                                                             hidesUnderline:
                                                                 true,
                                                             isSearchable: false,
@@ -2279,14 +2311,14 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                         if (!snapshot.hasData) {
                                                           return Center(
                                                             child: SizedBox(
-                                                              width: 40,
-                                                              height: 40,
+                                                              width: 40.0,
+                                                              height: 40.0,
                                                               child:
                                                                   SpinKitFadingCircle(
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
-                                                                size: 40,
+                                                                size: 40.0,
                                                               ),
                                                             ),
                                                           );
@@ -2315,7 +2347,7 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                                           context)
                                                                       .width *
                                                                   0.44,
-                                                          height: 50,
+                                                          height: 50.0,
                                                           textStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -2335,15 +2367,18 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                                   ),
                                                           fillColor:
                                                               Colors.white,
-                                                          elevation: 2,
+                                                          elevation: 2.0,
                                                           borderColor: Colors
                                                               .transparent,
-                                                          borderWidth: 0,
-                                                          borderRadius: 0,
+                                                          borderWidth: 0.0,
+                                                          borderRadius: 0.0,
                                                           margin:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(12,
-                                                                      4, 12, 4),
+                                                                  .fromSTEB(
+                                                                      12.0,
+                                                                      4.0,
+                                                                      12.0,
+                                                                      4.0),
                                                           hidesUnderline: true,
                                                           isSearchable: false,
                                                           isMultiSelect: false,
@@ -2390,7 +2425,10 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0, 0, 0, 8),
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  8.0),
                                                       child: StreamBuilder<
                                                           List<UnitTypeRecord>>(
                                                         stream:
@@ -2402,14 +2440,14 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                               .hasData) {
                                                             return Center(
                                                               child: SizedBox(
-                                                                width: 40,
-                                                                height: 40,
+                                                                width: 40.0,
+                                                                height: 40.0,
                                                                 child:
                                                                     SpinKitFadingCircle(
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primary,
-                                                                  size: 40,
+                                                                  size: 40.0,
                                                                 ),
                                                               ),
                                                             );
@@ -2439,7 +2477,7 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                                             context)
                                                                     .width *
                                                                 0.44,
-                                                            height: 50,
+                                                            height: 50.0,
                                                             textStyle:
                                                                 FlutterFlowTheme.of(
                                                                         context)
@@ -2459,18 +2497,18 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                                     ),
                                                             fillColor:
                                                                 Colors.white,
-                                                            elevation: 2,
+                                                            elevation: 2.0,
                                                             borderColor: Colors
                                                                 .transparent,
-                                                            borderWidth: 0,
-                                                            borderRadius: 0,
+                                                            borderWidth: 0.0,
+                                                            borderRadius: 0.0,
                                                             margin:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        12,
-                                                                        4,
-                                                                        12,
-                                                                        4),
+                                                                        12.0,
+                                                                        4.0,
+                                                                        12.0,
+                                                                        4.0),
                                                             hidesUnderline:
                                                                 true,
                                                             isSearchable: false,
@@ -2524,14 +2562,14 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                         if (!snapshot.hasData) {
                                                           return Center(
                                                             child: SizedBox(
-                                                              width: 40,
-                                                              height: 40,
+                                                              width: 40.0,
+                                                              height: 40.0,
                                                               child:
                                                                   SpinKitFadingCircle(
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
-                                                                size: 40,
+                                                                size: 40.0,
                                                               ),
                                                             ),
                                                           );
@@ -2560,7 +2598,7 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                                           context)
                                                                       .width *
                                                                   0.44,
-                                                          height: 50,
+                                                          height: 50.0,
                                                           textStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -2580,15 +2618,18 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                                   ),
                                                           fillColor:
                                                               Colors.white,
-                                                          elevation: 2,
+                                                          elevation: 2.0,
                                                           borderColor: Colors
                                                               .transparent,
-                                                          borderWidth: 0,
-                                                          borderRadius: 0,
+                                                          borderWidth: 0.0,
+                                                          borderRadius: 0.0,
                                                           margin:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(12,
-                                                                      4, 12, 4),
+                                                                  .fromSTEB(
+                                                                      12.0,
+                                                                      4.0,
+                                                                      12.0,
+                                                                      4.0),
                                                           hidesUnderline: true,
                                                           isSearchable: false,
                                                           isMultiSelect: false,
@@ -2602,7 +2643,8 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                           if (!true)
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 20, 0, 15),
+                                                  .fromSTEB(
+                                                      0.0, 20.0, 0.0, 15.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -2655,7 +2697,8 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                           if (!true)
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 0, 15),
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 0.0, 15.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -2678,7 +2721,7 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                               .secondary,
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              5),
+                                                              5.0),
                                                     ),
                                                     child: Row(
                                                       mainAxisSize:
@@ -2770,7 +2813,7 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .lineColor,
-                                                              size: 28,
+                                                              size: 28.0,
                                                             ),
                                                           ),
                                                         ),
@@ -2834,7 +2877,7 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                                 .secondary,
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(5),
+                                                                .circular(5.0),
                                                       ),
                                                       child: Row(
                                                         mainAxisSize:
@@ -2878,7 +2921,8 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                           if (!true)
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 0, 10),
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 0.0, 10.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -2902,7 +2946,7 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                             .secondaryBackground,
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(5),
+                                                                .circular(5.0),
                                                         border: Border.all(
                                                           color: FlutterFlowTheme
                                                                   .of(context)
@@ -2912,8 +2956,11 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                       child: Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
-                                                                .fromSTEB(10, 0,
-                                                                    3, 0),
+                                                                .fromSTEB(
+                                                                    10.0,
+                                                                    0.0,
+                                                                    3.0,
+                                                                    0.0),
                                                         child: Row(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -2950,7 +2997,10 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  5, 0, 0, 0),
+                                                                  5.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
                                                       child: Container(
                                                         width:
                                                             MediaQuery.sizeOf(
@@ -2969,7 +3019,8 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                               .secondaryBackground,
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(5),
+                                                                  .circular(
+                                                                      5.0),
                                                           border: Border.all(
                                                             color: FlutterFlowTheme
                                                                     .of(context)
@@ -3137,7 +3188,7 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 15, 0, 15),
+                                          0.0, 15.0, 0.0, 15.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -3646,22 +3697,22 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                             ),
                                                             options:
                                                                 FFButtonOptions(
-                                                              width: 120,
-                                                              height: 50,
+                                                              width: 120.0,
+                                                              height: 50.0,
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          0,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                               iconPadding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          0,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .parkingSecondaryBackground,
@@ -3681,7 +3732,7 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                                         useGoogleFonts:
                                                                             GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                       ),
-                                                              elevation: 2,
+                                                              elevation: 2.0,
                                                               borderSide:
                                                                   BorderSide(
                                                                 color: Colors
@@ -3690,7 +3741,7 @@ class _AddproductAPPWidgetState extends State<AddproductAPPWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          5),
+                                                                          5.0),
                                                             ),
                                                           ),
                                                         ],

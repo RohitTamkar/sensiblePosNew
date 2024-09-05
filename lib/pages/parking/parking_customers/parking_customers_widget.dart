@@ -117,11 +117,11 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                 );
               },
               backgroundColor: FlutterFlowTheme.of(context).info,
-              elevation: 8,
+              elevation: 8.0,
               child: Icon(
                 Icons.add,
                 color: FlutterFlowTheme.of(context).primaryBtnText,
-                size: 24,
+                size: 24.0,
               ),
             ),
             body: Column(
@@ -131,10 +131,11 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                   flex: 4,
                   child: Container(
                     width: double.infinity,
-                    height: 100,
+                    height: 100.0,
                     decoration: BoxDecoration(),
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(25, 0, 25, 5),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(25.0, 0.0, 25.0, 5.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -145,12 +146,12 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                             children: [
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 30,
-                                buttonSize: 40,
+                                borderRadius: 30.0,
+                                buttonSize: 40.0,
                                 icon: Icon(
                                   Icons.keyboard_arrow_left_sharp,
                                   color: FlutterFlowTheme.of(context).lineColor,
-                                  size: 24,
+                                  size: 24.0,
                                 ),
                                 onPressed: () async {
                                   context.pushNamed('account');
@@ -180,13 +181,13 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                                 children: [
                                   FlutterFlowIconButton(
                                     borderColor: Colors.transparent,
-                                    borderRadius: 30,
-                                    buttonSize: 40,
+                                    borderRadius: 30.0,
+                                    buttonSize: 40.0,
                                     icon: Icon(
                                       Icons.settings_sharp,
                                       color: FlutterFlowTheme.of(context)
                                           .lineColor,
-                                      size: 20,
+                                      size: 20.0,
                                     ),
                                     onPressed: () async {
                                       context.pushNamed('account');
@@ -194,12 +195,12 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                                   ),
                                   Builder(
                                     builder: (context) => FlutterFlowIconButton(
-                                      buttonSize: 40,
+                                      buttonSize: 40.0,
                                       icon: Icon(
                                         Icons.qr_code_scanner_sharp,
                                         color: FlutterFlowTheme.of(context)
                                             .lineColor,
-                                        size: 22,
+                                        size: 22.0,
                                       ),
                                       onPressed: () async {
                                         _model.qrResult =
@@ -233,11 +234,10 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                                                 insetPadding: EdgeInsets.zero,
                                                 backgroundColor:
                                                     Colors.transparent,
-                                                alignment:
-                                                    AlignmentDirectional(0, 0)
-                                                        .resolve(
-                                                            Directionality.of(
-                                                                context)),
+                                                alignment: AlignmentDirectional(
+                                                        0.0, 0.0)
+                                                    .resolve(Directionality.of(
+                                                        context)),
                                                 child: GestureDetector(
                                                   onTap: () => FocusScope.of(
                                                           dialogContext)
@@ -275,7 +275,7 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                                       },
                                     ),
                                   ),
-                                ].divide(SizedBox(width: 4)),
+                                ].divide(SizedBox(width: 4.0)),
                               ),
                             ],
                           ),
@@ -288,19 +288,20 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                   flex: 26,
                   child: Container(
                     width: double.infinity,
-                    height: 100,
+                    height: 100.0,
                     decoration: BoxDecoration(
                       color:
                           FlutterFlowTheme.of(context).parkingPrimaryBackground,
                     ),
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(10, 15, 10, 15),
+                      padding: EdgeInsetsDirectional.fromSTEB(
+                          10.0, 15.0, 10.0, 15.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 10.0),
                             child: TextFormField(
                               controller: _model.textController,
                               focusNode: _model.textFieldFocusNode,
@@ -367,49 +368,49 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).accent1,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
                                   borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(0),
-                                    bottomRight: Radius.circular(0),
-                                    topLeft: Radius.circular(20),
-                                    topRight: Radius.circular(20),
+                                    bottomLeft: Radius.circular(0.0),
+                                    bottomRight: Radius.circular(0.0),
+                                    topLeft: Radius.circular(20.0),
+                                    topRight: Radius.circular(20.0),
                                   ),
                                 ),
                                 focusedBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).info,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
                                   borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(0),
-                                    bottomRight: Radius.circular(0),
-                                    topLeft: Radius.circular(20),
-                                    topRight: Radius.circular(20),
+                                    bottomLeft: Radius.circular(0.0),
+                                    bottomRight: Radius.circular(0.0),
+                                    topLeft: Radius.circular(20.0),
+                                    topRight: Radius.circular(20.0),
                                   ),
                                 ),
                                 errorBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
                                   borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(0),
-                                    bottomRight: Radius.circular(0),
-                                    topLeft: Radius.circular(20),
-                                    topRight: Radius.circular(20),
+                                    bottomLeft: Radius.circular(0.0),
+                                    bottomRight: Radius.circular(0.0),
+                                    topLeft: Radius.circular(20.0),
+                                    topRight: Radius.circular(20.0),
                                   ),
                                 ),
                                 focusedErrorBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
                                   borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(0),
-                                    bottomRight: Radius.circular(0),
-                                    topLeft: Radius.circular(20),
-                                    topRight: Radius.circular(20),
+                                    bottomLeft: Radius.circular(0.0),
+                                    bottomRight: Radius.circular(0.0),
+                                    topLeft: Radius.circular(20.0),
+                                    topRight: Radius.circular(20.0),
                                   ),
                                 ),
                                 filled: true,
@@ -454,13 +455,14 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                                             parkingCustomersVarIndex];
                                     return Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 0, 20),
+                                          0.0, 0.0, 0.0, 20.0),
                                       child: ClipRRect(
-                                        borderRadius: BorderRadius.circular(20),
+                                        borderRadius:
+                                            BorderRadius.circular(20.0),
                                         child: Container(
                                           decoration: BoxDecoration(
                                             borderRadius:
-                                                BorderRadius.circular(20),
+                                                BorderRadius.circular(20.0),
                                           ),
                                           child: Container(
                                             width: double.infinity,
@@ -476,13 +478,16 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                                                         .secondaryBackground,
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            15),
+                                                            15.0),
                                                   ),
                                                   child: Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(
-                                                                10, 10, 0, 10),
+                                                                10.0,
+                                                                10.0,
+                                                                0.0,
+                                                                10.0),
                                                     child: Column(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -512,7 +517,7 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                                                                         FlutterFlowTheme.of(context)
                                                                             .headlineSmallFamily,
                                                                     fontSize:
-                                                                        22,
+                                                                        22.0,
                                                                     letterSpacing:
                                                                         1.5,
                                                                     fontWeight:
@@ -527,7 +532,7 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                                                           ],
                                                         ),
                                                         Divider(
-                                                          thickness: 1,
+                                                          thickness: 1.0,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .accent3,
@@ -552,10 +557,10 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            0,
-                                                                            3),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            3.0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -569,7 +574,7 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                                                                             fontFamily:
                                                                                 FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                             fontSize:
-                                                                                12,
+                                                                                12.0,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
@@ -589,10 +594,10 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                                                                     children: [
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            7,
-                                                                            0),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            7.0,
+                                                                            0.0),
                                                                         child:
                                                                             Text(
                                                                           '₹ ${valueOrDefault<String>(
@@ -638,10 +643,10 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          0,
-                                                                          3),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          3.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -655,7 +660,7 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                                                                           fontFamily:
                                                                               FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                           fontSize:
-                                                                              12,
+                                                                              12.0,
                                                                           letterSpacing:
                                                                               0.0,
                                                                           fontWeight:
@@ -707,7 +712,10 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                                                     padding:
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(
-                                                                15, 10, 15, 10),
+                                                                15.0,
+                                                                10.0,
+                                                                15.0,
+                                                                10.0),
                                                     child: Column(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -715,8 +723,11 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(0,
-                                                                      0, 0, 10),
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      10.0),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -736,10 +747,10 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            0,
-                                                                            3),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            3.0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -755,7 +766,7 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).customColor2,
                                                                             fontSize:
-                                                                                12,
+                                                                                12.0,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
@@ -803,10 +814,10 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            0,
-                                                                            3),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            3.0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -822,7 +833,7 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).customColor2,
                                                                             fontSize:
-                                                                                12,
+                                                                                12.0,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
@@ -870,10 +881,10 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            0,
-                                                                            3),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            3.0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -889,7 +900,7 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).customColor2,
                                                                             fontSize:
-                                                                                12,
+                                                                                12.0,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
@@ -939,10 +950,10 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          5,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
                                                               child:
                                                                   FFButtonWidget(
                                                                 onPressed:
@@ -1014,20 +1025,19 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                                                                 ),
                                                                 options:
                                                                     FFButtonOptions(
-                                                                  height: 45,
+                                                                  height: 45.0,
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          14,
-                                                                          0,
-                                                                          14,
-                                                                          0),
-                                                                  iconPadding:
-                                                                      EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                          14.0,
+                                                                          0.0,
+                                                                          14.0,
+                                                                          0.0),
+                                                                  iconPadding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                   color: Color(
                                                                       0xFF23424A),
                                                                   textStyle: FlutterFlowTheme.of(
@@ -1039,23 +1049,24 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                                                                         color: Colors
                                                                             .white,
                                                                         fontSize:
-                                                                            14,
+                                                                            14.0,
                                                                         letterSpacing:
                                                                             0.0,
                                                                         useGoogleFonts:
                                                                             GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                       ),
-                                                                  elevation: 3,
+                                                                  elevation:
+                                                                      3.0,
                                                                   borderSide:
                                                                       BorderSide(
                                                                     color: Colors
                                                                         .transparent,
-                                                                    width: 1,
+                                                                    width: 1.0,
                                                                   ),
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              8),
+                                                                              8.0),
                                                                 ),
                                                               ),
                                                             ),
@@ -1065,10 +1076,10 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            5,
-                                                                            0),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0),
                                                                 child:
                                                                     PaymentModeWidget(
                                                                   key: Key(
@@ -1292,25 +1303,24 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                                                               icon: Icon(
                                                                 Icons
                                                                     .print_outlined,
-                                                                size: 15,
+                                                                size: 15.0,
                                                               ),
                                                               options:
                                                                   FFButtonOptions(
-                                                                height: 45,
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            12,
-                                                                            0,
-                                                                            12,
-                                                                            0),
+                                                                height: 45.0,
+                                                                padding: EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        12.0,
+                                                                        0.0,
+                                                                        12.0,
+                                                                        0.0),
                                                                 iconPadding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .parkingPrimaryBackground,
@@ -1325,7 +1335,7 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                                                                               context)
                                                                           .lineColor,
                                                                       fontSize:
-                                                                          14,
+                                                                          14.0,
                                                                       letterSpacing:
                                                                           0.0,
                                                                       fontWeight:
@@ -1336,17 +1346,17 @@ class _ParkingCustomersWidgetState extends State<ParkingCustomersWidget> {
                                                                           .containsKey(
                                                                               FlutterFlowTheme.of(context).titleSmallFamily),
                                                                     ),
-                                                                elevation: 3,
+                                                                elevation: 3.0,
                                                                 borderSide:
                                                                     BorderSide(
                                                                   color: Colors
                                                                       .transparent,
-                                                                  width: 1,
+                                                                  width: 1.0,
                                                                 ),
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            8),
+                                                                            8.0),
                                                               ),
                                                             ),
                                                           ],

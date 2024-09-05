@@ -52,14 +52,14 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Padding(
-              padding: EdgeInsets.all(3),
+              padding: EdgeInsets.all(3.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Expanded(
                     flex: 1,
                     child: Container(
-                      width: MediaQuery.sizeOf(context).width,
+                      width: MediaQuery.sizeOf(context).width * 1.0,
                       height: MediaQuery.sizeOf(context).height * 0.12,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primary,
@@ -72,22 +72,22 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                           Expanded(
                             flex: 1,
                             child: Container(
-                              width: 100,
-                              height: 100,
+                              width: 100.0,
+                              height: 100.0,
                               decoration: BoxDecoration(),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   FlutterFlowIconButton(
                                     borderColor: Colors.transparent,
-                                    borderRadius: 30,
-                                    borderWidth: 1,
-                                    buttonSize: 60,
+                                    borderRadius: 30.0,
+                                    borderWidth: 1.0,
+                                    buttonSize: 60.0,
                                     icon: Icon(
                                       Icons.chevron_left_sharp,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBtnText,
-                                      size: 26,
+                                      size: 26.0,
                                     ),
                                     onPressed: () async {
                                       context.pop();
@@ -131,10 +131,11 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                   Expanded(
                     flex: 13,
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
                       child: Container(
                         width: double.infinity,
-                        height: 100,
+                        height: 100.0,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).primaryBackground,
                         ),
@@ -143,11 +144,11 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                           children: [
                             Expanded(
                               child: Container(
-                                width: 100,
-                                height: MediaQuery.sizeOf(context).height * 1,
+                                width: 100.0,
+                                height: MediaQuery.sizeOf(context).height * 1.0,
                                 decoration: BoxDecoration(),
                                 child: Padding(
-                                  padding: EdgeInsets.all(10),
+                                  padding: EdgeInsets.all(10.0),
                                   child: SingleChildScrollView(
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -157,7 +158,7 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Padding(
-                                          padding: EdgeInsets.all(5),
+                                          padding: EdgeInsets.all(5.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'imzpq31w' /* INTRODUCTION: */,
@@ -179,7 +180,7 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                           ),
                                         ),
                                         Padding(
-                                          padding: EdgeInsets.all(5),
+                                          padding: EdgeInsets.all(5.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'pye5jn76' /* Founded in 2016, Sensible Conn... */,
@@ -202,7 +203,7 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                           ),
                                         ),
                                         Padding(
-                                          padding: EdgeInsets.all(5),
+                                          padding: EdgeInsets.all(5.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'w1pihp54' /* These are widely acknowledged ... */,
@@ -227,7 +228,7 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  5, 15, 5, 5),
+                                                  5.0, 15.0, 5.0, 5.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'ycovg9er' /* SUBSCRIPTION */,
@@ -249,7 +250,7 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                           ),
                                         ),
                                         Padding(
-                                          padding: EdgeInsets.all(5),
+                                          padding: EdgeInsets.all(5.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'vw8c0s4r' /* To use the service provided by... */,
@@ -274,7 +275,7 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  5, 15, 5, 5),
+                                                  5.0, 15.0, 5.0, 5.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'vxu3fmz2' /* PAYMENT */,
@@ -296,7 +297,7 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                           ),
                                         ),
                                         Padding(
-                                          padding: EdgeInsets.all(5),
+                                          padding: EdgeInsets.all(5.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'woi1qxk4' /* When you purchase a subscripti... */,
@@ -319,7 +320,7 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                           ),
                                         ),
                                         Padding(
-                                          padding: EdgeInsets.all(5),
+                                          padding: EdgeInsets.all(5.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'um719825' /* SERVICES */,
@@ -341,7 +342,7 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                           ),
                                         ),
                                         Padding(
-                                          padding: EdgeInsets.all(5),
+                                          padding: EdgeInsets.all(5.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'rmo895wy' /* Standard product warranty is f... */,
@@ -371,8 +372,8 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                             ),
                             Expanded(
                               child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(2, 0, 0, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    2.0, 0.0, 0.0, 0.0),
                                 child: StreamBuilder<List<OutletRecord>>(
                                   stream: queryOutletRecord(
                                     queryBuilder: (outletRecord) =>
@@ -389,12 +390,12 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                     if (!snapshot.hasData) {
                                       return Center(
                                         child: SizedBox(
-                                          width: 40,
-                                          height: 40,
+                                          width: 40.0,
+                                          height: 40.0,
                                           child: SpinKitFadingCircle(
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
-                                            size: 40,
+                                            size: 40.0,
                                           ),
                                         ),
                                       );
@@ -413,12 +414,12 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
 
                                     return Material(
                                       color: Colors.transparent,
-                                      elevation: 3,
+                                      elevation: 3.0,
                                       child: Container(
-                                        width: 100,
+                                        width: 100.0,
                                         height:
                                             MediaQuery.sizeOf(context).height *
-                                                1,
+                                                1.0,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
@@ -434,13 +435,13 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                             if (!snapshot.hasData) {
                                               return Center(
                                                 child: SizedBox(
-                                                  width: 40,
-                                                  height: 40,
+                                                  width: 40.0,
+                                                  height: 40.0,
                                                   child: SpinKitFadingCircle(
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primary,
-                                                    size: 40,
+                                                    size: 40.0,
                                                   ),
                                                 ),
                                               );
@@ -459,7 +460,7 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                                 children: [
                                                   Container(
                                                     width: double.infinity,
-                                                    height: 100,
+                                                    height: 100.0,
                                                     decoration: BoxDecoration(),
                                                     child: Column(
                                                       mainAxisSize:
@@ -474,8 +475,11 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(0,
-                                                                      5, 0, 0),
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      5.0,
+                                                                      0.0,
+                                                                      0.0),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -702,14 +706,14 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                                       if (!snapshot.hasData) {
                                                         return Center(
                                                           child: SizedBox(
-                                                            width: 40,
-                                                            height: 40,
+                                                            width: 40.0,
+                                                            height: 40.0,
                                                             child:
                                                                 SpinKitFadingCircle(
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .primary,
-                                                              size: 40,
+                                                              size: 40.0,
                                                             ),
                                                           ),
                                                         );
@@ -739,14 +743,16 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                                                 return Center(
                                                                   child:
                                                                       SizedBox(
-                                                                    width: 40,
-                                                                    height: 40,
+                                                                    width: 40.0,
+                                                                    height:
+                                                                        40.0,
                                                                     child:
                                                                         SpinKitFadingCircle(
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
-                                                                      size: 40,
+                                                                      size:
+                                                                          40.0,
                                                                     ),
                                                                   ),
                                                                 );
@@ -824,10 +830,10 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0,
-                                                                              15,
-                                                                              0,
-                                                                              0),
+                                                                              0.0,
+                                                                              15.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             containerSubscriptionRecord.planName,
@@ -982,8 +988,8 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                0, 5, 0, 10),
+                                                            .fromSTEB(0.0, 5.0,
+                                                                0.0, 10.0),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -1002,10 +1008,10 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          0,
-                                                                          10),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          10.0),
                                                               child: Container(
                                                                 width: MediaQuery.sizeOf(
                                                                             context)
@@ -1020,8 +1026,8 @@ class _SubscriptionNewWidgetState extends State<SubscriptionNewWidget> {
                                                                 child:
                                                                     Image.asset(
                                                                   'assets/images/sensible-logo.png',
-                                                                  width: 100,
-                                                                  height: 100,
+                                                                  width: 100.0,
+                                                                  height: 100.0,
                                                                   fit: BoxFit
                                                                       .none,
                                                                 ),

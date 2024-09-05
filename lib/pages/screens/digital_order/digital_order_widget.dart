@@ -99,7 +99,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
             drawer: Container(
               width: MediaQuery.sizeOf(context).width * 0.11,
               child: Drawer(
-                elevation: 16,
+                elevation: 16.0,
                 child: wrapWithModel(
                   model: _model.menuDrawerModel,
                   updateCallback: () => safeSetState(() {}),
@@ -110,9 +110,9 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
             endDrawer: Container(
               width: MediaQuery.sizeOf(context).width * 0.45,
               child: Drawer(
-                elevation: 10,
+                elevation: 10.0,
                 child: Padding(
-                  padding: EdgeInsets.all(15),
+                  padding: EdgeInsets.all(15.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -121,8 +121,8 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 15),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 15.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 '2ofya7wy' /* Order ID :  */,
@@ -141,8 +141,8 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                             ),
                           ),
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 15),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 15.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'k2070jip' /* 56863259 */,
@@ -167,17 +167,17 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
-                          borderRadius: BorderRadius.circular(5),
+                          borderRadius: BorderRadius.circular(5.0),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(15),
+                          padding: EdgeInsets.all(15.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 15),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 15.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
                                     'bvacvazl' /* Customer Details */,
@@ -187,7 +187,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                       .override(
                                         fontFamily: FlutterFlowTheme.of(context)
                                             .titleSmallFamily,
-                                        fontSize: 12,
+                                        fontSize: 12.0,
                                         letterSpacing: 0.0,
                                         useGoogleFonts: GoogleFonts.asMap()
                                             .containsKey(
@@ -197,8 +197,8 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                 ),
                               ),
                               Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 5.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
                                     'tubt9xf7' /* Customer Name */,
@@ -219,8 +219,8 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                 ),
                               ),
                               Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 5.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
                                     'pe5q9i7d' /* 1st Order */,
@@ -230,7 +230,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                       .override(
                                         fontFamily: FlutterFlowTheme.of(context)
                                             .titleSmallFamily,
-                                        fontSize: 15,
+                                        fontSize: 15.0,
                                         letterSpacing: 0.0,
                                         useGoogleFonts: GoogleFonts.asMap()
                                             .containsKey(
@@ -240,14 +240,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                 ),
                               ),
                               Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 10.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 5, 0),
+                                          0.0, 0.0, 5.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
                                           'hxn77xb1' /* Kothrud */,
@@ -258,7 +258,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                               fontFamily:
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmallFamily,
-                                              fontSize: 12,
+                                              fontSize: 12.0,
                                               letterSpacing: 0.0,
                                               useGoogleFonts: GoogleFonts
                                                       .asMap()
@@ -271,7 +271,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 5, 0),
+                                          0.0, 0.0, 5.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
                                           'y6nfdndi' /* 3 */,
@@ -282,7 +282,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                               fontFamily:
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmallFamily,
-                                              fontSize: 12,
+                                              fontSize: 12.0,
                                               letterSpacing: 0.0,
                                               useGoogleFonts: GoogleFonts
                                                       .asMap()
@@ -295,7 +295,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 5, 0),
+                                          0.0, 0.0, 5.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
                                           '4eb60k2q' /* kms, */,
@@ -306,7 +306,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                               fontFamily:
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmallFamily,
-                                              fontSize: 12,
+                                              fontSize: 12.0,
                                               letterSpacing: 0.0,
                                               useGoogleFonts: GoogleFonts
                                                       .asMap()
@@ -319,7 +319,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 5, 0),
+                                          0.0, 0.0, 5.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
                                           'njam04br' /* 9 */,
@@ -330,7 +330,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                               fontFamily:
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmallFamily,
-                                              fontSize: 12,
+                                              fontSize: 12.0,
                                               letterSpacing: 0.0,
                                               useGoogleFonts: GoogleFonts
                                                       .asMap()
@@ -343,7 +343,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 5, 0),
+                                          0.0, 0.0, 5.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
                                           'gv71ysn6' /* min away */,
@@ -354,7 +354,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                               fontFamily:
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmallFamily,
-                                              fontSize: 12,
+                                              fontSize: 12.0,
                                               letterSpacing: 0.0,
                                               useGoogleFonts: GoogleFonts
                                                       .asMap()
@@ -373,7 +373,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 5, 0),
+                                        0.0, 0.0, 5.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
                                         '8xezqi4h' /* Placed : */,
@@ -384,7 +384,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                             fontFamily:
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmallFamily,
-                                            fontSize: 12,
+                                            fontSize: 12.0,
                                             letterSpacing: 0.0,
                                             useGoogleFonts: GoogleFonts.asMap()
                                                 .containsKey(
@@ -395,7 +395,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 5, 0),
+                                        0.0, 0.0, 5.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
                                         'wzx23zbu' /* 20 */,
@@ -406,7 +406,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                             fontFamily:
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmallFamily,
-                                            fontSize: 12,
+                                            fontSize: 12.0,
                                             letterSpacing: 0.0,
                                             useGoogleFonts: GoogleFonts.asMap()
                                                 .containsKey(
@@ -425,7 +425,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                           fontFamily:
                                               FlutterFlowTheme.of(context)
                                                   .titleSmallFamily,
-                                          fontSize: 12,
+                                          fontSize: 12.0,
                                           letterSpacing: 0.0,
                                           useGoogleFonts: GoogleFonts.asMap()
                                               .containsKey(
@@ -435,7 +435,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 5, 0),
+                                        0.0, 0.0, 5.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
                                         'tshsj0f9' /* ago */,
@@ -446,7 +446,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                             fontFamily:
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmallFamily,
-                                            fontSize: 12,
+                                            fontSize: 12.0,
                                             letterSpacing: 0.0,
                                             useGoogleFonts: GoogleFonts.asMap()
                                                 .containsKey(
@@ -462,7 +462,8 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
                         child: Container(
                           width: double.infinity,
                           height: MediaQuery.sizeOf(context).height * 0.08,
@@ -471,7 +472,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                 .secondaryBackground,
                           ),
                           child: Padding(
-                            padding: EdgeInsets.all(3),
+                            padding: EdgeInsets.all(3.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -479,7 +480,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      10, 0, 10, 3),
+                                      10.0, 0.0, 10.0, 3.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:
@@ -487,10 +488,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 0, 2),
+                                            0.0, 0.0, 0.0, 2.0),
                                         child: Container(
-                                          width: 15,
-                                          height: 15,
+                                          width: 15.0,
+                                          height: 15.0,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .secondary,
@@ -512,10 +513,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 0, 2),
+                                            0.0, 0.0, 0.0, 2.0),
                                         child: Container(
-                                          width: 15,
-                                          height: 15,
+                                          width: 15.0,
+                                          height: 15.0,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .secondary,
@@ -537,10 +538,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 0, 2),
+                                            0.0, 0.0, 0.0, 2.0),
                                         child: Container(
-                                          width: 15,
-                                          height: 15,
+                                          width: 15.0,
+                                          height: 15.0,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .secondary,
@@ -562,10 +563,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 0, 2),
+                                            0.0, 0.0, 0.0, 2.0),
                                         child: Container(
-                                          width: 15,
-                                          height: 15,
+                                          width: 15.0,
+                                          height: 15.0,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .secondary,
@@ -583,7 +584,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 5, 0),
+                                          0.0, 0.0, 5.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
                                           '4si5i9r3' /* Placed */,
@@ -594,7 +595,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                               fontFamily:
                                                   FlutterFlowTheme.of(context)
                                                       .bodySmallFamily,
-                                              fontSize: 10,
+                                              fontSize: 10.0,
                                               letterSpacing: 0.0,
                                               useGoogleFonts:
                                                   GoogleFonts.asMap()
@@ -607,7 +608,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 5, 0),
+                                          0.0, 0.0, 5.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
                                           'nrdwa9l8' /* Acknowledged */,
@@ -618,7 +619,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                               fontFamily:
                                                   FlutterFlowTheme.of(context)
                                                       .bodySmallFamily,
-                                              fontSize: 10,
+                                              fontSize: 10.0,
                                               letterSpacing: 0.0,
                                               useGoogleFonts:
                                                   GoogleFonts.asMap()
@@ -631,7 +632,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 5, 0),
+                                          0.0, 0.0, 5.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
                                           'uj9mc7jo' /* Dispatched */,
@@ -642,7 +643,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                               fontFamily:
                                                   FlutterFlowTheme.of(context)
                                                       .bodySmallFamily,
-                                              fontSize: 10,
+                                              fontSize: 10.0,
                                               letterSpacing: 0.0,
                                               useGoogleFonts:
                                                   GoogleFonts.asMap()
@@ -663,7 +664,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                             fontFamily:
                                                 FlutterFlowTheme.of(context)
                                                     .bodySmallFamily,
-                                            fontSize: 10,
+                                            fontSize: 10.0,
                                             letterSpacing: 0.0,
                                             useGoogleFonts: GoogleFonts.asMap()
                                                 .containsKey(
@@ -684,12 +685,12 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
               ),
             ),
             body: Padding(
-              padding: EdgeInsets.all(3),
+              padding: EdgeInsets.all(3.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -715,7 +716,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                   Icons.menu_rounded,
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
-                                  size: 18,
+                                  size: 18.0,
                                 ),
                               ],
                             ),
@@ -730,12 +731,12 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                               if (!snapshot.hasData) {
                                 return Center(
                                   child: SizedBox(
-                                    width: 40,
-                                    height: 40,
+                                    width: 40.0,
+                                    height: 40.0,
                                     child: SpinKitFadingCircle(
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      size: 40,
+                                      size: 40.0,
                                     ),
                                   ),
                                 );
@@ -744,7 +745,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                               final containerOutletRecord = snapshot.data!;
 
                               return Container(
-                                width: 100,
+                                width: 100.0,
                                 height:
                                     MediaQuery.sizeOf(context).height * 0.06,
                                 decoration: BoxDecoration(
@@ -752,7 +753,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                 ),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      5, 0, 5, 0),
+                                      5.0, 0.0, 5.0, 0.0),
                                   child: StreamBuilder<List<UserProfileRecord>>(
                                     stream: queryUserProfileRecord(
                                       singleRecord: true,
@@ -762,13 +763,13 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                       if (!snapshot.hasData) {
                                         return Center(
                                           child: SizedBox(
-                                            width: 40,
-                                            height: 40,
+                                            width: 40.0,
+                                            height: 40.0,
                                             child: SpinKitFadingCircle(
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              size: 40,
+                                              size: 40.0,
                                             ),
                                           ),
                                         );
@@ -792,8 +793,8 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                         children: [
                                           Expanded(
                                             child: Container(
-                                              width: 100,
-                                              height: 100,
+                                              width: 100.0,
+                                              height: 100.0,
                                               decoration: BoxDecoration(),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -801,8 +802,8 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                0, 0, 3, 0),
+                                                            .fromSTEB(0.0, 0.0,
+                                                                3.0, 0.0),
                                                     child: Text(
                                                       rowUserProfileRecord!
                                                           .name,
@@ -833,8 +834,8 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                0, 0, 6, 0),
+                                                            .fromSTEB(0.0, 0.0,
+                                                                6.0, 0.0),
                                                     child: Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -869,7 +870,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 6, 0),
+                                                    0.0, 0.0, 6.0, 0.0),
                                             child: Text(
                                               dateTimeFormat(
                                                 "yMMMd",
@@ -929,8 +930,8 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                           ),
                                           Expanded(
                                             child: Container(
-                                              width: 100,
-                                              height: 100,
+                                              width: 100.0,
+                                              height: 100.0,
                                               decoration: BoxDecoration(),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -978,8 +979,8 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                           decoration: BoxDecoration(),
                           child: Image.asset(
                             'assets/images/IMG_20220412_140945.png',
-                            width: 100,
-                            height: 100,
+                            width: 100.0,
+                            height: 100.0,
                             fit: BoxFit.contain,
                           ),
                         ),
@@ -1002,11 +1003,11 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                         if (!snapshot.hasData) {
                           return Center(
                             child: SizedBox(
-                              width: 40,
-                              height: 40,
+                              width: 40.0,
+                              height: 40.0,
                               child: SpinKitFadingCircle(
                                 color: FlutterFlowTheme.of(context).primary,
-                                size: 40,
+                                size: 40.0,
                               ),
                             ),
                           );
@@ -1015,7 +1016,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                             containerOnlineOrdersRecordList = snapshot.data!;
 
                         return Container(
-                          width: MediaQuery.sizeOf(context).width,
+                          width: MediaQuery.sizeOf(context).width * 1.0,
                           decoration: BoxDecoration(),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -1033,7 +1034,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                     Expanded(
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 0, 3),
+                                            0.0, 0.0, 0.0, 3.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -1045,7 +1046,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                           },
                                           child: Container(
                                             width: double.infinity,
-                                            height: 100,
+                                            height: 100.0,
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -1087,7 +1088,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                     Expanded(
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 0, 3),
+                                            0.0, 0.0, 0.0, 3.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -1100,7 +1101,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                           },
                                           child: Container(
                                             width: double.infinity,
-                                            height: 100,
+                                            height: 100.0,
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -1142,7 +1143,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                     Expanded(
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 0, 3),
+                                            0.0, 0.0, 0.0, 3.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -1155,7 +1156,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                           },
                                           child: Container(
                                             width: double.infinity,
-                                            height: 100,
+                                            height: 100.0,
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -1197,7 +1198,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                     Expanded(
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 0, 3),
+                                            0.0, 0.0, 0.0, 3.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -1210,7 +1211,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                           },
                                           child: Container(
                                             width: double.infinity,
-                                            height: 100,
+                                            height: 100.0,
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -1252,7 +1253,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                     Expanded(
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 0, 3),
+                                            0.0, 0.0, 0.0, 3.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -1265,7 +1266,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                           },
                                           child: Container(
                                             width: double.infinity,
-                                            height: 100,
+                                            height: 100.0,
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -1307,7 +1308,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                     Expanded(
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 0, 3),
+                                            0.0, 0.0, 0.0, 3.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -1319,7 +1320,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                           },
                                           child: Container(
                                             width: double.infinity,
-                                            height: 100,
+                                            height: 100.0,
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -1360,10 +1361,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 0, 3),
+                                          0.0, 0.0, 0.0, 3.0),
                                       child: Container(
                                         width: double.infinity,
-                                        height: 70,
+                                        height: 70.0,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .customColor2,
@@ -1414,9 +1415,9 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    8, 0, 8, 0),
+                                                    8.0, 0.0, 8.0, 0.0),
                                             child: Container(
-                                              width: 100,
+                                              width: 100.0,
                                               height: double.infinity,
                                               decoration: BoxDecoration(
                                                 color:
@@ -1429,8 +1430,8 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                0, 0, 0, 8),
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 8.0),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -1441,12 +1442,12 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0,
-                                                                        0,
-                                                                        3,
-                                                                        0),
+                                                                        0.0,
+                                                                        0.0,
+                                                                        3.0,
+                                                                        0.0),
                                                             child: Container(
-                                                              width: 100,
+                                                              width: 100.0,
                                                               height: MediaQuery
                                                                           .sizeOf(
                                                                               context)
@@ -1467,7 +1468,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                         Padding(
                                                                       padding:
                                                                           EdgeInsets.all(
-                                                                              2),
+                                                                              2.0),
                                                                       child:
                                                                           TextFormField(
                                                                         controller:
@@ -1537,7 +1538,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                             ),
                                                                           ),
                                                                           contentPadding:
-                                                                              EdgeInsets.all(16),
+                                                                              EdgeInsets.all(16.0),
                                                                         ),
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodySmall
@@ -1555,9 +1556,9 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                   ),
                                                                   FlutterFlowIconButton(
                                                                     borderWidth:
-                                                                        1,
+                                                                        1.0,
                                                                     buttonSize:
-                                                                        50,
+                                                                        50.0,
                                                                     fillColor: FlutterFlowTheme.of(
                                                                             context)
                                                                         .customColor2,
@@ -1567,7 +1568,8 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryBtnText,
-                                                                      size: 15,
+                                                                      size:
+                                                                          15.0,
                                                                     ),
                                                                     onPressed:
                                                                         () {
@@ -1583,7 +1585,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                         Expanded(
                                                           flex: 6,
                                                           child: Container(
-                                                            width: 100,
+                                                            width: 100.0,
                                                             height: MediaQuery
                                                                         .sizeOf(
                                                                             context)
@@ -1597,7 +1599,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                             child: Padding(
                                                               padding:
                                                                   EdgeInsets
-                                                                      .all(2),
+                                                                      .all(2.0),
                                                               child:
                                                                   TextFormField(
                                                                 controller: _model
@@ -1697,7 +1699,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                   contentPadding:
                                                                       EdgeInsets
                                                                           .all(
-                                                                              16),
+                                                                              16.0),
                                                                 ),
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
@@ -1740,9 +1742,12 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                           gridDelegate:
                                                               SliverGridDelegateWithFixedCrossAxisCount(
                                                             crossAxisCount: 3,
-                                                            crossAxisSpacing: 9,
-                                                            mainAxisSpacing: 9,
-                                                            childAspectRatio: 2,
+                                                            crossAxisSpacing:
+                                                                9.0,
+                                                            mainAxisSpacing:
+                                                                9.0,
+                                                            childAspectRatio:
+                                                                2.0,
                                                           ),
                                                           scrollDirection:
                                                               Axis.vertical,
@@ -1786,8 +1791,8 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                     () {});
                                                               },
                                                               child: Container(
-                                                                width: 100,
-                                                                height: 200,
+                                                                width: 100.0,
+                                                                height: 200.0,
                                                                 decoration:
                                                                     BoxDecoration(
                                                                   color: FlutterFlowTheme.of(
@@ -1796,15 +1801,15 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              5),
+                                                                              5.0),
                                                                 ),
                                                                 child: Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10,
-                                                                          15,
-                                                                          10,
-                                                                          15),
+                                                                          10.0,
+                                                                          15.0,
+                                                                          10.0,
+                                                                          15.0),
                                                                   child: Column(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -1834,29 +1839,29 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                             children: [
                                                                               if (listItem.vendor == 'Swiggy')
                                                                                 Container(
-                                                                                  width: 25,
-                                                                                  height: 25,
+                                                                                  width: 25.0,
+                                                                                  height: 25.0,
                                                                                   decoration: BoxDecoration(
                                                                                     color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                   ),
                                                                                   child: Image.asset(
                                                                                     'assets/images/png-transparent-swiggy-hd-logo-thumbnail.png',
-                                                                                    width: 100,
-                                                                                    height: 100,
+                                                                                    width: 100.0,
+                                                                                    height: 100.0,
                                                                                     fit: BoxFit.contain,
                                                                                   ),
                                                                                 ),
                                                                               if (listItem.vendor == 'Zomato')
                                                                                 Container(
-                                                                                  width: 25,
-                                                                                  height: 25,
+                                                                                  width: 25.0,
+                                                                                  height: 25.0,
                                                                                   decoration: BoxDecoration(
                                                                                     color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                   ),
                                                                                   child: Image.asset(
                                                                                     'assets/images/280-2801744_zomato-app-icon-png-png-download-transparent-icon.png',
-                                                                                    width: 100,
-                                                                                    height: 100,
+                                                                                    width: 100.0,
+                                                                                    height: 100.0,
                                                                                     fit: BoxFit.contain,
                                                                                   ),
                                                                                 ),
@@ -1900,11 +1905,11 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                             width:
                                                                                 MediaQuery.sizeOf(context).width * 0.1,
                                                                             height:
-                                                                                15,
+                                                                                15.0,
                                                                             child:
                                                                                 custom_widgets.LinearProgressBar(
                                                                               width: MediaQuery.sizeOf(context).width * 0.1,
-                                                                              height: 15,
+                                                                              height: 15.0,
                                                                             ),
                                                                           ),
                                                                         ],
@@ -1927,14 +1932,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                         Expanded(
                                           flex: 10,
                                           child: Container(
-                                            width: 100,
+                                            width: 100.0,
                                             height: double.infinity,
                                             decoration: BoxDecoration(
                                               border: Border.all(
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
-                                                width: 1,
+                                                width: 1.0,
                                               ),
                                             ),
                                             child: Column(
@@ -1952,8 +1957,11 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                       header: Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
-                                                                .fromSTEB(10, 0,
-                                                                    10, 0),
+                                                                .fromSTEB(
+                                                                    10.0,
+                                                                    0.0,
+                                                                    10.0,
+                                                                    0.0),
                                                         child: Row(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -1962,26 +1970,26 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          10,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          10.0,
+                                                                          0.0),
                                                               child: Icon(
                                                                 Icons.person,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .customColor1,
-                                                                size: 40,
+                                                                size: 40.0,
                                                               ),
                                                             ),
                                                             Padding(
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          10,
-                                                                          10,
-                                                                          10),
+                                                                          0.0,
+                                                                          10.0,
+                                                                          10.0,
+                                                                          10.0),
                                                               child: Column(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -1996,10 +2004,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            0,
-                                                                            3),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            3.0),
                                                                     child: Row(
                                                                       mainAxisSize:
                                                                           MainAxisSize
@@ -2015,7 +2023,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                               .override(
                                                                                 fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                 color: FlutterFlowTheme.of(context).customColor1,
-                                                                                fontSize: 12,
+                                                                                fontSize: 12.0,
                                                                                 letterSpacing: 0.0,
                                                                                 useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                               ),
@@ -2030,10 +2038,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                     children: [
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            5,
-                                                                            3),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            5.0,
+                                                                            3.0),
                                                                         child:
                                                                             Text(
                                                                           getJsonField(
@@ -2045,7 +2053,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                               .override(
                                                                                 fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                 color: FlutterFlowTheme.of(context).primaryText,
-                                                                                fontSize: 15,
+                                                                                fontSize: 15.0,
                                                                                 letterSpacing: 0.0,
                                                                                 useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                               ),
@@ -2053,10 +2061,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                       ),
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            0,
-                                                                            3),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            3.0),
                                                                         child:
                                                                             Text(
                                                                           getJsonField(
@@ -2067,7 +2075,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                               .titleSmall
                                                                               .override(
                                                                                 fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                fontSize: 12,
+                                                                                fontSize: 12.0,
                                                                                 letterSpacing: 0.0,
                                                                                 useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                               ),
@@ -2083,8 +2091,8 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                       ),
                                                       collapsed: Container(),
                                                       expanded: Padding(
-                                                        padding:
-                                                            EdgeInsets.all(10),
+                                                        padding: EdgeInsets.all(
+                                                            10.0),
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -2093,10 +2101,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          0,
-                                                                          5),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -2105,10 +2113,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            5,
-                                                                            0),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0),
                                                                     child: Text(
                                                                       getJsonField(
                                                                         _model
@@ -2122,7 +2130,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                             fontFamily:
                                                                                 FlutterFlowTheme.of(context).titleSmallFamily,
                                                                             fontSize:
-                                                                                12,
+                                                                                12.0,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             useGoogleFonts:
@@ -2141,10 +2149,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          5,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
                                                                   child: Text(
                                                                     getJsonField(
                                                                       _model
@@ -2158,7 +2166,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                           fontFamily:
                                                                               FlutterFlowTheme.of(context).titleSmallFamily,
                                                                           fontSize:
-                                                                              12,
+                                                                              12.0,
                                                                           letterSpacing:
                                                                               0.0,
                                                                           useGoogleFonts:
@@ -2176,10 +2184,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          5,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -2193,7 +2201,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                           fontFamily:
                                                                               FlutterFlowTheme.of(context).titleSmallFamily,
                                                                           fontSize:
-                                                                              12,
+                                                                              12.0,
                                                                           letterSpacing:
                                                                               0.0,
                                                                           useGoogleFonts:
@@ -2204,10 +2212,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          5,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -2221,7 +2229,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                           fontFamily:
                                                                               FlutterFlowTheme.of(context).titleSmallFamily,
                                                                           fontSize:
-                                                                              12,
+                                                                              12.0,
                                                                           letterSpacing:
                                                                               0.0,
                                                                           useGoogleFonts:
@@ -2242,7 +2250,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                         fontFamily:
                                                                             FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         fontSize:
-                                                                            12,
+                                                                            12.0,
                                                                         letterSpacing:
                                                                             0.0,
                                                                         useGoogleFonts:
@@ -2252,10 +2260,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          5,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -2269,7 +2277,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                           fontFamily:
                                                                               FlutterFlowTheme.of(context).titleSmallFamily,
                                                                           fontSize:
-                                                                              12,
+                                                                              12.0,
                                                                           letterSpacing:
                                                                               0.0,
                                                                           useGoogleFonts:
@@ -2298,7 +2306,8 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                 ),
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(0, 0, 0, 3),
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 3.0),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -2306,7 +2315,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                       Expanded(
                                                         flex: 11,
                                                         child: Container(
-                                                          width: 100,
+                                                          width: 100.0,
                                                           height:
                                                               MediaQuery.sizeOf(
                                                                           context)
@@ -2322,10 +2331,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        5,
-                                                                        0,
-                                                                        0,
-                                                                        0),
+                                                                        5.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             child: Column(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -2363,7 +2372,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                       Expanded(
                                                         flex: 2,
                                                         child: Container(
-                                                          width: 100,
+                                                          width: 100.0,
                                                           height:
                                                               MediaQuery.sizeOf(
                                                                           context)
@@ -2411,7 +2420,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                       Expanded(
                                                         flex: 3,
                                                         child: Container(
-                                                          width: 100,
+                                                          width: 100.0,
                                                           height:
                                                               MediaQuery.sizeOf(
                                                                           context)
@@ -2471,7 +2480,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0, 0, 0, 5),
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  5.0),
                                                       child:
                                                           SingleChildScrollView(
                                                         child: Column(
@@ -2506,12 +2518,11 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                         items[
                                                                             itemsIndex];
                                                                     return Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              0,
-                                                                              3),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          3.0),
                                                                       child:
                                                                           Row(
                                                                         mainAxisSize:
@@ -2522,20 +2533,20 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                                 11,
                                                                             child:
                                                                                 Container(
-                                                                              width: 100,
+                                                                              width: 100.0,
                                                                               height: MediaQuery.sizeOf(context).height * 0.055,
                                                                               decoration: BoxDecoration(
                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                               ),
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
                                                                                 child: Column(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   mainAxisAlignment: MainAxisAlignment.center,
                                                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                                                   children: [
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 2),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
                                                                                       child: Text(
                                                                                         getJsonField(
                                                                                           itemsItem,
@@ -2552,14 +2563,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       children: [
                                                                                         Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 2, 0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 0.0),
                                                                                           child: Text(
                                                                                             FFLocalizations.of(context).getText(
                                                                                               'wp49lt31' /* ₹ */,
                                                                                             ),
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                                   fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
-                                                                                                  fontSize: 10,
+                                                                                                  fontSize: 10.0,
                                                                                                   letterSpacing: 0.0,
                                                                                                   useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                                 ),
@@ -2572,7 +2583,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                                           ).toString(),
                                                                                           style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                                 fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
-                                                                                                fontSize: 10,
+                                                                                                fontSize: 10.0,
                                                                                                 letterSpacing: 0.0,
                                                                                                 useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                               ),
@@ -2589,7 +2600,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                                 2,
                                                                             child:
                                                                                 Container(
-                                                                              width: 100,
+                                                                              width: 100.0,
                                                                               height: MediaQuery.sizeOf(context).height * 0.055,
                                                                               decoration: BoxDecoration(
                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -2618,7 +2629,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                                 3,
                                                                             child:
                                                                                 Container(
-                                                                              width: 100,
+                                                                              width: 100.0,
                                                                               height: MediaQuery.sizeOf(context).height * 0.055,
                                                                               decoration: BoxDecoration(
                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -2669,8 +2680,8 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                   child: Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                10, 0, 10, 0),
+                                                            .fromSTEB(10.0, 0.0,
+                                                                10.0, 0.0),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -2798,15 +2809,15 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                   ),
                                                   options: FFButtonOptions(
                                                     width: double.infinity,
-                                                    height: 40,
+                                                    height: 40.0,
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                0, 0, 0, 0),
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 0.0),
                                                     iconPadding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                0, 0, 0, 0),
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 0.0),
                                                     color: Color(0xFFFBA442),
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
@@ -2827,20 +2838,20 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                           context)
                                                                       .titleSmallFamily),
                                                         ),
-                                                    elevation: 2,
+                                                    elevation: 2.0,
                                                     borderSide: BorderSide(
                                                       color: Colors.transparent,
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            0),
+                                                            0.0),
                                                     hoverColor:
                                                         Color(0xFFC55C00),
                                                     hoverTextColor:
                                                         FlutterFlowTheme.of(
                                                                 context)
                                                             .primaryBtnText,
-                                                    hoverElevation: 2,
+                                                    hoverElevation: 2.0,
                                                   ),
                                                 ),
                                                 Container(
@@ -2851,7 +2862,8 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                         .secondaryBackground,
                                                   ),
                                                   child: Padding(
-                                                    padding: EdgeInsets.all(10),
+                                                    padding:
+                                                        EdgeInsets.all(10.0),
                                                     child: Column(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -2865,8 +2877,11 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(0,
-                                                                      0, 0, 3),
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      3.0),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -2879,17 +2894,17 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            10,
-                                                                            0),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            10.0,
+                                                                            0.0),
                                                                 child: FaIcon(
                                                                   FontAwesomeIcons
                                                                       .motorcycle,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .customColor1,
-                                                                  size: 25,
+                                                                  size: 25.0,
                                                                 ),
                                                               ),
                                                               Text(
@@ -2909,7 +2924,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                               context)
                                                                           .customColor1,
                                                                       fontSize:
-                                                                          12,
+                                                                          12.0,
                                                                       letterSpacing:
                                                                           0.0,
                                                                       useGoogleFonts: GoogleFonts
@@ -2924,8 +2939,11 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(0,
-                                                                      0, 0, 5),
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      5.0),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -2942,10 +2960,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            5,
-                                                                            0),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -2959,7 +2977,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                             fontFamily:
                                                                                 FlutterFlowTheme.of(context).titleSmallFamily,
                                                                             fontSize:
-                                                                                15,
+                                                                                15.0,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             useGoogleFonts:
@@ -2995,10 +3013,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            5,
-                                                                            0),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -3012,7 +3030,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                             fontFamily:
                                                                                 FlutterFlowTheme.of(context).titleSmallFamily,
                                                                             fontSize:
-                                                                                14,
+                                                                                14.0,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             useGoogleFonts:
@@ -3033,7 +3051,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                           fontFamily:
                                                                               FlutterFlowTheme.of(context).titleSmallFamily,
                                                                           fontSize:
-                                                                              14,
+                                                                              14.0,
                                                                           letterSpacing:
                                                                               0.0,
                                                                           useGoogleFonts:
@@ -3048,12 +3066,12 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                         Container(
                                                           width:
                                                               double.infinity,
-                                                          height: 15,
+                                                          height: 15.0,
                                                           child: custom_widgets
                                                               .LinearProgressBar(
                                                             width:
                                                                 double.infinity,
-                                                            height: 15,
+                                                            height: 15.0,
                                                           ),
                                                         ),
                                                       ],
@@ -3072,7 +3090,8 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                         .secondaryBackground,
                                                   ),
                                                   child: Padding(
-                                                    padding: EdgeInsets.all(3),
+                                                    padding:
+                                                        EdgeInsets.all(3.0),
                                                     child: Column(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -3086,8 +3105,11 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(10,
-                                                                      0, 10, 3),
+                                                                  .fromSTEB(
+                                                                      10.0,
+                                                                      0.0,
+                                                                      10.0,
+                                                                      3.0),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -3100,14 +3122,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            0,
-                                                                            2),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            2.0),
                                                                 child:
                                                                     Container(
-                                                                  width: 15,
-                                                                  height: 15,
+                                                                  width: 15.0,
+                                                                  height: 15.0,
                                                                   decoration:
                                                                       BoxDecoration(
                                                                     color: FlutterFlowTheme.of(
@@ -3138,14 +3160,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            0,
-                                                                            2),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            2.0),
                                                                 child:
                                                                     Container(
-                                                                  width: 15,
-                                                                  height: 15,
+                                                                  width: 15.0,
+                                                                  height: 15.0,
                                                                   decoration:
                                                                       BoxDecoration(
                                                                     color: FlutterFlowTheme.of(
@@ -3176,14 +3198,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            0,
-                                                                            2),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            2.0),
                                                                 child:
                                                                     Container(
-                                                                  width: 15,
-                                                                  height: 15,
+                                                                  width: 15.0,
+                                                                  height: 15.0,
                                                                   decoration:
                                                                       BoxDecoration(
                                                                     color: FlutterFlowTheme.of(
@@ -3214,14 +3236,14 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            0,
-                                                                            2),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            2.0),
                                                                 child:
                                                                     Container(
-                                                                  width: 15,
-                                                                  height: 15,
+                                                                  width: 15.0,
+                                                                  height: 15.0,
                                                                   decoration:
                                                                       BoxDecoration(
                                                                     color: FlutterFlowTheme.of(
@@ -3246,10 +3268,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          5,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
                                                               child: Text(
                                                                 FFLocalizations.of(
                                                                         context)
@@ -3264,7 +3286,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                           FlutterFlowTheme.of(context)
                                                                               .bodySmallFamily,
                                                                       fontSize:
-                                                                          10,
+                                                                          10.0,
                                                                       letterSpacing:
                                                                           0.0,
                                                                       useGoogleFonts: GoogleFonts
@@ -3278,10 +3300,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          5,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
                                                               child: Text(
                                                                 FFLocalizations.of(
                                                                         context)
@@ -3296,7 +3318,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                           FlutterFlowTheme.of(context)
                                                                               .bodySmallFamily,
                                                                       fontSize:
-                                                                          10,
+                                                                          10.0,
                                                                       letterSpacing:
                                                                           0.0,
                                                                       useGoogleFonts: GoogleFonts
@@ -3320,7 +3342,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                         FlutterFlowTheme.of(context)
                                                                             .bodySmallFamily,
                                                                     fontSize:
-                                                                        10,
+                                                                        10.0,
                                                                     letterSpacing:
                                                                         0.0,
                                                                     useGoogleFonts: GoogleFonts
@@ -3344,9 +3366,12 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0, 0, 1, 0),
+                                                                    0.0,
+                                                                    0.0,
+                                                                    1.0,
+                                                                    0.0),
                                                         child: Container(
-                                                          width: 100,
+                                                          width: 100.0,
                                                           height:
                                                               MediaQuery.sizeOf(
                                                                           context)
@@ -3403,9 +3428,12 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    1, 0, 0, 0),
+                                                                    1.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
                                                         child: Container(
-                                                          width: 100,
+                                                          width: 100.0,
                                                           height:
                                                               MediaQuery.sizeOf(
                                                                           context)
@@ -3468,7 +3496,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                     if (FFAppState().hide)
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            7, 0, 0, 0),
+                                            7.0, 0.0, 0.0, 0.0),
                                         child: Container(
                                           width: double.infinity,
                                           height: double.infinity,
@@ -3477,7 +3505,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                 .primaryBackground,
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(10),
+                                            padding: EdgeInsets.all(10.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               crossAxisAlignment:
@@ -3485,7 +3513,8 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(0, 0, 0, 5),
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 5.0),
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
@@ -3511,7 +3540,8 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                 ),
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(0, 0, 0, 10),
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 10.0),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -3519,8 +3549,11 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                       Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
-                                                                .fromSTEB(0, 0,
-                                                                    10, 0),
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    10.0,
+                                                                    0.0),
                                                         child: FFButtonWidget(
                                                           onPressed: () async {
                                                             await showModalBottomSheet(
@@ -3562,26 +3595,26 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                           icon: FaIcon(
                                                             FontAwesomeIcons
                                                                 .calendarWeek,
-                                                            size: 16,
+                                                            size: 16.0,
                                                           ),
                                                           options:
                                                               FFButtonOptions(
-                                                            width: 130,
-                                                            height: 40,
+                                                            width: 130.0,
+                                                            height: 40.0,
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0,
-                                                                        0,
-                                                                        0,
-                                                                        0),
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             iconPadding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0,
-                                                                        0,
-                                                                        0,
-                                                                        0),
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .secondary,
@@ -3603,17 +3636,17 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                           .containsKey(
                                                                               FlutterFlowTheme.of(context).bodySmallFamily),
                                                                     ),
-                                                            elevation: 2,
+                                                            elevation: 2.0,
                                                             borderSide:
                                                                 BorderSide(
                                                               color: Colors
                                                                   .transparent,
-                                                              width: 1,
+                                                              width: 1.0,
                                                             ),
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        8),
+                                                                        8.0),
                                                           ),
                                                         ),
                                                       ),
@@ -3653,18 +3686,21 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0, 0, 0, 5),
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  5.0),
                                                       child: ClipRRect(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(10),
+                                                                .circular(10.0),
                                                         child: Container(
                                                           decoration:
                                                               BoxDecoration(
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        10),
+                                                                        10.0),
                                                           ),
                                                           child: Container(
                                                             width:
@@ -3679,10 +3715,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                 header: Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          15,
-                                                                          5,
-                                                                          5,
-                                                                          5),
+                                                                          15.0,
+                                                                          5.0,
+                                                                          5.0,
+                                                                          5.0),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -3693,10 +3729,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                     children: [
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            25,
-                                                                            0),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            25.0,
+                                                                            0.0),
                                                                         child:
                                                                             Text(
                                                                           FFLocalizations.of(context)
@@ -3717,10 +3753,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                         child:
                                                                             Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              10,
-                                                                              0),
+                                                                              0.0,
+                                                                              0.0,
+                                                                              10.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -3728,7 +3764,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                   fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                  fontSize: 14,
+                                                                                  fontSize: 14.0,
                                                                                   letterSpacing: 0.0,
                                                                                   useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                 ),
@@ -3740,10 +3776,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                         child:
                                                                             Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              10,
-                                                                              0),
+                                                                              0.0,
+                                                                              0.0,
+                                                                              10.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -3751,7 +3787,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                   fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                  fontSize: 14,
+                                                                                  fontSize: 14.0,
                                                                                   letterSpacing: 0.0,
                                                                                   useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                 ),
@@ -3760,36 +3796,36 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                       ),
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            5,
-                                                                            0),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0),
                                                                         child:
                                                                             Stack(
                                                                           children: [
                                                                             Container(
-                                                                              width: 25,
-                                                                              height: 25,
+                                                                              width: 25.0,
+                                                                              height: 25.0,
                                                                               decoration: BoxDecoration(
                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                               ),
                                                                               child: Image.asset(
                                                                                 'assets/images/png-transparent-swiggy-hd-logo-thumbnail.png',
-                                                                                width: 100,
-                                                                                height: 100,
+                                                                                width: 100.0,
+                                                                                height: 100.0,
                                                                                 fit: BoxFit.contain,
                                                                               ),
                                                                             ),
                                                                             Container(
-                                                                              width: 25,
-                                                                              height: 25,
+                                                                              width: 25.0,
+                                                                              height: 25.0,
                                                                               decoration: BoxDecoration(
                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                               ),
                                                                               child: Image.asset(
                                                                                 'assets/images/280-2801744_zomato-app-icon-png-png-download-transparent-icon.png',
-                                                                                width: 100,
-                                                                                height: 100,
+                                                                                width: 100.0,
+                                                                                height: 100.0,
                                                                                 fit: BoxFit.contain,
                                                                               ),
                                                                             ),
@@ -3801,10 +3837,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                         child:
                                                                             Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              10,
-                                                                              0),
+                                                                              0.0,
+                                                                              0.0,
+                                                                              10.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -3812,7 +3848,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                   fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                  fontSize: 14,
+                                                                                  fontSize: 14.0,
                                                                                   letterSpacing: 0.0,
                                                                                   useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                 ),
@@ -3836,10 +3872,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0,
-                                                                                0,
-                                                                                10,
-                                                                                0),
+                                                                                0.0,
+                                                                                0.0,
+                                                                                10.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -3863,10 +3899,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                     Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          3,
-                                                                          0,
-                                                                          0),
+                                                                          0.0,
+                                                                          3.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                   child: Column(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -3874,16 +3910,16 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                     children: [
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            0,
-                                                                            3),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            3.0),
                                                                         child:
                                                                             Container(
                                                                           width:
                                                                               double.infinity,
                                                                           height:
-                                                                              20,
+                                                                              20.0,
                                                                           decoration:
                                                                               BoxDecoration(
                                                                             color:
@@ -3892,10 +3928,10 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                10,
-                                                                                0,
-                                                                                0,
-                                                                                0),
+                                                                                10.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Row(
                                                                               mainAxisSize: MainAxisSize.max,
@@ -3903,8 +3939,8 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                                 Expanded(
                                                                                   flex: 11,
                                                                                   child: Container(
-                                                                                    width: 100,
-                                                                                    height: 100,
+                                                                                    width: 100.0,
+                                                                                    height: 100.0,
                                                                                     decoration: BoxDecoration(),
                                                                                     child: Column(
                                                                                       mainAxisSize: MainAxisSize.max,
@@ -3929,8 +3965,8 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                                 Expanded(
                                                                                   flex: 2,
                                                                                   child: Container(
-                                                                                    width: 100,
-                                                                                    height: 100,
+                                                                                    width: 100.0,
+                                                                                    height: 100.0,
                                                                                     decoration: BoxDecoration(),
                                                                                     child: Column(
                                                                                       mainAxisSize: MainAxisSize.max,
@@ -3954,11 +3990,11 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                                 Expanded(
                                                                                   flex: 3,
                                                                                   child: Container(
-                                                                                    width: 100,
-                                                                                    height: 100,
+                                                                                    width: 100.0,
+                                                                                    height: 100.0,
                                                                                     decoration: BoxDecoration(),
                                                                                     child: Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                                                                                       child: Column(
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         mainAxisAlignment: MainAxisAlignment.center,
@@ -3998,27 +4034,27 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                               Axis.vertical,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
                                                                               child: Row(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 children: [
                                                                                   Expanded(
                                                                                     flex: 11,
                                                                                     child: Container(
-                                                                                      width: 100,
+                                                                                      width: 100.0,
                                                                                       height: MediaQuery.sizeOf(context).height * 0.045,
                                                                                       decoration: BoxDecoration(
                                                                                         color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                       ),
                                                                                       child: Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                                                                                         child: Column(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           mainAxisAlignment: MainAxisAlignment.center,
                                                                                           crossAxisAlignment: CrossAxisAlignment.start,
                                                                                           children: [
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 2),
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
                                                                                               child: Text(
                                                                                                 FFLocalizations.of(context).getText(
                                                                                                   'rvgc6rw0' /* Item Name */,
@@ -4039,7 +4075,7 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                                   Expanded(
                                                                                     flex: 2,
                                                                                     child: Container(
-                                                                                      width: 100,
+                                                                                      width: 100.0,
                                                                                       height: MediaQuery.sizeOf(context).height * 0.045,
                                                                                       decoration: BoxDecoration(
                                                                                         color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -4065,13 +4101,13 @@ class _DigitalOrderWidgetState extends State<DigitalOrderWidget> {
                                                                                   Expanded(
                                                                                     flex: 3,
                                                                                     child: Container(
-                                                                                      width: 100,
+                                                                                      width: 100.0,
                                                                                       height: MediaQuery.sizeOf(context).height * 0.045,
                                                                                       decoration: BoxDecoration(
                                                                                         color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                       ),
                                                                                       child: Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                                                                                         child: Column(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           mainAxisAlignment: MainAxisAlignment.center,

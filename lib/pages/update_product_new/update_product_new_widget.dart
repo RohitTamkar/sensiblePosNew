@@ -160,11 +160,11 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Center(
               child: SizedBox(
-                width: 40,
-                height: 40,
+                width: 40.0,
+                height: 40.0,
                 child: SpinKitFadingCircle(
                   color: FlutterFlowTheme.of(context).primary,
-                  size: 40,
+                  size: 40.0,
                 ),
               ),
             ),
@@ -186,16 +186,16 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                   },
                   backgroundColor:
                       FlutterFlowTheme.of(context).secondaryBackground,
-                  elevation: 8,
+                  elevation: 8.0,
                   child: FlutterFlowIconButton(
                     borderColor: Colors.transparent,
-                    borderRadius: 30,
-                    borderWidth: 1,
-                    buttonSize: 60,
+                    borderRadius: 30.0,
+                    borderWidth: 1.0,
+                    buttonSize: 60.0,
                     icon: Icon(
                       Icons.add,
                       color: FlutterFlowTheme.of(context).primary,
-                      size: 32,
+                      size: 32.0,
                     ),
                     onPressed: () async {
                       _model.len = await actions.genarateProductCode(
@@ -213,20 +213,20 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                 endDrawer: Container(
                   width: MediaQuery.sizeOf(context).width * 0.4,
                   child: Drawer(
-                    elevation: 16,
+                    elevation: 16.0,
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Container(
-                          width: MediaQuery.sizeOf(context).width,
-                          height: MediaQuery.sizeOf(context).height * 1,
+                          width: MediaQuery.sizeOf(context).width * 1.0,
+                          height: MediaQuery.sizeOf(context).height * 1.0,
                           decoration: BoxDecoration(
                             color:
                                 FlutterFlowTheme.of(context).primaryBackground,
                           ),
                           child: Padding(
-                            padding: EdgeInsets.all(10),
+                            padding: EdgeInsets.all(10.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -234,10 +234,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 10, 0, 0),
+                                      0.0, 10.0, 0.0, 0.0),
                                   child: Material(
                                     color: Colors.transparent,
-                                    elevation: 2,
+                                    elevation: 2.0,
                                     child: Container(
                                       width: double.infinity,
                                       height:
@@ -255,7 +255,7 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                           Expanded(
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(6, 0, 0, 0),
+                                                  .fromSTEB(6.0, 0.0, 0.0, 0.0),
                                               child: TextFormField(
                                                 controller: _model
                                                     .textFieldsearchProdTextController,
@@ -414,8 +414,8 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                             ),
                                             child: FlutterFlowIconButton(
                                               borderColor: Colors.transparent,
-                                              borderWidth: 1,
-                                              buttonSize: 50,
+                                              borderWidth: 1.0,
+                                              buttonSize: 50.0,
                                               fillColor:
                                                   FlutterFlowTheme.of(context)
                                                       .secondary,
@@ -424,7 +424,7 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .lineColor,
-                                                size: 20,
+                                                size: 20.0,
                                               ),
                                               onPressed: () {
                                                 print('IconButton pressed ...');
@@ -438,7 +438,7 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 5, 0, 0),
+                                      0.0, 5.0, 0.0, 0.0),
                                   child: Container(
                                     width: double.infinity,
                                     height:
@@ -448,11 +448,11 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                           .secondaryBackground,
                                       boxShadow: [
                                         BoxShadow(
-                                          blurRadius: 3,
+                                          blurRadius: 3.0,
                                           color: Color(0x33000000),
                                           offset: Offset(
-                                            0,
-                                            1,
+                                            0.0,
+                                            1.0,
                                           ),
                                         )
                                       ],
@@ -518,7 +518,8 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                             RoundedRectangleBorder(
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(0),
+                                                                  .circular(
+                                                                      0.0),
                                                         ),
                                                         child: Row(
                                                           mainAxisSize:
@@ -602,7 +603,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0, 5, 0, 5),
+                                                                  0.0,
+                                                                  5.0,
+                                                                  0.0,
+                                                                  5.0),
                                                       child: InkWell(
                                                         splashColor:
                                                             Colors.transparent,
@@ -643,7 +647,7 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        0),
+                                                                        0.0),
                                                           ),
                                                           child: Row(
                                                             mainAxisSize:
@@ -724,7 +728,7 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                       Expanded(
                         flex: 1,
                         child: Container(
-                          width: MediaQuery.sizeOf(context).width,
+                          width: MediaQuery.sizeOf(context).width * 1.0,
                           height: MediaQuery.sizeOf(context).height * 0.12,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context).primary,
@@ -737,22 +741,22 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                               Expanded(
                                 flex: 1,
                                 child: Container(
-                                  width: 100,
-                                  height: 100,
+                                  width: 100.0,
+                                  height: 100.0,
                                   decoration: BoxDecoration(),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       FlutterFlowIconButton(
                                         borderColor: Colors.transparent,
-                                        borderRadius: 30,
-                                        borderWidth: 1,
-                                        buttonSize: 60,
+                                        borderRadius: 30.0,
+                                        borderWidth: 1.0,
+                                        buttonSize: 60.0,
                                         icon: Icon(
                                           Icons.chevron_left_sharp,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBtnText,
-                                          size: 26,
+                                          size: 26.0,
                                         ),
                                         onPressed: () async {
                                           context.pop();
@@ -799,7 +803,8 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                       Expanded(
                         flex: 13,
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 3.0, 0.0, 0.0),
                           child: Container(
                             width: double.infinity,
                             height: MediaQuery.sizeOf(context).height * 0.79,
@@ -811,7 +816,7 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsets.all(2),
+                                  padding: EdgeInsets.all(2.0),
                                   child: Container(
                                     width: double.infinity,
                                     height:
@@ -832,7 +837,7 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                   .openEndDrawer();
                                             },
                                             child: Container(
-                                              height: 100,
+                                              height: 100.0,
                                               decoration: BoxDecoration(
                                                 border: Border.all(
                                                   color: FlutterFlowTheme.of(
@@ -847,8 +852,8 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                20, 0, 0, 0),
+                                                            .fromSTEB(20.0, 0.0,
+                                                                0.0, 0.0),
                                                     child: Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -883,10 +888,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    2, 0, 0, 0),
+                                                    2.0, 0.0, 0.0, 0.0),
                                             child: Container(
-                                              width: 80,
-                                              height: 100,
+                                              width: 80.0,
+                                              height: 100.0,
                                               decoration: BoxDecoration(
                                                 color:
                                                     FlutterFlowTheme.of(context)
@@ -955,16 +960,22 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                       'cn8phnqf' /* Delete */,
                                                     ),
                                                     options: FFButtonOptions(
-                                                      width: 100,
-                                                      height: 36,
+                                                      width: 100.0,
+                                                      height: 36.0,
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0, 0, 0, 0),
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
                                                       iconPadding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0, 0, 0, 0),
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -988,15 +999,15 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                         FlutterFlowTheme.of(context)
                                                                             .titleSmallFamily),
                                                               ),
-                                                      elevation: 2,
+                                                      elevation: 2.0,
                                                       borderSide: BorderSide(
                                                         color:
                                                             Colors.transparent,
-                                                        width: 1,
+                                                        width: 1.0,
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              4),
+                                                              4.0),
                                                     ),
                                                   ),
                                                   FFButtonWidget(
@@ -1156,16 +1167,22 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                       '8b7v8u7d' /* Update */,
                                                     ),
                                                     options: FFButtonOptions(
-                                                      width: 100,
-                                                      height: 36,
+                                                      width: 100.0,
+                                                      height: 36.0,
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0, 0, 0, 0),
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
                                                       iconPadding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0, 0, 0, 0),
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1189,15 +1206,15 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                         FlutterFlowTheme.of(context)
                                                                             .titleSmallFamily),
                                                               ),
-                                                      elevation: 2,
+                                                      elevation: 2.0,
                                                       borderSide: BorderSide(
                                                         color:
                                                             Colors.transparent,
-                                                        width: 1,
+                                                        width: 1.0,
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              4),
+                                                              4.0),
                                                     ),
                                                   ),
                                                 ],
@@ -1219,18 +1236,19 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                           .primaryBackground,
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsets.all(5),
+                                      padding: EdgeInsets.all(5.0),
                                       child: SingleChildScrollView(
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(5, 7, 5, 5),
+                                                  .fromSTEB(5.0, 7.0, 5.0, 5.0),
                                               child: Container(
                                                 width:
                                                     MediaQuery.sizeOf(context)
-                                                        .width,
+                                                            .width *
+                                                        1.0,
                                                 height:
                                                     MediaQuery.sizeOf(context)
                                                             .height *
@@ -1255,10 +1273,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        5,
-                                                                        0,
-                                                                        0,
-                                                                        0),
+                                                                        5.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             child: Text(
                                                               FFLocalizations.of(
                                                                       context)
@@ -1308,10 +1326,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          5,
-                                                                          0,
-                                                                          0),
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                   child:
                                                                       TextFormField(
                                                                     controller:
@@ -1456,10 +1474,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        5,
-                                                                        0,
-                                                                        0,
-                                                                        0),
+                                                                        5.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             child: Text(
                                                               FFLocalizations.of(
                                                                       context)
@@ -1499,10 +1517,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          5,
-                                                                          0,
-                                                                          0),
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0,
+                                                                          0.0),
                                                               child:
                                                                   TextFormField(
                                                                 controller: _model
@@ -1658,10 +1676,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        5,
-                                                                        0,
-                                                                        0,
-                                                                        0),
+                                                                        5.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             child: Text(
                                                               FFLocalizations.of(
                                                                       context)
@@ -1701,10 +1719,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          5,
-                                                                          0,
-                                                                          0),
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0,
+                                                                          0.0),
                                                               child:
                                                                   TextFormField(
                                                                 controller: _model
@@ -1853,15 +1871,15 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                               ),
                                             ),
                                             Divider(
-                                              thickness: 1,
-                                              indent: 10,
-                                              endIndent: 10,
+                                              thickness: 1.0,
+                                              indent: 10.0,
+                                              endIndent: 10.0,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .customColor2,
                                             ),
                                             Padding(
-                                              padding: EdgeInsets.all(5),
+                                              padding: EdgeInsets.all(5.0),
                                               child: Container(
                                                 width: double.infinity,
                                                 decoration: BoxDecoration(),
@@ -1882,10 +1900,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          1,
-                                                                          0,
-                                                                          1,
-                                                                          0),
+                                                                          1.0,
+                                                                          0.0,
+                                                                          1.0,
+                                                                          0.0),
                                                               child: Container(
                                                                 width: MediaQuery.sizeOf(
                                                                             context)
@@ -1906,12 +1924,11 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                           .start,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              5,
-                                                                              0,
-                                                                              0,
-                                                                              2),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          5.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          2.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -1928,12 +1945,11 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              2,
-                                                                              0,
-                                                                              3,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          2.0,
+                                                                          0.0,
+                                                                          3.0,
+                                                                          0.0),
                                                                       child:
                                                                           Container(
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -1965,8 +1981,8 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                                 )
                                                                               ],
                                                                               onChanged: (val) => safeSetState(() => _model.dropDownValue1 = val),
-                                                                              width: 180,
-                                                                              height: 50,
+                                                                              width: 180.0,
+                                                                              height: 50.0,
                                                                               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                     color: Colors.black,
@@ -1976,11 +1992,11 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                               hintText: FFLocalizations.of(context).getText(
                                                                                 'xhqb4wn8' /* Please select... */,
                                                                               ),
-                                                                              elevation: 2,
+                                                                              elevation: 2.0,
                                                                               borderColor: Colors.transparent,
-                                                                              borderWidth: 0,
-                                                                              borderRadius: 0,
-                                                                              margin: EdgeInsetsDirectional.fromSTEB(12, 4, 12, 4),
+                                                                              borderWidth: 0.0,
+                                                                              borderRadius: 0.0,
+                                                                              margin: EdgeInsetsDirectional.fromSTEB(12.0, 4.0, 12.0, 4.0),
                                                                               hidesUnderline: true,
                                                                               isSearchable: false,
                                                                               isMultiSelect: false,
@@ -1999,10 +2015,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          1,
-                                                                          0,
-                                                                          1,
-                                                                          0),
+                                                                          1.0,
+                                                                          0.0,
+                                                                          1.0,
+                                                                          0.0),
                                                               child: Container(
                                                                 width: MediaQuery.sizeOf(
                                                                             context)
@@ -2023,12 +2039,11 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                           .start,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              5,
-                                                                              0,
-                                                                              0,
-                                                                              2),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          5.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          2.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -2045,12 +2060,11 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              2,
-                                                                              0,
-                                                                              3,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          2.0,
+                                                                          0.0,
+                                                                          3.0,
+                                                                          0.0),
                                                                       child:
                                                                           Container(
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -2079,11 +2093,11 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                                 if (!snapshot.hasData) {
                                                                                   return Center(
                                                                                     child: SizedBox(
-                                                                                      width: 40,
-                                                                                      height: 40,
+                                                                                      width: 40.0,
+                                                                                      height: 40.0,
                                                                                       child: SpinKitFadingCircle(
                                                                                         color: FlutterFlowTheme.of(context).primary,
-                                                                                        size: 40,
+                                                                                        size: 40.0,
                                                                                       ),
                                                                                     ),
                                                                                   );
@@ -2094,8 +2108,8 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                                   controller: _model.dropDownValueController2 ??= FormFieldController<String>(null),
                                                                                   options: dropDownTaxMasterRecordList.map((e) => e.name).toList(),
                                                                                   onChanged: (val) => safeSetState(() => _model.dropDownValue2 = val),
-                                                                                  width: 180,
-                                                                                  height: 50,
+                                                                                  width: 180.0,
+                                                                                  height: 50.0,
                                                                                   textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                         color: Colors.black,
@@ -2105,11 +2119,11 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                                   hintText: FFLocalizations.of(context).getText(
                                                                                     'epsdoyc5' /* Please select... */,
                                                                                   ),
-                                                                                  elevation: 2,
+                                                                                  elevation: 2.0,
                                                                                   borderColor: Colors.transparent,
-                                                                                  borderWidth: 0,
-                                                                                  borderRadius: 0,
-                                                                                  margin: EdgeInsetsDirectional.fromSTEB(12, 4, 12, 4),
+                                                                                  borderWidth: 0.0,
+                                                                                  borderRadius: 0.0,
+                                                                                  margin: EdgeInsetsDirectional.fromSTEB(12.0, 4.0, 12.0, 4.0),
                                                                                   hidesUnderline: true,
                                                                                   isSearchable: false,
                                                                                   isMultiSelect: false,
@@ -2130,10 +2144,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          1,
-                                                                          0,
-                                                                          1,
-                                                                          0),
+                                                                          1.0,
+                                                                          0.0,
+                                                                          1.0,
+                                                                          0.0),
                                                               child: Container(
                                                                 width: MediaQuery.sizeOf(
                                                                             context)
@@ -2154,12 +2168,11 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                           .start,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              5,
-                                                                              0,
-                                                                              0,
-                                                                              2),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          5.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          2.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -2176,12 +2189,11 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              2,
-                                                                              0,
-                                                                              3,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          2.0,
+                                                                          0.0,
+                                                                          3.0,
+                                                                          0.0),
                                                                       child:
                                                                           Container(
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -2211,8 +2223,8 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                                 )
                                                                               ],
                                                                               onChanged: (val) => safeSetState(() => _model.dropDownValue3 = val),
-                                                                              width: 180,
-                                                                              height: 50,
+                                                                              width: 180.0,
+                                                                              height: 50.0,
                                                                               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                     color: Colors.black,
@@ -2222,11 +2234,11 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                               hintText: FFLocalizations.of(context).getText(
                                                                                 'xefitbo5' /* Please select... */,
                                                                               ),
-                                                                              elevation: 2,
+                                                                              elevation: 2.0,
                                                                               borderColor: Colors.transparent,
-                                                                              borderWidth: 0,
-                                                                              borderRadius: 0,
-                                                                              margin: EdgeInsetsDirectional.fromSTEB(12, 4, 12, 4),
+                                                                              borderWidth: 0.0,
+                                                                              borderRadius: 0.0,
+                                                                              margin: EdgeInsetsDirectional.fromSTEB(12.0, 4.0, 12.0, 4.0),
                                                                               hidesUnderline: true,
                                                                               isSearchable: false,
                                                                               isMultiSelect: false,
@@ -2245,10 +2257,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          1,
-                                                                          0,
-                                                                          1,
-                                                                          0),
+                                                                          1.0,
+                                                                          0.0,
+                                                                          1.0,
+                                                                          0.0),
                                                               child: Container(
                                                                 width: MediaQuery.sizeOf(
                                                                             context)
@@ -2269,12 +2281,11 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                           .start,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              5,
-                                                                              0,
-                                                                              0,
-                                                                              2),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          5.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          2.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -2291,12 +2302,11 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              2,
-                                                                              0,
-                                                                              3,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          2.0,
+                                                                          0.0,
+                                                                          3.0,
+                                                                          0.0),
                                                                       child:
                                                                           Container(
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -2327,11 +2337,11 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                                 if (!snapshot.hasData) {
                                                                                   return Center(
                                                                                     child: SizedBox(
-                                                                                      width: 40,
-                                                                                      height: 40,
+                                                                                      width: 40.0,
+                                                                                      height: 40.0,
                                                                                       child: SpinKitFadingCircle(
                                                                                         color: FlutterFlowTheme.of(context).primary,
-                                                                                        size: 40,
+                                                                                        size: 40.0,
                                                                                       ),
                                                                                     ),
                                                                                   );
@@ -2342,8 +2352,8 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                                   controller: _model.dropDownValueController4 ??= FormFieldController<String>(null),
                                                                                   options: dropDownServicePointOutletRecordList.map((e) => e.name).toList(),
                                                                                   onChanged: (val) => safeSetState(() => _model.dropDownValue4 = val),
-                                                                                  width: 180,
-                                                                                  height: 50,
+                                                                                  width: 180.0,
+                                                                                  height: 50.0,
                                                                                   textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                         color: Colors.black,
@@ -2353,11 +2363,11 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                                   hintText: FFLocalizations.of(context).getText(
                                                                                     'lj96dfr6' /* Please select... */,
                                                                                   ),
-                                                                                  elevation: 2,
+                                                                                  elevation: 2.0,
                                                                                   borderColor: Colors.transparent,
-                                                                                  borderWidth: 0,
-                                                                                  borderRadius: 0,
-                                                                                  margin: EdgeInsetsDirectional.fromSTEB(12, 4, 12, 4),
+                                                                                  borderWidth: 0.0,
+                                                                                  borderRadius: 0.0,
+                                                                                  margin: EdgeInsetsDirectional.fromSTEB(12.0, 4.0, 12.0, 4.0),
                                                                                   hidesUnderline: true,
                                                                                   isSearchable: false,
                                                                                   isMultiSelect: false,
@@ -2377,15 +2387,18 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                       ),
                                                     ),
                                                     Divider(
-                                                      thickness: 1,
-                                                      indent: 10,
-                                                      endIndent: 10,
+                                                      thickness: 1.0,
+                                                      indent: 10.0,
+                                                      endIndent: 10.0,
                                                     ),
                                                     Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0, 10, 0, 0),
+                                                                  0.0,
+                                                                  10.0,
+                                                                  0.0,
+                                                                  0.0),
                                                       child: Container(
                                                         width: double.infinity,
                                                         decoration:
@@ -2404,12 +2417,11 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              1,
-                                                                              0,
-                                                                              2,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          1.0,
+                                                                          0.0,
+                                                                          2.0,
+                                                                          0.0),
                                                                       child:
                                                                           Container(
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -2426,7 +2438,7 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                               CrossAxisAlignment.start,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 FFLocalizations.of(context).getText(
                                                                                   'hfjeiba1' /* Best Before */,
@@ -2439,10 +2451,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                               ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(2, 5, 3, 0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(2.0, 5.0, 3.0, 0.0),
                                                                               child: Material(
                                                                                 color: Colors.transparent,
-                                                                                elevation: 2,
+                                                                                elevation: 2.0,
                                                                                 child: Container(
                                                                                   height: MediaQuery.sizeOf(context).height * 0.09,
                                                                                   decoration: BoxDecoration(
@@ -2455,7 +2467,7 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                                     mainAxisAlignment: MainAxisAlignment.start,
                                                                                     children: [
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
                                                                                         child: Text(
                                                                                           FFLocalizations.of(context).getText(
                                                                                             'hzfdlsuq' /* Days */,
@@ -2483,12 +2495,11 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              1,
-                                                                              0,
-                                                                              2,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          1.0,
+                                                                          0.0,
+                                                                          2.0,
+                                                                          0.0),
                                                                       child:
                                                                           Container(
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -2505,7 +2516,7 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                               CrossAxisAlignment.start,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 FFLocalizations.of(context).getText(
                                                                                   '9p21gcg6' /* Batch No */,
@@ -2518,10 +2529,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                               ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(2, 5, 3, 0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(2.0, 5.0, 3.0, 0.0),
                                                                               child: Material(
                                                                                 color: Colors.transparent,
-                                                                                elevation: 2,
+                                                                                elevation: 2.0,
                                                                                 child: Container(
                                                                                   height: MediaQuery.sizeOf(context).height * 0.09,
                                                                                   decoration: BoxDecoration(
@@ -2613,10 +2624,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                       Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            1,
-                                                                            0,
-                                                                            2,
-                                                                            0),
+                                                                            1.0,
+                                                                            0.0,
+                                                                            2.0,
+                                                                            0.0),
                                                                     child:
                                                                         Container(
                                                                       width: MediaQuery.sizeOf(context)
@@ -2636,10 +2647,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                8,
-                                                                                0,
-                                                                                0,
-                                                                                0),
+                                                                                8.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -2654,14 +2665,14 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                2,
-                                                                                5,
-                                                                                3,
-                                                                                0),
+                                                                                2.0,
+                                                                                5.0,
+                                                                                3.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Material(
                                                                               color: Colors.transparent,
-                                                                              elevation: 2,
+                                                                              elevation: 2.0,
                                                                               child: Container(
                                                                                 height: MediaQuery.sizeOf(context).height * 0.09,
                                                                                 decoration: BoxDecoration(
@@ -2754,10 +2765,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                       Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            1,
-                                                                            0,
-                                                                            2,
-                                                                            0),
+                                                                            1.0,
+                                                                            0.0,
+                                                                            2.0,
+                                                                            0.0),
                                                                     child:
                                                                         Container(
                                                                       width: MediaQuery.sizeOf(context)
@@ -2777,10 +2788,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                8,
-                                                                                0,
-                                                                                0,
-                                                                                0),
+                                                                                8.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -2795,14 +2806,14 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                2,
-                                                                                5,
-                                                                                3,
-                                                                                0),
+                                                                                2.0,
+                                                                                5.0,
+                                                                                3.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Material(
                                                                               color: Colors.transparent,
-                                                                              elevation: 2,
+                                                                              elevation: 2.0,
                                                                               child: Container(
                                                                                 height: MediaQuery.sizeOf(context).height * 0.09,
                                                                                 decoration: BoxDecoration(
@@ -2911,10 +2922,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              8,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              8.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -2929,16 +2940,16 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              2,
-                                                                              5,
-                                                                              3,
-                                                                              0),
+                                                                              2.0,
+                                                                              5.0,
+                                                                              3.0,
+                                                                              0.0),
                                                                           child:
                                                                               Material(
                                                                             color:
                                                                                 Colors.transparent,
                                                                             elevation:
-                                                                                2,
+                                                                                2.0,
                                                                             child:
                                                                                 Container(
                                                                               height: MediaQuery.sizeOf(context).height * 0.09,
@@ -3028,7 +3039,7 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                               ],
                                                             ),
                                                             Divider(
-                                                              thickness: 1,
+                                                              thickness: 1.0,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .customColor2,
@@ -3037,10 +3048,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          10,
-                                                                          0,
-                                                                          0),
+                                                                          0.0,
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -3052,10 +3063,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            1,
-                                                                            0,
-                                                                            2,
-                                                                            0),
+                                                                            1.0,
+                                                                            0.0,
+                                                                            2.0,
+                                                                            0.0),
                                                                         child:
                                                                             Container(
                                                                           width:
@@ -3072,7 +3083,7 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                                 CrossAxisAlignment.start,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                                                                                 child: Text(
                                                                                   FFLocalizations.of(context).getText(
                                                                                     '2jau88l1' /* CESS Percent */,
@@ -3085,10 +3096,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                                 ),
                                                                               ),
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(2, 5, 3, 0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(2.0, 5.0, 3.0, 0.0),
                                                                                 child: Material(
                                                                                   color: Colors.transparent,
-                                                                                  elevation: 2,
+                                                                                  elevation: 2.0,
                                                                                   child: Container(
                                                                                     height: MediaQuery.sizeOf(context).height * 0.09,
                                                                                     decoration: BoxDecoration(
@@ -3182,10 +3193,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            1,
-                                                                            0,
-                                                                            2,
-                                                                            0),
+                                                                            1.0,
+                                                                            0.0,
+                                                                            2.0,
+                                                                            0.0),
                                                                         child:
                                                                             Container(
                                                                           width:
@@ -3202,7 +3213,7 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                                 CrossAxisAlignment.start,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                                                                                 child: Text(
                                                                                   FFLocalizations.of(context).getText(
                                                                                     'z9sr5gq3' /* CESS Amt. */,
@@ -3215,10 +3226,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                                 ),
                                                                               ),
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(2, 5, 3, 0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(2.0, 5.0, 3.0, 0.0),
                                                                                 child: Material(
                                                                                   color: Colors.transparent,
-                                                                                  elevation: 2,
+                                                                                  elevation: 2.0,
                                                                                   child: Container(
                                                                                     height: MediaQuery.sizeOf(context).height * 0.09,
                                                                                     decoration: BoxDecoration(
@@ -3309,12 +3320,11 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              1,
-                                                                              0,
-                                                                              2,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          1.0,
+                                                                          0.0,
+                                                                          2.0,
+                                                                          0.0),
                                                                       child:
                                                                           Container(
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -3331,7 +3341,7 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                               CrossAxisAlignment.start,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 FFLocalizations.of(context).getText(
                                                                                   '2le6np5i' /* Selling price */,
@@ -3344,10 +3354,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                               ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(2, 5, 3, 0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(2.0, 5.0, 3.0, 0.0),
                                                                               child: Material(
                                                                                 color: Colors.transparent,
-                                                                                elevation: 2,
+                                                                                elevation: 2.0,
                                                                                 child: Container(
                                                                                   height: MediaQuery.sizeOf(context).height * 0.09,
                                                                                   decoration: BoxDecoration(
@@ -3438,12 +3448,11 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              1,
-                                                                              0,
-                                                                              2,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          1.0,
+                                                                          0.0,
+                                                                          2.0,
+                                                                          0.0),
                                                                       child:
                                                                           Container(
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -3460,7 +3469,7 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                               CrossAxisAlignment.start,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 FFLocalizations.of(context).getText(
                                                                                   'p60u5s7y' /* Purchace price */,
@@ -3473,10 +3482,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                               ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(2, 5, 3, 0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(2.0, 5.0, 3.0, 0.0),
                                                                               child: Material(
                                                                                 color: Colors.transparent,
-                                                                                elevation: 2,
+                                                                                elevation: 2.0,
                                                                                 child: Container(
                                                                                   height: MediaQuery.sizeOf(context).height * 0.09,
                                                                                   decoration: BoxDecoration(
@@ -3584,10 +3593,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                8,
-                                                                                0,
-                                                                                0,
-                                                                                0),
+                                                                                8.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -3602,14 +3611,14 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                2,
-                                                                                5,
-                                                                                2,
-                                                                                0),
+                                                                                2.0,
+                                                                                5.0,
+                                                                                2.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Material(
                                                                               color: Colors.transparent,
-                                                                              elevation: 2,
+                                                                              elevation: 2.0,
                                                                               child: Container(
                                                                                 height: MediaQuery.sizeOf(context).height * 0.09,
                                                                                 decoration: BoxDecoration(
@@ -3700,7 +3709,7 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                               ),
                                                             ),
                                                             Divider(
-                                                              thickness: 1,
+                                                              thickness: 1.0,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .customColor2,
@@ -3709,10 +3718,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          10,
-                                                                          0,
-                                                                          0),
+                                                                          0.0,
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -3721,12 +3730,11 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              1,
-                                                                              0,
-                                                                              2,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          1.0,
+                                                                          0.0,
+                                                                          2.0,
+                                                                          0.0),
                                                                       child:
                                                                           Container(
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -3743,7 +3751,7 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                               CrossAxisAlignment.start,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 FFLocalizations.of(context).getText(
                                                                                   'vphl3c9l' /* Discount */,
@@ -3756,10 +3764,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                               ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(2, 5, 3, 0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(2.0, 5.0, 3.0, 0.0),
                                                                               child: Material(
                                                                                 color: Colors.transparent,
-                                                                                elevation: 2,
+                                                                                elevation: 2.0,
                                                                                 child: Container(
                                                                                   height: MediaQuery.sizeOf(context).height * 0.09,
                                                                                   decoration: BoxDecoration(
@@ -3850,12 +3858,11 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              1,
-                                                                              0,
-                                                                              2,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          1.0,
+                                                                          0.0,
+                                                                          2.0,
+                                                                          0.0),
                                                                       child:
                                                                           Container(
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -3872,7 +3879,7 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                               CrossAxisAlignment.start,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 FFLocalizations.of(context).getText(
                                                                                   'c8bbps63' /* Dis.Amt. */,
@@ -3885,10 +3892,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                               ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(2, 5, 3, 0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(2.0, 5.0, 3.0, 0.0),
                                                                               child: Material(
                                                                                 color: Colors.transparent,
-                                                                                elevation: 2,
+                                                                                elevation: 2.0,
                                                                                 child: Container(
                                                                                   height: MediaQuery.sizeOf(context).height * 0.09,
                                                                                   decoration: BoxDecoration(
@@ -3982,10 +3989,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            1,
-                                                                            0,
-                                                                            2,
-                                                                            0),
+                                                                            1.0,
+                                                                            0.0,
+                                                                            2.0,
+                                                                            0.0),
                                                                         child:
                                                                             Container(
                                                                           width:
@@ -4002,7 +4009,7 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                                 CrossAxisAlignment.start,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                                                                                 child: Text(
                                                                                   FFLocalizations.of(context).getText(
                                                                                     '9d3czqa6' /* Current Stock */,
@@ -4016,10 +4023,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                                 ),
                                                                               ),
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
                                                                                 child: Material(
                                                                                   color: Colors.transparent,
-                                                                                  elevation: 2,
+                                                                                  elevation: 2.0,
                                                                                   child: Container(
                                                                                     height: MediaQuery.sizeOf(context).height * 0.09,
                                                                                     decoration: BoxDecoration(
@@ -4053,12 +4060,11 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              1,
-                                                                              0,
-                                                                              2,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          1.0,
+                                                                          0.0,
+                                                                          2.0,
+                                                                          0.0),
                                                                       child:
                                                                           Container(
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -4092,7 +4098,7 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                         color: FlutterFlowTheme.of(context).primaryText,
-                                                                                        fontSize: 11,
+                                                                                        fontSize: 11.0,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                       ),
@@ -4145,7 +4151,7 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).headlineSmall.override(
                                                                                       fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
-                                                                                      fontSize: 12,
+                                                                                      fontSize: 12.0,
                                                                                       letterSpacing: 0.0,
                                                                                       useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                                     ),
@@ -4168,19 +4174,23 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                       ),
                                                     ),
                                                     Divider(
-                                                      thickness: 1,
+                                                      thickness: 1.0,
                                                     ),
                                                     if (!FFAppState().show)
                                                       Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
-                                                                .fromSTEB(5, 10,
-                                                                    5, 0),
+                                                                .fromSTEB(
+                                                                    5.0,
+                                                                    10.0,
+                                                                    5.0,
+                                                                    0.0),
                                                         child: Container(
                                                           width:
                                                               MediaQuery.sizeOf(
-                                                                      context)
-                                                                  .width,
+                                                                          context)
+                                                                      .width *
+                                                                  1.0,
                                                           height:
                                                               MediaQuery.sizeOf(
                                                                           context)
@@ -4210,10 +4220,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              5.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -4236,10 +4246,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0,
-                                                                                5,
-                                                                                0,
-                                                                                0),
+                                                                                0.0,
+                                                                                5.0,
+                                                                                0.0,
+                                                                                0.0),
                                                                             child:
                                                                                 TextFormField(
                                                                               controller: _model.textController15,
@@ -4324,10 +4334,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              5.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -4350,10 +4360,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0,
-                                                                                5,
-                                                                                0,
-                                                                                0),
+                                                                                0.0,
+                                                                                5.0,
+                                                                                0.0,
+                                                                                0.0),
                                                                             child:
                                                                                 TextFormField(
                                                                               controller: _model.textController16,
@@ -4437,10 +4447,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              5.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -4463,10 +4473,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0,
-                                                                                5,
-                                                                                0,
-                                                                                0),
+                                                                                0.0,
+                                                                                5.0,
+                                                                                0.0,
+                                                                                0.0),
                                                                             child:
                                                                                 TextFormField(
                                                                               controller: _model.textController17,
@@ -4545,10 +4555,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            15,
-                                                                            0,
-                                                                            0),
+                                                                            0.0,
+                                                                            15.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                 child: Row(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -4564,10 +4574,10 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5,
-                                                                                0,
-                                                                                0,
-                                                                                0),
+                                                                                5.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -4589,7 +4599,7 @@ class _UpdateProductNewWidgetState extends State<UpdateProductNewWidget> {
                                                                                 BoxDecoration(),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
                                                                               child: TextFormField(
                                                                                 controller: _model.textController18,
                                                                                 focusNode: _model.textFieldFocusNode18,

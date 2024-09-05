@@ -47,8 +47,8 @@ class _CalenderDayStartWidgetState extends State<CalenderDayStartWidget> {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Container(
-          width: 450,
-          height: 350,
+          width: 450.0,
+          height: 350.0,
           decoration: BoxDecoration(
             color: Color(0xFFCFDCFF),
           ),
@@ -57,10 +57,10 @@ class _CalenderDayStartWidgetState extends State<CalenderDayStartWidget> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: EdgeInsets.all(10),
+                padding: EdgeInsets.all(10.0),
                 child: Container(
                   width: double.infinity,
-                  height: 30,
+                  height: 30.0,
                   decoration: BoxDecoration(),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
@@ -113,7 +113,7 @@ class _CalenderDayStartWidgetState extends State<CalenderDayStartWidget> {
                                 fontFamily: FlutterFlowTheme.of(context)
                                     .headlineMediumFamily,
                                 color: FlutterFlowTheme.of(context).primary,
-                                fontSize: 18,
+                                fontSize: 18.0,
                                 letterSpacing: 0.0,
                                 decoration: TextDecoration.underline,
                                 useGoogleFonts: GoogleFonts.asMap().containsKey(
@@ -127,13 +127,13 @@ class _CalenderDayStartWidgetState extends State<CalenderDayStartWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 40),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 40.0),
                 child: FlutterFlowCalendar(
                   color: Color(0xFF5E7BD4),
                   weekFormat: false,
                   weekStartsMonday: true,
                   initialDate: getCurrentTimestamp,
-                  rowHeight: 27,
+                  rowHeight: 27.0,
                   onChange: (DateTimeRange? newSelectedDate) {
                     safeSetState(
                         () => _model.calendarSelectedDay = newSelectedDate);

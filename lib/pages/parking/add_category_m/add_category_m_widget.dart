@@ -81,8 +81,8 @@ class _AddCategoryMWidgetState extends State<AddCategoryMWidget> {
                 Expanded(
                   flex: 4,
                   child: Container(
-                    width: MediaQuery.sizeOf(context).width,
-                    height: 100,
+                    width: MediaQuery.sizeOf(context).width * 1.0,
+                    height: 100.0,
                     decoration: BoxDecoration(),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -90,20 +90,21 @@ class _AddCategoryMWidgetState extends State<AddCategoryMWidget> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              20.0, 0.0, 20.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 30,
-                                borderWidth: 1,
-                                buttonSize: 45,
+                                borderRadius: 30.0,
+                                borderWidth: 1.0,
+                                buttonSize: 45.0,
                                 icon: Icon(
                                   Icons.chevron_left,
                                   color: FlutterFlowTheme.of(context).lineColor,
-                                  size: 24,
+                                  size: 24.0,
                                 ),
                                 onPressed: () async {
                                   context.pushNamed('categories');
@@ -131,13 +132,13 @@ class _AddCategoryMWidgetState extends State<AddCategoryMWidget> {
                               ),
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 30,
-                                borderWidth: 1,
-                                buttonSize: 45,
+                                borderRadius: 30.0,
+                                borderWidth: 1.0,
+                                buttonSize: 45.0,
                                 icon: Icon(
                                   Icons.chevron_left,
                                   color: Colors.transparent,
-                                  size: 30,
+                                  size: 30.0,
                                 ),
                                 onPressed: () {
                                   print('IconButton pressed ...');
@@ -170,11 +171,11 @@ class _AddCategoryMWidgetState extends State<AddCategoryMWidget> {
                       if (!snapshot.hasData) {
                         return Center(
                           child: SizedBox(
-                            width: 40,
-                            height: 40,
+                            width: 40.0,
+                            height: 40.0,
                             child: SpinKitFadingCircle(
                               color: FlutterFlowTheme.of(context).primary,
-                              size: 40,
+                              size: 40.0,
                             ),
                           ),
                         );
@@ -183,38 +184,38 @@ class _AddCategoryMWidgetState extends State<AddCategoryMWidget> {
                           snapshot.data!;
 
                       return Container(
-                        width: MediaQuery.sizeOf(context).width,
-                        height: 100,
+                        width: MediaQuery.sizeOf(context).width * 1.0,
+                        height: 100.0,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context)
                               .parkingPrimaryBackground,
                           borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(0),
-                            bottomRight: Radius.circular(0),
-                            topLeft: Radius.circular(0),
-                            topRight: Radius.circular(0),
+                            bottomLeft: Radius.circular(0.0),
+                            bottomRight: Radius.circular(0.0),
+                            topLeft: Radius.circular(0.0),
+                            topRight: Radius.circular(0.0),
                           ),
                         ),
                         child: Form(
                           key: _model.formKey,
                           autovalidateMode: AutovalidateMode.disabled,
                           child: Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 60, 0, 15),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 60.0, 0.0, 15.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 0, 20),
+                                      0.0, 0.0, 0.0, 20.0),
                                   child: Container(
                                     width:
                                         MediaQuery.sizeOf(context).width * 0.9,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
-                                      borderRadius: BorderRadius.circular(5),
+                                      borderRadius: BorderRadius.circular(5.0),
                                       border: Border.all(
                                         color: FlutterFlowTheme.of(context)
                                             .customColor1,
@@ -227,16 +228,16 @@ class _AddCategoryMWidgetState extends State<AddCategoryMWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 10, 0),
+                                                  0.0, 0.0, 10.0, 0.0),
                                           child: FlutterFlowIconButton(
-                                            borderRadius: 5,
-                                            buttonSize: 45,
+                                            borderRadius: 5.0,
+                                            buttonSize: 45.0,
                                             icon: Icon(
                                               Icons.search_rounded,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
-                                              size: 24,
+                                              size: 24.0,
                                             ),
                                             onPressed: () async {
                                               await showModalBottomSheet(
@@ -374,7 +375,7 @@ class _AddCategoryMWidgetState extends State<AddCategoryMWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 0, 20),
+                                      0.0, 0.0, 0.0, 20.0),
                                   child: Container(
                                     width:
                                         MediaQuery.sizeOf(context).width * 0.9,
@@ -383,7 +384,7 @@ class _AddCategoryMWidgetState extends State<AddCategoryMWidget> {
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
-                                      borderRadius: BorderRadius.circular(5),
+                                      borderRadius: BorderRadius.circular(5.0),
                                       border: Border.all(
                                         color: FlutterFlowTheme.of(context)
                                             .customColor1,
@@ -475,7 +476,7 @@ class _AddCategoryMWidgetState extends State<AddCategoryMWidget> {
                                       MediaQuery.sizeOf(context).height * 0.05,
                                   decoration: BoxDecoration(
                                     color: Color(0xFFEDD28A),
-                                    borderRadius: BorderRadius.circular(5),
+                                    borderRadius: BorderRadius.circular(5.0),
                                   ),
                                   child: FFButtonWidget(
                                     onPressed: () async {
@@ -602,13 +603,13 @@ class _AddCategoryMWidgetState extends State<AddCategoryMWidget> {
                                       'qghr2zc5' /* Add */,
                                     ),
                                     options: FFButtonOptions(
-                                      width: 130,
-                                      height: 40,
+                                      width: 130.0,
+                                      height: 40.0,
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 0, 0),
+                                          0.0, 0.0, 0.0, 0.0),
                                       iconPadding:
                                           EdgeInsetsDirectional.fromSTEB(
-                                              0, 0, 0, 0),
+                                              0.0, 0.0, 0.0, 0.0),
                                       color: FlutterFlowTheme.of(context)
                                           .parkingSecondaryBackground,
                                       textStyle: FlutterFlowTheme.of(context)
@@ -626,11 +627,11 @@ class _AddCategoryMWidgetState extends State<AddCategoryMWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .headlineSmallFamily),
                                           ),
-                                      elevation: 2,
+                                      elevation: 2.0,
                                       borderSide: BorderSide(
                                         color: Colors.transparent,
                                       ),
-                                      borderRadius: BorderRadius.circular(5),
+                                      borderRadius: BorderRadius.circular(5.0),
                                     ),
                                   ),
                                 ),

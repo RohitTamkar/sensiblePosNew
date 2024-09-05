@@ -589,22 +589,23 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                     Expanded(
                       flex: 7,
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(50, 50, 50, 50),
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            50.0, 50.0, 50.0, 50.0),
                         child: Container(
                           width: double.infinity,
-                          height: 100,
+                          height: 100.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
                             borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(6),
-                              bottomRight: Radius.circular(6),
-                              topLeft: Radius.circular(6),
-                              topRight: Radius.circular(6),
+                              bottomLeft: Radius.circular(6.0),
+                              bottomRight: Radius.circular(6.0),
+                              topLeft: Radius.circular(6.0),
+                              topRight: Radius.circular(6.0),
                             ),
                             border: Border.all(
                               color: FlutterFlowTheme.of(context).tertiary,
-                              width: 2,
+                              width: 2.0,
                             ),
                           ),
                           child: Column(
@@ -612,8 +613,8 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 75),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 75.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
                                     'y4rnysxj' /* Thank You ! */,
@@ -625,7 +626,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                                             .displayLargeFamily,
                                         color: FlutterFlowTheme.of(context)
                                             .success,
-                                        fontSize: 36,
+                                        fontSize: 36.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                         fontStyle: FontStyle.italic,
@@ -868,7 +869,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                                             .bodyMediumFamily,
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
-                                        fontSize: 16,
+                                        fontSize: 16.0,
                                         letterSpacing: 0.0,
                                         useGoogleFonts: GoogleFonts.asMap()
                                             .containsKey(
@@ -886,22 +887,23 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                     Expanded(
                       flex: 7,
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(50, 50, 50, 50),
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            50.0, 50.0, 50.0, 50.0),
                         child: Container(
                           width: double.infinity,
-                          height: 100,
+                          height: 100.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
                             borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(6),
-                              bottomRight: Radius.circular(6),
-                              topLeft: Radius.circular(6),
-                              topRight: Radius.circular(6),
+                              bottomLeft: Radius.circular(6.0),
+                              bottomRight: Radius.circular(6.0),
+                              topLeft: Radius.circular(6.0),
+                              topRight: Radius.circular(6.0),
                             ),
                             border: Border.all(
                               color: FlutterFlowTheme.of(context).tertiary,
-                              width: 2,
+                              width: 2.0,
                             ),
                           ),
                           child: Column(
@@ -923,22 +925,23 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                     Expanded(
                       flex: 7,
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(50, 50, 50, 50),
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            50.0, 50.0, 50.0, 50.0),
                         child: Container(
                           width: double.infinity,
-                          height: 100,
+                          height: 100.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
                             borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(6),
-                              bottomRight: Radius.circular(6),
-                              topLeft: Radius.circular(6),
-                              topRight: Radius.circular(6),
+                              bottomLeft: Radius.circular(6.0),
+                              bottomRight: Radius.circular(6.0),
+                              topLeft: Radius.circular(6.0),
+                              topRight: Radius.circular(6.0),
                             ),
                             border: Border.all(
                               color: FlutterFlowTheme.of(context).tertiary,
-                              width: 2,
+                              width: 2.0,
                             ),
                           ),
                           child: Column(

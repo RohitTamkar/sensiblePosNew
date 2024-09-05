@@ -46,8 +46,8 @@ class _ExitConfirmWidgetState extends State<ExitConfirmWidget> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          width: 500,
-          height: 200,
+          width: 500.0,
+          height: 200.0,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).primaryBackground,
           ),
@@ -97,11 +97,11 @@ class _ExitConfirmWidgetState extends State<ExitConfirmWidget> {
                       safeSetState(() {});
                     },
                     child: Container(
-                      width: 100,
-                      height: 40,
+                      width: 100.0,
+                      height: 40.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        borderRadius: BorderRadius.circular(5),
+                        borderRadius: BorderRadius.circular(5.0),
                         border: Border.all(
                           color: FlutterFlowTheme.of(context).customColor1,
                         ),
@@ -138,11 +138,11 @@ class _ExitConfirmWidgetState extends State<ExitConfirmWidget> {
                       context.safePop();
                     },
                     child: Container(
-                      width: 100,
-                      height: 40,
+                      width: 100.0,
+                      height: 40.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        borderRadius: BorderRadius.circular(5),
+                        borderRadius: BorderRadius.circular(5.0),
                         border: Border.all(
                           color: FlutterFlowTheme.of(context).customColor1,
                         ),

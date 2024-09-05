@@ -55,10 +55,11 @@ class _ParkingProductCopyWidgetState extends State<ParkingProductCopyWidget> {
                   flex: 4,
                   child: Container(
                     width: double.infinity,
-                    height: 100,
+                    height: 100.0,
                     decoration: BoxDecoration(),
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(25, 0, 25, 5),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(25.0, 0.0, 25.0, 5.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -69,13 +70,13 @@ class _ParkingProductCopyWidgetState extends State<ParkingProductCopyWidget> {
                             children: [
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 30,
-                                buttonSize: 40,
+                                borderRadius: 30.0,
+                                buttonSize: 40.0,
                                 icon: Icon(
                                   Icons.keyboard_arrow_left_sharp,
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
-                                  size: 24,
+                                  size: 24.0,
                                 ),
                                 onPressed: () {
                                   print('IconButton pressed ...');
@@ -100,15 +101,15 @@ class _ParkingProductCopyWidgetState extends State<ParkingProductCopyWidget> {
                               ),
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 10,
-                                buttonSize: 40,
+                                borderRadius: 10.0,
+                                buttonSize: 40.0,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
                                 icon: Icon(
                                   Icons.playlist_add_check,
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
-                                  size: 24,
+                                  size: 24.0,
                                 ),
                                 onPressed: () async {
                                   context.pushNamed('ParkingCustomers');
@@ -125,35 +126,35 @@ class _ParkingProductCopyWidgetState extends State<ParkingProductCopyWidget> {
                   flex: 26,
                   child: Container(
                     width: double.infinity,
-                    height: 100,
+                    height: 100.0,
                     decoration: BoxDecoration(
                       color:
                           FlutterFlowTheme.of(context).parkingPrimaryBackground,
                     ),
                     child: Padding(
-                      padding: EdgeInsets.all(25),
+                      padding: EdgeInsets.all(25.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 20.0),
                             child: Material(
                               color: Colors.transparent,
-                              elevation: 5,
+                              elevation: 5.0,
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
+                                borderRadius: BorderRadius.circular(10.0),
                               ),
                               child: Container(
                                 width: double.infinity,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  borderRadius: BorderRadius.circular(10),
+                                  borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      40, 25, 40, 25),
+                                      40.0, 25.0, 40.0, 25.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:
@@ -162,7 +163,7 @@ class _ParkingProductCopyWidgetState extends State<ParkingProductCopyWidget> {
                                       Icon(
                                         Icons.two_wheeler,
                                         color: Color(0xFFEE8B60),
-                                        size: 45,
+                                        size: 45.0,
                                       ),
                                       Text(
                                         FFLocalizations.of(context).getText(
@@ -191,24 +192,24 @@ class _ParkingProductCopyWidgetState extends State<ParkingProductCopyWidget> {
                             ),
                           ),
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 20.0),
                             child: Material(
                               color: Colors.transparent,
-                              elevation: 5,
+                              elevation: 5.0,
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
+                                borderRadius: BorderRadius.circular(10.0),
                               ),
                               child: Container(
                                 width: double.infinity,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  borderRadius: BorderRadius.circular(10),
+                                  borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      40, 25, 40, 25),
+                                      40.0, 25.0, 40.0, 25.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:
@@ -217,7 +218,7 @@ class _ParkingProductCopyWidgetState extends State<ParkingProductCopyWidget> {
                                       FaIcon(
                                         FontAwesomeIcons.carSide,
                                         color: Color(0xFFEE8B60),
-                                        size: 40,
+                                        size: 40.0,
                                       ),
                                       Text(
                                         FFLocalizations.of(context).getText(
@@ -247,24 +248,24 @@ class _ParkingProductCopyWidgetState extends State<ParkingProductCopyWidget> {
                             ),
                           ),
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 20.0),
                             child: Material(
                               color: Colors.transparent,
-                              elevation: 5,
+                              elevation: 5.0,
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
+                                borderRadius: BorderRadius.circular(10.0),
                               ),
                               child: Container(
                                 width: double.infinity,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  borderRadius: BorderRadius.circular(10),
+                                  borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      40, 25, 40, 25),
+                                      40.0, 25.0, 40.0, 25.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:
@@ -273,7 +274,7 @@ class _ParkingProductCopyWidgetState extends State<ParkingProductCopyWidget> {
                                       Icon(
                                         Icons.electric_rickshaw,
                                         color: Color(0xFFEE8B60),
-                                        size: 50,
+                                        size: 50.0,
                                       ),
                                       Text(
                                         FFLocalizations.of(context).getText(

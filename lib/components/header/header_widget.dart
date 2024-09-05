@@ -48,18 +48,18 @@ class _HeaderWidgetState extends State<HeaderWidget> {
         Flexible(
           child: Container(
             width: double.infinity,
-            height: 65,
+            height: 65.0,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).primary,
             ),
             child: Padding(
-              padding: EdgeInsets.all(5),
+              padding: EdgeInsets.all(5.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.end,
@@ -87,13 +87,14 @@ class _HeaderWidgetState extends State<HeaderWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 2, 0, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 5.0, 0.0),
                           child: Text(
                             FFAppState().userName,
                             style: FlutterFlowTheme.of(context)
@@ -120,7 +121,7 @@ class _HeaderWidgetState extends State<HeaderWidget> {
                                 fontFamily: FlutterFlowTheme.of(context)
                                     .bodySmallFamily,
                                 color: FlutterFlowTheme.of(context).secondary,
-                                fontSize: 9,
+                                fontSize: 9.0,
                                 letterSpacing: 0.0,
                                 useGoogleFonts: GoogleFonts.asMap().containsKey(
                                     FlutterFlowTheme.of(context)

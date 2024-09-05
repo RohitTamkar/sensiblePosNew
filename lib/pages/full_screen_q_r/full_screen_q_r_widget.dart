@@ -55,21 +55,22 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
             drawer: Container(
               width: MediaQuery.sizeOf(context).width * 0.6,
               child: Drawer(
-                elevation: 16,
+                elevation: 16.0,
                 child: Container(
-                  width: 100,
-                  height: 100,
+                  width: 100.0,
+                  height: 100.0,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).primaryBackground,
                   ),
                   child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(7, 0, 7, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(7.0, 0.0, 7.0, 0.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 10.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
                               '67a576p3' /* Selected Items */,
@@ -87,7 +88,8 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 10.0, 0.0, 0.0),
                           child: Container(
                             width: double.infinity,
                             height: MediaQuery.sizeOf(context).height * 0.8,
@@ -107,7 +109,7 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                     final billItem = bill[billIndex];
                                     return Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 0, 4),
+                                          0.0, 0.0, 0.0, 4.0),
                                       child: Container(
                                         width:
                                             MediaQuery.sizeOf(context).width *
@@ -151,8 +153,11 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(0,
-                                                                      2, 0, 0),
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      2.0,
+                                                                      0.0,
+                                                                      0.0),
                                                           child: Text(
                                                             functions
                                                                 .genSrno(
@@ -186,8 +191,8 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                   child: Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                2, 0, 0, 0),
+                                                            .fromSTEB(2.0, 0.0,
+                                                                0.0, 0.0),
                                                     child: Container(
                                                       width: MediaQuery.sizeOf(
                                                                   context)
@@ -216,10 +221,10 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0,
-                                                                        0,
-                                                                        0,
-                                                                        1),
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        1.0),
                                                             child: Text(
                                                               getJsonField(
                                                                 billItem,
@@ -275,8 +280,8 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                   child: Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                0, 0, 1, 0),
+                                                            .fromSTEB(0.0, 0.0,
+                                                                1.0, 0.0),
                                                     child: Container(
                                                       width: MediaQuery.sizeOf(
                                                                   context)
@@ -342,7 +347,7 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primary,
-                                                                  size: 18,
+                                                                  size: 18.0,
                                                                 ),
                                                               ),
                                                             ),
@@ -368,7 +373,7 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                               ),
                                                               alignment:
                                                                   AlignmentDirectional(
-                                                                      0, 0),
+                                                                      0.0, 0.0),
                                                               child: Column(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -451,7 +456,7 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primary,
-                                                                  size: 18,
+                                                                  size: 18.0,
                                                                 ),
                                                               ),
                                                             ),
@@ -466,8 +471,8 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                   child: Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                0, 0, 1, 0),
+                                                            .fromSTEB(0.0, 0.0,
+                                                                1.0, 0.0),
                                                     child: Container(
                                                       width: MediaQuery.sizeOf(
                                                                   context)
@@ -485,7 +490,7 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                       child: Align(
                                                         alignment:
                                                             AlignmentDirectional(
-                                                                0, 0),
+                                                                0.0, 0.0),
                                                         child: Text(
                                                           functions
                                                               .getTotal(
@@ -578,7 +583,7 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primary,
-                                                        size: 16,
+                                                        size: 16.0,
                                                       ),
                                                     ),
                                                   ),
@@ -601,8 +606,8 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                             height: MediaQuery.sizeOf(context).height * 0.1,
                             decoration: BoxDecoration(),
                             child: Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(5, 5, 5, 10),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  5.0, 5.0, 5.0, 10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment:
@@ -611,7 +616,7 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                   Container(
                                     width:
                                         MediaQuery.sizeOf(context).width * 0.1,
-                                    height: 100,
+                                    height: 100.0,
                                     decoration: BoxDecoration(),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -621,12 +626,12 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 5, 0),
+                                                  0.0, 0.0, 5.0, 0.0),
                                           child: Icon(
                                             Icons.shopping_cart,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            size: 18,
+                                            size: 18.0,
                                           ),
                                         ),
                                         Text(
@@ -654,7 +659,7 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                   Container(
                                     width:
                                         MediaQuery.sizeOf(context).width * 0.15,
-                                    height: 100,
+                                    height: 100.0,
                                     decoration: BoxDecoration(),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -664,7 +669,7 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 5, 0),
+                                                  0.0, 0.0, 5.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'qac40rnw' /* ₹ */,
@@ -679,7 +684,7 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
-                                                  fontSize: 14,
+                                                  fontSize: 14.0,
                                                   letterSpacing: 0.0,
                                                   useGoogleFonts: GoogleFonts
                                                           .asMap()
@@ -693,7 +698,7 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 4, 0),
+                                                  0.0, 0.0, 4.0, 0.0),
                                           child: Text(
                                             FFAppState().subTotal.toString(),
                                             style: FlutterFlowTheme.of(context)
@@ -706,7 +711,7 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
-                                                  fontSize: 16,
+                                                  fontSize: 16.0,
                                                   letterSpacing: 0.0,
                                                   useGoogleFonts: GoogleFonts
                                                           .asMap()
@@ -731,11 +736,12 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                     child: Container(
                                       width: MediaQuery.sizeOf(context).width *
                                           0.15,
-                                      height: 100,
+                                      height: 100.0,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
-                                        borderRadius: BorderRadius.circular(5),
+                                        borderRadius:
+                                            BorderRadius.circular(5.0),
                                         border: Border.all(
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
@@ -761,7 +767,7 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
-                                                  fontSize: 16,
+                                                  fontSize: 16.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.normal,
                                                   useGoogleFonts: GoogleFonts
@@ -790,7 +796,7 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
             endDrawer: Container(
               width: MediaQuery.sizeOf(context).width * 0.11,
               child: Drawer(
-                elevation: 16,
+                elevation: 16.0,
                 child: wrapWithModel(
                   model: _model.menuDrawerModel,
                   updateCallback: () => safeSetState(() {}),
@@ -804,7 +810,7 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                 Expanded(
                   child: Container(
                     width: double.infinity,
-                    height: 100,
+                    height: 100.0,
                     decoration: BoxDecoration(),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
@@ -821,7 +827,7 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 2, 0),
+                                        0.0, 0.0, 2.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
                                       focusColor: Colors.transparent,
@@ -840,7 +846,7 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
                                           borderRadius:
-                                              BorderRadius.circular(0),
+                                              BorderRadius.circular(0.0),
                                         ),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -849,7 +855,8 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(15, 0, 15, 0),
+                                                  .fromSTEB(
+                                                      15.0, 0.0, 15.0, 0.0),
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -885,9 +892,9 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                     flex: 10,
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 2, 0),
+                                          0.0, 0.0, 2.0, 0.0),
                                       child: Container(
-                                        width: 100,
+                                        width: 100.0,
                                         height:
                                             MediaQuery.sizeOf(context).height *
                                                 0.08,
@@ -902,13 +909,13 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                             if (!snapshot.hasData) {
                                               return Center(
                                                 child: SizedBox(
-                                                  width: 40,
-                                                  height: 40,
+                                                  width: 40.0,
+                                                  height: 40.0,
                                                   child: SpinKitFadingCircle(
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primary,
-                                                    size: 40,
+                                                    size: 40.0,
                                                   ),
                                                 ),
                                               );
@@ -930,7 +937,8 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                         listViewIndex];
                                                 return Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(0, 0, 2, 0),
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 2.0, 0.0),
                                                   child: InkWell(
                                                     splashColor:
                                                         Colors.transparent,
@@ -960,7 +968,7 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                                 .primary,
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(0),
+                                                                .circular(0.0),
                                                       ),
                                                       child: Column(
                                                         mainAxisSize:
@@ -973,10 +981,10 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        15,
-                                                                        0,
-                                                                        15,
-                                                                        0),
+                                                                        15.0,
+                                                                        0.0,
+                                                                        15.0,
+                                                                        0.0),
                                                             child: Text(
                                                               listViewCategoryRecord
                                                                   .name,
@@ -1023,13 +1031,13 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                       },
                                       child: Material(
                                         color: Colors.transparent,
-                                        elevation: 30,
+                                        elevation: 30.0,
                                         shape: RoundedRectangleBorder(
                                           borderRadius:
-                                              BorderRadius.circular(0),
+                                              BorderRadius.circular(0.0),
                                         ),
                                         child: Container(
-                                          width: 100,
+                                          width: 100.0,
                                           height: MediaQuery.sizeOf(context)
                                                   .height *
                                               0.08,
@@ -1037,13 +1045,13 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                             color: FlutterFlowTheme.of(context)
                                                 .secondary,
                                             borderRadius:
-                                                BorderRadius.circular(0),
+                                                BorderRadius.circular(0.0),
                                           ),
                                           child: Icon(
                                             Icons.menu_rounded,
                                             color: FlutterFlowTheme.of(context)
                                                 .lineColor,
-                                            size: 24,
+                                            size: 24.0,
                                           ),
                                         ),
                                       ),
@@ -1068,7 +1076,7 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  7, 5, 7, 5),
+                                                  7.0, 5.0, 7.0, 5.0),
                                           child: StreamBuilder<
                                               List<ProductRecord>>(
                                             stream: queryProductRecord(
@@ -1085,14 +1093,14 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                               if (!snapshot.hasData) {
                                                 return Center(
                                                   child: SizedBox(
-                                                    width: 40,
-                                                    height: 40,
+                                                    width: 40.0,
+                                                    height: 40.0,
                                                     child: SpinKitFadingCircle(
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primary,
-                                                      size: 40,
+                                                      size: 40.0,
                                                     ),
                                                   ),
                                                 );
@@ -1112,8 +1120,8 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                 gridDelegate:
                                                     SliverGridDelegateWithFixedCrossAxisCount(
                                                   crossAxisCount: 5,
-                                                  crossAxisSpacing: 4,
-                                                  mainAxisSpacing: 4,
+                                                  crossAxisSpacing: 4.0,
+                                                  mainAxisSpacing: 4.0,
                                                   childAspectRatio: 1.5,
                                                 ),
                                                 scrollDirection: Axis.vertical,
@@ -1137,14 +1145,14 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                       if (!snapshot.hasData) {
                                                         return Center(
                                                           child: SizedBox(
-                                                            width: 40,
-                                                            height: 40,
+                                                            width: 40.0,
+                                                            height: 40.0,
                                                             child:
                                                                 SpinKitFadingCircle(
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .primary,
-                                                              size: 40,
+                                                              size: 40.0,
                                                             ),
                                                           ),
                                                         );
@@ -1154,7 +1162,7 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                           snapshot.data!;
 
                                                       return Container(
-                                                        width: 100,
+                                                        width: 100.0,
                                                         height:
                                                             MediaQuery.sizeOf(
                                                                         context)
@@ -1197,10 +1205,10 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                                 },
                                                                 child:
                                                                     Container(
-                                                                  width: MediaQuery
-                                                                          .sizeOf(
+                                                                  width: MediaQuery.sizeOf(
                                                                               context)
-                                                                      .width,
+                                                                          .width *
+                                                                      1.0,
                                                                   height: MediaQuery.sizeOf(
                                                                               context)
                                                                           .height *
@@ -1220,14 +1228,14 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                                       ),
                                                                     ),
                                                                     borderRadius:
-                                                                        BorderRadius
-                                                                            .circular(5),
+                                                                        BorderRadius.circular(
+                                                                            5.0),
                                                                   ),
                                                                   child:
                                                                       Padding(
                                                                     padding:
-                                                                        EdgeInsets
-                                                                            .all(1),
+                                                                        EdgeInsets.all(
+                                                                            1.0),
                                                                     child:
                                                                         Column(
                                                                       mainAxisSize:
@@ -1250,13 +1258,13 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                                             decoration:
                                                                                 BoxDecoration(
                                                                               color: Color(0x1A000000),
-                                                                              borderRadius: BorderRadius.circular(5),
+                                                                              borderRadius: BorderRadius.circular(5.0),
                                                                             ),
                                                                             child:
                                                                                 Align(
-                                                                              alignment: AlignmentDirectional(0, 1),
+                                                                              alignment: AlignmentDirectional(0.0, 1.0),
                                                                               child: Container(
-                                                                                width: MediaQuery.sizeOf(context).width,
+                                                                                width: MediaQuery.sizeOf(context).width * 1.0,
                                                                                 height: MediaQuery.sizeOf(context).height * 0.18,
                                                                                 decoration: BoxDecoration(
                                                                                   gradient: LinearGradient(
@@ -1264,25 +1272,28 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                                                       Colors.transparent,
                                                                                       Color(0xA5000000)
                                                                                     ],
-                                                                                    stops: [0, 1],
-                                                                                    begin: AlignmentDirectional(0, -1),
-                                                                                    end: AlignmentDirectional(0, 1),
+                                                                                    stops: [
+                                                                                      0.0,
+                                                                                      1.0
+                                                                                    ],
+                                                                                    begin: AlignmentDirectional(0.0, -1.0),
+                                                                                    end: AlignmentDirectional(0, 1.0),
                                                                                   ),
                                                                                   borderRadius: BorderRadius.only(
-                                                                                    bottomLeft: Radius.circular(5),
-                                                                                    bottomRight: Radius.circular(5),
-                                                                                    topLeft: Radius.circular(0),
-                                                                                    topRight: Radius.circular(0),
+                                                                                    bottomLeft: Radius.circular(5.0),
+                                                                                    bottomRight: Radius.circular(5.0),
+                                                                                    topLeft: Radius.circular(0.0),
+                                                                                    topRight: Radius.circular(0.0),
                                                                                   ),
                                                                                 ),
                                                                                 child: Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(3, 0, 3, 5),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(3.0, 0.0, 3.0, 5.0),
                                                                                   child: Column(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     mainAxisAlignment: MainAxisAlignment.end,
                                                                                     children: [
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 2),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
                                                                                         child: Text(
                                                                                           gridViewProductRecord.name,
                                                                                           textAlign: TextAlign.center,
@@ -1296,14 +1307,14 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                                                         ),
                                                                                       ),
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 2),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
                                                                                         child: Row(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           mainAxisAlignment: MainAxisAlignment.center,
                                                                                           crossAxisAlignment: CrossAxisAlignment.end,
                                                                                           children: [
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 3, 0),
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
                                                                                               child: Text(
                                                                                                 FFLocalizations.of(context).getText(
                                                                                                   'poohvk5h' /* ₹ */,
@@ -1363,7 +1374,7 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                     Expanded(
                                       child: Container(
                                         width: double.infinity,
-                                        height: 100,
+                                        height: 100.0,
                                         decoration: BoxDecoration(),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -1377,7 +1388,7 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                     MediaQuery.sizeOf(context)
                                                             .width *
                                                         0.25,
-                                                height: 100,
+                                                height: 100.0,
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
@@ -1385,12 +1396,13 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                   borderRadius:
                                                       BorderRadius.only(
                                                     bottomLeft:
-                                                        Radius.circular(0),
+                                                        Radius.circular(0.0),
                                                     bottomRight:
-                                                        Radius.circular(0),
-                                                    topLeft: Radius.circular(0),
+                                                        Radius.circular(0.0),
+                                                    topLeft:
+                                                        Radius.circular(0.0),
                                                     topRight:
-                                                        Radius.circular(7),
+                                                        Radius.circular(7.0),
                                                   ),
                                                 ),
                                                 child: Row(
@@ -1432,7 +1444,10 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  6, 0, 0, 0),
+                                                                  6.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
                                                       child: Text(
                                                         dateTimeFormat(
                                                           "yMMMd",
@@ -1471,7 +1486,8 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                               flex: 5,
                                               child: Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(2, 0, 2, 0),
+                                                    .fromSTEB(
+                                                        2.0, 0.0, 2.0, 0.0),
                                                 child: InkWell(
                                                   splashColor:
                                                       Colors.transparent,
@@ -1490,7 +1506,7 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                                 context)
                                                             .width *
                                                         0.25,
-                                                    height: 100,
+                                                    height: 100.0,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
@@ -1498,13 +1514,17 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                       borderRadius:
                                                           BorderRadius.only(
                                                         bottomLeft:
-                                                            Radius.circular(0),
+                                                            Radius.circular(
+                                                                0.0),
                                                         bottomRight:
-                                                            Radius.circular(0),
+                                                            Radius.circular(
+                                                                0.0),
                                                         topLeft:
-                                                            Radius.circular(7),
+                                                            Radius.circular(
+                                                                7.0),
                                                         topRight:
-                                                            Radius.circular(7),
+                                                            Radius.circular(
+                                                                7.0),
                                                       ),
                                                     ),
                                                     child: Row(
@@ -1517,8 +1537,11 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(0,
-                                                                      0, 5, 0),
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      5.0,
+                                                                      0.0),
                                                           child: Text(
                                                             FFLocalizations.of(
                                                                     context)
@@ -1585,19 +1608,19 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                       MediaQuery.sizeOf(context)
                                                               .width *
                                                           0.25,
-                                                  height: 100,
+                                                  height: 100.0,
                                                   decoration: BoxDecoration(
                                                     color: Color(0xFFB6001A),
                                                     borderRadius:
                                                         BorderRadius.only(
                                                       bottomLeft:
-                                                          Radius.circular(0),
+                                                          Radius.circular(0.0),
                                                       bottomRight:
-                                                          Radius.circular(0),
+                                                          Radius.circular(0.0),
                                                       topLeft:
-                                                          Radius.circular(7),
+                                                          Radius.circular(7.0),
                                                       topRight:
-                                                          Radius.circular(0),
+                                                          Radius.circular(0.0),
                                                     ),
                                                   ),
                                                   child: Row(
@@ -1611,7 +1634,10 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0, 0, 5, 0),
+                                                                    0.0,
+                                                                    0.0,
+                                                                    5.0,
+                                                                    0.0),
                                                         child: Text(
                                                           FFLocalizations.of(
                                                                   context)
@@ -1641,8 +1667,11 @@ class _FullScreenQRWidgetState extends State<FullScreenQRWidget> {
                                                       Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
-                                                                .fromSTEB(0, 0,
-                                                                    15, 0),
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    15.0,
+                                                                    0.0),
                                                         child: Text(
                                                           FFAppState()
                                                               .billAmt

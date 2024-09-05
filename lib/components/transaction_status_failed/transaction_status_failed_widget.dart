@@ -46,19 +46,19 @@ class _TransactionStatusFailedWidgetState
     context.watch<FFAppState>();
 
     return Container(
-      width: 450,
-      height: 550,
+      width: 450.0,
+      height: 550.0,
       decoration: BoxDecoration(
         color: Color(0xFFDA4257),
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(16),
-          bottomRight: Radius.circular(16),
-          topLeft: Radius.circular(16),
-          topRight: Radius.circular(16),
+          bottomLeft: Radius.circular(16.0),
+          bottomRight: Radius.circular(16.0),
+          topLeft: Radius.circular(16.0),
+          topRight: Radius.circular(16.0),
         ),
         border: Border.all(
           color: FlutterFlowTheme.of(context).primaryBackground,
-          width: 4,
+          width: 4.0,
         ),
       ),
       child: Column(
@@ -96,7 +96,7 @@ class _TransactionStatusFailedWidgetState
                       fontFamily:
                           FlutterFlowTheme.of(context).displaySmallFamily,
                       color: FlutterFlowTheme.of(context).primaryBackground,
-                      fontSize: 26,
+                      fontSize: 26.0,
                       letterSpacing: 0.0,
                       useGoogleFonts: GoogleFonts.asMap().containsKey(
                           FlutterFlowTheme.of(context).displaySmallFamily),
@@ -109,11 +109,11 @@ class _TransactionStatusFailedWidgetState
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               ClipRRect(
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(8.0),
                 child: Image.asset(
                   'assets/images/output-onlinegiftools_(1).gif',
-                  width: 300,
-                  height: 200,
+                  width: 300.0,
+                  height: 200.0,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -159,7 +159,7 @@ class _TransactionStatusFailedWidgetState
             ],
           ),
           StyledDivider(
-            thickness: 4,
+            thickness: 4.0,
             color: FlutterFlowTheme.of(context).accent4,
             lineStyle: DividerLineStyle.dashdotted,
           ),
@@ -174,7 +174,7 @@ class _TransactionStatusFailedWidgetState
                 style: FlutterFlowTheme.of(context).labelLarge.override(
                       fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                       color: FlutterFlowTheme.of(context).primary,
-                      fontSize: 16,
+                      fontSize: 16.0,
                       letterSpacing: 0.0,
                       useGoogleFonts: GoogleFonts.asMap().containsKey(
                           FlutterFlowTheme.of(context).labelLargeFamily),

@@ -54,17 +54,17 @@ class _CategoryWidgetState extends State<CategoryWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 0),
+      padding: EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 0.0),
       child: Container(
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).primaryBackground,
-          borderRadius: BorderRadius.circular(0),
+          borderRadius: BorderRadius.circular(0.0),
           border: Border.all(
             color: FlutterFlowTheme.of(context).secondaryBackground,
           ),
         ),
         child: Padding(
-          padding: EdgeInsets.all(5),
+          padding: EdgeInsets.all(5.0),
           child: Container(
             width: double.infinity,
             color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -81,7 +81,7 @@ class _CategoryWidgetState extends State<CategoryWidget> {
                         Expanded(
                           flex: 1,
                           child: Container(
-                            width: 100,
+                            width: 100.0,
                             height: MediaQuery.sizeOf(context).height * 0.07,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
@@ -112,7 +112,7 @@ class _CategoryWidgetState extends State<CategoryWidget> {
                         ),
                         Expanded(
                           child: Container(
-                            width: 100,
+                            width: 100.0,
                             height: MediaQuery.sizeOf(context).height * 0.07,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
@@ -150,7 +150,7 @@ class _CategoryWidgetState extends State<CategoryWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Container(
-                      width: MediaQuery.sizeOf(context).width,
+                      width: MediaQuery.sizeOf(context).width * 1.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primaryBackground,
                       ),
@@ -165,13 +165,13 @@ class _CategoryWidgetState extends State<CategoryWidget> {
                             itemBuilder: (context, cListIndex) {
                               final cListItem = cList[cListIndex];
                               return Container(
-                                width: MediaQuery.sizeOf(context).width,
+                                width: MediaQuery.sizeOf(context).width * 1.0,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBackground,
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsets.all(5),
+                                  padding: EdgeInsets.all(5.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:

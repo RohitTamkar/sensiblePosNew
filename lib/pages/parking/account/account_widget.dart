@@ -377,11 +377,11 @@ class _AccountWidgetState extends State<AccountWidget>
                   if (!snapshot.hasData) {
                     return Center(
                       child: SizedBox(
-                        width: 40,
-                        height: 40,
+                        width: 40.0,
+                        height: 40.0,
                         child: SpinKitFadingCircle(
                           color: FlutterFlowTheme.of(context).primary,
-                          size: 40,
+                          size: 40.0,
                         ),
                       ),
                     );
@@ -401,8 +401,8 @@ class _AccountWidgetState extends State<AccountWidget>
                         Expanded(
                           flex: 3,
                           child: Container(
-                            width: MediaQuery.sizeOf(context).width,
-                            height: 100,
+                            width: MediaQuery.sizeOf(context).width * 1.0,
+                            height: 100.0,
                             decoration: BoxDecoration(),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -411,7 +411,7 @@ class _AccountWidgetState extends State<AccountWidget>
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 0, 15),
+                                      0.0, 0.0, 0.0, 15.0),
                                   child: Container(
                                     width:
                                         MediaQuery.sizeOf(context).width * 0.85,
@@ -434,15 +434,15 @@ class _AccountWidgetState extends State<AccountWidget>
                                                   0.1,
                                               decoration: BoxDecoration(),
                                               child: FlutterFlowIconButton(
-                                                borderRadius: 20,
-                                                borderWidth: 1,
-                                                buttonSize: 40,
+                                                borderRadius: 20.0,
+                                                borderWidth: 1.0,
+                                                buttonSize: 40.0,
                                                 icon: Icon(
                                                   Icons.chevron_left,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .lineColor,
-                                                  size: 24,
+                                                  size: 24.0,
                                                 ),
                                                 onPressed: () async {
                                                   context.safePop();
@@ -488,21 +488,21 @@ class _AccountWidgetState extends State<AccountWidget>
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .lineColor,
-                                                    size: 28,
+                                                    size: 28.0,
                                                   ),
                                                   Icon(
                                                     Icons.phone,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .lineColor,
-                                                    size: 20,
+                                                    size: 20.0,
                                                   ),
                                                   Icon(
                                                     Icons.group_work_rounded,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .lineColor,
-                                                    size: 20,
+                                                    size: 20.0,
                                                   ),
                                                 ],
                                               ),
@@ -620,15 +620,15 @@ class _AccountWidgetState extends State<AccountWidget>
                                                   FlutterFlowIconButton(
                                                     borderColor:
                                                         Colors.transparent,
-                                                    borderRadius: 8,
-                                                    buttonSize: 45,
+                                                    borderRadius: 8.0,
+                                                    buttonSize: 45.0,
                                                     icon: Icon(
                                                       Icons.addchart,
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .lineColor,
-                                                      size: 18,
+                                                      size: 18.0,
                                                     ),
                                                     onPressed: () {
                                                       print(
@@ -638,15 +638,15 @@ class _AccountWidgetState extends State<AccountWidget>
                                                   FlutterFlowIconButton(
                                                     borderColor:
                                                         Colors.transparent,
-                                                    borderRadius: 8,
-                                                    buttonSize: 45,
+                                                    borderRadius: 8.0,
+                                                    buttonSize: 45.0,
                                                     icon: Icon(
                                                       Icons.home,
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .lineColor,
-                                                      size: 18,
+                                                      size: 18.0,
                                                     ),
                                                     onPressed: () {
                                                       print(
@@ -656,15 +656,15 @@ class _AccountWidgetState extends State<AccountWidget>
                                                   FlutterFlowIconButton(
                                                     borderColor:
                                                         Colors.transparent,
-                                                    borderRadius: 30,
-                                                    buttonSize: 45,
+                                                    borderRadius: 30.0,
+                                                    buttonSize: 45.0,
                                                     icon: Icon(
                                                       Icons.edit_sharp,
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .lineColor,
-                                                      size: 22,
+                                                      size: 22.0,
                                                     ),
                                                     onPressed: () async {
                                                       context.pushNamed(
@@ -700,20 +700,20 @@ class _AccountWidgetState extends State<AccountWidget>
                         Expanded(
                           flex: 7,
                           child: Container(
-                            width: MediaQuery.sizeOf(context).width,
+                            width: MediaQuery.sizeOf(context).width * 1.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .parkingPrimaryBackground,
                               borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(0),
-                                bottomRight: Radius.circular(0),
-                                topLeft: Radius.circular(0),
-                                topRight: Radius.circular(0),
+                                bottomLeft: Radius.circular(0.0),
+                                bottomRight: Radius.circular(0.0),
+                                topLeft: Radius.circular(0.0),
+                                topRight: Radius.circular(0.0),
                               ),
                             ),
                             child: Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 20.0, 0.0, 0.0),
                               child: SingleChildScrollView(
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -850,7 +850,7 @@ class _AccountWidgetState extends State<AccountWidget>
                                             decoration: BoxDecoration(
                                               color: Color(0x00FFFFFF),
                                               borderRadius:
-                                                  BorderRadius.circular(5),
+                                                  BorderRadius.circular(5.0),
                                             ),
                                             child: Stack(
                                               children: [
@@ -861,7 +861,7 @@ class _AccountWidgetState extends State<AccountWidget>
                                                     color: Color(0x4C989FDE),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            0),
+                                                            0.0),
                                                   ),
                                                 ).animateOnActionTrigger(
                                                     animationsMap[
@@ -871,7 +871,7 @@ class _AccountWidgetState extends State<AccountWidget>
                                                 Align(
                                                   alignment:
                                                       AlignmentDirectional(
-                                                          0, 0),
+                                                          0.0, 0.0),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -889,16 +889,16 @@ class _AccountWidgetState extends State<AccountWidget>
                                                             FlutterFlowIconButton(
                                                           borderColor: Colors
                                                               .transparent,
-                                                          borderRadius: 30,
-                                                          borderWidth: 1,
-                                                          buttonSize: 60,
+                                                          borderRadius: 30.0,
+                                                          borderWidth: 1.0,
+                                                          buttonSize: 60.0,
                                                           icon: Icon(
                                                             Icons
                                                                 .add_business_outlined,
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .info,
-                                                            size: 24,
+                                                            size: 24.0,
                                                           ),
                                                           onPressed: () {
                                                             print(
@@ -909,8 +909,11 @@ class _AccountWidgetState extends State<AccountWidget>
                                                       Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
-                                                                .fromSTEB(15, 0,
-                                                                    0, 0),
+                                                                .fromSTEB(
+                                                                    15.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
                                                         child: AutoSizeText(
                                                           FFLocalizations.of(
                                                                   context)
@@ -949,8 +952,8 @@ class _AccountWidgetState extends State<AccountWidget>
                                     ),
                                     Divider(
                                       thickness: 0.5,
-                                      indent: 40,
-                                      endIndent: 40,
+                                      indent: 40.0,
+                                      endIndent: 40.0,
                                       color: FlutterFlowTheme.of(context)
                                           .customColor1,
                                     ),
@@ -1068,7 +1071,7 @@ class _AccountWidgetState extends State<AccountWidget>
                                             decoration: BoxDecoration(
                                               color: Color(0x00FFFFFF),
                                               borderRadius:
-                                                  BorderRadius.circular(5),
+                                                  BorderRadius.circular(5.0),
                                             ),
                                             child: Stack(
                                               children: [
@@ -1079,7 +1082,7 @@ class _AccountWidgetState extends State<AccountWidget>
                                                     color: Color(0x4C989FDE),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            0),
+                                                            0.0),
                                                   ),
                                                 ).animateOnActionTrigger(
                                                     animationsMap[
@@ -1089,7 +1092,7 @@ class _AccountWidgetState extends State<AccountWidget>
                                                 Align(
                                                   alignment:
                                                       AlignmentDirectional(
-                                                          0, 0),
+                                                          0.0, 0.0),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -1107,15 +1110,15 @@ class _AccountWidgetState extends State<AccountWidget>
                                                             FlutterFlowIconButton(
                                                           borderColor: Colors
                                                               .transparent,
-                                                          borderRadius: 30,
-                                                          borderWidth: 1,
-                                                          buttonSize: 60,
+                                                          borderRadius: 30.0,
+                                                          borderWidth: 1.0,
+                                                          buttonSize: 60.0,
                                                           icon: Icon(
                                                             Icons.content_paste,
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .info,
-                                                            size: 24,
+                                                            size: 24.0,
                                                           ),
                                                           onPressed: () {
                                                             print(
@@ -1126,8 +1129,11 @@ class _AccountWidgetState extends State<AccountWidget>
                                                       Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
-                                                                .fromSTEB(15, 0,
-                                                                    0, 0),
+                                                                .fromSTEB(
+                                                                    15.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
                                                         child: AutoSizeText(
                                                           FFLocalizations.of(
                                                                   context)
@@ -1166,8 +1172,8 @@ class _AccountWidgetState extends State<AccountWidget>
                                     ),
                                     Divider(
                                       thickness: 0.5,
-                                      indent: 40,
-                                      endIndent: 40,
+                                      indent: 40.0,
+                                      endIndent: 40.0,
                                       color: FlutterFlowTheme.of(context)
                                           .customColor1,
                                     ),
@@ -1245,14 +1251,14 @@ class _AccountWidgetState extends State<AccountWidget>
                                             decoration: BoxDecoration(
                                               color: Color(0x00FFFFFF),
                                               borderRadius:
-                                                  BorderRadius.circular(5),
+                                                  BorderRadius.circular(5.0),
                                             ),
                                             child: Stack(
                                               children: [
                                                 Align(
                                                   alignment:
                                                       AlignmentDirectional(
-                                                          0, 0),
+                                                          0.0, 0.0),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -1270,15 +1276,15 @@ class _AccountWidgetState extends State<AccountWidget>
                                                             FlutterFlowIconButton(
                                                           borderColor: Colors
                                                               .transparent,
-                                                          borderRadius: 30,
-                                                          borderWidth: 1,
-                                                          buttonSize: 60,
+                                                          borderRadius: 30.0,
+                                                          borderWidth: 1.0,
+                                                          buttonSize: 60.0,
                                                           icon: Icon(
                                                             Icons.attach_money,
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .info,
-                                                            size: 25,
+                                                            size: 25.0,
                                                           ),
                                                           onPressed: () {
                                                             print(
@@ -1289,8 +1295,11 @@ class _AccountWidgetState extends State<AccountWidget>
                                                       Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
-                                                                .fromSTEB(15, 0,
-                                                                    0, 0),
+                                                                .fromSTEB(
+                                                                    15.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
                                                         child: AutoSizeText(
                                                           FFLocalizations.of(
                                                                   context)
@@ -1337,7 +1346,7 @@ class _AccountWidgetState extends State<AccountWidget>
                                                       color: Color(0x4C989FDE),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              0),
+                                                              0.0),
                                                     ),
                                                   ),
                                                 ).animateOnActionTrigger(
@@ -1357,8 +1366,8 @@ class _AccountWidgetState extends State<AccountWidget>
                                     ),
                                     Divider(
                                       thickness: 0.5,
-                                      indent: 40,
-                                      endIndent: 40,
+                                      indent: 40.0,
+                                      endIndent: 40.0,
                                       color: FlutterFlowTheme.of(context)
                                           .customColor1,
                                     ),
@@ -1400,14 +1409,14 @@ class _AccountWidgetState extends State<AccountWidget>
                                             decoration: BoxDecoration(
                                               color: Color(0x00FFFFFF),
                                               borderRadius:
-                                                  BorderRadius.circular(5),
+                                                  BorderRadius.circular(5.0),
                                             ),
                                             child: Stack(
                                               children: [
                                                 Align(
                                                   alignment:
                                                       AlignmentDirectional(
-                                                          0, 0),
+                                                          0.0, 0.0),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -1425,15 +1434,15 @@ class _AccountWidgetState extends State<AccountWidget>
                                                             FlutterFlowIconButton(
                                                           borderColor: Colors
                                                               .transparent,
-                                                          borderRadius: 30,
-                                                          borderWidth: 1,
-                                                          buttonSize: 60,
+                                                          borderRadius: 30.0,
+                                                          borderWidth: 1.0,
+                                                          buttonSize: 60.0,
                                                           icon: Icon(
                                                             Icons.print_rounded,
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .info,
-                                                            size: 25,
+                                                            size: 25.0,
                                                           ),
                                                           onPressed: () {
                                                             print(
@@ -1444,8 +1453,11 @@ class _AccountWidgetState extends State<AccountWidget>
                                                       Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
-                                                                .fromSTEB(15, 0,
-                                                                    0, 0),
+                                                                .fromSTEB(
+                                                                    15.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
                                                         child: AutoSizeText(
                                                           FFLocalizations.of(
                                                                   context)
@@ -1479,7 +1491,7 @@ class _AccountWidgetState extends State<AccountWidget>
                                                     color: Color(0x4C989FDE),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            0),
+                                                            0.0),
                                                   ),
                                                 ).animateOnActionTrigger(
                                                     animationsMap[
@@ -1498,8 +1510,8 @@ class _AccountWidgetState extends State<AccountWidget>
                                     ),
                                     Divider(
                                       thickness: 0.5,
-                                      indent: 40,
-                                      endIndent: 40,
+                                      indent: 40.0,
+                                      endIndent: 40.0,
                                       color: FlutterFlowTheme.of(context)
                                           .customColor1,
                                     ),
@@ -1551,7 +1563,7 @@ class _AccountWidgetState extends State<AccountWidget>
                                             decoration: BoxDecoration(
                                               color: Color(0x00FFFFFF),
                                               borderRadius:
-                                                  BorderRadius.circular(5),
+                                                  BorderRadius.circular(5.0),
                                             ),
                                             child: Stack(
                                               children: [
@@ -1562,7 +1574,7 @@ class _AccountWidgetState extends State<AccountWidget>
                                                     color: Color(0x4C989FDE),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            0),
+                                                            0.0),
                                                   ),
                                                 ).animateOnActionTrigger(
                                                     animationsMap[
@@ -1585,15 +1597,15 @@ class _AccountWidgetState extends State<AccountWidget>
                                                           FlutterFlowIconButton(
                                                         borderColor:
                                                             Colors.transparent,
-                                                        borderRadius: 30,
-                                                        borderWidth: 1,
-                                                        buttonSize: 60,
+                                                        borderRadius: 30.0,
+                                                        borderWidth: 1.0,
+                                                        buttonSize: 60.0,
                                                         icon: Icon(
                                                           Icons.chat,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .info,
-                                                          size: 24,
+                                                          size: 24.0,
                                                         ),
                                                         onPressed: () {
                                                           print(
@@ -1605,7 +1617,10 @@ class _AccountWidgetState extends State<AccountWidget>
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  15, 0, 0, 0),
+                                                                  15.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
                                                       child: AutoSizeText(
                                                         FFLocalizations.of(
                                                                 context)
@@ -1644,8 +1659,8 @@ class _AccountWidgetState extends State<AccountWidget>
                                     ),
                                     Divider(
                                       thickness: 0.5,
-                                      indent: 40,
-                                      endIndent: 40,
+                                      indent: 40.0,
+                                      endIndent: 40.0,
                                       color: FlutterFlowTheme.of(context)
                                           .customColor1,
                                     ),
@@ -1699,7 +1714,7 @@ class _AccountWidgetState extends State<AccountWidget>
                                             decoration: BoxDecoration(
                                               color: Color(0x00FFFFFF),
                                               borderRadius:
-                                                  BorderRadius.circular(5),
+                                                  BorderRadius.circular(5.0),
                                             ),
                                             child: Stack(
                                               children: [
@@ -1710,7 +1725,7 @@ class _AccountWidgetState extends State<AccountWidget>
                                                     color: Color(0x4C989FDE),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            0),
+                                                            0.0),
                                                   ),
                                                 ).animateOnActionTrigger(
                                                     animationsMap[
@@ -1733,15 +1748,15 @@ class _AccountWidgetState extends State<AccountWidget>
                                                           FlutterFlowIconButton(
                                                         borderColor:
                                                             Colors.transparent,
-                                                        borderRadius: 30,
-                                                        borderWidth: 1,
-                                                        buttonSize: 60,
+                                                        borderRadius: 30.0,
+                                                        borderWidth: 1.0,
+                                                        buttonSize: 60.0,
                                                         icon: Icon(
                                                           Icons.devices_rounded,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .info,
-                                                          size: 24,
+                                                          size: 24.0,
                                                         ),
                                                         onPressed: () {
                                                           print(
@@ -1753,7 +1768,10 @@ class _AccountWidgetState extends State<AccountWidget>
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  15, 0, 0, 0),
+                                                                  15.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
                                                       child: AutoSizeText(
                                                         FFLocalizations.of(
                                                                 context)
@@ -1792,8 +1810,8 @@ class _AccountWidgetState extends State<AccountWidget>
                                     ),
                                     Divider(
                                       thickness: 0.5,
-                                      indent: 40,
-                                      endIndent: 40,
+                                      indent: 40.0,
+                                      endIndent: 40.0,
                                       color: FlutterFlowTheme.of(context)
                                           .customColor1,
                                     ),
@@ -1845,7 +1863,7 @@ class _AccountWidgetState extends State<AccountWidget>
                                             decoration: BoxDecoration(
                                               color: Color(0x00FFFFFF),
                                               borderRadius:
-                                                  BorderRadius.circular(5),
+                                                  BorderRadius.circular(5.0),
                                             ),
                                             child: Stack(
                                               children: [
@@ -1856,7 +1874,7 @@ class _AccountWidgetState extends State<AccountWidget>
                                                     color: Color(0x4C989FDE),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            0),
+                                                            0.0),
                                                   ),
                                                 ).animateOnActionTrigger(
                                                     animationsMap[
@@ -1879,15 +1897,15 @@ class _AccountWidgetState extends State<AccountWidget>
                                                           FlutterFlowIconButton(
                                                         borderColor:
                                                             Colors.transparent,
-                                                        borderRadius: 30,
-                                                        borderWidth: 1,
-                                                        buttonSize: 60,
+                                                        borderRadius: 30.0,
+                                                        borderWidth: 1.0,
+                                                        buttonSize: 60.0,
                                                         icon: Icon(
                                                           Icons.business,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .info,
-                                                          size: 24,
+                                                          size: 24.0,
                                                         ),
                                                         onPressed: () {
                                                           print(
@@ -1899,7 +1917,10 @@ class _AccountWidgetState extends State<AccountWidget>
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  15, 0, 0, 0),
+                                                                  15.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
                                                       child: AutoSizeText(
                                                         FFLocalizations.of(
                                                                 context)
@@ -1938,8 +1959,8 @@ class _AccountWidgetState extends State<AccountWidget>
                                     ),
                                     Divider(
                                       thickness: 0.5,
-                                      indent: 40,
-                                      endIndent: 40,
+                                      indent: 40.0,
+                                      endIndent: 40.0,
                                       color: FlutterFlowTheme.of(context)
                                           .customColor1,
                                     ),
@@ -1999,7 +2020,7 @@ class _AccountWidgetState extends State<AccountWidget>
                                             decoration: BoxDecoration(
                                               color: Color(0x00FFFFFF),
                                               borderRadius:
-                                                  BorderRadius.circular(5),
+                                                  BorderRadius.circular(5.0),
                                             ),
                                             child: Stack(
                                               children: [
@@ -2010,7 +2031,7 @@ class _AccountWidgetState extends State<AccountWidget>
                                                     color: Color(0x4C989FDE),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            0),
+                                                            0.0),
                                                   ),
                                                 ).animateOnActionTrigger(
                                                     animationsMap[
@@ -2020,7 +2041,7 @@ class _AccountWidgetState extends State<AccountWidget>
                                                 Align(
                                                   alignment:
                                                       AlignmentDirectional(
-                                                          0, 0),
+                                                          0.0, 0.0),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -2038,15 +2059,15 @@ class _AccountWidgetState extends State<AccountWidget>
                                                             FlutterFlowIconButton(
                                                           borderColor: Colors
                                                               .transparent,
-                                                          borderRadius: 30,
-                                                          borderWidth: 1,
-                                                          buttonSize: 60,
+                                                          borderRadius: 30.0,
+                                                          borderWidth: 1.0,
+                                                          buttonSize: 60.0,
                                                           icon: Icon(
                                                             Icons.logout,
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .info,
-                                                            size: 24,
+                                                            size: 24.0,
                                                           ),
                                                           onPressed: () {
                                                             print(
@@ -2057,8 +2078,11 @@ class _AccountWidgetState extends State<AccountWidget>
                                                       Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
-                                                                .fromSTEB(15, 0,
-                                                                    0, 0),
+                                                                .fromSTEB(
+                                                                    15.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
                                                         child: AutoSizeText(
                                                           FFLocalizations.of(
                                                                   context)
@@ -2097,8 +2121,8 @@ class _AccountWidgetState extends State<AccountWidget>
                                     ),
                                     Divider(
                                       thickness: 0.5,
-                                      indent: 40,
-                                      endIndent: 40,
+                                      indent: 40.0,
+                                      endIndent: 40.0,
                                       color: FlutterFlowTheme.of(context)
                                           .customColor2,
                                     ),
@@ -2117,7 +2141,7 @@ class _AccountWidgetState extends State<AccountWidget>
                                           decoration: BoxDecoration(
                                             color: Color(0x00FFFFFF),
                                             borderRadius:
-                                                BorderRadius.circular(5),
+                                                BorderRadius.circular(5.0),
                                           ),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -2131,12 +2155,13 @@ class _AccountWidgetState extends State<AccountWidget>
                                                 decoration: BoxDecoration(),
                                                 child: Icon(
                                                   Icons.settings_sharp,
-                                                  size: 0,
+                                                  size: 0.0,
                                                 ),
                                               ),
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(15, 0, 0, 0),
+                                                    .fromSTEB(
+                                                        15.0, 0.0, 0.0, 0.0),
                                                 child: AutoSizeText(
                                                   FFLocalizations.of(context)
                                                       .getText(

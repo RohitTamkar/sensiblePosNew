@@ -166,7 +166,7 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                 },
                 backgroundColor:
                     FlutterFlowTheme.of(context).secondaryBackground,
-                elevation: 8,
+                elevation: 8.0,
                 label: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -176,11 +176,11 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                       children: [
                         FlutterFlowIconButton(
                           borderColor: Colors.transparent,
-                          buttonSize: 30,
+                          buttonSize: 30.0,
                           icon: Icon(
                             Icons.print,
                             color: FlutterFlowTheme.of(context).primary,
-                            size: 20,
+                            size: 20.0,
                           ),
                           onPressed: () {
                             print('IconButton pressed ...');
@@ -209,14 +209,14 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
               ),
             ),
             body: Padding(
-              padding: EdgeInsets.all(3),
+              padding: EdgeInsets.all(3.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(
                     child: Container(
-                      width: MediaQuery.sizeOf(context).width,
+                      width: MediaQuery.sizeOf(context).width * 1.0,
                       height: MediaQuery.sizeOf(context).height * 0.12,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primary,
@@ -229,22 +229,22 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                           Expanded(
                             flex: 1,
                             child: Container(
-                              width: 100,
-                              height: 100,
+                              width: 100.0,
+                              height: 100.0,
                               decoration: BoxDecoration(),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   FlutterFlowIconButton(
                                     borderColor: Colors.transparent,
-                                    borderRadius: 30,
-                                    borderWidth: 1,
-                                    buttonSize: 60,
+                                    borderRadius: 30.0,
+                                    borderWidth: 1.0,
+                                    buttonSize: 60.0,
                                     icon: Icon(
                                       Icons.chevron_left_sharp,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBtnText,
-                                      size: 26,
+                                      size: 26.0,
                                     ),
                                     onPressed: () async {
                                       context.safePop();
@@ -281,8 +281,8 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                           Expanded(
                             flex: 3,
                             child: Container(
-                              width: 100,
-                              height: 100,
+                              width: 100.0,
+                              height: 100.0,
                               decoration: BoxDecoration(),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -290,7 +290,7 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 15, 0),
+                                        0.0, 0.0, 15.0, 0.0),
                                     child: Text(
                                       dateTimeFormat(
                                         "yMMMd",
@@ -316,7 +316,7 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        5, 5, 10, 5),
+                                        5.0, 5.0, 10.0, 5.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
                                       focusColor: Colors.transparent,
@@ -347,17 +347,17 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                       },
                                       child: Material(
                                         color: Colors.transparent,
-                                        elevation: 2,
+                                        elevation: 2.0,
                                         shape: RoundedRectangleBorder(
                                           borderRadius:
-                                              BorderRadius.circular(5),
+                                              BorderRadius.circular(5.0),
                                         ),
                                         child: Container(
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .secondary,
                                             borderRadius:
-                                                BorderRadius.circular(5),
+                                                BorderRadius.circular(5.0),
                                           ),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.min,
@@ -366,7 +366,8 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                             children: [
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(10, 15, 10, 15),
+                                                    .fromSTEB(
+                                                        10.0, 15.0, 10.0, 15.0),
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
@@ -420,10 +421,11 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                   Expanded(
                     flex: 13,
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
                       child: Container(
-                        width: MediaQuery.sizeOf(context).width,
-                        height: 100,
+                        width: MediaQuery.sizeOf(context).width * 1.0,
+                        height: 100.0,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).primaryBackground,
                         ),
@@ -432,7 +434,7 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Container(
-                                width: MediaQuery.sizeOf(context).width,
+                                width: MediaQuery.sizeOf(context).width * 1.0,
                                 height:
                                     MediaQuery.sizeOf(context).height * 0.06,
                                 decoration: BoxDecoration(
@@ -445,12 +447,12 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          10, 0, 0, 0),
+                                          10.0, 0.0, 0.0, 0.0),
                                       child: Container(
                                         width:
                                             MediaQuery.sizeOf(context).width *
                                                 0.08,
-                                        height: 100,
+                                        height: 100.0,
                                         decoration: BoxDecoration(),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -492,7 +494,7 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                     Container(
                                       width: MediaQuery.sizeOf(context).width *
                                           0.29,
-                                      height: 100,
+                                      height: 100.0,
                                       decoration: BoxDecoration(),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -528,11 +530,11 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                     Container(
                                       width: MediaQuery.sizeOf(context).width *
                                           0.27,
-                                      height: 100,
+                                      height: 100.0,
                                       decoration: BoxDecoration(),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 30, 0),
+                                            0.0, 0.0, 30.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -540,7 +542,7 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 2, 0),
+                                                  .fromSTEB(0.0, 0.0, 2.0, 0.0),
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -575,12 +577,12 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 60, 0),
+                                          0.0, 0.0, 60.0, 0.0),
                                       child: Container(
                                         width:
                                             MediaQuery.sizeOf(context).width *
                                                 0.28,
-                                        height: 100,
+                                        height: 100.0,
                                         decoration: BoxDecoration(),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -626,9 +628,10 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        3, 0, 3, 0),
+                                        3.0, 0.0, 3.0, 0.0),
                                     child: Container(
-                                      width: MediaQuery.sizeOf(context).width,
+                                      width: MediaQuery.sizeOf(context).width *
+                                          1.0,
                                       height:
                                           MediaQuery.sizeOf(context).height *
                                               0.9,
@@ -670,13 +673,13 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                           firstPageProgressIndicatorBuilder:
                                               (_) => Center(
                                             child: SizedBox(
-                                              width: 40,
-                                              height: 40,
+                                              width: 40.0,
+                                              height: 40.0,
                                               child: SpinKitFadingCircle(
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
-                                                size: 40,
+                                                size: 40.0,
                                               ),
                                             ),
                                           ),
@@ -684,13 +687,13 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                           newPageProgressIndicatorBuilder:
                                               (_) => Center(
                                             child: SizedBox(
-                                              width: 40,
-                                              height: 40,
+                                              width: 40.0,
+                                              height: 40.0,
                                               child: SpinKitFadingCircle(
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
-                                                size: 40,
+                                                size: 40.0,
                                               ),
                                             ),
                                           ),
@@ -709,8 +712,8 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                10, 10, 5, 0),
+                                                            .fromSTEB(10.0,
+                                                                10.0, 5.0, 0.0),
                                                     child: InkWell(
                                                       splashColor:
                                                           Colors.transparent,
@@ -737,8 +740,9 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                                       child: Container(
                                                         width:
                                                             MediaQuery.sizeOf(
-                                                                    context)
-                                                                .width,
+                                                                        context)
+                                                                    .width *
+                                                                1.0,
                                                         height:
                                                             MediaQuery.sizeOf(
                                                                         context)
@@ -768,7 +772,7 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                                                               context)
                                                                       .width *
                                                                   0.06,
-                                                              height: 100,
+                                                              height: 100.0,
                                                               decoration:
                                                                   BoxDecoration(
                                                                 color: FlutterFlowTheme.of(
@@ -807,16 +811,16 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          20,
-                                                                          0,
-                                                                          0,
-                                                                          0),
+                                                                          20.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                               child: Container(
                                                                 width: MediaQuery.sizeOf(
                                                                             context)
                                                                         .width *
                                                                     0.29,
-                                                                height: 100,
+                                                                height: 100.0,
                                                                 decoration:
                                                                     BoxDecoration(
                                                                   color: FlutterFlowTheme.of(
@@ -854,16 +858,16 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          1,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          1.0,
+                                                                          0.0),
                                                               child: Container(
                                                                 width: MediaQuery.sizeOf(
                                                                             context)
                                                                         .width *
                                                                     0.27,
-                                                                height: 100,
+                                                                height: 100.0,
                                                                 decoration:
                                                                     BoxDecoration(
                                                                   color: FlutterFlowTheme.of(
@@ -873,10 +877,10 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                                                 child: Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          18,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          18.0,
+                                                                          0.0),
                                                                   child: Column(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -907,7 +911,7 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                                                               context)
                                                                       .width *
                                                                   0.28,
-                                                              height: 100,
+                                                              height: 100.0,
                                                               decoration:
                                                                   BoxDecoration(
                                                                 color: FlutterFlowTheme.of(
@@ -948,16 +952,16 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          10,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          10.0,
+                                                                          0.0),
                                                               child: Container(
                                                                 width: MediaQuery.sizeOf(
                                                                             context)
                                                                         .width *
                                                                     0.05,
-                                                                height: 100,
+                                                                height: 100.0,
                                                                 decoration:
                                                                     BoxDecoration(
                                                                   color: FlutterFlowTheme.of(
@@ -977,9 +981,9 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                                                           Colors
                                                                               .transparent,
                                                                       borderWidth:
-                                                                          1,
+                                                                          1.0,
                                                                       buttonSize:
-                                                                          40,
+                                                                          40.0,
                                                                       icon:
                                                                           Icon(
                                                                         Icons
@@ -987,7 +991,7 @@ class _BillReportNewWidgetState extends State<BillReportNewWidget>
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         size:
-                                                                            24,
+                                                                            24.0,
                                                                       ),
                                                                       onPressed:
                                                                           () async {

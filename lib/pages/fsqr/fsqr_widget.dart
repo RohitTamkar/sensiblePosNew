@@ -61,7 +61,7 @@ class _FsqrWidgetState extends State<FsqrWidget> {
                   flex: 7,
                   child: Container(
                     width: double.infinity,
-                    height: 100,
+                    height: 100.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).primaryBackground,
                     ),
@@ -70,22 +70,24 @@ class _FsqrWidgetState extends State<FsqrWidget> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 30.0, 0.0, 0.0),
                           child: ClipRRect(
-                            borderRadius: BorderRadius.circular(8),
+                            borderRadius: BorderRadius.circular(8.0),
                             child: Image.network(
                               getJsonField(
                                 widget!.json,
                                 r'''$.image_url''',
                               ).toString(),
-                              width: 500,
-                              height: 500,
+                              width: 500.0,
+                              height: 500.0,
                               fit: BoxFit.cover,
                             ),
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 30.0, 0.0, 0.0),
                           child: Text(
                             getJsonField(
                               widget!.json,
@@ -149,11 +151,11 @@ class _FsqrWidgetState extends State<FsqrWidget> {
                             if (!snapshot.hasData) {
                               return Center(
                                 child: SizedBox(
-                                  width: 40,
-                                  height: 40,
+                                  width: 40.0,
+                                  height: 40.0,
                                   child: SpinKitFadingCircle(
                                     color: FlutterFlowTheme.of(context).primary,
-                                    size: 40,
+                                    size: 40.0,
                                   ),
                                 ),
                               );

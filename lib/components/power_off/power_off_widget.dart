@@ -45,20 +45,20 @@ class _PowerOffWidgetState extends State<PowerOffWidget> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          width: 300,
-          height: 200,
+          width: 300.0,
+          height: 200.0,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
           ),
           child: Padding(
-            padding: EdgeInsets.all(10),
+            padding: EdgeInsets.all(10.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Container(
                   width: double.infinity,
-                  height: 35,
+                  height: 35.0,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                   ),
@@ -66,11 +66,12 @@ class _PowerOffWidgetState extends State<PowerOffWidget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(15, 0, 15, 0),
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            15.0, 0.0, 15.0, 0.0),
                         child: Icon(
                           Icons.replay_sharp,
                           color: Colors.black,
-                          size: 24,
+                          size: 24.0,
                         ),
                       ),
                       Text(
@@ -102,7 +103,7 @@ class _PowerOffWidgetState extends State<PowerOffWidget> {
                   },
                   child: Container(
                     width: double.infinity,
-                    height: 35,
+                    height: 35.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),
@@ -110,11 +111,12 @@ class _PowerOffWidgetState extends State<PowerOffWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(15, 0, 15, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              15.0, 0.0, 15.0, 0.0),
                           child: Icon(
                             Icons.logout,
                             color: Colors.black,
-                            size: 24,
+                            size: 24.0,
                           ),
                         ),
                         Text(
@@ -147,7 +149,7 @@ class _PowerOffWidgetState extends State<PowerOffWidget> {
                   },
                   child: Container(
                     width: double.infinity,
-                    height: 35,
+                    height: 35.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),
@@ -155,11 +157,12 @@ class _PowerOffWidgetState extends State<PowerOffWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(15, 0, 15, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              15.0, 0.0, 15.0, 0.0),
                           child: Icon(
                             Icons.arrow_back_sharp,
                             color: Colors.black,
-                            size: 24,
+                            size: 24.0,
                           ),
                         ),
                         Text(

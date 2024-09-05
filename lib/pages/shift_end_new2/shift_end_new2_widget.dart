@@ -73,8 +73,8 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: 0,
-            end: 1,
+            begin: 0.0,
+            end: 1.0,
           ),
         ],
       ),
@@ -115,7 +115,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                 Expanded(
                   flex: 1,
                   child: Container(
-                    width: MediaQuery.sizeOf(context).width,
+                    width: MediaQuery.sizeOf(context).width * 1.0,
                     height: MediaQuery.sizeOf(context).height * 0.12,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).primary,
@@ -128,22 +128,22 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                         Expanded(
                           flex: 1,
                           child: Container(
-                            width: 100,
-                            height: 100,
+                            width: 100.0,
+                            height: 100.0,
                             decoration: BoxDecoration(),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
-                                  borderRadius: 30,
-                                  borderWidth: 1,
-                                  buttonSize: 60,
+                                  borderRadius: 30.0,
+                                  borderWidth: 1.0,
+                                  buttonSize: 60.0,
                                   icon: Icon(
                                     Icons.chevron_left_sharp,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBtnText,
-                                    size: 26,
+                                    size: 26.0,
                                   ),
                                   onPressed: () async {
                                     context.pop();
@@ -179,7 +179,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                   flex: 13,
                   child: Container(
                     width: double.infinity,
-                    height: 100,
+                    height: 100.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).primaryBackground,
                     ),
@@ -190,10 +190,11 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                         Expanded(
                           flex: 1,
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(1, 2, 1, 3),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                1.0, 2.0, 1.0, 3.0),
                             child: Container(
                               width: double.infinity,
-                              height: 100,
+                              height: 100.0,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context).secondary,
                               ),
@@ -215,7 +216,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 5, 0),
+                                                    0.0, 0.0, 5.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -247,7 +248,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 5, 0),
+                                                    0.0, 0.0, 5.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
                                                 FFAppState()
@@ -297,7 +298,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 5, 0),
+                                                    0.0, 0.0, 5.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -329,7 +330,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                           Expanded(
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 0, 3),
+                                                  .fromSTEB(0.0, 0.0, 0.0, 3.0),
                                               child: TextFormField(
                                                 controller:
                                                     _model.textController,
@@ -345,7 +346,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                         fontFamily: 'Lora',
                                                         color:
                                                             Color(0xFF000133),
-                                                        fontSize: 14,
+                                                        fontSize: 14.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.normal,
@@ -568,7 +569,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .lineColor,
-                                              size: 24,
+                                              size: 24.0,
                                             ),
                                           ],
                                         ),
@@ -583,10 +584,10 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                         Expanded(
                           flex: 10,
                           child: Padding(
-                            padding: EdgeInsets.all(2),
+                            padding: EdgeInsets.all(2.0),
                             child: Container(
                               width: double.infinity,
-                              height: 100,
+                              height: 100.0,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
@@ -598,7 +599,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                     flex: 1,
                                     child: Container(
                                       width: double.infinity,
-                                      height: 100,
+                                      height: 100.0,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
@@ -633,7 +634,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 4, 0),
+                                                    0.0, 0.0, 4.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -695,7 +696,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                     flex: 10,
                                     child: Container(
                                       width: double.infinity,
-                                      height: 100,
+                                      height: 100.0,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
@@ -705,7 +706,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                         children: [
                                           Expanded(
                                             child: Container(
-                                              width: 100,
+                                              width: 100.0,
                                               height: double.infinity,
                                               decoration: BoxDecoration(
                                                 color:
@@ -719,7 +720,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                     flex: 1,
                                                     child: Container(
                                                       width: double.infinity,
-                                                      height: 100,
+                                                      height: 100.0,
                                                       decoration: BoxDecoration(
                                                         color:
                                                             FlutterFlowTheme.of(
@@ -770,10 +771,13 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0, 3, 0, 0),
+                                                                  0.0,
+                                                                  3.0,
+                                                                  0.0,
+                                                                  0.0),
                                                       child: Container(
                                                         width: double.infinity,
-                                                        height: 100,
+                                                        height: 100.0,
                                                         decoration:
                                                             BoxDecoration(
                                                           color: FlutterFlowTheme
@@ -795,7 +799,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                             Padding(
                                                               padding:
                                                                   EdgeInsets
-                                                                      .all(2),
+                                                                      .all(2.0),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -807,12 +811,11 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              2,
-                                                                              0,
-                                                                              3,
-                                                                              2),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          2.0,
+                                                                          0.0,
+                                                                          3.0,
+                                                                          2.0),
                                                                       child:
                                                                           Container(
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -826,16 +829,16 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondaryBackground,
                                                                             width:
-                                                                                1,
+                                                                                1.0,
                                                                           ),
                                                                         ),
                                                                         child:
                                                                             Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5,
-                                                                              0,
-                                                                              5,
-                                                                              3),
+                                                                              5.0,
+                                                                              0.0,
+                                                                              5.0,
+                                                                              3.0),
                                                                           child:
                                                                               Row(
                                                                             mainAxisSize:
@@ -844,7 +847,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                                 MainAxisAlignment.start,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                 child: Container(
                                                                                   width: MediaQuery.sizeOf(context).width * 0.09,
                                                                                   height: MediaQuery.sizeOf(context).height * 0.04,
@@ -878,14 +881,14 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                                 ),
                                                                               ),
                                                                               Container(
-                                                                                width: 100,
-                                                                                height: 100,
+                                                                                width: 100.0,
+                                                                                height: 100.0,
                                                                                 decoration: BoxDecoration(),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                       child: Text(
                                                                                         FFLocalizations.of(context).getText(
                                                                                           'wgo1bor8' /* ₹ */,
@@ -925,12 +928,11 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              3,
-                                                                              0,
-                                                                              2,
-                                                                              2),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          3.0,
+                                                                          0.0,
+                                                                          2.0,
+                                                                          2.0),
                                                                       child:
                                                                           Container(
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -944,23 +946,23 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondaryBackground,
                                                                             width:
-                                                                                1,
+                                                                                1.0,
                                                                           ),
                                                                         ),
                                                                         child:
                                                                             Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5,
-                                                                              0,
-                                                                              5,
-                                                                              3),
+                                                                              5.0,
+                                                                              0.0,
+                                                                              5.0,
+                                                                              3.0),
                                                                           child:
                                                                               Row(
                                                                             mainAxisSize:
                                                                                 MainAxisSize.max,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                 child: Container(
                                                                                   width: MediaQuery.sizeOf(context).width * 0.09,
                                                                                   height: MediaQuery.sizeOf(context).height * 0.04,
@@ -994,14 +996,14 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                                 ),
                                                                               ),
                                                                               Container(
-                                                                                width: 100,
-                                                                                height: 100,
+                                                                                width: 100.0,
+                                                                                height: 100.0,
                                                                                 decoration: BoxDecoration(),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                       child: Text(
                                                                                         FFLocalizations.of(context).getText(
                                                                                           'gsvkdd6h' /* ₹ */,
@@ -1044,7 +1046,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                             Padding(
                                                               padding:
                                                                   EdgeInsets
-                                                                      .all(2),
+                                                                      .all(2.0),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -1053,12 +1055,11 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              2,
-                                                                              0,
-                                                                              3,
-                                                                              2),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          2.0,
+                                                                          0.0,
+                                                                          3.0,
+                                                                          2.0),
                                                                       child:
                                                                           Container(
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -1072,23 +1073,23 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondaryBackground,
                                                                             width:
-                                                                                1,
+                                                                                1.0,
                                                                           ),
                                                                         ),
                                                                         child:
                                                                             Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5,
-                                                                              0,
-                                                                              5,
-                                                                              3),
+                                                                              5.0,
+                                                                              0.0,
+                                                                              5.0,
+                                                                              3.0),
                                                                           child:
                                                                               Row(
                                                                             mainAxisSize:
                                                                                 MainAxisSize.max,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                 child: Container(
                                                                                   width: MediaQuery.sizeOf(context).width * 0.09,
                                                                                   height: MediaQuery.sizeOf(context).height * 0.04,
@@ -1122,14 +1123,14 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                                 ),
                                                                               ),
                                                                               Container(
-                                                                                width: 100,
-                                                                                height: 100,
+                                                                                width: 100.0,
+                                                                                height: 100.0,
                                                                                 decoration: BoxDecoration(),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                       child: Text(
                                                                                         FFLocalizations.of(context).getText(
                                                                                           'kjhkh991' /* ₹ */,
@@ -1169,12 +1170,11 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              3,
-                                                                              0,
-                                                                              2,
-                                                                              2),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          3.0,
+                                                                          0.0,
+                                                                          2.0,
+                                                                          2.0),
                                                                       child:
                                                                           Container(
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -1188,23 +1188,23 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondaryBackground,
                                                                             width:
-                                                                                1,
+                                                                                1.0,
                                                                           ),
                                                                         ),
                                                                         child:
                                                                             Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5,
-                                                                              0,
-                                                                              5,
-                                                                              3),
+                                                                              5.0,
+                                                                              0.0,
+                                                                              5.0,
+                                                                              3.0),
                                                                           child:
                                                                               Row(
                                                                             mainAxisSize:
                                                                                 MainAxisSize.max,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                 child: Container(
                                                                                   width: MediaQuery.sizeOf(context).width * 0.09,
                                                                                   height: MediaQuery.sizeOf(context).height * 0.04,
@@ -1238,14 +1238,14 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                                 ),
                                                                               ),
                                                                               Container(
-                                                                                width: 100,
-                                                                                height: 100,
+                                                                                width: 100.0,
+                                                                                height: 100.0,
                                                                                 decoration: BoxDecoration(),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 2, 0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 0.0),
                                                                                       child: Text(
                                                                                         FFLocalizations.of(context).getText(
                                                                                           'hkj1oo7s' /* ₹ */,
@@ -1288,7 +1288,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                             Padding(
                                                               padding:
                                                                   EdgeInsets
-                                                                      .all(2),
+                                                                      .all(2.0),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -1297,12 +1297,11 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              2,
-                                                                              0,
-                                                                              3,
-                                                                              2),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          2.0,
+                                                                          0.0,
+                                                                          3.0,
+                                                                          2.0),
                                                                       child:
                                                                           Container(
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -1316,23 +1315,23 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondaryBackground,
                                                                             width:
-                                                                                1,
+                                                                                1.0,
                                                                           ),
                                                                         ),
                                                                         child:
                                                                             Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5,
-                                                                              0,
-                                                                              5,
-                                                                              3),
+                                                                              5.0,
+                                                                              0.0,
+                                                                              5.0,
+                                                                              3.0),
                                                                           child:
                                                                               Row(
                                                                             mainAxisSize:
                                                                                 MainAxisSize.max,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                 child: Container(
                                                                                   width: MediaQuery.sizeOf(context).width * 0.09,
                                                                                   height: MediaQuery.sizeOf(context).height * 0.04,
@@ -1352,7 +1351,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                                             ),
                                                                                       ),
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 3, 0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
                                                                                         child: Text(
                                                                                           FFLocalizations.of(context).getText(
                                                                                             'v0a25887' /* : */,
@@ -1369,14 +1368,14 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                                 ),
                                                                               ),
                                                                               Container(
-                                                                                width: 100,
-                                                                                height: 100,
+                                                                                width: 100.0,
+                                                                                height: 100.0,
                                                                                 decoration: BoxDecoration(),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                       child: Text(
                                                                                         FFLocalizations.of(context).getText(
                                                                                           'qrraxd8t' /* ₹ */,
@@ -1416,12 +1415,11 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              3,
-                                                                              0,
-                                                                              2,
-                                                                              2),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          3.0,
+                                                                          0.0,
+                                                                          2.0,
+                                                                          2.0),
                                                                       child:
                                                                           Container(
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -1435,23 +1433,23 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondaryBackground,
                                                                             width:
-                                                                                1,
+                                                                                1.0,
                                                                           ),
                                                                         ),
                                                                         child:
                                                                             Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5,
-                                                                              0,
-                                                                              5,
-                                                                              3),
+                                                                              5.0,
+                                                                              0.0,
+                                                                              5.0,
+                                                                              3.0),
                                                                           child:
                                                                               Row(
                                                                             mainAxisSize:
                                                                                 MainAxisSize.max,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                 child: Container(
                                                                                   width: MediaQuery.sizeOf(context).width * 0.09,
                                                                                   height: MediaQuery.sizeOf(context).height * 0.04,
@@ -1461,7 +1459,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                     children: [
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 3, 0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
                                                                                         child: Text(
                                                                                           FFLocalizations.of(context).getText(
                                                                                             'oni9like' /* PhonePe: */,
@@ -1478,14 +1476,14 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                                 ),
                                                                               ),
                                                                               Container(
-                                                                                width: 100,
-                                                                                height: 100,
+                                                                                width: 100.0,
+                                                                                height: 100.0,
                                                                                 decoration: BoxDecoration(),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                       child: Text(
                                                                                         FFLocalizations.of(context).getText(
                                                                                           'w8188wgv' /* ₹ */,
@@ -1528,7 +1526,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                             Padding(
                                                               padding:
                                                                   EdgeInsets
-                                                                      .all(2),
+                                                                      .all(2.0),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -1537,12 +1535,11 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              2,
-                                                                              0,
-                                                                              3,
-                                                                              2),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          2.0,
+                                                                          0.0,
+                                                                          3.0,
+                                                                          2.0),
                                                                       child:
                                                                           Container(
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -1556,23 +1553,23 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondaryBackground,
                                                                             width:
-                                                                                1,
+                                                                                1.0,
                                                                           ),
                                                                         ),
                                                                         child:
                                                                             Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5,
-                                                                              0,
-                                                                              5,
-                                                                              3),
+                                                                              5.0,
+                                                                              0.0,
+                                                                              5.0,
+                                                                              3.0),
                                                                           child:
                                                                               Row(
                                                                             mainAxisSize:
                                                                                 MainAxisSize.max,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                 child: Container(
                                                                                   width: MediaQuery.sizeOf(context).width * 0.09,
                                                                                   height: MediaQuery.sizeOf(context).height * 0.04,
@@ -1592,7 +1589,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                                             ),
                                                                                       ),
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 3, 0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
                                                                                         child: Text(
                                                                                           FFLocalizations.of(context).getText(
                                                                                             'n5yjsvwl' /* : */,
@@ -1609,14 +1606,14 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                                 ),
                                                                               ),
                                                                               Container(
-                                                                                width: 100,
-                                                                                height: 100,
+                                                                                width: 100.0,
+                                                                                height: 100.0,
                                                                                 decoration: BoxDecoration(),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                       child: Text(
                                                                                         FFLocalizations.of(context).getText(
                                                                                           'wqfng23t' /* ₹ */,
@@ -1656,12 +1653,11 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              3,
-                                                                              0,
-                                                                              2,
-                                                                              2),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          3.0,
+                                                                          0.0,
+                                                                          2.0,
+                                                                          2.0),
                                                                       child:
                                                                           Container(
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -1675,23 +1671,23 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondaryBackground,
                                                                             width:
-                                                                                1,
+                                                                                1.0,
                                                                           ),
                                                                         ),
                                                                         child:
                                                                             Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5,
-                                                                              0,
-                                                                              5,
-                                                                              3),
+                                                                              5.0,
+                                                                              0.0,
+                                                                              5.0,
+                                                                              3.0),
                                                                           child:
                                                                               Row(
                                                                             mainAxisSize:
                                                                                 MainAxisSize.max,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                 child: Container(
                                                                                   width: MediaQuery.sizeOf(context).width * 0.09,
                                                                                   height: MediaQuery.sizeOf(context).height * 0.04,
@@ -1711,7 +1707,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                                             ),
                                                                                       ),
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 3, 0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
                                                                                         child: Text(
                                                                                           FFLocalizations.of(context).getText(
                                                                                             'dw79b9qe' /* : */,
@@ -1728,14 +1724,14 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                                 ),
                                                                               ),
                                                                               Container(
-                                                                                width: 100,
-                                                                                height: 100,
+                                                                                width: 100.0,
+                                                                                height: 100.0,
                                                                                 decoration: BoxDecoration(
                                                                                   color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                 ),
                                                                                 child: Container(
-                                                                                  width: 100,
-                                                                                  height: 100,
+                                                                                  width: 100.0,
+                                                                                  height: 100.0,
                                                                                   decoration: BoxDecoration(
                                                                                     color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                   ),
@@ -1743,7 +1739,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     children: [
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                         child: Text(
                                                                                           FFLocalizations.of(context).getText(
                                                                                             '02zh92bd' /* ₹ */,
@@ -1787,7 +1783,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                             Padding(
                                                               padding:
                                                                   EdgeInsets
-                                                                      .all(2),
+                                                                      .all(2.0),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -1796,12 +1792,11 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              2,
-                                                                              0,
-                                                                              3,
-                                                                              2),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          2.0,
+                                                                          0.0,
+                                                                          3.0,
+                                                                          2.0),
                                                                       child:
                                                                           Container(
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -1815,23 +1810,23 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondaryBackground,
                                                                             width:
-                                                                                1,
+                                                                                1.0,
                                                                           ),
                                                                         ),
                                                                         child:
                                                                             Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5,
-                                                                              0,
-                                                                              5,
-                                                                              3),
+                                                                              5.0,
+                                                                              0.0,
+                                                                              5.0,
+                                                                              3.0),
                                                                           child:
                                                                               Row(
                                                                             mainAxisSize:
                                                                                 MainAxisSize.max,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                 child: Container(
                                                                                   width: MediaQuery.sizeOf(context).width * 0.09,
                                                                                   height: MediaQuery.sizeOf(context).height * 0.04,
@@ -1851,7 +1846,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                                             ),
                                                                                       ),
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 3, 0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
                                                                                         child: Text(
                                                                                           FFLocalizations.of(context).getText(
                                                                                             'rnrsf6kt' /* : */,
@@ -1868,14 +1863,14 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                                 ),
                                                                               ),
                                                                               Container(
-                                                                                width: 100,
-                                                                                height: 100,
+                                                                                width: 100.0,
+                                                                                height: 100.0,
                                                                                 decoration: BoxDecoration(),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                       child: Text(
                                                                                         FFLocalizations.of(context).getText(
                                                                                           '3gj1t00y' /* ₹ */,
@@ -1917,12 +1912,11 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              3,
-                                                                              0,
-                                                                              2,
-                                                                              2),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          3.0,
+                                                                          0.0,
+                                                                          2.0,
+                                                                          2.0),
                                                                       child:
                                                                           Container(
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -1936,16 +1930,16 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondaryBackground,
                                                                             width:
-                                                                                1,
+                                                                                1.0,
                                                                           ),
                                                                         ),
                                                                         child:
                                                                             Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5,
-                                                                              0,
-                                                                              5,
-                                                                              3),
+                                                                              5.0,
+                                                                              0.0,
+                                                                              5.0,
+                                                                              3.0),
                                                                           child:
                                                                               Row(
                                                                             mainAxisSize:
@@ -1976,15 +1970,15 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                               ),
                                                                               Expanded(
                                                                                 child: Container(
-                                                                                  width: 100,
-                                                                                  height: 100,
+                                                                                  width: 100.0,
+                                                                                  height: 100.0,
                                                                                   decoration: BoxDecoration(),
                                                                                   child: Row(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     mainAxisAlignment: MainAxisAlignment.start,
                                                                                     children: [
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                         child: Text(
                                                                                           FFLocalizations.of(context).getText(
                                                                                             'snig6d28' /* ₹ */,
@@ -2034,9 +2028,9 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                           Expanded(
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(5, 0, 3, 0),
+                                                  .fromSTEB(5.0, 0.0, 3.0, 0.0),
                                               child: Container(
-                                                width: 100,
+                                                width: 100.0,
                                                 height: double.infinity,
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
@@ -2051,7 +2045,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                       flex: 1,
                                                       child: Container(
                                                         width: double.infinity,
-                                                        height: 100,
+                                                        height: 100.0,
                                                         decoration:
                                                             BoxDecoration(
                                                           color: FlutterFlowTheme
@@ -2101,11 +2095,14 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0, 3, 0, 0),
+                                                                    0.0,
+                                                                    3.0,
+                                                                    0.0,
+                                                                    0.0),
                                                         child: Container(
                                                           width:
                                                               double.infinity,
-                                                          height: 100,
+                                                          height: 100.0,
                                                           decoration:
                                                               BoxDecoration(
                                                             color: FlutterFlowTheme
@@ -2128,7 +2125,8 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                               Padding(
                                                                 padding:
                                                                     EdgeInsets
-                                                                        .all(2),
+                                                                        .all(
+                                                                            2.0),
                                                                 child: Row(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -2138,10 +2136,10 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            2,
-                                                                            0,
-                                                                            3,
-                                                                            2),
+                                                                            2.0,
+                                                                            0.0,
+                                                                            3.0,
+                                                                            2.0),
                                                                         child:
                                                                             Container(
                                                                           width:
@@ -2153,22 +2151,22 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                             border:
                                                                                 Border.all(
                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              width: 1,
+                                                                              width: 1.0,
                                                                             ),
                                                                           ),
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5,
-                                                                                0,
-                                                                                5,
-                                                                                3),
+                                                                                5.0,
+                                                                                0.0,
+                                                                                5.0,
+                                                                                3.0),
                                                                             child:
                                                                                 Row(
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                   child: Container(
                                                                                     width: MediaQuery.sizeOf(context).width * 0.09,
                                                                                     height: MediaQuery.sizeOf(context).height * 0.04,
@@ -2202,14 +2200,14 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                                   ),
                                                                                 ),
                                                                                 Container(
-                                                                                  width: 100,
-                                                                                  height: 100,
+                                                                                  width: 100.0,
+                                                                                  height: 100.0,
                                                                                   decoration: BoxDecoration(),
                                                                                   child: Row(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     children: [
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                         child: Text(
                                                                                           FFLocalizations.of(context).getText(
                                                                                             'pb1p3c26' /* ₹ */,
@@ -2245,10 +2243,10 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            3,
-                                                                            0,
-                                                                            2,
-                                                                            2),
+                                                                            3.0,
+                                                                            0.0,
+                                                                            2.0,
+                                                                            2.0),
                                                                         child:
                                                                             Container(
                                                                           width:
@@ -2260,22 +2258,22 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                             border:
                                                                                 Border.all(
                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              width: 1,
+                                                                              width: 1.0,
                                                                             ),
                                                                           ),
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5,
-                                                                                0,
-                                                                                5,
-                                                                                3),
+                                                                                5.0,
+                                                                                0.0,
+                                                                                5.0,
+                                                                                3.0),
                                                                             child:
                                                                                 Row(
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                   child: Container(
                                                                                     width: MediaQuery.sizeOf(context).width * 0.09,
                                                                                     height: MediaQuery.sizeOf(context).height * 0.04,
@@ -2309,14 +2307,14 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                                   ),
                                                                                 ),
                                                                                 Container(
-                                                                                  width: 100,
-                                                                                  height: 100,
+                                                                                  width: 100.0,
+                                                                                  height: 100.0,
                                                                                   decoration: BoxDecoration(),
                                                                                   child: Row(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     children: [
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 2, 0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 0.0),
                                                                                         child: Text(
                                                                                           FFLocalizations.of(context).getText(
                                                                                             'i2ruzxs7' /* ₹  */,
@@ -2354,7 +2352,8 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                               Padding(
                                                                 padding:
                                                                     EdgeInsets
-                                                                        .all(2),
+                                                                        .all(
+                                                                            2.0),
                                                                 child: Row(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -2364,10 +2363,10 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            2,
-                                                                            0,
-                                                                            3,
-                                                                            2),
+                                                                            2.0,
+                                                                            0.0,
+                                                                            3.0,
+                                                                            2.0),
                                                                         child:
                                                                             Container(
                                                                           width:
@@ -2379,22 +2378,22 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                             border:
                                                                                 Border.all(
                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              width: 1,
+                                                                              width: 1.0,
                                                                             ),
                                                                           ),
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5,
-                                                                                0,
-                                                                                5,
-                                                                                3),
+                                                                                5.0,
+                                                                                0.0,
+                                                                                5.0,
+                                                                                3.0),
                                                                             child:
                                                                                 Row(
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                   child: Container(
                                                                                     width: MediaQuery.sizeOf(context).width * 0.09,
                                                                                     height: MediaQuery.sizeOf(context).height * 0.04,
@@ -2428,14 +2427,14 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                                   ),
                                                                                 ),
                                                                                 Container(
-                                                                                  width: 100,
-                                                                                  height: 100,
+                                                                                  width: 100.0,
+                                                                                  height: 100.0,
                                                                                   decoration: BoxDecoration(),
                                                                                   child: Row(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     children: [
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                         child: Text(
                                                                                           FFLocalizations.of(context).getText(
                                                                                             'ln2fv2qf' /* ₹ */,
@@ -2471,10 +2470,10 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            3,
-                                                                            0,
-                                                                            2,
-                                                                            2),
+                                                                            3.0,
+                                                                            0.0,
+                                                                            2.0,
+                                                                            2.0),
                                                                         child:
                                                                             Container(
                                                                           width:
@@ -2486,22 +2485,22 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                             border:
                                                                                 Border.all(
                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              width: 1,
+                                                                              width: 1.0,
                                                                             ),
                                                                           ),
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5,
-                                                                                0,
-                                                                                5,
-                                                                                3),
+                                                                                5.0,
+                                                                                0.0,
+                                                                                5.0,
+                                                                                3.0),
                                                                             child:
                                                                                 Row(
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                   child: Container(
                                                                                     width: MediaQuery.sizeOf(context).width * 0.09,
                                                                                     height: MediaQuery.sizeOf(context).height * 0.04,
@@ -2535,14 +2534,14 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                                   ),
                                                                                 ),
                                                                                 Container(
-                                                                                  width: 100,
-                                                                                  height: 100,
+                                                                                  width: 100.0,
+                                                                                  height: 100.0,
                                                                                   decoration: BoxDecoration(),
                                                                                   child: Row(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     children: [
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 2, 0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 0.0),
                                                                                         child: Text(
                                                                                           FFLocalizations.of(context).getText(
                                                                                             'pq86pdns' /* ₹  */,
@@ -2580,7 +2579,8 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                               Padding(
                                                                 padding:
                                                                     EdgeInsets
-                                                                        .all(2),
+                                                                        .all(
+                                                                            2.0),
                                                                 child: Row(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -2590,10 +2590,10 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            2,
-                                                                            0,
-                                                                            3,
-                                                                            2),
+                                                                            2.0,
+                                                                            0.0,
+                                                                            3.0,
+                                                                            2.0),
                                                                         child:
                                                                             Container(
                                                                           width:
@@ -2605,22 +2605,22 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                             border:
                                                                                 Border.all(
                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              width: 1,
+                                                                              width: 1.0,
                                                                             ),
                                                                           ),
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5,
-                                                                                0,
-                                                                                5,
-                                                                                3),
+                                                                                5.0,
+                                                                                0.0,
+                                                                                5.0,
+                                                                                3.0),
                                                                             child:
                                                                                 Row(
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                   child: Container(
                                                                                     width: MediaQuery.sizeOf(context).width * 0.09,
                                                                                     height: MediaQuery.sizeOf(context).height * 0.04,
@@ -2654,14 +2654,14 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                                   ),
                                                                                 ),
                                                                                 Container(
-                                                                                  width: 100,
-                                                                                  height: 100,
+                                                                                  width: 100.0,
+                                                                                  height: 100.0,
                                                                                   decoration: BoxDecoration(),
                                                                                   child: Row(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     children: [
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                         child: Text(
                                                                                           FFLocalizations.of(context).getText(
                                                                                             'c6nbkyaa' /* ₹ */,
@@ -2697,10 +2697,10 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            3,
-                                                                            0,
-                                                                            2,
-                                                                            2),
+                                                                            3.0,
+                                                                            0.0,
+                                                                            2.0,
+                                                                            2.0),
                                                                         child:
                                                                             Container(
                                                                           width:
@@ -2712,22 +2712,22 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                             border:
                                                                                 Border.all(
                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              width: 1,
+                                                                              width: 1.0,
                                                                             ),
                                                                           ),
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5,
-                                                                                0,
-                                                                                5,
-                                                                                3),
+                                                                                5.0,
+                                                                                0.0,
+                                                                                5.0,
+                                                                                3.0),
                                                                             child:
                                                                                 Row(
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                   child: Container(
                                                                                     width: MediaQuery.sizeOf(context).width * 0.09,
                                                                                     height: MediaQuery.sizeOf(context).height * 0.04,
@@ -2761,14 +2761,14 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                                   ),
                                                                                 ),
                                                                                 Container(
-                                                                                  width: 100,
-                                                                                  height: 100,
+                                                                                  width: 100.0,
+                                                                                  height: 100.0,
                                                                                   decoration: BoxDecoration(),
                                                                                   child: Row(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     children: [
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 2, 0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 0.0),
                                                                                         child: Text(
                                                                                           FFLocalizations.of(context).getText(
                                                                                             'mbqdunwz' /* ₹  */,
@@ -2806,7 +2806,8 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                               Padding(
                                                                 padding:
                                                                     EdgeInsets
-                                                                        .all(2),
+                                                                        .all(
+                                                                            2.0),
                                                                 child: Row(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -2816,10 +2817,10 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            2,
-                                                                            0,
-                                                                            3,
-                                                                            2),
+                                                                            2.0,
+                                                                            0.0,
+                                                                            3.0,
+                                                                            2.0),
                                                                         child:
                                                                             Container(
                                                                           width:
@@ -2831,22 +2832,22 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                             border:
                                                                                 Border.all(
                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              width: 1,
+                                                                              width: 1.0,
                                                                             ),
                                                                           ),
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5,
-                                                                                0,
-                                                                                5,
-                                                                                3),
+                                                                                5.0,
+                                                                                0.0,
+                                                                                5.0,
+                                                                                3.0),
                                                                             child:
                                                                                 Row(
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                   child: Container(
                                                                                     width: MediaQuery.sizeOf(context).width * 0.09,
                                                                                     height: MediaQuery.sizeOf(context).height * 0.04,
@@ -2880,14 +2881,14 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                                   ),
                                                                                 ),
                                                                                 Container(
-                                                                                  width: 100,
-                                                                                  height: 100,
+                                                                                  width: 100.0,
+                                                                                  height: 100.0,
                                                                                   decoration: BoxDecoration(),
                                                                                   child: Row(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     children: [
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                         child: Text(
                                                                                           FFLocalizations.of(context).getText(
                                                                                             '5mopjsn8' /* ₹ */,
@@ -2923,10 +2924,10 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            3,
-                                                                            0,
-                                                                            2,
-                                                                            2),
+                                                                            3.0,
+                                                                            0.0,
+                                                                            2.0,
+                                                                            2.0),
                                                                         child:
                                                                             Container(
                                                                           width:
@@ -2938,22 +2939,22 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                             border:
                                                                                 Border.all(
                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              width: 1,
+                                                                              width: 1.0,
                                                                             ),
                                                                           ),
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5,
-                                                                                0,
-                                                                                5,
-                                                                                3),
+                                                                                5.0,
+                                                                                0.0,
+                                                                                5.0,
+                                                                                3.0),
                                                                             child:
                                                                                 Row(
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                   child: Container(
                                                                                     width: MediaQuery.sizeOf(context).width * 0.09,
                                                                                     height: MediaQuery.sizeOf(context).height * 0.04,
@@ -2987,14 +2988,14 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                                   ),
                                                                                 ),
                                                                                 Container(
-                                                                                  width: 100,
-                                                                                  height: 100,
+                                                                                  width: 100.0,
+                                                                                  height: 100.0,
                                                                                   decoration: BoxDecoration(),
                                                                                   child: Row(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     children: [
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 2, 0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 0.0),
                                                                                         child: Text(
                                                                                           FFLocalizations.of(context).getText(
                                                                                             'dcrdamk1' /* ₹  */,
@@ -3032,7 +3033,8 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                               Padding(
                                                                 padding:
                                                                     EdgeInsets
-                                                                        .all(2),
+                                                                        .all(
+                                                                            2.0),
                                                                 child: Row(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -3042,10 +3044,10 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            2,
-                                                                            0,
-                                                                            3,
-                                                                            2),
+                                                                            2.0,
+                                                                            0.0,
+                                                                            3.0,
+                                                                            2.0),
                                                                         child:
                                                                             Container(
                                                                           width:
@@ -3057,22 +3059,22 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                             border:
                                                                                 Border.all(
                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              width: 1,
+                                                                              width: 1.0,
                                                                             ),
                                                                           ),
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5,
-                                                                                0,
-                                                                                5,
-                                                                                3),
+                                                                                5.0,
+                                                                                0.0,
+                                                                                5.0,
+                                                                                3.0),
                                                                             child:
                                                                                 Row(
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                   child: Container(
                                                                                     width: MediaQuery.sizeOf(context).width * 0.09,
                                                                                     height: MediaQuery.sizeOf(context).height * 0.04,
@@ -3106,14 +3108,14 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                                   ),
                                                                                 ),
                                                                                 Container(
-                                                                                  width: 100,
-                                                                                  height: 100,
+                                                                                  width: 100.0,
+                                                                                  height: 100.0,
                                                                                   decoration: BoxDecoration(),
                                                                                   child: Row(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     children: [
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                         child: Text(
                                                                                           FFLocalizations.of(context).getText(
                                                                                             'nshyudtr' /* ₹ */,
@@ -3149,10 +3151,10 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            3,
-                                                                            0,
-                                                                            2,
-                                                                            2),
+                                                                            3.0,
+                                                                            0.0,
+                                                                            2.0,
+                                                                            2.0),
                                                                         child:
                                                                             Container(
                                                                           width:
@@ -3164,22 +3166,22 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                             border:
                                                                                 Border.all(
                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              width: 1,
+                                                                              width: 1.0,
                                                                             ),
                                                                           ),
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5,
-                                                                                0,
-                                                                                5,
-                                                                                3),
+                                                                                5.0,
+                                                                                0.0,
+                                                                                5.0,
+                                                                                3.0),
                                                                             child:
                                                                                 Row(
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                   child: Container(
                                                                                     width: MediaQuery.sizeOf(context).width * 0.09,
                                                                                     height: MediaQuery.sizeOf(context).height * 0.04,
@@ -3192,8 +3194,8 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                                   ),
                                                                                 ),
                                                                                 Container(
-                                                                                  width: 100,
-                                                                                  height: 100,
+                                                                                  width: 100.0,
+                                                                                  height: 100.0,
                                                                                   decoration: BoxDecoration(),
                                                                                 ),
                                                                               ],
@@ -3225,7 +3227,8 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 5.0),
                           child: Container(
                             width: double.infinity,
                             height: MediaQuery.sizeOf(context).height * 0.09,
@@ -3240,15 +3243,15 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                 Expanded(
                                   flex: 2,
                                   child: Container(
-                                    width: 100,
-                                    height: 100,
+                                    width: 100.0,
+                                    height: 100.0,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
                                       border: Border.all(
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
-                                        width: 2,
+                                        width: 2.0,
                                       ),
                                     ),
                                     child: Row(
@@ -3259,7 +3262,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  8, 0, 3, 2),
+                                                  8.0, 0.0, 3.0, 2.0),
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
@@ -3272,12 +3275,12 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
-                                                width: 1,
+                                                width: 1.0,
                                               ),
                                             ),
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(5, 0, 5, 3),
+                                                  .fromSTEB(5.0, 0.0, 5.0, 3.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -3286,8 +3289,8 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                0, 0, 5, 0),
+                                                            .fromSTEB(0.0, 0.0,
+                                                                5.0, 0.0),
                                                     child: Container(
                                                       width: MediaQuery.sizeOf(
                                                                   context)
@@ -3355,8 +3358,8 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                     ),
                                                   ),
                                                   Container(
-                                                    width: 100,
-                                                    height: 100,
+                                                    width: 100.0,
+                                                    height: 100.0,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
@@ -3369,8 +3372,11 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(5,
-                                                                      0, 0, 0),
+                                                                  .fromSTEB(
+                                                                      5.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
                                                           child: Text(
                                                             valueOrDefault<
                                                                 String>(
@@ -3414,7 +3420,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  2, 0, 8, 2),
+                                                  2.0, 0.0, 8.0, 2.0),
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
@@ -3427,12 +3433,12 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
-                                                width: 1,
+                                                width: 1.0,
                                               ),
                                             ),
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(5, 0, 5, 3),
+                                                  .fromSTEB(5.0, 0.0, 5.0, 3.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -3441,8 +3447,8 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                0, 0, 5, 0),
+                                                            .fromSTEB(0.0, 0.0,
+                                                                5.0, 0.0),
                                                     child: Container(
                                                       width: MediaQuery.sizeOf(
                                                                   context)
@@ -3510,8 +3516,8 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                     ),
                                                   ),
                                                   Container(
-                                                    width: 100,
-                                                    height: 100,
+                                                    width: 100.0,
+                                                    height: 100.0,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
@@ -3524,8 +3530,11 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(0,
-                                                                      0, 5, 0),
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      5.0,
+                                                                      0.0),
                                                           child: Text(
                                                             FFLocalizations.of(
                                                                     context)
@@ -3542,7 +3551,8 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primary,
-                                                                  fontSize: 22,
+                                                                  fontSize:
+                                                                      22.0,
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
@@ -3575,7 +3585,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
-                                                                fontSize: 22,
+                                                                fontSize: 22.0,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
@@ -3603,7 +3613,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                 Expanded(
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 8, 0),
+                                        0.0, 0.0, 8.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
                                       focusColor: Colors.transparent,
@@ -3778,7 +3788,7 @@ class _ShiftEndNew2WidgetState extends State<ShiftEndNew2Widget>
                                       },
                                       child: Container(
                                         width: double.infinity,
-                                        height: 100,
+                                        height: 100.0,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .primary,

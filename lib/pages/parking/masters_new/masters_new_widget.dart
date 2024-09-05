@@ -60,8 +60,8 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                 Expanded(
                   flex: 4,
                   child: Container(
-                    width: MediaQuery.sizeOf(context).width,
-                    height: 100,
+                    width: MediaQuery.sizeOf(context).width * 1.0,
+                    height: 100.0,
                     decoration: BoxDecoration(),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -69,20 +69,21 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              20.0, 0.0, 20.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 30,
-                                borderWidth: 1,
-                                buttonSize: 45,
+                                borderRadius: 30.0,
+                                borderWidth: 1.0,
+                                buttonSize: 45.0,
                                 icon: Icon(
                                   Icons.chevron_left,
                                   color: FlutterFlowTheme.of(context).lineColor,
-                                  size: 24,
+                                  size: 24.0,
                                 ),
                                 onPressed: () async {
                                   context.pushNamed('account');
@@ -110,13 +111,13 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                               ),
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 30,
-                                borderWidth: 1,
-                                buttonSize: 45,
+                                borderRadius: 30.0,
+                                borderWidth: 1.0,
+                                buttonSize: 45.0,
                                 icon: Icon(
                                   Icons.chevron_left,
                                   color: Colors.transparent,
-                                  size: 30,
+                                  size: 30.0,
                                 ),
                                 onPressed: () {
                                   print('IconButton pressed ...');
@@ -132,30 +133,30 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                 Expanded(
                   flex: 24,
                   child: Container(
-                    width: MediaQuery.sizeOf(context).width,
-                    height: 100,
+                    width: MediaQuery.sizeOf(context).width * 1.0,
+                    height: 100.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).primaryBackground,
                       borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(0),
-                        bottomRight: Radius.circular(0),
-                        topLeft: Radius.circular(0),
-                        topRight: Radius.circular(0),
+                        bottomLeft: Radius.circular(0.0),
+                        bottomRight: Radius.circular(0.0),
+                        topLeft: Radius.circular(0.0),
+                        topRight: Radius.circular(0.0),
                       ),
                     ),
                     child: Stack(
                       children: [
                         if (FFAppState().isButtonselected == false)
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(16, 15, 16, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                16.0, 15.0, 16.0, 0.0),
                             child: SingleChildScrollView(
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 5, 0),
+                                        0.0, 0.0, 5.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment: MainAxisAlignment.end,
@@ -172,7 +173,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                           },
                                           child: Material(
                                             color: Colors.transparent,
-                                            elevation: 2,
+                                            elevation: 2.0,
                                             shape: const CircleBorder(),
                                             child: Container(
                                               width: MediaQuery.sizeOf(context)
@@ -192,7 +193,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryBtnText,
-                                                size: 18,
+                                                size: 18.0,
                                               ),
                                             ),
                                           ),
@@ -202,7 +203,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 5, 0, 0),
+                                        0.0, 5.0, 0.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
                                       focusColor: Colors.transparent,
@@ -219,10 +220,10 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    3, 0, 0, 0),
+                                                    3.0, 0.0, 0.0, 0.0),
                                             child: Container(
-                                              width: 55,
-                                              height: 55,
+                                              width: 55.0,
+                                              height: 55.0,
                                               decoration: BoxDecoration(
                                                 shape: BoxShape.circle,
                                               ),
@@ -231,7 +232,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .info,
-                                                size: 24,
+                                                size: 24.0,
                                               ),
                                             ),
                                           ),
@@ -245,7 +246,8 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                             decoration: BoxDecoration(),
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(15, 0, 0, 0),
+                                                  .fromSTEB(
+                                                      15.0, 0.0, 0.0, 0.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -266,7 +268,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                                               FlutterFlowTheme.of(
                                                                       context)
                                                                   .bodyMediumFamily,
-                                                          fontSize: 16,
+                                                          fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
@@ -291,7 +293,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                                               FlutterFlowTheme.of(
                                                                       context)
                                                                   .bodyMediumFamily,
-                                                          fontSize: 12,
+                                                          fontSize: 12.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w300,
@@ -327,7 +329,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryText,
-                                                  size: 20,
+                                                  size: 20.0,
                                                 ),
                                               ],
                                             ),
@@ -357,10 +359,10 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  3, 0, 0, 0),
+                                                  3.0, 0.0, 0.0, 0.0),
                                           child: Container(
-                                            width: 55,
-                                            height: 55,
+                                            width: 55.0,
+                                            height: 55.0,
                                             decoration: BoxDecoration(
                                               shape: BoxShape.circle,
                                             ),
@@ -369,7 +371,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .info,
-                                              size: 24,
+                                              size: 24.0,
                                             ),
                                           ),
                                         ),
@@ -384,7 +386,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    15, 0, 0, 0),
+                                                    15.0, 0.0, 0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -405,7 +407,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .bodyMediumFamily,
-                                                        fontSize: 16,
+                                                        fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,
@@ -430,7 +432,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .bodyMediumFamily,
-                                                        fontSize: 12,
+                                                        fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w300,
@@ -466,7 +468,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
-                                                size: 20,
+                                                size: 20.0,
                                               ),
                                             ],
                                           ),
@@ -493,10 +495,10 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  3, 0, 0, 0),
+                                                  3.0, 0.0, 0.0, 0.0),
                                           child: Container(
-                                            width: 55,
-                                            height: 55,
+                                            width: 55.0,
+                                            height: 55.0,
                                             decoration: BoxDecoration(
                                               shape: BoxShape.circle,
                                             ),
@@ -505,7 +507,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .info,
-                                              size: 24,
+                                              size: 24.0,
                                             ),
                                           ),
                                         ),
@@ -520,7 +522,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    15, 0, 0, 0),
+                                                    15.0, 0.0, 0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -541,7 +543,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .bodyMediumFamily,
-                                                        fontSize: 16,
+                                                        fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,
@@ -566,7 +568,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .bodyMediumFamily,
-                                                        fontSize: 12,
+                                                        fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w300,
@@ -602,7 +604,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
-                                                size: 20,
+                                                size: 20.0,
                                               ),
                                             ],
                                           ),
@@ -629,10 +631,10 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  3, 0, 0, 0),
+                                                  3.0, 0.0, 0.0, 0.0),
                                           child: Container(
-                                            width: 55,
-                                            height: 55,
+                                            width: 55.0,
+                                            height: 55.0,
                                             decoration: BoxDecoration(
                                               shape: BoxShape.circle,
                                             ),
@@ -641,7 +643,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .info,
-                                              size: 24,
+                                              size: 24.0,
                                             ),
                                           ),
                                         ),
@@ -656,7 +658,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    15, 0, 0, 0),
+                                                    15.0, 0.0, 0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -681,7 +683,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primaryText,
-                                                        fontSize: 16,
+                                                        fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,
@@ -710,7 +712,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primaryText,
-                                                        fontSize: 12,
+                                                        fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w300,
@@ -746,7 +748,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
-                                                size: 20,
+                                                size: 20.0,
                                               ),
                                             ],
                                           ),
@@ -770,10 +772,10 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  3, 0, 0, 0),
+                                                  3.0, 0.0, 0.0, 0.0),
                                           child: Container(
-                                            width: 55,
-                                            height: 55,
+                                            width: 55.0,
+                                            height: 55.0,
                                             decoration: BoxDecoration(
                                               shape: BoxShape.circle,
                                             ),
@@ -782,7 +784,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .info,
-                                              size: 24,
+                                              size: 24.0,
                                             ),
                                           ),
                                         ),
@@ -797,7 +799,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    15, 0, 0, 0),
+                                                    15.0, 0.0, 0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -822,7 +824,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primaryText,
-                                                        fontSize: 16,
+                                                        fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,
@@ -851,7 +853,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primaryText,
-                                                        fontSize: 12,
+                                                        fontSize: 12.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w300,
@@ -887,7 +889,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
-                                                size: 20,
+                                                size: 20.0,
                                               ),
                                             ],
                                           ),
@@ -906,10 +908,10 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            3, 0, 0, 0),
+                                            3.0, 0.0, 0.0, 0.0),
                                         child: Container(
-                                          width: 55,
-                                          height: 55,
+                                          width: 55.0,
+                                          height: 55.0,
                                           decoration: BoxDecoration(
                                             shape: BoxShape.circle,
                                           ),
@@ -917,7 +919,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                             Icons.fastfood,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
-                                            size: 24,
+                                            size: 24.0,
                                           ),
                                         ),
                                       ),
@@ -932,7 +934,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  15, 0, 0, 0),
+                                                  15.0, 0.0, 0.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -956,7 +958,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryBackground,
-                                                          fontSize: 16,
+                                                          fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
@@ -984,7 +986,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryBackground,
-                                                          fontSize: 12,
+                                                          fontSize: 12.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w300,
@@ -1020,7 +1022,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
-                                              size: 20,
+                                              size: 20.0,
                                             ),
                                           ],
                                         ),
@@ -1038,10 +1040,10 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            3, 0, 0, 0),
+                                            3.0, 0.0, 0.0, 0.0),
                                         child: Container(
-                                          width: 55,
-                                          height: 55,
+                                          width: 55.0,
+                                          height: 55.0,
                                           decoration: BoxDecoration(
                                             shape: BoxShape.circle,
                                           ),
@@ -1049,7 +1051,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                             Icons.ramen_dining,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
-                                            size: 24,
+                                            size: 24.0,
                                           ),
                                         ),
                                       ),
@@ -1064,7 +1066,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  15, 0, 0, 0),
+                                                  15.0, 0.0, 0.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -1088,7 +1090,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryBackground,
-                                                          fontSize: 16,
+                                                          fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
@@ -1116,7 +1118,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryBackground,
-                                                          fontSize: 12,
+                                                          fontSize: 12.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w300,
@@ -1152,7 +1154,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
-                                              size: 20,
+                                              size: 20.0,
                                             ),
                                           ],
                                         ),
@@ -1174,14 +1176,14 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                             '9xxlrv7v' /* Marathi */,
                                           ),
                                           options: FFButtonOptions(
-                                            width: 100,
-                                            height: 40,
+                                            width: 100.0,
+                                            height: 40.0,
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 0, 0),
+                                                    0.0, 0.0, 0.0, 0.0),
                                             iconPadding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 0, 0),
+                                                    0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
                                             textStyle:
@@ -1203,10 +1205,10 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                                     ),
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
-                                              width: 1,
+                                              width: 1.0,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(8),
+                                                BorderRadius.circular(8.0),
                                           ),
                                         ),
                                         FFButtonWidget(
@@ -1218,14 +1220,14 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                             '0u2yzetf' /* Hindi */,
                                           ),
                                           options: FFButtonOptions(
-                                            width: 100,
-                                            height: 40,
+                                            width: 100.0,
+                                            height: 40.0,
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 0, 0),
+                                                    0.0, 0.0, 0.0, 0.0),
                                             iconPadding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 0, 0),
+                                                    0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
                                             textStyle:
@@ -1247,10 +1249,10 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                                     ),
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
-                                              width: 1,
+                                              width: 1.0,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(8),
+                                                BorderRadius.circular(8.0),
                                           ),
                                         ),
                                         FFButtonWidget(
@@ -1262,14 +1264,14 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                             'rde0ei16' /* English */,
                                           ),
                                           options: FFButtonOptions(
-                                            width: 100,
-                                            height: 40,
+                                            width: 100.0,
+                                            height: 40.0,
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 0, 0),
+                                                    0.0, 0.0, 0.0, 0.0),
                                             iconPadding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 0, 0),
+                                                    0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
                                             textStyle:
@@ -1291,10 +1293,10 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                                     ),
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
-                                              width: 1,
+                                              width: 1.0,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(8),
+                                                BorderRadius.circular(8.0),
                                           ),
                                         ),
                                       ],
@@ -1302,7 +1304,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                   if (false)
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 30, 0, 0),
+                                          0.0, 30.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -1317,12 +1319,12 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                               '4qk9w6sd' /* Tamil */,
                                             ),
                                             options: FFButtonOptions(
-                                              width: 100,
-                                              height: 40,
+                                              width: 100.0,
+                                              height: 40.0,
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 0, 0),
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               iconPadding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 0, 0),
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
@@ -1345,10 +1347,10 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                                       ),
                                               borderSide: BorderSide(
                                                 color: Colors.transparent,
-                                                width: 1,
+                                                width: 1.0,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8),
+                                                  BorderRadius.circular(8.0),
                                             ),
                                           ),
                                         ],
@@ -1360,14 +1362,14 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                           ),
                         if (FFAppState().isButtonselected == true)
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 20.0, 0.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      25, 0, 25, 10),
+                                      25.0, 0.0, 25.0, 10.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.end,
@@ -1383,7 +1385,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                         },
                                         child: Material(
                                           color: Colors.transparent,
-                                          elevation: 2,
+                                          elevation: 2.0,
                                           shape: const CircleBorder(),
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
@@ -1403,7 +1405,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBtnText,
-                                              size: 18,
+                                              size: 18.0,
                                             ),
                                           ),
                                         ),
@@ -1413,7 +1415,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 20, 0, 20),
+                                      0.0, 20.0, 0.0, 20.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:
@@ -1436,7 +1438,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                               0.1,
                                           decoration: BoxDecoration(
                                             borderRadius:
-                                                BorderRadius.circular(10),
+                                                BorderRadius.circular(10.0),
                                           ),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -1448,11 +1450,12 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .info,
-                                                size: 36,
+                                                size: 36.0,
                                               ),
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(0, 0, 0, 5),
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 5.0),
                                                 child: AutoSizeText(
                                                   FFLocalizations.of(context)
                                                       .getText(
@@ -1497,7 +1500,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                               0.1,
                                           decoration: BoxDecoration(
                                             borderRadius:
-                                                BorderRadius.circular(15),
+                                                BorderRadius.circular(15.0),
                                           ),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -1509,11 +1512,12 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .info,
-                                                size: 36,
+                                                size: 36.0,
                                               ),
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(0, 0, 0, 5),
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 5.0),
                                                 child: AutoSizeText(
                                                   FFLocalizations.of(context)
                                                       .getText(
@@ -1546,7 +1550,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 10, 0, 20),
+                                      0.0, 10.0, 0.0, 20.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:
@@ -1561,7 +1565,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                                 0.1,
                                         decoration: BoxDecoration(
                                           borderRadius:
-                                              BorderRadius.circular(15),
+                                              BorderRadius.circular(15.0),
                                         ),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -1573,11 +1577,11 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .info,
-                                              size: 36,
+                                              size: 36.0,
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 0, 5),
+                                                  .fromSTEB(0.0, 0.0, 0.0, 5.0),
                                               child: AutoSizeText(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -1613,7 +1617,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                                 0.1,
                                         decoration: BoxDecoration(
                                           borderRadius:
-                                              BorderRadius.circular(15),
+                                              BorderRadius.circular(15.0),
                                         ),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -1625,11 +1629,11 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .info,
-                                              size: 36,
+                                              size: 36.0,
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 0, 5),
+                                                  .fromSTEB(0.0, 0.0, 0.0, 5.0),
                                               child: AutoSizeText(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -1661,7 +1665,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 10, 0, 20),
+                                      0.0, 10.0, 0.0, 20.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:
@@ -1676,7 +1680,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                                 0.1,
                                         decoration: BoxDecoration(
                                           borderRadius:
-                                              BorderRadius.circular(15),
+                                              BorderRadius.circular(15.0),
                                         ),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -1688,11 +1692,11 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .info,
-                                              size: 36,
+                                              size: 36.0,
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 0, 5),
+                                                  .fromSTEB(0.0, 0.0, 0.0, 5.0),
                                               child: AutoSizeText(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -1724,7 +1728,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 0, 20),
+                                      0.0, 0.0, 0.0, 20.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -1747,11 +1751,11 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
-                                              size: 36,
+                                              size: 36.0,
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 0, 5),
+                                                  .fromSTEB(0.0, 0.0, 0.0, 5.0),
                                               child: AutoSizeText(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -1799,11 +1803,11 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
-                                              size: 36,
+                                              size: 36.0,
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 0, 5),
+                                                  .fromSTEB(0.0, 0.0, 0.0, 5.0),
                                               child: AutoSizeText(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -1838,7 +1842,7 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 0, 20),
+                                      0.0, 0.0, 0.0, 20.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -1861,11 +1865,11 @@ class _MastersNewWidgetState extends State<MastersNewWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
-                                              size: 36,
+                                              size: 36.0,
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 0, 5),
+                                                  .fromSTEB(0.0, 0.0, 0.0, 5.0),
                                               child: AutoSizeText(
                                                 FFLocalizations.of(context)
                                                     .getText(

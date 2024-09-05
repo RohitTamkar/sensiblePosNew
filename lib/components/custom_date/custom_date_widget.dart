@@ -45,14 +45,14 @@ class _CustomDateWidgetState extends State<CustomDateWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0, 0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            width: 500,
-            height: 300,
+            width: 500.0,
+            height: 300.0,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).primaryBackground,
             ),
@@ -61,7 +61,7 @@ class _CustomDateWidgetState extends State<CustomDateWidget> {
               children: [
                 Container(
                   width: double.infinity,
-                  height: 50,
+                  height: 50.0,
                   decoration: BoxDecoration(
                     border: Border.all(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -73,7 +73,8 @@ class _CustomDateWidgetState extends State<CustomDateWidget> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             'i0h5unus' /* Date Selector */,
@@ -95,8 +96,8 @@ class _CustomDateWidgetState extends State<CustomDateWidget> {
                   ),
                 ),
                 Container(
-                  width: 329,
-                  height: 250,
+                  width: 329.0,
+                  height: 250.0,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).primaryBackground,
                   ),
@@ -104,8 +105,8 @@ class _CustomDateWidgetState extends State<CustomDateWidget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Container(
-                        width: 329,
-                        height: 250,
+                        width: 329.0,
+                        height: 250.0,
                         decoration: BoxDecoration(),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
@@ -131,8 +132,8 @@ class _CustomDateWidgetState extends State<CustomDateWidget> {
                                 ).then((value) => safeSetState(() {}));
                               },
                               child: Container(
-                                width: 160,
-                                height: 50,
+                                width: 160.0,
+                                height: 50.0,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBackground,
@@ -146,20 +147,20 @@ class _CustomDateWidgetState extends State<CustomDateWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Container(
-                                      width: 40,
+                                      width: 40.0,
                                       decoration: BoxDecoration(),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            1, 0, 0, 0),
+                                            1.0, 0.0, 0.0, 0.0),
                                         child: FlutterFlowIconButton(
                                           borderColor: Colors.transparent,
-                                          borderWidth: 1,
-                                          buttonSize: 40,
+                                          borderWidth: 1.0,
+                                          buttonSize: 40.0,
                                           icon: Icon(
                                             Icons.calendar_today,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            size: 22,
+                                            size: 22.0,
                                           ),
                                           onPressed: () {
                                             print('IconButton pressed ...');
@@ -168,8 +169,8 @@ class _CustomDateWidgetState extends State<CustomDateWidget> {
                                       ),
                                     ),
                                     Container(
-                                      width: 118,
-                                      height: 50,
+                                      width: 118.0,
+                                      height: 50.0,
                                       decoration: BoxDecoration(),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -181,7 +182,7 @@ class _CustomDateWidgetState extends State<CustomDateWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    10, 0, 0, 0),
+                                                    10.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -236,8 +237,8 @@ class _CustomDateWidgetState extends State<CustomDateWidget> {
                                 ).then((value) => safeSetState(() {}));
                               },
                               child: Container(
-                                width: 160,
-                                height: 50,
+                                width: 160.0,
+                                height: 50.0,
                                 decoration: BoxDecoration(
                                   border: Border.all(
                                     color: FlutterFlowTheme.of(context)
@@ -249,20 +250,20 @@ class _CustomDateWidgetState extends State<CustomDateWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Container(
-                                      width: 40,
+                                      width: 40.0,
                                       decoration: BoxDecoration(),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            1, 0, 0, 0),
+                                            1.0, 0.0, 0.0, 0.0),
                                         child: FlutterFlowIconButton(
                                           borderColor: Colors.transparent,
-                                          borderWidth: 1,
-                                          buttonSize: 40,
+                                          borderWidth: 1.0,
+                                          buttonSize: 40.0,
                                           icon: Icon(
                                             Icons.calendar_today,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            size: 22,
+                                            size: 22.0,
                                           ),
                                           onPressed: () {
                                             print('IconButton pressed ...');
@@ -271,8 +272,8 @@ class _CustomDateWidgetState extends State<CustomDateWidget> {
                                       ),
                                     ),
                                     Container(
-                                      width: 118,
-                                      height: 50,
+                                      width: 118.0,
+                                      height: 50.0,
                                       decoration: BoxDecoration(),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -284,7 +285,7 @@ class _CustomDateWidgetState extends State<CustomDateWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    10, 0, 0, 0),
+                                                    10.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -331,12 +332,12 @@ class _CustomDateWidgetState extends State<CustomDateWidget> {
                                     '9dr3jp1g' /* Cancel */,
                                   ),
                                   options: FFButtonOptions(
-                                    width: 80,
-                                    height: 40,
+                                    width: 80.0,
+                                    height: 40.0,
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 0, 0),
+                                        0.0, 0.0, 0.0, 0.0),
                                     iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 0, 0),
+                                        0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context)
                                         .customColor2,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -351,12 +352,12 @@ class _CustomDateWidgetState extends State<CustomDateWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .headlineSmallFamily),
                                         ),
-                                    elevation: 2,
+                                    elevation: 2.0,
                                     borderSide: BorderSide(
                                       color: Colors.transparent,
-                                      width: 1,
+                                      width: 1.0,
                                     ),
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                 ),
                                 FFButtonWidget(
@@ -367,12 +368,12 @@ class _CustomDateWidgetState extends State<CustomDateWidget> {
                                     '80watvo4' /* Go */,
                                   ),
                                   options: FFButtonOptions(
-                                    width: 80,
-                                    height: 40,
+                                    width: 80.0,
+                                    height: 40.0,
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 0, 0),
+                                        0.0, 0.0, 0.0, 0.0),
                                     iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 0, 0),
+                                        0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).primary,
                                     textStyle: FlutterFlowTheme.of(context)
                                         .headlineSmall
@@ -389,12 +390,12 @@ class _CustomDateWidgetState extends State<CustomDateWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .headlineSmallFamily),
                                         ),
-                                    elevation: 2,
+                                    elevation: 2.0,
                                     borderSide: BorderSide(
                                       color: Colors.transparent,
-                                      width: 1,
+                                      width: 1.0,
                                     ),
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                 ),
                               ],

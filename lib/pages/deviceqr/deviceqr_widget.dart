@@ -55,11 +55,12 @@ class _DeviceqrWidgetState extends State<DeviceqrWidget> {
                 Expanded(
                   flex: 4,
                   child: Container(
-                    width: MediaQuery.sizeOf(context).width,
+                    width: MediaQuery.sizeOf(context).width * 1.0,
                     height: MediaQuery.sizeOf(context).height * 0.12,
                     decoration: BoxDecoration(),
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(15, 0, 15, 5),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 5.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -70,12 +71,12 @@ class _DeviceqrWidgetState extends State<DeviceqrWidget> {
                             children: [
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 30,
-                                buttonSize: 40,
+                                borderRadius: 30.0,
+                                buttonSize: 40.0,
                                 icon: Icon(
                                   Icons.keyboard_arrow_left_sharp,
                                   color: FlutterFlowTheme.of(context).lineColor,
-                                  size: 24,
+                                  size: 24.0,
                                 ),
                                 onPressed: () async {
                                   context.goNamed('account');
@@ -102,11 +103,11 @@ class _DeviceqrWidgetState extends State<DeviceqrWidget> {
                               ),
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 30,
-                                buttonSize: 40,
+                                borderRadius: 30.0,
+                                buttonSize: 40.0,
                                 icon: Icon(
                                   Icons.settings_sharp,
-                                  size: 0,
+                                  size: 0.0,
                                 ),
                                 onPressed: () {
                                   print('IconButton pressed ...');
@@ -122,10 +123,10 @@ class _DeviceqrWidgetState extends State<DeviceqrWidget> {
                 Expanded(
                   flex: 26,
                   child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
                     child: Container(
-                      width: MediaQuery.sizeOf(context).width,
-                      height: 100,
+                      width: MediaQuery.sizeOf(context).width * 1.0,
+                      height: 100.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context)
                             .parkingPrimaryBackground,
@@ -133,14 +134,14 @@ class _DeviceqrWidgetState extends State<DeviceqrWidget> {
                       child: Container(
                         decoration: BoxDecoration(),
                         child: Padding(
-                          padding: EdgeInsets.all(10),
+                          padding: EdgeInsets.all(10.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 10.0),
                                 child: Text(
                                   valueOrDefault<String>(
                                     FFAppState().outletId,
@@ -162,11 +163,11 @@ class _DeviceqrWidgetState extends State<DeviceqrWidget> {
                                 ),
                               ),
                               Container(
-                                width: 300,
-                                height: 300,
+                                width: 300.0,
+                                height: 300.0,
                                 child: custom_widgets.QrCode(
-                                  width: 300,
-                                  height: 300,
+                                  width: 300.0,
+                                  height: 300.0,
                                   data: FFAppState().outletId,
                                   size: 250.0,
                                   backgroundColor: Colors.black,

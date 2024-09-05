@@ -64,8 +64,8 @@ class _ProductListNewMWidgetState extends State<ProductListNewMWidget> {
                 Expanded(
                   flex: 4,
                   child: Container(
-                    width: MediaQuery.sizeOf(context).width,
-                    height: 100,
+                    width: MediaQuery.sizeOf(context).width * 1.0,
+                    height: 100.0,
                     decoration: BoxDecoration(),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -73,20 +73,21 @@ class _ProductListNewMWidgetState extends State<ProductListNewMWidget> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              20.0, 0.0, 20.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 30,
-                                borderWidth: 1,
-                                buttonSize: 45,
+                                borderRadius: 30.0,
+                                borderWidth: 1.0,
+                                buttonSize: 45.0,
                                 icon: Icon(
                                   Icons.chevron_left,
                                   color: FlutterFlowTheme.of(context).lineColor,
-                                  size: 24,
+                                  size: 24.0,
                                 ),
                                 onPressed: () async {
                                   context.pushNamed('mastersNew');
@@ -114,13 +115,13 @@ class _ProductListNewMWidgetState extends State<ProductListNewMWidget> {
                               ),
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 30,
-                                borderWidth: 1,
-                                buttonSize: 45,
+                                borderRadius: 30.0,
+                                borderWidth: 1.0,
+                                buttonSize: 45.0,
                                 icon: Icon(
                                   Icons.more_vert,
                                   color: FlutterFlowTheme.of(context).primary,
-                                  size: 0,
+                                  size: 0.0,
                                 ),
                                 onPressed: () {
                                   print('IconButton pressed ...');
@@ -153,11 +154,11 @@ class _ProductListNewMWidgetState extends State<ProductListNewMWidget> {
                       if (!snapshot.hasData) {
                         return Center(
                           child: SizedBox(
-                            width: 40,
-                            height: 40,
+                            width: 40.0,
+                            height: 40.0,
                             child: SpinKitFadingCircle(
                               color: FlutterFlowTheme.of(context).primary,
-                              size: 40,
+                              size: 40.0,
                             ),
                           ),
                         );
@@ -166,21 +167,21 @@ class _ProductListNewMWidgetState extends State<ProductListNewMWidget> {
                           snapshot.data!;
 
                       return Container(
-                        width: MediaQuery.sizeOf(context).width,
-                        height: 100,
+                        width: MediaQuery.sizeOf(context).width * 1.0,
+                        height: 100.0,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context)
                               .parkingPrimaryBackground,
                           borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(0),
-                            bottomRight: Radius.circular(0),
-                            topLeft: Radius.circular(0),
-                            topRight: Radius.circular(0),
+                            bottomLeft: Radius.circular(0.0),
+                            bottomRight: Radius.circular(0.0),
+                            topLeft: Radius.circular(0.0),
+                            topRight: Radius.circular(0.0),
                           ),
                         ),
                         child: Padding(
-                          padding:
-                              EdgeInsetsDirectional.fromSTEB(10, 25, 10, 15),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              10.0, 25.0, 10.0, 15.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -188,7 +189,7 @@ class _ProductListNewMWidgetState extends State<ProductListNewMWidget> {
                               Expanded(
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 0, 10),
+                                      0.0, 0.0, 0.0, 10.0),
                                   child: Container(
                                     width:
                                         MediaQuery.sizeOf(context).width * 0.9,
@@ -213,7 +214,8 @@ class _ProductListNewMWidgetState extends State<ProductListNewMWidget> {
                                             final listItem = list[listIndex];
                                             return Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 0, 10),
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 0.0, 10.0),
                                               child: Container(
                                                 width: double.infinity,
                                                 decoration: BoxDecoration(
@@ -221,10 +223,11 @@ class _ProductListNewMWidgetState extends State<ProductListNewMWidget> {
                                                           context)
                                                       .secondaryBackground,
                                                   borderRadius:
-                                                      BorderRadius.circular(8),
+                                                      BorderRadius.circular(
+                                                          8.0),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsets.all(10),
+                                                  padding: EdgeInsets.all(10.0),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -240,7 +243,7 @@ class _ProductListNewMWidgetState extends State<ProductListNewMWidget> {
                                                         child: Align(
                                                           alignment:
                                                               AlignmentDirectional(
-                                                                  0, 0),
+                                                                  0.0, 0.0),
                                                           child: Text(
                                                             listItem.code
                                                                 .toString(),
@@ -263,7 +266,7 @@ class _ProductListNewMWidgetState extends State<ProductListNewMWidget> {
                                                         ),
                                                       ),
                                                       SizedBox(
-                                                        height: 50,
+                                                        height: 50.0,
                                                         child: VerticalDivider(
                                                           thickness: 0.5,
                                                           color: FlutterFlowTheme
@@ -279,10 +282,10 @@ class _ProductListNewMWidgetState extends State<ProductListNewMWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0,
-                                                                        0,
-                                                                        8,
-                                                                        0),
+                                                                        0.0,
+                                                                        0.0,
+                                                                        8.0,
+                                                                        0.0),
                                                             child: Column(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -294,10 +297,10 @@ class _ProductListNewMWidgetState extends State<ProductListNewMWidget> {
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          0,
-                                                                          7),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          7.0),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -326,12 +329,11 @@ class _ProductListNewMWidgetState extends State<ProductListNewMWidget> {
                                                                           .spaceBetween,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              5,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0),
                                                                       child:
                                                                           Column(
                                                                         mainAxisSize:
@@ -394,24 +396,25 @@ class _ProductListNewMWidgetState extends State<ProductListNewMWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0,
-                                                                        0,
-                                                                        0,
-                                                                        10),
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        10.0),
                                                             child:
                                                                 FlutterFlowIconButton(
                                                               borderColor: Colors
                                                                   .transparent,
-                                                              borderRadius: 30,
-                                                              borderWidth: 1,
-                                                              buttonSize: 35,
+                                                              borderRadius:
+                                                                  30.0,
+                                                              borderWidth: 1.0,
+                                                              buttonSize: 35.0,
                                                               icon: Icon(
                                                                 Icons
                                                                     .delete_forever_rounded,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
-                                                                size: 18,
+                                                                size: 18.0,
                                                               ),
                                                               onPressed:
                                                                   () async {
@@ -486,15 +489,15 @@ class _ProductListNewMWidgetState extends State<ProductListNewMWidget> {
                                                           FlutterFlowIconButton(
                                                             borderColor: Colors
                                                                 .transparent,
-                                                            borderRadius: 30,
-                                                            borderWidth: 1,
-                                                            buttonSize: 35,
+                                                            borderRadius: 30.0,
+                                                            borderWidth: 1.0,
+                                                            buttonSize: 35.0,
                                                             icon: Icon(
                                                               Icons.mode_edit,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .primaryText,
-                                                              size: 18,
+                                                              size: 18.0,
                                                             ),
                                                             onPressed:
                                                                 () async {
@@ -544,12 +547,12 @@ class _ProductListNewMWidgetState extends State<ProductListNewMWidget> {
                                   'f3915q0z' /* + */,
                                 ),
                                 options: FFButtonOptions(
-                                  width: 130,
-                                  height: 40,
+                                  width: 130.0,
+                                  height: 40.0,
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 0, 0),
+                                      0.0, 0.0, 0.0, 0.0),
                                   iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 0, 0),
+                                      0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context)
                                       .parkingSecondaryBackground,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -558,17 +561,17 @@ class _ProductListNewMWidgetState extends State<ProductListNewMWidget> {
                                         fontFamily: 'Lora',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBtnText,
-                                        fontSize: 42,
+                                        fontSize: 42.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.normal,
                                         useGoogleFonts: GoogleFonts.asMap()
                                             .containsKey('Lora'),
                                       ),
-                                  elevation: 2,
+                                  elevation: 2.0,
                                   borderSide: BorderSide(
                                     color: Colors.transparent,
                                   ),
-                                  borderRadius: BorderRadius.circular(5),
+                                  borderRadius: BorderRadius.circular(5.0),
                                 ),
                               ),
                             ],

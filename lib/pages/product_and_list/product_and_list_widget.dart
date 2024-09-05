@@ -107,8 +107,8 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: 0,
-            end: 1,
+            begin: 0.0,
+            end: 1.0,
           ),
         ],
       ),
@@ -167,8 +167,8 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: 0,
-            end: 1,
+            begin: 0.0,
+            end: 1.0,
           ),
         ],
       ),
@@ -187,8 +187,8 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 120.0.ms,
-            begin: 0,
-            end: 1,
+            begin: 0.0,
+            end: 1.0,
           ),
         ],
       ),
@@ -207,8 +207,8 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: 0,
-            end: 1,
+            begin: 0.0,
+            end: 1.0,
           ),
         ],
       ),
@@ -227,8 +227,8 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: 0,
-            end: 1,
+            begin: 0.0,
+            end: 1.0,
           ),
         ],
       ),
@@ -247,8 +247,8 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: 0,
-            end: 1,
+            begin: 0.0,
+            end: 1.0,
           ),
         ],
       ),
@@ -267,8 +267,8 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: 0,
-            end: 1,
+            begin: 0.0,
+            end: 1.0,
           ),
         ],
       ),
@@ -306,11 +306,11 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Center(
               child: SizedBox(
-                width: 40,
-                height: 40,
+                width: 40.0,
+                height: 40.0,
                 child: SpinKitFadingCircle(
                   color: FlutterFlowTheme.of(context).primary,
-                  size: 40,
+                  size: 40.0,
                 ),
               ),
             ),
@@ -334,7 +334,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                 drawer: Container(
                   width: MediaQuery.sizeOf(context).width * 0.11,
                   child: Drawer(
-                    elevation: 16,
+                    elevation: 16.0,
                     child: wrapWithModel(
                       model: _model.menuDrawerModel,
                       updateCallback: () => safeSetState(() {}),
@@ -345,7 +345,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                 endDrawer: Container(
                   width: MediaQuery.sizeOf(context).width * 0.45,
                   child: Drawer(
-                    elevation: 16,
+                    elevation: 16.0,
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.end,
@@ -359,11 +359,11 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                             if (!snapshot.hasData) {
                               return Center(
                                 child: SizedBox(
-                                  width: 40,
-                                  height: 40,
+                                  width: 40.0,
+                                  height: 40.0,
                                   child: SpinKitFadingCircle(
                                     color: FlutterFlowTheme.of(context).primary,
-                                    size: 40,
+                                    size: 40.0,
                                   ),
                                 ),
                               );
@@ -372,14 +372,14 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                 snapshot.data!;
 
                             return Container(
-                              width: MediaQuery.sizeOf(context).width,
-                              height: MediaQuery.sizeOf(context).height * 1,
+                              width: MediaQuery.sizeOf(context).width * 1.0,
+                              height: MediaQuery.sizeOf(context).height * 1.0,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .primaryBackground,
                               ),
                               child: Padding(
-                                padding: EdgeInsets.all(10),
+                                padding: EdgeInsets.all(10.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -401,15 +401,15 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                         children: [
                                           FlutterFlowIconButton(
                                             borderColor: Colors.transparent,
-                                            borderRadius: 30,
-                                            borderWidth: 1,
-                                            buttonSize: 40,
+                                            borderRadius: 30.0,
+                                            borderWidth: 1.0,
+                                            buttonSize: 40.0,
                                             icon: Icon(
                                               Icons.chevron_left,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
-                                              size: 22,
+                                              size: 22.0,
                                             ),
                                             onPressed: () async {
                                               context.pop();
@@ -423,7 +423,8 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(20, 0, 0, 0),
+                                                      .fromSTEB(
+                                                          20.0, 0.0, 0.0, 0.0),
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
@@ -452,15 +453,15 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                           ),
                                           FlutterFlowIconButton(
                                             borderColor: Colors.transparent,
-                                            borderRadius: 30,
-                                            borderWidth: 1,
-                                            buttonSize: 40,
+                                            borderRadius: 30.0,
+                                            borderWidth: 1.0,
+                                            buttonSize: 40.0,
                                             icon: Icon(
                                               Icons.person_add,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
-                                              size: 22,
+                                              size: 22.0,
                                             ),
                                             onPressed: () async {
                                               context.pushNamed('AddCustomer');
@@ -471,10 +472,10 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 10, 0, 0),
+                                          0.0, 10.0, 0.0, 0.0),
                                       child: Material(
                                         color: Colors.transparent,
-                                        elevation: 2,
+                                        elevation: 2.0,
                                         child: Container(
                                           width: double.infinity,
                                           height: MediaQuery.sizeOf(context)
@@ -492,7 +493,8 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                               Expanded(
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(6, 0, 0, 0),
+                                                      .fromSTEB(
+                                                          6.0, 0.0, 0.0, 0.0),
                                                   child: TextFormField(
                                                     controller: _model
                                                         .textFieldsearchTextController,
@@ -672,8 +674,8 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                 child: FlutterFlowIconButton(
                                                   borderColor:
                                                       Colors.transparent,
-                                                  borderWidth: 1,
-                                                  buttonSize: 50,
+                                                  borderWidth: 1.0,
+                                                  buttonSize: 50.0,
                                                   fillColor:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -683,7 +685,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryBtnText,
-                                                    size: 22,
+                                                    size: 22.0,
                                                   ),
                                                   onPressed: () {
                                                     print(
@@ -698,7 +700,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 5, 0, 0),
+                                          0.0, 5.0, 0.0, 0.0),
                                       child: Container(
                                         width: double.infinity,
                                         height:
@@ -709,11 +711,11 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                               .secondaryBackground,
                                           boxShadow: [
                                             BoxShadow(
-                                              blurRadius: 3,
+                                              blurRadius: 3.0,
                                               color: Color(0x33000000),
                                               offset: Offset(
-                                                0,
-                                                1,
+                                                0.0,
+                                                1.0,
                                               ),
                                             )
                                           ],
@@ -787,7 +789,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          4),
+                                                                          4.0),
                                                             ),
                                                             child: Row(
                                                               mainAxisSize:
@@ -802,18 +804,18 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                       Colors
                                                                           .transparent,
                                                                   borderRadius:
-                                                                      30,
+                                                                      30.0,
                                                                   borderWidth:
-                                                                      1,
+                                                                      1.0,
                                                                   buttonSize:
-                                                                      60,
+                                                                      60.0,
                                                                   icon: Icon(
                                                                     Icons
                                                                         .account_circle,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryText,
-                                                                    size: 30,
+                                                                    size: 30.0,
                                                                   ),
                                                                   onPressed:
                                                                       () {
@@ -824,7 +826,8 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                 Expanded(
                                                                   child:
                                                                       Container(
-                                                                    width: 170,
+                                                                    width:
+                                                                        170.0,
                                                                     height: MediaQuery.sizeOf(context)
                                                                             .height *
                                                                         0.14,
@@ -875,7 +878,8 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                 Expanded(
                                                                   child:
                                                                       Container(
-                                                                    width: 100,
+                                                                    width:
+                                                                        100.0,
                                                                     height: MediaQuery.sizeOf(context)
                                                                             .height *
                                                                         0.14,
@@ -897,10 +901,10 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                             .credit)
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0,
-                                                                                8,
-                                                                                0,
-                                                                                0),
+                                                                                0.0,
+                                                                                8.0,
+                                                                                0.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Row(
                                                                               mainAxisSize: MainAxisSize.max,
@@ -959,18 +963,18 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                           borderColor:
                                                                               Colors.transparent,
                                                                           borderRadius:
-                                                                              30,
+                                                                              30.0,
                                                                           borderWidth:
-                                                                              1,
+                                                                              1.0,
                                                                           buttonSize:
-                                                                              60,
+                                                                              60.0,
                                                                           icon:
                                                                               Icon(
                                                                             Icons.chevron_right,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondary,
                                                                             size:
-                                                                                24,
+                                                                                24.0,
                                                                           ),
                                                                           onPressed:
                                                                               () async {
@@ -1058,17 +1062,16 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                       .only(
                                                                 bottomLeft: Radius
                                                                     .circular(
-                                                                        4),
-                                                                bottomRight:
-                                                                    Radius
-                                                                        .circular(
-                                                                            4),
+                                                                        4.0),
+                                                                bottomRight: Radius
+                                                                    .circular(
+                                                                        4.0),
                                                                 topLeft: Radius
                                                                     .circular(
-                                                                        4),
+                                                                        4.0),
                                                                 topRight: Radius
                                                                     .circular(
-                                                                        4),
+                                                                        4.0),
                                                               ),
                                                             ),
                                                             child: Row(
@@ -1084,18 +1087,18 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                       Colors
                                                                           .transparent,
                                                                   borderRadius:
-                                                                      30,
+                                                                      30.0,
                                                                   borderWidth:
-                                                                      1,
+                                                                      1.0,
                                                                   buttonSize:
-                                                                      60,
+                                                                      60.0,
                                                                   icon: Icon(
                                                                     Icons
                                                                         .account_circle,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryText,
-                                                                    size: 30,
+                                                                    size: 30.0,
                                                                   ),
                                                                   onPressed:
                                                                       () {
@@ -1106,7 +1109,8 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                 Expanded(
                                                                   child:
                                                                       Container(
-                                                                    width: 170,
+                                                                    width:
+                                                                        170.0,
                                                                     height: MediaQuery.sizeOf(context)
                                                                             .height *
                                                                         0.14,
@@ -1157,7 +1161,8 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                 Expanded(
                                                                   child:
                                                                       Container(
-                                                                    width: 100,
+                                                                    width:
+                                                                        100.0,
                                                                     height: MediaQuery.sizeOf(context)
                                                                             .height *
                                                                         0.14,
@@ -1179,10 +1184,10 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                             .credit)
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0,
-                                                                                8,
-                                                                                0,
-                                                                                0),
+                                                                                0.0,
+                                                                                8.0,
+                                                                                0.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Row(
                                                                               mainAxisSize: MainAxisSize.max,
@@ -1241,18 +1246,18 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                           borderColor:
                                                                               Colors.transparent,
                                                                           borderRadius:
-                                                                              30,
+                                                                              30.0,
                                                                           borderWidth:
-                                                                              1,
+                                                                              1.0,
                                                                           buttonSize:
-                                                                              60,
+                                                                              60.0,
                                                                           icon:
                                                                               Icon(
                                                                             Icons.chevron_right,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondary,
                                                                             size:
-                                                                                24,
+                                                                                24.0,
                                                                           ),
                                                                           onPressed:
                                                                               () async {
@@ -1301,11 +1306,11 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                     if (!snapshot.hasData) {
                       return Center(
                         child: SizedBox(
-                          width: 40,
-                          height: 40,
+                          width: 40.0,
+                          height: 40.0,
                           child: SpinKitFadingCircle(
                             color: FlutterFlowTheme.of(context).primary,
-                            size: 40,
+                            size: 40.0,
                           ),
                         ),
                       );
@@ -1316,7 +1321,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                     return Container(
                       decoration: BoxDecoration(),
                       child: Padding(
-                        padding: EdgeInsets.all(3),
+                        padding: EdgeInsets.all(3.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1340,15 +1345,15 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                     },
                                     child: Image.asset(
                                       'assets/images/IMG_20220412_140945.png',
-                                      width: 100,
-                                      height: 100,
+                                      width: 100.0,
+                                      height: 100.0,
                                       fit: BoxFit.contain,
                                     ),
                                   ),
                                 ),
                                 Expanded(
                                   child: Container(
-                                    width: 100,
+                                    width: 100.0,
                                     height: MediaQuery.sizeOf(context).height *
                                         0.06,
                                     decoration: BoxDecoration(
@@ -1357,7 +1362,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                     ),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          10, 0, 10, 0),
+                                          10.0, 0.0, 10.0, 0.0),
                                       child: StreamBuilder<
                                           List<UserProfileRecord>>(
                                         stream: queryUserProfileRecord(
@@ -1368,8 +1373,8 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                           if (!snapshot.hasData) {
                                             return Center(
                                               child: SizedBox(
-                                                width: 20,
-                                                height: 20,
+                                                width: 20.0,
+                                                height: 20.0,
                                                 child:
                                                     CircularProgressIndicator(
                                                   valueColor:
@@ -1402,8 +1407,8 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                             children: [
                                               Expanded(
                                                 child: Container(
-                                                  width: 100,
-                                                  height: 100,
+                                                  width: 100.0,
+                                                  height: 100.0,
                                                   decoration: BoxDecoration(),
                                                   child: Row(
                                                     mainAxisSize:
@@ -1413,7 +1418,10 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0, 0, 3, 0),
+                                                                    0.0,
+                                                                    0.0,
+                                                                    3.0,
+                                                                    0.0),
                                                         child: Text(
                                                           rowUserProfileRecord!
                                                               .name,
@@ -1444,7 +1452,10 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0, 0, 6, 0),
+                                                                    0.0,
+                                                                    0.0,
+                                                                    6.0,
+                                                                    0.0),
                                                         child: Text(
                                                           FFLocalizations.of(
                                                                   context)
@@ -1480,7 +1491,8 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                               ),
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(0, 0, 6, 0),
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 6.0, 0.0),
                                                 child: Text(
                                                   dateTimeFormat(
                                                     "yMMMd",
@@ -1541,8 +1553,8 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                               ),
                                               Expanded(
                                                 child: Container(
-                                                  width: 100,
-                                                  height: 100,
+                                                  width: 100.0,
+                                                  height: 100.0,
                                                   decoration: BoxDecoration(),
                                                   child: Row(
                                                     mainAxisSize:
@@ -1587,15 +1599,15 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                               ],
                             ),
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 3.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Expanded(
                                     flex: 18,
                                     child: Container(
-                                      width: 100,
+                                      width: 100.0,
                                       height:
                                           MediaQuery.sizeOf(context).height *
                                               0.065,
@@ -1611,7 +1623,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 3, 0),
+                                                    0.0, 0.0, 3.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
                                               focusColor: Colors.transparent,
@@ -1664,7 +1676,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primaryText,
-                                                      size: 18,
+                                                      size: 18.0,
                                                     ),
                                                   ],
                                                 ),
@@ -1678,7 +1690,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                           Expanded(
                                             flex: 19,
                                             child: Container(
-                                              width: 100,
+                                              width: 100.0,
                                               height: MediaQuery.sizeOf(context)
                                                       .height *
                                                   0.065,
@@ -1688,11 +1700,11 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                         .secondaryBackground,
                                                 boxShadow: [
                                                   BoxShadow(
-                                                    blurRadius: 4,
+                                                    blurRadius: 4.0,
                                                     color: Color(0x32000000),
                                                     offset: Offset(
-                                                      0,
-                                                      2,
+                                                      0.0,
+                                                      2.0,
                                                     ),
                                                   )
                                                 ],
@@ -1846,9 +1858,9 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                     flex: 10,
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          3, 0, 0, 0),
+                                          3.0, 0.0, 0.0, 0.0),
                                       child: Container(
-                                        width: 100,
+                                        width: 100.0,
                                         height:
                                             MediaQuery.sizeOf(context).height *
                                                 0.065,
@@ -1892,7 +1904,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                 FFAppState().update(() {});
                                               },
                                               child: Container(
-                                                width: 36,
+                                                width: 36.0,
                                                 height: double.infinity,
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
@@ -1901,11 +1913,12 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                 ),
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(0, 0, 3, 0),
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 3.0, 0.0),
                                                   child: FlutterFlowIconButton(
                                                     borderColor:
                                                         Colors.transparent,
-                                                    buttonSize: 35,
+                                                    buttonSize: 35.0,
                                                     fillColor:
                                                         FlutterFlowTheme.of(
                                                                 context)
@@ -1920,7 +1933,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primaryText,
-                                                      size: 16,
+                                                      size: 16.0,
                                                     ),
                                                     onPressed:
                                                         !productAndListAppSettingsRecord!
@@ -1962,7 +1975,10 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0, 0, 3, 0),
+                                                                    0.0,
+                                                                    0.0,
+                                                                    3.0,
+                                                                    0.0),
                                                         child: InkWell(
                                                           splashColor: Colors
                                                               .transparent,
@@ -2058,7 +2074,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                             }
                                                           },
                                                           child: Container(
-                                                            width: 40,
+                                                            width: 40.0,
                                                             height:
                                                                 double.infinity,
                                                             decoration:
@@ -2088,10 +2104,10 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          7,
-                                                                          0,
-                                                                          7,
-                                                                          0),
+                                                                          7.0,
+                                                                          0.0,
+                                                                          7.0,
+                                                                          0.0),
                                                                   child: Text(
                                                                     getJsonField(
                                                                       holdListPLItem,
@@ -2176,7 +2192,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                     MediaQuery.sizeOf(context)
                                                             .width *
                                                         0.04,
-                                                height: 100,
+                                                height: 100.0,
                                                 decoration: BoxDecoration(
                                                   border: Border.all(
                                                     width: 0.5,
@@ -2188,7 +2204,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
-                                                    size: 16,
+                                                    size: 16.0,
                                                   ),
                                                   onPressed: () {
                                                     print(
@@ -2207,15 +2223,15 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                             ),
                             Expanded(
                               child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 3.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Expanded(
                                       flex: 18,
                                       child: Container(
-                                        width: 100,
+                                        width: 100.0,
                                         height: double.infinity,
                                         decoration: BoxDecoration(),
                                         child: Column(
@@ -2248,10 +2264,10 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          3,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          3.0,
+                                                                          0.0),
                                                                   child:
                                                                       Container(
                                                                     width: MediaQuery.sizeOf(context)
@@ -2272,9 +2288,9 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0,
                                                                               1.5),
                                                                           child:
                                                                               InkWell(
@@ -2313,7 +2329,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                                 mainAxisAlignment: MainAxisAlignment.center,
                                                                                 children: [
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(3, 12, 3, 12),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(3.0, 12.0, 3.0, 12.0),
                                                                                     child: Text(
                                                                                       FFLocalizations.of(context).getText(
                                                                                         'qxqvn1wb' /* All */,
@@ -2336,14 +2352,14 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0,
-                                                                                0,
-                                                                                0,
-                                                                                3),
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                3.0),
                                                                             child:
                                                                                 Container(
                                                                               width: double.infinity,
-                                                                              height: 100,
+                                                                              height: 100.0,
                                                                               decoration: BoxDecoration(),
                                                                               child: StreamBuilder<List<CategoryRecord>>(
                                                                                 stream: queryCategoryRecord(
@@ -2363,8 +2379,8 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                                   if (!snapshot.hasData) {
                                                                                     return Center(
                                                                                       child: SizedBox(
-                                                                                        width: 20,
-                                                                                        height: 20,
+                                                                                        width: 20.0,
+                                                                                        height: 20.0,
                                                                                         child: CircularProgressIndicator(
                                                                                           valueColor: AlwaysStoppedAnimation<Color>(
                                                                                             FlutterFlowTheme.of(context).primaryBackground,
@@ -2382,7 +2398,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                                     itemBuilder: (context, listViewIndex) {
                                                                                       final listViewCategoryRecord = listViewCategoryRecordList[listViewIndex];
                                                                                       return Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 1.5),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.5),
                                                                                         child: InkWell(
                                                                                           splashColor: Colors.transparent,
                                                                                           focusColor: Colors.transparent,
@@ -2405,7 +2421,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                                               mainAxisAlignment: MainAxisAlignment.center,
                                                                                               children: [
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(3, 12, 3, 12),
+                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(3.0, 12.0, 3.0, 12.0),
                                                                                                   child: Text(
                                                                                                     listViewCategoryRecord.name.maybeHandleOverflow(
                                                                                                       maxChars: 9,
@@ -2415,7 +2431,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                                                     style: FlutterFlowTheme.of(context).labelLarge.override(
                                                                                                           fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                                                           color: FlutterFlowTheme.of(context).lineColor,
-                                                                                                          fontSize: 15,
+                                                                                                          fontSize: 15.0,
                                                                                                           letterSpacing: 0.0,
                                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
                                                                                                         ),
@@ -2441,7 +2457,8 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                   flex: 19,
                                                                   child:
                                                                       Container(
-                                                                    width: 100,
+                                                                    width:
+                                                                        100.0,
                                                                     height: double
                                                                         .infinity,
                                                                     decoration:
@@ -2451,7 +2468,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                       children: [
                                                                         Padding(
                                                                           padding:
-                                                                              EdgeInsets.all(1),
+                                                                              EdgeInsets.all(1.0),
                                                                           child:
                                                                               Container(
                                                                             decoration:
@@ -2475,11 +2492,11 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                                 if (!snapshot.hasData) {
                                                                                   return Center(
                                                                                     child: SizedBox(
-                                                                                      width: 80,
-                                                                                      height: 80,
+                                                                                      width: 80.0,
+                                                                                      height: 80.0,
                                                                                       child: SpinKitCircle(
                                                                                         color: FlutterFlowTheme.of(context).primary,
-                                                                                        size: 80,
+                                                                                        size: 80.0,
                                                                                       ),
                                                                                     ),
                                                                                   );
@@ -2498,8 +2515,8 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                                   padding: EdgeInsets.zero,
                                                                                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                                                                                     crossAxisCount: 4,
-                                                                                    crossAxisSpacing: 3,
-                                                                                    mainAxisSpacing: 4,
+                                                                                    crossAxisSpacing: 3.0,
+                                                                                    mainAxisSpacing: 4.0,
                                                                                     childAspectRatio: 1.3,
                                                                                   ),
                                                                                   scrollDirection: Axis.vertical,
@@ -2507,14 +2524,14 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                                   itemBuilder: (context, gridViewIndex) {
                                                                                     final gridViewProductRecord = gridViewProductRecordList[gridViewIndex];
                                                                                     return Container(
-                                                                                      width: 100,
-                                                                                      height: 100,
+                                                                                      width: 100.0,
+                                                                                      height: 100.0,
                                                                                       decoration: BoxDecoration(
                                                                                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                        borderRadius: BorderRadius.circular(5),
+                                                                                        borderRadius: BorderRadius.circular(5.0),
                                                                                         border: Border.all(
                                                                                           color: FlutterFlowTheme.of(context).customColor2,
-                                                                                          width: 1,
+                                                                                          width: 1.0,
                                                                                         ),
                                                                                       ),
                                                                                       child: Stack(
@@ -2562,19 +2579,19 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                                               child: Container(
                                                                                                 decoration: BoxDecoration(
                                                                                                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                                  borderRadius: BorderRadius.circular(5),
+                                                                                                  borderRadius: BorderRadius.circular(5.0),
                                                                                                   border: Border.all(
                                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                                   ),
                                                                                                 ),
                                                                                                 child: Padding(
-                                                                                                  padding: EdgeInsets.all(2),
+                                                                                                  padding: EdgeInsets.all(2.0),
                                                                                                   child: Column(
                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                     mainAxisAlignment: MainAxisAlignment.end,
                                                                                                     children: [
                                                                                                       Padding(
-                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                                                                                                         child: Text(
                                                                                                           gridViewProductRecord.regionalName.maybeHandleOverflow(maxChars: 25),
                                                                                                           textAlign: TextAlign.center,
@@ -2586,13 +2603,13 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                                                         ),
                                                                                                       ),
                                                                                                       Padding(
-                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
                                                                                                         child: Row(
                                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                                           mainAxisAlignment: MainAxisAlignment.center,
                                                                                                           children: [
                                                                                                             Align(
-                                                                                                              alignment: AlignmentDirectional(0, 0),
+                                                                                                              alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                               child: Text(
                                                                                                                 FFLocalizations.of(context).getText(
                                                                                                                   'k3wg7q6p' /* ₹  */,
@@ -2606,7 +2623,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                                                               ),
                                                                                                             ),
                                                                                                             Align(
-                                                                                                              alignment: AlignmentDirectional(0, 0),
+                                                                                                              alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                               child: Text(
                                                                                                                 gridViewProductRecord.sellingPrice.toString(),
                                                                                                                 textAlign: TextAlign.center,
@@ -2668,20 +2685,20 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                                               child: Container(
                                                                                                 decoration: BoxDecoration(
                                                                                                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                                  borderRadius: BorderRadius.circular(5),
+                                                                                                  borderRadius: BorderRadius.circular(5.0),
                                                                                                   border: Border.all(
                                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                                   ),
                                                                                                 ),
                                                                                                 child: Padding(
-                                                                                                  padding: EdgeInsets.all(2),
+                                                                                                  padding: EdgeInsets.all(2.0),
                                                                                                   child: Column(
                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                     mainAxisAlignment: MainAxisAlignment.end,
                                                                                                     crossAxisAlignment: CrossAxisAlignment.center,
                                                                                                     children: [
                                                                                                       Padding(
-                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 2),
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
                                                                                                         child: Text(
                                                                                                           gridViewProductRecord.searchcode.toString(),
                                                                                                           textAlign: TextAlign.center,
@@ -2693,7 +2710,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                                                         ),
                                                                                                       ),
                                                                                                       Padding(
-                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 2),
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
                                                                                                         child: Text(
                                                                                                           gridViewProductRecord.name.maybeHandleOverflow(maxChars: 25),
                                                                                                           textAlign: TextAlign.center,
@@ -2706,13 +2723,13 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                                                         ),
                                                                                                       ),
                                                                                                       Padding(
-                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
                                                                                                         child: Row(
                                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                                           mainAxisAlignment: MainAxisAlignment.center,
                                                                                                           children: [
                                                                                                             Align(
-                                                                                                              alignment: AlignmentDirectional(0, 0),
+                                                                                                              alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                               child: Text(
                                                                                                                 FFLocalizations.of(context).getText(
                                                                                                                   '8ktlx2qu' /* ₹  */,
@@ -2726,7 +2743,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                                                               ),
                                                                                                             ),
                                                                                                             Align(
-                                                                                                              alignment: AlignmentDirectional(0, 0),
+                                                                                                              alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                               child: Text(
                                                                                                                 gridViewProductRecord.sellingPrice.toString(),
                                                                                                                 textAlign: TextAlign.center,
@@ -2788,7 +2805,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                                               child: Container(
                                                                                                 decoration: BoxDecoration(
                                                                                                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                                  borderRadius: BorderRadius.circular(5),
+                                                                                                  borderRadius: BorderRadius.circular(5.0),
                                                                                                 ),
                                                                                                 child: Padding(
                                                                                                   padding: EdgeInsets.all(0.5),
@@ -2803,7 +2820,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                                                           height: MediaQuery.sizeOf(context).height * 0.12,
                                                                                                           decoration: BoxDecoration(
                                                                                                             color: Color(0x1A000000),
-                                                                                                            borderRadius: BorderRadius.circular(5),
+                                                                                                            borderRadius: BorderRadius.circular(5.0),
                                                                                                           ),
                                                                                                           child: Column(
                                                                                                             mainAxisSize: MainAxisSize.max,
@@ -2812,27 +2829,27 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                                                             children: [
                                                                                                               Expanded(
                                                                                                                 child: Padding(
-                                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
+                                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                                                                                                                   child: Container(
                                                                                                                     width: double.infinity,
                                                                                                                     height: MediaQuery.sizeOf(context).height * 0.15,
                                                                                                                     decoration: BoxDecoration(
                                                                                                                       gradient: LinearGradient(
                                                                                                                         colors: [Colors.transparent, Color(0xA7000000)],
-                                                                                                                        stops: [0, 1],
-                                                                                                                        begin: AlignmentDirectional(0, -1),
-                                                                                                                        end: AlignmentDirectional(0, 1),
+                                                                                                                        stops: [0.0, 1.0],
+                                                                                                                        begin: AlignmentDirectional(0.0, -1.0),
+                                                                                                                        end: AlignmentDirectional(0, 1.0),
                                                                                                                       ),
-                                                                                                                      borderRadius: BorderRadius.circular(5),
+                                                                                                                      borderRadius: BorderRadius.circular(5.0),
                                                                                                                     ),
                                                                                                                     child: Padding(
-                                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(2, 0, 2, 3),
+                                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 2.0, 3.0),
                                                                                                                       child: Column(
                                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                                         mainAxisAlignment: MainAxisAlignment.end,
                                                                                                                         children: [
                                                                                                                           Padding(
-                                                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 2),
+                                                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
                                                                                                                             child: Text(
                                                                                                                               gridViewProductRecord.name,
                                                                                                                               textAlign: TextAlign.center,
@@ -2846,13 +2863,13 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                                                                             ),
                                                                                                                           ),
                                                                                                                           Padding(
-                                                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 2),
+                                                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
                                                                                                                             child: Row(
                                                                                                                               mainAxisSize: MainAxisSize.max,
                                                                                                                               mainAxisAlignment: MainAxisAlignment.center,
                                                                                                                               children: [
                                                                                                                                 Padding(
-                                                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 3, 0),
+                                                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
                                                                                                                                   child: Text(
                                                                                                                                     FFLocalizations.of(context).getText(
                                                                                                                                       'dd3ddlq5' /* ₹ */,
@@ -2926,16 +2943,16 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                                               child: Container(
                                                                                                 decoration: BoxDecoration(
                                                                                                   color: FFAppState().productColor == gridViewProductRecord.id ? FlutterFlowTheme.of(context).secondary : FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                                  borderRadius: BorderRadius.circular(5),
+                                                                                                  borderRadius: BorderRadius.circular(5.0),
                                                                                                 ),
                                                                                                 child: Padding(
-                                                                                                  padding: EdgeInsets.all(2),
+                                                                                                  padding: EdgeInsets.all(2.0),
                                                                                                   child: Column(
                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                     mainAxisAlignment: MainAxisAlignment.end,
                                                                                                     children: [
                                                                                                       Padding(
-                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 7),
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 7.0),
                                                                                                         child: Text(
                                                                                                           gridViewProductRecord.name.maybeHandleOverflow(maxChars: 25),
                                                                                                           textAlign: TextAlign.center,
@@ -2947,13 +2964,13 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                                                         ),
                                                                                                       ),
                                                                                                       Padding(
-                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
                                                                                                         child: Row(
                                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                                           mainAxisAlignment: MainAxisAlignment.center,
                                                                                                           children: [
                                                                                                             Align(
-                                                                                                              alignment: AlignmentDirectional(0, 0),
+                                                                                                              alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                               child: Text(
                                                                                                                 FFLocalizations.of(context).getText(
                                                                                                                   '9p86gkq1' /* ₹  */,
@@ -2967,7 +2984,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                                                               ),
                                                                                                             ),
                                                                                                             Align(
-                                                                                                              alignment: AlignmentDirectional(0, 0),
+                                                                                                              alignment: AlignmentDirectional(0.0, 0.0),
                                                                                                               child: Text(
                                                                                                                 gridViewProductRecord.sellingPrice.toString(),
                                                                                                                 textAlign: TextAlign.center,
@@ -3017,9 +3034,9 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                       flex: 10,
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            3, 0, 0, 0),
+                                            3.0, 0.0, 0.0, 0.0),
                                         child: Container(
-                                          width: 100,
+                                          width: 100.0,
                                           height: double.infinity,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
@@ -3028,7 +3045,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 5, 0, 0),
+                                                    0.0, 5.0, 0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
@@ -3049,7 +3066,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                         Align(
                                                           alignment:
                                                               AlignmentDirectional(
-                                                                  0, 0),
+                                                                  0.0, 0.0),
                                                           child: Container(
                                                             width:
                                                                 double.infinity,
@@ -3076,7 +3093,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                             Material(
                                                               color: Colors
                                                                   .transparent,
-                                                              elevation: 1,
+                                                              elevation: 1.0,
                                                               child: Container(
                                                                 width: MediaQuery.sizeOf(
                                                                             context)
@@ -3229,7 +3246,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                             Material(
                                                               color: Colors
                                                                   .transparent,
-                                                              elevation: 1,
+                                                              elevation: 1.0,
                                                               child: Container(
                                                                 width: MediaQuery.sizeOf(
                                                                             context)
@@ -3382,7 +3399,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                             Material(
                                                               color: Colors
                                                                   .transparent,
-                                                              elevation: 1,
+                                                              elevation: 1.0,
                                                               child: Container(
                                                                 width: MediaQuery.sizeOf(
                                                                             context)
@@ -3539,14 +3556,15 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                   ),
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(0, 0, 0, 1),
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 1.0),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
                                                       Expanded(
                                                         child: Container(
-                                                          width: 100,
+                                                          width: 100.0,
                                                           height:
                                                               MediaQuery.sizeOf(
                                                                           context)
@@ -3571,17 +3589,17 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                               context)
                                                                           .width *
                                                                       0.12,
-                                                                  height: 100,
+                                                                  height: 100.0,
                                                                   decoration:
                                                                       BoxDecoration(),
                                                                   child:
                                                                       Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            5,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                     child:
                                                                         Column(
                                                                       mainAxisSize:
@@ -3620,7 +3638,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                               context)
                                                                           .width *
                                                                       0.08,
-                                                                  height: 100,
+                                                                  height: 100.0,
                                                                   decoration:
                                                                       BoxDecoration(),
                                                                   child: Column(
@@ -3656,7 +3674,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                               context)
                                                                           .width *
                                                                       0.08,
-                                                                  height: 100,
+                                                                  height: 100.0,
                                                                   decoration:
                                                                       BoxDecoration(),
                                                                   child: Column(
@@ -3688,8 +3706,8 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                 flex: 5,
                                                                 child:
                                                                     Container(
-                                                                  width: 100,
-                                                                  height: 100,
+                                                                  width: 100.0,
+                                                                  height: 100.0,
                                                                   decoration:
                                                                       BoxDecoration(
                                                                     color: FlutterFlowTheme.of(
@@ -3709,11 +3727,11 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                   child: Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                0, 0, 0, 2),
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 2.0),
                                                     child: Container(
                                                       width: double.infinity,
-                                                      height: 100,
+                                                      height: 100.0,
                                                       decoration:
                                                           BoxDecoration(),
                                                       child: Builder(
@@ -3745,10 +3763,10 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            0,
-                                                                            4),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            4.0),
                                                                 child:
                                                                     Container(
                                                                   width: MediaQuery.sizeOf(
@@ -3769,10 +3787,10 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                       Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            5,
-                                                                            0,
-                                                                            5),
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0,
+                                                                            5.0),
                                                                     child: Row(
                                                                       mainAxisSize:
                                                                           MainAxisSize
@@ -3787,23 +3805,23 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                2,
-                                                                                0,
-                                                                                0,
-                                                                                0),
+                                                                                2.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Container(
                                                                               width: MediaQuery.sizeOf(context).width * 0.265,
                                                                               decoration: BoxDecoration(),
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(2, 0, 0, 0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
                                                                                 child: Column(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   mainAxisAlignment: MainAxisAlignment.center,
                                                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                                                   children: [
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 2),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
                                                                                       child: Text(
                                                                                         getJsonField(
                                                                                           billItem,
@@ -3816,7 +3834,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                               fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                               color: FlutterFlowTheme.of(context).primaryText,
-                                                                                              fontSize: 15,
+                                                                                              fontSize: 15.0,
                                                                                               letterSpacing: 0.0,
                                                                                               useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                             ),
@@ -3831,7 +3849,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                                           ),
                                                                                           style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                                 fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
-                                                                                                fontSize: 13,
+                                                                                                fontSize: 13.0,
                                                                                                 letterSpacing: 0.0,
                                                                                                 useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                               ),
@@ -3843,7 +3861,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                                           ).toString(),
                                                                                           style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                                 fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
-                                                                                                fontSize: 13,
+                                                                                                fontSize: 13.0,
                                                                                                 letterSpacing: 0.0,
                                                                                                 useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                               ),
@@ -3862,19 +3880,19 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0,
-                                                                                0,
-                                                                                1,
-                                                                                0),
+                                                                                0.0,
+                                                                                0.0,
+                                                                                1.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Container(
                                                                               width: MediaQuery.sizeOf(context).width * 0.08,
                                                                               decoration: BoxDecoration(
                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                borderRadius: BorderRadius.circular(5),
+                                                                                borderRadius: BorderRadius.circular(5.0),
                                                                               ),
                                                                               child: Padding(
-                                                                                padding: EdgeInsets.all(1),
+                                                                                padding: EdgeInsets.all(1.0),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -3915,26 +3933,26 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                                             color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                             boxShadow: [
                                                                                               BoxShadow(
-                                                                                                blurRadius: 5,
+                                                                                                blurRadius: 5.0,
                                                                                                 color: Color(0x27000000),
                                                                                                 offset: Offset(
-                                                                                                  -4,
-                                                                                                  1,
+                                                                                                  -4.0,
+                                                                                                  1.0,
                                                                                                 ),
-                                                                                                spreadRadius: 1,
+                                                                                                spreadRadius: 1.0,
                                                                                               )
                                                                                             ],
                                                                                             borderRadius: BorderRadius.only(
-                                                                                              bottomLeft: Radius.circular(5),
-                                                                                              bottomRight: Radius.circular(0),
-                                                                                              topLeft: Radius.circular(5),
-                                                                                              topRight: Radius.circular(0),
+                                                                                              bottomLeft: Radius.circular(5.0),
+                                                                                              bottomRight: Radius.circular(0.0),
+                                                                                              topLeft: Radius.circular(5.0),
+                                                                                              topRight: Radius.circular(0.0),
                                                                                             ),
                                                                                           ),
                                                                                           child: Icon(
                                                                                             Icons.remove,
                                                                                             color: FlutterFlowTheme.of(context).primary,
-                                                                                            size: 18,
+                                                                                            size: 18.0,
                                                                                           ),
                                                                                         ),
                                                                                       ),
@@ -3947,7 +3965,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                                         decoration: BoxDecoration(
                                                                                           color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                         ),
-                                                                                        alignment: AlignmentDirectional(0, 0),
+                                                                                        alignment: AlignmentDirectional(0.0, 0.0),
                                                                                         child: Column(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           mainAxisAlignment: MainAxisAlignment.center,
@@ -3961,7 +3979,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                                     fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                     color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                    fontSize: 13,
+                                                                                                    fontSize: 13.0,
                                                                                                     letterSpacing: 0.0,
                                                                                                     fontWeight: FontWeight.w500,
                                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
@@ -4007,26 +4025,26 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                                             color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                             boxShadow: [
                                                                                               BoxShadow(
-                                                                                                blurRadius: 5,
+                                                                                                blurRadius: 5.0,
                                                                                                 color: Color(0x25000000),
                                                                                                 offset: Offset(
-                                                                                                  4,
-                                                                                                  1,
+                                                                                                  4.0,
+                                                                                                  1.0,
                                                                                                 ),
-                                                                                                spreadRadius: 1,
+                                                                                                spreadRadius: 1.0,
                                                                                               )
                                                                                             ],
                                                                                             borderRadius: BorderRadius.only(
-                                                                                              bottomLeft: Radius.circular(0),
-                                                                                              bottomRight: Radius.circular(5),
-                                                                                              topLeft: Radius.circular(0),
-                                                                                              topRight: Radius.circular(5),
+                                                                                              bottomLeft: Radius.circular(0.0),
+                                                                                              bottomRight: Radius.circular(5.0),
+                                                                                              topLeft: Radius.circular(0.0),
+                                                                                              topRight: Radius.circular(5.0),
                                                                                             ),
                                                                                           ),
                                                                                           child: Icon(
                                                                                             Icons.add,
                                                                                             color: FlutterFlowTheme.of(context).primary,
-                                                                                            size: 18,
+                                                                                            size: 18.0,
                                                                                           ),
                                                                                         ),
                                                                                       ),
@@ -4043,17 +4061,17 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0,
-                                                                                0,
-                                                                                1,
-                                                                                0),
+                                                                                0.0,
+                                                                                0.0,
+                                                                                1.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Container(
                                                                               width: MediaQuery.sizeOf(context).width * 0.042,
                                                                               height: MediaQuery.sizeOf(context).height * 0.08,
                                                                               decoration: BoxDecoration(),
                                                                               child: Align(
-                                                                                alignment: AlignmentDirectional(0, 0),
+                                                                                alignment: AlignmentDirectional(0.0, 0.0),
                                                                                 child: Text(
                                                                                   functions
                                                                                       .getTotal(
@@ -4076,7 +4094,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                                   style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                         color: FlutterFlowTheme.of(context).primaryText,
-                                                                                        fontSize: 13,
+                                                                                        fontSize: 13.0,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                       ),
@@ -4125,7 +4143,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                               child: Icon(
                                                                                 Icons.delete,
                                                                                 color: FlutterFlowTheme.of(context).primary,
-                                                                                size: 20,
+                                                                                size: 20.0,
                                                                               ),
                                                                             ),
                                                                           ),
@@ -4154,12 +4172,12 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                         .secondaryBackground,
                                                     boxShadow: [
                                                       BoxShadow(
-                                                        blurRadius: 15,
+                                                        blurRadius: 15.0,
                                                         color:
                                                             Color(0x40000000),
                                                         offset: Offset(
-                                                          2,
-                                                          -2,
+                                                          2.0,
+                                                          -2.0,
                                                         ),
                                                       )
                                                     ],
@@ -4167,8 +4185,8 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                   child: Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                0, 0, 12, 0),
+                                                            .fromSTEB(0.0, 0.0,
+                                                                12.0, 0.0),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -4182,10 +4200,10 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          2,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          2.0,
+                                                                          0.0),
                                                               child: InkWell(
                                                                 splashColor: Colors
                                                                     .transparent,
@@ -4213,8 +4231,8 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                   decoration:
                                                                       BoxDecoration(
                                                                     borderRadius:
-                                                                        BorderRadius
-                                                                            .circular(0),
+                                                                        BorderRadius.circular(
+                                                                            0.0),
                                                                   ),
                                                                   child: Row(
                                                                     mainAxisSize:
@@ -4223,10 +4241,10 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                     children: [
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            3,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            3.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
                                                                             Container(
                                                                           width:
@@ -4251,7 +4269,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primaryText,
                                                                             size:
-                                                                                17,
+                                                                                17.0,
                                                                           ),
                                                                         ),
                                                                       ),
@@ -4259,10 +4277,10 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                         child:
                                                                             Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              3,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              3.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               Column(
                                                                             mainAxisSize:
@@ -4416,10 +4434,10 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0,
-                                                                        0,
-                                                                        3,
-                                                                        0),
+                                                                        0.0,
+                                                                        0.0,
+                                                                        3.0,
+                                                                        0.0),
                                                             child: Column(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -4518,8 +4536,8 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                   child: Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                0, 0, 12, 0),
+                                                            .fromSTEB(0.0, 0.0,
+                                                                12.0, 0.0),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -4530,8 +4548,11 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(5,
-                                                                      0, 2, 0),
+                                                                  .fromSTEB(
+                                                                      5.0,
+                                                                      0.0,
+                                                                      2.0,
+                                                                      0.0),
                                                           child: InkWell(
                                                             splashColor: Colors
                                                                 .transparent,
@@ -4567,7 +4588,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                       child:
                                                                           Container(
                                                                         height:
-                                                                            360,
+                                                                            360.0,
                                                                         child:
                                                                             DiscountAndDeliveryCopyWidget(),
                                                                       ),
@@ -4620,14 +4641,15 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                               child: Align(
                                                                 alignment:
                                                                     AlignmentDirectional(
-                                                                        0, 0),
+                                                                        0.0,
+                                                                        0.0),
                                                                 child: FaIcon(
                                                                   FontAwesomeIcons
                                                                       .receipt,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .lineColor,
-                                                                  size: 16,
+                                                                  size: 16.0,
                                                                 ),
                                                               ),
                                                             ),
@@ -4643,10 +4665,10 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        5,
-                                                                        0,
-                                                                        0,
-                                                                        0),
+                                                                        5.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             child: InkWell(
                                                               splashColor: Colors
                                                                   .transparent,
@@ -4674,7 +4696,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                 }
                                                               },
                                                               child: Container(
-                                                                width: 100,
+                                                                width: 100.0,
                                                                 height: MediaQuery.sizeOf(
                                                                             context)
                                                                         .height *
@@ -4687,16 +4709,16 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                   boxShadow: [
                                                                     BoxShadow(
                                                                       blurRadius:
-                                                                          3,
+                                                                          3.0,
                                                                       color: Color(
                                                                           0x33000000),
                                                                       offset:
                                                                           Offset(
-                                                                        1,
-                                                                        1,
+                                                                        1.0,
+                                                                        1.0,
                                                                       ),
                                                                       spreadRadius:
-                                                                          2,
+                                                                          2.0,
                                                                     )
                                                                   ],
                                                                 ),
@@ -4704,7 +4726,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                   padding:
                                                                       EdgeInsets
                                                                           .all(
-                                                                              2),
+                                                                              2.0),
                                                                   child: Column(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -4778,10 +4800,10 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        5,
-                                                                        0,
-                                                                        5,
-                                                                        0),
+                                                                        5.0,
+                                                                        0.0,
+                                                                        5.0,
+                                                                        0.0),
                                                             child: Container(
                                                               width: MediaQuery
                                                                           .sizeOf(
@@ -4796,16 +4818,16 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                 boxShadow: [
                                                                   BoxShadow(
                                                                     blurRadius:
-                                                                        3,
+                                                                        3.0,
                                                                     color: Color(
                                                                         0x33000000),
                                                                     offset:
                                                                         Offset(
-                                                                      1,
-                                                                      1,
+                                                                      1.0,
+                                                                      1.0,
                                                                     ),
                                                                     spreadRadius:
-                                                                        2,
+                                                                        2.0,
                                                                   )
                                                                 ],
                                                               ),
@@ -4823,9 +4845,9 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                       child:
                                                                           SizedBox(
                                                                         width:
-                                                                            20,
+                                                                            20.0,
                                                                         height:
-                                                                            20,
+                                                                            20.0,
                                                                         child:
                                                                             CircularProgressIndicator(
                                                                           valueColor:
@@ -4887,23 +4909,24 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .lineColor,
-                                                                      size: 22,
+                                                                      size:
+                                                                          22.0,
                                                                     ),
                                                                     elevation:
-                                                                        2,
+                                                                        2.0,
                                                                     borderColor:
                                                                         Colors
                                                                             .transparent,
                                                                     borderWidth:
-                                                                        0,
+                                                                        0.0,
                                                                     borderRadius:
-                                                                        0,
+                                                                        0.0,
                                                                     margin: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            7,
-                                                                            4,
-                                                                            5,
-                                                                            4),
+                                                                            7.0,
+                                                                            4.0,
+                                                                            5.0,
+                                                                            4.0),
                                                                     hidesUnderline:
                                                                         true,
                                                                     isSearchable:
@@ -4987,7 +5010,7 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                             style: FlutterFlowTheme.of(context).headlineMedium.override(
                                                                                   fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
                                                                                   color: FlutterFlowTheme.of(context).lineColor,
-                                                                                  fontSize: 26,
+                                                                                  fontSize: 26.0,
                                                                                   letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.w600,
                                                                                   useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineMediumFamily),
@@ -5020,8 +5043,11 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(0,
-                                                                      0, 1, 0),
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      1.0,
+                                                                      0.0),
                                                           child: InkWell(
                                                             splashColor: Colors
                                                                 .transparent,
@@ -5117,8 +5143,11 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(0,
-                                                                      0, 1, 0),
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      1.0,
+                                                                      0.0),
                                                           child: InkWell(
                                                             splashColor: Colors
                                                                 .transparent,
@@ -5215,8 +5244,11 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(0,
-                                                                      0, 1, 0),
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      1.0,
+                                                                      0.0),
                                                           child: Container(
                                                             width: MediaQuery
                                                                         .sizeOf(
@@ -5633,17 +5665,17 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                 iconPadding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
@@ -5671,12 +5703,12 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                     BorderSide(
                                                                   color: Colors
                                                                       .transparent,
-                                                                  width: 1,
+                                                                  width: 1.0,
                                                                 ),
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            8),
+                                                                            8.0),
                                                               ),
                                                             ),
                                                           ).animateOnActionTrigger(
@@ -6246,21 +6278,21 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                               ),
                                                               options:
                                                                   FFButtonOptions(
-                                                                width: 130,
+                                                                width: 130.0,
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                 iconPadding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
@@ -6288,12 +6320,12 @@ class _ProductAndListWidgetState extends State<ProductAndListWidget>
                                                                     BorderSide(
                                                                   color: Colors
                                                                       .transparent,
-                                                                  width: 1,
+                                                                  width: 1.0,
                                                                 ),
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            8),
+                                                                            8.0),
                                                               ),
                                                             ),
                                                           ),

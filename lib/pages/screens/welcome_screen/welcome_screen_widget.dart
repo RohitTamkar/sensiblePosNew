@@ -141,9 +141,9 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
                   FlutterFlowTheme.of(context).customColor3,
                   FlutterFlowTheme.of(context).error
                 ],
-                stops: [1, 1],
-                begin: AlignmentDirectional(0, -1),
-                end: AlignmentDirectional(0, 1),
+                stops: [1.0, 1.0],
+                begin: AlignmentDirectional(0.0, -1.0),
+                end: AlignmentDirectional(0, 1.0),
               ),
             ),
             child: Column(
@@ -152,8 +152,8 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
               children: [
                 Image.asset(
                   'assets/images/sensible-logo.png',
-                  width: 200,
-                  height: 180,
+                  width: 200.0,
+                  height: 180.0,
                   fit: BoxFit.contain,
                 ).animateOnPageLoad(animationsMap['imageOnPageLoadAnimation']!),
                 Stack(
@@ -181,11 +181,11 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
                           if (!snapshot.hasData) {
                             return Center(
                               child: SizedBox(
-                                width: 40,
-                                height: 40,
+                                width: 40.0,
+                                height: 40.0,
                                 child: SpinKitFadingCircle(
                                   color: FlutterFlowTheme.of(context).primary,
-                                  size: 40,
+                                  size: 40.0,
                                 ),
                               ),
                             );
@@ -268,11 +268,11 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
                           if (!snapshot.hasData) {
                             return Center(
                               child: SizedBox(
-                                width: 40,
-                                height: 40,
+                                width: 40.0,
+                                height: 40.0,
                                 child: SpinKitFadingCircle(
                                   color: FlutterFlowTheme.of(context).primary,
-                                  size: 40,
+                                  size: 40.0,
                                 ),
                               ),
                             );
@@ -348,7 +348,7 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
                   ],
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       var _shouldSetState = false;
@@ -413,10 +413,12 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
                       'uoi4jzqu' /* Continue */,
                     ),
                     options: FFButtonOptions(
-                      width: 130,
-                      height: 40,
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-                      iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                      width: 130.0,
+                      height: 40.0,
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      iconPadding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle: FlutterFlowTheme.of(context)
                           .titleSmall
@@ -428,12 +430,12 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
                             useGoogleFonts: GoogleFonts.asMap().containsKey(
                                 FlutterFlowTheme.of(context).titleSmallFamily),
                           ),
-                      elevation: 2,
+                      elevation: 2.0,
                       borderSide: BorderSide(
                         color: Colors.transparent,
-                        width: 1,
+                        width: 1.0,
                       ),
-                      borderRadius: BorderRadius.circular(8),
+                      borderRadius: BorderRadius.circular(8.0),
                     ),
                   ),
                 ),

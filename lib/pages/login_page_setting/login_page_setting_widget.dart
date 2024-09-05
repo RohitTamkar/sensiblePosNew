@@ -52,14 +52,14 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Padding(
-              padding: EdgeInsets.all(3),
+              padding: EdgeInsets.all(3.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Expanded(
                     flex: 1,
                     child: Container(
-                      width: MediaQuery.sizeOf(context).width,
+                      width: MediaQuery.sizeOf(context).width * 1.0,
                       height: MediaQuery.sizeOf(context).height * 0.12,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primary,
@@ -72,22 +72,22 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                           Expanded(
                             flex: 1,
                             child: Container(
-                              width: 100,
-                              height: 100,
+                              width: 100.0,
+                              height: 100.0,
                               decoration: BoxDecoration(),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   FlutterFlowIconButton(
                                     borderColor: Colors.transparent,
-                                    borderRadius: 30,
-                                    borderWidth: 1,
-                                    buttonSize: 60,
+                                    borderRadius: 30.0,
+                                    borderWidth: 1.0,
+                                    buttonSize: 60.0,
                                     icon: Icon(
                                       Icons.chevron_left_sharp,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBtnText,
-                                      size: 26,
+                                      size: 26.0,
                                     ),
                                     onPressed: () async {
                                       context.pushNamed('LoginPage');
@@ -131,10 +131,11 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                   Expanded(
                     flex: 8,
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
                       child: Container(
-                        width: MediaQuery.sizeOf(context).width,
-                        height: 100,
+                        width: MediaQuery.sizeOf(context).width * 1.0,
+                        height: 100.0,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).primaryBackground,
                         ),
@@ -143,10 +144,11 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                           children: [
                             Expanded(
                               child: Padding(
-                                padding: EdgeInsets.all(3),
+                                padding: EdgeInsets.all(3.0),
                                 child: Container(
-                                  width: 100,
-                                  height: MediaQuery.sizeOf(context).height * 1,
+                                  width: 100.0,
+                                  height:
+                                      MediaQuery.sizeOf(context).height * 1.0,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
@@ -163,7 +165,7 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 3, 0, 0),
+                                            0.0, 3.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -171,7 +173,7 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 5, 0),
+                                                  .fromSTEB(0.0, 0.0, 5.0, 0.0),
                                               child: FFButtonWidget(
                                                 onPressed: () async {
                                                   FFAppState().posMode =
@@ -190,16 +192,18 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                                 ),
                                                 icon: Icon(
                                                   Icons.save,
-                                                  size: 14,
+                                                  size: 14.0,
                                                 ),
                                                 options: FFButtonOptions(
-                                                  width: 100,
-                                                  height: 28,
+                                                  width: 100.0,
+                                                  height: 28.0,
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(0, 0, 0, 0),
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 0.0),
                                                   iconPadding:
                                                       EdgeInsetsDirectional
-                                                          .fromSTEB(0, 0, 0, 0),
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryBackground,
@@ -223,13 +227,14 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                                                         context)
                                                                     .bodyMediumFamily),
                                                       ),
-                                                  elevation: 2,
+                                                  elevation: 2.0,
                                                   borderSide: BorderSide(
                                                     color: Colors.transparent,
-                                                    width: 1,
+                                                    width: 1.0,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(0),
+                                                      BorderRadius.circular(
+                                                          0.0),
                                                 ),
                                               ),
                                             ),
@@ -238,7 +243,7 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            5, 15, 5, 0),
+                                            5.0, 15.0, 5.0, 0.0),
                                         child: Text(
                                           FFAppState().posMode,
                                           style: FlutterFlowTheme.of(context)
@@ -258,13 +263,14 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            5, 0, 5, 5),
+                                            5.0, 0.0, 5.0, 5.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(15, 5, 5, 5),
+                                                  .fromSTEB(
+                                                      15.0, 5.0, 5.0, 5.0),
                                               child: FlutterFlowRadioButton(
                                                 options: FFAppState()
                                                     .posModelList
@@ -275,7 +281,7 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                                         .radioButtonValueController1 ??=
                                                     FormFieldController<String>(
                                                         FFAppState().posMode),
-                                                optionHeight: 25,
+                                                optionHeight: 25.0,
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
@@ -310,7 +316,8 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                                         ),
                                                 textPadding:
                                                     EdgeInsetsDirectional
-                                                        .fromSTEB(0, 0, 15, 0),
+                                                        .fromSTEB(0.0, 0.0,
+                                                            15.0, 0.0),
                                                 buttonPosition:
                                                     RadioButtonPosition.left,
                                                 direction: Axis.horizontal,
@@ -331,12 +338,12 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                         ),
                                       ),
                                       Divider(
-                                        indent: 10,
-                                        endIndent: 10,
+                                        indent: 10.0,
+                                        endIndent: 10.0,
                                         color: Color(0xFFD4D1D1),
                                       ),
                                       Padding(
-                                        padding: EdgeInsets.all(5),
+                                        padding: EdgeInsets.all(5.0),
                                         child: Text(
                                           FFAppState().printerType,
                                           style: FlutterFlowTheme.of(context)
@@ -356,13 +363,14 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            5, 0, 5, 5),
+                                            5.0, 0.0, 5.0, 5.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(15, 5, 15, 5),
+                                                  .fromSTEB(
+                                                      15.0, 5.0, 15.0, 5.0),
                                               child: FlutterFlowRadioButton(
                                                 options: FFAppState()
                                                     .printerTypeList
@@ -374,7 +382,7 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                                     FormFieldController<String>(
                                                         FFAppState()
                                                             .printerType),
-                                                optionHeight: 25,
+                                                optionHeight: 25.0,
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
@@ -409,7 +417,8 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                                         ),
                                                 textPadding:
                                                     EdgeInsetsDirectional
-                                                        .fromSTEB(0, 0, 15, 0),
+                                                        .fromSTEB(0.0, 0.0,
+                                                            15.0, 0.0),
                                                 buttonPosition:
                                                     RadioButtonPosition.left,
                                                 direction: Axis.horizontal,
@@ -430,12 +439,12 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                         ),
                                       ),
                                       Divider(
-                                        indent: 10,
-                                        endIndent: 10,
+                                        indent: 10.0,
+                                        endIndent: 10.0,
                                         color: Color(0xFFD4D1D1),
                                       ),
                                       Padding(
-                                        padding: EdgeInsets.all(5),
+                                        padding: EdgeInsets.all(5.0),
                                         child: Text(
                                           FFAppState().paperSize,
                                           textAlign: TextAlign.center,
@@ -456,13 +465,14 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            5, 0, 5, 2),
+                                            5.0, 0.0, 5.0, 2.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(15, 5, 5, 5),
+                                                  .fromSTEB(
+                                                      15.0, 5.0, 5.0, 5.0),
                                               child: FlutterFlowRadioButton(
                                                 options: FFAppState()
                                                     .paperSizeList
@@ -473,7 +483,7 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                                         .radioButtonValueController3 ??=
                                                     FormFieldController<String>(
                                                         FFAppState().paperSize),
-                                                optionHeight: 25,
+                                                optionHeight: 25.0,
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall
@@ -508,7 +518,8 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                                         ),
                                                 textPadding:
                                                     EdgeInsetsDirectional
-                                                        .fromSTEB(0, 0, 15, 0),
+                                                        .fromSTEB(0.0, 0.0,
+                                                            15.0, 0.0),
                                                 buttonPosition:
                                                     RadioButtonPosition.left,
                                                 direction: Axis.horizontal,
@@ -529,13 +540,13 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                         ),
                                       ),
                                       Divider(
-                                        indent: 10,
-                                        endIndent: 10,
+                                        indent: 10.0,
+                                        endIndent: 10.0,
                                         color: Color(0xFFD4D1D1),
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 15, 0, 0),
+                                            0.0, 15.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -550,13 +561,15 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                                 '9znj2lc8' /* Connect USB Printer */,
                                               ),
                                               options: FFButtonOptions(
-                                                width: 200,
-                                                height: 36,
+                                                width: 200.0,
+                                                height: 36.0,
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(0, 0, 0, 0),
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 0.0),
                                                 iconPadding:
                                                     EdgeInsetsDirectional
-                                                        .fromSTEB(0, 0, 0, 0),
+                                                        .fromSTEB(
+                                                            0.0, 0.0, 0.0, 0.0),
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondary,
@@ -579,13 +592,13 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                                                           context)
                                                                       .titleMediumFamily),
                                                         ),
-                                                elevation: 2,
+                                                elevation: 2.0,
                                                 borderSide: BorderSide(
                                                   color: Colors.transparent,
-                                                  width: 1,
+                                                  width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(4),
+                                                    BorderRadius.circular(4.0),
                                               ),
                                             ),
                                           ],
@@ -593,7 +606,7 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 15, 0, 0),
+                                            0.0, 15.0, 0.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -671,10 +684,11 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                             ),
                             Expanded(
                               child: Padding(
-                                padding: EdgeInsets.all(3),
+                                padding: EdgeInsets.all(3.0),
                                 child: Container(
-                                  width: 100,
-                                  height: MediaQuery.sizeOf(context).height * 1,
+                                  width: 100.0,
+                                  height:
+                                      MediaQuery.sizeOf(context).height * 1.0,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
@@ -695,14 +709,14 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                         children: [
                                           FlutterFlowIconButton(
                                             borderColor: Colors.transparent,
-                                            borderWidth: 1,
-                                            buttonSize: 45,
+                                            borderWidth: 1.0,
+                                            buttonSize: 45.0,
                                             icon: Icon(
                                               Icons.wifi,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              size: 18,
+                                              size: 18.0,
                                             ),
                                             onPressed: () async {
                                               context.pushNamed('WiFiSetting');
@@ -710,15 +724,15 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                           ),
                                           FlutterFlowIconButton(
                                             borderColor: Colors.transparent,
-                                            borderRadius: 30,
-                                            borderWidth: 1,
-                                            buttonSize: 45,
+                                            borderRadius: 30.0,
+                                            borderWidth: 1.0,
+                                            buttonSize: 45.0,
                                             icon: Icon(
                                               Icons.print_rounded,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              size: 20,
+                                              size: 20.0,
                                             ),
                                             onPressed: () {
                                               print('IconButton pressed ...');
@@ -728,10 +742,11 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 3, 0, 0),
+                                            0.0, 3.0, 0.0, 0.0),
                                         child: Container(
                                           width:
-                                              MediaQuery.sizeOf(context).width,
+                                              MediaQuery.sizeOf(context).width *
+                                                  1.0,
                                           height: MediaQuery.sizeOf(context)
                                                   .height *
                                               0.2,
@@ -748,7 +763,8 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                             children: [
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(5, 0, 0, 0),
+                                                    .fromSTEB(
+                                                        5.0, 0.0, 0.0, 0.0),
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
@@ -773,11 +789,12 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsets.all(5),
+                                                padding: EdgeInsets.all(5.0),
                                                 child: Container(
                                                   width:
                                                       MediaQuery.sizeOf(context)
-                                                          .width,
+                                                              .width *
+                                                          1.0,
                                                   height:
                                                       MediaQuery.sizeOf(context)
                                                               .height *
@@ -830,7 +847,7 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            5, 0, 5, 5),
+                                            5.0, 0.0, 5.0, 5.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -842,7 +859,8 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                           },
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
-                                                .width,
+                                                    .width *
+                                                1.0,
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
                                                 0.09,
@@ -860,7 +878,8 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(6, 0, 0, 0),
+                                                      .fromSTEB(
+                                                          6.0, 0.0, 0.0, 0.0),
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
@@ -887,15 +906,15 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                                 FlutterFlowIconButton(
                                                   borderColor:
                                                       Colors.transparent,
-                                                  borderRadius: 30,
-                                                  borderWidth: 1,
-                                                  buttonSize: 60,
+                                                  borderRadius: 30.0,
+                                                  borderWidth: 1.0,
+                                                  buttonSize: 60.0,
                                                   icon: Icon(
                                                     Icons.chevron_right,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
-                                                    size: 24,
+                                                    size: 24.0,
                                                   ),
                                                   onPressed: () async {
                                                     context.pushNamed(
@@ -909,7 +928,7 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            5, 0, 5, 5),
+                                            5.0, 0.0, 5.0, 5.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -920,7 +939,8 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                           },
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
-                                                .width,
+                                                    .width *
+                                                1.0,
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
                                                 0.09,
@@ -938,7 +958,8 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(6, 0, 0, 0),
+                                                      .fromSTEB(
+                                                          6.0, 0.0, 0.0, 0.0),
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
@@ -965,15 +986,15 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                                 FlutterFlowIconButton(
                                                   borderColor:
                                                       Colors.transparent,
-                                                  borderRadius: 30,
-                                                  borderWidth: 1,
-                                                  buttonSize: 60,
+                                                  borderRadius: 30.0,
+                                                  borderWidth: 1.0,
+                                                  buttonSize: 60.0,
                                                   icon: Icon(
                                                     Icons.chevron_right,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
-                                                    size: 24,
+                                                    size: 24.0,
                                                   ),
                                                   onPressed: () async {
                                                     context.pushNamed(
@@ -987,7 +1008,7 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            5, 0, 5, 5),
+                                            5.0, 0.0, 5.0, 5.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -998,7 +1019,8 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                           },
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
-                                                .width,
+                                                    .width *
+                                                1.0,
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
                                                 0.09,
@@ -1016,7 +1038,8 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(6, 0, 0, 0),
+                                                      .fromSTEB(
+                                                          6.0, 0.0, 0.0, 0.0),
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
@@ -1043,15 +1066,15 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                                 FlutterFlowIconButton(
                                                   borderColor:
                                                       Colors.transparent,
-                                                  borderRadius: 30,
-                                                  borderWidth: 1,
-                                                  buttonSize: 60,
+                                                  borderRadius: 30.0,
+                                                  borderWidth: 1.0,
+                                                  buttonSize: 60.0,
                                                   icon: Icon(
                                                     Icons.chevron_right,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
-                                                    size: 24,
+                                                    size: 24.0,
                                                   ),
                                                   onPressed: () async {
                                                     context
@@ -1065,10 +1088,11 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            5, 0, 5, 5),
+                                            5.0, 0.0, 5.0, 5.0),
                                         child: Container(
                                           width:
-                                              MediaQuery.sizeOf(context).width,
+                                              MediaQuery.sizeOf(context).width *
+                                                  1.0,
                                           height: MediaQuery.sizeOf(context)
                                                   .height *
                                               0.09,
@@ -1085,7 +1109,8 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                             children: [
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(6, 0, 0, 0),
+                                                    .fromSTEB(
+                                                        6.0, 0.0, 0.0, 0.0),
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
@@ -1111,15 +1136,15 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                               ),
                                               FlutterFlowIconButton(
                                                 borderColor: Colors.transparent,
-                                                borderRadius: 30,
-                                                borderWidth: 1,
-                                                buttonSize: 60,
+                                                borderRadius: 30.0,
+                                                borderWidth: 1.0,
+                                                buttonSize: 60.0,
                                                 icon: Icon(
                                                   Icons.chevron_right,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
-                                                  size: 24,
+                                                  size: 24.0,
                                                 ),
                                                 onPressed: () {
                                                   print(
@@ -1132,10 +1157,11 @@ class _LoginPageSettingWidgetState extends State<LoginPageSettingWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            5, 0, 5, 5),
+                                            5.0, 0.0, 5.0, 5.0),
                                         child: Container(
                                           width:
-                                              MediaQuery.sizeOf(context).width,
+                                              MediaQuery.sizeOf(context).width *
+                                                  1.0,
                                           height: MediaQuery.sizeOf(context)
                                                   .height *
                                               0.1,

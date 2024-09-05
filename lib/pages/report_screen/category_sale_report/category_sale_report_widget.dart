@@ -70,19 +70,19 @@ class _CategorySaleReportWidgetState extends State<CategorySaleReportWidget> {
                 print('FloatingActionButton pressed ...');
               },
               backgroundColor: FlutterFlowTheme.of(context).primary,
-              elevation: 8,
+              elevation: 8.0,
               label: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   FlutterFlowIconButton(
                     borderColor: Colors.transparent,
-                    borderRadius: 30,
-                    borderWidth: 1,
-                    buttonSize: 60,
+                    borderRadius: 30.0,
+                    borderWidth: 1.0,
+                    buttonSize: 60.0,
                     icon: Icon(
                       Icons.local_print_shop_sharp,
                       color: FlutterFlowTheme.of(context).primaryBtnText,
-                      size: 30,
+                      size: 30.0,
                     ),
                     onPressed: () async {
                       var _shouldSetState = false;
@@ -136,14 +136,14 @@ class _CategorySaleReportWidgetState extends State<CategorySaleReportWidget> {
             body: SafeArea(
               top: true,
               child: Padding(
-                padding: EdgeInsets.all(3),
+                padding: EdgeInsets.all(3.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Expanded(
                       flex: 1,
                       child: Container(
-                        width: MediaQuery.sizeOf(context).width,
+                        width: MediaQuery.sizeOf(context).width * 1.0,
                         height: MediaQuery.sizeOf(context).height * 0.12,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).primary,
@@ -156,8 +156,8 @@ class _CategorySaleReportWidgetState extends State<CategorySaleReportWidget> {
                             Expanded(
                               flex: 2,
                               child: Container(
-                                width: 100,
-                                height: 100,
+                                width: 100.0,
+                                height: 100.0,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context).primary,
                                 ),
@@ -166,14 +166,14 @@ class _CategorySaleReportWidgetState extends State<CategorySaleReportWidget> {
                                   children: [
                                     FlutterFlowIconButton(
                                       borderColor: Colors.transparent,
-                                      borderRadius: 30,
-                                      borderWidth: 1,
-                                      buttonSize: 60,
+                                      borderRadius: 30.0,
+                                      borderWidth: 1.0,
+                                      buttonSize: 60.0,
                                       icon: Icon(
                                         Icons.chevron_left_sharp,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBtnText,
-                                        size: 26,
+                                        size: 26.0,
                                       ),
                                       onPressed: () async {
                                         context.safePop();
@@ -205,8 +205,8 @@ class _CategorySaleReportWidgetState extends State<CategorySaleReportWidget> {
                             Expanded(
                               flex: 3,
                               child: Container(
-                                width: 100,
-                                height: 100,
+                                width: 100.0,
+                                height: 100.0,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context).primary,
                                 ),
@@ -217,7 +217,7 @@ class _CategorySaleReportWidgetState extends State<CategorySaleReportWidget> {
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 15, 0),
+                                          0.0, 0.0, 15.0, 0.0),
                                       child: Text(
                                         dateTimeFormat(
                                           "yMMMd",
@@ -286,17 +286,17 @@ class _CategorySaleReportWidgetState extends State<CategorySaleReportWidget> {
                                       },
                                       child: Material(
                                         color: Colors.transparent,
-                                        elevation: 2,
+                                        elevation: 2.0,
                                         shape: RoundedRectangleBorder(
                                           borderRadius:
-                                              BorderRadius.circular(5),
+                                              BorderRadius.circular(5.0),
                                         ),
                                         child: Container(
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .secondary,
                                             borderRadius:
-                                                BorderRadius.circular(5),
+                                                BorderRadius.circular(5.0),
                                           ),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.min,
@@ -305,7 +305,8 @@ class _CategorySaleReportWidgetState extends State<CategorySaleReportWidget> {
                                             children: [
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(10, 15, 10, 15),
+                                                    .fromSTEB(
+                                                        10.0, 15.0, 10.0, 15.0),
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
@@ -358,10 +359,11 @@ class _CategorySaleReportWidgetState extends State<CategorySaleReportWidget> {
                     Expanded(
                       flex: 13,
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
                         child: Container(
-                          width: MediaQuery.sizeOf(context).width,
-                          height: 100,
+                          width: MediaQuery.sizeOf(context).width * 1.0,
+                          height: 100.0,
                           decoration: BoxDecoration(
                             color:
                                 FlutterFlowTheme.of(context).primaryBackground,
@@ -370,7 +372,7 @@ class _CategorySaleReportWidgetState extends State<CategorySaleReportWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Container(
-                                width: MediaQuery.sizeOf(context).width,
+                                width: MediaQuery.sizeOf(context).width * 1.0,
                                 height:
                                     MediaQuery.sizeOf(context).height * 0.06,
                                 decoration: BoxDecoration(
@@ -382,8 +384,8 @@ class _CategorySaleReportWidgetState extends State<CategorySaleReportWidget> {
                                     Expanded(
                                       flex: 1,
                                       child: Container(
-                                        width: 100,
-                                        height: 100,
+                                        width: 100.0,
+                                        height: 100.0,
                                         decoration: BoxDecoration(),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -424,8 +426,8 @@ class _CategorySaleReportWidgetState extends State<CategorySaleReportWidget> {
                                     ),
                                     Expanded(
                                       child: Container(
-                                        width: 100,
-                                        height: 100,
+                                        width: 100.0,
+                                        height: 100.0,
                                         decoration: BoxDecoration(),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,

@@ -45,8 +45,8 @@ class _ChoiceWidgetState extends State<ChoiceWidget> {
       mainAxisSize: MainAxisSize.max,
       children: [
         Container(
-          width: 300,
-          height: 100,
+          width: 300.0,
+          height: 100.0,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
           ),
@@ -62,10 +62,11 @@ class _ChoiceWidgetState extends State<ChoiceWidget> {
                   '7jtgjqgf' /* 1 */,
                 ),
                 options: FFButtonOptions(
-                  width: 60,
-                  height: 1,
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-                  iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                  width: 60.0,
+                  height: 1.0,
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  iconPadding:
+                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily:
@@ -75,12 +76,12 @@ class _ChoiceWidgetState extends State<ChoiceWidget> {
                         useGoogleFonts: GoogleFonts.asMap().containsKey(
                             FlutterFlowTheme.of(context).titleSmallFamily),
                       ),
-                  elevation: 2,
+                  elevation: 2.0,
                   borderSide: BorderSide(
                     color: Colors.transparent,
-                    width: 1,
+                    width: 1.0,
                   ),
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius: BorderRadius.circular(8.0),
                 ),
               ),
             ],

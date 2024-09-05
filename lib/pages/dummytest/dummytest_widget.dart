@@ -63,11 +63,11 @@ class _DummytestWidgetState extends State<DummytestWidget> {
                   if (!snapshot.hasData) {
                     return Center(
                       child: SizedBox(
-                        width: 40,
-                        height: 40,
+                        width: 40.0,
+                        height: 40.0,
                         child: SpinKitFadingCircle(
                           color: FlutterFlowTheme.of(context).primary,
-                          size: 40,
+                          size: 40.0,
                         ),
                       ),
                     );
@@ -91,8 +91,8 @@ class _DummytestWidgetState extends State<DummytestWidget> {
                         Expanded(
                           flex: 3,
                           child: Container(
-                            width: MediaQuery.sizeOf(context).width,
-                            height: 100,
+                            width: MediaQuery.sizeOf(context).width * 1.0,
+                            height: 100.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context).primary,
                             ),
@@ -103,7 +103,7 @@ class _DummytestWidgetState extends State<DummytestWidget> {
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 0, 5),
+                                      0.0, 0.0, 0.0, 5.0),
                                   child: Container(
                                     width:
                                         MediaQuery.sizeOf(context).width * 0.85,
@@ -191,21 +191,21 @@ class _DummytestWidgetState extends State<DummytestWidget> {
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryBtnText,
-                                                    size: 28,
+                                                    size: 28.0,
                                                   ),
                                                   Icon(
                                                     Icons.phone,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryBtnText,
-                                                    size: 20,
+                                                    size: 20.0,
                                                   ),
                                                   Icon(
                                                     Icons.group_work_rounded,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryBtnText,
-                                                    size: 20,
+                                                    size: 20.0,
                                                   ),
                                                 ],
                                               ),
@@ -295,7 +295,7 @@ class _DummytestWidgetState extends State<DummytestWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryBtnText,
-                                                          fontSize: 11,
+                                                          fontSize: 11.0,
                                                           letterSpacing: 0.0,
                                                           useGoogleFonts: GoogleFonts
                                                                   .asMap()
@@ -324,15 +324,15 @@ class _DummytestWidgetState extends State<DummytestWidget> {
                                                   FlutterFlowIconButton(
                                                     borderColor:
                                                         Colors.transparent,
-                                                    borderRadius: 8,
-                                                    buttonSize: 50,
+                                                    borderRadius: 8.0,
+                                                    buttonSize: 50.0,
                                                     icon: Icon(
                                                       Icons.addchart,
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primaryBtnText,
-                                                      size: 18,
+                                                      size: 18.0,
                                                     ),
                                                     onPressed: () {
                                                       print(
@@ -342,15 +342,15 @@ class _DummytestWidgetState extends State<DummytestWidget> {
                                                   FlutterFlowIconButton(
                                                     borderColor:
                                                         Colors.transparent,
-                                                    borderRadius: 8,
-                                                    buttonSize: 50,
+                                                    borderRadius: 8.0,
+                                                    buttonSize: 50.0,
                                                     icon: Icon(
                                                       Icons.home,
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primaryBtnText,
-                                                      size: 18,
+                                                      size: 18.0,
                                                     ),
                                                     onPressed: () {
                                                       print(
@@ -360,15 +360,15 @@ class _DummytestWidgetState extends State<DummytestWidget> {
                                                   FlutterFlowIconButton(
                                                     borderColor:
                                                         Colors.transparent,
-                                                    borderRadius: 30,
-                                                    buttonSize: 50,
+                                                    borderRadius: 30.0,
+                                                    buttonSize: 50.0,
                                                     icon: Icon(
                                                       Icons.edit_sharp,
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primaryBtnText,
-                                                      size: 22,
+                                                      size: 22.0,
                                                     ),
                                                     onPressed: () async {
                                                       context.pushNamed(

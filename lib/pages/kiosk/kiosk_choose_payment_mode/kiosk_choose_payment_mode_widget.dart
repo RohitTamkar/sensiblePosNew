@@ -82,8 +82,8 @@ class _KioskChoosePaymentModeWidgetState
             delay: 0.0.ms,
             duration: 1500.0.ms,
             color: Color(0xFFFFDD42),
-            begin: 0,
-            end: 1,
+            begin: 0.0,
+            end: 1.0,
           ),
         ],
       ),
@@ -104,8 +104,8 @@ class _KioskChoosePaymentModeWidgetState
             delay: 0.0.ms,
             duration: 1500.0.ms,
             color: Color(0xFFFFDD42),
-            begin: 0,
-            end: 1,
+            begin: 0.0,
+            end: 1.0,
           ),
         ],
       ),
@@ -140,14 +140,15 @@ class _KioskChoosePaymentModeWidgetState
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     fit: BoxFit.fitWidth,
-                    alignment: AlignmentDirectional(0, -1),
+                    alignment: AlignmentDirectional(0.0, -1.0),
                     image: Image.asset(
                       'assets/images/Top_img_3.png',
                     ).image,
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 0),
+                  padding:
+                      EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -157,34 +158,35 @@ class _KioskChoosePaymentModeWidgetState
                         child: KioskHeaderWidget(),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 250, 0, 0),
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            0.0, 250.0, 0.0, 0.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 10.0),
                               child: Container(
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context).primary,
-                                  borderRadius: BorderRadius.circular(10),
+                                  borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      25, 8, 25, 8),
+                                      25.0, 8.0, 25.0, 8.0),
                                   child: Icon(
                                     Icons.currency_rupee_outlined,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBtnText,
-                                    size: 40,
+                                    size: 40.0,
                                   ),
                                 ),
                               ),
                             ),
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 80),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 80.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
                                   'sw0ojh01' /* Choose Payment Type  */,
@@ -196,8 +198,8 @@ class _KioskChoosePaymentModeWidgetState
                                           .displayLargeFamily,
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      fontSize: 40,
-                                      letterSpacing: 5,
+                                      fontSize: 40.0,
+                                      letterSpacing: 5.0,
                                       fontWeight: FontWeight.w600,
                                       useGoogleFonts: GoogleFonts.asMap()
                                           .containsKey(
@@ -262,18 +264,18 @@ class _KioskChoosePaymentModeWidgetState
                                   color: FlutterFlowTheme.of(context).info,
                                   boxShadow: [
                                     BoxShadow(
-                                      blurRadius: 12,
+                                      blurRadius: 12.0,
                                       color: Color(0x26000000),
                                       offset: Offset(
-                                        9,
-                                        9,
+                                        9.0,
+                                        9.0,
                                       ),
                                     )
                                   ],
-                                  borderRadius: BorderRadius.circular(30),
+                                  borderRadius: BorderRadius.circular(30.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsets.all(30),
+                                  padding: EdgeInsets.all(30.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -282,7 +284,7 @@ class _KioskChoosePaymentModeWidgetState
                                           Icons.qr_code_scanner,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBtnText,
-                                          size: 50,
+                                          size: 50.0,
                                         ).animateOnPageLoad(animationsMap[
                                             'iconOnPageLoadAnimation1']!),
                                       ),
@@ -302,7 +304,7 @@ class _KioskChoosePaymentModeWidgetState
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryBtnText,
-                                                fontSize: 36,
+                                                fontSize: 36.0,
                                                 letterSpacing: 0.0,
                                                 useGoogleFonts: GoogleFonts
                                                         .asMap()
@@ -319,8 +321,8 @@ class _KioskChoosePaymentModeWidgetState
                               ),
                             ),
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 25, 0, 25),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 25.0, 0.0, 25.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
                                   'bi488f0w' /* OR */,
@@ -332,8 +334,8 @@ class _KioskChoosePaymentModeWidgetState
                                           .displayLargeFamily,
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      fontSize: 30,
-                                      letterSpacing: 5,
+                                      fontSize: 30.0,
+                                      letterSpacing: 5.0,
                                       fontWeight: FontWeight.normal,
                                       useGoogleFonts: GoogleFonts.asMap()
                                           .containsKey(
@@ -343,8 +345,8 @@ class _KioskChoosePaymentModeWidgetState
                               ),
                             ),
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 50),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 50.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
@@ -385,31 +387,31 @@ class _KioskChoosePaymentModeWidgetState
                                     color: FlutterFlowTheme.of(context).info,
                                     boxShadow: [
                                       BoxShadow(
-                                        blurRadius: 12,
+                                        blurRadius: 12.0,
                                         color: Color(0x27000000),
                                         offset: Offset(
-                                          9,
-                                          9,
+                                          9.0,
+                                          9.0,
                                         ),
                                       )
                                     ],
-                                    borderRadius: BorderRadius.circular(30),
+                                    borderRadius: BorderRadius.circular(30.0),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsets.all(30),
+                                    padding: EdgeInsets.all(30.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Expanded(
                                           child: Align(
                                             alignment:
-                                                AlignmentDirectional(0, 0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: FaIcon(
                                               FontAwesomeIcons.moneyBillWaveAlt,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBtnText,
-                                              size: 45,
+                                              size: 45.0,
                                             ).animateOnPageLoad(animationsMap[
                                                 'iconOnPageLoadAnimation2']!),
                                           ),
@@ -431,7 +433,7 @@ class _KioskChoosePaymentModeWidgetState
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryBtnText,
-                                                  fontSize: 36,
+                                                  fontSize: 36.0,
                                                   letterSpacing: 0.0,
                                                   useGoogleFonts: GoogleFonts
                                                           .asMap()

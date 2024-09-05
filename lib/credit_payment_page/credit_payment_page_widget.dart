@@ -66,7 +66,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Padding(
-              padding: EdgeInsets.all(3),
+              padding: EdgeInsets.all(3.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
@@ -76,7 +76,8 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                       color: FlutterFlowTheme.of(context).primary,
                     ),
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(20, 5, 20, 5),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 20.0, 5.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -89,17 +90,17 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 15, 0),
+                                      0.0, 0.0, 15.0, 0.0),
                                   child: FlutterFlowIconButton(
                                     borderColor:
                                         FlutterFlowTheme.of(context).accent3,
-                                    borderRadius: 10,
-                                    buttonSize: 35,
+                                    borderRadius: 10.0,
+                                    buttonSize: 35.0,
                                     icon: Icon(
                                       Icons.chevron_left,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBtnText,
-                                      size: 18,
+                                      size: 18.0,
                                     ),
                                     onPressed: () async {
                                       context.safePop();
@@ -120,7 +121,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                   .headlineMediumFamily,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBtnText,
-                                          fontSize: 20,
+                                          fontSize: 20.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
                                           useGoogleFonts: GoogleFonts.asMap()
@@ -134,10 +135,10 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                             ),
                           ),
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                20.0, 0.0, 20.0, 0.0),
                             child: ClipRRect(
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(8.0),
                               child: Image.asset(
                                 'assets/images/Sensible_Connect_Logo_White.png',
                                 width: MediaQuery.sizeOf(context).width * 0.035,
@@ -155,7 +156,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 10, 0),
+                                      0.0, 0.0, 10.0, 0.0),
                                   child: Text(
                                     FFAppState().outletName,
                                     style: FlutterFlowTheme.of(context)
@@ -176,7 +177,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 15, 0),
+                                      0.0, 0.0, 15.0, 0.0),
                                   child: Text(
                                     FFAppState().userName,
                                     style: FlutterFlowTheme.of(context)
@@ -198,16 +199,16 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                 FlutterFlowIconButton(
                                   borderColor:
                                       FlutterFlowTheme.of(context).secondary,
-                                  borderRadius: 10,
-                                  borderWidth: 1,
-                                  buttonSize: 35,
+                                  borderRadius: 10.0,
+                                  borderWidth: 1.0,
+                                  buttonSize: 35.0,
                                   fillColor: FlutterFlowTheme.of(context)
                                       .primaryBtnText,
                                   icon: Icon(
                                     Icons.menu_rounded,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
-                                    size: 18,
+                                    size: 18.0,
                                   ),
                                   onPressed: () {
                                     print('IconButton pressed ...');
@@ -221,10 +222,10 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
                     child: Container(
                       width: double.infinity,
-                      height: 40,
+                      height: 40.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                       ),
@@ -233,11 +234,11 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                         children: [
                           Expanded(
                             child: Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 5.0, 0.0),
                               child: Container(
-                                width: 100,
-                                height: 100,
+                                width: 100.0,
+                                height: 100.0,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context).info,
                                 ),
@@ -257,7 +258,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                     .bodyMediumFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
-                                            fontSize: 20,
+                                            fontSize: 20.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                             useGoogleFonts: GoogleFonts.asMap()
@@ -273,11 +274,11 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                           ),
                           Expanded(
                             child: Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 5.0, 0.0),
                               child: Container(
-                                width: 100,
-                                height: 100,
+                                width: 100.0,
+                                height: 100.0,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context).info,
                                 ),
@@ -297,7 +298,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                     .bodyMediumFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
-                                            fontSize: 20,
+                                            fontSize: 20.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                             useGoogleFonts: GoogleFonts.asMap()
@@ -313,11 +314,11 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                           ),
                           Expanded(
                             child: Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 5.0, 0.0),
                               child: Container(
-                                width: 100,
-                                height: 100,
+                                width: 100.0,
+                                height: 100.0,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context).info,
                                 ),
@@ -337,7 +338,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                     .bodyMediumFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
-                                            fontSize: 20,
+                                            fontSize: 20.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                             useGoogleFonts: GoogleFonts.asMap()
@@ -353,11 +354,11 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                           ),
                           Expanded(
                             child: Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 5.0, 0.0),
                               child: Container(
-                                width: 100,
-                                height: 100,
+                                width: 100.0,
+                                height: 100.0,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context).info,
                                 ),
@@ -377,7 +378,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                     .bodyMediumFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
-                                            fontSize: 20,
+                                            fontSize: 20.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                             useGoogleFonts: GoogleFonts.asMap()
@@ -397,7 +398,8 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                   ),
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
                       child: StreamBuilder<List<InvoiceRecord>>(
                         stream: queryInvoiceRecord(
                           parent: FFAppState().outletIdRef,
@@ -411,11 +413,11 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                           if (!snapshot.hasData) {
                             return Center(
                               child: SizedBox(
-                                width: 40,
-                                height: 40,
+                                width: 40.0,
+                                height: 40.0,
                                 child: SpinKitFadingCircle(
                                   color: FlutterFlowTheme.of(context).primary,
-                                  size: 40,
+                                  size: 40.0,
                                 ),
                               ),
                             );
@@ -425,18 +427,19 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
 
                           return Container(
                             width: double.infinity,
-                            height: 100,
+                            height: 100.0,
                             decoration: BoxDecoration(),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsets.all(3),
+                                    padding: EdgeInsets.all(3.0),
                                     child: Container(
-                                      width: 100,
+                                      width: 100.0,
                                       height:
-                                          MediaQuery.sizeOf(context).height * 1,
+                                          MediaQuery.sizeOf(context).height *
+                                              1.0,
                                       decoration: BoxDecoration(
                                         color: Color(0x869DB8FF),
                                         border: Border.all(
@@ -457,7 +460,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                             decoration: BoxDecoration(),
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3, 0, 3, 3),
+                                                  .fromSTEB(3.0, 0.0, 3.0, 3.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -469,8 +472,8 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                5, 0, 0, 0),
+                                                            .fromSTEB(5.0, 0.0,
+                                                                0.0, 0.0),
                                                     child: Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -499,7 +502,8 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                     ),
                                                   ),
                                                   Padding(
-                                                    padding: EdgeInsets.all(4),
+                                                    padding:
+                                                        EdgeInsets.all(4.0),
                                                     child: InkWell(
                                                       splashColor:
                                                           Colors.transparent,
@@ -528,7 +532,8 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                               .secondaryBackground,
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(14),
+                                                                  .circular(
+                                                                      14.0),
                                                           border: Border.all(
                                                             color: Color(
                                                                 0xFFD4D1D1),
@@ -545,25 +550,27 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          10,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          10.0,
+                                                                          0.0),
                                                               child:
                                                                   FlutterFlowIconButton(
                                                                 borderColor: Colors
                                                                     .transparent,
                                                                 borderRadius:
-                                                                    30,
-                                                                borderWidth: 1,
-                                                                buttonSize: 40,
+                                                                    30.0,
+                                                                borderWidth:
+                                                                    1.0,
+                                                                buttonSize:
+                                                                    40.0,
                                                                 icon: Icon(
                                                                   Icons
                                                                       .account_circle,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .info,
-                                                                  size: 30,
+                                                                  size: 30.0,
                                                                 ),
                                                                 onPressed: () {
                                                                   print(
@@ -575,10 +582,10 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          5,
-                                                                          0,
-                                                                          0),
+                                                                          0.0,
+                                                                          5.0,
+                                                                          0.0,
+                                                                          0.0),
                                                               child: Text(
                                                                 FFAppState()
                                                                     .setCustName,
@@ -590,7 +597,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                           FlutterFlowTheme.of(context)
                                                                               .bodyMediumFamily,
                                                                       fontSize:
-                                                                          18,
+                                                                          18.0,
                                                                       letterSpacing:
                                                                           0.0,
                                                                       fontWeight:
@@ -620,7 +627,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                             decoration: BoxDecoration(),
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3, 0, 3, 3),
+                                                  .fromSTEB(3.0, 0.0, 3.0, 3.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -632,8 +639,8 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                5, 0, 0, 0),
+                                                            .fromSTEB(5.0, 0.0,
+                                                                0.0, 0.0),
                                                     child: Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -667,8 +674,8 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                8, 0, 8, 0),
+                                                            .fromSTEB(8.0, 0.0,
+                                                                8.0, 0.0),
                                                     child: TextFormField(
                                                       controller: _model
                                                           .textController1,
@@ -726,11 +733,12 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .alternate,
-                                                            width: 2,
+                                                            width: 2.0,
                                                           ),
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(8),
+                                                                  .circular(
+                                                                      8.0),
                                                         ),
                                                         focusedBorder:
                                                             UnderlineInputBorder(
@@ -739,11 +747,12 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .primary,
-                                                            width: 2,
+                                                            width: 2.0,
                                                           ),
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(8),
+                                                                  .circular(
+                                                                      8.0),
                                                         ),
                                                         errorBorder:
                                                             UnderlineInputBorder(
@@ -752,11 +761,12 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .error,
-                                                            width: 2,
+                                                            width: 2.0,
                                                           ),
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(8),
+                                                                  .circular(
+                                                                      8.0),
                                                         ),
                                                         focusedErrorBorder:
                                                             UnderlineInputBorder(
@@ -765,18 +775,20 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .error,
-                                                            width: 2,
+                                                            width: 2.0,
                                                           ),
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(8),
+                                                                  .circular(
+                                                                      8.0),
                                                         ),
                                                         filled: true,
                                                         fillColor: FlutterFlowTheme
                                                                 .of(context)
                                                             .secondaryBackground,
                                                         contentPadding:
-                                                            EdgeInsets.all(14),
+                                                            EdgeInsets.all(
+                                                                14.0),
                                                       ),
                                                       style:
                                                           FlutterFlowTheme.of(
@@ -806,7 +818,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    3, 3, 3, 2),
+                                                    3.0, 3.0, 3.0, 2.0),
                                             child: Container(
                                               width: double.infinity,
                                               height: MediaQuery.sizeOf(context)
@@ -815,7 +827,8 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                               decoration: BoxDecoration(),
                                               child: Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(3, 0, 3, 3),
+                                                    .fromSTEB(
+                                                        3.0, 0.0, 3.0, 3.0),
                                                 child: Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -829,7 +842,10 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  5, 0, 0, 0),
+                                                                  5.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
                                                       child: Text(
                                                         FFLocalizations.of(
                                                                 context)
@@ -862,7 +878,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsets.all(3),
+                                                          EdgeInsets.all(3.0),
                                                       child: Container(
                                                         width: double.infinity,
                                                         height:
@@ -877,7 +893,8 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                               .secondaryBackground,
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(14),
+                                                                  .circular(
+                                                                      14.0),
                                                           border: Border.all(
                                                             color: Color(
                                                                 0xFFD4D1D1),
@@ -897,10 +914,10 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10,
-                                                                          0,
-                                                                          0,
-                                                                          0),
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                               child: Text(
                                                                 valueOrDefault<
                                                                     String>(
@@ -923,7 +940,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                               context)
                                                                           .primary,
                                                                       fontSize:
-                                                                          20,
+                                                                          20.0,
                                                                       letterSpacing:
                                                                           0.0,
                                                                       useGoogleFonts: GoogleFonts
@@ -943,7 +960,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                             ),
                                           ),
                                           Padding(
-                                            padding: EdgeInsets.all(5),
+                                            padding: EdgeInsets.all(5.0),
                                             child: Container(
                                               width: double.infinity,
                                               height: MediaQuery.sizeOf(context)
@@ -955,13 +972,13 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                 children: [
                                                   Expanded(
                                                     child: Container(
-                                                      width: 100,
-                                                      height: 100,
+                                                      width: 100.0,
+                                                      height: 100.0,
                                                       decoration:
                                                           BoxDecoration(),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsets.all(3),
+                                                            EdgeInsets.all(3.0),
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -976,10 +993,10 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          5,
-                                                                          0,
-                                                                          0,
-                                                                          0),
+                                                                          5.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                               child: Text(
                                                                 FFLocalizations.of(
                                                                         context)
@@ -1011,7 +1028,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                             Padding(
                                                               padding:
                                                                   EdgeInsets
-                                                                      .all(2),
+                                                                      .all(2.0),
                                                               child:
                                                                   TextFormField(
                                                                 controller: _model
@@ -1054,7 +1071,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                     ),
                                                                     borderRadius:
                                                                         BorderRadius.circular(
-                                                                            10),
+                                                                            10.0),
                                                                   ),
                                                                   focusedBorder:
                                                                       OutlineInputBorder(
@@ -1067,7 +1084,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                     ),
                                                                     borderRadius:
                                                                         BorderRadius.circular(
-                                                                            10),
+                                                                            10.0),
                                                                   ),
                                                                   errorBorder:
                                                                       OutlineInputBorder(
@@ -1080,7 +1097,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                     ),
                                                                     borderRadius:
                                                                         BorderRadius.circular(
-                                                                            10),
+                                                                            10.0),
                                                                   ),
                                                                   focusedErrorBorder:
                                                                       OutlineInputBorder(
@@ -1093,7 +1110,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                     ),
                                                                     borderRadius:
                                                                         BorderRadius.circular(
-                                                                            10),
+                                                                            10.0),
                                                                   ),
                                                                   filled: true,
                                                                   fillColor: FlutterFlowTheme.of(
@@ -1127,16 +1144,16 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                   ),
                                                   Expanded(
                                                     child: Container(
-                                                      width: 100,
+                                                      width: 100.0,
                                                       height: MediaQuery.sizeOf(
                                                                   context)
                                                               .height *
-                                                          1,
+                                                          1.0,
                                                       decoration:
                                                           BoxDecoration(),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsets.all(3),
+                                                            EdgeInsets.all(3.0),
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -1187,7 +1204,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              14),
+                                                                              14.0),
                                                                   border: Border
                                                                       .all(
                                                                     color: FlutterFlowTheme.of(
@@ -1255,8 +1272,8 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                       safeSetState(() =>
                                                                           _model.dropDownCustCredValue =
                                                                               val),
-                                                                  width: 200,
-                                                                  height: 50,
+                                                                  width: 200.0,
+                                                                  height: 50.0,
                                                                   textStyle: FlutterFlowTheme.of(
                                                                           context)
                                                                       .titleSmall
@@ -1276,23 +1293,23 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryText,
-                                                                    size: 14,
+                                                                    size: 14.0,
                                                                   ),
                                                                   fillColor: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryBackground,
-                                                                  elevation: 0,
+                                                                  elevation:
+                                                                      0.0,
                                                                   borderColor:
                                                                       Colors
                                                                           .transparent,
                                                                   borderWidth:
-                                                                      0,
+                                                                      0.0,
                                                                   borderRadius:
-                                                                      0,
-                                                                  margin:
-                                                                      EdgeInsets
-                                                                          .all(
-                                                                              14),
+                                                                      0.0,
+                                                                  margin: EdgeInsets
+                                                                      .all(
+                                                                          14.0),
                                                                   hidesUnderline:
                                                                       true,
                                                                   isSearchable:
@@ -1312,7 +1329,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                             ),
                                           ),
                                           Padding(
-                                            padding: EdgeInsets.all(3),
+                                            padding: EdgeInsets.all(3.0),
                                             child: Container(
                                               width: double.infinity,
                                               height: MediaQuery.sizeOf(context)
@@ -1321,7 +1338,8 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                               decoration: BoxDecoration(),
                                               child: Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(0, 0, 0, 5),
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 5.0),
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -1463,16 +1481,22 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                         'eo43rr57' /* SAVE */,
                                                       ),
                                                       options: FFButtonOptions(
-                                                        width: 120,
-                                                        height: 40,
+                                                        width: 120.0,
+                                                        height: 40.0,
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0, 0, 0, 0),
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
                                                         iconPadding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0, 0, 0, 0),
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1496,13 +1520,13 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                           FlutterFlowTheme.of(context)
                                                                               .headlineSmallFamily),
                                                                 ),
-                                                        elevation: 2,
+                                                        elevation: 2.0,
                                                         borderSide: BorderSide(
-                                                          width: 1,
+                                                          width: 1.0,
                                                         ),
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(0),
+                                                                .circular(0.0),
                                                       ),
                                                     ),
                                                     FFButtonWidget(
@@ -1740,16 +1764,22 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                         'rexvwed4' /* PRINT */,
                                                       ),
                                                       options: FFButtonOptions(
-                                                        width: 120,
-                                                        height: 40,
+                                                        width: 120.0,
+                                                        height: 40.0,
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0, 0, 0, 0),
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
                                                         iconPadding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0, 0, 0, 0),
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1773,15 +1803,15 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                           FlutterFlowTheme.of(context)
                                                                               .headlineSmallFamily),
                                                                 ),
-                                                        elevation: 2,
+                                                        elevation: 2.0,
                                                         borderSide: BorderSide(
                                                           color: Colors
                                                               .transparent,
-                                                          width: 1,
+                                                          width: 1.0,
                                                         ),
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(0),
+                                                                .circular(0.0),
                                                       ),
                                                     ),
                                                   ],
@@ -1796,11 +1826,12 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsets.all(3),
+                                    padding: EdgeInsets.all(3.0),
                                     child: Container(
-                                      width: 100,
+                                      width: 100.0,
                                       height:
-                                          MediaQuery.sizeOf(context).height * 1,
+                                          MediaQuery.sizeOf(context).height *
+                                              1.0,
                                       decoration: BoxDecoration(
                                         color: Color(0x719DB8FF),
                                         border: Border.all(
@@ -1829,7 +1860,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                   containerVar[
                                                       containerVarIndex];
                                               return Padding(
-                                                padding: EdgeInsets.all(8),
+                                                padding: EdgeInsets.all(8.0),
                                                 child: InkWell(
                                                   splashColor:
                                                       Colors.transparent,
@@ -1849,7 +1880,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                     safeSetState(() {});
                                                   },
                                                   child: Container(
-                                                    width: 100,
+                                                    width: 100.0,
                                                     height: MediaQuery.sizeOf(
                                                                 context)
                                                             .height *
@@ -1860,7 +1891,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                           .secondaryBackground,
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              8),
+                                                              8.0),
                                                       border: Border.all(
                                                         color:
                                                             FlutterFlowTheme.of(
@@ -1889,10 +1920,10 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            10,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            10.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                 child: Text(
                                                                   FFLocalizations.of(
                                                                           context)
@@ -1942,12 +1973,11 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                           .start,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              10,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -2000,10 +2030,10 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            10,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            10.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                 child: Text(
                                                                   FFLocalizations.of(
                                                                           context)
@@ -2056,10 +2086,10 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            10,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            10.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                 child: Text(
                                                                   FFLocalizations.of(
                                                                           context)
@@ -2146,11 +2176,12 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsets.all(3),
+                                    padding: EdgeInsets.all(3.0),
                                     child: Container(
-                                      width: 100,
+                                      width: 100.0,
                                       height:
-                                          MediaQuery.sizeOf(context).height * 1,
+                                          MediaQuery.sizeOf(context).height *
+                                              1.0,
                                       decoration: BoxDecoration(
                                         color: Color(0x719DB8FF),
                                         border: Border.all(
@@ -2172,13 +2203,13 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                           if (!snapshot.hasData) {
                                             return Center(
                                               child: SizedBox(
-                                                width: 40,
-                                                height: 40,
+                                                width: 40.0,
+                                                height: 40.0,
                                                 child: SpinKitFadingCircle(
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
-                                                  size: 40,
+                                                  size: 40.0,
                                                 ),
                                               ),
                                             );
@@ -2198,7 +2229,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                   listViewPaymentRecordList[
                                                       listViewIndex];
                                               return Padding(
-                                                padding: EdgeInsets.all(8),
+                                                padding: EdgeInsets.all(8.0),
                                                 child:
                                                     StreamBuilder<PartyRecord>(
                                                   stream:
@@ -2210,14 +2241,14 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                     if (!snapshot.hasData) {
                                                       return Center(
                                                         child: SizedBox(
-                                                          width: 40,
-                                                          height: 40,
+                                                          width: 40.0,
+                                                          height: 40.0,
                                                           child:
                                                               SpinKitFadingCircle(
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .primary,
-                                                            size: 40,
+                                                            size: 40.0,
                                                           ),
                                                         ),
                                                       );
@@ -2244,7 +2275,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                             .update(() {});
                                                       },
                                                       child: Container(
-                                                        width: 100,
+                                                        width: 100.0,
                                                         height:
                                                             MediaQuery.sizeOf(
                                                                         context)
@@ -2257,7 +2288,8 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                               .secondaryBackground,
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(14),
+                                                                  .circular(
+                                                                      14.0),
                                                           border: Border.all(
                                                             color: FlutterFlowTheme
                                                                     .of(context)
@@ -2268,8 +2300,11 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(0,
-                                                                      0, 0, 4),
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      4.0),
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -2283,7 +2318,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                   padding:
                                                                       EdgeInsets
                                                                           .all(
-                                                                              2),
+                                                                              2.0),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -2294,10 +2329,10 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                     children: [
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            3,
-                                                                            0),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            3.0,
+                                                                            0.0),
                                                                         child:
                                                                             Text(
                                                                           valueOrDefault<
@@ -2321,10 +2356,10 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                       ),
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            3,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            3.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
                                                                             Text(
                                                                           dateTimeFormat(
@@ -2354,12 +2389,11 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              10,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -2399,10 +2433,10 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                10,
-                                                                                0,
-                                                                                0,
-                                                                                0),
+                                                                                10.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -2437,12 +2471,11 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              10,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -2482,10 +2515,10 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                10,
-                                                                                0,
-                                                                                0,
-                                                                                0),
+                                                                                10.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -2523,12 +2556,11 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              10,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -2604,11 +2636,12 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsets.all(3),
+                                    padding: EdgeInsets.all(3.0),
                                     child: Container(
-                                      width: 100,
+                                      width: 100.0,
                                       height:
-                                          MediaQuery.sizeOf(context).height * 1,
+                                          MediaQuery.sizeOf(context).height *
+                                              1.0,
                                       decoration: BoxDecoration(
                                         color: Color(0x719DB8FF),
                                         border: Border.all(
@@ -2626,7 +2659,8 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                           if (false)
                                             Container(
                                               width: MediaQuery.sizeOf(context)
-                                                  .width,
+                                                      .width *
+                                                  1.0,
                                               height: MediaQuery.sizeOf(context)
                                                       .height *
                                                   0.04,
@@ -2671,7 +2705,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 0, 2),
+                                                    0.0, 0.0, 0.0, 2.0),
                                             child: Container(
                                               width: double.infinity,
                                               height: MediaQuery.sizeOf(context)
@@ -2685,7 +2719,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryBackground,
-                                                  width: 2,
+                                                  width: 2.0,
                                                 ),
                                               ),
                                               child: Row(
@@ -2700,7 +2734,10 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  2, 0, 0, 0),
+                                                                  2.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
                                                       child: Container(
                                                         height:
                                                             MediaQuery.sizeOf(
@@ -2736,7 +2773,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                         FlutterFlowTheme.of(context)
                                                                             .bodyMediumFamily,
                                                                     fontSize:
-                                                                        14,
+                                                                        14.0,
                                                                     letterSpacing:
                                                                         0.0,
                                                                     fontWeight:
@@ -2759,7 +2796,10 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  2, 0, 0, 0),
+                                                                  2.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
                                                       child: Container(
                                                         height:
                                                             MediaQuery.sizeOf(
@@ -2778,7 +2818,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                             Expanded(
                                                               flex: 3,
                                                               child: Container(
-                                                                width: 100,
+                                                                width: 100.0,
                                                                 height: MediaQuery.sizeOf(
                                                                             context)
                                                                         .height *
@@ -2796,8 +2836,8 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                     Align(
                                                                       alignment:
                                                                           AlignmentDirectional(
-                                                                              0,
-                                                                              0),
+                                                                              0.0,
+                                                                              0.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -2810,7 +2850,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                             .bodyMedium
                                                                             .override(
                                                                               fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                              fontSize: 14,
+                                                                              fontSize: 14.0,
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w600,
                                                                               useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
@@ -2832,7 +2872,10 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  2, 0, 0, 0),
+                                                                  2.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
                                                       child: Container(
                                                         height:
                                                             MediaQuery.sizeOf(
@@ -2844,7 +2887,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                         child: Align(
                                                           alignment:
                                                               AlignmentDirectional(
-                                                                  0, 0),
+                                                                  0.0, 0.0),
                                                           child: Text(
                                                             FFLocalizations.of(
                                                                     context)
@@ -2860,7 +2903,8 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                   fontFamily: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMediumFamily,
-                                                                  fontSize: 14,
+                                                                  fontSize:
+                                                                      14.0,
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
@@ -2883,7 +2927,10 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  2, 0, 0, 0),
+                                                                  2.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
                                                       child: Container(
                                                         height:
                                                             MediaQuery.sizeOf(
@@ -2905,7 +2952,8 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                 Container(
                                                   width:
                                                       MediaQuery.sizeOf(context)
-                                                          .width,
+                                                              .width *
+                                                          1.0,
                                                   height:
                                                       MediaQuery.sizeOf(context)
                                                               .height *
@@ -2935,10 +2983,10 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0,
-                                                                        0,
-                                                                        0,
-                                                                        4),
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        4.0),
                                                             child: Container(
                                                               width: MediaQuery
                                                                           .sizeOf(
@@ -2975,10 +3023,10 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                         child:
                                                                             Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              2,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              2.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               Container(
                                                                             height:
@@ -2989,14 +3037,14 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                             ),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(3, 0, 0, 0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(3.0, 0.0, 0.0, 0.0),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 mainAxisAlignment: MainAxisAlignment.center,
                                                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                                                 children: [
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 2),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
                                                                                     child: Text(
                                                                                       list3Item.name,
                                                                                       textAlign: TextAlign.start,
@@ -3016,7 +3064,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                               fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                              fontSize: 13,
+                                                                                              fontSize: 13.0,
                                                                                               letterSpacing: 0.0,
                                                                                               useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                             ),
@@ -3026,7 +3074,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                                         textAlign: TextAlign.center,
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                               fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                              fontSize: 13,
+                                                                                              fontSize: 13.0,
                                                                                               letterSpacing: 0.0,
                                                                                               useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                             ),
@@ -3058,7 +3106,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                               Expanded(
                                                                                 flex: 11,
                                                                                 child: Container(
-                                                                                  width: 100,
+                                                                                  width: 100.0,
                                                                                   height: MediaQuery.sizeOf(context).height * 0.083,
                                                                                   decoration: BoxDecoration(
                                                                                     color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -3068,14 +3116,14 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                                     mainAxisAlignment: MainAxisAlignment.center,
                                                                                     children: [
                                                                                       Align(
-                                                                                        alignment: AlignmentDirectional(0, 0),
+                                                                                        alignment: AlignmentDirectional(0.0, 0.0),
                                                                                         child: Text(
                                                                                           list3Item.quantity.toString(),
                                                                                           textAlign: TextAlign.center,
                                                                                           style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                                 fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                                 color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                fontSize: 13,
+                                                                                                fontSize: 13.0,
                                                                                                 letterSpacing: 0.0,
                                                                                                 useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                               ),
@@ -3103,7 +3151,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                           child:
                                                                               Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(0, 0),
+                                                                                AlignmentDirectional(0.0, 0.0),
                                                                             child:
                                                                                 Text(
                                                                               functions
@@ -3121,7 +3169,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                     color: FlutterFlowTheme.of(context).primaryText,
-                                                                                    fontSize: 13,
+                                                                                    fontSize: 13.0,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),

@@ -123,11 +123,11 @@ class _PrinterSelectionScreenWidgetState
             backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
             body: Center(
               child: SizedBox(
-                width: 40,
-                height: 40,
+                width: 40.0,
+                height: 40.0,
                 child: SpinKitFadingCircle(
                   color: FlutterFlowTheme.of(context).primary,
-                  size: 40,
+                  size: 40.0,
                 ),
               ),
             ),
@@ -161,13 +161,13 @@ class _PrinterSelectionScreenWidgetState
                       FlutterFlowTheme.of(context).secondaryBackground,
                   child: FlutterFlowIconButton(
                     borderColor: Colors.transparent,
-                    borderRadius: 30,
-                    borderWidth: 1,
-                    buttonSize: 40,
+                    borderRadius: 30.0,
+                    borderWidth: 1.0,
+                    buttonSize: 40.0,
                     icon: Icon(
                       Icons.print,
                       color: FlutterFlowTheme.of(context).primary,
-                      size: 20,
+                      size: 20.0,
                     ),
                     onPressed: () async {
                       _model.headerDoc = await queryHeaderRecordOnce(
@@ -397,14 +397,14 @@ class _PrinterSelectionScreenWidgetState
                   ),
                 ),
                 body: Padding(
-                  padding: EdgeInsets.all(3),
+                  padding: EdgeInsets.all(3.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Expanded(
                         flex: 1,
                         child: Container(
-                          width: MediaQuery.sizeOf(context).width,
+                          width: MediaQuery.sizeOf(context).width * 1.0,
                           height: MediaQuery.sizeOf(context).height * 0.12,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context).primary,
@@ -417,22 +417,22 @@ class _PrinterSelectionScreenWidgetState
                               Expanded(
                                 flex: 1,
                                 child: Container(
-                                  width: 100,
-                                  height: 100,
+                                  width: 100.0,
+                                  height: 100.0,
                                   decoration: BoxDecoration(),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       FlutterFlowIconButton(
                                         borderColor: Colors.transparent,
-                                        borderRadius: 30,
-                                        borderWidth: 1,
-                                        buttonSize: 60,
+                                        borderRadius: 30.0,
+                                        borderWidth: 1.0,
+                                        buttonSize: 60.0,
                                         icon: Icon(
                                           Icons.chevron_left_sharp,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBtnText,
-                                          size: 26,
+                                          size: 26.0,
                                         ),
                                         onPressed: () async {
                                           context.safePop();
@@ -479,7 +479,8 @@ class _PrinterSelectionScreenWidgetState
                       Expanded(
                         flex: 13,
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 3.0, 0.0, 0.0),
                           child: StreamBuilder<List<HeaderRecord>>(
                             stream: queryHeaderRecord(
                               parent: FFAppState().outletIdRef,
@@ -490,12 +491,12 @@ class _PrinterSelectionScreenWidgetState
                               if (!snapshot.hasData) {
                                 return Center(
                                   child: SizedBox(
-                                    width: 40,
-                                    height: 40,
+                                    width: 40.0,
+                                    height: 40.0,
                                     child: SpinKitFadingCircle(
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      size: 40,
+                                      size: 40.0,
                                     ),
                                   ),
                                 );
@@ -508,18 +509,18 @@ class _PrinterSelectionScreenWidgetState
                                       : null;
 
                               return Container(
-                                width: MediaQuery.sizeOf(context).width,
-                                height: MediaQuery.sizeOf(context).height * 1,
+                                width: MediaQuery.sizeOf(context).width * 1.0,
+                                height: MediaQuery.sizeOf(context).height * 1.0,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBackground,
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsets.all(5),
+                                  padding: EdgeInsets.all(5.0),
                                   child: Column(
                                     children: [
                                       Align(
-                                        alignment: Alignment(0, 0),
+                                        alignment: Alignment(0.0, 0),
                                         child: TabBar(
                                           labelColor:
                                               FlutterFlowTheme.of(context)
@@ -546,7 +547,7 @@ class _PrinterSelectionScreenWidgetState
                                           indicatorColor:
                                               FlutterFlowTheme.of(context)
                                                   .tertiary,
-                                          indicatorWeight: 3,
+                                          indicatorWeight: 3.0,
                                           tabs: [
                                             Tab(
                                               text: FFLocalizations.of(context)
@@ -590,7 +591,7 @@ class _PrinterSelectionScreenWidgetState
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 8, 0, 8),
+                                                  .fromSTEB(0.0, 8.0, 0.0, 8.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -603,7 +604,10 @@ class _PrinterSelectionScreenWidgetState
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0, 0, 5, 0),
+                                                                  0.0,
+                                                                  0.0,
+                                                                  5.0,
+                                                                  0.0),
                                                       child: Container(
                                                         width:
                                                             MediaQuery.sizeOf(
@@ -624,12 +628,13 @@ class _PrinterSelectionScreenWidgetState
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .customColor1,
-                                                            width: 1,
+                                                            width: 1.0,
                                                           ),
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsets.all(3),
+                                                              EdgeInsets.all(
+                                                                  3.0),
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -654,18 +659,19 @@ class _PrinterSelectionScreenWidgetState
                                                                         Colors
                                                                             .transparent,
                                                                     borderRadius:
-                                                                        30,
+                                                                        30.0,
                                                                     borderWidth:
-                                                                        1,
+                                                                        1.0,
                                                                     buttonSize:
-                                                                        45,
+                                                                        45.0,
                                                                     icon: Icon(
                                                                       Icons
                                                                           .wifi,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryBackground,
-                                                                      size: 18,
+                                                                      size:
+                                                                          18.0,
                                                                     ),
                                                                     onPressed:
                                                                         () {
@@ -678,11 +684,11 @@ class _PrinterSelectionScreenWidgetState
                                                                         Colors
                                                                             .transparent,
                                                                     borderRadius:
-                                                                        30,
+                                                                        30.0,
                                                                     borderWidth:
-                                                                        1,
+                                                                        1.0,
                                                                     buttonSize:
-                                                                        45,
+                                                                        45.0,
                                                                     disabledColor:
                                                                         FlutterFlowTheme.of(context)
                                                                             .customColor1,
@@ -692,7 +698,8 @@ class _PrinterSelectionScreenWidgetState
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryBackground,
-                                                                      size: 22,
+                                                                      size:
+                                                                          22.0,
                                                                     ),
                                                                     onPressed: FFAppState()
                                                                             .isPrinterConnected
@@ -759,12 +766,11 @@ class _PrinterSelectionScreenWidgetState
                                                                   if (FFAppState()
                                                                       .ethernetPrint)
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              8,
-                                                                              0,
-                                                                              8,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          8.0,
+                                                                          0.0,
+                                                                          8.0,
+                                                                          0.0),
                                                                       child:
                                                                           TextFormField(
                                                                         controller:
@@ -806,40 +812,40 @@ class _PrinterSelectionScreenWidgetState
                                                                             borderSide:
                                                                                 BorderSide(
                                                                               color: FlutterFlowTheme.of(context).alternate,
-                                                                              width: 2,
+                                                                              width: 2.0,
                                                                             ),
                                                                             borderRadius:
-                                                                                BorderRadius.circular(8),
+                                                                                BorderRadius.circular(8.0),
                                                                           ),
                                                                           focusedBorder:
                                                                               UnderlineInputBorder(
                                                                             borderSide:
                                                                                 BorderSide(
                                                                               color: FlutterFlowTheme.of(context).primary,
-                                                                              width: 2,
+                                                                              width: 2.0,
                                                                             ),
                                                                             borderRadius:
-                                                                                BorderRadius.circular(8),
+                                                                                BorderRadius.circular(8.0),
                                                                           ),
                                                                           errorBorder:
                                                                               UnderlineInputBorder(
                                                                             borderSide:
                                                                                 BorderSide(
                                                                               color: FlutterFlowTheme.of(context).error,
-                                                                              width: 2,
+                                                                              width: 2.0,
                                                                             ),
                                                                             borderRadius:
-                                                                                BorderRadius.circular(8),
+                                                                                BorderRadius.circular(8.0),
                                                                           ),
                                                                           focusedErrorBorder:
                                                                               UnderlineInputBorder(
                                                                             borderSide:
                                                                                 BorderSide(
                                                                               color: FlutterFlowTheme.of(context).error,
-                                                                              width: 2,
+                                                                              width: 2.0,
                                                                             ),
                                                                             borderRadius:
-                                                                                BorderRadius.circular(8),
+                                                                                BorderRadius.circular(8.0),
                                                                           ),
                                                                         ),
                                                                         style: FlutterFlowTheme.of(context)
@@ -857,12 +863,11 @@ class _PrinterSelectionScreenWidgetState
                                                                   if (FFAppState()
                                                                       .ethernetPrint)
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              8,
-                                                                              0,
-                                                                              8,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          8.0,
+                                                                          0.0,
+                                                                          8.0,
+                                                                          0.0),
                                                                       child:
                                                                           TextFormField(
                                                                         controller:
@@ -904,40 +909,40 @@ class _PrinterSelectionScreenWidgetState
                                                                             borderSide:
                                                                                 BorderSide(
                                                                               color: FlutterFlowTheme.of(context).alternate,
-                                                                              width: 2,
+                                                                              width: 2.0,
                                                                             ),
                                                                             borderRadius:
-                                                                                BorderRadius.circular(8),
+                                                                                BorderRadius.circular(8.0),
                                                                           ),
                                                                           focusedBorder:
                                                                               UnderlineInputBorder(
                                                                             borderSide:
                                                                                 BorderSide(
                                                                               color: FlutterFlowTheme.of(context).primary,
-                                                                              width: 2,
+                                                                              width: 2.0,
                                                                             ),
                                                                             borderRadius:
-                                                                                BorderRadius.circular(8),
+                                                                                BorderRadius.circular(8.0),
                                                                           ),
                                                                           errorBorder:
                                                                               UnderlineInputBorder(
                                                                             borderSide:
                                                                                 BorderSide(
                                                                               color: FlutterFlowTheme.of(context).error,
-                                                                              width: 2,
+                                                                              width: 2.0,
                                                                             ),
                                                                             borderRadius:
-                                                                                BorderRadius.circular(8),
+                                                                                BorderRadius.circular(8.0),
                                                                           ),
                                                                           focusedErrorBorder:
                                                                               UnderlineInputBorder(
                                                                             borderSide:
                                                                                 BorderSide(
                                                                               color: FlutterFlowTheme.of(context).error,
-                                                                              width: 2,
+                                                                              width: 2.0,
                                                                             ),
                                                                             borderRadius:
-                                                                                BorderRadius.circular(8),
+                                                                                BorderRadius.circular(8.0),
                                                                           ),
                                                                         ),
                                                                         style: FlutterFlowTheme.of(context)
@@ -955,12 +960,11 @@ class _PrinterSelectionScreenWidgetState
                                                                   if (FFAppState()
                                                                       .ethernetPrint)
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              0,
-                                                                              8,
-                                                                              0,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          8.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       child:
                                                                           FFButtonWidget(
                                                                         onPressed:
@@ -998,17 +1002,17 @@ class _PrinterSelectionScreenWidgetState
                                                                         options:
                                                                             FFButtonOptions(
                                                                           height:
-                                                                              40,
+                                                                              40.0,
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              24,
-                                                                              0,
-                                                                              24,
-                                                                              0),
+                                                                              24.0,
+                                                                              0.0,
+                                                                              24.0,
+                                                                              0.0),
                                                                           iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primary,
                                                                           textStyle: FlutterFlowTheme.of(context)
@@ -1020,16 +1024,16 @@ class _PrinterSelectionScreenWidgetState
                                                                                 useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                               ),
                                                                           elevation:
-                                                                              3,
+                                                                              3.0,
                                                                           borderSide:
                                                                               BorderSide(
                                                                             color:
                                                                                 Colors.transparent,
                                                                             width:
-                                                                                1,
+                                                                                1.0,
                                                                           ),
                                                                           borderRadius:
-                                                                              BorderRadius.circular(8),
+                                                                              BorderRadius.circular(8.0),
                                                                         ),
                                                                       ),
                                                                     ),
@@ -1039,10 +1043,10 @@ class _PrinterSelectionScreenWidgetState
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            10,
-                                                                            0,
-                                                                            3),
+                                                                            0.0,
+                                                                            10.0,
+                                                                            0.0,
+                                                                            3.0),
                                                                 child: Text(
                                                                   FFLocalizations.of(
                                                                           context)
@@ -1066,10 +1070,10 @@ class _PrinterSelectionScreenWidgetState
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            0,
-                                                                            10),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            10.0),
                                                                 child:
                                                                     FlutterFlowDropDown<
                                                                         String>(
@@ -1109,26 +1113,27 @@ class _PrinterSelectionScreenWidgetState
                                                                   icon: Icon(
                                                                     Icons
                                                                         .keyboard_arrow_down,
-                                                                    size: 15,
+                                                                    size: 15.0,
                                                                   ),
                                                                   fillColor: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryBackground,
-                                                                  elevation: 2,
+                                                                  elevation:
+                                                                      2.0,
                                                                   borderColor:
                                                                       FlutterFlowTheme.of(
                                                                               context)
                                                                           .customColor2,
                                                                   borderWidth:
-                                                                      0,
+                                                                      0.0,
                                                                   borderRadius:
-                                                                      5,
+                                                                      5.0,
                                                                   margin: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          12,
-                                                                          0,
-                                                                          12,
-                                                                          0),
+                                                                          12.0,
+                                                                          0.0,
+                                                                          12.0,
+                                                                          0.0),
                                                                   hidesUnderline:
                                                                       true,
                                                                   isSearchable:
@@ -1140,7 +1145,8 @@ class _PrinterSelectionScreenWidgetState
                                                               Padding(
                                                                 padding:
                                                                     EdgeInsets
-                                                                        .all(5),
+                                                                        .all(
+                                                                            5.0),
                                                                 child: Text(
                                                                   FFLocalizations.of(
                                                                           context)
@@ -1164,10 +1170,10 @@ class _PrinterSelectionScreenWidgetState
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            0,
-                                                                            20),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            20.0),
                                                                 child:
                                                                     FlutterFlowDropDown<
                                                                         String>(
@@ -1228,26 +1234,27 @@ class _PrinterSelectionScreenWidgetState
                                                                   icon: Icon(
                                                                     Icons
                                                                         .keyboard_arrow_down,
-                                                                    size: 15,
+                                                                    size: 15.0,
                                                                   ),
                                                                   fillColor: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryBackground,
-                                                                  elevation: 2,
+                                                                  elevation:
+                                                                      2.0,
                                                                   borderColor:
                                                                       FlutterFlowTheme.of(
                                                                               context)
                                                                           .customColor2,
                                                                   borderWidth:
-                                                                      0,
+                                                                      0.0,
                                                                   borderRadius:
-                                                                      5,
+                                                                      5.0,
                                                                   margin: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          12,
-                                                                          0,
-                                                                          12,
-                                                                          0),
+                                                                          12.0,
+                                                                          0.0,
+                                                                          12.0,
+                                                                          0.0),
                                                                   hidesUnderline:
                                                                       true,
                                                                   isSearchable:
@@ -1259,7 +1266,8 @@ class _PrinterSelectionScreenWidgetState
                                                               Padding(
                                                                 padding:
                                                                     EdgeInsets
-                                                                        .all(5),
+                                                                        .all(
+                                                                            5.0),
                                                                 child: Text(
                                                                   FFLocalizations.of(
                                                                           context)
@@ -1283,10 +1291,10 @@ class _PrinterSelectionScreenWidgetState
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            5,
-                                                                            0,
-                                                                            0,
-                                                                            20),
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            20.0),
                                                                 child:
                                                                     Container(
                                                                   width: double
@@ -1331,7 +1339,7 @@ class _PrinterSelectionScreenWidgetState
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 8),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                                                                                   child: InkWell(
                                                                                     splashColor: Colors.transparent,
                                                                                     focusColor: Colors.transparent,
@@ -1399,10 +1407,10 @@ class _PrinterSelectionScreenWidgetState
                                                                                       height: MediaQuery.sizeOf(context).height * 0.065,
                                                                                       decoration: BoxDecoration(
                                                                                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                        borderRadius: BorderRadius.circular(12),
+                                                                                        borderRadius: BorderRadius.circular(12.0),
                                                                                       ),
                                                                                       child: Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(10, 6, 10, 8),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(10.0, 6.0, 10.0, 8.0),
                                                                                         child: Column(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1412,11 +1420,11 @@ class _PrinterSelectionScreenWidgetState
                                                                                               mainAxisAlignment: MainAxisAlignment.start,
                                                                                               children: [
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                                   child: Icon(
                                                                                                     Icons.print_rounded,
                                                                                                     color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                    size: 16,
+                                                                                                    size: 16.0,
                                                                                                   ),
                                                                                                 ),
                                                                                                 Text(
@@ -1434,17 +1442,17 @@ class _PrinterSelectionScreenWidgetState
                                                                                               ],
                                                                                             ),
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                               child: Row(
                                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                                 mainAxisAlignment: MainAxisAlignment.start,
                                                                                                 children: [
                                                                                                   Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
                                                                                                     child: Icon(
                                                                                                       Icons.location_on,
                                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                                      size: 15,
+                                                                                                      size: 15.0,
                                                                                                     ),
                                                                                                   ),
                                                                                                   Text(
@@ -1455,7 +1463,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                                     style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                                           fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                           color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                          fontSize: 10,
+                                                                                                          fontSize: 10.0,
                                                                                                           letterSpacing: 0.0,
                                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                                         ),
@@ -1476,13 +1484,13 @@ class _PrinterSelectionScreenWidgetState
                                                                                     ))
                                                                                   FlutterFlowIconButton(
                                                                                     borderColor: Colors.transparent,
-                                                                                    borderRadius: 30,
-                                                                                    borderWidth: 1,
-                                                                                    buttonSize: 60,
+                                                                                    borderRadius: 30.0,
+                                                                                    borderWidth: 1.0,
+                                                                                    buttonSize: 60.0,
                                                                                     icon: Icon(
                                                                                       Icons.check_circle,
                                                                                       color: FlutterFlowTheme.of(context).tertiary,
-                                                                                      size: 30,
+                                                                                      size: 30.0,
                                                                                     ),
                                                                                     onPressed: () {
                                                                                       print('IconButton pressed ...');
@@ -1522,7 +1530,7 @@ class _PrinterSelectionScreenWidgetState
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .customColor1,
-                                                          width: 2,
+                                                          width: 2.0,
                                                         ),
                                                       ),
                                                       child:
@@ -1562,7 +1570,7 @@ class _PrinterSelectionScreenWidgetState
                                                                           fontFamily:
                                                                               FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                           fontSize:
-                                                                              22,
+                                                                              22.0,
                                                                           letterSpacing:
                                                                               0.0,
                                                                           fontWeight:
@@ -1960,15 +1968,16 @@ class _PrinterSelectionScreenWidgetState
                                                               ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 0,
-                                                              endIndent: 0,
+                                                              indent: 0.0,
+                                                              endIndent: 0.0,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
                                                             Align(
                                                               alignment:
                                                                   AlignmentDirectional(
-                                                                      -0.75, 0),
+                                                                      -0.75,
+                                                                      0.0),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -1981,7 +1990,7 @@ class _PrinterSelectionScreenWidgetState
                                                                     alignment:
                                                                         AlignmentDirectional(
                                                                             -0.4,
-                                                                            0),
+                                                                            0.0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -2005,15 +2014,14 @@ class _PrinterSelectionScreenWidgetState
                                                                     alignment:
                                                                         AlignmentDirectional(
                                                                             0.55,
-                                                                            0),
+                                                                            0.0),
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              175,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          175.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -2036,7 +2044,8 @@ class _PrinterSelectionScreenWidgetState
                                                             Align(
                                                               alignment:
                                                                   AlignmentDirectional(
-                                                                      -0.55, 0),
+                                                                      -0.55,
+                                                                      0.0),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -2067,15 +2076,14 @@ class _PrinterSelectionScreenWidgetState
                                                                     alignment:
                                                                         AlignmentDirectional(
                                                                             0.55,
-                                                                            0),
+                                                                            0.0),
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              188,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          188.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -2097,8 +2105,8 @@ class _PrinterSelectionScreenWidgetState
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 0,
-                                                              endIndent: 0,
+                                                              indent: 0.0,
+                                                              endIndent: 0.0,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -2113,10 +2121,10 @@ class _PrinterSelectionScreenWidgetState
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          2,
-                                                                          0,
-                                                                          0,
-                                                                          0),
+                                                                          2.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -2142,15 +2150,15 @@ class _PrinterSelectionScreenWidgetState
                                                                   alignment:
                                                                       AlignmentDirectional(
                                                                           0.55,
-                                                                          0),
+                                                                          0.0),
                                                                   child:
                                                                       Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            70,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            70.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -2176,10 +2184,10 @@ class _PrinterSelectionScreenWidgetState
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          30,
-                                                                          0,
-                                                                          0,
-                                                                          0),
+                                                                          30.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -2204,10 +2212,10 @@ class _PrinterSelectionScreenWidgetState
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          20,
-                                                                          0,
-                                                                          0,
-                                                                          0),
+                                                                          20.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -2233,8 +2241,8 @@ class _PrinterSelectionScreenWidgetState
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 0,
-                                                              endIndent: 0,
+                                                              indent: 0.0,
+                                                              endIndent: 0.0,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -2249,10 +2257,10 @@ class _PrinterSelectionScreenWidgetState
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          5,
-                                                                          0,
-                                                                          0,
-                                                                          0),
+                                                                          5.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -2276,15 +2284,15 @@ class _PrinterSelectionScreenWidgetState
                                                                   alignment:
                                                                       AlignmentDirectional(
                                                                           0.55,
-                                                                          0),
+                                                                          0.0),
                                                                   child:
                                                                       Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            100,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            100.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -2308,10 +2316,10 @@ class _PrinterSelectionScreenWidgetState
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          32,
-                                                                          0,
-                                                                          0,
-                                                                          0),
+                                                                          32.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -2334,10 +2342,10 @@ class _PrinterSelectionScreenWidgetState
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          30,
-                                                                          0,
-                                                                          0,
-                                                                          0),
+                                                                          30.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -2361,8 +2369,8 @@ class _PrinterSelectionScreenWidgetState
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 0,
-                                                              endIndent: 0,
+                                                              indent: 0.0,
+                                                              endIndent: 0.0,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -2377,10 +2385,10 @@ class _PrinterSelectionScreenWidgetState
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          37,
-                                                                          0,
-                                                                          0,
-                                                                          0),
+                                                                          37.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -2408,10 +2416,10 @@ class _PrinterSelectionScreenWidgetState
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          34,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          34.0,
+                                                                          0.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -2435,8 +2443,8 @@ class _PrinterSelectionScreenWidgetState
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 0,
-                                                              endIndent: 0,
+                                                              indent: 0.0,
+                                                              endIndent: 0.0,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -2444,10 +2452,10 @@ class _PrinterSelectionScreenWidgetState
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          3,
-                                                                          0,
-                                                                          30,
-                                                                          0),
+                                                                          3.0,
+                                                                          0.0,
+                                                                          30.0,
+                                                                          0.0),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -2474,7 +2482,7 @@ class _PrinterSelectionScreenWidgetState
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           fontSize:
-                                                                              28,
+                                                                              28.0,
                                                                           letterSpacing:
                                                                               0.0,
                                                                           fontWeight:
@@ -2498,7 +2506,7 @@ class _PrinterSelectionScreenWidgetState
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           fontSize:
-                                                                              28,
+                                                                              28.0,
                                                                           letterSpacing:
                                                                               0.0,
                                                                           useGoogleFonts:
@@ -2510,8 +2518,8 @@ class _PrinterSelectionScreenWidgetState
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 0,
-                                                              endIndent: 0,
+                                                              indent: 0.0,
+                                                              endIndent: 0.0,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -2526,7 +2534,8 @@ class _PrinterSelectionScreenWidgetState
                                                                 Align(
                                                                   alignment:
                                                                       AlignmentDirectional(
-                                                                          0, 0),
+                                                                          0.0,
+                                                                          0.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -2572,8 +2581,8 @@ class _PrinterSelectionScreenWidgetState
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 0,
-                                                              endIndent: 0,
+                                                              indent: 0.0,
+                                                              endIndent: 0.0,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -2762,7 +2771,7 @@ class _PrinterSelectionScreenWidgetState
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 8, 0, 8),
+                                                  .fromSTEB(0.0, 8.0, 0.0, 8.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -2775,7 +2784,10 @@ class _PrinterSelectionScreenWidgetState
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0, 0, 5, 0),
+                                                                  0.0,
+                                                                  0.0,
+                                                                  5.0,
+                                                                  0.0),
                                                       child: Container(
                                                         width:
                                                             MediaQuery.sizeOf(
@@ -2796,12 +2808,13 @@ class _PrinterSelectionScreenWidgetState
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .customColor1,
-                                                            width: 2,
+                                                            width: 2.0,
                                                           ),
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsets.all(3),
+                                                              EdgeInsets.all(
+                                                                  3.0),
                                                           child:
                                                               SingleChildScrollView(
                                                             child: Column(
@@ -2821,10 +2834,10 @@ class _PrinterSelectionScreenWidgetState
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            5,
-                                                                            5,
-                                                                            0,
-                                                                            0),
+                                                                            5.0,
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
                                                                             TextFormField(
                                                                           controller: _model.textFieldTitleTextController ??=
@@ -2864,7 +2877,7 @@ class _PrinterSelectionScreenWidgetState
                                                                             ),
                                                                             hintStyle: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                   fontFamily: 'Lora',
-                                                                                  fontSize: 14,
+                                                                                  fontSize: 14.0,
                                                                                   letterSpacing: 0.0,
                                                                                   useGoogleFonts: GoogleFonts.asMap().containsKey('Lora'),
                                                                                 ),
@@ -2874,7 +2887,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                 color: Color(0xFF898686),
                                                                                 width: 0.5,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                             ),
                                                                             focusedBorder:
                                                                                 UnderlineInputBorder(
@@ -2882,7 +2895,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                 color: Color(0x00000000),
                                                                                 width: 0.5,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                             ),
                                                                             errorBorder:
                                                                                 UnderlineInputBorder(
@@ -2890,7 +2903,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                 color: Color(0x00000000),
                                                                                 width: 0.5,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                             ),
                                                                             focusedErrorBorder:
                                                                                 UnderlineInputBorder(
@@ -2898,13 +2911,13 @@ class _PrinterSelectionScreenWidgetState
                                                                                 color: Color(0x00000000),
                                                                                 width: 0.5,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                             ),
                                                                             contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5,
-                                                                                5,
-                                                                                5,
-                                                                                10),
+                                                                                5.0,
+                                                                                5.0,
+                                                                                5.0,
+                                                                                10.0),
                                                                             suffixIcon: _model.textFieldTitleTextController!.text.isNotEmpty
                                                                                 ? InkWell(
                                                                                     onTap: () async {
@@ -2914,7 +2927,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                     child: Icon(
                                                                                       Icons.clear,
                                                                                       color: Color(0xFF757575),
-                                                                                      size: 22,
+                                                                                      size: 22.0,
                                                                                     ),
                                                                                   )
                                                                                 : null,
@@ -2950,10 +2963,10 @@ class _PrinterSelectionScreenWidgetState
                                                                         child:
                                                                             Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              5.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               TextFormField(
                                                                             controller: _model.textFieldSubTitleTextController ??=
@@ -2991,30 +3004,30 @@ class _PrinterSelectionScreenWidgetState
                                                                                   color: Color(0xFF898686),
                                                                                   width: 0.5,
                                                                                 ),
-                                                                                borderRadius: BorderRadius.circular(0),
+                                                                                borderRadius: BorderRadius.circular(0.0),
                                                                               ),
                                                                               focusedBorder: UnderlineInputBorder(
                                                                                 borderSide: BorderSide(
                                                                                   color: Color(0x00000000),
                                                                                   width: 0.5,
                                                                                 ),
-                                                                                borderRadius: BorderRadius.circular(0),
+                                                                                borderRadius: BorderRadius.circular(0.0),
                                                                               ),
                                                                               errorBorder: UnderlineInputBorder(
                                                                                 borderSide: BorderSide(
                                                                                   color: Color(0x00000000),
                                                                                   width: 0.5,
                                                                                 ),
-                                                                                borderRadius: BorderRadius.circular(0),
+                                                                                borderRadius: BorderRadius.circular(0.0),
                                                                               ),
                                                                               focusedErrorBorder: UnderlineInputBorder(
                                                                                 borderSide: BorderSide(
                                                                                   color: Color(0x00000000),
                                                                                   width: 0.5,
                                                                                 ),
-                                                                                borderRadius: BorderRadius.circular(0),
+                                                                                borderRadius: BorderRadius.circular(0.0),
                                                                               ),
-                                                                              contentPadding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 10),
+                                                                              contentPadding: EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 10.0),
                                                                               suffixIcon: _model.textFieldSubTitleTextController!.text.isNotEmpty
                                                                                   ? InkWell(
                                                                                       onTap: () async {
@@ -3024,7 +3037,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                       child: Icon(
                                                                                         Icons.clear,
                                                                                         color: Color(0xFF757575),
-                                                                                        size: 22,
+                                                                                        size: 22.0,
                                                                                       ),
                                                                                     )
                                                                                   : null,
@@ -3058,10 +3071,10 @@ class _PrinterSelectionScreenWidgetState
                                                                         child:
                                                                             Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              5.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               TextFormField(
                                                                             controller: _model.textFieldAddressTextController ??=
@@ -3099,30 +3112,30 @@ class _PrinterSelectionScreenWidgetState
                                                                                   color: Color(0xFF898686),
                                                                                   width: 0.5,
                                                                                 ),
-                                                                                borderRadius: BorderRadius.circular(0),
+                                                                                borderRadius: BorderRadius.circular(0.0),
                                                                               ),
                                                                               focusedBorder: UnderlineInputBorder(
                                                                                 borderSide: BorderSide(
                                                                                   color: Color(0x00000000),
                                                                                   width: 0.5,
                                                                                 ),
-                                                                                borderRadius: BorderRadius.circular(0),
+                                                                                borderRadius: BorderRadius.circular(0.0),
                                                                               ),
                                                                               errorBorder: UnderlineInputBorder(
                                                                                 borderSide: BorderSide(
                                                                                   color: Color(0x00000000),
                                                                                   width: 0.5,
                                                                                 ),
-                                                                                borderRadius: BorderRadius.circular(0),
+                                                                                borderRadius: BorderRadius.circular(0.0),
                                                                               ),
                                                                               focusedErrorBorder: UnderlineInputBorder(
                                                                                 borderSide: BorderSide(
                                                                                   color: Color(0x00000000),
                                                                                   width: 0.5,
                                                                                 ),
-                                                                                borderRadius: BorderRadius.circular(0),
+                                                                                borderRadius: BorderRadius.circular(0.0),
                                                                               ),
-                                                                              contentPadding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 15),
+                                                                              contentPadding: EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 15.0),
                                                                               suffixIcon: _model.textFieldAddressTextController!.text.isNotEmpty
                                                                                   ? InkWell(
                                                                                       onTap: () async {
@@ -3132,7 +3145,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                       child: Icon(
                                                                                         Icons.clear,
                                                                                         color: Color(0xFF757575),
-                                                                                        size: 22,
+                                                                                        size: 22.0,
                                                                                       ),
                                                                                     )
                                                                                   : null,
@@ -3166,10 +3179,10 @@ class _PrinterSelectionScreenWidgetState
                                                                         child:
                                                                             Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              5.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               TextFormField(
                                                                             controller: _model.textFieldGstTextController ??=
@@ -3205,30 +3218,30 @@ class _PrinterSelectionScreenWidgetState
                                                                                   color: Color(0xFF898686),
                                                                                   width: 0.5,
                                                                                 ),
-                                                                                borderRadius: BorderRadius.circular(0),
+                                                                                borderRadius: BorderRadius.circular(0.0),
                                                                               ),
                                                                               focusedBorder: UnderlineInputBorder(
                                                                                 borderSide: BorderSide(
                                                                                   color: Color(0x00000000),
                                                                                   width: 0.5,
                                                                                 ),
-                                                                                borderRadius: BorderRadius.circular(0),
+                                                                                borderRadius: BorderRadius.circular(0.0),
                                                                               ),
                                                                               errorBorder: UnderlineInputBorder(
                                                                                 borderSide: BorderSide(
                                                                                   color: Color(0x00000000),
                                                                                   width: 0.5,
                                                                                 ),
-                                                                                borderRadius: BorderRadius.circular(0),
+                                                                                borderRadius: BorderRadius.circular(0.0),
                                                                               ),
                                                                               focusedErrorBorder: UnderlineInputBorder(
                                                                                 borderSide: BorderSide(
                                                                                   color: Color(0x00000000),
                                                                                   width: 0.5,
                                                                                 ),
-                                                                                borderRadius: BorderRadius.circular(0),
+                                                                                borderRadius: BorderRadius.circular(0.0),
                                                                               ),
-                                                                              contentPadding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 15),
+                                                                              contentPadding: EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 15.0),
                                                                               suffixIcon: _model.textFieldGstTextController!.text.isNotEmpty
                                                                                   ? InkWell(
                                                                                       onTap: () async {
@@ -3240,7 +3253,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                       child: Icon(
                                                                                         Icons.clear,
                                                                                         color: Color(0xFF757575),
-                                                                                        size: 22,
+                                                                                        size: 22.0,
                                                                                       ),
                                                                                     )
                                                                                   : null,
@@ -3269,10 +3282,10 @@ class _PrinterSelectionScreenWidgetState
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            5,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
                                                                             TextFormField(
                                                                           controller: _model.textFieldContactTextController ??=
@@ -3316,7 +3329,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                 color: Color(0xFF898686),
                                                                                 width: 0.5,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                             ),
                                                                             focusedBorder:
                                                                                 UnderlineInputBorder(
@@ -3324,7 +3337,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                 color: Color(0x00000000),
                                                                                 width: 0.5,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                             ),
                                                                             errorBorder:
                                                                                 UnderlineInputBorder(
@@ -3332,7 +3345,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                 color: Color(0x00000000),
                                                                                 width: 0.5,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                             ),
                                                                             focusedErrorBorder:
                                                                                 UnderlineInputBorder(
@@ -3340,13 +3353,13 @@ class _PrinterSelectionScreenWidgetState
                                                                                 color: Color(0x00000000),
                                                                                 width: 0.5,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                             ),
                                                                             contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5,
-                                                                                5,
-                                                                                5,
-                                                                                10),
+                                                                                5.0,
+                                                                                5.0,
+                                                                                5.0,
+                                                                                10.0),
                                                                             suffixIcon: _model.textFieldContactTextController!.text.isNotEmpty
                                                                                 ? InkWell(
                                                                                     onTap: () async {
@@ -3356,7 +3369,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                     child: Icon(
                                                                                       Icons.clear,
                                                                                       color: Color(0xFF757575),
-                                                                                      size: 22,
+                                                                                      size: 22.0,
                                                                                     ),
                                                                                   )
                                                                                 : null,
@@ -3392,10 +3405,10 @@ class _PrinterSelectionScreenWidgetState
                                                                         child:
                                                                             Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              5.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               TextFormField(
                                                                             controller: _model.textFieldEmailTextController ??=
@@ -3433,30 +3446,30 @@ class _PrinterSelectionScreenWidgetState
                                                                                   color: Color(0xFF898686),
                                                                                   width: 0.5,
                                                                                 ),
-                                                                                borderRadius: BorderRadius.circular(0),
+                                                                                borderRadius: BorderRadius.circular(0.0),
                                                                               ),
                                                                               focusedBorder: UnderlineInputBorder(
                                                                                 borderSide: BorderSide(
                                                                                   color: Color(0x00000000),
                                                                                   width: 0.5,
                                                                                 ),
-                                                                                borderRadius: BorderRadius.circular(0),
+                                                                                borderRadius: BorderRadius.circular(0.0),
                                                                               ),
                                                                               errorBorder: UnderlineInputBorder(
                                                                                 borderSide: BorderSide(
                                                                                   color: Color(0x00000000),
                                                                                   width: 0.5,
                                                                                 ),
-                                                                                borderRadius: BorderRadius.circular(0),
+                                                                                borderRadius: BorderRadius.circular(0.0),
                                                                               ),
                                                                               focusedErrorBorder: UnderlineInputBorder(
                                                                                 borderSide: BorderSide(
                                                                                   color: Color(0x00000000),
                                                                                   width: 0.5,
                                                                                 ),
-                                                                                borderRadius: BorderRadius.circular(0),
+                                                                                borderRadius: BorderRadius.circular(0.0),
                                                                               ),
-                                                                              contentPadding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 10),
+                                                                              contentPadding: EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 10.0),
                                                                               suffixIcon: _model.textFieldEmailTextController!.text.isNotEmpty
                                                                                   ? InkWell(
                                                                                       onTap: () async {
@@ -3466,7 +3479,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                       child: Icon(
                                                                                         Icons.clear,
                                                                                         color: Color(0xFF757575),
-                                                                                        size: 22,
+                                                                                        size: 22.0,
                                                                                       ),
                                                                                     )
                                                                                   : null,
@@ -3495,10 +3508,10 @@ class _PrinterSelectionScreenWidgetState
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            5,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
                                                                             TextFormField(
                                                                           controller: _model.textFieldSerialNoTextController ??=
@@ -3542,7 +3555,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                 color: Color(0xFF898686),
                                                                                 width: 0.5,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                             ),
                                                                             focusedBorder:
                                                                                 UnderlineInputBorder(
@@ -3550,7 +3563,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                 color: Color(0x00000000),
                                                                                 width: 0.5,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                             ),
                                                                             errorBorder:
                                                                                 UnderlineInputBorder(
@@ -3558,7 +3571,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                 color: Color(0x00000000),
                                                                                 width: 0.5,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                             ),
                                                                             focusedErrorBorder:
                                                                                 UnderlineInputBorder(
@@ -3566,13 +3579,13 @@ class _PrinterSelectionScreenWidgetState
                                                                                 color: Color(0x00000000),
                                                                                 width: 0.5,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                             ),
                                                                             contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5,
-                                                                                5,
-                                                                                5,
-                                                                                10),
+                                                                                5.0,
+                                                                                5.0,
+                                                                                5.0,
+                                                                                10.0),
                                                                             suffixIcon: _model.textFieldSerialNoTextController!.text.isNotEmpty
                                                                                 ? InkWell(
                                                                                     onTap: () async {
@@ -3582,7 +3595,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                     child: Icon(
                                                                                       Icons.clear,
                                                                                       color: Color(0xFF757575),
-                                                                                      size: 22,
+                                                                                      size: 22.0,
                                                                                     ),
                                                                                   )
                                                                                 : null,
@@ -3613,10 +3626,10 @@ class _PrinterSelectionScreenWidgetState
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            5,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
                                                                             TextFormField(
                                                                           controller: _model.textFieldTaxTextController ??=
@@ -3656,7 +3669,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                 color: FlutterFlowTheme.of(context).lineColor,
                                                                                 width: 1.0,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                             ),
                                                                             focusedBorder:
                                                                                 UnderlineInputBorder(
@@ -3664,7 +3677,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                 color: Color(0x00000000),
                                                                                 width: 1.0,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                             ),
                                                                             errorBorder:
                                                                                 UnderlineInputBorder(
@@ -3672,7 +3685,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                 color: Color(0x00000000),
                                                                                 width: 1.0,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                             ),
                                                                             focusedErrorBorder:
                                                                                 UnderlineInputBorder(
@@ -3680,13 +3693,13 @@ class _PrinterSelectionScreenWidgetState
                                                                                 color: Color(0x00000000),
                                                                                 width: 1.0,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                             ),
                                                                             contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5,
-                                                                                5,
-                                                                                5,
-                                                                                10),
+                                                                                5.0,
+                                                                                5.0,
+                                                                                5.0,
+                                                                                10.0),
                                                                             suffixIcon: _model.textFieldTaxTextController!.text.isNotEmpty
                                                                                 ? InkWell(
                                                                                     onTap: () async {
@@ -3696,7 +3709,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                     child: Icon(
                                                                                       Icons.clear,
                                                                                       color: Color(0xFF757575),
-                                                                                      size: 22,
+                                                                                      size: 22.0,
                                                                                     ),
                                                                                   )
                                                                                 : null,
@@ -3727,10 +3740,10 @@ class _PrinterSelectionScreenWidgetState
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            5,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
                                                                             TextFormField(
                                                                           controller: _model.textFieldBankNameTextController ??=
@@ -3774,7 +3787,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                 color: Color(0xFF898686),
                                                                                 width: 0.5,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                             ),
                                                                             focusedBorder:
                                                                                 UnderlineInputBorder(
@@ -3782,7 +3795,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                 color: Color(0x00000000),
                                                                                 width: 0.5,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                             ),
                                                                             errorBorder:
                                                                                 UnderlineInputBorder(
@@ -3790,7 +3803,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                 color: Color(0x00000000),
                                                                                 width: 0.5,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                             ),
                                                                             focusedErrorBorder:
                                                                                 UnderlineInputBorder(
@@ -3798,13 +3811,13 @@ class _PrinterSelectionScreenWidgetState
                                                                                 color: Color(0x00000000),
                                                                                 width: 0.5,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                             ),
                                                                             contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5,
-                                                                                5,
-                                                                                5,
-                                                                                10),
+                                                                                5.0,
+                                                                                5.0,
+                                                                                5.0,
+                                                                                10.0),
                                                                             suffixIcon: _model.textFieldBankNameTextController!.text.isNotEmpty
                                                                                 ? InkWell(
                                                                                     onTap: () async {
@@ -3814,7 +3827,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                     child: Icon(
                                                                                       Icons.clear,
                                                                                       color: Color(0xFF757575),
-                                                                                      size: 22,
+                                                                                      size: 22.0,
                                                                                     ),
                                                                                   )
                                                                                 : null,
@@ -3845,10 +3858,10 @@ class _PrinterSelectionScreenWidgetState
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            5,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
                                                                             TextFormField(
                                                                           controller: _model.textFieldBankBranchTextController ??=
@@ -3892,7 +3905,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                 color: Color(0xFF898686),
                                                                                 width: 0.5,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                             ),
                                                                             focusedBorder:
                                                                                 UnderlineInputBorder(
@@ -3900,7 +3913,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                 color: Color(0x00000000),
                                                                                 width: 0.5,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                             ),
                                                                             errorBorder:
                                                                                 UnderlineInputBorder(
@@ -3908,7 +3921,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                 color: Color(0x00000000),
                                                                                 width: 0.5,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                             ),
                                                                             focusedErrorBorder:
                                                                                 UnderlineInputBorder(
@@ -3916,13 +3929,13 @@ class _PrinterSelectionScreenWidgetState
                                                                                 color: Color(0x00000000),
                                                                                 width: 0.5,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                             ),
                                                                             contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5,
-                                                                                5,
-                                                                                5,
-                                                                                10),
+                                                                                5.0,
+                                                                                5.0,
+                                                                                5.0,
+                                                                                10.0),
                                                                             suffixIcon: _model.textFieldBankBranchTextController!.text.isNotEmpty
                                                                                 ? InkWell(
                                                                                     onTap: () async {
@@ -3932,7 +3945,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                     child: Icon(
                                                                                       Icons.clear,
                                                                                       color: Color(0xFF757575),
-                                                                                      size: 22,
+                                                                                      size: 22.0,
                                                                                     ),
                                                                                   )
                                                                                 : null,
@@ -3963,10 +3976,10 @@ class _PrinterSelectionScreenWidgetState
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            5,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
                                                                             TextFormField(
                                                                           controller: _model.textFieldIfscCodeTextController ??=
@@ -4010,7 +4023,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                 color: Color(0xFF898686),
                                                                                 width: 0.5,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                             ),
                                                                             focusedBorder:
                                                                                 UnderlineInputBorder(
@@ -4018,7 +4031,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                 color: Color(0x00000000),
                                                                                 width: 0.5,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                             ),
                                                                             errorBorder:
                                                                                 UnderlineInputBorder(
@@ -4026,7 +4039,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                 color: Color(0x00000000),
                                                                                 width: 0.5,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                             ),
                                                                             focusedErrorBorder:
                                                                                 UnderlineInputBorder(
@@ -4034,13 +4047,13 @@ class _PrinterSelectionScreenWidgetState
                                                                                 color: Color(0x00000000),
                                                                                 width: 0.5,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                             ),
                                                                             contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5,
-                                                                                5,
-                                                                                5,
-                                                                                10),
+                                                                                5.0,
+                                                                                5.0,
+                                                                                5.0,
+                                                                                10.0),
                                                                             suffixIcon: _model.textFieldIfscCodeTextController!.text.isNotEmpty
                                                                                 ? InkWell(
                                                                                     onTap: () async {
@@ -4050,7 +4063,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                     child: Icon(
                                                                                       Icons.clear,
                                                                                       color: Color(0xFF757575),
-                                                                                      size: 22,
+                                                                                      size: 22.0,
                                                                                     ),
                                                                                   )
                                                                                 : null,
@@ -4081,10 +4094,10 @@ class _PrinterSelectionScreenWidgetState
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            5,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
                                                                             TextFormField(
                                                                           controller: _model.textFieldACNoTextController ??=
@@ -4128,7 +4141,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                 color: Color(0xFF898686),
                                                                                 width: 0.5,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                             ),
                                                                             focusedBorder:
                                                                                 UnderlineInputBorder(
@@ -4136,7 +4149,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                 color: Color(0x00000000),
                                                                                 width: 0.5,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                             ),
                                                                             errorBorder:
                                                                                 UnderlineInputBorder(
@@ -4144,7 +4157,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                 color: Color(0x00000000),
                                                                                 width: 0.5,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                             ),
                                                                             focusedErrorBorder:
                                                                                 UnderlineInputBorder(
@@ -4152,13 +4165,13 @@ class _PrinterSelectionScreenWidgetState
                                                                                 color: Color(0x00000000),
                                                                                 width: 0.5,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(0),
+                                                                              borderRadius: BorderRadius.circular(0.0),
                                                                             ),
                                                                             contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5,
-                                                                                5,
-                                                                                5,
-                                                                                10),
+                                                                                5.0,
+                                                                                5.0,
+                                                                                5.0,
+                                                                                10.0),
                                                                             suffixIcon: _model.textFieldACNoTextController!.text.isNotEmpty
                                                                                 ? InkWell(
                                                                                     onTap: () async {
@@ -4168,7 +4181,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                     child: Icon(
                                                                                       Icons.clear,
                                                                                       color: Color(0xFF757575),
-                                                                                      size: 22,
+                                                                                      size: 22.0,
                                                                                     ),
                                                                                   )
                                                                                 : null,
@@ -4216,16 +4229,17 @@ class _PrinterSelectionScreenWidgetState
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .customColor1,
-                                                          width: 2,
+                                                          width: 2.0,
                                                         ),
                                                       ),
                                                       child: Align(
                                                         alignment:
                                                             AlignmentDirectional(
-                                                                0, -0.9),
+                                                                0.0, -0.9),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsets.all(3),
+                                                              EdgeInsets.all(
+                                                                  3.0),
                                                           child:
                                                               SingleChildScrollView(
                                                             child: Column(
@@ -4261,7 +4275,7 @@ class _PrinterSelectionScreenWidgetState
                                                                             .bodyMedium
                                                                             .override(
                                                                               fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                              fontSize: 22,
+                                                                              fontSize: 22.0,
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.bold,
                                                                               useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
@@ -4613,8 +4627,9 @@ class _PrinterSelectionScreenWidgetState
                                                                 Divider(
                                                                   thickness:
                                                                       0.5,
-                                                                  indent: 0,
-                                                                  endIndent: 0,
+                                                                  indent: 0.0,
+                                                                  endIndent:
+                                                                      0.0,
                                                                   color: Color(
                                                                       0xFFD4D1D1),
                                                                 ),
@@ -4622,7 +4637,7 @@ class _PrinterSelectionScreenWidgetState
                                                                   alignment:
                                                                       AlignmentDirectional(
                                                                           -0.75,
-                                                                          0),
+                                                                          0.0),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -4634,7 +4649,7 @@ class _PrinterSelectionScreenWidgetState
                                                                       Align(
                                                                         alignment: AlignmentDirectional(
                                                                             -0.4,
-                                                                            0),
+                                                                            0.0),
                                                                         child:
                                                                             Text(
                                                                           FFLocalizations.of(context)
@@ -4653,14 +4668,14 @@ class _PrinterSelectionScreenWidgetState
                                                                       Align(
                                                                         alignment: AlignmentDirectional(
                                                                             0.55,
-                                                                            0),
+                                                                            0.0),
                                                                         child:
                                                                             Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              175,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              175.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -4681,7 +4696,7 @@ class _PrinterSelectionScreenWidgetState
                                                                   alignment:
                                                                       AlignmentDirectional(
                                                                           -0.55,
-                                                                          0),
+                                                                          0.0),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -4706,14 +4721,14 @@ class _PrinterSelectionScreenWidgetState
                                                                       Align(
                                                                         alignment: AlignmentDirectional(
                                                                             0.55,
-                                                                            0),
+                                                                            0.0),
                                                                         child:
                                                                             Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              188,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              188.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -4733,8 +4748,9 @@ class _PrinterSelectionScreenWidgetState
                                                                 Divider(
                                                                   thickness:
                                                                       0.5,
-                                                                  indent: 0,
-                                                                  endIndent: 0,
+                                                                  indent: 0.0,
+                                                                  endIndent:
+                                                                      0.0,
                                                                   color: Color(
                                                                       0xFFD4D1D1),
                                                                 ),
@@ -4747,12 +4763,11 @@ class _PrinterSelectionScreenWidgetState
                                                                           .spaceAround,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              2,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          2.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -4773,14 +4788,14 @@ class _PrinterSelectionScreenWidgetState
                                                                       alignment:
                                                                           AlignmentDirectional(
                                                                               0.55,
-                                                                              0),
+                                                                              0.0),
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            70,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            70.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
                                                                             Text(
                                                                           FFLocalizations.of(context)
@@ -4799,12 +4814,11 @@ class _PrinterSelectionScreenWidgetState
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              30,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          30.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -4822,12 +4836,11 @@ class _PrinterSelectionScreenWidgetState
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              20,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          20.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -4849,8 +4862,9 @@ class _PrinterSelectionScreenWidgetState
                                                                 Divider(
                                                                   thickness:
                                                                       0.5,
-                                                                  indent: 0,
-                                                                  endIndent: 0,
+                                                                  indent: 0.0,
+                                                                  endIndent:
+                                                                      0.0,
                                                                   color: Color(
                                                                       0xFFD4D1D1),
                                                                 ),
@@ -4863,12 +4877,11 @@ class _PrinterSelectionScreenWidgetState
                                                                           .spaceAround,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              5,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          5.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -4888,14 +4901,14 @@ class _PrinterSelectionScreenWidgetState
                                                                       alignment:
                                                                           AlignmentDirectional(
                                                                               0.55,
-                                                                              0),
+                                                                              0.0),
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            100,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            100.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
                                                                             Text(
                                                                           FFLocalizations.of(context)
@@ -4913,12 +4926,11 @@ class _PrinterSelectionScreenWidgetState
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              32,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          32.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -4935,12 +4947,11 @@ class _PrinterSelectionScreenWidgetState
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              30,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          30.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -4961,8 +4972,9 @@ class _PrinterSelectionScreenWidgetState
                                                                 Divider(
                                                                   thickness:
                                                                       0.5,
-                                                                  indent: 0,
-                                                                  endIndent: 0,
+                                                                  indent: 0.0,
+                                                                  endIndent:
+                                                                      0.0,
                                                                   color: Color(
                                                                       0xFFD4D1D1),
                                                                 ),
@@ -4975,12 +4987,11 @@ class _PrinterSelectionScreenWidgetState
                                                                           .spaceBetween,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              37,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          37.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -5000,12 +5011,11 @@ class _PrinterSelectionScreenWidgetState
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              34,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          34.0,
+                                                                          0.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -5026,18 +5036,19 @@ class _PrinterSelectionScreenWidgetState
                                                                 Divider(
                                                                   thickness:
                                                                       0.5,
-                                                                  indent: 0,
-                                                                  endIndent: 0,
+                                                                  indent: 0.0,
+                                                                  endIndent:
+                                                                      0.0,
                                                                   color: Color(
                                                                       0xFFD4D1D1),
                                                                 ),
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          3,
-                                                                          0,
-                                                                          30,
-                                                                          0),
+                                                                          3.0,
+                                                                          0.0,
+                                                                          30.0,
+                                                                          0.0),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -5059,7 +5070,7 @@ class _PrinterSelectionScreenWidgetState
                                                                             .override(
                                                                               fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
-                                                                              fontSize: 28,
+                                                                              fontSize: 28.0,
                                                                               letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.w600,
                                                                               useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
@@ -5075,7 +5086,7 @@ class _PrinterSelectionScreenWidgetState
                                                                             .override(
                                                                               fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
-                                                                              fontSize: 28,
+                                                                              fontSize: 28.0,
                                                                               letterSpacing: 0.0,
                                                                               useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                             ),
@@ -5086,8 +5097,9 @@ class _PrinterSelectionScreenWidgetState
                                                                 Divider(
                                                                   thickness:
                                                                       0.5,
-                                                                  indent: 0,
-                                                                  endIndent: 0,
+                                                                  indent: 0.0,
+                                                                  endIndent:
+                                                                      0.0,
                                                                   color: Color(
                                                                       0xFFD4D1D1),
                                                                 ),
@@ -5102,8 +5114,8 @@ class _PrinterSelectionScreenWidgetState
                                                                     Align(
                                                                       alignment:
                                                                           AlignmentDirectional(
-                                                                              0,
-                                                                              0),
+                                                                              0.0,
+                                                                              0.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -5145,8 +5157,9 @@ class _PrinterSelectionScreenWidgetState
                                                                 Divider(
                                                                   thickness:
                                                                       0.5,
-                                                                  indent: 0,
-                                                                  endIndent: 0,
+                                                                  indent: 0.0,
+                                                                  endIndent:
+                                                                      0.0,
                                                                   color: Color(
                                                                       0xFFD4D1D1),
                                                                 ),
@@ -5317,7 +5330,7 @@ class _PrinterSelectionScreenWidgetState
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 8, 0, 7),
+                                                  .fromSTEB(0.0, 8.0, 0.0, 7.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -5330,7 +5343,10 @@ class _PrinterSelectionScreenWidgetState
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0, 0, 5, 0),
+                                                                  0.0,
+                                                                  0.0,
+                                                                  5.0,
+                                                                  0.0),
                                                       child: Container(
                                                         width:
                                                             MediaQuery.sizeOf(
@@ -5351,12 +5367,13 @@ class _PrinterSelectionScreenWidgetState
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .customColor1,
-                                                            width: 2,
+                                                            width: 2.0,
                                                           ),
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsets.all(3),
+                                                              EdgeInsets.all(
+                                                                  3.0),
                                                           child:
                                                               SingleChildScrollView(
                                                             child: Column(
@@ -5370,10 +5387,10 @@ class _PrinterSelectionScreenWidgetState
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10,
-                                                                          10,
-                                                                          5,
-                                                                          5),
+                                                                          10.0,
+                                                                          10.0,
+                                                                          5.0,
+                                                                          5.0),
                                                                   child:
                                                                       FlutterFlowCheckboxGroup(
                                                                     options: [
@@ -5415,10 +5432,10 @@ class _PrinterSelectionScreenWidgetState
                                                                         ),
                                                                     labelPadding:
                                                                         EdgeInsetsDirectional.fromSTEB(
-                                                                            10,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            10.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                     initialized:
                                                                         _model.checkboxGroupValues1 !=
                                                                             null,
@@ -5433,10 +5450,10 @@ class _PrinterSelectionScreenWidgetState
                                                                       Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            5,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                     child:
                                                                         TextFormField(
                                                                       controller:
@@ -5480,7 +5497,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                 0.5,
                                                                           ),
                                                                           borderRadius:
-                                                                              BorderRadius.circular(0),
+                                                                              BorderRadius.circular(0.0),
                                                                         ),
                                                                         focusedBorder:
                                                                             UnderlineInputBorder(
@@ -5492,7 +5509,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                 0.5,
                                                                           ),
                                                                           borderRadius:
-                                                                              BorderRadius.circular(0),
+                                                                              BorderRadius.circular(0.0),
                                                                         ),
                                                                         errorBorder:
                                                                             UnderlineInputBorder(
@@ -5504,7 +5521,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                 0.5,
                                                                           ),
                                                                           borderRadius:
-                                                                              BorderRadius.circular(0),
+                                                                              BorderRadius.circular(0.0),
                                                                         ),
                                                                         focusedErrorBorder:
                                                                             UnderlineInputBorder(
@@ -5516,13 +5533,13 @@ class _PrinterSelectionScreenWidgetState
                                                                                 0.5,
                                                                           ),
                                                                           borderRadius:
-                                                                              BorderRadius.circular(0),
+                                                                              BorderRadius.circular(0.0),
                                                                         ),
                                                                         contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                                                            5,
-                                                                            5,
-                                                                            5,
-                                                                            15),
+                                                                            5.0,
+                                                                            5.0,
+                                                                            5.0,
+                                                                            15.0),
                                                                       ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
@@ -5548,10 +5565,10 @@ class _PrinterSelectionScreenWidgetState
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          5,
-                                                                          5,
-                                                                          0,
-                                                                          0),
+                                                                          5.0,
+                                                                          5.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                   child:
                                                                       TextFormField(
                                                                     controller:
@@ -5607,7 +5624,7 @@ class _PrinterSelectionScreenWidgetState
                                                                               0.5,
                                                                         ),
                                                                         borderRadius:
-                                                                            BorderRadius.circular(0),
+                                                                            BorderRadius.circular(0.0),
                                                                       ),
                                                                       focusedBorder:
                                                                           UnderlineInputBorder(
@@ -5619,7 +5636,7 @@ class _PrinterSelectionScreenWidgetState
                                                                               0.5,
                                                                         ),
                                                                         borderRadius:
-                                                                            BorderRadius.circular(0),
+                                                                            BorderRadius.circular(0.0),
                                                                       ),
                                                                       errorBorder:
                                                                           UnderlineInputBorder(
@@ -5631,7 +5648,7 @@ class _PrinterSelectionScreenWidgetState
                                                                               0.5,
                                                                         ),
                                                                         borderRadius:
-                                                                            BorderRadius.circular(0),
+                                                                            BorderRadius.circular(0.0),
                                                                       ),
                                                                       focusedErrorBorder:
                                                                           UnderlineInputBorder(
@@ -5643,14 +5660,13 @@ class _PrinterSelectionScreenWidgetState
                                                                               0.5,
                                                                         ),
                                                                         borderRadius:
-                                                                            BorderRadius.circular(0),
+                                                                            BorderRadius.circular(0.0),
                                                                       ),
-                                                                      contentPadding:
-                                                                          EdgeInsetsDirectional.fromSTEB(
-                                                                              5,
-                                                                              5,
-                                                                              5,
-                                                                              10),
+                                                                      contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                          5.0,
+                                                                          5.0,
+                                                                          5.0,
+                                                                          10.0),
                                                                       suffixIcon: _model
                                                                               .textFieldFooter2TextController!
                                                                               .text
@@ -5663,7 +5679,7 @@ class _PrinterSelectionScreenWidgetState
                                                                               child: Icon(
                                                                                 Icons.clear,
                                                                                 color: Color(0xFF757575),
-                                                                                size: 22,
+                                                                                size: 22.0,
                                                                               ),
                                                                             )
                                                                           : null,
@@ -5697,10 +5713,10 @@ class _PrinterSelectionScreenWidgetState
                                                                       Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            5,
-                                                                            5,
-                                                                            0,
-                                                                            10),
+                                                                            5.0,
+                                                                            5.0,
+                                                                            0.0,
+                                                                            10.0),
                                                                     child:
                                                                         TextFormField(
                                                                       controller:
@@ -5753,7 +5769,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                 0.5,
                                                                           ),
                                                                           borderRadius:
-                                                                              BorderRadius.circular(0),
+                                                                              BorderRadius.circular(0.0),
                                                                         ),
                                                                         focusedBorder:
                                                                             UnderlineInputBorder(
@@ -5765,7 +5781,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                 0.5,
                                                                           ),
                                                                           borderRadius:
-                                                                              BorderRadius.circular(0),
+                                                                              BorderRadius.circular(0.0),
                                                                         ),
                                                                         errorBorder:
                                                                             UnderlineInputBorder(
@@ -5777,7 +5793,7 @@ class _PrinterSelectionScreenWidgetState
                                                                                 0.5,
                                                                           ),
                                                                           borderRadius:
-                                                                              BorderRadius.circular(0),
+                                                                              BorderRadius.circular(0.0),
                                                                         ),
                                                                         focusedErrorBorder:
                                                                             UnderlineInputBorder(
@@ -5789,13 +5805,13 @@ class _PrinterSelectionScreenWidgetState
                                                                                 0.5,
                                                                           ),
                                                                           borderRadius:
-                                                                              BorderRadius.circular(0),
+                                                                              BorderRadius.circular(0.0),
                                                                         ),
                                                                         contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                                                            5,
-                                                                            5,
-                                                                            5,
-                                                                            10),
+                                                                            5.0,
+                                                                            5.0,
+                                                                            5.0,
+                                                                            10.0),
                                                                       ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
@@ -5821,10 +5837,10 @@ class _PrinterSelectionScreenWidgetState
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          5,
-                                                                          5,
-                                                                          0,
-                                                                          10),
+                                                                          5.0,
+                                                                          5.0,
+                                                                          0.0,
+                                                                          10.0),
                                                                   child:
                                                                       TextFormField(
                                                                     controller:
@@ -5880,7 +5896,7 @@ class _PrinterSelectionScreenWidgetState
                                                                               0.5,
                                                                         ),
                                                                         borderRadius:
-                                                                            BorderRadius.circular(0),
+                                                                            BorderRadius.circular(0.0),
                                                                       ),
                                                                       focusedBorder:
                                                                           UnderlineInputBorder(
@@ -5892,7 +5908,7 @@ class _PrinterSelectionScreenWidgetState
                                                                               0.5,
                                                                         ),
                                                                         borderRadius:
-                                                                            BorderRadius.circular(0),
+                                                                            BorderRadius.circular(0.0),
                                                                       ),
                                                                       errorBorder:
                                                                           UnderlineInputBorder(
@@ -5904,7 +5920,7 @@ class _PrinterSelectionScreenWidgetState
                                                                               0.5,
                                                                         ),
                                                                         borderRadius:
-                                                                            BorderRadius.circular(0),
+                                                                            BorderRadius.circular(0.0),
                                                                       ),
                                                                       focusedErrorBorder:
                                                                           UnderlineInputBorder(
@@ -5916,14 +5932,13 @@ class _PrinterSelectionScreenWidgetState
                                                                               0.5,
                                                                         ),
                                                                         borderRadius:
-                                                                            BorderRadius.circular(0),
+                                                                            BorderRadius.circular(0.0),
                                                                       ),
-                                                                      contentPadding:
-                                                                          EdgeInsetsDirectional.fromSTEB(
-                                                                              5,
-                                                                              5,
-                                                                              5,
-                                                                              10),
+                                                                      contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                          5.0,
+                                                                          5.0,
+                                                                          5.0,
+                                                                          10.0),
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -5948,10 +5963,10 @@ class _PrinterSelectionScreenWidgetState
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          5,
-                                                                          5,
-                                                                          0,
-                                                                          10),
+                                                                          5.0,
+                                                                          5.0,
+                                                                          0.0,
+                                                                          10.0),
                                                                   child:
                                                                       TextFormField(
                                                                     controller:
@@ -6007,7 +6022,7 @@ class _PrinterSelectionScreenWidgetState
                                                                               0.5,
                                                                         ),
                                                                         borderRadius:
-                                                                            BorderRadius.circular(0),
+                                                                            BorderRadius.circular(0.0),
                                                                       ),
                                                                       focusedBorder:
                                                                           UnderlineInputBorder(
@@ -6019,7 +6034,7 @@ class _PrinterSelectionScreenWidgetState
                                                                               0.5,
                                                                         ),
                                                                         borderRadius:
-                                                                            BorderRadius.circular(0),
+                                                                            BorderRadius.circular(0.0),
                                                                       ),
                                                                       errorBorder:
                                                                           UnderlineInputBorder(
@@ -6031,7 +6046,7 @@ class _PrinterSelectionScreenWidgetState
                                                                               0.5,
                                                                         ),
                                                                         borderRadius:
-                                                                            BorderRadius.circular(0),
+                                                                            BorderRadius.circular(0.0),
                                                                       ),
                                                                       focusedErrorBorder:
                                                                           UnderlineInputBorder(
@@ -6043,14 +6058,13 @@ class _PrinterSelectionScreenWidgetState
                                                                               0.5,
                                                                         ),
                                                                         borderRadius:
-                                                                            BorderRadius.circular(0),
+                                                                            BorderRadius.circular(0.0),
                                                                       ),
-                                                                      contentPadding:
-                                                                          EdgeInsetsDirectional.fromSTEB(
-                                                                              5,
-                                                                              5,
-                                                                              5,
-                                                                              10),
+                                                                      contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                          5.0,
+                                                                          5.0,
+                                                                          5.0,
+                                                                          10.0),
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -6084,7 +6098,7 @@ class _PrinterSelectionScreenWidgetState
                                                     child: Align(
                                                       alignment:
                                                           AlignmentDirectional(
-                                                              0, 0),
+                                                              0.0, 0.0),
                                                       child: Container(
                                                         width:
                                                             MediaQuery.sizeOf(
@@ -6105,7 +6119,7 @@ class _PrinterSelectionScreenWidgetState
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .customColor1,
-                                                            width: 2,
+                                                            width: 2.0,
                                                           ),
                                                         ),
                                                         child: Container(
@@ -6128,17 +6142,17 @@ class _PrinterSelectionScreenWidgetState
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .customColor1,
-                                                              width: 2,
+                                                              width: 2.0,
                                                             ),
                                                           ),
                                                           child: Align(
                                                             alignment:
                                                                 AlignmentDirectional(
-                                                                    0, -0.9),
+                                                                    0.0, -0.9),
                                                             child: Padding(
                                                               padding:
                                                                   EdgeInsets
-                                                                      .all(3),
+                                                                      .all(3.0),
                                                               child:
                                                                   SingleChildScrollView(
                                                                 child: Column(
@@ -6166,7 +6180,7 @@ class _PrinterSelectionScreenWidgetState
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                  fontSize: 22,
+                                                                                  fontSize: 22.0,
                                                                                   letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.bold,
                                                                                   useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
@@ -6430,17 +6444,17 @@ class _PrinterSelectionScreenWidgetState
                                                                     Divider(
                                                                       thickness:
                                                                           0.5,
-                                                                      indent: 0,
+                                                                      indent:
+                                                                          0.0,
                                                                       endIndent:
-                                                                          0,
+                                                                          0.0,
                                                                       color: Color(
                                                                           0xFFD4D1D1),
                                                                     ),
                                                                     Align(
-                                                                      alignment:
-                                                                          AlignmentDirectional(
-                                                                              -0.75,
-                                                                              0),
+                                                                      alignment: AlignmentDirectional(
+                                                                          -0.75,
+                                                                          0.0),
                                                                       child:
                                                                           Row(
                                                                         mainAxisSize:
@@ -6450,7 +6464,7 @@ class _PrinterSelectionScreenWidgetState
                                                                         children: [
                                                                           Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(-0.4, 0),
+                                                                                AlignmentDirectional(-0.4, 0.0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -6465,10 +6479,10 @@ class _PrinterSelectionScreenWidgetState
                                                                           ),
                                                                           Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(0.55, 0),
+                                                                                AlignmentDirectional(0.55, 0.0),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(175, 0, 0, 0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(175.0, 0.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 FFLocalizations.of(context).getText(
                                                                                   '27eiuj7k' /* DATE */,
@@ -6485,10 +6499,9 @@ class _PrinterSelectionScreenWidgetState
                                                                       ),
                                                                     ),
                                                                     Align(
-                                                                      alignment:
-                                                                          AlignmentDirectional(
-                                                                              -0.55,
-                                                                              0),
+                                                                      alignment: AlignmentDirectional(
+                                                                          -0.55,
+                                                                          0.0),
                                                                       child:
                                                                           Row(
                                                                         mainAxisSize:
@@ -6508,10 +6521,10 @@ class _PrinterSelectionScreenWidgetState
                                                                           ),
                                                                           Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(0.55, 0),
+                                                                                AlignmentDirectional(0.55, 0.0),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(188, 0, 0, 0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(188.0, 0.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 FFLocalizations.of(context).getText(
                                                                                   'gi4h5uwl' /* TIME */,
@@ -6530,9 +6543,10 @@ class _PrinterSelectionScreenWidgetState
                                                                     Divider(
                                                                       thickness:
                                                                           0.5,
-                                                                      indent: 0,
+                                                                      indent:
+                                                                          0.0,
                                                                       endIndent:
-                                                                          0,
+                                                                          0.0,
                                                                       color: Color(
                                                                           0xFFD4D1D1),
                                                                     ),
@@ -6546,10 +6560,10 @@ class _PrinterSelectionScreenWidgetState
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              2,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              2.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -6566,14 +6580,14 @@ class _PrinterSelectionScreenWidgetState
                                                                         Align(
                                                                           alignment: AlignmentDirectional(
                                                                               0.55,
-                                                                              0),
+                                                                              0.0),
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                70,
-                                                                                0,
-                                                                                0,
-                                                                                0),
+                                                                                70.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -6590,10 +6604,10 @@ class _PrinterSelectionScreenWidgetState
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              30,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              30.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -6609,10 +6623,10 @@ class _PrinterSelectionScreenWidgetState
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              20,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              20.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -6631,9 +6645,10 @@ class _PrinterSelectionScreenWidgetState
                                                                     Divider(
                                                                       thickness:
                                                                           0.5,
-                                                                      indent: 0,
+                                                                      indent:
+                                                                          0.0,
                                                                       endIndent:
-                                                                          0,
+                                                                          0.0,
                                                                       color: Color(
                                                                           0xFFD4D1D1),
                                                                     ),
@@ -6647,10 +6662,10 @@ class _PrinterSelectionScreenWidgetState
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              5.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -6666,14 +6681,14 @@ class _PrinterSelectionScreenWidgetState
                                                                         Align(
                                                                           alignment: AlignmentDirectional(
                                                                               0.55,
-                                                                              0),
+                                                                              0.0),
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                100,
-                                                                                0,
-                                                                                0,
-                                                                                0),
+                                                                                100.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -6689,10 +6704,10 @@ class _PrinterSelectionScreenWidgetState
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              32,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              32.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -6707,10 +6722,10 @@ class _PrinterSelectionScreenWidgetState
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              30,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              30.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -6728,9 +6743,10 @@ class _PrinterSelectionScreenWidgetState
                                                                     Divider(
                                                                       thickness:
                                                                           0.5,
-                                                                      indent: 0,
+                                                                      indent:
+                                                                          0.0,
                                                                       endIndent:
-                                                                          0,
+                                                                          0.0,
                                                                       color: Color(
                                                                           0xFFD4D1D1),
                                                                     ),
@@ -6744,10 +6760,10 @@ class _PrinterSelectionScreenWidgetState
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              37,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              37.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -6765,10 +6781,10 @@ class _PrinterSelectionScreenWidgetState
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              34,
-                                                                              0),
+                                                                              0.0,
+                                                                              0.0,
+                                                                              34.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -6786,19 +6802,19 @@ class _PrinterSelectionScreenWidgetState
                                                                     Divider(
                                                                       thickness:
                                                                           0.5,
-                                                                      indent: 0,
+                                                                      indent:
+                                                                          0.0,
                                                                       endIndent:
-                                                                          0,
+                                                                          0.0,
                                                                       color: Color(
                                                                           0xFFD4D1D1),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              3,
-                                                                              0,
-                                                                              30,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          3.0,
+                                                                          0.0,
+                                                                          30.0,
+                                                                          0.0),
                                                                       child:
                                                                           Row(
                                                                         mainAxisSize:
@@ -6815,7 +6831,7 @@ class _PrinterSelectionScreenWidgetState
                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                   fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                   color: FlutterFlowTheme.of(context).primaryText,
-                                                                                  fontSize: 28,
+                                                                                  fontSize: 28.0,
                                                                                   letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.w600,
                                                                                   useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
@@ -6828,7 +6844,7 @@ class _PrinterSelectionScreenWidgetState
                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                   fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                   color: FlutterFlowTheme.of(context).primaryText,
-                                                                                  fontSize: 28,
+                                                                                  fontSize: 28.0,
                                                                                   letterSpacing: 0.0,
                                                                                   useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                 ),
@@ -6839,9 +6855,10 @@ class _PrinterSelectionScreenWidgetState
                                                                     Divider(
                                                                       thickness:
                                                                           0.5,
-                                                                      indent: 0,
+                                                                      indent:
+                                                                          0.0,
                                                                       endIndent:
-                                                                          0,
+                                                                          0.0,
                                                                       color: Color(
                                                                           0xFFD4D1D1),
                                                                     ),
@@ -6855,8 +6872,8 @@ class _PrinterSelectionScreenWidgetState
                                                                       children: [
                                                                         Align(
                                                                           alignment: AlignmentDirectional(
-                                                                              0,
-                                                                              0),
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -6889,9 +6906,10 @@ class _PrinterSelectionScreenWidgetState
                                                                     Divider(
                                                                       thickness:
                                                                           0.5,
-                                                                      indent: 0,
+                                                                      indent:
+                                                                          0.0,
                                                                       endIndent:
-                                                                          0,
+                                                                          0.0,
                                                                       color: Color(
                                                                           0xFFD4D1D1),
                                                                     ),
@@ -7024,7 +7042,7 @@ class _PrinterSelectionScreenWidgetState
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 8, 0, 7),
+                                                  .fromSTEB(0.0, 8.0, 0.0, 7.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -7037,7 +7055,10 @@ class _PrinterSelectionScreenWidgetState
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0, 0, 5, 0),
+                                                                  0.0,
+                                                                  0.0,
+                                                                  5.0,
+                                                                  0.0),
                                                       child: Container(
                                                         width:
                                                             MediaQuery.sizeOf(
@@ -7062,7 +7083,8 @@ class _PrinterSelectionScreenWidgetState
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsets.all(3),
+                                                              EdgeInsets.all(
+                                                                  3.0),
                                                           child:
                                                               SingleChildScrollView(
                                                             child: Column(
@@ -7076,10 +7098,10 @@ class _PrinterSelectionScreenWidgetState
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10,
-                                                                          0,
-                                                                          5,
-                                                                          5),
+                                                                          10.0,
+                                                                          0.0,
+                                                                          5.0,
+                                                                          5.0),
                                                                   child:
                                                                       FlutterFlowCheckboxGroup(
                                                                     options: [
@@ -7121,10 +7143,10 @@ class _PrinterSelectionScreenWidgetState
                                                                         ),
                                                                     labelPadding:
                                                                         EdgeInsetsDirectional.fromSTEB(
-                                                                            10,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            10.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                     initialized:
                                                                         _model.checkboxGroupValues2 !=
                                                                             null,
@@ -7133,10 +7155,10 @@ class _PrinterSelectionScreenWidgetState
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          25,
-                                                                          0,
-                                                                          0),
+                                                                          0.0,
+                                                                          25.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -7147,9 +7169,9 @@ class _PrinterSelectionScreenWidgetState
                                                                     children: [
                                                                       Container(
                                                                         width:
-                                                                            160,
+                                                                            160.0,
                                                                         height:
-                                                                            160,
+                                                                            160.0,
                                                                         decoration:
                                                                             BoxDecoration(
                                                                           color:
@@ -7167,10 +7189,10 @@ class _PrinterSelectionScreenWidgetState
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          15,
-                                                                          0,
-                                                                          0),
+                                                                          0.0,
+                                                                          15.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -7192,19 +7214,19 @@ class _PrinterSelectionScreenWidgetState
                                                                         options:
                                                                             FFButtonOptions(
                                                                           width:
-                                                                              180,
+                                                                              180.0,
                                                                           height:
-                                                                              40,
+                                                                              40.0,
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           color:
                                                                               FlutterFlowTheme.of(context).secondary,
                                                                           textStyle: FlutterFlowTheme.of(context)
@@ -7216,14 +7238,14 @@ class _PrinterSelectionScreenWidgetState
                                                                                 useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                               ),
                                                                           elevation:
-                                                                              3,
+                                                                              3.0,
                                                                           borderSide:
                                                                               BorderSide(
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primaryBtnText,
                                                                           ),
                                                                           borderRadius:
-                                                                              BorderRadius.circular(0),
+                                                                              BorderRadius.circular(0.0),
                                                                         ),
                                                                       ),
                                                                     ],
@@ -7241,7 +7263,7 @@ class _PrinterSelectionScreenWidgetState
                                                     child: Align(
                                                       alignment:
                                                           AlignmentDirectional(
-                                                              0, 0),
+                                                              0.0, 0.0),
                                                       child: Container(
                                                         width:
                                                             MediaQuery.sizeOf(
@@ -7262,7 +7284,7 @@ class _PrinterSelectionScreenWidgetState
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .customColor1,
-                                                            width: 1,
+                                                            width: 1.0,
                                                           ),
                                                         ),
                                                         child: Container(
@@ -7285,17 +7307,17 @@ class _PrinterSelectionScreenWidgetState
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .customColor1,
-                                                              width: 2,
+                                                              width: 2.0,
                                                             ),
                                                           ),
                                                           child: Align(
                                                             alignment:
                                                                 AlignmentDirectional(
-                                                                    0, -0.9),
+                                                                    0.0, -0.9),
                                                             child: Padding(
                                                               padding:
                                                                   EdgeInsets
-                                                                      .all(3),
+                                                                      .all(3.0),
                                                               child:
                                                                   SingleChildScrollView(
                                                                 child: Column(
@@ -7323,7 +7345,7 @@ class _PrinterSelectionScreenWidgetState
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                  fontSize: 22,
+                                                                                  fontSize: 22.0,
                                                                                   letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.bold,
                                                                                   useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
@@ -7587,17 +7609,17 @@ class _PrinterSelectionScreenWidgetState
                                                                     Divider(
                                                                       thickness:
                                                                           0.5,
-                                                                      indent: 0,
+                                                                      indent:
+                                                                          0.0,
                                                                       endIndent:
-                                                                          0,
+                                                                          0.0,
                                                                       color: Color(
                                                                           0xFFD4D1D1),
                                                                     ),
                                                                     Align(
-                                                                      alignment:
-                                                                          AlignmentDirectional(
-                                                                              -0.75,
-                                                                              0),
+                                                                      alignment: AlignmentDirectional(
+                                                                          -0.75,
+                                                                          0.0),
                                                                       child:
                                                                           Row(
                                                                         mainAxisSize:
@@ -7607,7 +7629,7 @@ class _PrinterSelectionScreenWidgetState
                                                                         children: [
                                                                           Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(-0.4, 0),
+                                                                                AlignmentDirectional(-0.4, 0.0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -7622,10 +7644,10 @@ class _PrinterSelectionScreenWidgetState
                                                                           ),
                                                                           Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(0.55, 0),
+                                                                                AlignmentDirectional(0.55, 0.0),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(175, 0, 0, 0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(175.0, 0.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 FFLocalizations.of(context).getText(
                                                                                   'anold0qj' /* DATE */,
@@ -7642,10 +7664,9 @@ class _PrinterSelectionScreenWidgetState
                                                                       ),
                                                                     ),
                                                                     Align(
-                                                                      alignment:
-                                                                          AlignmentDirectional(
-                                                                              -0.55,
-                                                                              0),
+                                                                      alignment: AlignmentDirectional(
+                                                                          -0.55,
+                                                                          0.0),
                                                                       child:
                                                                           Row(
                                                                         mainAxisSize:
@@ -7665,10 +7686,10 @@ class _PrinterSelectionScreenWidgetState
                                                                           ),
                                                                           Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(0.55, 0),
+                                                                                AlignmentDirectional(0.55, 0.0),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(188, 0, 0, 0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(188.0, 0.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 FFLocalizations.of(context).getText(
                                                                                   '9d7h3pnd' /* TIME */,
@@ -7687,9 +7708,10 @@ class _PrinterSelectionScreenWidgetState
                                                                     Divider(
                                                                       thickness:
                                                                           0.5,
-                                                                      indent: 0,
+                                                                      indent:
+                                                                          0.0,
                                                                       endIndent:
-                                                                          0,
+                                                                          0.0,
                                                                       color: Color(
                                                                           0xFFD4D1D1),
                                                                     ),
@@ -7703,10 +7725,10 @@ class _PrinterSelectionScreenWidgetState
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              2,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              2.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -7723,14 +7745,14 @@ class _PrinterSelectionScreenWidgetState
                                                                         Align(
                                                                           alignment: AlignmentDirectional(
                                                                               0.55,
-                                                                              0),
+                                                                              0.0),
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                70,
-                                                                                0,
-                                                                                0,
-                                                                                0),
+                                                                                70.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -7747,10 +7769,10 @@ class _PrinterSelectionScreenWidgetState
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              30,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              30.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -7766,10 +7788,10 @@ class _PrinterSelectionScreenWidgetState
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              20,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              20.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -7788,9 +7810,10 @@ class _PrinterSelectionScreenWidgetState
                                                                     Divider(
                                                                       thickness:
                                                                           0.5,
-                                                                      indent: 0,
+                                                                      indent:
+                                                                          0.0,
                                                                       endIndent:
-                                                                          0,
+                                                                          0.0,
                                                                       color: Color(
                                                                           0xFFD4D1D1),
                                                                     ),
@@ -7804,10 +7827,10 @@ class _PrinterSelectionScreenWidgetState
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              5.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -7823,14 +7846,14 @@ class _PrinterSelectionScreenWidgetState
                                                                         Align(
                                                                           alignment: AlignmentDirectional(
                                                                               0.55,
-                                                                              0),
+                                                                              0.0),
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                100,
-                                                                                0,
-                                                                                0,
-                                                                                0),
+                                                                                100.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -7846,10 +7869,10 @@ class _PrinterSelectionScreenWidgetState
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              32,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              32.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -7864,10 +7887,10 @@ class _PrinterSelectionScreenWidgetState
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              30,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              30.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -7885,9 +7908,10 @@ class _PrinterSelectionScreenWidgetState
                                                                     Divider(
                                                                       thickness:
                                                                           0.5,
-                                                                      indent: 0,
+                                                                      indent:
+                                                                          0.0,
                                                                       endIndent:
-                                                                          0,
+                                                                          0.0,
                                                                       color: Color(
                                                                           0xFFD4D1D1),
                                                                     ),
@@ -7901,10 +7925,10 @@ class _PrinterSelectionScreenWidgetState
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              37,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              37.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -7922,10 +7946,10 @@ class _PrinterSelectionScreenWidgetState
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              34,
-                                                                              0),
+                                                                              0.0,
+                                                                              0.0,
+                                                                              34.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -7943,19 +7967,19 @@ class _PrinterSelectionScreenWidgetState
                                                                     Divider(
                                                                       thickness:
                                                                           0.5,
-                                                                      indent: 0,
+                                                                      indent:
+                                                                          0.0,
                                                                       endIndent:
-                                                                          0,
+                                                                          0.0,
                                                                       color: Color(
                                                                           0xFFD4D1D1),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              3,
-                                                                              0,
-                                                                              30,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          3.0,
+                                                                          0.0,
+                                                                          30.0,
+                                                                          0.0),
                                                                       child:
                                                                           Row(
                                                                         mainAxisSize:
@@ -7972,7 +7996,7 @@ class _PrinterSelectionScreenWidgetState
                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                   fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                   color: FlutterFlowTheme.of(context).primaryText,
-                                                                                  fontSize: 28,
+                                                                                  fontSize: 28.0,
                                                                                   letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.w600,
                                                                                   useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
@@ -7985,7 +8009,7 @@ class _PrinterSelectionScreenWidgetState
                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                   fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                   color: FlutterFlowTheme.of(context).primaryText,
-                                                                                  fontSize: 28,
+                                                                                  fontSize: 28.0,
                                                                                   letterSpacing: 0.0,
                                                                                   useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                 ),
@@ -7996,9 +8020,10 @@ class _PrinterSelectionScreenWidgetState
                                                                     Divider(
                                                                       thickness:
                                                                           0.5,
-                                                                      indent: 0,
+                                                                      indent:
+                                                                          0.0,
                                                                       endIndent:
-                                                                          0,
+                                                                          0.0,
                                                                       color: Color(
                                                                           0xFFD4D1D1),
                                                                     ),
@@ -8012,8 +8037,8 @@ class _PrinterSelectionScreenWidgetState
                                                                       children: [
                                                                         Align(
                                                                           alignment: AlignmentDirectional(
-                                                                              0,
-                                                                              0),
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -8046,9 +8071,10 @@ class _PrinterSelectionScreenWidgetState
                                                                     Divider(
                                                                       thickness:
                                                                           0.5,
-                                                                      indent: 0,
+                                                                      indent:
+                                                                          0.0,
                                                                       endIndent:
-                                                                          0,
+                                                                          0.0,
                                                                       color: Color(
                                                                           0xFFD4D1D1),
                                                                     ),
