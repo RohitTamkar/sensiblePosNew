@@ -57,7 +57,7 @@ class _KioskAdvertisingWidgetState extends State<KioskAdvertisingWidget> {
       );
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -82,11 +82,11 @@ class _KioskAdvertisingWidgetState extends State<KioskAdvertisingWidget> {
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Center(
               child: SizedBox(
-                width: 40.0,
-                height: 40.0,
+                width: 40,
+                height: 40,
                 child: SpinKitFadingCircle(
                   color: FlutterFlowTheme.of(context).primary,
-                  size: 40.0,
+                  size: 40,
                 ),
               ),
             ),
@@ -114,11 +114,11 @@ class _KioskAdvertisingWidgetState extends State<KioskAdvertisingWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              20.0, 20.0, 20.0, 0.0),
+                          padding:
+                              EdgeInsetsDirectional.fromSTEB(20, 20, 20, 0),
                           child: wrapWithModel(
                             model: _model.kioskHeaderModel,
-                            updateCallback: () => setState(() {}),
+                            updateCallback: () => safeSetState(() {}),
                             child: KioskHeaderWidget(),
                           ),
                         ),
@@ -126,10 +126,10 @@ class _KioskAdvertisingWidgetState extends State<KioskAdvertisingWidget> {
                           child: Stack(
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0, 0),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 25.0),
+                                      0, 0, 0, 25),
                                   child: Builder(
                                     builder: (context) {
                                       final kioskAdvertisingVar =
@@ -150,7 +150,7 @@ class _KioskAdvertisingWidgetState extends State<KioskAdvertisingWidget> {
                                                     kioskAdvertisingVarIndex];
                                             return ClipRRect(
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(8),
                                               child: CachedNetworkImage(
                                                 fadeInDuration:
                                                     Duration(milliseconds: 500),
@@ -162,8 +162,8 @@ class _KioskAdvertisingWidgetState extends State<KioskAdvertisingWidget> {
                                                       .imageUrl,
                                                   'https://images.unsplash.com/photo-1511920170033-f8396924c348?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwyfHxjb2ZmZWV8ZW58MHx8fHwxNzE0MTAxNTg5fDA&ixlib=rb-4.0.3&q=80&w=1080',
                                                 ),
-                                                width: 300.0,
-                                                height: 200.0,
+                                                width: 300,
+                                                height: 200,
                                                 fit: BoxFit.cover,
                                               ),
                                             );
@@ -201,10 +201,10 @@ class _KioskAdvertisingWidgetState extends State<KioskAdvertisingWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.0, 1.0),
+                                alignment: AlignmentDirectional(0, 1),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 15.0),
+                                      0, 0, 0, 15),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
                                     focusColor: Colors.transparent,
@@ -254,10 +254,10 @@ class _KioskAdvertisingWidgetState extends State<KioskAdvertisingWidget> {
                                             MediaQuery.sizeOf(context).height *
                                                 0.1,
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            24.0, 0.0, 24.0, 0.0),
+                                            24, 0, 24, 0),
                                         iconPadding:
                                             EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
+                                                0, 0, 0, 0),
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         textStyle: FlutterFlowTheme.of(context)
@@ -267,7 +267,7 @@ class _KioskAdvertisingWidgetState extends State<KioskAdvertisingWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmallFamily,
                                               color: Colors.white,
-                                              fontSize: 30.0,
+                                              fontSize: 30,
                                               letterSpacing: 0.0,
                                               useGoogleFonts: GoogleFonts
                                                       .asMap()
@@ -276,14 +276,13 @@ class _KioskAdvertisingWidgetState extends State<KioskAdvertisingWidget> {
                                                               context)
                                                           .titleSmallFamily),
                                             ),
-                                        elevation: 10.0,
+                                        elevation: 10,
                                         borderSide: BorderSide(
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBtnText,
-                                          width: 5.0,
+                                          width: 5,
                                         ),
-                                        borderRadius:
-                                            BorderRadius.circular(15.0),
+                                        borderRadius: BorderRadius.circular(15),
                                       ),
                                     ),
                                   ),

@@ -64,7 +64,7 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
     _model.quickPinTextController ??= TextEditingController();
     _model.quickPinFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -92,7 +92,7 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                 Expanded(
                   flex: 5,
                   child: Container(
-                    width: 100.0,
+                    width: 100,
                     height: double.infinity,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondary,
@@ -115,8 +115,8 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                             },
                             child: Image.asset(
                               'assets/images/Sensible_Connect_Logo_2.png',
-                              width: 100.0,
-                              height: 100.0,
+                              width: 100,
+                              height: 100,
                               fit: BoxFit.contain,
                             ),
                           ),
@@ -169,11 +169,11 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                             if (!snapshot.hasData) {
                               return Center(
                                 child: SizedBox(
-                                  width: 40.0,
-                                  height: 40.0,
+                                  width: 40,
+                                  height: 40,
                                   child: SpinKitFadingCircle(
                                     color: FlutterFlowTheme.of(context).primary,
-                                    size: 40.0,
+                                    size: 40,
                                   ),
                                 ),
                               );
@@ -186,14 +186,14 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                     : null;
 
                             return Container(
-                              width: 100.0,
-                              height: 100.0,
+                              width: 100,
+                              height: 100,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
                               ),
                               child: Padding(
-                                padding: EdgeInsets.all(15.0),
+                                padding: EdgeInsets.all(15),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment:
@@ -207,15 +207,14 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                               0.05,
                                       decoration: BoxDecoration(),
                                       child: Align(
-                                        alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                        alignment: AlignmentDirectional(0, 0),
                                         child: Container(
-                                          width: 300.0,
-                                          height: 200.0,
+                                          width: 300,
+                                          height: 200,
                                           child:
                                               custom_widgets.Datetimecountdown(
-                                            width: 300.0,
-                                            height: 200.0,
+                                            width: 300,
+                                            height: 200,
                                             parameter: 1,
                                           ),
                                         ),
@@ -235,7 +234,7 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                         children: [
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0, 0),
                                             child: Text(
                                               containerDeviceRecord!.outletName,
                                               textAlign: TextAlign.center,
@@ -251,7 +250,7 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primary,
-                                                        fontSize: 27.0,
+                                                        fontSize: 27,
                                                         letterSpacing: 0.0,
                                                         useGoogleFonts: GoogleFonts
                                                                 .asMap()
@@ -287,18 +286,18 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 1.0, 0.0, 20.0),
+                                          0, 1, 0, 20),
                                       child: Container(
-                                        width: 300.0,
-                                        height: 320.0,
+                                        width: 300,
+                                        height: 320,
                                         decoration: BoxDecoration(),
                                         child: Stack(
                                           alignment:
-                                              AlignmentDirectional(0.0, -1.0),
+                                              AlignmentDirectional(0, -1),
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 5.0),
+                                                  .fromSTEB(0, 0, 0, 5),
                                               child: StreamBuilder<
                                                   List<UserProfileRecord>>(
                                                 stream: queryUserProfileRecord(
@@ -334,14 +333,14 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                   if (!snapshot.hasData) {
                                                     return Center(
                                                       child: SizedBox(
-                                                        width: 40.0,
-                                                        height: 40.0,
+                                                        width: 40,
+                                                        height: 40,
                                                         child:
                                                             SpinKitFadingCircle(
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
-                                                          size: 40.0,
+                                                          size: 40,
                                                         ),
                                                       ),
                                                     );
@@ -351,17 +350,14 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                       snapshot.data!;
 
                                                   return Container(
-                                                    width: 275.0,
-                                                    height: 290.0,
+                                                    width: 275,
+                                                    height: 290,
                                                     decoration: BoxDecoration(),
                                                     child: Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0.0,
-                                                                  5.0,
-                                                                  0.0,
-                                                                  0.0),
+                                                                  0, 5, 0, 0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -375,10 +371,10 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          5.0),
+                                                                          0,
+                                                                          0,
+                                                                          0,
+                                                                          5),
                                                               child: Container(
                                                                 decoration:
                                                                     BoxDecoration(
@@ -395,7 +391,7 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                     Padding(
                                                                       padding:
                                                                           EdgeInsets.all(
-                                                                              1.0),
+                                                                              1),
                                                                       child: FlutterFlowDropDown<
                                                                           String>(
                                                                         controller: _model
@@ -408,7 +404,7 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                             .toList(),
                                                                         onChanged:
                                                                             (val) =>
-                                                                                setState(() => _model.dropDownNameValue = val),
+                                                                                safeSetState(() => _model.dropDownNameValue = val),
                                                                         width: double
                                                                             .infinity,
                                                                         height:
@@ -431,23 +427,23 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                           size:
-                                                                              16.0,
+                                                                              16,
                                                                         ),
                                                                         fillColor:
                                                                             FlutterFlowTheme.of(context).secondaryBackground,
                                                                         elevation:
-                                                                            2.0,
+                                                                            2,
                                                                         borderColor:
                                                                             Colors.transparent,
                                                                         borderWidth:
-                                                                            0.0,
+                                                                            0,
                                                                         borderRadius:
-                                                                            0.0,
+                                                                            0,
                                                                         margin: EdgeInsetsDirectional.fromSTEB(
-                                                                            12.0,
-                                                                            4.0,
-                                                                            12.0,
-                                                                            4.0),
+                                                                            12,
+                                                                            4,
+                                                                            12,
+                                                                            4),
                                                                         hidesUnderline:
                                                                             true,
                                                                         isSearchable:
@@ -466,10 +462,10 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          10.0),
+                                                                          0,
+                                                                          0,
+                                                                          0,
+                                                                          10),
                                                               child: Container(
                                                                 decoration:
                                                                     BoxDecoration(
@@ -619,11 +615,12 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          2.0,
-                                                                          0.0),
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              0,
+                                                                              0,
+                                                                              2,
+                                                                              0),
                                                                       child:
                                                                           Column(
                                                                         mainAxisSize:
@@ -634,7 +631,7 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 3.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 2, 3),
                                                                               child: FFButtonWidget(
                                                                                 onPressed: () async {
                                                                                   _model.one = await actions.setQuickPin(
@@ -643,28 +640,28 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                                   FFAppState().quickPin = _model.one!;
                                                                                   FFAppState().update(() {});
 
-                                                                                  setState(() {});
+                                                                                  safeSetState(() {});
                                                                                 },
                                                                                 text: FFLocalizations.of(context).getText(
                                                                                   '1naxfrt3' /* 1 */,
                                                                                 ),
                                                                                 options: FFButtonOptions(
                                                                                   width: double.infinity,
-                                                                                  height: 33.0,
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  height: 33,
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                   color: FlutterFlowTheme.of(context).customColor2,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
-                                                                                  elevation: 2.0,
+                                                                                  elevation: 2,
                                                                                   borderSide: BorderSide(
                                                                                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    width: 2.0,
+                                                                                    width: 2,
                                                                                   ),
-                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                  borderRadius: BorderRadius.circular(8),
                                                                                 ),
                                                                               ),
                                                                             ),
@@ -672,7 +669,7 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 3.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 2, 3),
                                                                               child: FFButtonWidget(
                                                                                 onPressed: () async {
                                                                                   _model.four = await actions.setQuickPin(
@@ -681,28 +678,28 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                                   FFAppState().quickPin = _model.four!;
                                                                                   FFAppState().update(() {});
 
-                                                                                  setState(() {});
+                                                                                  safeSetState(() {});
                                                                                 },
                                                                                 text: FFLocalizations.of(context).getText(
                                                                                   '6ucpo1is' /* 4 */,
                                                                                 ),
                                                                                 options: FFButtonOptions(
                                                                                   width: double.infinity,
-                                                                                  height: 33.0,
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  height: 33,
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                   color: FlutterFlowTheme.of(context).customColor2,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
-                                                                                  elevation: 2.0,
+                                                                                  elevation: 2,
                                                                                   borderSide: BorderSide(
                                                                                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    width: 2.0,
+                                                                                    width: 2,
                                                                                   ),
-                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                  borderRadius: BorderRadius.circular(8),
                                                                                 ),
                                                                               ),
                                                                             ),
@@ -710,7 +707,7 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 3.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 2, 3),
                                                                               child: FFButtonWidget(
                                                                                 onPressed: () async {
                                                                                   _model.seven = await actions.setQuickPin(
@@ -719,28 +716,28 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                                   FFAppState().quickPin = _model.seven!;
                                                                                   FFAppState().update(() {});
 
-                                                                                  setState(() {});
+                                                                                  safeSetState(() {});
                                                                                 },
                                                                                 text: FFLocalizations.of(context).getText(
                                                                                   'gvg157mu' /* 7 */,
                                                                                 ),
                                                                                 options: FFButtonOptions(
                                                                                   width: double.infinity,
-                                                                                  height: 33.0,
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  height: 33,
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                   color: FlutterFlowTheme.of(context).customColor2,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
-                                                                                  elevation: 2.0,
+                                                                                  elevation: 2,
                                                                                   borderSide: BorderSide(
                                                                                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    width: 2.0,
+                                                                                    width: 2,
                                                                                   ),
-                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                  borderRadius: BorderRadius.circular(8),
                                                                                 ),
                                                                               ),
                                                                             ),
@@ -748,7 +745,7 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 2, 0),
                                                                               child: FFButtonWidget(
                                                                                 onPressed: () async {
                                                                                   FFAppState().quickPin = '';
@@ -758,25 +755,25 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                                 icon: Icon(
                                                                                   Icons.backspace_sharp,
                                                                                   color: FlutterFlowTheme.of(context).primaryText,
-                                                                                  size: 16.0,
+                                                                                  size: 16,
                                                                                 ),
                                                                                 options: FFButtonOptions(
                                                                                   width: double.infinity,
-                                                                                  height: 33.0,
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  height: 33,
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                   color: FlutterFlowTheme.of(context).customColor2,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
-                                                                                  elevation: 2.0,
+                                                                                  elevation: 2,
                                                                                   borderSide: BorderSide(
                                                                                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    width: 2.0,
+                                                                                    width: 2,
                                                                                   ),
-                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                  borderRadius: BorderRadius.circular(8),
                                                                                 ),
                                                                               ),
                                                                             ),
@@ -788,11 +785,12 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          2.0,
-                                                                          0.0),
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              0,
+                                                                              0,
+                                                                              2,
+                                                                              0),
                                                                       child:
                                                                           Column(
                                                                         mainAxisSize:
@@ -803,7 +801,7 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
                                                                               child: FFButtonWidget(
                                                                                 onPressed: () async {
                                                                                   _model.two = await actions.setQuickPin(
@@ -812,28 +810,28 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                                   FFAppState().quickPin = _model.two!;
                                                                                   FFAppState().update(() {});
 
-                                                                                  setState(() {});
+                                                                                  safeSetState(() {});
                                                                                 },
                                                                                 text: FFLocalizations.of(context).getText(
                                                                                   '2oj6bxi8' /* 2 */,
                                                                                 ),
                                                                                 options: FFButtonOptions(
                                                                                   width: double.infinity,
-                                                                                  height: 33.0,
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  height: 33,
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                   color: FlutterFlowTheme.of(context).customColor2,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
-                                                                                  elevation: 2.0,
+                                                                                  elevation: 2,
                                                                                   borderSide: BorderSide(
                                                                                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    width: 2.0,
+                                                                                    width: 2,
                                                                                   ),
-                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                  borderRadius: BorderRadius.circular(8),
                                                                                 ),
                                                                               ),
                                                                             ),
@@ -841,7 +839,7 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
                                                                               child: FFButtonWidget(
                                                                                 onPressed: () async {
                                                                                   _model.five = await actions.setQuickPin(
@@ -850,28 +848,28 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                                   FFAppState().quickPin = _model.five!;
                                                                                   FFAppState().update(() {});
 
-                                                                                  setState(() {});
+                                                                                  safeSetState(() {});
                                                                                 },
                                                                                 text: FFLocalizations.of(context).getText(
                                                                                   'prgag59p' /* 5 */,
                                                                                 ),
                                                                                 options: FFButtonOptions(
                                                                                   width: double.infinity,
-                                                                                  height: 33.0,
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  height: 33,
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                   color: FlutterFlowTheme.of(context).customColor2,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
-                                                                                  elevation: 2.0,
+                                                                                  elevation: 2,
                                                                                   borderSide: BorderSide(
                                                                                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    width: 2.0,
+                                                                                    width: 2,
                                                                                   ),
-                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                  borderRadius: BorderRadius.circular(8),
                                                                                 ),
                                                                               ),
                                                                             ),
@@ -879,7 +877,7 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
                                                                               child: FFButtonWidget(
                                                                                 onPressed: () async {
                                                                                   _model.eight = await actions.setQuickPin(
@@ -888,28 +886,28 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                                   FFAppState().quickPin = _model.eight!;
                                                                                   FFAppState().update(() {});
 
-                                                                                  setState(() {});
+                                                                                  safeSetState(() {});
                                                                                 },
                                                                                 text: FFLocalizations.of(context).getText(
                                                                                   'pn5cgqg5' /* 8 */,
                                                                                 ),
                                                                                 options: FFButtonOptions(
                                                                                   width: double.infinity,
-                                                                                  height: 33.0,
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  height: 33,
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                   color: FlutterFlowTheme.of(context).customColor2,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
-                                                                                  elevation: 2.0,
+                                                                                  elevation: 2,
                                                                                   borderSide: BorderSide(
                                                                                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    width: 2.0,
+                                                                                    width: 2,
                                                                                   ),
-                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                  borderRadius: BorderRadius.circular(8),
                                                                                 ),
                                                                               ),
                                                                             ),
@@ -924,28 +922,28 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                                 FFAppState().quickPin = _model.zero!;
                                                                                 FFAppState().update(() {});
 
-                                                                                setState(() {});
+                                                                                safeSetState(() {});
                                                                               },
                                                                               text: FFLocalizations.of(context).getText(
                                                                                 'rizo8zlc' /* 0 */,
                                                                               ),
                                                                               options: FFButtonOptions(
                                                                                 width: double.infinity,
-                                                                                height: 33.0,
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                height: 33,
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                 color: FlutterFlowTheme.of(context).customColor2,
                                                                                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                       fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                       letterSpacing: 0.0,
                                                                                       useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                     ),
-                                                                                elevation: 2.0,
+                                                                                elevation: 2,
                                                                                 borderSide: BorderSide(
                                                                                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                  width: 2.0,
+                                                                                  width: 2,
                                                                                 ),
-                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                borderRadius: BorderRadius.circular(8),
                                                                               ),
                                                                             ),
                                                                           ),
@@ -967,10 +965,10 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                2.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0),
+                                                                                2,
+                                                                                0,
+                                                                                0,
+                                                                                3),
                                                                             child:
                                                                                 FFButtonWidget(
                                                                               onPressed: () async {
@@ -980,28 +978,28 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                                 FFAppState().quickPin = _model.three!;
                                                                                 FFAppState().update(() {});
 
-                                                                                setState(() {});
+                                                                                safeSetState(() {});
                                                                               },
                                                                               text: FFLocalizations.of(context).getText(
                                                                                 'd3nloabk' /* 3 */,
                                                                               ),
                                                                               options: FFButtonOptions(
                                                                                 width: double.infinity,
-                                                                                height: 33.0,
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                height: 33,
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                 color: FlutterFlowTheme.of(context).customColor2,
                                                                                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                       fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                       letterSpacing: 0.0,
                                                                                       useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                     ),
-                                                                                elevation: 2.0,
+                                                                                elevation: 2,
                                                                                 borderSide: BorderSide(
                                                                                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                  width: 2.0,
+                                                                                  width: 2,
                                                                                 ),
-                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                borderRadius: BorderRadius.circular(8),
                                                                               ),
                                                                             ),
                                                                           ),
@@ -1010,10 +1008,10 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                2.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0),
+                                                                                2,
+                                                                                0,
+                                                                                0,
+                                                                                3),
                                                                             child:
                                                                                 FFButtonWidget(
                                                                               onPressed: () async {
@@ -1023,28 +1021,28 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                                 FFAppState().quickPin = _model.six!;
                                                                                 FFAppState().update(() {});
 
-                                                                                setState(() {});
+                                                                                safeSetState(() {});
                                                                               },
                                                                               text: FFLocalizations.of(context).getText(
                                                                                 'xo6xhw83' /* 6 */,
                                                                               ),
                                                                               options: FFButtonOptions(
                                                                                 width: double.infinity,
-                                                                                height: 33.0,
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                height: 33,
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                 color: FlutterFlowTheme.of(context).customColor2,
                                                                                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                       fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                       letterSpacing: 0.0,
                                                                                       useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                     ),
-                                                                                elevation: 2.0,
+                                                                                elevation: 2,
                                                                                 borderSide: BorderSide(
                                                                                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                  width: 2.0,
+                                                                                  width: 2,
                                                                                 ),
-                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                borderRadius: BorderRadius.circular(8),
                                                                               ),
                                                                             ),
                                                                           ),
@@ -1053,10 +1051,10 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                2.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0),
+                                                                                2,
+                                                                                0,
+                                                                                0,
+                                                                                3),
                                                                             child:
                                                                                 FFButtonWidget(
                                                                               onPressed: () async {
@@ -1066,28 +1064,28 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                                 FFAppState().quickPin = _model.nine!;
                                                                                 FFAppState().update(() {});
 
-                                                                                setState(() {});
+                                                                                safeSetState(() {});
                                                                               },
                                                                               text: FFLocalizations.of(context).getText(
                                                                                 'cg3gfu1f' /* 9 */,
                                                                               ),
                                                                               options: FFButtonOptions(
                                                                                 width: double.infinity,
-                                                                                height: 33.0,
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                height: 33,
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                 color: FlutterFlowTheme.of(context).customColor2,
                                                                                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                       fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                       letterSpacing: 0.0,
                                                                                       useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                     ),
-                                                                                elevation: 2.0,
+                                                                                elevation: 2,
                                                                                 borderSide: BorderSide(
                                                                                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                  width: 2.0,
+                                                                                  width: 2,
                                                                                 ),
-                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                borderRadius: BorderRadius.circular(8),
                                                                               ),
                                                                             ),
                                                                           ),
@@ -1096,10 +1094,10 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                2.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0),
+                                                                                2,
+                                                                                0,
+                                                                                0,
+                                                                                0),
                                                                             child:
                                                                                 StreamBuilder<List<AppSettingsRecord>>(
                                                                               stream: queryAppSettingsRecord(
@@ -1111,11 +1109,11 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                                 if (!snapshot.hasData) {
                                                                                   return Center(
                                                                                     child: SizedBox(
-                                                                                      width: 40.0,
-                                                                                      height: 40.0,
+                                                                                      width: 40,
+                                                                                      height: 40,
                                                                                       child: SpinKitFadingCircle(
                                                                                         color: FlutterFlowTheme.of(context).primary,
-                                                                                        size: 40.0,
+                                                                                        size: 40,
                                                                                       ),
                                                                                     ),
                                                                                   );
@@ -1151,7 +1149,7 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                                     _shouldSetState = true;
                                                                                     FFAppState().outletName = containerDeviceRecord!.outletName;
                                                                                     FFAppState().outletIdRef = containerDeviceRecord?.outletRef;
-                                                                                    setState(() {});
+                                                                                    safeSetState(() {});
                                                                                     _model.shiftlistonline = await queryShiftRecordOnce(
                                                                                       parent: FFAppState().outletIdRef,
                                                                                     );
@@ -1163,7 +1161,7 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                                         if (getCurrentTimestamp.millisecondsSinceEpoch <= _model.outletdoc!.renewalDate) {
                                                                                           if (_model.userProfile?.reference != null) {
                                                                                             FFAppState().userName = _model.userProfile!.name;
-                                                                                            setState(() {});
+                                                                                            safeSetState(() {});
                                                                                             _model.shiftdetailsnewonline = await actions.shiftDetailNewpark(
                                                                                               _model.shiftlistonline?.toList(),
                                                                                             );
@@ -1194,7 +1192,7 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                                               },
                                                                                             );
 
-                                                                                            if (_shouldSetState) setState(() {});
+                                                                                            if (_shouldSetState) safeSetState(() {});
                                                                                             return;
                                                                                           } else {
                                                                                             await showDialog(
@@ -1264,31 +1262,31 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                                       );
                                                                                     }
 
-                                                                                    if (_shouldSetState) setState(() {});
+                                                                                    if (_shouldSetState) safeSetState(() {});
                                                                                   },
                                                                                   text: '',
                                                                                   icon: Icon(
                                                                                     Icons.done,
                                                                                     color: FlutterFlowTheme.of(context).primaryText,
-                                                                                    size: 19.0,
+                                                                                    size: 19,
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     width: double.infinity,
-                                                                                    height: 33.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    height: 33,
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                         ),
-                                                                                    elevation: 2.0,
+                                                                                    elevation: 2,
                                                                                     borderSide: BorderSide(
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      width: 2.0,
+                                                                                      width: 2,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                    borderRadius: BorderRadius.circular(8),
                                                                                   ),
                                                                                 );
                                                                               },
@@ -1311,8 +1309,8 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                             ),
                                             if (FFAppState().show)
                                               Container(
-                                                width: 285.0,
-                                                height: 310.0,
+                                                width: 285,
+                                                height: 310,
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
@@ -1392,13 +1390,13 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                         if (!snapshot.hasData) {
                                           return Center(
                                             child: SizedBox(
-                                              width: 40.0,
-                                              height: 40.0,
+                                              width: 40,
+                                              height: 40,
                                               child: SpinKitFadingCircle(
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
-                                                size: 40.0,
+                                                size: 40,
                                               ),
                                             ),
                                           );
@@ -1432,8 +1430,7 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                             children: [
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 0.0, 10.0),
+                                                    .fromSTEB(0, 0, 0, 10),
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -1444,10 +1441,7 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  5.0,
-                                                                  0.0),
+                                                                  0, 0, 5, 0),
                                                       child: AutoSizeText(
                                                         FFLocalizations.of(
                                                                 context)
@@ -1515,8 +1509,7 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                               ),
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 0.0, 3.0),
+                                                    .fromSTEB(0, 0, 0, 3),
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -1529,7 +1522,7 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                   context)
                                                               .width *
                                                           0.3,
-                                                      lineHeight: 22.0,
+                                                      lineHeight: 22,
                                                       animation: true,
                                                       animateFromLastPercent:
                                                           true,
@@ -1570,7 +1563,7 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                                                 ),
                                                       ),
                                                       barRadius:
-                                                          Radius.circular(20.0),
+                                                          Radius.circular(20),
                                                       padding: EdgeInsets.zero,
                                                     ),
                                                   ],
@@ -1682,7 +1675,7 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                 Expanded(
                   flex: 2,
                   child: Container(
-                    width: 100.0,
+                    width: 100,
                     height: double.infinity,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondary,
@@ -1693,10 +1686,9 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 50.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 50),
                           child: Container(
-                            width: 100.0,
+                            width: 100,
                             height: MediaQuery.sizeOf(context).height * 0.6,
                             decoration: BoxDecoration(),
                             child: Column(
@@ -1705,14 +1697,14 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Container(
-                                  width: 60.0,
-                                  height: 60.0,
+                                  width: 60,
+                                  height: 60,
                                   constraints: BoxConstraints(
-                                    maxWidth: 85.0,
-                                    maxHeight: 85.0,
+                                    maxWidth: 85,
+                                    maxHeight: 85,
                                   ),
                                   decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(0.0),
+                                    borderRadius: BorderRadius.circular(0),
                                     shape: BoxShape.rectangle,
                                   ),
                                   child: InkWell(
@@ -1726,7 +1718,7 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                       await actions.deleteAllproduct();
                                       await actions.deleteAllshift();
                                       FFAppState().navigate = '';
-                                      setState(() {});
+                                      safeSetState(() {});
                                       await showDialog(
                                         context: context,
                                         builder: (alertDialogContext) {
@@ -1746,15 +1738,15 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                     },
                                     child: FlutterFlowIconButton(
                                       borderColor: Colors.transparent,
-                                      borderRadius: 50.0,
-                                      buttonSize: 40.0,
+                                      borderRadius: 50,
+                                      buttonSize: 40,
                                       fillColor:
                                           FlutterFlowTheme.of(context).primary,
                                       icon: Icon(
                                         Icons.settings,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBtnText,
-                                        size: 27.0,
+                                        size: 27,
                                       ),
                                       onPressed: () async {
                                         context.pushNamed('printSettingkiosk');
@@ -1763,26 +1755,26 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                   ),
                                 ),
                                 Container(
-                                  width: 60.0,
-                                  height: 60.0,
+                                  width: 60,
+                                  height: 60,
                                   constraints: BoxConstraints(
-                                    maxWidth: 85.0,
-                                    maxHeight: 85.0,
+                                    maxWidth: 85,
+                                    maxHeight: 85,
                                   ),
                                   decoration: BoxDecoration(
                                     shape: BoxShape.rectangle,
                                   ),
                                   child: FlutterFlowIconButton(
                                     borderColor: Colors.transparent,
-                                    borderRadius: 50.0,
-                                    buttonSize: 40.0,
+                                    borderRadius: 50,
+                                    buttonSize: 40,
                                     fillColor:
                                         FlutterFlowTheme.of(context).primary,
                                     icon: Icon(
                                       Icons.keyboard_hide_outlined,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBtnText,
-                                      size: 27.0,
+                                      size: 27,
                                     ),
                                     onPressed: () async {
                                       FFAppState().show = functions
@@ -1792,26 +1784,26 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                   ),
                                 ),
                                 Container(
-                                  width: 60.0,
-                                  height: 60.0,
+                                  width: 60,
+                                  height: 60,
                                   constraints: BoxConstraints(
-                                    maxWidth: 85.0,
-                                    maxHeight: 85.0,
+                                    maxWidth: 85,
+                                    maxHeight: 85,
                                   ),
                                   decoration: BoxDecoration(
                                     shape: BoxShape.rectangle,
                                   ),
                                   child: FlutterFlowIconButton(
                                     borderColor: Colors.transparent,
-                                    borderRadius: 50.0,
-                                    buttonSize: 40.0,
+                                    borderRadius: 50,
+                                    buttonSize: 40,
                                     fillColor:
                                         FlutterFlowTheme.of(context).primary,
                                     icon: Icon(
                                       Icons.power_settings_new,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBtnText,
-                                      size: 27.0,
+                                      size: 27,
                                     ),
                                     onPressed: () async {
                                       await showModalBottomSheet(
@@ -1838,26 +1830,26 @@ class _LoginPageNewWidgetState extends State<LoginPageNewWidget> {
                                   ),
                                 ),
                                 Container(
-                                  width: 60.0,
-                                  height: 60.0,
+                                  width: 60,
+                                  height: 60,
                                   constraints: BoxConstraints(
-                                    maxWidth: 85.0,
-                                    maxHeight: 85.0,
+                                    maxWidth: 85,
+                                    maxHeight: 85,
                                   ),
                                   decoration: BoxDecoration(
                                     shape: BoxShape.rectangle,
                                   ),
                                   child: FlutterFlowIconButton(
                                     borderColor: Colors.transparent,
-                                    borderRadius: 50.0,
-                                    buttonSize: 40.0,
+                                    borderRadius: 50,
+                                    buttonSize: 40,
                                     fillColor:
                                         FlutterFlowTheme.of(context).primary,
                                     icon: Icon(
                                       Icons.info_outline,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBtnText,
-                                      size: 27.0,
+                                      size: 27,
                                     ),
                                     onPressed: () async {
                                       context.pushNamed('AboutUs');

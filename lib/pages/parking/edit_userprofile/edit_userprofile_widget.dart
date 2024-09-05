@@ -49,7 +49,7 @@ class _EditUserprofileWidgetState extends State<EditUserprofileWidget> {
 
     _model.textFieldFocusNode4 ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -78,8 +78,8 @@ class _EditUserprofileWidgetState extends State<EditUserprofileWidget> {
                   Expanded(
                     flex: 4,
                     child: Container(
-                      width: MediaQuery.sizeOf(context).width * 1.0,
-                      height: 100.0,
+                      width: MediaQuery.sizeOf(context).width,
+                      height: 100,
                       decoration: BoxDecoration(),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
@@ -87,22 +87,22 @@ class _EditUserprofileWidgetState extends State<EditUserprofileWidget> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                20.0, 0.0, 20.0, 0.0),
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
-                                  borderRadius: 30.0,
-                                  borderWidth: 1.0,
-                                  buttonSize: 45.0,
+                                  borderRadius: 30,
+                                  borderWidth: 1,
+                                  buttonSize: 45,
                                   icon: Icon(
                                     Icons.chevron_left,
                                     color:
                                         FlutterFlowTheme.of(context).lineColor,
-                                    size: 24.0,
+                                    size: 24,
                                   ),
                                   onPressed: () async {
                                     context.pushNamed('account');
@@ -130,14 +130,14 @@ class _EditUserprofileWidgetState extends State<EditUserprofileWidget> {
                                 ),
                                 FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
-                                  borderRadius: 30.0,
-                                  borderWidth: 1.0,
-                                  buttonSize: 45.0,
+                                  borderRadius: 30,
+                                  borderWidth: 1,
+                                  buttonSize: 45,
                                   icon: Icon(
                                     Icons.chevron_left,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBtnText,
-                                    size: 0.0,
+                                    size: 0,
                                   ),
                                   onPressed: () {
                                     print('IconButton pressed ...');
@@ -153,16 +153,16 @@ class _EditUserprofileWidgetState extends State<EditUserprofileWidget> {
                   Expanded(
                     flex: 24,
                     child: Container(
-                      width: MediaQuery.sizeOf(context).width * 1.0,
-                      height: 100.0,
+                      width: MediaQuery.sizeOf(context).width,
+                      height: 100,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context)
                             .parkingPrimaryBackground,
                         borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(0.0),
-                          bottomRight: Radius.circular(0.0),
-                          topLeft: Radius.circular(0.0),
-                          topRight: Radius.circular(0.0),
+                          bottomLeft: Radius.circular(0),
+                          bottomRight: Radius.circular(0),
+                          topLeft: Radius.circular(0),
+                          topRight: Radius.circular(0),
                         ),
                       ),
                       child: SingleChildScrollView(
@@ -170,8 +170,8 @@ class _EditUserprofileWidgetState extends State<EditUserprofileWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 40.0, 0.0, 0.0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 40, 0, 0),
                               child: StreamBuilder<List<UserProfileRecord>>(
                                 stream: queryUserProfileRecord(
                                   queryBuilder: (userProfileRecord) =>
@@ -186,12 +186,12 @@ class _EditUserprofileWidgetState extends State<EditUserprofileWidget> {
                                   if (!snapshot.hasData) {
                                     return Center(
                                       child: SizedBox(
-                                        width: 40.0,
-                                        height: 40.0,
+                                        width: 40,
+                                        height: 40,
                                         child: SpinKitFadingCircle(
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
-                                          size: 40.0,
+                                          size: 40,
                                         ),
                                       ),
                                     );
@@ -212,7 +212,7 @@ class _EditUserprofileWidgetState extends State<EditUserprofileWidget> {
                                     decoration: BoxDecoration(),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 5.0, 0.0, 5.0),
+                                          0, 5, 0, 5),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -221,7 +221,7 @@ class _EditUserprofileWidgetState extends State<EditUserprofileWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    15.0, 0.0, 0.0, 0.0),
+                                                    15, 0, 0, 0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -255,7 +255,7 @@ class _EditUserprofileWidgetState extends State<EditUserprofileWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 20.0),
+                                                    0, 0, 0, 20),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -276,13 +276,13 @@ class _EditUserprofileWidgetState extends State<EditUserprofileWidget> {
                                                         .secondaryBackground,
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            10.0),
+                                                            10),
                                                   ),
                                                   child: Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(10.0, 0.0,
-                                                                0.0, 0.0),
+                                                            .fromSTEB(
+                                                                10, 0, 0, 0),
                                                     child: TextFormField(
                                                       controller: _model
                                                               .textController1 ??=
@@ -421,7 +421,7 @@ class _EditUserprofileWidgetState extends State<EditUserprofileWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    15.0, 0.0, 0.0, 0.0),
+                                                    15, 0, 0, 0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -455,7 +455,7 @@ class _EditUserprofileWidgetState extends State<EditUserprofileWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 20.0),
+                                                    0, 0, 0, 20),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -476,7 +476,7 @@ class _EditUserprofileWidgetState extends State<EditUserprofileWidget> {
                                                         .secondaryBackground,
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            10.0),
+                                                            10),
                                                   ),
                                                   child: Column(
                                                     mainAxisSize:
@@ -622,7 +622,7 @@ class _EditUserprofileWidgetState extends State<EditUserprofileWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    15.0, 0.0, 0.0, 0.0),
+                                                    15, 0, 0, 0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -656,7 +656,7 @@ class _EditUserprofileWidgetState extends State<EditUserprofileWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 20.0),
+                                                    0, 0, 0, 20),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -677,13 +677,13 @@ class _EditUserprofileWidgetState extends State<EditUserprofileWidget> {
                                                         .secondaryBackground,
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            10.0),
+                                                            10),
                                                   ),
                                                   child: Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(10.0, 0.0,
-                                                                0.0, 0.0),
+                                                            .fromSTEB(
+                                                                10, 0, 0, 0),
                                                     child: TextFormField(
                                                       controller: _model
                                                               .textController3 ??=
@@ -819,7 +819,7 @@ class _EditUserprofileWidgetState extends State<EditUserprofileWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    15.0, 0.0, 0.0, 0.0),
+                                                    15, 0, 0, 0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -853,7 +853,7 @@ class _EditUserprofileWidgetState extends State<EditUserprofileWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 20.0),
+                                                    0, 0, 0, 20),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -874,13 +874,13 @@ class _EditUserprofileWidgetState extends State<EditUserprofileWidget> {
                                                         .secondaryBackground,
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            10.0),
+                                                            10),
                                                   ),
                                                   child: Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(10.0, 0.0,
-                                                                0.0, 0.0),
+                                                            .fromSTEB(
+                                                                10, 0, 0, 0),
                                                     child: TextFormField(
                                                       controller: _model
                                                               .textController4 ??=
@@ -1019,7 +1019,7 @@ class _EditUserprofileWidgetState extends State<EditUserprofileWidget> {
                                             width: double.infinity,
                                             decoration: BoxDecoration(
                                               borderRadius:
-                                                  BorderRadius.circular(5.0),
+                                                  BorderRadius.circular(5),
                                             ),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -1028,8 +1028,7 @@ class _EditUserprofileWidgetState extends State<EditUserprofileWidget> {
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 0.0, 10.0),
+                                                      .fromSTEB(0, 0, 0, 10),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -1066,16 +1065,16 @@ class _EditUserprofileWidgetState extends State<EditUserprofileWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        8.0),
+                                                                        8),
                                                           ),
                                                           child: Padding(
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        8.0,
-                                                                        0.0,
-                                                                        8.0,
-                                                                        0.0),
+                                                                        8,
+                                                                        0,
+                                                                        8,
+                                                                        0),
                                                             child: Row(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -1208,16 +1207,16 @@ class _EditUserprofileWidgetState extends State<EditUserprofileWidget> {
                                                     'u48j6h04' /* UPDATE */,
                                                   ),
                                                   options: FFButtonOptions(
-                                                    width: 120.0,
-                                                    height: 40.0,
+                                                    width: 120,
+                                                    height: 40,
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 0, 0, 0),
                                                     iconPadding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 0, 0, 0),
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .parkingSecondaryBackground,
@@ -1242,13 +1241,13 @@ class _EditUserprofileWidgetState extends State<EditUserprofileWidget> {
                                                                           context)
                                                                       .titleSmallFamily),
                                                         ),
-                                                    elevation: 2.0,
+                                                    elevation: 2,
                                                     borderSide: BorderSide(
                                                       color: Colors.transparent,
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            5.0),
+                                                            5),
                                                   ),
                                                 ),
                                               ],

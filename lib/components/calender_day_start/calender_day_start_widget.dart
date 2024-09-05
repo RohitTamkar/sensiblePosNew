@@ -30,7 +30,7 @@ class _CalenderDayStartWidgetState extends State<CalenderDayStartWidget> {
     super.initState();
     _model = createModel(context, () => CalenderDayStartModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -47,8 +47,8 @@ class _CalenderDayStartWidgetState extends State<CalenderDayStartWidget> {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Container(
-          width: 450.0,
-          height: 350.0,
+          width: 450,
+          height: 350,
           decoration: BoxDecoration(
             color: Color(0xFFCFDCFF),
           ),
@@ -57,10 +57,10 @@ class _CalenderDayStartWidgetState extends State<CalenderDayStartWidget> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: EdgeInsets.all(10),
                 child: Container(
                   width: double.infinity,
-                  height: 30.0,
+                  height: 30,
                   decoration: BoxDecoration(),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
@@ -113,7 +113,7 @@ class _CalenderDayStartWidgetState extends State<CalenderDayStartWidget> {
                                 fontFamily: FlutterFlowTheme.of(context)
                                     .headlineMediumFamily,
                                 color: FlutterFlowTheme.of(context).primary,
-                                fontSize: 18.0,
+                                fontSize: 18,
                                 letterSpacing: 0.0,
                                 decoration: TextDecoration.underline,
                                 useGoogleFonts: GoogleFonts.asMap().containsKey(
@@ -127,15 +127,15 @@ class _CalenderDayStartWidgetState extends State<CalenderDayStartWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 40.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 40),
                 child: FlutterFlowCalendar(
                   color: Color(0xFF5E7BD4),
                   weekFormat: false,
                   weekStartsMonday: true,
                   initialDate: getCurrentTimestamp,
-                  rowHeight: 27.0,
+                  rowHeight: 27,
                   onChange: (DateTimeRange? newSelectedDate) {
-                    setState(
+                    safeSetState(
                         () => _model.calendarSelectedDay = newSelectedDate);
                   },
                   titleStyle: TextStyle(),

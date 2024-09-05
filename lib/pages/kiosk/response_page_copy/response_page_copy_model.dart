@@ -25,7 +25,6 @@ import 'package:provider/provider.dart';
 class ResponsePageCopyModel extends FlutterFlowModel<ResponsePageCopyWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - filterProducts] action in responsePageCopy widget.
   List<SelItemListStruct>? prdListkiosk;
   // Stores action output result for [Backend Call - Create Document] action in responsePageCopy widget.

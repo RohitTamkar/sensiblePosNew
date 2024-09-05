@@ -18,7 +18,6 @@ class CategorySaleReportModel
     extends FlutterFlowModel<CategorySaleReportWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - productSaleReport] action in categorySaleReport widget.
   List<dynamic>? productList;
   // Stores action output result for [Custom Action - productSaleReport] action in Container widget.

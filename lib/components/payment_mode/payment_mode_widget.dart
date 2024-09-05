@@ -31,7 +31,7 @@ class _PaymentModeWidgetState extends State<PaymentModeWidget> {
     super.initState();
     _model = createModel(context, () => PaymentModeModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -50,11 +50,11 @@ class _PaymentModeWidgetState extends State<PaymentModeWidget> {
         if (!snapshot.hasData) {
           return Center(
             child: SizedBox(
-              width: 40.0,
-              height: 40.0,
+              width: 40,
+              height: 40,
               child: SpinKitFadingCircle(
                 color: FlutterFlowTheme.of(context).primary,
-                size: 40.0,
+                size: 40,
               ),
             ),
           );
@@ -65,12 +65,12 @@ class _PaymentModeWidgetState extends State<PaymentModeWidget> {
           controller: _model.dropDownValueController ??=
               FormFieldController<String>(null),
           options: dropDownPaymentModeRecordList.map((e) => e.name).toList(),
-          onChanged: (val) => setState(() => _model.dropDownValue = val),
-          width: 300.0,
+          onChanged: (val) => safeSetState(() => _model.dropDownValue = val),
+          width: 300,
           textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                 fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                 color: FlutterFlowTheme.of(context).primaryBtnText,
-                fontSize: 14.0,
+                fontSize: 14,
                 letterSpacing: 0.0,
                 useGoogleFonts: GoogleFonts.asMap()
                     .containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
@@ -81,14 +81,14 @@ class _PaymentModeWidgetState extends State<PaymentModeWidget> {
           icon: Icon(
             Icons.keyboard_arrow_down_rounded,
             color: FlutterFlowTheme.of(context).primaryBtnText,
-            size: 20.0,
+            size: 20,
           ),
           fillColor: Color(0xFF274287),
-          elevation: 2.0,
+          elevation: 2,
           borderColor: Colors.transparent,
-          borderWidth: 0.0,
-          borderRadius: 8.0,
-          margin: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 5.0, 0.0),
+          borderWidth: 0,
+          borderRadius: 8,
+          margin: EdgeInsetsDirectional.fromSTEB(10, 0, 5, 0),
           hidesUnderline: true,
           isOverButton: true,
           isSearchable: false,

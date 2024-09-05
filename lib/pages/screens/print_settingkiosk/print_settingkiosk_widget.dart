@@ -39,7 +39,7 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
     _model.textController2 ??= TextEditingController();
     _model.textFieldFocusNode2 ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {
           _model.textController1?.text = FFLocalizations.of(context).getText(
             'pzdg0xhg' /* 9100 */,
           );
@@ -66,14 +66,14 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Padding(
-              padding: EdgeInsets.all(3.0),
+              padding: EdgeInsets.all(3),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Expanded(
                     flex: 1,
                     child: Container(
-                      width: MediaQuery.sizeOf(context).width * 1.0,
+                      width: MediaQuery.sizeOf(context).width,
                       height: MediaQuery.sizeOf(context).height * 0.12,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primary,
@@ -86,8 +86,8 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                           Expanded(
                             flex: 1,
                             child: Container(
-                              width: 100.0,
-                              height: 100.0,
+                              width: 100,
+                              height: 100,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context).primary,
                               ),
@@ -96,14 +96,14 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                 children: [
                                   FlutterFlowIconButton(
                                     borderColor: Colors.transparent,
-                                    borderRadius: 30.0,
-                                    borderWidth: 1.0,
-                                    buttonSize: 60.0,
+                                    borderRadius: 30,
+                                    borderWidth: 1,
+                                    buttonSize: 60,
                                     icon: Icon(
                                       Icons.chevron_left_sharp,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBtnText,
-                                      size: 26.0,
+                                      size: 26,
                                     ),
                                     onPressed: () async {
                                       context.safePop();
@@ -136,7 +136,7 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                             flex: 1,
                             child: wrapWithModel(
                               model: _model.headerModel,
-                              updateCallback: () => setState(() {}),
+                              updateCallback: () => safeSetState(() {}),
                               child: HeaderWidget(),
                             ),
                           ),
@@ -147,11 +147,10 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                   Expanded(
                     flex: 13,
                     child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
                       child: Container(
-                        width: MediaQuery.sizeOf(context).width * 1.0,
-                        height: 100.0,
+                        width: MediaQuery.sizeOf(context).width,
+                        height: 100,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).primaryBackground,
                         ),
@@ -160,11 +159,10 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                           children: [
                             Expanded(
                               child: Padding(
-                                padding: EdgeInsets.all(3.0),
+                                padding: EdgeInsets.all(3),
                                 child: Container(
-                                  width: 100.0,
-                                  height:
-                                      MediaQuery.sizeOf(context).height * 1.0,
+                                  width: 100,
+                                  height: MediaQuery.sizeOf(context).height * 1,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
@@ -174,7 +172,7 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsets.all(3.0),
+                                    padding: EdgeInsets.all(3),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -189,15 +187,15 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                           children: [
                                             FlutterFlowIconButton(
                                               borderColor: Colors.transparent,
-                                              borderRadius: 30.0,
-                                              borderWidth: 1.0,
-                                              buttonSize: 45.0,
+                                              borderRadius: 30,
+                                              borderWidth: 1,
+                                              buttonSize: 45,
                                               icon: Icon(
                                                 Icons.wifi,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryBackground,
-                                                size: 18.0,
+                                                size: 18,
                                               ),
                                               onPressed: () {
                                                 print('IconButton pressed ...');
@@ -205,9 +203,9 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                             ),
                                             FlutterFlowIconButton(
                                               borderColor: Colors.transparent,
-                                              borderRadius: 30.0,
-                                              borderWidth: 1.0,
-                                              buttonSize: 45.0,
+                                              borderRadius: 30,
+                                              borderWidth: 1,
+                                              buttonSize: 45,
                                               disabledColor:
                                                   FlutterFlowTheme.of(context)
                                                       .customColor1,
@@ -216,7 +214,7 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryBackground,
-                                                size: 22.0,
+                                                size: 22,
                                               ),
                                               onPressed: FFAppState()
                                                       .isPrinterConnected
@@ -227,13 +225,13 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                     },
                                             ),
                                             Container(
-                                              width: 200.0,
+                                              width: 200,
                                               height: MediaQuery.sizeOf(context)
                                                       .height *
                                                   0.1,
                                               child: custom_widgets
                                                   .OpenWIFISetting(
-                                                width: 200.0,
+                                                width: 200,
                                                 height:
                                                     MediaQuery.sizeOf(context)
                                                             .height *
@@ -275,18 +273,18 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                 Switch.adaptive(
                                                   value: _model.switchValue!,
                                                   onChanged: (newValue) async {
-                                                    setState(() =>
+                                                    safeSetState(() =>
                                                         _model.switchValue =
                                                             newValue!);
                                                     if (newValue!) {
                                                       FFAppState()
                                                           .ethernetPrint = true;
-                                                      setState(() {});
+                                                      safeSetState(() {});
                                                     } else {
                                                       FFAppState()
                                                               .ethernetPrint =
                                                           false;
-                                                      setState(() {});
+                                                      safeSetState(() {});
                                                     }
                                                   },
                                                   activeColor:
@@ -311,8 +309,7 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                             if (FFAppState().ethernetPrint)
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        8.0, 0.0, 8.0, 0.0),
+                                                    .fromSTEB(8, 0, 8, 0),
                                                 child: TextFormField(
                                                   controller:
                                                       _model.textController1,
@@ -373,11 +370,11 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .alternate,
-                                                        width: 2.0,
+                                                        width: 2,
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              8.0),
+                                                              8),
                                                     ),
                                                     focusedBorder:
                                                         UnderlineInputBorder(
@@ -386,11 +383,11 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primary,
-                                                        width: 2.0,
+                                                        width: 2,
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              8.0),
+                                                              8),
                                                     ),
                                                     errorBorder:
                                                         UnderlineInputBorder(
@@ -399,11 +396,11 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .error,
-                                                        width: 2.0,
+                                                        width: 2,
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              8.0),
+                                                              8),
                                                     ),
                                                     focusedErrorBorder:
                                                         UnderlineInputBorder(
@@ -412,11 +409,11 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .error,
-                                                        width: 2.0,
+                                                        width: 2,
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              8.0),
+                                                              8),
                                                     ),
                                                   ),
                                                   style: FlutterFlowTheme.of(
@@ -443,8 +440,7 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                             if (FFAppState().ethernetPrint)
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        8.0, 0.0, 8.0, 0.0),
+                                                    .fromSTEB(8, 0, 8, 0),
                                                 child: TextFormField(
                                                   controller:
                                                       _model.textController2,
@@ -505,11 +501,11 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .alternate,
-                                                        width: 2.0,
+                                                        width: 2,
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              8.0),
+                                                              8),
                                                     ),
                                                     focusedBorder:
                                                         UnderlineInputBorder(
@@ -518,11 +514,11 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primary,
-                                                        width: 2.0,
+                                                        width: 2,
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              8.0),
+                                                              8),
                                                     ),
                                                     errorBorder:
                                                         UnderlineInputBorder(
@@ -531,11 +527,11 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .error,
-                                                        width: 2.0,
+                                                        width: 2,
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              8.0),
+                                                              8),
                                                     ),
                                                     focusedErrorBorder:
                                                         UnderlineInputBorder(
@@ -544,11 +540,11 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .error,
-                                                        width: 2.0,
+                                                        width: 2,
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              8.0),
+                                                              8),
                                                     ),
                                                   ),
                                                   style: FlutterFlowTheme.of(
@@ -575,8 +571,7 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                             if (FFAppState().ethernetPrint)
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 8.0, 0.0, 0.0),
+                                                    .fromSTEB(0, 8, 0, 0),
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
                                                     FFAppState().port =
@@ -591,7 +586,7 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                           .textController2.text,
                                                       '11111111',
                                                     );
-                                                    setState(() {});
+                                                    safeSetState(() {});
                                                     ScaffoldMessenger.of(
                                                             context)
                                                         .showSnackBar(
@@ -619,15 +614,15 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                     'ayno1lel' /* Save */,
                                                   ),
                                                   options: FFButtonOptions(
-                                                    height: 40.0,
+                                                    height: 40,
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(24.0, 0.0,
-                                                                24.0, 0.0),
+                                                            .fromSTEB(
+                                                                24, 0, 24, 0),
                                                     iconPadding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 0, 0, 0),
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primary,
@@ -648,14 +643,14 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                                           context)
                                                                       .titleSmallFamily),
                                                         ),
-                                                    elevation: 3.0,
+                                                    elevation: 3,
                                                     borderSide: BorderSide(
                                                       color: Colors.transparent,
-                                                      width: 1.0,
+                                                      width: 1,
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            8.0),
+                                                            8),
                                                   ),
                                                 ),
                                               ),
@@ -664,7 +659,7 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 10.0, 0.0, 3.0),
+                                                  0, 10, 0, 3),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'izmglg2h' /* Paper Size */,
@@ -689,7 +684,7 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 10.0),
+                                                  0, 0, 0, 10),
                                           child: FlutterFlowDropDown<String>(
                                             controller: _model
                                                     .dropDownValueController1 ??=
@@ -698,8 +693,9 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                   FFAppState().paperSize,
                                             ),
                                             options: FFAppState().paperSizeList,
-                                            onChanged: (val) => setState(() =>
-                                                _model.dropDownValue1 = val),
+                                            onChanged: (val) => safeSetState(
+                                                () => _model.dropDownValue1 =
+                                                    val),
                                             width: double.infinity,
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
@@ -724,27 +720,27 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                             ),
                                             icon: Icon(
                                               Icons.keyboard_arrow_down,
-                                              size: 15.0,
+                                              size: 15,
                                             ),
                                             fillColor:
                                                 FlutterFlowTheme.of(context)
                                                     .secondaryBackground,
-                                            elevation: 2.0,
+                                            elevation: 2,
                                             borderColor:
                                                 FlutterFlowTheme.of(context)
                                                     .customColor2,
-                                            borderWidth: 0.0,
-                                            borderRadius: 5.0,
+                                            borderWidth: 0,
+                                            borderRadius: 5,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    12.0, 0.0, 12.0, 0.0),
+                                                    12, 0, 12, 0),
                                             hidesUnderline: true,
                                             isSearchable: false,
                                             isMultiSelect: false,
                                           ),
                                         ),
                                         Padding(
-                                          padding: EdgeInsets.all(5.0),
+                                          padding: EdgeInsets.all(5),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               '0si4jcby' /* Printer Mode */,
@@ -769,7 +765,7 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 20.0),
+                                                  0, 0, 0, 20),
                                           child: FlutterFlowDropDown<String>(
                                             controller: _model
                                                     .dropDownValueController2 ??=
@@ -780,19 +776,19 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                             options:
                                                 FFAppState().printerTypeList,
                                             onChanged: (val) async {
-                                              setState(() =>
+                                              safeSetState(() =>
                                                   _model.dropDownValue2 = val);
                                               FFAppState().paperSize =
                                                   _model.dropDownValue1!;
                                               FFAppState().posMode =
                                                   _model.dropDownValue2!;
-                                              setState(() {});
+                                              safeSetState(() {});
                                               _model.resultDevice2 =
                                                   await actions.scanPrinter(
                                                 _model.dropDownValue2!,
                                               );
 
-                                              setState(() {});
+                                              safeSetState(() {});
                                             },
                                             width: double.infinity,
                                             textStyle:
@@ -818,27 +814,27 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                             ),
                                             icon: Icon(
                                               Icons.keyboard_arrow_down,
-                                              size: 15.0,
+                                              size: 15,
                                             ),
                                             fillColor:
                                                 FlutterFlowTheme.of(context)
                                                     .secondaryBackground,
-                                            elevation: 2.0,
+                                            elevation: 2,
                                             borderColor:
                                                 FlutterFlowTheme.of(context)
                                                     .customColor2,
-                                            borderWidth: 0.0,
-                                            borderRadius: 5.0,
+                                            borderWidth: 0,
+                                            borderRadius: 5,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    12.0, 0.0, 12.0, 0.0),
+                                                    12, 0, 12, 0),
                                             hidesUnderline: true,
                                             isSearchable: false,
                                             isMultiSelect: false,
                                           ),
                                         ),
                                         Padding(
-                                          padding: EdgeInsets.all(5.0),
+                                          padding: EdgeInsets.all(5),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'x0d9t6ae' /* Available Device */,
@@ -863,7 +859,7 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  5.0, 0.0, 0.0, 20.0),
+                                                  5, 0, 0, 20),
                                           child: Container(
                                             width: double.infinity,
                                             height: MediaQuery.sizeOf(context)
@@ -904,10 +900,10 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        8.0),
+                                                                        0,
+                                                                        0,
+                                                                        0,
+                                                                        8),
                                                             child: InkWell(
                                                               splashColor: Colors
                                                                   .transparent,
@@ -925,7 +921,8 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                                   printerListItem,
                                                                   r'''$.address''',
                                                                 );
-                                                                setState(() {});
+                                                                safeSetState(
+                                                                    () {});
                                                                 FFAppState()
                                                                         .printerIndex =
                                                                     getJsonField(
@@ -1009,7 +1006,8 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                                   );
                                                                 }
 
-                                                                setState(() {});
+                                                                safeSetState(
+                                                                    () {});
                                                               },
                                                               child: Container(
                                                                 width: MediaQuery.sizeOf(
@@ -1028,15 +1026,15 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              12.0),
+                                                                              12),
                                                                 ),
                                                                 child: Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          6.0,
-                                                                          10.0,
-                                                                          8.0),
+                                                                          10,
+                                                                          6,
+                                                                          10,
+                                                                          8),
                                                                   child: Column(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -1053,15 +1051,15 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                5.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                5,
+                                                                                0),
                                                                             child:
                                                                                 Icon(
                                                                               Icons.print_rounded,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
-                                                                              size: 16.0,
+                                                                              size: 16,
                                                                             ),
                                                                           ),
                                                                           Text(
@@ -1080,10 +1078,10 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                                       ),
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            5,
+                                                                            0),
                                                                         child:
                                                                             Row(
                                                                           mainAxisSize:
@@ -1092,11 +1090,11 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                                               MainAxisAlignment.start,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                               child: Icon(
                                                                                 Icons.location_on,
                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                size: 15.0,
+                                                                                size: 15,
                                                                               ),
                                                                             ),
                                                                             Text(
@@ -1107,7 +1105,7 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                                               style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                     color: FlutterFlowTheme.of(context).primaryText,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                   ),
@@ -1130,17 +1128,16 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                             FlutterFlowIconButton(
                                                               borderColor: Colors
                                                                   .transparent,
-                                                              borderRadius:
-                                                                  30.0,
-                                                              borderWidth: 1.0,
-                                                              buttonSize: 60.0,
+                                                              borderRadius: 30,
+                                                              borderWidth: 1,
+                                                              buttonSize: 60,
                                                               icon: Icon(
                                                                 Icons
                                                                     .check_circle,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .tertiary,
-                                                                size: 30.0,
+                                                                size: 30,
                                                               ),
                                                               onPressed: () {
                                                                 print(

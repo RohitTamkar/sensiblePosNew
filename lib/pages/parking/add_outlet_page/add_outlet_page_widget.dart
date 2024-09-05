@@ -53,7 +53,7 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
         TextEditingController(text: FFAppState().deviceqrId);
     _model.textFieldFocusNode3 ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -82,8 +82,8 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                 Expanded(
                   flex: 4,
                   child: Container(
-                    width: MediaQuery.sizeOf(context).width * 1.0,
-                    height: 100.0,
+                    width: MediaQuery.sizeOf(context).width,
+                    height: 100,
                     decoration: BoxDecoration(),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -91,21 +91,20 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              20.0, 0.0, 20.0, 0.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 30.0,
-                                borderWidth: 1.0,
-                                buttonSize: 45.0,
+                                borderRadius: 30,
+                                borderWidth: 1,
+                                buttonSize: 45,
                                 icon: Icon(
                                   Icons.chevron_left,
                                   color: FlutterFlowTheme.of(context).lineColor,
-                                  size: 24.0,
+                                  size: 24,
                                 ),
                                 onPressed: () async {},
                               ),
@@ -131,13 +130,13 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                               ),
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 30.0,
-                                borderWidth: 1.0,
-                                buttonSize: 45.0,
+                                borderRadius: 30,
+                                borderWidth: 1,
+                                buttonSize: 45,
                                 icon: Icon(
                                   Icons.chevron_left,
                                   color: Colors.transparent,
-                                  size: 30.0,
+                                  size: 30,
                                 ),
                                 onPressed: () {
                                   print('IconButton pressed ...');
@@ -153,21 +152,20 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                 Expanded(
                   flex: 22,
                   child: Container(
-                    width: MediaQuery.sizeOf(context).width * 1.0,
-                    height: 100.0,
+                    width: MediaQuery.sizeOf(context).width,
+                    height: 100,
                     decoration: BoxDecoration(
                       color:
                           FlutterFlowTheme.of(context).parkingPrimaryBackground,
                       borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(0.0),
-                        bottomRight: Radius.circular(0.0),
-                        topLeft: Radius.circular(0.0),
-                        topRight: Radius.circular(0.0),
+                        bottomLeft: Radius.circular(0),
+                        bottomRight: Radius.circular(0),
+                        topLeft: Radius.circular(0),
+                        topRight: Radius.circular(0),
                       ),
                     ),
                     child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                      padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -180,14 +178,14 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 10.0, 0.0, 0.0),
+                                      0, 10, 0, 0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            3.0, 0.0, 0.0, 0.0),
+                                            3, 0, 0, 0),
                                         child: Container(
                                           width:
                                               MediaQuery.sizeOf(context).width *
@@ -200,8 +198,7 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                             children: [
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 0.0, 5.0),
+                                                    .fromSTEB(0, 0, 0, 5),
                                                 child: SelectionArea(
                                                     child: Text(
                                                   FFLocalizations.of(context)
@@ -235,7 +232,7 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                                     EasyDebounce.debounce(
                                                   '_model.textController1',
                                                   Duration(milliseconds: 2000),
-                                                  () => setState(() {}),
+                                                  () => safeSetState(() {}),
                                                 ),
                                                 autofocus: true,
                                                 obscureText: false,
@@ -273,7 +270,7 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            8.0),
+                                                            8),
                                                   ),
                                                   focusedBorder:
                                                       OutlineInputBorder(
@@ -283,7 +280,7 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            8.0),
+                                                            8),
                                                   ),
                                                   errorBorder:
                                                       OutlineInputBorder(
@@ -293,7 +290,7 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            8.0),
+                                                            8),
                                                   ),
                                                   focusedErrorBorder:
                                                       OutlineInputBorder(
@@ -303,7 +300,7 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            8.0),
+                                                            8),
                                                   ),
                                                   filled: true,
                                                   fillColor:
@@ -340,14 +337,14 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 10.0, 0.0, 0.0),
+                                      0, 10, 0, 0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            3.0, 5.0, 0.0, 0.0),
+                                            3, 5, 0, 0),
                                         child: Container(
                                           width:
                                               MediaQuery.sizeOf(context).width *
@@ -362,8 +359,7 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                             children: [
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 0.0, 5.0),
+                                                    .fromSTEB(0, 0, 0, 5),
                                                 child: SelectionArea(
                                                     child: Text(
                                                   FFLocalizations.of(context)
@@ -397,7 +393,7 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                                     EasyDebounce.debounce(
                                                   '_model.textController2',
                                                   Duration(milliseconds: 2000),
-                                                  () => setState(() {}),
+                                                  () => safeSetState(() {}),
                                                 ),
                                                 autofocus: true,
                                                 obscureText: false,
@@ -435,7 +431,7 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            8.0),
+                                                            8),
                                                   ),
                                                   focusedBorder:
                                                       OutlineInputBorder(
@@ -445,7 +441,7 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            8.0),
+                                                            8),
                                                   ),
                                                   errorBorder:
                                                       OutlineInputBorder(
@@ -455,7 +451,7 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            8.0),
+                                                            8),
                                                   ),
                                                   focusedErrorBorder:
                                                       OutlineInputBorder(
@@ -465,7 +461,7 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            8.0),
+                                                            8),
                                                   ),
                                                   filled: true,
                                                   fillColor:
@@ -502,14 +498,14 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 10.0, 0.0, 0.0),
+                                      0, 10, 0, 0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            3.0, 0.0, 0.0, 0.0),
+                                            3, 0, 0, 0),
                                         child: Container(
                                           width:
                                               MediaQuery.sizeOf(context).width *
@@ -530,7 +526,7 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                                     EasyDebounce.debounce(
                                                   '_model.textController3',
                                                   Duration(milliseconds: 2000),
-                                                  () => setState(() {}),
+                                                  () => safeSetState(() {}),
                                                 ),
                                                 autofocus: true,
                                                 readOnly: true,
@@ -543,7 +539,7 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                                         fontFamily: 'Lora',
                                                         color:
                                                             Color(0xFFB6B9AC),
-                                                        fontSize: 16.0,
+                                                        fontSize: 16,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.normal,
@@ -560,7 +556,7 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            8.0),
+                                                            8),
                                                   ),
                                                   focusedBorder:
                                                       OutlineInputBorder(
@@ -570,7 +566,7 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            8.0),
+                                                            8),
                                                   ),
                                                   errorBorder:
                                                       OutlineInputBorder(
@@ -580,7 +576,7 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            8.0),
+                                                            8),
                                                   ),
                                                   focusedErrorBorder:
                                                       OutlineInputBorder(
@@ -590,7 +586,7 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            8.0),
+                                                            8),
                                                   ),
                                                   filled: true,
                                                   fillColor:
@@ -628,7 +624,7 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                 if (false)
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 10.0, 0.0, 0.0),
+                                        0, 10, 0, 0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -637,7 +633,7 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  3.0, 0.0, 0.0, 0.0),
+                                                  3, 0, 0, 0),
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
@@ -659,14 +655,14 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                                     if (!snapshot.hasData) {
                                                       return Center(
                                                         child: SizedBox(
-                                                          width: 40.0,
-                                                          height: 40.0,
+                                                          width: 40,
+                                                          height: 40,
                                                           child:
                                                               SpinKitFadingCircle(
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .primary,
-                                                            size: 40.0,
+                                                            size: 40,
                                                           ),
                                                         ),
                                                       );
@@ -687,9 +683,9 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                                                   (e) => e.name)
                                                               .toList(),
                                                       onChanged: (val) =>
-                                                          setState(() => _model
-                                                                  .dropDownValue =
-                                                              val),
+                                                          safeSetState(() =>
+                                                              _model.dropDownValue =
+                                                                  val),
                                                       width: MediaQuery.sizeOf(
                                                                   context)
                                                               .width *
@@ -727,20 +723,17 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primaryText,
-                                                        size: 15.0,
+                                                        size: 15,
                                                       ),
-                                                      elevation: 2.0,
+                                                      elevation: 2,
                                                       borderColor:
                                                           Colors.transparent,
-                                                      borderWidth: 0.0,
-                                                      borderRadius: 0.0,
+                                                      borderWidth: 0,
+                                                      borderRadius: 0,
                                                       margin:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  12.0,
-                                                                  4.0,
-                                                                  12.0,
-                                                                  4.0),
+                                                                  12, 4, 12, 4),
                                                       hidesUnderline: true,
                                                       isSearchable: false,
                                                       isMultiSelect: false,
@@ -772,7 +765,7 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                 if (false)
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 30.0, 0.0, 0.0),
+                                        0, 30, 0, 0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -783,7 +776,7 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                           androidGoogleMapsApiKey: '',
                                           webGoogleMapsApiKey: '',
                                           onSelect: (place) async {
-                                            setState(() => _model
+                                            safeSetState(() => _model
                                                 .placePickerValue = place);
                                           },
                                           defaultText:
@@ -795,11 +788,11 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                             Icons.place,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            size: 18.0,
+                                            size: 18,
                                           ),
                                           buttonOptions: FFButtonOptions(
-                                            width: 180.0,
-                                            height: 40.0,
+                                            width: 180,
+                                            height: 40,
                                             color: FlutterFlowTheme.of(context)
                                                 .secondary,
                                             textStyle:
@@ -824,10 +817,10 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                                     ),
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
-                                              width: 1.0,
+                                              width: 1,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(12.0),
+                                                BorderRadius.circular(12),
                                           ),
                                         ),
                                       ],
@@ -842,8 +835,8 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                             decoration: BoxDecoration(),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 10.0, 0.0, 0.0),
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                             child: StreamBuilder<List<BusinesssMasterRecord>>(
                               stream: queryBusinesssMasterRecord(
                                 queryBuilder: (businesssMasterRecord) =>
@@ -858,12 +851,12 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                 if (!snapshot.hasData) {
                                   return Center(
                                     child: SizedBox(
-                                      width: 40.0,
-                                      height: 40.0,
+                                      width: 40,
+                                      height: 40,
                                       child: SpinKitFadingCircle(
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
-                                        size: 40.0,
+                                        size: 40,
                                       ),
                                     ),
                                   );
@@ -883,11 +876,11 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                   height:
                                       MediaQuery.sizeOf(context).height * 0.05,
                                   decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(5.0),
+                                    borderRadius: BorderRadius.circular(5),
                                   ),
                                   child: Container(
-                                    width: 100.0,
-                                    height: 100.0,
+                                    width: 100,
+                                    height: 100,
                                     decoration: BoxDecoration(),
                                     child:
                                         StreamBuilder<List<UserProfileRecord>>(
@@ -905,13 +898,13 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                         if (!snapshot.hasData) {
                                           return Center(
                                             child: SizedBox(
-                                              width: 40.0,
-                                              height: 40.0,
+                                              width: 40,
+                                              height: 40,
                                               child: SpinKitFadingCircle(
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
-                                                size: 40.0,
+                                                size: 40,
                                               ),
                                             ),
                                           );
@@ -1048,21 +1041,21 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                               }.withoutNulls,
                                             );
 
-                                            setState(() {});
+                                            safeSetState(() {});
                                           },
                                           text: FFLocalizations.of(context)
                                               .getText(
                                             'kt636jrq' /* Save */,
                                           ),
                                           options: FFButtonOptions(
-                                            width: 130.0,
-                                            height: 35.0,
+                                            width: 130,
+                                            height: 35,
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
+                                                    0, 0, 0, 0),
                                             iconPadding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
+                                                    0, 0, 0, 0),
                                             color: FlutterFlowTheme.of(context)
                                                 .parkingSecondaryBackground,
                                             textStyle:
@@ -1084,12 +1077,12 @@ class _AddOutletPageWidgetState extends State<AddOutletPageWidget> {
                                                                       context)
                                                                   .titleMediumFamily),
                                                     ),
-                                            elevation: 2.0,
+                                            elevation: 2,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(5.0),
+                                                BorderRadius.circular(5),
                                           ),
                                         );
                                       },

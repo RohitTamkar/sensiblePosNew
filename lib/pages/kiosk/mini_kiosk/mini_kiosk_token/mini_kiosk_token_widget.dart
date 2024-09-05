@@ -32,10 +32,10 @@ class _MiniKioskTokenWidgetState extends State<MiniKioskTokenWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       FFAppState().tokenNo = 1;
-      setState(() {});
+      safeSetState(() {});
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -60,9 +60,9 @@ class _MiniKioskTokenWidgetState extends State<MiniKioskTokenWidget> {
             body: SafeArea(
               top: true,
               child: Align(
-                alignment: AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0, 0),
                 child: Transform.rotate(
-                  angle: 90.0 * (math.pi / 180),
+                  angle: 90 * (math.pi / 180),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -75,11 +75,10 @@ class _MiniKioskTokenWidgetState extends State<MiniKioskTokenWidget> {
                           'dua10qwt' /* printer setting */,
                         ),
                         options: FFButtonOptions(
-                          height: 40.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              24.0, 0.0, 24.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
+                          height: 40,
+                          padding: EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
+                          iconPadding:
+                              EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle: FlutterFlowTheme.of(context)
                               .titleSmall
@@ -92,12 +91,12 @@ class _MiniKioskTokenWidgetState extends State<MiniKioskTokenWidget> {
                                     FlutterFlowTheme.of(context)
                                         .titleSmallFamily),
                               ),
-                          elevation: 3.0,
+                          elevation: 3,
                           borderSide: BorderSide(
                             color: Colors.transparent,
-                            width: 1.0,
+                            width: 1,
                           ),
-                          borderRadius: BorderRadius.circular(8.0),
+                          borderRadius: BorderRadius.circular(8),
                         ),
                       ),
                       FFButtonWidget(
@@ -111,7 +110,7 @@ class _MiniKioskTokenWidgetState extends State<MiniKioskTokenWidget> {
                           if (FFAppState().printerName != null &&
                               FFAppState().printerName != '') {
                             FFAppState().tokenNo = FFAppState().tokenNo + 1;
-                            setState(() {});
+                            safeSetState(() {});
                             _model.device = await actions.newCustomAction(
                               FFAppState().printerIndex,
                             );
@@ -142,17 +141,16 @@ class _MiniKioskTokenWidgetState extends State<MiniKioskTokenWidget> {
                             );
                           }
 
-                          setState(() {});
+                          safeSetState(() {});
                         },
                         text: FFLocalizations.of(context).getText(
                           'pushn5gf' /* Print Token */,
                         ),
                         options: FFButtonOptions(
-                          height: 40.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              24.0, 0.0, 24.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
+                          height: 40,
+                          padding: EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
+                          iconPadding:
+                              EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle: FlutterFlowTheme.of(context)
                               .titleSmall
@@ -165,12 +163,12 @@ class _MiniKioskTokenWidgetState extends State<MiniKioskTokenWidget> {
                                     FlutterFlowTheme.of(context)
                                         .titleSmallFamily),
                               ),
-                          elevation: 3.0,
+                          elevation: 3,
                           borderSide: BorderSide(
                             color: Colors.transparent,
-                            width: 1.0,
+                            width: 1,
                           ),
-                          borderRadius: BorderRadius.circular(8.0),
+                          borderRadius: BorderRadius.circular(8),
                         ),
                       ),
                     ],

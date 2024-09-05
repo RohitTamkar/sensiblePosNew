@@ -30,7 +30,7 @@ class _PhoneAuthPageWidgetState extends State<PhoneAuthPageWidget> {
     _model.textFieldNumberFocusNode ??= FocusNode();
 
     authManager.handlePhoneAuthStateChanges(context);
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -63,19 +63,18 @@ class _PhoneAuthPageWidgetState extends State<PhoneAuthPageWidget> {
                       width: double.infinity,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primaryBackground,
-                        borderRadius: BorderRadius.circular(0.0),
+                        borderRadius: BorderRadius.circular(0),
                       ),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            25.0, 60.0, 25.0, 60.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(25, 60, 25, 60),
                         child: SingleChildScrollView(
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 10.0),
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
                                   focusColor: Colors.transparent,
@@ -88,8 +87,8 @@ class _PhoneAuthPageWidgetState extends State<PhoneAuthPageWidget> {
                                     context.pushNamed('welcomeScreenNew');
                                   },
                                   child: Container(
-                                    width: 40.0,
-                                    height: 40.0,
+                                    width: 40,
+                                    height: 40,
                                     decoration: BoxDecoration(
                                       image: DecorationImage(
                                         fit: BoxFit.cover,
@@ -102,8 +101,8 @@ class _PhoneAuthPageWidgetState extends State<PhoneAuthPageWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 5.0),
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -120,7 +119,7 @@ class _PhoneAuthPageWidgetState extends State<PhoneAuthPageWidget> {
                                                     .displaySmallFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .customColor1,
-                                            fontSize: 55.0,
+                                            fontSize: 55,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.normal,
                                             useGoogleFonts: GoogleFonts.asMap()
@@ -134,7 +133,7 @@ class _PhoneAuthPageWidgetState extends State<PhoneAuthPageWidget> {
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 10.0, 0.0, 15.0),
+                                    10, 10, 0, 15),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
                                     '9ixzswmn' /* Manage Billing, Inventory & Fr... */,
@@ -145,7 +144,7 @@ class _PhoneAuthPageWidgetState extends State<PhoneAuthPageWidget> {
                                       .override(
                                         fontFamily: FlutterFlowTheme.of(context)
                                             .headlineSmallFamily,
-                                        fontSize: 14.0,
+                                        fontSize: 14,
                                         letterSpacing: 0.0,
                                         useGoogleFonts: GoogleFonts.asMap()
                                             .containsKey(
@@ -155,8 +154,8 @@ class _PhoneAuthPageWidgetState extends State<PhoneAuthPageWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 20.0, 0.0, 0.0),
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                                 child: Container(
                                   width: MediaQuery.sizeOf(context).width * 0.9,
                                   decoration: BoxDecoration(),
@@ -171,7 +170,7 @@ class _PhoneAuthPageWidgetState extends State<PhoneAuthPageWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 15.0),
+                                                  0, 0, 0, 15),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.min,
                                             mainAxisAlignment:
@@ -200,13 +199,13 @@ class _PhoneAuthPageWidgetState extends State<PhoneAuthPageWidget> {
                                                     ],
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            8.0),
+                                                            8),
                                                   ),
                                                   child: Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(10.0, 2.0,
-                                                                10.0, 2.0),
+                                                            .fromSTEB(
+                                                                10, 2, 10, 2),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -217,15 +216,15 @@ class _PhoneAuthPageWidgetState extends State<PhoneAuthPageWidget> {
                                                         Align(
                                                           alignment:
                                                               AlignmentDirectional(
-                                                                  0.0, 0.0),
+                                                                  0, 0),
                                                           child: Padding(
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        10.0,
-                                                                        0.0),
+                                                                        0,
+                                                                        0,
+                                                                        10,
+                                                                        0),
                                                             child: Text(
                                                               FFLocalizations.of(
                                                                       context)
@@ -291,16 +290,16 @@ class _PhoneAuthPageWidgetState extends State<PhoneAuthPageWidget> {
                                                                         .only(
                                                                   bottomLeft: Radius
                                                                       .circular(
-                                                                          0.0),
+                                                                          0),
                                                                   bottomRight: Radius
                                                                       .circular(
-                                                                          8.0),
+                                                                          8),
                                                                   topLeft: Radius
                                                                       .circular(
-                                                                          0.0),
+                                                                          0),
                                                                   topRight: Radius
                                                                       .circular(
-                                                                          8.0),
+                                                                          8),
                                                                 ),
                                                               ),
                                                               focusedBorder:
@@ -316,16 +315,16 @@ class _PhoneAuthPageWidgetState extends State<PhoneAuthPageWidget> {
                                                                         .only(
                                                                   bottomLeft: Radius
                                                                       .circular(
-                                                                          0.0),
+                                                                          0),
                                                                   bottomRight: Radius
                                                                       .circular(
-                                                                          8.0),
+                                                                          8),
                                                                   topLeft: Radius
                                                                       .circular(
-                                                                          0.0),
+                                                                          0),
                                                                   topRight: Radius
                                                                       .circular(
-                                                                          8.0),
+                                                                          8),
                                                                 ),
                                                               ),
                                                               errorBorder:
@@ -341,16 +340,16 @@ class _PhoneAuthPageWidgetState extends State<PhoneAuthPageWidget> {
                                                                         .only(
                                                                   bottomLeft: Radius
                                                                       .circular(
-                                                                          0.0),
+                                                                          0),
                                                                   bottomRight: Radius
                                                                       .circular(
-                                                                          8.0),
+                                                                          8),
                                                                   topLeft: Radius
                                                                       .circular(
-                                                                          0.0),
+                                                                          0),
                                                                   topRight: Radius
                                                                       .circular(
-                                                                          8.0),
+                                                                          8),
                                                                 ),
                                                               ),
                                                               focusedErrorBorder:
@@ -366,16 +365,16 @@ class _PhoneAuthPageWidgetState extends State<PhoneAuthPageWidget> {
                                                                         .only(
                                                                   bottomLeft: Radius
                                                                       .circular(
-                                                                          0.0),
+                                                                          0),
                                                                   bottomRight: Radius
                                                                       .circular(
-                                                                          8.0),
+                                                                          8),
                                                                   topLeft: Radius
                                                                       .circular(
-                                                                          0.0),
+                                                                          0),
                                                                   topRight: Radius
                                                                       .circular(
-                                                                          8.0),
+                                                                          8),
                                                                 ),
                                                               ),
                                                               filled: true,
@@ -400,7 +399,7 @@ class _PhoneAuthPageWidgetState extends State<PhoneAuthPageWidget> {
                                                                 ),
                                                             keyboardType:
                                                                 const TextInputType
-                                                                    .numberWithOptions(
+                                                                        .numberWithOptions(
                                                                     signed:
                                                                         true,
                                                                     decimal:
@@ -422,7 +421,7 @@ class _PhoneAuthPageWidgetState extends State<PhoneAuthPageWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 25.0, 0.0, 0.0),
+                                                  0, 25, 0, 0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -433,7 +432,7 @@ class _PhoneAuthPageWidgetState extends State<PhoneAuthPageWidget> {
                                                   FFAppState()
                                                           .currentMobileString =
                                                       '+91${_model.textFieldNumberTextController.text}';
-                                                  setState(() {});
+                                                  safeSetState(() {});
                                                   final phoneNumberVal =
                                                       FFAppState()
                                                           .currentMobileString;
@@ -479,15 +478,13 @@ class _PhoneAuthPageWidgetState extends State<PhoneAuthPageWidget> {
                                                   '70xzwnwb' /* Get OTP */,
                                                 ),
                                                 options: FFButtonOptions(
-                                                  width: 180.0,
-                                                  height: 45.0,
+                                                  width: 180,
+                                                  height: 45,
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 0.0, 0.0),
+                                                      .fromSTEB(0, 0, 0, 0),
                                                   iconPadding:
                                                       EdgeInsetsDirectional
-                                                          .fromSTEB(0.0, 0.0,
-                                                              0.0, 0.0),
+                                                          .fromSTEB(0, 0, 0, 0),
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .parkingSecondaryBackground,
@@ -501,7 +498,7 @@ class _PhoneAuthPageWidgetState extends State<PhoneAuthPageWidget> {
                                                                         context)
                                                                     .titleSmallFamily,
                                                             color: Colors.white,
-                                                            fontSize: 14.0,
+                                                            fontSize: 14,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.w600,
@@ -512,14 +509,13 @@ class _PhoneAuthPageWidgetState extends State<PhoneAuthPageWidget> {
                                                                             context)
                                                                         .titleSmallFamily),
                                                           ),
-                                                  elevation: 2.0,
+                                                  elevation: 2,
                                                   borderSide: BorderSide(
                                                     color: Colors.transparent,
-                                                    width: 1.0,
+                                                    width: 1,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
+                                                      BorderRadius.circular(8),
                                                 ),
                                               ),
                                             ],

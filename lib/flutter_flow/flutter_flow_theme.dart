@@ -228,105 +228,105 @@ class MobileTypography extends Typography {
         'Numans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 29.0,
+        fontSize: 29,
       );
   String get displayMediumFamily => 'Numans';
   TextStyle get displayMedium => GoogleFonts.getFont(
         'Numans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 24.0,
+        fontSize: 24,
       );
   String get displaySmallFamily => 'Numans';
   TextStyle get displaySmall => GoogleFonts.getFont(
         'Numans',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 24.0,
+        fontSize: 24,
       );
   String get headlineLargeFamily => 'Numans';
   TextStyle get headlineLarge => GoogleFonts.getFont(
         'Numans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 20.0,
+        fontSize: 20,
       );
   String get headlineMediumFamily => 'Numans';
   TextStyle get headlineMedium => GoogleFonts.getFont(
         'Numans',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 20.0,
+        fontSize: 20,
       );
   String get headlineSmallFamily => 'Numans';
   TextStyle get headlineSmall => GoogleFonts.getFont(
         'Numans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 17.0,
+        fontSize: 17,
       );
   String get titleLargeFamily => 'Numans';
   TextStyle get titleLarge => GoogleFonts.getFont(
         'Numans',
         color: theme.secondaryText,
         fontWeight: FontWeight.w500,
-        fontSize: 17.0,
+        fontSize: 17,
       );
   String get titleMediumFamily => 'Numans';
   TextStyle get titleMedium => GoogleFonts.getFont(
         'Numans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 15.0,
+        fontSize: 15,
       );
   String get titleSmallFamily => 'Numans';
   TextStyle get titleSmall => GoogleFonts.getFont(
         'Numans',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 15.0,
+        fontSize: 15,
       );
   String get labelLargeFamily => 'Numans';
   TextStyle get labelLarge => GoogleFonts.getFont(
         'Numans',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
-        fontSize: 14.0,
+        fontSize: 14,
       );
   String get labelMediumFamily => 'Numans';
   TextStyle get labelMedium => GoogleFonts.getFont(
         'Numans',
         color: theme.secondaryText,
         fontWeight: FontWeight.w500,
-        fontSize: 14.0,
+        fontSize: 14,
       );
   String get labelSmallFamily => 'Numans';
   TextStyle get labelSmall => GoogleFonts.getFont(
         'Numans',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
-        fontSize: 12.0,
+        fontSize: 12,
       );
   String get bodyLargeFamily => 'Numans';
   TextStyle get bodyLarge => GoogleFonts.getFont(
         'Numans',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 12.0,
+        fontSize: 12,
       );
   String get bodyMediumFamily => 'Numans';
   TextStyle get bodyMedium => GoogleFonts.getFont(
         'Numans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 10.0,
+        fontSize: 10,
       );
   String get bodySmallFamily => 'Numans';
   TextStyle get bodySmall => GoogleFonts.getFont(
         'Numans',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 10.0,
+        fontSize: 10,
       );
 }
 
@@ -340,105 +340,105 @@ class TabletTypography extends Typography {
         'Numans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 29.0,
+        fontSize: 29,
       );
   String get displayMediumFamily => 'Numans';
   TextStyle get displayMedium => GoogleFonts.getFont(
         'Numans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 24.0,
+        fontSize: 24,
       );
   String get displaySmallFamily => 'Numans';
   TextStyle get displaySmall => GoogleFonts.getFont(
         'Numans',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 24.0,
+        fontSize: 24,
       );
   String get headlineLargeFamily => 'Numans';
   TextStyle get headlineLarge => GoogleFonts.getFont(
         'Numans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 20.0,
+        fontSize: 20,
       );
   String get headlineMediumFamily => 'Numans';
   TextStyle get headlineMedium => GoogleFonts.getFont(
         'Numans',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 20.0,
+        fontSize: 20,
       );
   String get headlineSmallFamily => 'Numans';
   TextStyle get headlineSmall => GoogleFonts.getFont(
         'Numans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 17.0,
+        fontSize: 17,
       );
   String get titleLargeFamily => 'Numans';
   TextStyle get titleLarge => GoogleFonts.getFont(
         'Numans',
         color: theme.secondaryText,
         fontWeight: FontWeight.w500,
-        fontSize: 17.0,
+        fontSize: 17,
       );
   String get titleMediumFamily => 'Numans';
   TextStyle get titleMedium => GoogleFonts.getFont(
         'Numans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 15.0,
+        fontSize: 15,
       );
   String get titleSmallFamily => 'Numans';
   TextStyle get titleSmall => GoogleFonts.getFont(
         'Numans',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 15.0,
+        fontSize: 15,
       );
   String get labelLargeFamily => 'Numans';
   TextStyle get labelLarge => GoogleFonts.getFont(
         'Numans',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
-        fontSize: 14.0,
+        fontSize: 14,
       );
   String get labelMediumFamily => 'Numans';
   TextStyle get labelMedium => GoogleFonts.getFont(
         'Numans',
         color: theme.secondaryText,
         fontWeight: FontWeight.w500,
-        fontSize: 14.0,
+        fontSize: 14,
       );
   String get labelSmallFamily => 'Numans';
   TextStyle get labelSmall => GoogleFonts.getFont(
         'Numans',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
-        fontSize: 12.0,
+        fontSize: 12,
       );
   String get bodyLargeFamily => 'Numans';
   TextStyle get bodyLarge => GoogleFonts.getFont(
         'Numans',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 12.0,
+        fontSize: 12,
       );
   String get bodyMediumFamily => 'Numans';
   TextStyle get bodyMedium => GoogleFonts.getFont(
         'Numans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 10.0,
+        fontSize: 10,
       );
   String get bodySmallFamily => 'Numans';
   TextStyle get bodySmall => GoogleFonts.getFont(
         'Numans',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 10.0,
+        fontSize: 10,
       );
 }
 
@@ -452,105 +452,105 @@ class DesktopTypography extends Typography {
         'Numans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 34.0,
+        fontSize: 34,
       );
   String get displayMediumFamily => 'Numans';
   TextStyle get displayMedium => GoogleFonts.getFont(
         'Numans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 28.0,
+        fontSize: 28,
       );
   String get displaySmallFamily => 'Numans';
   TextStyle get displaySmall => GoogleFonts.getFont(
         'Numans',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 28.0,
+        fontSize: 28,
       );
   String get headlineLargeFamily => 'Numans';
   TextStyle get headlineLarge => GoogleFonts.getFont(
         'Numans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 24.0,
+        fontSize: 24,
       );
   String get headlineMediumFamily => 'Numans';
   TextStyle get headlineMedium => GoogleFonts.getFont(
         'Numans',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 24.0,
+        fontSize: 24,
       );
   String get headlineSmallFamily => 'Numans';
   TextStyle get headlineSmall => GoogleFonts.getFont(
         'Numans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 20.0,
+        fontSize: 20,
       );
   String get titleLargeFamily => 'Numans';
   TextStyle get titleLarge => GoogleFonts.getFont(
         'Numans',
         color: theme.secondaryText,
         fontWeight: FontWeight.w500,
-        fontSize: 20.0,
+        fontSize: 20,
       );
   String get titleMediumFamily => 'Numans';
   TextStyle get titleMedium => GoogleFonts.getFont(
         'Numans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 18.0,
+        fontSize: 18,
       );
   String get titleSmallFamily => 'Numans';
   TextStyle get titleSmall => GoogleFonts.getFont(
         'Numans',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 18.0,
+        fontSize: 18,
       );
   String get labelLargeFamily => 'Numans';
   TextStyle get labelLarge => GoogleFonts.getFont(
         'Numans',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
-        fontSize: 16.0,
+        fontSize: 16,
       );
   String get labelMediumFamily => 'Numans';
   TextStyle get labelMedium => GoogleFonts.getFont(
         'Numans',
         color: theme.secondaryText,
         fontWeight: FontWeight.w500,
-        fontSize: 16.0,
+        fontSize: 16,
       );
   String get labelSmallFamily => 'Numans';
   TextStyle get labelSmall => GoogleFonts.getFont(
         'Numans',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
-        fontSize: 14.0,
+        fontSize: 14,
       );
   String get bodyLargeFamily => 'Numans';
   TextStyle get bodyLarge => GoogleFonts.getFont(
         'Numans',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 14.0,
+        fontSize: 14,
       );
   String get bodyMediumFamily => 'Numans';
   TextStyle get bodyMedium => GoogleFonts.getFont(
         'Numans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 12.0,
+        fontSize: 12,
       );
   String get bodySmallFamily => 'Numans';
   TextStyle get bodySmall => GoogleFonts.getFont(
         'Numans',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
-        fontSize: 12.0,
+        fontSize: 12,
       );
 }
 

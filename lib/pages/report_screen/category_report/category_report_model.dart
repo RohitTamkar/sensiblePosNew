@@ -18,7 +18,6 @@ import 'package:provider/provider.dart';
 class CategoryReportModel extends FlutterFlowModel<CategoryReportWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - checkInternetConnection] action in CategoryReport widget.
   bool? netConn;
   // Stores action output result for [Custom Action - productSaleReport] action in CategoryReport widget.

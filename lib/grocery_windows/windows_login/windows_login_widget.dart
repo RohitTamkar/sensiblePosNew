@@ -56,7 +56,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
     _model.textController2 ??= TextEditingController();
     _model.textFieldFocusNode2 ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {
           _model.textController1?.text = dateTimeFormat(
             "MMMEd",
             getCurrentTimestamp,
@@ -89,7 +89,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0, 0),
                   child: Container(
                     width: MediaQuery.sizeOf(context).width * 0.6,
                     height: MediaQuery.sizeOf(context).height * 0.65,
@@ -97,71 +97,71 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                       boxShadow: [
                         BoxShadow(
-                          blurRadius: 6.0,
+                          blurRadius: 6,
                           color: Color(0x80000000),
                           offset: Offset(
-                            4.0,
-                            4.0,
+                            4,
+                            4,
                           ),
                         )
                       ],
-                      borderRadius: BorderRadius.circular(20.0),
+                      borderRadius: BorderRadius.circular(20),
                       border: Border.all(
                         color: Color(0xFF518CFF),
-                        width: 10.0,
+                        width: 10,
                       ),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.all(10.0),
+                      padding: EdgeInsets.all(10),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Expanded(
                             child: Container(
-                              width: 100.0,
+                              width: 100,
                               height: double.infinity,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
                               ),
                               child: Padding(
-                                padding: EdgeInsets.all(15.0),
+                                padding: EdgeInsets.all(15),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Expanded(
                                       child: Container(
                                         width: double.infinity,
-                                        height: 180.0,
+                                        height: 180,
                                         child: CarouselSlider(
                                           items: [
                                             ClipRRect(
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(8),
                                               child: Image.asset(
                                                 'assets/images/20547283_6310507.jpg',
-                                                width: 300.0,
-                                                height: 200.0,
+                                                width: 300,
+                                                height: 200,
                                                 fit: BoxFit.cover,
                                               ),
                                             ),
                                             ClipRRect(
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(8),
                                               child: Image.asset(
                                                 'assets/images/12977755_5107070.jpg',
-                                                width: 300.0,
-                                                height: 200.0,
+                                                width: 300,
+                                                height: 200,
                                                 fit: BoxFit.cover,
                                               ),
                                             ),
                                             ClipRRect(
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(8),
                                               child: Image.asset(
                                                 'assets/images/8961401_4022230.jpg',
-                                                width: 300.0,
-                                                height: 200.0,
+                                                width: 300,
+                                                height: 200,
                                                 fit: BoxFit.cover,
                                               ),
                                             ),
@@ -171,7 +171,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                   CarouselController(),
                                           options: CarouselOptions(
                                             initialPage: 1,
-                                            viewportFraction: 1.0,
+                                            viewportFraction: 1,
                                             disableCenter: true,
                                             enlargeCenterPage: true,
                                             enlargeFactor: 0.25,
@@ -219,12 +219,12 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                 if (!snapshot.hasData) {
                                   return Center(
                                     child: SizedBox(
-                                      width: 40.0,
-                                      height: 40.0,
+                                      width: 40,
+                                      height: 40,
                                       child: SpinKitFadingCircle(
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
-                                        size: 40.0,
+                                        size: 40,
                                       ),
                                     ),
                                   );
@@ -241,14 +241,14 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                         : null;
 
                                 return Container(
-                                  width: 100.0,
+                                  width: 100,
                                   height: double.infinity,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsets.all(5.0),
+                                    padding: EdgeInsets.all(5),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -257,14 +257,13 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 5.0),
+                                                  0, 0, 0, 5),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 0.0, 5.0),
+                                                    .fromSTEB(0, 0, 0, 5),
                                                 child: TextFormField(
                                                   controller:
                                                       _model.textController1,
@@ -308,8 +307,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                               ),
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 0.0, 5.0),
+                                                    .fromSTEB(0, 0, 0, 5),
                                                 child: Container(
                                                   decoration: BoxDecoration(),
                                                   child: Column(
@@ -319,7 +317,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                       Align(
                                                         alignment:
                                                             AlignmentDirectional(
-                                                                0.0, 0.0),
+                                                                0, 0),
                                                         child: Text(
                                                           valueOrDefault<
                                                               String>(
@@ -339,7 +337,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
-                                                                fontSize: 15.0,
+                                                                fontSize: 15,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 useGoogleFonts: GoogleFonts
@@ -382,21 +380,20 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 5.0),
+                                                  0, 0, 0, 5),
                                           child: Container(
-                                            width: 300.0,
+                                            width: 300,
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
                                                 0.3,
                                             decoration: BoxDecoration(),
                                             child: Stack(
-                                              alignment: AlignmentDirectional(
-                                                  0.0, -1.0),
+                                              alignment:
+                                                  AlignmentDirectional(0, -1),
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 0.0, 5.0),
+                                                      .fromSTEB(0, 0, 0, 5),
                                                   child: StreamBuilder<
                                                       List<UserProfileRecord>>(
                                                     stream:
@@ -432,14 +429,14 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                       if (!snapshot.hasData) {
                                                         return Center(
                                                           child: SizedBox(
-                                                            width: 40.0,
-                                                            height: 40.0,
+                                                            width: 40,
+                                                            height: 40,
                                                             child:
                                                                 SpinKitFadingCircle(
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .primary,
-                                                              size: 40.0,
+                                                              size: 40,
                                                             ),
                                                           ),
                                                         );
@@ -449,7 +446,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                           snapshot.data!;
 
                                                       return Container(
-                                                        width: 275.0,
+                                                        width: 275,
                                                         height:
                                                             MediaQuery.sizeOf(
                                                                         context)
@@ -468,10 +465,10 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          5.0),
+                                                                          0,
+                                                                          0,
+                                                                          0,
+                                                                          5),
                                                               child:
                                                                   FlutterFlowDropDown<
                                                                       String>(
@@ -485,7 +482,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                         e.name)
                                                                     .toList(),
                                                                 onChanged: (val) =>
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.dropDownValue =
                                                                             val),
                                                                 width: double
@@ -520,26 +517,26 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryText,
-                                                                  size: 16.0,
+                                                                  size: 16,
                                                                 ),
                                                                 fillColor: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryBackground,
-                                                                elevation: 2.0,
+                                                                elevation: 2,
                                                                 borderColor:
                                                                     FlutterFlowTheme.of(
                                                                             context)
                                                                         .customColor2,
-                                                                borderWidth:
-                                                                    0.0,
+                                                                borderWidth: 0,
                                                                 borderRadius:
-                                                                    10.0,
-                                                                margin: EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        12.0,
-                                                                        4.0,
-                                                                        12.0,
-                                                                        4.0),
+                                                                    10,
+                                                                margin:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            12,
+                                                                            4,
+                                                                            12,
+                                                                            4),
                                                                 hidesUnderline:
                                                                     true,
                                                                 isSearchable:
@@ -552,10 +549,10 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          5.0),
+                                                                          0,
+                                                                          0,
+                                                                          0,
+                                                                          5),
                                                               child:
                                                                   TextFormField(
                                                                 controller: _model
@@ -591,12 +588,11 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .customColor2,
-                                                                      width:
-                                                                          1.0,
+                                                                      width: 1,
                                                                     ),
                                                                     borderRadius:
                                                                         BorderRadius.circular(
-                                                                            10.0),
+                                                                            10),
                                                                   ),
                                                                   focusedBorder:
                                                                       OutlineInputBorder(
@@ -604,12 +600,11 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                         BorderSide(
                                                                       color: Color(
                                                                           0x00000000),
-                                                                      width:
-                                                                          1.0,
+                                                                      width: 1,
                                                                     ),
                                                                     borderRadius:
                                                                         BorderRadius.circular(
-                                                                            10.0),
+                                                                            10),
                                                                   ),
                                                                   errorBorder:
                                                                       OutlineInputBorder(
@@ -617,12 +612,11 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                         BorderSide(
                                                                       color: Color(
                                                                           0x00000000),
-                                                                      width:
-                                                                          1.0,
+                                                                      width: 1,
                                                                     ),
                                                                     borderRadius:
                                                                         BorderRadius.circular(
-                                                                            10.0),
+                                                                            10),
                                                                   ),
                                                                   focusedErrorBorder:
                                                                       OutlineInputBorder(
@@ -630,19 +624,19 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                         BorderSide(
                                                                       color: Color(
                                                                           0x00000000),
-                                                                      width:
-                                                                          1.0,
+                                                                      width: 1,
                                                                     ),
                                                                     borderRadius:
                                                                         BorderRadius.circular(
-                                                                            10.0),
+                                                                            10),
                                                                   ),
                                                                   contentPadding:
-                                                                      EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          15.0,
-                                                                          0.0,
-                                                                          15.0),
+                                                                      EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              0,
+                                                                              15,
+                                                                              0,
+                                                                              15),
                                                                 ),
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
@@ -681,10 +675,10 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            2.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            2,
+                                                                            0),
                                                                         child:
                                                                             Column(
                                                                           mainAxisSize:
@@ -694,7 +688,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                           children: [
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 2, 3),
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     _model.one = await actions.setQuickPin(
@@ -703,35 +697,35 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                     FFAppState().quickPin = _model.one!;
                                                                                     FFAppState().update(() {});
 
-                                                                                    setState(() {});
+                                                                                    safeSetState(() {});
                                                                                   },
                                                                                   text: FFLocalizations.of(context).getText(
                                                                                     'cmcw3lt9' /* 1 */,
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     width: double.infinity,
-                                                                                    height: 33.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    height: 33,
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).labelLarge.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                                           letterSpacing: 0.0,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
                                                                                         ),
-                                                                                    elevation: 2.0,
+                                                                                    elevation: 2,
                                                                                     borderSide: BorderSide(
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      width: 2.0,
+                                                                                      width: 2,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                    borderRadius: BorderRadius.circular(8),
                                                                                   ),
                                                                                 ),
                                                                               ),
                                                                             ),
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 2, 3),
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     _model.four = await actions.setQuickPin(
@@ -740,35 +734,35 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                     FFAppState().quickPin = _model.four!;
                                                                                     FFAppState().update(() {});
 
-                                                                                    setState(() {});
+                                                                                    safeSetState(() {});
                                                                                   },
                                                                                   text: FFLocalizations.of(context).getText(
                                                                                     'xezc1w8y' /* 4 */,
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     width: double.infinity,
-                                                                                    height: 33.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    height: 33,
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                         ),
-                                                                                    elevation: 2.0,
+                                                                                    elevation: 2,
                                                                                     borderSide: BorderSide(
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      width: 2.0,
+                                                                                      width: 2,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                    borderRadius: BorderRadius.circular(8),
                                                                                   ),
                                                                                 ),
                                                                               ),
                                                                             ),
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 2, 3),
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     _model.seven = await actions.setQuickPin(
@@ -777,35 +771,35 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                     FFAppState().quickPin = _model.seven!;
                                                                                     FFAppState().update(() {});
 
-                                                                                    setState(() {});
+                                                                                    safeSetState(() {});
                                                                                   },
                                                                                   text: FFLocalizations.of(context).getText(
                                                                                     'wpo6g609' /* 7 */,
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     width: double.infinity,
-                                                                                    height: 33.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    height: 33,
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                         ),
-                                                                                    elevation: 2.0,
+                                                                                    elevation: 2,
                                                                                     borderSide: BorderSide(
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      width: 2.0,
+                                                                                      width: 2,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                    borderRadius: BorderRadius.circular(8),
                                                                                   ),
                                                                                 ),
                                                                               ),
                                                                             ),
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 0.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 2, 0),
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     FFAppState().quickPin = '';
@@ -815,25 +809,25 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                   icon: Icon(
                                                                                     Icons.backspace_sharp,
                                                                                     color: FlutterFlowTheme.of(context).primaryText,
-                                                                                    size: 16.0,
+                                                                                    size: 16,
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     width: double.infinity,
-                                                                                    height: 33.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    height: 33,
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                         ),
-                                                                                    elevation: 2.0,
+                                                                                    elevation: 2,
                                                                                     borderSide: BorderSide(
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      width: 2.0,
+                                                                                      width: 2,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                    borderRadius: BorderRadius.circular(8),
                                                                                   ),
                                                                                 ),
                                                                               ),
@@ -846,10 +840,10 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            2.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            2,
+                                                                            0),
                                                                         child:
                                                                             Column(
                                                                           mainAxisSize:
@@ -859,7 +853,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                           children: [
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     _model.two = await actions.setQuickPin(
@@ -868,35 +862,35 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                     FFAppState().quickPin = _model.two!;
                                                                                     FFAppState().update(() {});
 
-                                                                                    setState(() {});
+                                                                                    safeSetState(() {});
                                                                                   },
                                                                                   text: FFLocalizations.of(context).getText(
                                                                                     '61bsba2n' /* 2 */,
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     width: double.infinity,
-                                                                                    height: 33.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    height: 33,
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                         ),
-                                                                                    elevation: 2.0,
+                                                                                    elevation: 2,
                                                                                     borderSide: BorderSide(
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      width: 2.0,
+                                                                                      width: 2,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                    borderRadius: BorderRadius.circular(8),
                                                                                   ),
                                                                                 ),
                                                                               ),
                                                                             ),
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     _model.five = await actions.setQuickPin(
@@ -905,35 +899,35 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                     FFAppState().quickPin = _model.five!;
                                                                                     FFAppState().update(() {});
 
-                                                                                    setState(() {});
+                                                                                    safeSetState(() {});
                                                                                   },
                                                                                   text: FFLocalizations.of(context).getText(
                                                                                     '8immd7e7' /* 5 */,
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     width: double.infinity,
-                                                                                    height: 33.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    height: 33,
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                         ),
-                                                                                    elevation: 2.0,
+                                                                                    elevation: 2,
                                                                                     borderSide: BorderSide(
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      width: 2.0,
+                                                                                      width: 2,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                    borderRadius: BorderRadius.circular(8),
                                                                                   ),
                                                                                 ),
                                                                               ),
                                                                             ),
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     _model.eight = await actions.setQuickPin(
@@ -942,28 +936,28 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                     FFAppState().quickPin = _model.eight!;
                                                                                     FFAppState().update(() {});
 
-                                                                                    setState(() {});
+                                                                                    safeSetState(() {});
                                                                                   },
                                                                                   text: FFLocalizations.of(context).getText(
                                                                                     'arppljt9' /* 8 */,
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     width: double.infinity,
-                                                                                    height: 33.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    height: 33,
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                         ),
-                                                                                    elevation: 2.0,
+                                                                                    elevation: 2,
                                                                                     borderSide: BorderSide(
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      width: 2.0,
+                                                                                      width: 2,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                    borderRadius: BorderRadius.circular(8),
                                                                                   ),
                                                                                 ),
                                                                               ),
@@ -977,28 +971,28 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                   FFAppState().quickPin = _model.zero!;
                                                                                   FFAppState().update(() {});
 
-                                                                                  setState(() {});
+                                                                                  safeSetState(() {});
                                                                                 },
                                                                                 text: FFLocalizations.of(context).getText(
                                                                                   'fauta6ir' /* 0 */,
                                                                                 ),
                                                                                 options: FFButtonOptions(
                                                                                   width: double.infinity,
-                                                                                  height: 33.0,
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  height: 33,
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                   color: FlutterFlowTheme.of(context).customColor2,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
-                                                                                  elevation: 2.0,
+                                                                                  elevation: 2,
                                                                                   borderSide: BorderSide(
                                                                                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    width: 2.0,
+                                                                                    width: 2,
                                                                                   ),
-                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                  borderRadius: BorderRadius.circular(8),
                                                                                 ),
                                                                               ),
                                                                             ),
@@ -1017,7 +1011,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 3.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(2, 0, 0, 3),
                                                                               child: FFButtonWidget(
                                                                                 onPressed: () async {
                                                                                   _model.three = await actions.setQuickPin(
@@ -1026,28 +1020,28 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                   FFAppState().quickPin = _model.three!;
                                                                                   FFAppState().update(() {});
 
-                                                                                  setState(() {});
+                                                                                  safeSetState(() {});
                                                                                 },
                                                                                 text: FFLocalizations.of(context).getText(
                                                                                   'nb5yx6ek' /* 3 */,
                                                                                 ),
                                                                                 options: FFButtonOptions(
                                                                                   width: double.infinity,
-                                                                                  height: 33.0,
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  height: 33,
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                   color: FlutterFlowTheme.of(context).customColor2,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
-                                                                                  elevation: 2.0,
+                                                                                  elevation: 2,
                                                                                   borderSide: BorderSide(
                                                                                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    width: 2.0,
+                                                                                    width: 2,
                                                                                   ),
-                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                  borderRadius: BorderRadius.circular(8),
                                                                                 ),
                                                                               ),
                                                                             ),
@@ -1055,7 +1049,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 3.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(2, 0, 0, 3),
                                                                               child: FFButtonWidget(
                                                                                 onPressed: () async {
                                                                                   _model.six = await actions.setQuickPin(
@@ -1064,28 +1058,28 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                   FFAppState().quickPin = _model.six!;
                                                                                   FFAppState().update(() {});
 
-                                                                                  setState(() {});
+                                                                                  safeSetState(() {});
                                                                                 },
                                                                                 text: FFLocalizations.of(context).getText(
                                                                                   'swrinu4v' /* 6 */,
                                                                                 ),
                                                                                 options: FFButtonOptions(
                                                                                   width: double.infinity,
-                                                                                  height: 33.0,
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  height: 33,
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                   color: FlutterFlowTheme.of(context).customColor2,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
-                                                                                  elevation: 2.0,
+                                                                                  elevation: 2,
                                                                                   borderSide: BorderSide(
                                                                                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    width: 2.0,
+                                                                                    width: 2,
                                                                                   ),
-                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                  borderRadius: BorderRadius.circular(8),
                                                                                 ),
                                                                               ),
                                                                             ),
@@ -1093,7 +1087,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 3.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(2, 0, 0, 3),
                                                                               child: FFButtonWidget(
                                                                                 onPressed: () async {
                                                                                   _model.nine = await actions.setQuickPin(
@@ -1102,28 +1096,28 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                   FFAppState().quickPin = _model.nine!;
                                                                                   FFAppState().update(() {});
 
-                                                                                  setState(() {});
+                                                                                  safeSetState(() {});
                                                                                 },
                                                                                 text: FFLocalizations.of(context).getText(
                                                                                   'a53gcoms' /* 9 */,
                                                                                 ),
                                                                                 options: FFButtonOptions(
                                                                                   width: double.infinity,
-                                                                                  height: 33.0,
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  height: 33,
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                   color: FlutterFlowTheme.of(context).customColor2,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
-                                                                                  elevation: 2.0,
+                                                                                  elevation: 2,
                                                                                   borderSide: BorderSide(
                                                                                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    width: 2.0,
+                                                                                    width: 2,
                                                                                   ),
-                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                  borderRadius: BorderRadius.circular(8),
                                                                                 ),
                                                                               ),
                                                                             ),
@@ -1131,7 +1125,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(2, 0, 0, 0),
                                                                               child: StreamBuilder<List<AppSettingsRecord>>(
                                                                                 stream: queryAppSettingsRecord(
                                                                                   parent: FFAppState().outletIdRef,
@@ -1142,11 +1136,11 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                   if (!snapshot.hasData) {
                                                                                     return Center(
                                                                                       child: SizedBox(
-                                                                                        width: 40.0,
-                                                                                        height: 40.0,
+                                                                                        width: 40,
+                                                                                        height: 40,
                                                                                         child: SpinKitFadingCircle(
                                                                                           color: FlutterFlowTheme.of(context).primary,
-                                                                                          size: 40.0,
+                                                                                          size: 40,
                                                                                         ),
                                                                                       ),
                                                                                     );
@@ -1182,7 +1176,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                       _shouldSetState = true;
                                                                                       FFAppState().outletName = containerDeviceRecord!.outletName;
                                                                                       FFAppState().outletIdRef = containerDeviceRecord?.outletRef;
-                                                                                      setState(() {});
+                                                                                      safeSetState(() {});
                                                                                       _model.shiftlistonline = await queryShiftRecordOnce(
                                                                                         parent: FFAppState().outletIdRef,
                                                                                         queryBuilder: (shiftRecord) => shiftRecord.where(
@@ -1199,7 +1193,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                             if (getCurrentTimestamp.millisecondsSinceEpoch <= _model.outletdoc!.renewalDate) {
                                                                                               if (_model.userProfile?.reference != null) {
                                                                                                 FFAppState().userName = _model.userProfile!.name;
-                                                                                                setState(() {});
+                                                                                                safeSetState(() {});
                                                                                                 _model.shiftdetailsnewonline = await actions.shiftDetailNewpark(
                                                                                                   _model.shiftlistonline?.toList(),
                                                                                                 );
@@ -1230,7 +1224,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                                   },
                                                                                                 );
 
-                                                                                                if (_shouldSetState) setState(() {});
+                                                                                                if (_shouldSetState) safeSetState(() {});
                                                                                                 return;
                                                                                               } else {
                                                                                                 await showDialog(
@@ -1301,31 +1295,31 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                                         );
                                                                                       }
 
-                                                                                      if (_shouldSetState) setState(() {});
+                                                                                      if (_shouldSetState) safeSetState(() {});
                                                                                     },
                                                                                     text: '',
                                                                                     icon: Icon(
                                                                                       Icons.done,
                                                                                       color: FlutterFlowTheme.of(context).primaryText,
-                                                                                      size: 19.0,
+                                                                                      size: 19,
                                                                                     ),
                                                                                     options: FFButtonOptions(
                                                                                       width: double.infinity,
-                                                                                      height: 33.0,
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      height: 33,
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                       color: FlutterFlowTheme.of(context).customColor2,
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                             letterSpacing: 0.0,
                                                                                             useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                           ),
-                                                                                      elevation: 2.0,
+                                                                                      elevation: 2,
                                                                                       borderSide: BorderSide(
                                                                                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                        width: 2.0,
+                                                                                        width: 2,
                                                                                       ),
-                                                                                      borderRadius: BorderRadius.circular(8.0),
+                                                                                      borderRadius: BorderRadius.circular(8),
                                                                                     ),
                                                                                   );
                                                                                 },
@@ -1347,7 +1341,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                 ),
                                                 if (FFAppState().show)
                                                   Container(
-                                                    width: 285.0,
+                                                    width: 285,
                                                     height: MediaQuery.sizeOf(
                                                                 context)
                                                             .height *
@@ -1436,7 +1430,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                     .deleteAllproduct();
                                                 await actions.deleteAllshift();
                                                 FFAppState().navigate = '';
-                                                setState(() {});
+                                                safeSetState(() {});
                                                 await showDialog(
                                                   context: context,
                                                   builder:
@@ -1460,15 +1454,15 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                 borderColor:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
-                                                borderRadius: 10.0,
-                                                borderWidth: 1.0,
-                                                buttonSize: 40.0,
+                                                borderRadius: 10,
+                                                borderWidth: 1,
+                                                buttonSize: 40,
                                                 icon: Icon(
                                                   Icons.settings_sharp,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
-                                                  size: 20.0,
+                                                  size: 20,
                                                 ),
                                                 onPressed: () async {
                                                   context.pushNamed(
@@ -1480,36 +1474,36 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                               borderColor:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              borderRadius: 10.0,
-                                              borderWidth: 1.0,
-                                              buttonSize: 40.0,
+                                              borderRadius: 10,
+                                              borderWidth: 1,
+                                              buttonSize: 40,
                                               icon: Icon(
                                                 Icons.keyboard_alt,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
-                                                size: 20.0,
+                                                size: 20,
                                               ),
                                               onPressed: () async {
                                                 FFAppState().show =
                                                     functions.toggleLogin(
                                                         FFAppState().show);
-                                                setState(() {});
+                                                safeSetState(() {});
                                               },
                                             ),
                                             FlutterFlowIconButton(
                                               borderColor:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              borderRadius: 10.0,
-                                              borderWidth: 1.0,
-                                              buttonSize: 40.0,
+                                              borderRadius: 10,
+                                              borderWidth: 1,
+                                              buttonSize: 40,
                                               icon: Icon(
                                                 Icons.power_settings_new,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
-                                                size: 20.0,
+                                                size: 20,
                                               ),
                                               onPressed: () {
                                                 print('IconButton pressed ...');
@@ -1536,13 +1530,13 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                             if (!snapshot.hasData) {
                                               return Center(
                                                 child: SizedBox(
-                                                  width: 40.0,
-                                                  height: 40.0,
+                                                  width: 40,
+                                                  height: 40,
                                                   child: SpinKitFadingCircle(
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primary,
-                                                    size: 40.0,
+                                                    size: 40,
                                                   ),
                                                 ),
                                               );
@@ -1574,8 +1568,8 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 5.0),
+                                                            .fromSTEB(
+                                                                0, 0, 0, 5),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -1586,11 +1580,8 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      5.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 5, 0),
                                                           child: AutoSizeText(
                                                             FFLocalizations.of(
                                                                     context)
@@ -1638,7 +1629,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
-                                                                fontSize: 14.0,
+                                                                fontSize: 14,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 useGoogleFonts: GoogleFonts
@@ -1654,8 +1645,8 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 3.0),
+                                                            .fromSTEB(
+                                                                0, 0, 0, 3),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -1666,7 +1657,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                         Align(
                                                           alignment:
                                                               AlignmentDirectional(
-                                                                  0.0, 0.0),
+                                                                  0, 0),
                                                           child:
                                                               LinearPercentIndicator(
                                                             percent: 0.9,
@@ -1675,7 +1666,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                                             context)
                                                                     .width *
                                                                 0.2,
-                                                            lineHeight: 18.0,
+                                                            lineHeight: 18,
                                                             animation: true,
                                                             animateFromLastPercent:
                                                                 true,
@@ -1709,7 +1700,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                             ),
                                                             barRadius:
                                                                 Radius.circular(
-                                                                    20.0),
+                                                                    20),
                                                             padding:
                                                                 EdgeInsets.zero,
                                                           ),

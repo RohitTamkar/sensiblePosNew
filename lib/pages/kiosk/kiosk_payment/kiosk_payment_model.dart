@@ -25,7 +25,6 @@ import 'package:provider/provider.dart';
 class KioskPaymentModel extends FlutterFlowModel<KioskPaymentWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Stores action output result for [Firestore Query - Query a collection] action in KioskPayment widget.
   OutletRecord? outlet2;
   InstantTimer? instantTimer;

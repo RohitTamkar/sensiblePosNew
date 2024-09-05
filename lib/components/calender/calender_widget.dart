@@ -37,7 +37,7 @@ class _CalenderWidgetState extends State<CalenderWidget> {
     super.initState();
     _model = createModel(context, () => CalenderModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -56,8 +56,8 @@ class _CalenderWidgetState extends State<CalenderWidget> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          width: 450.0,
-          height: 370.0,
+          width: 450,
+          height: 370,
           decoration: BoxDecoration(
             color: Color(0xFFCFDCFF),
           ),
@@ -66,18 +66,17 @@ class _CalenderWidgetState extends State<CalenderWidget> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(10, 5, 10, 0),
                 child: Container(
                   width: double.infinity,
-                  height: 34.0,
+                  height: 34,
                   decoration: BoxDecoration(),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -96,7 +95,7 @@ class _CalenderWidgetState extends State<CalenderWidget> {
                                   fontFamily: FlutterFlowTheme.of(context)
                                       .headlineMediumFamily,
                                   color: FlutterFlowTheme.of(context).primary,
-                                  fontSize: 22.0,
+                                  fontSize: 22,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
                                   useGoogleFonts: GoogleFonts.asMap()
@@ -107,8 +106,7 @@ class _CalenderWidgetState extends State<CalenderWidget> {
                         ),
                       ),
                       Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -128,9 +126,9 @@ class _CalenderWidgetState extends State<CalenderWidget> {
                               FFAppState().invoiceList = _model.invoicebyday!
                                   .toList()
                                   .cast<InvoiceStructStruct>();
-                              setState(() {});
+                              safeSetState(() {});
                               Navigator.pop(context);
-                              if (_shouldSetState) setState(() {});
+                              if (_shouldSetState) safeSetState(() {});
                               return;
                             } else {
                               if (!functions.isPrinterSelected(
@@ -247,12 +245,12 @@ class _CalenderWidgetState extends State<CalenderWidget> {
                                     );
                                   },
                                 );
-                                if (_shouldSetState) setState(() {});
+                                if (_shouldSetState) safeSetState(() {});
                                 return;
                               }
                             }
 
-                            if (_shouldSetState) setState(() {});
+                            if (_shouldSetState) safeSetState(() {});
                           },
                           child: Text(
                             FFLocalizations.of(context).getText(
@@ -264,7 +262,7 @@ class _CalenderWidgetState extends State<CalenderWidget> {
                                   fontFamily: FlutterFlowTheme.of(context)
                                       .headlineMediumFamily,
                                   color: FlutterFlowTheme.of(context).primary,
-                                  fontSize: 24.0,
+                                  fontSize: 24,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
                                   decoration: TextDecoration.underline,
@@ -280,15 +278,15 @@ class _CalenderWidgetState extends State<CalenderWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 30.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 30),
                 child: FlutterFlowCalendar(
                   color: Color(0xFF5E7BD4),
                   weekFormat: false,
                   weekStartsMonday: true,
                   initialDate: getCurrentTimestamp,
-                  rowHeight: 32.0,
+                  rowHeight: 32,
                   onChange: (DateTimeRange? newSelectedDate) {
-                    setState(
+                    safeSetState(
                         () => _model.calendarSelectedDay = newSelectedDate);
                   },
                   titleStyle: TextStyle(
@@ -297,7 +295,7 @@ class _CalenderWidgetState extends State<CalenderWidget> {
                   dayOfWeekStyle: TextStyle(),
                   dateStyle: TextStyle(
                     color: FlutterFlowTheme.of(context).secondaryText,
-                    fontSize: 16.0,
+                    fontSize: 16,
                   ),
                   selectedDateStyle: TextStyle(),
                   inactiveDateStyle: TextStyle(),

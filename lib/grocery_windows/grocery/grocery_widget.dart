@@ -52,7 +52,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
       r'''$.quantity''',
     ).toString().toString());
     _model.textFieldqtFocusNode ??= FocusNode();
-    _model.textFieldqtFocusNode!.addListener(() => setState(() {}));
+    _model.textFieldqtFocusNode!.addListener(() => safeSetState(() {}));
     _model.textFieldrateTextController ??= TextEditingController(
         text: getJsonField(
       widget!.jsonitem,
@@ -88,7 +88,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
     ).toString().toString());
     _model.textFieldTaxAmtFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -106,12 +106,12 @@ class _GroceryWidgetState extends State<GroceryWidget> {
       children: [
         if (FFAppState().groceryshow)
           Container(
-            height: 40.0,
+            height: 40,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
             ),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(15.0, 3.0, 0.0, 3.0),
+              padding: EdgeInsetsDirectional.fromSTEB(15, 3, 0, 3),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
@@ -140,9 +140,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                           ),
                         ),
                         SizedBox(
-                          height: 100.0,
+                          height: 100,
                           child: VerticalDivider(
-                            width: 20.0,
+                            width: 20,
                             thickness: 0.5,
                             color: FlutterFlowTheme.of(context).accent2,
                           ),
@@ -176,9 +176,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                           )),
                         ),
                         SizedBox(
-                          height: 100.0,
+                          height: 100,
                           child: VerticalDivider(
-                            width: 20.0,
+                            width: 20,
                             thickness: 0.5,
                             color: FlutterFlowTheme.of(context).accent2,
                           ),
@@ -212,9 +212,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                           ),
                         ),
                         SizedBox(
-                          height: 100.0,
+                          height: 100,
                           child: VerticalDivider(
-                            width: 20.0,
+                            width: 20,
                             thickness: 0.5,
                             color: FlutterFlowTheme.of(context).accent2,
                           ),
@@ -229,19 +229,19 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                       children: [
                         FlutterFlowIconButton(
                           borderColor: FlutterFlowTheme.of(context).primaryText,
-                          borderRadius: 20.0,
-                          borderWidth: 1.0,
-                          buttonSize: 25.0,
+                          borderRadius: 20,
+                          borderWidth: 1,
+                          buttonSize: 25,
                           fillColor: FlutterFlowTheme.of(context).alternate,
                           icon: Icon(
                             Icons.remove,
                             color: FlutterFlowTheme.of(context).primaryText,
-                            size: 10.0,
+                            size: 10,
                           ),
                           onPressed: () async {
                             if (_model.textFieldqtTextController.text !=
                                 '1.0') {
-                              setState(() {
+                              safeSetState(() {
                                 _model.textFieldqtTextController?.text =
                                     (double.parse(_model
                                                 .textFieldqtTextController
@@ -276,7 +276,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                 double.parse(
                                     _model.textFieldTaxAmtTextController.text),
                               );
-                              setState(() {
+                              safeSetState(() {
                                 _model.textFielddisAmtTextController?.text =
                                     getJsonField(
                                   _model.allbillistplusCopy!
@@ -301,7 +301,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                             .text
                                             .length);
                               });
-                              setState(() {
+                              safeSetState(() {
                                 _model.textFieldTaxAmtTextController?.text =
                                     getJsonField(
                                   _model.allbillistplusCopy!
@@ -342,7 +342,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                               FFAppState().finalAmt = FFAppState().finalAmt;
                               FFAppState().update(() {});
                             } else {
-                              setState(() {
+                              safeSetState(() {
                                 _model.textFieldqtTextController?.text = '1.0';
                                 _model.textFieldqtTextController?.selection =
                                     TextSelection.collapsed(
@@ -353,7 +353,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                               });
                             }
 
-                            setState(() {});
+                            safeSetState(() {});
                           },
                         ),
                         Expanded(
@@ -382,7 +382,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                 double.parse(
                                     _model.textFieldTaxAmtTextController.text),
                               );
-                              setState(() {
+                              safeSetState(() {
                                 _model.textFielddisAmtTextController?.text =
                                     getJsonField(
                                   _model.allbillist!
@@ -407,7 +407,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                             .text
                                             .length);
                               });
-                              setState(() {
+                              safeSetState(() {
                                 _model.textFieldTaxAmtTextController?.text =
                                     getJsonField(
                                   _model.allbillist!
@@ -445,7 +445,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                 FFAppState().delCharges,
                               );
 
-                              setState(() {});
+                              safeSetState(() {});
                             },
                             autofocus: false,
                             obscureText: false,
@@ -479,33 +479,33 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                       FlutterFlowTheme.of(context).customColor2,
                                   width: 0.5,
                                 ),
-                                borderRadius: BorderRadius.circular(12.0),
+                                borderRadius: BorderRadius.circular(12),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).info,
                                   width: 0.5,
                                 ),
-                                borderRadius: BorderRadius.circular(12.0),
+                                borderRadius: BorderRadius.circular(12),
                               ),
                               errorBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).error,
                                   width: 0.5,
                                 ),
-                                borderRadius: BorderRadius.circular(12.0),
+                                borderRadius: BorderRadius.circular(12),
                               ),
                               focusedErrorBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).error,
                                   width: 0.5,
                                 ),
-                                borderRadius: BorderRadius.circular(12.0),
+                                borderRadius: BorderRadius.circular(12),
                               ),
                               filled: true,
                               fillColor: Color(0xFFF5F6FB),
-                              contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 10.0, 0.0, 10.0),
+                              contentPadding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
@@ -524,17 +524,17 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                         ),
                         FlutterFlowIconButton(
                           borderColor: FlutterFlowTheme.of(context).primaryText,
-                          borderRadius: 20.0,
-                          borderWidth: 1.0,
-                          buttonSize: 25.0,
+                          borderRadius: 20,
+                          borderWidth: 1,
+                          buttonSize: 25,
                           fillColor: FlutterFlowTheme.of(context).alternate,
                           icon: Icon(
                             Icons.add,
                             color: FlutterFlowTheme.of(context).primaryText,
-                            size: 10.0,
+                            size: 10,
                           ),
                           onPressed: () async {
-                            setState(() {
+                            safeSetState(() {
                               _model.textFieldqtTextController?.text =
                                   (double.parse(_model
                                               .textFieldqtTextController.text) +
@@ -565,7 +565,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                               double.parse(
                                   _model.textFieldTaxAmtTextController.text),
                             );
-                            setState(() {
+                            safeSetState(() {
                               _model.textFielddisAmtTextController?.text =
                                   getJsonField(
                                 _model.all!
@@ -589,7 +589,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                           .text
                                           .length);
                             });
-                            setState(() {
+                            safeSetState(() {
                               _model.textFieldTaxAmtTextController?.text =
                                   getJsonField(
                                 _model.all!
@@ -628,13 +628,13 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             FFAppState().finalAmt = FFAppState().finalAmt;
                             FFAppState().update(() {});
 
-                            setState(() {});
+                            safeSetState(() {});
                           },
                         ),
                         SizedBox(
-                          height: 100.0,
+                          height: 100,
                           child: VerticalDivider(
-                            width: 20.0,
+                            width: 20,
                             thickness: 0.5,
                             color: FlutterFlowTheme.of(context).accent2,
                           ),
@@ -667,9 +667,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                           ),
                         ),
                         SizedBox(
-                          height: 100.0,
+                          height: 100,
                           child: VerticalDivider(
-                            width: 20.0,
+                            width: 20,
                             thickness: 0.5,
                             color: FlutterFlowTheme.of(context).accent2,
                           ),
@@ -708,7 +708,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                 double.parse(
                                     _model.textFieldTaxAmtTextController.text),
                               );
-                              setState(() {
+                              safeSetState(() {
                                 _model.textFieldTaxAmtTextController?.text =
                                     valueOrDefault<String>(
                                   getJsonField(
@@ -736,7 +736,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                             .text
                                             .length);
                               });
-                              setState(() {
+                              safeSetState(() {
                                 _model.textFielddisAmtTextController?.text =
                                     valueOrDefault<String>(
                                   getJsonField(
@@ -778,7 +778,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                 FFAppState().delCharges,
                               );
 
-                              setState(() {});
+                              safeSetState(() {});
                             },
                             autofocus: false,
                             obscureText: false,
@@ -812,33 +812,33 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                       FlutterFlowTheme.of(context).customColor2,
                                   width: 0.5,
                                 ),
-                                borderRadius: BorderRadius.circular(12.0),
+                                borderRadius: BorderRadius.circular(12),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).info,
                                   width: 0.5,
                                 ),
-                                borderRadius: BorderRadius.circular(12.0),
+                                borderRadius: BorderRadius.circular(12),
                               ),
                               errorBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).error,
                                   width: 0.5,
                                 ),
-                                borderRadius: BorderRadius.circular(12.0),
+                                borderRadius: BorderRadius.circular(12),
                               ),
                               focusedErrorBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).error,
                                   width: 0.5,
                                 ),
-                                borderRadius: BorderRadius.circular(12.0),
+                                borderRadius: BorderRadius.circular(12),
                               ),
                               filled: true,
                               fillColor: Color(0xFFF5F6FB),
-                              contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 10.0, 0.0, 10.0),
+                              contentPadding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
@@ -857,9 +857,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                           ),
                         ),
                         SizedBox(
-                          height: 100.0,
+                          height: 100,
                           child: VerticalDivider(
-                            width: 20.0,
+                            width: 20,
                             thickness: 0.5,
                             color: FlutterFlowTheme.of(context).accent2,
                           ),
@@ -892,9 +892,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                           ),
                         ),
                         SizedBox(
-                          height: 100.0,
+                          height: 100,
                           child: VerticalDivider(
-                            width: 20.0,
+                            width: 20,
                             thickness: 0.5,
                             color: FlutterFlowTheme.of(context).accent2,
                           ),
@@ -933,7 +933,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                 double.parse(
                                     _model.textFieldTaxAmtTextController.text),
                               );
-                              setState(() {
+                              safeSetState(() {
                                 _model.textFielddisAmtTextController?.text =
                                     getJsonField(
                                   _model.itemlist!
@@ -972,7 +972,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                 FFAppState().delCharges,
                               );
 
-                              setState(() {});
+                              safeSetState(() {});
                             },
                             autofocus: false,
                             obscureText: false,
@@ -1006,33 +1006,33 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                       FlutterFlowTheme.of(context).customColor2,
                                   width: 0.5,
                                 ),
-                                borderRadius: BorderRadius.circular(12.0),
+                                borderRadius: BorderRadius.circular(12),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).info,
                                   width: 0.5,
                                 ),
-                                borderRadius: BorderRadius.circular(12.0),
+                                borderRadius: BorderRadius.circular(12),
                               ),
                               errorBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).error,
                                   width: 0.5,
                                 ),
-                                borderRadius: BorderRadius.circular(12.0),
+                                borderRadius: BorderRadius.circular(12),
                               ),
                               focusedErrorBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).error,
                                   width: 0.5,
                                 ),
-                                borderRadius: BorderRadius.circular(12.0),
+                                borderRadius: BorderRadius.circular(12),
                               ),
                               filled: true,
                               fillColor: Color(0xFFF5F6FB),
-                              contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 10.0, 0.0, 10.0),
+                              contentPadding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
@@ -1051,9 +1051,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                           ),
                         ),
                         SizedBox(
-                          height: 100.0,
+                          height: 100,
                           child: VerticalDivider(
-                            width: 20.0,
+                            width: 20,
                             thickness: 0.5,
                             color: FlutterFlowTheme.of(context).accent2,
                           ),
@@ -1092,7 +1092,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                 double.parse(
                                     _model.textFieldTaxAmtTextController.text),
                               );
-                              setState(() {
+                              safeSetState(() {
                                 _model.textFielddisPerTextController?.text =
                                     getJsonField(
                                   _model.allbillistdiscper!
@@ -1131,7 +1131,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                 FFAppState().delCharges,
                               );
 
-                              setState(() {});
+                              safeSetState(() {});
                             },
                             autofocus: false,
                             obscureText: false,
@@ -1165,33 +1165,33 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                       FlutterFlowTheme.of(context).customColor2,
                                   width: 0.5,
                                 ),
-                                borderRadius: BorderRadius.circular(12.0),
+                                borderRadius: BorderRadius.circular(12),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).info,
                                   width: 0.5,
                                 ),
-                                borderRadius: BorderRadius.circular(12.0),
+                                borderRadius: BorderRadius.circular(12),
                               ),
                               errorBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).error,
                                   width: 0.5,
                                 ),
-                                borderRadius: BorderRadius.circular(12.0),
+                                borderRadius: BorderRadius.circular(12),
                               ),
                               focusedErrorBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).error,
                                   width: 0.5,
                                 ),
-                                borderRadius: BorderRadius.circular(12.0),
+                                borderRadius: BorderRadius.circular(12),
                               ),
                               filled: true,
                               fillColor: Color(0xFFF5F6FB),
-                              contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 10.0, 0.0, 10.0),
+                              contentPadding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
@@ -1210,9 +1210,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                           ),
                         ),
                         SizedBox(
-                          height: 100.0,
+                          height: 100,
                           child: VerticalDivider(
-                            width: 20.0,
+                            width: 20,
                             thickness: 0.5,
                             color: FlutterFlowTheme.of(context).accent2,
                           ),
@@ -1251,7 +1251,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                 double.parse(
                                     _model.textFieldTaxAmtTextController.text),
                               );
-                              setState(() {
+                              safeSetState(() {
                                 _model.textFieldTaxAmtTextController?.text =
                                     getJsonField(
                                   _model.taxperchenged!
@@ -1290,7 +1290,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                 FFAppState().delCharges,
                               );
 
-                              setState(() {});
+                              safeSetState(() {});
                             },
                             autofocus: false,
                             obscureText: false,
@@ -1324,33 +1324,33 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                       FlutterFlowTheme.of(context).customColor2,
                                   width: 0.5,
                                 ),
-                                borderRadius: BorderRadius.circular(12.0),
+                                borderRadius: BorderRadius.circular(12),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).info,
                                   width: 0.5,
                                 ),
-                                borderRadius: BorderRadius.circular(12.0),
+                                borderRadius: BorderRadius.circular(12),
                               ),
                               errorBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).error,
                                   width: 0.5,
                                 ),
-                                borderRadius: BorderRadius.circular(12.0),
+                                borderRadius: BorderRadius.circular(12),
                               ),
                               focusedErrorBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).error,
                                   width: 0.5,
                                 ),
-                                borderRadius: BorderRadius.circular(12.0),
+                                borderRadius: BorderRadius.circular(12),
                               ),
                               filled: true,
                               fillColor: Color(0xFFF5F6FB),
-                              contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 10.0, 0.0, 10.0),
+                              contentPadding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
@@ -1369,9 +1369,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                           ),
                         ),
                         SizedBox(
-                          height: 100.0,
+                          height: 100,
                           child: VerticalDivider(
-                            width: 20.0,
+                            width: 20,
                             thickness: 0.5,
                             color: FlutterFlowTheme.of(context).accent2,
                           ),
@@ -1410,7 +1410,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                 double.parse(
                                     _model.textFieldTaxAmtTextController.text),
                               );
-                              setState(() {
+                              safeSetState(() {
                                 _model.textFieldtaxPerTextController?.text =
                                     getJsonField(
                                   _model.taxamtchanged!
@@ -1449,7 +1449,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                 FFAppState().delCharges,
                               );
 
-                              setState(() {});
+                              safeSetState(() {});
                             },
                             autofocus: false,
                             obscureText: false,
@@ -1483,33 +1483,33 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                       FlutterFlowTheme.of(context).customColor2,
                                   width: 0.5,
                                 ),
-                                borderRadius: BorderRadius.circular(12.0),
+                                borderRadius: BorderRadius.circular(12),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).info,
                                   width: 0.5,
                                 ),
-                                borderRadius: BorderRadius.circular(12.0),
+                                borderRadius: BorderRadius.circular(12),
                               ),
                               errorBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).error,
                                   width: 0.5,
                                 ),
-                                borderRadius: BorderRadius.circular(12.0),
+                                borderRadius: BorderRadius.circular(12),
                               ),
                               focusedErrorBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).error,
                                   width: 0.5,
                                 ),
-                                borderRadius: BorderRadius.circular(12.0),
+                                borderRadius: BorderRadius.circular(12),
                               ),
                               filled: true,
                               fillColor: Color(0xFFF5F6FB),
-                              contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 10.0, 0.0, 10.0),
+                              contentPadding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
@@ -1528,9 +1528,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                           ),
                         ),
                         SizedBox(
-                          height: 100.0,
+                          height: 100,
                           child: VerticalDivider(
-                            width: 20.0,
+                            width: 20,
                             thickness: 0.5,
                             color: FlutterFlowTheme.of(context).accent2,
                           ),
@@ -1564,9 +1564,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                           ),
                         ),
                         SizedBox(
-                          height: 100.0,
+                          height: 100,
                           child: VerticalDivider(
-                            width: 20.0,
+                            width: 20,
                             thickness: 0.5,
                             color: FlutterFlowTheme.of(context).accent2,
                           ),
@@ -1586,8 +1586,8 @@ class _GroceryWidgetState extends State<GroceryWidget> {
             highlightColor: Colors.transparent,
             onTap: () async {
               FFAppState().groceryshow = true;
-              setState(() {});
-              setState(() {
+              safeSetState(() {});
+              safeSetState(() {
                 _model.textFieldqtTextController?.text = valueOrDefault<String>(
                   getJsonField(
                     widget!.jsonitem,
@@ -1599,7 +1599,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                     TextSelection.collapsed(
                         offset: _model.textFieldqtTextController!.text.length);
               });
-              setState(() {
+              safeSetState(() {
                 _model.textFieldrateTextController?.text =
                     valueOrDefault<String>(
                   getJsonField(
@@ -1613,7 +1613,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                         offset:
                             _model.textFieldrateTextController!.text.length);
               });
-              setState(() {
+              safeSetState(() {
                 _model.textFielddisAmtTextController?.text =
                     valueOrDefault<String>(
                   getJsonField(
@@ -1627,7 +1627,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                         offset:
                             _model.textFielddisAmtTextController!.text.length);
               });
-              setState(() {
+              safeSetState(() {
                 _model.textFieldTaxAmtTextController?.text =
                     valueOrDefault<String>(
                   getJsonField(
@@ -1641,7 +1641,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                         offset:
                             _model.textFieldTaxAmtTextController!.text.length);
               });
-              setState(() {
+              safeSetState(() {
                 _model.textFielddisPerTextController?.text =
                     valueOrDefault<String>(
                   getJsonField(
@@ -1655,7 +1655,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                         offset:
                             _model.textFielddisPerTextController!.text.length);
               });
-              setState(() {
+              safeSetState(() {
                 _model.textFieldtaxPerTextController?.text =
                     valueOrDefault<String>(
                   getJsonField(
@@ -1671,12 +1671,12 @@ class _GroceryWidgetState extends State<GroceryWidget> {
               });
             },
             child: Container(
-              height: 40.0,
+              height: 40,
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
               ),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(15.0, 3.0, 0.0, 3.0),
+                padding: EdgeInsetsDirectional.fromSTEB(15, 3, 0, 3),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -1706,9 +1706,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             ),
                           ),
                           SizedBox(
-                            height: 100.0,
+                            height: 100,
                             child: VerticalDivider(
-                              width: 20.0,
+                              width: 20,
                               thickness: 0.5,
                               color: FlutterFlowTheme.of(context).accent2,
                             ),
@@ -1743,9 +1743,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             )),
                           ),
                           SizedBox(
-                            height: 100.0,
+                            height: 100,
                             child: VerticalDivider(
-                              width: 20.0,
+                              width: 20,
                               thickness: 0.5,
                               color: FlutterFlowTheme.of(context).accent2,
                             ),
@@ -1780,9 +1780,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             ),
                           ),
                           SizedBox(
-                            height: 100.0,
+                            height: 100,
                             child: VerticalDivider(
-                              width: 20.0,
+                              width: 20,
                               thickness: 0.5,
                               color: FlutterFlowTheme.of(context).accent2,
                             ),
@@ -1819,9 +1819,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             ),
                           ),
                           SizedBox(
-                            height: 100.0,
+                            height: 100,
                             child: VerticalDivider(
-                              width: 20.0,
+                              width: 20,
                               thickness: 0.5,
                               color: FlutterFlowTheme.of(context).accent2,
                             ),
@@ -1855,9 +1855,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             ),
                           ),
                           SizedBox(
-                            height: 100.0,
+                            height: 100,
                             child: VerticalDivider(
-                              width: 20.0,
+                              width: 20,
                               thickness: 0.5,
                               color: FlutterFlowTheme.of(context).accent2,
                             ),
@@ -1891,9 +1891,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             ),
                           ),
                           SizedBox(
-                            height: 100.0,
+                            height: 100,
                             child: VerticalDivider(
-                              width: 20.0,
+                              width: 20,
                               thickness: 0.5,
                               color: FlutterFlowTheme.of(context).accent2,
                             ),
@@ -1927,9 +1927,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             ),
                           ),
                           SizedBox(
-                            height: 100.0,
+                            height: 100,
                             child: VerticalDivider(
-                              width: 20.0,
+                              width: 20,
                               thickness: 0.5,
                               color: FlutterFlowTheme.of(context).accent2,
                             ),
@@ -1963,9 +1963,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             ),
                           ),
                           SizedBox(
-                            height: 100.0,
+                            height: 100,
                             child: VerticalDivider(
-                              width: 20.0,
+                              width: 20,
                               thickness: 0.5,
                               color: FlutterFlowTheme.of(context).accent2,
                             ),
@@ -1999,9 +1999,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             ),
                           ),
                           SizedBox(
-                            height: 100.0,
+                            height: 100,
                             child: VerticalDivider(
-                              width: 20.0,
+                              width: 20,
                               thickness: 0.5,
                               color: FlutterFlowTheme.of(context).accent2,
                             ),
@@ -2035,9 +2035,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             ),
                           ),
                           SizedBox(
-                            height: 100.0,
+                            height: 100,
                             child: VerticalDivider(
-                              width: 20.0,
+                              width: 20,
                               thickness: 0.5,
                               color: FlutterFlowTheme.of(context).accent2,
                             ),
@@ -2071,9 +2071,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             ),
                           ),
                           SizedBox(
-                            height: 100.0,
+                            height: 100,
                             child: VerticalDivider(
-                              width: 20.0,
+                              width: 20,
                               thickness: 0.5,
                               color: FlutterFlowTheme.of(context).accent2,
                             ),
@@ -2108,9 +2108,9 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             ),
                           ),
                           SizedBox(
-                            height: 100.0,
+                            height: 100,
                             child: VerticalDivider(
-                              width: 20.0,
+                              width: 20,
                               thickness: 0.5,
                               color: FlutterFlowTheme.of(context).accent2,
                             ),

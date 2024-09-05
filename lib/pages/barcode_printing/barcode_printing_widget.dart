@@ -39,7 +39,7 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
     _model.textController3 ??= TextEditingController();
     _model.textFieldFocusNode3 ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -66,16 +66,16 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                 print('FloatingActionButton pressed ...');
               },
               backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-              elevation: 8.0,
+              elevation: 8,
               child: FlutterFlowIconButton(
                 borderColor: Colors.transparent,
-                borderRadius: 30.0,
-                borderWidth: 1.0,
-                buttonSize: 60.0,
+                borderRadius: 30,
+                borderWidth: 1,
+                buttonSize: 60,
                 icon: Icon(
                   Icons.print_rounded,
                   color: FlutterFlowTheme.of(context).primary,
-                  size: 30.0,
+                  size: 30,
                 ),
                 onPressed: () async {
                   await showDialog(
@@ -96,14 +96,14 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
               ),
             ),
             body: Padding(
-              padding: EdgeInsets.all(3.0),
+              padding: EdgeInsets.all(3),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Expanded(
                     flex: 1,
                     child: Container(
-                      width: MediaQuery.sizeOf(context).width * 1.0,
+                      width: MediaQuery.sizeOf(context).width,
                       height: MediaQuery.sizeOf(context).height * 0.12,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primary,
@@ -116,22 +116,22 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                           Expanded(
                             flex: 1,
                             child: Container(
-                              width: 100.0,
-                              height: 100.0,
+                              width: 100,
+                              height: 100,
                               decoration: BoxDecoration(),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   FlutterFlowIconButton(
                                     borderColor: Colors.transparent,
-                                    borderRadius: 30.0,
-                                    borderWidth: 1.0,
-                                    buttonSize: 60.0,
+                                    borderRadius: 30,
+                                    borderWidth: 1,
+                                    buttonSize: 60,
                                     icon: Icon(
                                       Icons.chevron_left_sharp,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBtnText,
-                                      size: 26.0,
+                                      size: 26,
                                     ),
                                     onPressed: () {
                                       print('IconButton pressed ...');
@@ -164,7 +164,7 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                             flex: 2,
                             child: wrapWithModel(
                               model: _model.headerModel,
-                              updateCallback: () => setState(() {}),
+                              updateCallback: () => safeSetState(() {}),
                               child: HeaderWidget(),
                             ),
                           ),
@@ -175,21 +175,20 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                   Expanded(
                     flex: 13,
                     child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
                       child: Container(
-                        width: MediaQuery.sizeOf(context).width * 1.0,
-                        height: 100.0,
+                        width: MediaQuery.sizeOf(context).width,
+                        height: 100,
                         decoration: BoxDecoration(),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Expanded(
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    3.0, 0.0, 0.0, 0.0),
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(3, 0, 0, 0),
                                 child: Container(
-                                  width: 100.0,
+                                  width: 100,
                                   height: double.infinity,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
@@ -208,11 +207,10 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  3.0, 5.0, 3.0, 3.0),
+                                                  3, 5, 3, 3),
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
-                                                    .width *
-                                                1.0,
+                                                .width,
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
                                                 0.1,
@@ -277,10 +275,11 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                   'ormvsg6m' /* 38mm*25mm[2] */,
                                                 )
                                               ],
-                                              onChanged: (val) => setState(() =>
-                                                  _model.dropDownValue = val),
-                                              width: 180.0,
-                                              height: 50.0,
+                                              onChanged: (val) => safeSetState(
+                                                  () => _model.dropDownValue =
+                                                      val),
+                                              width: 180,
+                                              height: 50,
                                               textStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .headlineSmall
@@ -302,15 +301,14 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                       .getText(
                                                 'qci55d03' /* Select your label size */,
                                               ),
-                                              elevation: 2.0,
+                                              elevation: 2,
                                               borderColor:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
-                                              borderWidth: 0.0,
-                                              borderRadius: 0.0,
+                                              borderWidth: 0,
+                                              borderRadius: 0,
                                               margin: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      12.0, 4.0, 12.0, 4.0),
+                                                  .fromSTEB(12, 4, 12, 4),
                                               hidesUnderline: true,
                                               isSearchable: false,
                                               isMultiSelect: false,
@@ -318,11 +316,10 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                           ),
                                         ),
                                         Padding(
-                                          padding: EdgeInsets.all(3.0),
+                                          padding: EdgeInsets.all(3),
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
-                                                    .width *
-                                                1.0,
+                                                .width,
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
                                                 0.17,
@@ -342,7 +339,7 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsets.all(5.0),
+                                                          EdgeInsets.all(5),
                                                       child: Text(
                                                         FFLocalizations.of(
                                                                 context)
@@ -371,8 +368,7 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                 ),
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 5.0, 0.0, 0.0),
+                                                      .fromSTEB(0, 5, 0, 0),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -393,7 +389,7 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                           )
                                                         ].toList(),
                                                         onChanged: (val) =>
-                                                            setState(() {}),
+                                                            safeSetState(() {}),
                                                         controller: _model
                                                                 .radioButtonValueController1 ??=
                                                             FormFieldController<
@@ -403,7 +399,7 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                                     .getText(
                                                           'fap8wvob' /* TOP */,
                                                         )),
-                                                        optionHeight: 25.0,
+                                                        optionHeight: 25,
                                                         textStyle:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -437,7 +433,7 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                                               .titleSmallFamily),
                                                                 ),
                                                         textPadding:
-                                                            EdgeInsets.all(3.0),
+                                                            EdgeInsets.all(3),
                                                         buttonPosition:
                                                             RadioButtonPosition
                                                                 .left,
@@ -469,11 +465,10 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  3.0, 5.0, 3.0, 3.0),
+                                                  3, 5, 3, 3),
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
-                                                    .width *
-                                                1.0,
+                                                .width,
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -486,8 +481,7 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                     CrossAxisAlignment.start,
                                                 children: [
                                                   Padding(
-                                                    padding:
-                                                        EdgeInsets.all(5.0),
+                                                    padding: EdgeInsets.all(5),
                                                     child: Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -577,12 +571,11 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                             ),
                             Expanded(
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    3.0, 0.0, 0.0, 0.0),
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(3, 0, 0, 0),
                                 child: Container(
-                                  width: 100.0,
-                                  height:
-                                      MediaQuery.sizeOf(context).height * 1.0,
+                                  width: 100,
+                                  height: MediaQuery.sizeOf(context).height * 1,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
@@ -595,11 +588,10 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsets.all(3.0),
+                                        padding: EdgeInsets.all(3),
                                         child: Container(
                                           width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  1.0,
+                                              MediaQuery.sizeOf(context).width,
                                           height: MediaQuery.sizeOf(context)
                                                   .height *
                                               0.1,
@@ -618,8 +610,7 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                               Expanded(
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          2.0, 0.0, 0.0, 0.0),
+                                                      .fromSTEB(2, 0, 0, 0),
                                                   child: TextFormField(
                                                     controller:
                                                         _model.textController1,
@@ -699,8 +690,8 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                 child: FlutterFlowIconButton(
                                                   borderColor:
                                                       Colors.transparent,
-                                                  borderWidth: 1.0,
-                                                  buttonSize: 50.0,
+                                                  borderWidth: 1,
+                                                  buttonSize: 50,
                                                   fillColor:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -710,7 +701,7 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .lineColor,
-                                                    size: 20.0,
+                                                    size: 20,
                                                   ),
                                                   onPressed: () {
                                                     print(
@@ -724,11 +715,10 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            3.0, 5.0, 3.0, 3.0),
+                                            3, 5, 3, 3),
                                         child: Container(
                                           width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  1.0,
+                                              MediaQuery.sizeOf(context).width,
                                           height: MediaQuery.sizeOf(context)
                                                   .height *
                                               0.2,
@@ -749,7 +739,7 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsets.all(5.0),
+                                                padding: EdgeInsets.all(5),
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -799,7 +789,7 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                       )
                                                     ].toList(),
                                                     onChanged: (val) =>
-                                                        setState(() {}),
+                                                        safeSetState(() {}),
                                                     controller: _model
                                                             .radioButtonValueController2 ??=
                                                         FormFieldController<
@@ -809,7 +799,7 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                                 .getText(
                                                       'sqci4at1' /* Barcode */,
                                                     )),
-                                                    optionHeight: 30.0,
+                                                    optionHeight: 30,
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .titleSmall
@@ -845,7 +835,7 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                                           .titleSmallFamily),
                                                             ),
                                                     textPadding:
-                                                        EdgeInsets.all(3.0),
+                                                        EdgeInsets.all(3),
                                                     buttonPosition:
                                                         RadioButtonPosition
                                                             .left,
@@ -873,11 +863,10 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            3.0, 5.0, 3.0, 3.0),
+                                            3, 5, 3, 3),
                                         child: Container(
                                           width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  1.0,
+                                              MediaQuery.sizeOf(context).width,
                                           height: MediaQuery.sizeOf(context)
                                                   .height *
                                               0.12,
@@ -893,7 +882,7 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    10.0, 0.0, 0.0, 0.0),
+                                                    10, 0, 0, 0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -1033,11 +1022,10 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            3.0, 5.0, 3.0, 3.0),
+                                            3, 5, 3, 3),
                                         child: Container(
                                           width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  1.0,
+                                              MediaQuery.sizeOf(context).width,
                                           height: MediaQuery.sizeOf(context)
                                                   .height *
                                               0.12,
@@ -1053,7 +1041,7 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    10.0, 0.0, 0.0, 0.0),
+                                                    10, 0, 0, 0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -1193,11 +1181,10 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            3.0, 5.0, 3.0, 3.0),
+                                            3, 5, 3, 3),
                                         child: Container(
                                           width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  1.0,
+                                              MediaQuery.sizeOf(context).width,
                                           height: MediaQuery.sizeOf(context)
                                                   .height *
                                               0.12,
@@ -1227,7 +1214,7 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                           .checkboxListTileValue ??=
                                                       false,
                                                   onChanged: (newValue) async {
-                                                    setState(() => _model
+                                                    safeSetState(() => _model
                                                             .checkboxListTileValue =
                                                         newValue!);
                                                   },
@@ -1275,12 +1262,11 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                             ),
                             Expanded(
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    3.0, 0.0, 3.0, 0.0),
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(3, 0, 3, 0),
                                 child: Container(
-                                  width: 100.0,
-                                  height:
-                                      MediaQuery.sizeOf(context).height * 1.0,
+                                  width: 100,
+                                  height: MediaQuery.sizeOf(context).height * 1,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
@@ -1295,8 +1281,7 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                       children: [
                                         Container(
                                           width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  1.0,
+                                              MediaQuery.sizeOf(context).width,
                                           height: MediaQuery.sizeOf(context)
                                                   .height *
                                               0.1,
@@ -1339,12 +1324,11 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                             if (_model.radioButtonValue1 ==
                                                 'TOP')
                                               Padding(
-                                                padding: EdgeInsets.all(3.0),
+                                                padding: EdgeInsets.all(3),
                                                 child: Container(
                                                   width:
                                                       MediaQuery.sizeOf(context)
-                                                              .width *
-                                                          1.0,
+                                                          .width,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -1366,17 +1350,13 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    2.0,
-                                                                    0.0,
-                                                                    0.0),
+                                                                    0, 2, 0, 0),
                                                         child: Image.asset(
                                                           'assets/images/barcodeImage.png',
                                                           width:
                                                               MediaQuery.sizeOf(
-                                                                          context)
-                                                                      .width *
-                                                                  1.0,
+                                                                      context)
+                                                                  .width,
                                                           height:
                                                               MediaQuery.sizeOf(
                                                                           context)
@@ -1457,12 +1437,11 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                             if (_model.radioButtonValue1 ==
                                                 'BOTTOM')
                                               Padding(
-                                                padding: EdgeInsets.all(3.0),
+                                                padding: EdgeInsets.all(3),
                                                 child: Container(
                                                   width:
                                                       MediaQuery.sizeOf(context)
-                                                              .width *
-                                                          1.0,
+                                                          .width,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -1547,17 +1526,13 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    2.0,
-                                                                    0.0,
-                                                                    0.0),
+                                                                    0, 2, 0, 0),
                                                         child: Image.asset(
                                                           'assets/images/barcodeImage.png',
                                                           width:
                                                               MediaQuery.sizeOf(
-                                                                          context)
-                                                                      .width *
-                                                                  1.0,
+                                                                      context)
+                                                                  .width,
                                                           height:
                                                               MediaQuery.sizeOf(
                                                                           context)
@@ -1573,12 +1548,11 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                             if (_model.radioButtonValue2 ==
                                                 'QRCode')
                                               Padding(
-                                                padding: EdgeInsets.all(3.0),
+                                                padding: EdgeInsets.all(3),
                                                 child: Container(
                                                   width:
                                                       MediaQuery.sizeOf(context)
-                                                              .width *
-                                                          1.0,
+                                                          .width,
                                                   constraints: BoxConstraints(
                                                     maxHeight:
                                                         MediaQuery.sizeOf(
@@ -1607,10 +1581,7 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    2.0,
-                                                                    0.0),
+                                                                    0, 0, 2, 0),
                                                         child: Container(
                                                           width:
                                                               MediaQuery.sizeOf(
@@ -1642,11 +1613,8 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      5.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(5,
+                                                                      0, 0, 0),
                                                           child: Builder(
                                                             builder: (context) {
                                                               final qrSelectedLabelValue =
@@ -1676,10 +1644,10 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                                   return Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            5,
+                                                                            0,
+                                                                            0),
                                                                     child: Row(
                                                                       mainAxisSize:
                                                                           MainAxisSize
@@ -1700,10 +1668,10 @@ class _BarcodePrintingWidgetState extends State<BarcodePrintingWidget> {
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              2.0,
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0),
+                                                                              2,
+                                                                              0,
+                                                                              0,
+                                                                              0),
                                                                           child:
                                                                               Text(
                                                                             '',

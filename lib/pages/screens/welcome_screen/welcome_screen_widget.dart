@@ -112,7 +112,7 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
       this,
     );
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -141,9 +141,9 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
                   FlutterFlowTheme.of(context).customColor3,
                   FlutterFlowTheme.of(context).error
                 ],
-                stops: [1.0, 1.0],
-                begin: AlignmentDirectional(0.0, -1.0),
-                end: AlignmentDirectional(0, 1.0),
+                stops: [1, 1],
+                begin: AlignmentDirectional(0, -1),
+                end: AlignmentDirectional(0, 1),
               ),
             ),
             child: Column(
@@ -152,8 +152,8 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
               children: [
                 Image.asset(
                   'assets/images/sensible-logo.png',
-                  width: 200.0,
-                  height: 180.0,
+                  width: 200,
+                  height: 180,
                   fit: BoxFit.contain,
                 ).animateOnPageLoad(animationsMap['imageOnPageLoadAnimation']!),
                 Stack(
@@ -181,11 +181,11 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
                           if (!snapshot.hasData) {
                             return Center(
                               child: SizedBox(
-                                width: 40.0,
-                                height: 40.0,
+                                width: 40,
+                                height: 40,
                                 child: SpinKitFadingCircle(
                                   color: FlutterFlowTheme.of(context).primary,
-                                  size: 40.0,
+                                  size: 40,
                                 ),
                               ),
                             );
@@ -268,11 +268,11 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
                           if (!snapshot.hasData) {
                             return Center(
                               child: SizedBox(
-                                width: 40.0,
-                                height: 40.0,
+                                width: 40,
+                                height: 40,
                                 child: SpinKitFadingCircle(
                                   color: FlutterFlowTheme.of(context).primary,
-                                  size: 40.0,
+                                  size: 40,
                                 ),
                               ),
                             );
@@ -348,7 +348,7 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
                   ],
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       var _shouldSetState = false;
@@ -372,7 +372,7 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
                           }.withoutNulls,
                         );
 
-                        if (_shouldSetState) setState(() {});
+                        if (_shouldSetState) safeSetState(() {});
                         return;
                       } else {
                         if (FFAppState().targetPlatform == 'windows') {
@@ -407,18 +407,16 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
                         );
                       }
 
-                      if (_shouldSetState) setState(() {});
+                      if (_shouldSetState) safeSetState(() {});
                     },
                     text: FFLocalizations.of(context).getText(
                       'uoi4jzqu' /* Continue */,
                     ),
                     options: FFButtonOptions(
-                      width: 130.0,
-                      height: 40.0,
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      width: 130,
+                      height: 40,
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                      iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle: FlutterFlowTheme.of(context)
                           .titleSmall
@@ -430,12 +428,12 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget>
                             useGoogleFonts: GoogleFonts.asMap().containsKey(
                                 FlutterFlowTheme.of(context).titleSmallFamily),
                           ),
-                      elevation: 2.0,
+                      elevation: 2,
                       borderSide: BorderSide(
                         color: Colors.transparent,
-                        width: 1.0,
+                        width: 1,
                       ),
-                      borderRadius: BorderRadius.circular(8.0),
+                      borderRadius: BorderRadius.circular(8),
                     ),
                   ),
                 ),

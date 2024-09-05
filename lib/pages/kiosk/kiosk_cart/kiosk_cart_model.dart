@@ -20,7 +20,6 @@ import 'package:provider/provider.dart';
 class KioskCartModel extends FlutterFlowModel<KioskCartWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for KioskHeader component.
   late KioskHeaderModel kioskHeaderModel;
   // Stores action output result for [Custom Action - reduceQuantityHoldListkiosk] action in IconButton widget.

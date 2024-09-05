@@ -28,7 +28,7 @@ class _HeaderCopyWidgetState extends State<HeaderCopyWidget> {
     super.initState();
     _model = createModel(context, () => HeaderCopyModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -46,18 +46,18 @@ class _HeaderCopyWidgetState extends State<HeaderCopyWidget> {
         Expanded(
           child: Container(
             width: double.infinity,
-            height: 100.0,
+            height: 100,
             decoration: BoxDecoration(
               color: Color(0xFFB6001A),
             ),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 2.0),
+              padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 2),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.end,
@@ -83,14 +83,13 @@ class _HeaderCopyWidgetState extends State<HeaderCopyWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 2, 0, 0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 5.0, 0.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                           child: Text(
                             FFLocalizations.of(context).getText(
                               '7zv9jgnt' /* Rohit Tamkar */,

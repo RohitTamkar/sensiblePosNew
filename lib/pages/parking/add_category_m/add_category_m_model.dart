@@ -19,7 +19,6 @@ import 'package:provider/provider.dart';
 class AddCategoryMModel extends FlutterFlowModel<AddCategoryMWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
   // State field(s) for TextFieldName widget.
   FocusNode? textFieldNameFocusNode;

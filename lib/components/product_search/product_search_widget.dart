@@ -36,7 +36,7 @@ class _ProductSearchWidgetState extends State<ProductSearchWidget> {
     _model.textFieldsearchProdTextController ??= TextEditingController();
     _model.textFieldsearchProdFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -56,8 +56,8 @@ class _ProductSearchWidgetState extends State<ProductSearchWidget> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          width: 450.0,
-          height: 450.0,
+          width: 450,
+          height: 450,
           decoration: BoxDecoration(),
           child: Column(
             mainAxisSize: MainAxisSize.max,
@@ -65,7 +65,7 @@ class _ProductSearchWidgetState extends State<ProductSearchWidget> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(60.0, 20.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(60, 20, 0, 0),
                 child: StreamBuilder<List<ProductRecord>>(
                   stream: queryProductRecord(
                     parent: FFAppState().outletIdRef,
@@ -77,11 +77,11 @@ class _ProductSearchWidgetState extends State<ProductSearchWidget> {
                     if (!snapshot.hasData) {
                       return Center(
                         child: SizedBox(
-                          width: 40.0,
-                          height: 40.0,
+                          width: 40,
+                          height: 40,
                           child: SpinKitFadingCircle(
                             color: FlutterFlowTheme.of(context).primary,
-                            size: 40.0,
+                            size: 40,
                           ),
                         ),
                       );
@@ -90,8 +90,8 @@ class _ProductSearchWidgetState extends State<ProductSearchWidget> {
                         snapshot.data!;
 
                     return Container(
-                      width: 300.0,
-                      height: 380.0,
+                      width: 300,
+                      height: 380,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primaryBackground,
                         border: Border.all(
@@ -99,7 +99,7 @@ class _ProductSearchWidgetState extends State<ProductSearchWidget> {
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(5.0),
+                        padding: EdgeInsets.all(5),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -121,14 +121,14 @@ class _ProductSearchWidgetState extends State<ProductSearchWidget> {
                                     decoration: BoxDecoration(),
                                     child: FlutterFlowIconButton(
                                       borderColor: Colors.transparent,
-                                      borderRadius: 30.0,
-                                      borderWidth: 1.0,
-                                      buttonSize: 35.0,
+                                      borderRadius: 30,
+                                      borderWidth: 1,
+                                      buttonSize: 35,
                                       icon: Icon(
                                         Icons.close,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
-                                        size: 20.0,
+                                        size: 20,
                                       ),
                                       onPressed: () {
                                         print('IconButton pressed ...');
@@ -139,11 +139,11 @@ class _ProductSearchWidgetState extends State<ProductSearchWidget> {
                               ],
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 5.0, 0.0, 0.0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                               child: Container(
                                 width: double.infinity,
-                                height: 40.0,
+                                height: 40,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context).primary,
                                 ),
@@ -155,7 +155,7 @@ class _ProductSearchWidgetState extends State<ProductSearchWidget> {
                                     Expanded(
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            4.0, 0.0, 0.0, 0.0),
+                                            4, 0, 0, 0),
                                         child: TextFormField(
                                           controller: _model
                                               .textFieldsearchProdTextController,
@@ -298,17 +298,17 @@ class _ProductSearchWidgetState extends State<ProductSearchWidget> {
                             ),
                             Container(
                               width: double.infinity,
-                              height: 276.0,
+                              height: 276,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
                                 boxShadow: [
                                   BoxShadow(
-                                    blurRadius: 3.0,
+                                    blurRadius: 3,
                                     color: Color(0x33000000),
                                     offset: Offset(
-                                      0.0,
-                                      1.0,
+                                      0,
+                                      1,
                                     ),
                                   )
                                 ],
@@ -350,7 +350,7 @@ class _ProductSearchWidgetState extends State<ProductSearchWidget> {
                                                   );
                                                   Navigator.pop(context);
 
-                                                  setState(() {});
+                                                  safeSetState(() {});
                                                 },
                                                 child: Card(
                                                   clipBehavior: Clip
@@ -361,7 +361,7 @@ class _ProductSearchWidgetState extends State<ProductSearchWidget> {
                                                   shape: RoundedRectangleBorder(
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            0.0),
+                                                            0),
                                                   ),
                                                   child: Row(
                                                     mainAxisSize:
@@ -373,7 +373,7 @@ class _ProductSearchWidgetState extends State<ProductSearchWidget> {
                                                         child: Container(
                                                           width:
                                                               double.infinity,
-                                                          height: 30.0,
+                                                          height: 30,
                                                           decoration:
                                                               BoxDecoration(
                                                             color: FlutterFlowTheme
@@ -441,8 +441,7 @@ class _ProductSearchWidgetState extends State<ProductSearchWidget> {
                                                       containerVarIndex];
                                               return Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 5.0, 0.0, 5.0),
+                                                    .fromSTEB(0, 5, 0, 5),
                                                 child: InkWell(
                                                   splashColor:
                                                       Colors.transparent,
@@ -470,7 +469,7 @@ class _ProductSearchWidgetState extends State<ProductSearchWidget> {
                                                         true;
                                                     FFAppState().update(() {});
 
-                                                    setState(() {});
+                                                    safeSetState(() {});
                                                   },
                                                   child: Card(
                                                     clipBehavior: Clip
@@ -482,7 +481,7 @@ class _ProductSearchWidgetState extends State<ProductSearchWidget> {
                                                         RoundedRectangleBorder(
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              0.0),
+                                                              0),
                                                     ),
                                                     child: Row(
                                                       mainAxisSize:
@@ -495,7 +494,7 @@ class _ProductSearchWidgetState extends State<ProductSearchWidget> {
                                                           child: Container(
                                                             width:
                                                                 double.infinity,
-                                                            height: 30.0,
+                                                            height: 30,
                                                             decoration:
                                                                 BoxDecoration(
                                                               color: FlutterFlowTheme

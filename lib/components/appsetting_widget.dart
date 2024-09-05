@@ -37,7 +37,7 @@ class _AppsettingWidgetState extends State<AppsettingWidget> {
     super.initState();
     _model = createModel(context, () => AppsettingModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -52,7 +52,7 @@ class _AppsettingWidgetState extends State<AppsettingWidget> {
     return SwitchListTile(
       value: _model.switchListTilecheckInOutValue ??= widget!.struct!.value,
       onChanged: (newValue) async {
-        setState(() => _model.switchListTilecheckInOutValue = newValue!);
+        safeSetState(() => _model.switchListTilecheckInOutValue = newValue!);
         if (newValue!) {
           _model.appsttingupdate = await actions.appSettingUpdate(
             AppSettingsStruct(
@@ -65,9 +65,9 @@ class _AppsettingWidgetState extends State<AppsettingWidget> {
           );
           FFAppState().appSettings =
               _model.appsttingupdate!.toList().cast<AppSettingsStruct>();
-          setState(() {});
+          safeSetState(() {});
 
-          setState(() {});
+          safeSetState(() {});
         } else {
           _model.appsttingupdateCopy = await actions.appSettingUpdate(
             AppSettingsStruct(
@@ -80,9 +80,9 @@ class _AppsettingWidgetState extends State<AppsettingWidget> {
           );
           FFAppState().appSettings =
               _model.appsttingupdateCopy!.toList().cast<AppSettingsStruct>();
-          setState(() {});
+          safeSetState(() {});
 
-          setState(() {});
+          safeSetState(() {});
         }
       },
       title: Text(

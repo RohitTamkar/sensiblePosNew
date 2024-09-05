@@ -34,7 +34,7 @@ class _FsqrWidgetState extends State<FsqrWidget> {
     super.initState();
     _model = createModel(context, () => FsqrModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -61,7 +61,7 @@ class _FsqrWidgetState extends State<FsqrWidget> {
                   flex: 7,
                   child: Container(
                     width: double.infinity,
-                    height: 100.0,
+                    height: 100,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).primaryBackground,
                     ),
@@ -70,24 +70,22 @@ class _FsqrWidgetState extends State<FsqrWidget> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 30.0, 0.0, 0.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
                           child: ClipRRect(
-                            borderRadius: BorderRadius.circular(8.0),
+                            borderRadius: BorderRadius.circular(8),
                             child: Image.network(
                               getJsonField(
                                 widget!.json,
                                 r'''$.image_url''',
                               ).toString(),
-                              width: 500.0,
-                              height: 500.0,
+                              width: 500,
+                              height: 500,
                               fit: BoxFit.cover,
                             ),
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 30.0, 0.0, 0.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
                           child: Text(
                             getJsonField(
                               widget!.json,
@@ -141,7 +139,7 @@ class _FsqrWidgetState extends State<FsqrWidget> {
                                     },
                                   );
 
-                                  setState(() {});
+                                  safeSetState(() {});
                                 }();
                               }
                               _model.listViewPreviousSnapshot = snapshot;
@@ -151,11 +149,11 @@ class _FsqrWidgetState extends State<FsqrWidget> {
                             if (!snapshot.hasData) {
                               return Center(
                                 child: SizedBox(
-                                  width: 40.0,
-                                  height: 40.0,
+                                  width: 40,
+                                  height: 40,
                                   child: SpinKitFadingCircle(
                                     color: FlutterFlowTheme.of(context).primary,
-                                    size: 40.0,
+                                    size: 40,
                                   ),
                                 ),
                               );

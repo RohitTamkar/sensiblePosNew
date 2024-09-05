@@ -82,7 +82,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
     _model.textFieldsearchTextController ??= TextEditingController();
     _model.textFieldsearchFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -109,16 +109,16 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                 print('FloatingActionButton pressed ...');
               },
               backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-              elevation: 8.0,
+              elevation: 8,
               child: FlutterFlowIconButton(
                 borderColor: Colors.transparent,
-                borderRadius: 30.0,
-                borderWidth: 1.0,
-                buttonSize: 60.0,
+                borderRadius: 30,
+                borderWidth: 1,
+                buttonSize: 60,
                 icon: Icon(
                   Icons.add,
                   color: FlutterFlowTheme.of(context).primary,
-                  size: 30.0,
+                  size: 30,
                 ),
                 onPressed: () async {
                   context.pushNamed('AddCustomer');
@@ -128,7 +128,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
             endDrawer: Container(
               width: MediaQuery.sizeOf(context).width * 0.45,
               child: Drawer(
-                elevation: 16.0,
+                elevation: 16,
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -142,11 +142,11 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                         if (!snapshot.hasData) {
                           return Center(
                             child: SizedBox(
-                              width: 40.0,
-                              height: 40.0,
+                              width: 40,
+                              height: 40,
                               child: SpinKitFadingCircle(
                                 color: FlutterFlowTheme.of(context).primary,
-                                size: 40.0,
+                                size: 40,
                               ),
                             ),
                           );
@@ -155,14 +155,14 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                             snapshot.data!;
 
                         return Container(
-                          width: MediaQuery.sizeOf(context).width * 1.0,
-                          height: MediaQuery.sizeOf(context).height * 1.0,
+                          width: MediaQuery.sizeOf(context).width,
+                          height: MediaQuery.sizeOf(context).height * 1,
                           decoration: BoxDecoration(
                             color:
                                 FlutterFlowTheme.of(context).primaryBackground,
                           ),
                           child: Padding(
-                            padding: EdgeInsets.all(10.0),
+                            padding: EdgeInsets.all(10),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -183,14 +183,14 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                     children: [
                                       FlutterFlowIconButton(
                                         borderColor: Colors.transparent,
-                                        borderRadius: 30.0,
-                                        borderWidth: 1.0,
-                                        buttonSize: 40.0,
+                                        borderRadius: 30,
+                                        borderWidth: 1,
+                                        buttonSize: 40,
                                         icon: Icon(
                                           Icons.chevron_left,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
-                                          size: 22.0,
+                                          size: 22,
                                         ),
                                         onPressed: () async {
                                           context.pop();
@@ -204,8 +204,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      20.0, 0.0, 0.0, 0.0),
+                                                  .fromSTEB(20, 0, 0, 0),
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -234,14 +233,14 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                       ),
                                       FlutterFlowIconButton(
                                         borderColor: Colors.transparent,
-                                        borderRadius: 30.0,
-                                        borderWidth: 1.0,
-                                        buttonSize: 40.0,
+                                        borderRadius: 30,
+                                        borderWidth: 1,
+                                        buttonSize: 40,
                                         icon: Icon(
                                           Icons.person_add,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
-                                          size: 22.0,
+                                          size: 22,
                                         ),
                                         onPressed: () async {
                                           context.pushNamed('AddCustomer');
@@ -252,10 +251,10 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 10.0, 0.0, 0.0),
+                                      0, 10, 0, 0),
                                   child: Material(
                                     color: Colors.transparent,
-                                    elevation: 2.0,
+                                    elevation: 2,
                                     child: Container(
                                       width: double.infinity,
                                       height:
@@ -273,7 +272,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                           Expanded(
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(6.0, 0.0, 0.0, 0.0),
+                                                  .fromSTEB(6, 0, 0, 0),
                                               child: TextFormField(
                                                 controller: _model
                                                     .textFieldsearchTextController,
@@ -432,8 +431,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                             ),
                                             child: FlutterFlowIconButton(
                                               borderColor: Colors.transparent,
-                                              borderWidth: 1.0,
-                                              buttonSize: 50.0,
+                                              borderWidth: 1,
+                                              buttonSize: 50,
                                               fillColor:
                                                   FlutterFlowTheme.of(context)
                                                       .secondary,
@@ -442,7 +441,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryBtnText,
-                                                size: 22.0,
+                                                size: 22,
                                               ),
                                               onPressed: () {
                                                 print('IconButton pressed ...');
@@ -456,7 +455,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 5.0, 0.0, 0.0),
+                                      0, 5, 0, 0),
                                   child: Container(
                                     width: double.infinity,
                                     height:
@@ -466,11 +465,11 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                           .secondaryBackground,
                                       boxShadow: [
                                         BoxShadow(
-                                          blurRadius: 3.0,
+                                          blurRadius: 3,
                                           color: Color(0x33000000),
                                           offset: Offset(
-                                            0.0,
-                                            1.0,
+                                            0,
+                                            1,
                                           ),
                                         )
                                       ],
@@ -533,8 +532,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                             RoundedRectangleBorder(
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      4.0),
+                                                                  .circular(4),
                                                         ),
                                                         child: Row(
                                                           mainAxisSize:
@@ -546,17 +544,16 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                             FlutterFlowIconButton(
                                                               borderColor: Colors
                                                                   .transparent,
-                                                              borderRadius:
-                                                                  30.0,
-                                                              borderWidth: 1.0,
-                                                              buttonSize: 60.0,
+                                                              borderRadius: 30,
+                                                              borderWidth: 1,
+                                                              buttonSize: 60,
                                                               icon: Icon(
                                                                 Icons
                                                                     .account_circle,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
-                                                                size: 30.0,
+                                                                size: 30,
                                                               ),
                                                               onPressed: () {
                                                                 print(
@@ -566,7 +563,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                             Expanded(
                                                               flex: 2,
                                                               child: Container(
-                                                                width: 170.0,
+                                                                width: 170,
                                                                 height: MediaQuery.sizeOf(
                                                                             context)
                                                                         .height *
@@ -640,7 +637,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                             Expanded(
                                                               flex: 2,
                                                               child: Container(
-                                                                width: 100.0,
+                                                                width: 100,
                                                                 height: MediaQuery.sizeOf(
                                                                             context)
                                                                         .height *
@@ -677,7 +674,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                       width: double
                                                                           .infinity,
                                                                       height:
-                                                                          20.0,
+                                                                          20,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -708,7 +705,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                             ),
                                                             Expanded(
                                                               child: Container(
-                                                                width: 100.0,
+                                                                width: 100,
                                                                 height: MediaQuery.sizeOf(
                                                                             context)
                                                                         .height *
@@ -725,15 +722,15 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                       Colors
                                                                           .transparent,
                                                                   borderWidth:
-                                                                      1.0,
+                                                                      1,
                                                                   buttonSize:
-                                                                      60.0,
+                                                                      60,
                                                                   icon: Icon(
                                                                     Icons.edit,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryText,
-                                                                    size: 24.0,
+                                                                    size: 24,
                                                                   ),
                                                                   onPressed:
                                                                       () async {
@@ -766,8 +763,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                           if (FFAppState().isCustListShown ==
                                               true)
                                             Align(
-                                              alignment: AlignmentDirectional(
-                                                  0.0, 0.0),
+                                              alignment:
+                                                  AlignmentDirectional(0, 0),
                                               child: Builder(
                                                 builder: (context) {
                                                   final containerVar =
@@ -787,7 +784,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                               containerVarIndex];
                                                       return Padding(
                                                         padding:
-                                                            EdgeInsets.all(3.0),
+                                                            EdgeInsets.all(3),
                                                         child: InkWell(
                                                           splashColor: Colors
                                                               .transparent,
@@ -838,7 +835,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          4.0),
+                                                                          4),
                                                             ),
                                                             child: Row(
                                                               mainAxisSize:
@@ -853,18 +850,18 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                       Colors
                                                                           .transparent,
                                                                   borderRadius:
-                                                                      30.0,
+                                                                      30,
                                                                   borderWidth:
-                                                                      1.0,
+                                                                      1,
                                                                   buttonSize:
-                                                                      60.0,
+                                                                      60,
                                                                   icon: Icon(
                                                                     Icons
                                                                         .account_circle,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryText,
-                                                                    size: 30.0,
+                                                                    size: 30,
                                                                   ),
                                                                   onPressed:
                                                                       () {
@@ -875,8 +872,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 Expanded(
                                                                   child:
                                                                       Container(
-                                                                    width:
-                                                                        170.0,
+                                                                    width: 170,
                                                                     height: MediaQuery.sizeOf(context)
                                                                             .height *
                                                                         0.16,
@@ -946,8 +942,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 Expanded(
                                                                   child:
                                                                       Container(
-                                                                    width:
-                                                                        100.0,
+                                                                    width: 100,
                                                                     height: MediaQuery.sizeOf(context)
                                                                             .height *
                                                                         0.16,
@@ -980,7 +975,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                           width:
                                                                               double.infinity,
                                                                           height:
-                                                                              20.0,
+                                                                              20,
                                                                           decoration:
                                                                               BoxDecoration(),
                                                                           child:
@@ -1030,19 +1025,18 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                         Colors
                                                                             .transparent,
                                                                     borderRadius:
-                                                                        30.0,
+                                                                        30,
                                                                     borderWidth:
-                                                                        1.0,
+                                                                        1,
                                                                     buttonSize:
-                                                                        60.0,
+                                                                        60,
                                                                     icon: Icon(
                                                                       Icons
                                                                           .edit,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryText,
-                                                                      size:
-                                                                          24.0,
+                                                                      size: 24,
                                                                     ),
                                                                     onPressed:
                                                                         () async {
@@ -1087,14 +1081,14 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
               ),
             ),
             body: Padding(
-              padding: EdgeInsets.all(3.0),
+              padding: EdgeInsets.all(3),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Expanded(
                     flex: 1,
                     child: Container(
-                      width: MediaQuery.sizeOf(context).width * 1.0,
+                      width: MediaQuery.sizeOf(context).width,
                       height: MediaQuery.sizeOf(context).height * 0.12,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primary,
@@ -1107,22 +1101,22 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                           Expanded(
                             flex: 1,
                             child: Container(
-                              width: 100.0,
-                              height: 100.0,
+                              width: 100,
+                              height: 100,
                               decoration: BoxDecoration(),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   FlutterFlowIconButton(
                                     borderColor: Colors.transparent,
-                                    borderRadius: 30.0,
-                                    borderWidth: 1.0,
-                                    buttonSize: 60.0,
+                                    borderRadius: 30,
+                                    borderWidth: 1,
+                                    buttonSize: 60,
                                     icon: Icon(
                                       Icons.chevron_left_sharp,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBtnText,
-                                      size: 26.0,
+                                      size: 26,
                                     ),
                                     onPressed: () {
                                       print('IconButton pressed ...');
@@ -1155,7 +1149,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                             flex: 2,
                             child: wrapWithModel(
                               model: _model.headerModel,
-                              updateCallback: () => setState(() {}),
+                              updateCallback: () => safeSetState(() {}),
                               child: HeaderWidget(),
                             ),
                           ),
@@ -1166,8 +1160,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                   Expanded(
                     flex: 13,
                     child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
                       child: StreamBuilder<List<PartyRecord>>(
                         stream: queryPartyRecord(
                           parent: FFAppState().outletIdRef,
@@ -1183,11 +1176,11 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                           if (!snapshot.hasData) {
                             return Center(
                               child: SizedBox(
-                                width: 40.0,
-                                height: 40.0,
+                                width: 40,
+                                height: 40,
                                 child: SpinKitFadingCircle(
                                   color: FlutterFlowTheme.of(context).primary,
-                                  size: 40.0,
+                                  size: 40,
                                 ),
                               ),
                             );
@@ -1204,8 +1197,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                   : null;
 
                           return Container(
-                            width: MediaQuery.sizeOf(context).width * 1.0,
-                            height: 100.0,
+                            width: MediaQuery.sizeOf(context).width,
+                            height: 100,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
@@ -1226,7 +1219,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            5.0, 0.0, 0.0, 0.0),
+                                            5, 0, 0, 0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -1262,8 +1255,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          5.0, 0.0, 0.0, 0.0),
+                                                      .fromSTEB(5, 0, 0, 0),
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
@@ -1288,7 +1280,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                   ),
                                                 ),
                                                 Container(
-                                                  width: 100.0,
+                                                  width: 100,
                                                   height:
                                                       MediaQuery.sizeOf(context)
                                                               .height *
@@ -1301,8 +1293,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                   child: FlutterFlowIconButton(
                                                     borderColor:
                                                         Colors.transparent,
-                                                    borderWidth: 1.0,
-                                                    buttonSize: 45.0,
+                                                    borderWidth: 1,
+                                                    buttonSize: 45,
                                                     fillColor:
                                                         FlutterFlowTheme.of(
                                                                 context)
@@ -1313,7 +1305,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .lineColor,
-                                                      size: 20.0,
+                                                      size: 20,
                                                     ),
                                                     onPressed: () {
                                                       print(
@@ -1328,7 +1320,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            5.0, 0.0, 5.0, 0.0),
+                                            5, 0, 5, 0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
                                             var confirmDialogResponse =
@@ -1374,14 +1366,14 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                             'ph9xm3wd' /* DELETE */,
                                           ),
                                           options: FFButtonOptions(
-                                            width: 120.0,
-                                            height: 44.0,
+                                            width: 120,
+                                            height: 44,
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
+                                                    0, 0, 0, 0),
                                             iconPadding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
+                                                    0, 0, 0, 0),
                                             color: FlutterFlowTheme.of(context)
                                                 .secondary,
                                             textStyle:
@@ -1403,19 +1395,19 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                       context)
                                                                   .headlineSmallFamily),
                                                     ),
-                                            elevation: 2.0,
+                                            elevation: 2,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
-                                              width: 1.0,
+                                              width: 1,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(0.0),
+                                                BorderRadius.circular(0),
                                           ),
                                         ),
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 20.0, 0.0),
+                                            0, 0, 20, 0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
                                             await containerPartyRecord!
@@ -1523,14 +1515,14 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                             'i0l2stea' /* UPDATE */,
                                           ),
                                           options: FFButtonOptions(
-                                            width: 120.0,
-                                            height: 44.0,
+                                            width: 120,
+                                            height: 44,
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
+                                                    0, 0, 0, 0),
                                             iconPadding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
+                                                    0, 0, 0, 0),
                                             color: FlutterFlowTheme.of(context)
                                                 .secondary,
                                             textStyle:
@@ -1553,13 +1545,13 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                       context)
                                                                   .titleSmallFamily),
                                                     ),
-                                            elevation: 2.0,
+                                            elevation: 2,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
-                                              width: 1.0,
+                                              width: 1,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(0.0),
+                                                BorderRadius.circular(0),
                                           ),
                                         ),
                                       ),
@@ -1581,7 +1573,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 5.0, 0.0, 0.0),
+                                                    0, 5, 0, 0),
                                             child: Container(
                                               width: double.infinity,
                                               height: MediaQuery.sizeOf(context)
@@ -1599,8 +1591,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(10.0, 0.0,
-                                                                0.0, 10.0),
+                                                            .fromSTEB(
+                                                                10, 0, 0, 10),
                                                     child: Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -1642,10 +1634,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    5.0,
-                                                                    0.0,
-                                                                    5.0,
-                                                                    0.0),
+                                                                    5, 0, 5, 0),
                                                         child: Container(
                                                           width:
                                                               MediaQuery.sizeOf(
@@ -1674,10 +1663,10 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            5.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                            5,
+                                                                            0,
+                                                                            0,
+                                                                            0),
                                                                 child: Text(
                                                                   FFLocalizations.of(
                                                                           context)
@@ -1700,7 +1689,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                               Material(
                                                                 color: Colors
                                                                     .transparent,
-                                                                elevation: 2.0,
+                                                                elevation: 2,
                                                                 child:
                                                                     Container(
                                                                   width: double
@@ -1845,10 +1834,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    5.0,
-                                                                    0.0,
-                                                                    5.0,
-                                                                    0.0),
+                                                                    5, 0, 5, 0),
                                                         child: Container(
                                                           width:
                                                               MediaQuery.sizeOf(
@@ -1877,10 +1863,10 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            5.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                            5,
+                                                                            0,
+                                                                            0,
+                                                                            0),
                                                                 child: Text(
                                                                   FFLocalizations.of(
                                                                           context)
@@ -1903,7 +1889,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                               Material(
                                                                 color: Colors
                                                                     .transparent,
-                                                                elevation: 2.0,
+                                                                elevation: 2,
                                                                 child:
                                                                     Container(
                                                                   width: double
@@ -2049,10 +2035,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    2.0,
-                                                                    0.0,
-                                                                    5.0,
-                                                                    0.0),
+                                                                    2, 0, 5, 0),
                                                         child: Container(
                                                           width:
                                                               MediaQuery.sizeOf(
@@ -2081,10 +2064,10 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            5.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                            5,
+                                                                            0,
+                                                                            0,
+                                                                            0),
                                                                 child: Text(
                                                                   FFLocalizations.of(
                                                                           context)
@@ -2107,7 +2090,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                               Material(
                                                                 color: Colors
                                                                     .transparent,
-                                                                elevation: 2.0,
+                                                                elevation: 2,
                                                                 child:
                                                                     Container(
                                                                   width: double
@@ -2254,8 +2237,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 10.0,
-                                                                0.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 10, 0, 0),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -2266,11 +2249,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      3.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 3, 0),
                                                           child: Container(
                                                             width: MediaQuery
                                                                         .sizeOf(
@@ -2288,10 +2268,10 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          5,
+                                                                          0,
+                                                                          0,
+                                                                          0),
                                                               child: Column(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -2306,10 +2286,10 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            5.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                            5,
+                                                                            0,
+                                                                            0,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -2333,7 +2313,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                     color: Colors
                                                                         .transparent,
                                                                     elevation:
-                                                                        2.0,
+                                                                        2,
                                                                     child:
                                                                         Container(
                                                                       width: double
@@ -2449,11 +2429,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      2.0,
-                                                                      0.0,
-                                                                      3.0,
-                                                                      0.0),
+                                                                  .fromSTEB(2,
+                                                                      0, 3, 0),
                                                           child: Container(
                                                             width: MediaQuery
                                                                         .sizeOf(
@@ -2481,10 +2458,10 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          5,
+                                                                          0,
+                                                                          0,
+                                                                          0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -2507,8 +2484,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 Material(
                                                                   color: Colors
                                                                       .transparent,
-                                                                  elevation:
-                                                                      2.0,
+                                                                  elevation: 2,
                                                                   child:
                                                                       Container(
                                                                     width: double
@@ -2644,11 +2620,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      2.0,
-                                                                      0.0,
-                                                                      3.0,
-                                                                      0.0),
+                                                                  .fromSTEB(2,
+                                                                      0, 3, 0),
                                                           child: Container(
                                                             width: MediaQuery
                                                                         .sizeOf(
@@ -2676,10 +2649,10 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          5,
+                                                                          0,
+                                                                          0,
+                                                                          0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -2702,8 +2675,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 Material(
                                                                   color: Colors
                                                                       .transparent,
-                                                                  elevation:
-                                                                      2.0,
+                                                                  elevation: 2,
                                                                   child:
                                                                       Container(
                                                                     width: double
@@ -2846,7 +2818,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 20.0, 0.0, 10.0),
+                                                    0, 20, 0, 10),
                                             child: Container(
                                               width: double.infinity,
                                               height: MediaQuery.sizeOf(context)
@@ -2864,8 +2836,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(10.0, 5.0,
-                                                                0.0, 10.0),
+                                                            .fromSTEB(
+                                                                10, 5, 0, 10),
                                                     child: Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -2899,8 +2871,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 10.0),
+                                                            .fromSTEB(
+                                                                0, 0, 0, 10),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -2911,11 +2883,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      13.0,
-                                                                      0.0,
-                                                                      10.0,
-                                                                      0.0),
+                                                                  .fromSTEB(13,
+                                                                      0, 10, 0),
                                                           child: Container(
                                                             width: MediaQuery
                                                                         .sizeOf(
@@ -2943,10 +2912,10 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          5,
+                                                                          0,
+                                                                          0,
+                                                                          0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -2971,8 +2940,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 Material(
                                                                   color: Colors
                                                                       .transparent,
-                                                                  elevation:
-                                                                      2.0,
+                                                                  elevation: 2,
                                                                   child:
                                                                       Container(
                                                                     width: double
@@ -3113,11 +3081,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      10.0,
-                                                                      0.0,
-                                                                      10.0,
-                                                                      0.0),
+                                                                  .fromSTEB(10,
+                                                                      0, 10, 0),
                                                           child: Container(
                                                             width: MediaQuery
                                                                         .sizeOf(
@@ -3145,10 +3110,10 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          5,
+                                                                          0,
+                                                                          0,
+                                                                          0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -3173,8 +3138,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 Material(
                                                                   color: Colors
                                                                       .transparent,
-                                                                  elevation:
-                                                                      2.0,
+                                                                  elevation: 2,
                                                                   child:
                                                                       Container(
                                                                     width: double
@@ -3310,11 +3274,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      10.0,
-                                                                      0.0,
-                                                                      15.0,
-                                                                      0.0),
+                                                                  .fromSTEB(10,
+                                                                      0, 15, 0),
                                                           child: Container(
                                                             width: MediaQuery
                                                                         .sizeOf(
@@ -3342,10 +3303,10 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          5,
+                                                                          0,
+                                                                          0,
+                                                                          0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -3370,8 +3331,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 Material(
                                                                   color: Colors
                                                                       .transparent,
-                                                                  elevation:
-                                                                      2.0,
+                                                                  elevation: 2,
                                                                   child:
                                                                       Container(
                                                                     width: double
@@ -3510,8 +3470,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 10.0,
-                                                                0.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 10, 0, 0),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -3522,11 +3482,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      10.0,
-                                                                      0.0,
-                                                                      3.0,
-                                                                      0.0),
+                                                                  .fromSTEB(10,
+                                                                      0, 3, 0),
                                                           child: Container(
                                                             width: MediaQuery
                                                                         .sizeOf(
@@ -3554,10 +3511,10 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          5,
+                                                                          0,
+                                                                          0,
+                                                                          0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -3582,8 +3539,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 Material(
                                                                   color: Colors
                                                                       .transparent,
-                                                                  elevation:
-                                                                      2.0,
+                                                                  elevation: 2,
                                                                   child:
                                                                       Container(
                                                                     width: double
@@ -3650,11 +3606,11 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                       ],
                                                                       onChanged:
                                                                           (val) =>
-                                                                              setState(() => _model.dropDownProofOfIDValue = val),
+                                                                              safeSetState(() => _model.dropDownProofOfIDValue = val),
                                                                       width:
-                                                                          180.0,
+                                                                          180,
                                                                       height:
-                                                                          50.0,
+                                                                          50,
                                                                       textStyle: FlutterFlowTheme.of(
                                                                               context)
                                                                           .bodyMedium
@@ -3677,19 +3633,20 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                           FlutterFlowTheme.of(context)
                                                                               .secondaryBackground,
                                                                       elevation:
-                                                                          2.0,
+                                                                          2,
                                                                       borderColor:
                                                                           Colors
                                                                               .transparent,
                                                                       borderWidth:
-                                                                          0.0,
+                                                                          0,
                                                                       borderRadius:
-                                                                          0.0,
-                                                                      margin: EdgeInsetsDirectional.fromSTEB(
-                                                                          12.0,
-                                                                          4.0,
-                                                                          12.0,
-                                                                          4.0),
+                                                                          0,
+                                                                      margin: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              12,
+                                                                              4,
+                                                                              12,
+                                                                              4),
                                                                       hidesUnderline:
                                                                           true,
                                                                       isSearchable:
@@ -3706,11 +3663,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      2.0,
-                                                                      0.0,
-                                                                      3.0,
-                                                                      0.0),
+                                                                  .fromSTEB(2,
+                                                                      0, 3, 0),
                                                           child: Container(
                                                             width: MediaQuery
                                                                         .sizeOf(
@@ -3752,11 +3706,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      2.0,
-                                                                      0.0,
-                                                                      2.0,
-                                                                      0.0),
+                                                                  .fromSTEB(2,
+                                                                      0, 2, 0),
                                                           child: Container(
                                                             width: MediaQuery
                                                                         .sizeOf(
@@ -3784,10 +3735,10 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          3.0),
+                                                                          0,
+                                                                          0,
+                                                                          0,
+                                                                          3),
                                                                   child:
                                                                       Container(
                                                                     width: MediaQuery.sizeOf(context)
@@ -3827,8 +3778,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          10.0, 5.0, 0.0, 10.0),
+                                                      .fromSTEB(10, 5, 0, 10),
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
@@ -3857,8 +3807,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                 ),
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 10.0, 0.0, 10.0),
+                                                      .fromSTEB(0, 10, 0, 10),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -3869,11 +3818,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                       Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    10.0,
-                                                                    0.0,
-                                                                    3.0,
-                                                                    0.0),
+                                                                .fromSTEB(10, 0,
+                                                                    3, 0),
                                                         child: Container(
                                                           width:
                                                               MediaQuery.sizeOf(
@@ -3902,10 +3848,10 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            5.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                            5,
+                                                                            0,
+                                                                            0,
+                                                                            0),
                                                                 child: Text(
                                                                   FFLocalizations.of(
                                                                           context)
@@ -3930,7 +3876,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                               Material(
                                                                 color: Colors
                                                                     .transparent,
-                                                                elevation: 2.0,
+                                                                elevation: 2,
                                                                 child:
                                                                     Container(
                                                                   width: double
@@ -4079,10 +4025,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    2.0,
-                                                                    0.0,
-                                                                    3.0,
-                                                                    0.0),
+                                                                    2, 0, 3, 0),
                                                         child: Container(
                                                           width:
                                                               MediaQuery.sizeOf(
@@ -4111,10 +4054,10 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            5.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                            5,
+                                                                            0,
+                                                                            0,
+                                                                            0),
                                                                 child: Text(
                                                                   FFLocalizations.of(
                                                                           context)
@@ -4139,7 +4082,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                               Material(
                                                                 color: Colors
                                                                     .transparent,
-                                                                elevation: 2.0,
+                                                                elevation: 2,
                                                                 child:
                                                                     Container(
                                                                   width: double
@@ -4286,10 +4229,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    2.0,
-                                                                    0.0,
-                                                                    5.0,
-                                                                    0.0),
+                                                                    2, 0, 5, 0),
                                                         child: Container(
                                                           width:
                                                               MediaQuery.sizeOf(
@@ -4317,7 +4257,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                               Material(
                                                                 color: Colors
                                                                     .transparent,
-                                                                elevation: 2.0,
+                                                                elevation: 2,
                                                                 child:
                                                                     Container(
                                                                   width: double
@@ -4346,7 +4286,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                           false,
                                                                       onChanged:
                                                                           (newValue) async {
-                                                                        setState(() =>
+                                                                        safeSetState(() =>
                                                                             _model.checkboxListTileCreditValue =
                                                                                 newValue!);
                                                                       },
@@ -4391,7 +4331,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 15.0, 0.0, 0.0),
+                                                    0, 15, 0, 0),
                                             child: Container(
                                               width: double.infinity,
                                               height: MediaQuery.sizeOf(context)
@@ -4409,8 +4349,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(10.0, 5.0,
-                                                                0.0, 10.0),
+                                                            .fromSTEB(
+                                                                10, 5, 0, 10),
                                                     child: Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -4444,8 +4384,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 10.0),
+                                                            .fromSTEB(
+                                                                0, 0, 0, 10),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -4456,11 +4396,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      8.0,
-                                                                      0.0,
-                                                                      3.0,
-                                                                      0.0),
+                                                                  .fromSTEB(8,
+                                                                      0, 3, 0),
                                                           child: Container(
                                                             width: MediaQuery
                                                                         .sizeOf(
@@ -4488,10 +4425,10 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          5,
+                                                                          0,
+                                                                          0,
+                                                                          0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -4561,7 +4498,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                     color: Colors
                                                                         .transparent,
                                                                     elevation:
-                                                                        2.0,
+                                                                        2,
                                                                     child:
                                                                         Container(
                                                                       width: double
@@ -4585,10 +4522,10 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0),
+                                                                                5,
+                                                                                0,
+                                                                                0,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               containerPartyRecord!.birthday,
@@ -4636,10 +4573,10 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            5.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                            5,
+                                                                            0,
+                                                                            0,
+                                                                            0),
                                                                 child: Text(
                                                                   FFLocalizations.of(
                                                                           context)
@@ -4706,8 +4643,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 child: Material(
                                                                   color: Colors
                                                                       .transparent,
-                                                                  elevation:
-                                                                      2.0,
+                                                                  elevation: 2,
                                                                   child:
                                                                       Container(
                                                                     width: double
@@ -4735,10 +4671,10 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5.0,
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0),
+                                                                              5,
+                                                                              0,
+                                                                              0,
+                                                                              0),
                                                                           child:
                                                                               Text(
                                                                             containerPartyRecord!.anniversary,
@@ -4760,11 +4696,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      2.0,
-                                                                      0.0,
-                                                                      5.0,
-                                                                      0.0),
+                                                                  .fromSTEB(2,
+                                                                      0, 5, 0),
                                                           child: Container(
                                                             width: MediaQuery
                                                                         .sizeOf(
@@ -4792,10 +4725,10 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          5,
+                                                                          0,
+                                                                          0,
+                                                                          0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -4820,8 +4753,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 Material(
                                                                   color: Colors
                                                                       .transparent,
-                                                                  elevation:
-                                                                      2.0,
+                                                                  elevation: 2,
                                                                   child:
                                                                       Container(
                                                                     width: double
@@ -4960,8 +4892,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 10.0,
-                                                                0.0, 5.0),
+                                                            .fromSTEB(
+                                                                0, 10, 0, 5),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -4972,11 +4904,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      8.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(8,
+                                                                      0, 0, 0),
                                                           child: Container(
                                                             width: MediaQuery
                                                                         .sizeOf(
@@ -5004,10 +4933,10 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          5,
+                                                                          0,
+                                                                          0,
+                                                                          0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -5032,8 +4961,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 Material(
                                                                   color: Colors
                                                                       .transparent,
-                                                                  elevation:
-                                                                      2.0,
+                                                                  elevation: 2,
                                                                   child:
                                                                       Container(
                                                                     width: double
@@ -5171,11 +5099,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      2.0,
-                                                                      0.0,
-                                                                      3.0,
-                                                                      0.0),
+                                                                  .fromSTEB(2,
+                                                                      0, 3, 0),
                                                           child: Container(
                                                             width: MediaQuery
                                                                         .sizeOf(
@@ -5203,10 +5128,10 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          5,
+                                                                          0,
+                                                                          0,
+                                                                          0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -5231,8 +5156,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 Material(
                                                                   color: Colors
                                                                       .transparent,
-                                                                  elevation:
-                                                                      2.0,
+                                                                  elevation: 2,
                                                                   child:
                                                                       Container(
                                                                     width: double
@@ -5267,11 +5191,11 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                       ],
                                                                       onChanged:
                                                                           (val) =>
-                                                                              setState(() => _model.dropDownGenderValue = val),
+                                                                              safeSetState(() => _model.dropDownGenderValue = val),
                                                                       width:
-                                                                          180.0,
+                                                                          180,
                                                                       height:
-                                                                          50.0,
+                                                                          50,
                                                                       textStyle: FlutterFlowTheme.of(
                                                                               context)
                                                                           .bodyMedium
@@ -5292,19 +5216,20 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                           FlutterFlowTheme.of(context)
                                                                               .secondaryBackground,
                                                                       elevation:
-                                                                          2.0,
+                                                                          2,
                                                                       borderColor:
                                                                           Colors
                                                                               .transparent,
                                                                       borderWidth:
-                                                                          0.0,
+                                                                          0,
                                                                       borderRadius:
-                                                                          0.0,
-                                                                      margin: EdgeInsetsDirectional.fromSTEB(
-                                                                          12.0,
-                                                                          4.0,
-                                                                          12.0,
-                                                                          4.0),
+                                                                          0,
+                                                                      margin: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              12,
+                                                                              4,
+                                                                              12,
+                                                                              4),
                                                                       hidesUnderline:
                                                                           true,
                                                                       isSearchable:
@@ -5321,11 +5246,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      2.0,
-                                                                      0.0,
-                                                                      5.0,
-                                                                      0.0),
+                                                                  .fromSTEB(2,
+                                                                      0, 5, 0),
                                                           child: Container(
                                                             width: MediaQuery
                                                                         .sizeOf(
@@ -5353,10 +5275,10 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          5,
+                                                                          0,
+                                                                          0,
+                                                                          0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -5381,8 +5303,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 Material(
                                                                   color: Colors
                                                                       .transparent,
-                                                                  elevation:
-                                                                      2.0,
+                                                                  elevation: 2,
                                                                   child:
                                                                       Container(
                                                                     width: double
@@ -5530,10 +5451,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    8.0,
-                                                                    0.0,
-                                                                    3.0,
-                                                                    0.0),
+                                                                    8, 0, 3, 0),
                                                         child: Container(
                                                           width:
                                                               MediaQuery.sizeOf(
@@ -5562,10 +5480,10 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            5.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                            5,
+                                                                            0,
+                                                                            0,
+                                                                            0),
                                                                 child: Text(
                                                                   FFLocalizations.of(
                                                                           context)
@@ -5590,7 +5508,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                               Material(
                                                                 color: Colors
                                                                     .transparent,
-                                                                elevation: 2.0,
+                                                                elevation: 2,
                                                                 child:
                                                                     Container(
                                                                   width: double
@@ -5720,7 +5638,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                           useGoogleFonts:
                                                                               GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                           lineHeight:
-                                                                              1.0,
+                                                                              1,
                                                                         ),
                                                                     maxLines: 2,
                                                                     validator: _model
@@ -5738,10 +5656,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    2.0,
-                                                                    0.0,
-                                                                    3.0,
-                                                                    0.0),
+                                                                    2, 0, 3, 0),
                                                         child: Container(
                                                           width:
                                                               MediaQuery.sizeOf(
@@ -5770,10 +5685,10 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            5.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                            5,
+                                                                            0,
+                                                                            0,
+                                                                            0),
                                                                 child: Text(
                                                                   FFLocalizations.of(
                                                                           context)
@@ -5798,7 +5713,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                               Material(
                                                                 color: Colors
                                                                     .transparent,
-                                                                elevation: 2.0,
+                                                                elevation: 2,
                                                                 child:
                                                                     Container(
                                                                   width: double
@@ -5943,10 +5858,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    2.0,
-                                                                    0.0,
-                                                                    5.0,
-                                                                    0.0),
+                                                                    2, 0, 5, 0),
                                                         child: Container(
                                                           width:
                                                               MediaQuery.sizeOf(
@@ -5998,7 +5910,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                               Material(
                                                                 color: Colors
                                                                     .transparent,
-                                                                elevation: 2.0,
+                                                                elevation: 2,
                                                                 child:
                                                                     Container(
                                                                   width: double
@@ -6148,7 +6060,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 10.0, 0.0, 10.0),
+                                                    0, 10, 0, 10),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -6156,8 +6068,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          8.0, 0.0, 3.0, 0.0),
+                                                      .fromSTEB(8, 0, 3, 0),
                                                   child: Container(
                                                     width: MediaQuery.sizeOf(
                                                                 context)
@@ -6181,11 +6092,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      5.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(5,
+                                                                      0, 0, 0),
                                                           child: Text(
                                                             FFLocalizations.of(
                                                                     context)
@@ -6215,7 +6123,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                         Material(
                                                           color: Colors
                                                               .transparent,
-                                                          elevation: 2.0,
+                                                          elevation: 2,
                                                           child: Container(
                                                             width:
                                                                 double.infinity,
@@ -6395,10 +6303,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    5.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0),
+                                                                    5, 0, 0, 0),
                                                         child: Text(
                                                           FFLocalizations.of(
                                                                   context)
@@ -6428,7 +6333,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                       Material(
                                                         color:
                                                             Colors.transparent,
-                                                        elevation: 2.0,
+                                                        elevation: 2,
                                                         child: Container(
                                                           width:
                                                               double.infinity,
@@ -6595,8 +6500,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                 ),
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          2.0, 0.0, 5.0, 0.0),
+                                                      .fromSTEB(2, 0, 5, 0),
                                                   child: Container(
                                                     width: MediaQuery.sizeOf(
                                                                 context)
@@ -6620,11 +6524,8 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      5.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(5,
+                                                                      0, 0, 0),
                                                           child: Text(
                                                             FFLocalizations.of(
                                                                     context)
@@ -6654,7 +6555,7 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                         Material(
                                                           color: Colors
                                                               .transparent,
-                                                          elevation: 2.0,
+                                                          elevation: 2,
                                                           child: Container(
                                                             width:
                                                                 double.infinity,
@@ -6693,11 +6594,11 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                                 )
                                                               ],
                                                               onChanged: (val) =>
-                                                                  setState(() =>
+                                                                  safeSetState(() =>
                                                                       _model.dropDownValue =
                                                                           val),
-                                                              width: 180.0,
-                                                              height: 50.0,
+                                                              width: 180,
+                                                              height: 50,
                                                               textStyle:
                                                                   FlutterFlowTheme.of(
                                                                           context)
@@ -6721,18 +6622,18 @@ class _EditCustomerWidgetState extends State<EditCustomerWidget> {
                                                               fillColor: FlutterFlowTheme
                                                                       .of(context)
                                                                   .secondaryBackground,
-                                                              elevation: 2.0,
+                                                              elevation: 2,
                                                               borderColor: Colors
                                                                   .transparent,
-                                                              borderWidth: 0.0,
-                                                              borderRadius: 0.0,
+                                                              borderWidth: 0,
+                                                              borderRadius: 0,
                                                               margin:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          12.0,
-                                                                          4.0,
-                                                                          12.0,
-                                                                          4.0),
+                                                                          12,
+                                                                          4,
+                                                                          12,
+                                                                          4),
                                                               hidesUnderline:
                                                                   true,
                                                               isSearchable:

@@ -91,7 +91,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
     _model.textController4 ??= TextEditingController();
     _model.textFieldFocusNode4 ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {
           _model.textController1?.text = dateTimeFormat(
             "MMMEd",
             getCurrentTimestamp,
@@ -130,7 +130,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                 Expanded(
                   flex: 5,
                   child: Container(
-                    width: 100.0,
+                    width: 100,
                     height: double.infinity,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondary,
@@ -153,8 +153,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                             },
                             child: Image.asset(
                               'assets/images/Sensible_Connect_Logo_2.png',
-                              width: 100.0,
-                              height: 100.0,
+                              width: 100,
+                              height: 100,
                               fit: BoxFit.contain,
                             ),
                           ),
@@ -202,12 +202,12 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                               if (!snapshot.hasData) {
                                 return Center(
                                   child: SizedBox(
-                                    width: 40.0,
-                                    height: 40.0,
+                                    width: 40,
+                                    height: 40,
                                     child: SpinKitFadingCircle(
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      size: 40.0,
+                                      size: 40,
                                     ),
                                   ),
                                 );
@@ -224,14 +224,14 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       : null;
 
                               return Container(
-                                width: 100.0,
-                                height: 100.0,
+                                width: 100,
+                                height: 100,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsets.all(15.0),
+                                  padding: EdgeInsets.all(15),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:
@@ -291,8 +291,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                               MainAxisAlignment.center,
                                           children: [
                                             Align(
-                                              alignment: AlignmentDirectional(
-                                                  0.0, 0.0),
+                                              alignment:
+                                                  AlignmentDirectional(0, 0),
                                               child: Text(
                                                 valueOrDefault<String>(
                                                   containerDeviceRecord
@@ -311,7 +311,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
-                                                          fontSize: 27.0,
+                                                          fontSize: 27,
                                                           letterSpacing: 0.0,
                                                           useGoogleFonts: GoogleFonts
                                                                   .asMap()
@@ -353,19 +353,18 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 1.0, 0.0, 20.0),
+                                            0, 1, 0, 20),
                                         child: Container(
-                                          width: 300.0,
-                                          height: 320.0,
+                                          width: 300,
+                                          height: 320,
                                           decoration: BoxDecoration(),
                                           child: Stack(
                                             alignment:
-                                                AlignmentDirectional(0.0, -1.0),
+                                                AlignmentDirectional(0, -1),
                                             children: [
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 0.0, 5.0),
+                                                    .fromSTEB(0, 0, 0, 5),
                                                 child: StreamBuilder<
                                                     List<UserProfileRecord>>(
                                                   stream:
@@ -402,14 +401,14 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                     if (!snapshot.hasData) {
                                                       return Center(
                                                         child: SizedBox(
-                                                          width: 40.0,
-                                                          height: 40.0,
+                                                          width: 40,
+                                                          height: 40,
                                                           child:
                                                               SpinKitFadingCircle(
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .primary,
-                                                            size: 40.0,
+                                                            size: 40,
                                                           ),
                                                         ),
                                                       );
@@ -419,18 +418,15 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                         snapshot.data!;
 
                                                     return Container(
-                                                      width: 275.0,
-                                                      height: 290.0,
+                                                      width: 275,
+                                                      height: 290,
                                                       decoration:
                                                           BoxDecoration(),
                                                       child: Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    5.0,
-                                                                    0.0,
-                                                                    0.0),
+                                                                    0, 5, 0, 0),
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -444,10 +440,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0),
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            5),
                                                                 child:
                                                                     Container(
                                                                   decoration:
@@ -466,7 +462,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                     children: [
                                                                       Padding(
                                                                         padding:
-                                                                            EdgeInsets.all(1.0),
+                                                                            EdgeInsets.all(1),
                                                                         child: FlutterFlowDropDown<
                                                                             String>(
                                                                           controller: _model.dropDownValueController1 ??=
@@ -475,7 +471,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                               .map((e) => e.name)
                                                                               .toList(),
                                                                           onChanged: (val) =>
-                                                                              setState(() => _model.dropDownValue1 = val),
+                                                                              safeSetState(() => _model.dropDownValue1 = val),
                                                                           width:
                                                                               double.infinity,
                                                                           height:
@@ -497,23 +493,23 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primaryText,
                                                                             size:
-                                                                                16.0,
+                                                                                16,
                                                                           ),
                                                                           fillColor:
                                                                               FlutterFlowTheme.of(context).secondaryBackground,
                                                                           elevation:
-                                                                              2.0,
+                                                                              2,
                                                                           borderColor:
                                                                               Colors.transparent,
                                                                           borderWidth:
-                                                                              0.0,
+                                                                              0,
                                                                           borderRadius:
-                                                                              0.0,
+                                                                              0,
                                                                           margin: EdgeInsetsDirectional.fromSTEB(
-                                                                              12.0,
-                                                                              4.0,
-                                                                              12.0,
-                                                                              4.0),
+                                                                              12,
+                                                                              4,
+                                                                              12,
+                                                                              4),
                                                                           hidesUnderline:
                                                                               true,
                                                                           isSearchable:
@@ -532,10 +528,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            10.0),
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            10),
                                                                 child:
                                                                     Container(
                                                                   decoration:
@@ -687,10 +683,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            2.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            2,
+                                                                            0),
                                                                         child:
                                                                             Column(
                                                                           mainAxisSize:
@@ -700,7 +696,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                           children: [
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 2, 3),
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     _model.one = await actions.setQuickPin(
@@ -709,35 +705,35 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                     FFAppState().quickPin = _model.one!;
                                                                                     FFAppState().update(() {});
 
-                                                                                    setState(() {});
+                                                                                    safeSetState(() {});
                                                                                   },
                                                                                   text: FFLocalizations.of(context).getText(
                                                                                     '0fkwkv4o' /* 1 */,
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     width: double.infinity,
-                                                                                    height: 33.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    height: 33,
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                         ),
-                                                                                    elevation: 2.0,
+                                                                                    elevation: 2,
                                                                                     borderSide: BorderSide(
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      width: 2.0,
+                                                                                      width: 2,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                    borderRadius: BorderRadius.circular(8),
                                                                                   ),
                                                                                 ),
                                                                               ),
                                                                             ),
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 2, 3),
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     _model.four = await actions.setQuickPin(
@@ -746,35 +742,35 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                     FFAppState().quickPin = _model.four!;
                                                                                     FFAppState().update(() {});
 
-                                                                                    setState(() {});
+                                                                                    safeSetState(() {});
                                                                                   },
                                                                                   text: FFLocalizations.of(context).getText(
                                                                                     'z6izz7xg' /* 4 */,
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     width: double.infinity,
-                                                                                    height: 33.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    height: 33,
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                         ),
-                                                                                    elevation: 2.0,
+                                                                                    elevation: 2,
                                                                                     borderSide: BorderSide(
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      width: 2.0,
+                                                                                      width: 2,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                    borderRadius: BorderRadius.circular(8),
                                                                                   ),
                                                                                 ),
                                                                               ),
                                                                             ),
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 2, 3),
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     _model.seven = await actions.setQuickPin(
@@ -783,35 +779,35 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                     FFAppState().quickPin = _model.seven!;
                                                                                     FFAppState().update(() {});
 
-                                                                                    setState(() {});
+                                                                                    safeSetState(() {});
                                                                                   },
                                                                                   text: FFLocalizations.of(context).getText(
                                                                                     'ikna70vc' /* 7 */,
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     width: double.infinity,
-                                                                                    height: 33.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    height: 33,
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                         ),
-                                                                                    elevation: 2.0,
+                                                                                    elevation: 2,
                                                                                     borderSide: BorderSide(
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      width: 2.0,
+                                                                                      width: 2,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                    borderRadius: BorderRadius.circular(8),
                                                                                   ),
                                                                                 ),
                                                                               ),
                                                                             ),
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 0.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 2, 0),
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     FFAppState().quickPin = '';
@@ -821,25 +817,25 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                   icon: Icon(
                                                                                     Icons.backspace_sharp,
                                                                                     color: FlutterFlowTheme.of(context).primaryText,
-                                                                                    size: 16.0,
+                                                                                    size: 16,
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     width: double.infinity,
-                                                                                    height: 33.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    height: 33,
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                         ),
-                                                                                    elevation: 2.0,
+                                                                                    elevation: 2,
                                                                                     borderSide: BorderSide(
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      width: 2.0,
+                                                                                      width: 2,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                    borderRadius: BorderRadius.circular(8),
                                                                                   ),
                                                                                 ),
                                                                               ),
@@ -852,10 +848,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            2.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            2,
+                                                                            0),
                                                                         child:
                                                                             Column(
                                                                           mainAxisSize:
@@ -865,7 +861,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                           children: [
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     _model.two = await actions.setQuickPin(
@@ -874,35 +870,35 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                     FFAppState().quickPin = _model.two!;
                                                                                     FFAppState().update(() {});
 
-                                                                                    setState(() {});
+                                                                                    safeSetState(() {});
                                                                                   },
                                                                                   text: FFLocalizations.of(context).getText(
                                                                                     '0ckwryub' /* 2 */,
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     width: double.infinity,
-                                                                                    height: 33.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    height: 33,
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                         ),
-                                                                                    elevation: 2.0,
+                                                                                    elevation: 2,
                                                                                     borderSide: BorderSide(
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      width: 2.0,
+                                                                                      width: 2,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                    borderRadius: BorderRadius.circular(8),
                                                                                   ),
                                                                                 ),
                                                                               ),
                                                                             ),
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     _model.five = await actions.setQuickPin(
@@ -911,35 +907,35 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                     FFAppState().quickPin = _model.five!;
                                                                                     FFAppState().update(() {});
 
-                                                                                    setState(() {});
+                                                                                    safeSetState(() {});
                                                                                   },
                                                                                   text: FFLocalizations.of(context).getText(
                                                                                     '6o2cg7wh' /* 5 */,
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     width: double.infinity,
-                                                                                    height: 33.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    height: 33,
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                         ),
-                                                                                    elevation: 2.0,
+                                                                                    elevation: 2,
                                                                                     borderSide: BorderSide(
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      width: 2.0,
+                                                                                      width: 2,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                    borderRadius: BorderRadius.circular(8),
                                                                                   ),
                                                                                 ),
                                                                               ),
                                                                             ),
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     _model.eight = await actions.setQuickPin(
@@ -948,28 +944,28 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                     FFAppState().quickPin = _model.eight!;
                                                                                     FFAppState().update(() {});
 
-                                                                                    setState(() {});
+                                                                                    safeSetState(() {});
                                                                                   },
                                                                                   text: FFLocalizations.of(context).getText(
                                                                                     'hh4t2f41' /* 8 */,
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     width: double.infinity,
-                                                                                    height: 33.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    height: 33,
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                         ),
-                                                                                    elevation: 2.0,
+                                                                                    elevation: 2,
                                                                                     borderSide: BorderSide(
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      width: 2.0,
+                                                                                      width: 2,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                    borderRadius: BorderRadius.circular(8),
                                                                                   ),
                                                                                 ),
                                                                               ),
@@ -983,28 +979,28 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                   FFAppState().quickPin = _model.zero!;
                                                                                   FFAppState().update(() {});
 
-                                                                                  setState(() {});
+                                                                                  safeSetState(() {});
                                                                                 },
                                                                                 text: FFLocalizations.of(context).getText(
                                                                                   '7ua6svfu' /* 0 */,
                                                                                 ),
                                                                                 options: FFButtonOptions(
                                                                                   width: double.infinity,
-                                                                                  height: 33.0,
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  height: 33,
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                   color: FlutterFlowTheme.of(context).customColor2,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
-                                                                                  elevation: 2.0,
+                                                                                  elevation: 2,
                                                                                   borderSide: BorderSide(
                                                                                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    width: 2.0,
+                                                                                    width: 2,
                                                                                   ),
-                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                  borderRadius: BorderRadius.circular(8),
                                                                                 ),
                                                                               ),
                                                                             ),
@@ -1023,7 +1019,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 3.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(2, 0, 0, 3),
                                                                               child: FFButtonWidget(
                                                                                 onPressed: () async {
                                                                                   _model.three = await actions.setQuickPin(
@@ -1032,28 +1028,28 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                   FFAppState().quickPin = _model.three!;
                                                                                   FFAppState().update(() {});
 
-                                                                                  setState(() {});
+                                                                                  safeSetState(() {});
                                                                                 },
                                                                                 text: FFLocalizations.of(context).getText(
                                                                                   'ngk670s9' /* 3 */,
                                                                                 ),
                                                                                 options: FFButtonOptions(
                                                                                   width: double.infinity,
-                                                                                  height: 33.0,
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  height: 33,
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                   color: FlutterFlowTheme.of(context).customColor2,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
-                                                                                  elevation: 2.0,
+                                                                                  elevation: 2,
                                                                                   borderSide: BorderSide(
                                                                                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    width: 2.0,
+                                                                                    width: 2,
                                                                                   ),
-                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                  borderRadius: BorderRadius.circular(8),
                                                                                 ),
                                                                               ),
                                                                             ),
@@ -1061,7 +1057,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 3.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(2, 0, 0, 3),
                                                                               child: FFButtonWidget(
                                                                                 onPressed: () async {
                                                                                   _model.six = await actions.setQuickPin(
@@ -1070,28 +1066,28 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                   FFAppState().quickPin = _model.six!;
                                                                                   FFAppState().update(() {});
 
-                                                                                  setState(() {});
+                                                                                  safeSetState(() {});
                                                                                 },
                                                                                 text: FFLocalizations.of(context).getText(
                                                                                   'gwslkot4' /* 6 */,
                                                                                 ),
                                                                                 options: FFButtonOptions(
                                                                                   width: double.infinity,
-                                                                                  height: 33.0,
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  height: 33,
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                   color: FlutterFlowTheme.of(context).customColor2,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
-                                                                                  elevation: 2.0,
+                                                                                  elevation: 2,
                                                                                   borderSide: BorderSide(
                                                                                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    width: 2.0,
+                                                                                    width: 2,
                                                                                   ),
-                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                  borderRadius: BorderRadius.circular(8),
                                                                                 ),
                                                                               ),
                                                                             ),
@@ -1099,7 +1095,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 3.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(2, 0, 0, 3),
                                                                               child: FFButtonWidget(
                                                                                 onPressed: () async {
                                                                                   _model.nine = await actions.setQuickPin(
@@ -1108,28 +1104,28 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                   FFAppState().quickPin = _model.nine!;
                                                                                   FFAppState().update(() {});
 
-                                                                                  setState(() {});
+                                                                                  safeSetState(() {});
                                                                                 },
                                                                                 text: FFLocalizations.of(context).getText(
                                                                                   'aoo78htq' /* 9 */,
                                                                                 ),
                                                                                 options: FFButtonOptions(
                                                                                   width: double.infinity,
-                                                                                  height: 33.0,
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  height: 33,
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                   color: FlutterFlowTheme.of(context).customColor2,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
-                                                                                  elevation: 2.0,
+                                                                                  elevation: 2,
                                                                                   borderSide: BorderSide(
                                                                                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    width: 2.0,
+                                                                                    width: 2,
                                                                                   ),
-                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                  borderRadius: BorderRadius.circular(8),
                                                                                 ),
                                                                               ),
                                                                             ),
@@ -1137,7 +1133,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(2, 0, 0, 0),
                                                                               child: StreamBuilder<List<AppSettingsRecord>>(
                                                                                 stream: queryAppSettingsRecord(
                                                                                   parent: FFAppState().outletIdRef,
@@ -1148,11 +1144,11 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                   if (!snapshot.hasData) {
                                                                                     return Center(
                                                                                       child: SizedBox(
-                                                                                        width: 40.0,
-                                                                                        height: 40.0,
+                                                                                        width: 40,
+                                                                                        height: 40,
                                                                                         child: SpinKitFadingCircle(
                                                                                           color: FlutterFlowTheme.of(context).primary,
-                                                                                          size: 40.0,
+                                                                                          size: 40,
                                                                                         ),
                                                                                       ),
                                                                                     );
@@ -1199,7 +1195,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                         );
 
                                                                                         await Future.delayed(const Duration(milliseconds: 5000));
-                                                                                        if (_shouldSetState) setState(() {});
+                                                                                        if (_shouldSetState) safeSetState(() {});
                                                                                         return;
                                                                                       } else {
                                                                                         await showDialog(
@@ -1219,31 +1215,31 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                         );
                                                                                       }
 
-                                                                                      if (_shouldSetState) setState(() {});
+                                                                                      if (_shouldSetState) safeSetState(() {});
                                                                                     },
                                                                                     text: '',
                                                                                     icon: Icon(
                                                                                       Icons.done,
                                                                                       color: FlutterFlowTheme.of(context).primaryText,
-                                                                                      size: 19.0,
+                                                                                      size: 19,
                                                                                     ),
                                                                                     options: FFButtonOptions(
                                                                                       width: double.infinity,
-                                                                                      height: 33.0,
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      height: 33,
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                       color: FlutterFlowTheme.of(context).customColor2,
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                             letterSpacing: 0.0,
                                                                                             useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                           ),
-                                                                                      elevation: 2.0,
+                                                                                      elevation: 2,
                                                                                       borderSide: BorderSide(
                                                                                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                        width: 2.0,
+                                                                                        width: 2,
                                                                                       ),
-                                                                                      borderRadius: BorderRadius.circular(8.0),
+                                                                                      borderRadius: BorderRadius.circular(8),
                                                                                     ),
                                                                                   );
                                                                                 },
@@ -1266,8 +1262,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                               ),
                                               if (FFAppState().show)
                                                 Container(
-                                                  width: 285.0,
-                                                  height: 310.0,
+                                                  width: 285,
+                                                  height: 310,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -1348,13 +1344,13 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                           if (!snapshot.hasData) {
                                             return Center(
                                               child: SizedBox(
-                                                width: 40.0,
-                                                height: 40.0,
+                                                width: 40,
+                                                height: 40,
                                                 child: SpinKitFadingCircle(
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
-                                                  size: 40.0,
+                                                  size: 40,
                                                 ),
                                               ),
                                             );
@@ -1388,8 +1384,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 0.0, 10.0),
+                                                      .fromSTEB(0, 0, 0, 10),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -1401,10 +1396,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    5.0,
-                                                                    0.0),
+                                                                    0, 0, 5, 0),
                                                         child: AutoSizeText(
                                                           FFLocalizations.of(
                                                                   context)
@@ -1464,8 +1456,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                 ),
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 0.0, 3.0),
+                                                      .fromSTEB(0, 0, 0, 3),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -1480,7 +1471,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                         context)
                                                                     .width *
                                                                 0.3,
-                                                        lineHeight: 22.0,
+                                                        lineHeight: 22,
                                                         animation: true,
                                                         animateFromLastPercent:
                                                             true,
@@ -1520,8 +1511,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                               ),
                                                         ),
                                                         barRadius:
-                                                            Radius.circular(
-                                                                20.0),
+                                                            Radius.circular(20),
                                                         padding:
                                                             EdgeInsets.zero,
                                                       ),
@@ -1576,11 +1566,11 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                             if (!snapshot.hasData) {
                               return Center(
                                 child: SizedBox(
-                                  width: 40.0,
-                                  height: 40.0,
+                                  width: 40,
+                                  height: 40,
                                   child: SpinKitFadingCircle(
                                     color: FlutterFlowTheme.of(context).primary,
-                                    size: 40.0,
+                                    size: 40,
                                   ),
                                 ),
                               );
@@ -1595,14 +1585,14 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                     .secondaryBackground,
                               ),
                               child: Container(
-                                width: 100.0,
-                                height: 100.0,
+                                width: 100,
+                                height: 100,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsets.all(15.0),
+                                  padding: EdgeInsets.all(15),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:
@@ -1662,8 +1652,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                               MainAxisAlignment.center,
                                           children: [
                                             Align(
-                                              alignment: AlignmentDirectional(
-                                                  0.0, 0.0),
+                                              alignment:
+                                                  AlignmentDirectional(0, 0),
                                               child: Text(
                                                 getJsonField(
                                                   con2GetDeviceResponse
@@ -1682,7 +1672,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
-                                                          fontSize: 21.0,
+                                                          fontSize: 21,
                                                           letterSpacing: 0.0,
                                                           useGoogleFonts: GoogleFonts
                                                                   .asMap()
@@ -1724,19 +1714,18 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 1.0, 0.0, 20.0),
+                                            0, 1, 0, 20),
                                         child: Container(
-                                          width: 300.0,
-                                          height: 320.0,
+                                          width: 300,
+                                          height: 320,
                                           decoration: BoxDecoration(),
                                           child: Stack(
                                             alignment:
-                                                AlignmentDirectional(0.0, -1.0),
+                                                AlignmentDirectional(0, -1),
                                             children: [
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 0.0, 5.0),
+                                                    .fromSTEB(0, 0, 0, 5),
                                                 child: FutureBuilder<
                                                     ApiCallResponse>(
                                                   future: GetUserOutletWiseCall
@@ -1752,14 +1741,14 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                     if (!snapshot.hasData) {
                                                       return Center(
                                                         child: SizedBox(
-                                                          width: 40.0,
-                                                          height: 40.0,
+                                                          width: 40,
+                                                          height: 40,
                                                           child:
                                                               SpinKitFadingCircle(
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .primary,
-                                                            size: 40.0,
+                                                            size: 40,
                                                           ),
                                                         ),
                                                       );
@@ -1768,18 +1757,15 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                         snapshot.data!;
 
                                                     return Container(
-                                                      width: 275.0,
-                                                      height: 290.0,
+                                                      width: 275,
+                                                      height: 290,
                                                       decoration:
                                                           BoxDecoration(),
                                                       child: Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    5.0,
-                                                                    0.0,
-                                                                    0.0),
+                                                                    0, 5, 0, 0),
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -1793,10 +1779,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0),
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            5),
                                                                 child:
                                                                     Container(
                                                                   decoration:
@@ -1815,12 +1801,12 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                     children: [
                                                                       Align(
                                                                         alignment: AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0),
                                                                         child:
                                                                             Padding(
                                                                           padding:
-                                                                              EdgeInsets.all(1.0),
+                                                                              EdgeInsets.all(1),
                                                                           child:
                                                                               FlutterFlowDropDown<String>(
                                                                             controller: _model.dropDownValueController2 ??=
@@ -1838,7 +1824,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                     .toList()!
                                                                                 : FFAppState().emptyOptions,
                                                                             onChanged: (val) =>
-                                                                                setState(() => _model.dropDownValue2 = val),
+                                                                                safeSetState(() => _model.dropDownValue2 = val),
                                                                             width:
                                                                                 double.infinity,
                                                                             height:
@@ -1856,23 +1842,23 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                 Icon(
                                                                               Icons.keyboard_arrow_down,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
-                                                                              size: 16.0,
+                                                                              size: 16,
                                                                             ),
                                                                             fillColor:
                                                                                 FlutterFlowTheme.of(context).secondaryBackground,
                                                                             elevation:
-                                                                                2.0,
+                                                                                2,
                                                                             borderColor:
                                                                                 Colors.transparent,
                                                                             borderWidth:
-                                                                                0.0,
+                                                                                0,
                                                                             borderRadius:
-                                                                                0.0,
+                                                                                0,
                                                                             margin: EdgeInsetsDirectional.fromSTEB(
-                                                                                12.0,
-                                                                                4.0,
-                                                                                12.0,
-                                                                                4.0),
+                                                                                12,
+                                                                                4,
+                                                                                12,
+                                                                                4),
                                                                             hidesUnderline:
                                                                                 true,
                                                                             disabled:
@@ -1897,10 +1883,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            10.0),
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            10),
                                                                 child:
                                                                     Container(
                                                                   decoration:
@@ -2052,10 +2038,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            2.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            2,
+                                                                            0),
                                                                         child:
                                                                             Column(
                                                                           mainAxisSize:
@@ -2065,7 +2051,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                           children: [
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 2, 3),
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     _model.one1 = await actions.setQuickPin(
@@ -2074,35 +2060,35 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                     FFAppState().quickPin = _model.one1!;
                                                                                     FFAppState().update(() {});
 
-                                                                                    setState(() {});
+                                                                                    safeSetState(() {});
                                                                                   },
                                                                                   text: FFLocalizations.of(context).getText(
                                                                                     'q1134pxo' /* 1 */,
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     width: double.infinity,
-                                                                                    height: 33.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    height: 33,
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                         ),
-                                                                                    elevation: 2.0,
+                                                                                    elevation: 2,
                                                                                     borderSide: BorderSide(
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      width: 2.0,
+                                                                                      width: 2,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                    borderRadius: BorderRadius.circular(8),
                                                                                   ),
                                                                                 ),
                                                                               ),
                                                                             ),
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 2, 3),
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     _model.four1 = await actions.setQuickPin(
@@ -2111,35 +2097,35 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                     FFAppState().quickPin = _model.four1!;
                                                                                     FFAppState().update(() {});
 
-                                                                                    setState(() {});
+                                                                                    safeSetState(() {});
                                                                                   },
                                                                                   text: FFLocalizations.of(context).getText(
                                                                                     'pmureu09' /* 4 */,
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     width: double.infinity,
-                                                                                    height: 33.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    height: 33,
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                         ),
-                                                                                    elevation: 2.0,
+                                                                                    elevation: 2,
                                                                                     borderSide: BorderSide(
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      width: 2.0,
+                                                                                      width: 2,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                    borderRadius: BorderRadius.circular(8),
                                                                                   ),
                                                                                 ),
                                                                               ),
                                                                             ),
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 2, 3),
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     _model.seven1 = await actions.setQuickPin(
@@ -2148,35 +2134,35 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                     FFAppState().quickPin = _model.seven1!;
                                                                                     FFAppState().update(() {});
 
-                                                                                    setState(() {});
+                                                                                    safeSetState(() {});
                                                                                   },
                                                                                   text: FFLocalizations.of(context).getText(
                                                                                     'n5oobyj1' /* 7 */,
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     width: double.infinity,
-                                                                                    height: 33.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    height: 33,
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                         ),
-                                                                                    elevation: 2.0,
+                                                                                    elevation: 2,
                                                                                     borderSide: BorderSide(
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      width: 2.0,
+                                                                                      width: 2,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                    borderRadius: BorderRadius.circular(8),
                                                                                   ),
                                                                                 ),
                                                                               ),
                                                                             ),
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 0.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 2, 0),
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     FFAppState().quickPin = '';
@@ -2186,25 +2172,25 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                   icon: Icon(
                                                                                     Icons.backspace_sharp,
                                                                                     color: FlutterFlowTheme.of(context).primaryText,
-                                                                                    size: 16.0,
+                                                                                    size: 16,
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     width: double.infinity,
-                                                                                    height: 33.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    height: 33,
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                         ),
-                                                                                    elevation: 2.0,
+                                                                                    elevation: 2,
                                                                                     borderSide: BorderSide(
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      width: 2.0,
+                                                                                      width: 2,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                    borderRadius: BorderRadius.circular(8),
                                                                                   ),
                                                                                 ),
                                                                               ),
@@ -2217,10 +2203,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            2.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            2,
+                                                                            0),
                                                                         child:
                                                                             Column(
                                                                           mainAxisSize:
@@ -2230,7 +2216,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                           children: [
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     _model.two1 = await actions.setQuickPin(
@@ -2239,35 +2225,35 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                     FFAppState().quickPin = _model.two1!;
                                                                                     FFAppState().update(() {});
 
-                                                                                    setState(() {});
+                                                                                    safeSetState(() {});
                                                                                   },
                                                                                   text: FFLocalizations.of(context).getText(
                                                                                     '8mv0bmdd' /* 2 */,
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     width: double.infinity,
-                                                                                    height: 33.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    height: 33,
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                         ),
-                                                                                    elevation: 2.0,
+                                                                                    elevation: 2,
                                                                                     borderSide: BorderSide(
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      width: 2.0,
+                                                                                      width: 2,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                    borderRadius: BorderRadius.circular(8),
                                                                                   ),
                                                                                 ),
                                                                               ),
                                                                             ),
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     _model.five1 = await actions.setQuickPin(
@@ -2276,35 +2262,35 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                     FFAppState().quickPin = _model.five1!;
                                                                                     FFAppState().update(() {});
 
-                                                                                    setState(() {});
+                                                                                    safeSetState(() {});
                                                                                   },
                                                                                   text: FFLocalizations.of(context).getText(
                                                                                     '79c7xvsb' /* 5 */,
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     width: double.infinity,
-                                                                                    height: 33.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    height: 33,
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                         ),
-                                                                                    elevation: 2.0,
+                                                                                    elevation: 2,
                                                                                     borderSide: BorderSide(
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      width: 2.0,
+                                                                                      width: 2,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                    borderRadius: BorderRadius.circular(8),
                                                                                   ),
                                                                                 ),
                                                                               ),
                                                                             ),
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     _model.eight1 = await actions.setQuickPin(
@@ -2313,28 +2299,28 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                     FFAppState().quickPin = _model.eight1!;
                                                                                     FFAppState().update(() {});
 
-                                                                                    setState(() {});
+                                                                                    safeSetState(() {});
                                                                                   },
                                                                                   text: FFLocalizations.of(context).getText(
                                                                                     'v9sce6yz' /* 8 */,
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     width: double.infinity,
-                                                                                    height: 33.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    height: 33,
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                         ),
-                                                                                    elevation: 2.0,
+                                                                                    elevation: 2,
                                                                                     borderSide: BorderSide(
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      width: 2.0,
+                                                                                      width: 2,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                    borderRadius: BorderRadius.circular(8),
                                                                                   ),
                                                                                 ),
                                                                               ),
@@ -2348,28 +2334,28 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                   FFAppState().quickPin = _model.zero1!;
                                                                                   FFAppState().update(() {});
 
-                                                                                  setState(() {});
+                                                                                  safeSetState(() {});
                                                                                 },
                                                                                 text: FFLocalizations.of(context).getText(
                                                                                   'qocntyu7' /* 0 */,
                                                                                 ),
                                                                                 options: FFButtonOptions(
                                                                                   width: double.infinity,
-                                                                                  height: 33.0,
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  height: 33,
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                   color: FlutterFlowTheme.of(context).customColor2,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
-                                                                                  elevation: 2.0,
+                                                                                  elevation: 2,
                                                                                   borderSide: BorderSide(
                                                                                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    width: 2.0,
+                                                                                    width: 2,
                                                                                   ),
-                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                  borderRadius: BorderRadius.circular(8),
                                                                                 ),
                                                                               ),
                                                                             ),
@@ -2388,7 +2374,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 3.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(2, 0, 0, 3),
                                                                               child: FFButtonWidget(
                                                                                 onPressed: () async {
                                                                                   _model.three1 = await actions.setQuickPin(
@@ -2397,28 +2383,28 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                   FFAppState().quickPin = _model.three1!;
                                                                                   FFAppState().update(() {});
 
-                                                                                  setState(() {});
+                                                                                  safeSetState(() {});
                                                                                 },
                                                                                 text: FFLocalizations.of(context).getText(
                                                                                   'zpbdff67' /* 3 */,
                                                                                 ),
                                                                                 options: FFButtonOptions(
                                                                                   width: double.infinity,
-                                                                                  height: 33.0,
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  height: 33,
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                   color: FlutterFlowTheme.of(context).customColor2,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
-                                                                                  elevation: 2.0,
+                                                                                  elevation: 2,
                                                                                   borderSide: BorderSide(
                                                                                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    width: 2.0,
+                                                                                    width: 2,
                                                                                   ),
-                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                  borderRadius: BorderRadius.circular(8),
                                                                                 ),
                                                                               ),
                                                                             ),
@@ -2426,7 +2412,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 3.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(2, 0, 0, 3),
                                                                               child: FFButtonWidget(
                                                                                 onPressed: () async {
                                                                                   _model.six1 = await actions.setQuickPin(
@@ -2435,28 +2421,28 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                   FFAppState().quickPin = _model.six1!;
                                                                                   FFAppState().update(() {});
 
-                                                                                  setState(() {});
+                                                                                  safeSetState(() {});
                                                                                 },
                                                                                 text: FFLocalizations.of(context).getText(
                                                                                   '3mey5s8w' /* 6 */,
                                                                                 ),
                                                                                 options: FFButtonOptions(
                                                                                   width: double.infinity,
-                                                                                  height: 33.0,
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  height: 33,
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                   color: FlutterFlowTheme.of(context).customColor2,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
-                                                                                  elevation: 2.0,
+                                                                                  elevation: 2,
                                                                                   borderSide: BorderSide(
                                                                                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    width: 2.0,
+                                                                                    width: 2,
                                                                                   ),
-                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                  borderRadius: BorderRadius.circular(8),
                                                                                 ),
                                                                               ),
                                                                             ),
@@ -2464,7 +2450,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 3.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(2, 0, 0, 3),
                                                                               child: FFButtonWidget(
                                                                                 onPressed: () async {
                                                                                   _model.nine1 = await actions.setQuickPin(
@@ -2473,28 +2459,28 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                                   FFAppState().quickPin = _model.nine1!;
                                                                                   FFAppState().update(() {});
 
-                                                                                  setState(() {});
+                                                                                  safeSetState(() {});
                                                                                 },
                                                                                 text: FFLocalizations.of(context).getText(
                                                                                   '45uygnr1' /* 9 */,
                                                                                 ),
                                                                                 options: FFButtonOptions(
                                                                                   width: double.infinity,
-                                                                                  height: 33.0,
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  height: 33,
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                   color: FlutterFlowTheme.of(context).customColor2,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
-                                                                                  elevation: 2.0,
+                                                                                  elevation: 2,
                                                                                   borderSide: BorderSide(
                                                                                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    width: 2.0,
+                                                                                    width: 2,
                                                                                   ),
-                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                  borderRadius: BorderRadius.circular(8),
                                                                                 ),
                                                                               ),
                                                                             ),
@@ -2502,7 +2488,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(2, 0, 0, 0),
                                                                               child: FFButtonWidget(
                                                                                 onPressed: () async {
                                                                                   _model.docUserCopy = await actions.validateUserCopy(
@@ -2532,31 +2518,31 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
 
                                                                                   await Future.delayed(const Duration(milliseconds: 5000));
 
-                                                                                  setState(() {});
+                                                                                  safeSetState(() {});
                                                                                 },
                                                                                 text: '',
                                                                                 icon: Icon(
                                                                                   Icons.done,
                                                                                   color: FlutterFlowTheme.of(context).primaryText,
-                                                                                  size: 19.0,
+                                                                                  size: 19,
                                                                                 ),
                                                                                 options: FFButtonOptions(
                                                                                   width: double.infinity,
-                                                                                  height: 33.0,
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  height: 33,
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                   color: FlutterFlowTheme.of(context).customColor2,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
-                                                                                  elevation: 2.0,
+                                                                                  elevation: 2,
                                                                                   borderSide: BorderSide(
                                                                                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    width: 2.0,
+                                                                                    width: 2,
                                                                                   ),
-                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                  borderRadius: BorderRadius.circular(8),
                                                                                 ),
                                                                               ),
                                                                             ),
@@ -2577,8 +2563,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                               ),
                                               if (FFAppState().show)
                                                 Container(
-                                                  width: 285.0,
-                                                  height: 310.0,
+                                                  width: 285,
+                                                  height: 310,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -2657,7 +2643,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 3.0),
+                                                  .fromSTEB(0, 0, 0, 3),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -2666,8 +2652,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                5.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 0, 5, 0),
                                                     child: AutoSizeText(
                                                       FFLocalizations.of(
                                                               context)
@@ -2728,7 +2714,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 3.0),
+                                                  .fromSTEB(0, 0, 0, 3),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -2740,7 +2726,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                 context)
                                                             .width *
                                                         0.3,
-                                                    lineHeight: 22.0,
+                                                    lineHeight: 22,
                                                     animation: true,
                                                     animateFromLastPercent:
                                                         true,
@@ -2782,7 +2768,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                               ),
                                                     ),
                                                     barRadius:
-                                                        Radius.circular(20.0),
+                                                        Radius.circular(20),
                                                     padding: EdgeInsets.zero,
                                                   ),
                                                 ],
@@ -2826,7 +2812,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                 Expanded(
                   flex: 2,
                   child: Container(
-                    width: 100.0,
+                    width: 100,
                     height: double.infinity,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondary,
@@ -2837,10 +2823,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 50.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 50),
                           child: Container(
-                            width: 100.0,
+                            width: 100,
                             height: MediaQuery.sizeOf(context).height * 0.6,
                             decoration: BoxDecoration(),
                             child: Column(
@@ -2849,27 +2834,27 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Container(
-                                  width: 60.0,
-                                  height: 60.0,
+                                  width: 60,
+                                  height: 60,
                                   constraints: BoxConstraints(
-                                    maxWidth: 85.0,
-                                    maxHeight: 85.0,
+                                    maxWidth: 85,
+                                    maxHeight: 85,
                                   ),
                                   decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(0.0),
+                                    borderRadius: BorderRadius.circular(0),
                                     shape: BoxShape.rectangle,
                                   ),
                                   child: FlutterFlowIconButton(
                                     borderColor: Colors.transparent,
-                                    borderRadius: 50.0,
-                                    buttonSize: 40.0,
+                                    borderRadius: 50,
+                                    buttonSize: 40,
                                     fillColor:
                                         FlutterFlowTheme.of(context).primary,
                                     icon: Icon(
                                       Icons.settings,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBtnText,
-                                      size: 27.0,
+                                      size: 27,
                                     ),
                                     onPressed: () async {
                                       context.pushNamed('SettingHomepage');
@@ -2877,26 +2862,26 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                   ),
                                 ),
                                 Container(
-                                  width: 60.0,
-                                  height: 60.0,
+                                  width: 60,
+                                  height: 60,
                                   constraints: BoxConstraints(
-                                    maxWidth: 85.0,
-                                    maxHeight: 85.0,
+                                    maxWidth: 85,
+                                    maxHeight: 85,
                                   ),
                                   decoration: BoxDecoration(
                                     shape: BoxShape.rectangle,
                                   ),
                                   child: FlutterFlowIconButton(
                                     borderColor: Colors.transparent,
-                                    borderRadius: 50.0,
-                                    buttonSize: 40.0,
+                                    borderRadius: 50,
+                                    buttonSize: 40,
                                     fillColor:
                                         FlutterFlowTheme.of(context).primary,
                                     icon: Icon(
                                       Icons.keyboard_hide_outlined,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBtnText,
-                                      size: 27.0,
+                                      size: 27,
                                     ),
                                     onPressed: () async {
                                       FFAppState().show = functions
@@ -2906,26 +2891,26 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                   ),
                                 ),
                                 Container(
-                                  width: 60.0,
-                                  height: 60.0,
+                                  width: 60,
+                                  height: 60,
                                   constraints: BoxConstraints(
-                                    maxWidth: 85.0,
-                                    maxHeight: 85.0,
+                                    maxWidth: 85,
+                                    maxHeight: 85,
                                   ),
                                   decoration: BoxDecoration(
                                     shape: BoxShape.rectangle,
                                   ),
                                   child: FlutterFlowIconButton(
                                     borderColor: Colors.transparent,
-                                    borderRadius: 50.0,
-                                    buttonSize: 40.0,
+                                    borderRadius: 50,
+                                    buttonSize: 40,
                                     fillColor:
                                         FlutterFlowTheme.of(context).primary,
                                     icon: Icon(
                                       Icons.power_settings_new,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBtnText,
-                                      size: 27.0,
+                                      size: 27,
                                     ),
                                     onPressed: () async {
                                       await showModalBottomSheet(

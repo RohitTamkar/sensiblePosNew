@@ -45,7 +45,7 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
     super.initState();
     _model = createModel(context, () => GroceryHeaderModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -75,12 +75,12 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
               ),
               icon: Icon(
                 Icons.content_paste,
-                size: 18.0,
+                size: 18,
               ),
               options: FFButtonOptions(
-                height: 35.0,
-                padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 18.0, 0.0),
-                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                height: 35,
+                padding: EdgeInsetsDirectional.fromSTEB(18, 0, 18, 0),
+                iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 textStyle: FlutterFlowTheme.of(context).labelLarge.override(
                       fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
@@ -89,16 +89,16 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
                       useGoogleFonts: GoogleFonts.asMap().containsKey(
                           FlutterFlowTheme.of(context).labelLargeFamily),
                     ),
-                elevation: 0.0,
+                elevation: 0,
                 borderSide: BorderSide(
                   color: Colors.transparent,
-                  width: 1.0,
+                  width: 1,
                 ),
                 borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(0.0),
-                  bottomRight: Radius.circular(0.0),
-                  topLeft: Radius.circular(0.0),
-                  topRight: Radius.circular(0.0),
+                  bottomLeft: Radius.circular(0),
+                  bottomRight: Radius.circular(0),
+                  topLeft: Radius.circular(0),
+                  topRight: Radius.circular(0),
                 ),
               ),
             ),
@@ -113,12 +113,12 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
               ),
               icon: Icon(
                 Icons.shopping_cart,
-                size: 18.0,
+                size: 18,
               ),
               options: FFButtonOptions(
-                height: 35.0,
-                padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 18.0, 0.0),
-                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                height: 35,
+                padding: EdgeInsetsDirectional.fromSTEB(18, 0, 18, 0),
+                iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 textStyle: FlutterFlowTheme.of(context).labelLarge.override(
                       fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
@@ -127,16 +127,16 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
                       useGoogleFonts: GoogleFonts.asMap().containsKey(
                           FlutterFlowTheme.of(context).labelLargeFamily),
                     ),
-                elevation: 0.0,
+                elevation: 0,
                 borderSide: BorderSide(
                   color: Colors.transparent,
-                  width: 1.0,
+                  width: 1,
                 ),
                 borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(0.0),
-                  bottomRight: Radius.circular(0.0),
-                  topLeft: Radius.circular(0.0),
-                  topRight: Radius.circular(0.0),
+                  bottomLeft: Radius.circular(0),
+                  bottomRight: Radius.circular(0),
+                  topLeft: Radius.circular(0),
+                  topRight: Radius.circular(0),
                 ),
               ),
             ),
@@ -177,12 +177,12 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
               ),
               icon: Icon(
                 Icons.receipt_long_sharp,
-                size: 18.0,
+                size: 18,
               ),
               options: FFButtonOptions(
-                height: 35.0,
-                padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 18.0, 0.0),
-                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                height: 35,
+                padding: EdgeInsetsDirectional.fromSTEB(18, 0, 18, 0),
+                iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 textStyle: FlutterFlowTheme.of(context).labelLarge.override(
                       fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
@@ -191,16 +191,16 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
                       useGoogleFonts: GoogleFonts.asMap().containsKey(
                           FlutterFlowTheme.of(context).labelLargeFamily),
                     ),
-                elevation: 0.0,
+                elevation: 0,
                 borderSide: BorderSide(
                   color: Colors.transparent,
-                  width: 1.0,
+                  width: 1,
                 ),
                 borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(0.0),
-                  bottomRight: Radius.circular(0.0),
-                  topLeft: Radius.circular(0.0),
-                  topRight: Radius.circular(0.0),
+                  bottomLeft: Radius.circular(0),
+                  bottomRight: Radius.circular(0),
+                  topLeft: Radius.circular(0),
+                  topRight: Radius.circular(0),
                 ),
               ),
             ),
@@ -215,12 +215,12 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
               ),
               icon: Icon(
                 Icons.bar_chart,
-                size: 18.0,
+                size: 18,
               ),
               options: FFButtonOptions(
-                height: 35.0,
-                padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 18.0, 0.0),
-                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                height: 35,
+                padding: EdgeInsetsDirectional.fromSTEB(18, 0, 18, 0),
+                iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 textStyle: FlutterFlowTheme.of(context).labelLarge.override(
                       fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
@@ -228,16 +228,16 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
                       useGoogleFonts: GoogleFonts.asMap().containsKey(
                           FlutterFlowTheme.of(context).labelLargeFamily),
                     ),
-                elevation: 0.0,
+                elevation: 0,
                 borderSide: BorderSide(
                   color: Colors.transparent,
-                  width: 1.0,
+                  width: 1,
                 ),
                 borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(0.0),
-                  bottomRight: Radius.circular(0.0),
-                  topLeft: Radius.circular(0.0),
-                  topRight: Radius.circular(0.0),
+                  bottomLeft: Radius.circular(0),
+                  bottomRight: Radius.circular(0),
+                  topLeft: Radius.circular(0),
+                  topRight: Radius.circular(0),
                 ),
               ),
             ),
@@ -252,12 +252,12 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
               ),
               icon: Icon(
                 Icons.lock_clock,
-                size: 18.0,
+                size: 18,
               ),
               options: FFButtonOptions(
-                height: 35.0,
-                padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 18.0, 0.0),
-                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                height: 35,
+                padding: EdgeInsetsDirectional.fromSTEB(18, 0, 18, 0),
+                iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 textStyle: FlutterFlowTheme.of(context).labelLarge.override(
                       fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
@@ -265,16 +265,16 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
                       useGoogleFonts: GoogleFonts.asMap().containsKey(
                           FlutterFlowTheme.of(context).labelLargeFamily),
                     ),
-                elevation: 0.0,
+                elevation: 0,
                 borderSide: BorderSide(
                   color: Colors.transparent,
-                  width: 1.0,
+                  width: 1,
                 ),
                 borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(0.0),
-                  bottomRight: Radius.circular(0.0),
-                  topLeft: Radius.circular(0.0),
-                  topRight: Radius.circular(0.0),
+                  bottomLeft: Radius.circular(0),
+                  bottomRight: Radius.circular(0),
+                  topLeft: Radius.circular(0),
+                  topRight: Radius.circular(0),
                 ),
               ),
             ),
@@ -289,12 +289,12 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
               ),
               icon: Icon(
                 Icons.print_rounded,
-                size: 18.0,
+                size: 18,
               ),
               options: FFButtonOptions(
-                height: 35.0,
-                padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 18.0, 0.0),
-                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                height: 35,
+                padding: EdgeInsetsDirectional.fromSTEB(18, 0, 18, 0),
+                iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 textStyle: FlutterFlowTheme.of(context).labelLarge.override(
                       fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
@@ -302,16 +302,16 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
                       useGoogleFonts: GoogleFonts.asMap().containsKey(
                           FlutterFlowTheme.of(context).labelLargeFamily),
                     ),
-                elevation: 0.0,
+                elevation: 0,
                 borderSide: BorderSide(
                   color: Colors.transparent,
-                  width: 1.0,
+                  width: 1,
                 ),
                 borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(0.0),
-                  bottomRight: Radius.circular(0.0),
-                  topLeft: Radius.circular(0.0),
-                  topRight: Radius.circular(0.0),
+                  bottomLeft: Radius.circular(0),
+                  bottomRight: Radius.circular(0),
+                  topLeft: Radius.circular(0),
+                  topRight: Radius.circular(0),
                 ),
               ),
             ),
@@ -326,12 +326,12 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
               ),
               icon: Icon(
                 Icons.settings_sharp,
-                size: 18.0,
+                size: 18,
               ),
               options: FFButtonOptions(
-                height: 35.0,
-                padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 18.0, 0.0),
-                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                height: 35,
+                padding: EdgeInsetsDirectional.fromSTEB(18, 0, 18, 0),
+                iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 textStyle: FlutterFlowTheme.of(context).labelLarge.override(
                       fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
@@ -339,16 +339,16 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
                       useGoogleFonts: GoogleFonts.asMap().containsKey(
                           FlutterFlowTheme.of(context).labelLargeFamily),
                     ),
-                elevation: 0.0,
+                elevation: 0,
                 borderSide: BorderSide(
                   color: Colors.transparent,
-                  width: 1.0,
+                  width: 1,
                 ),
                 borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(0.0),
-                  bottomRight: Radius.circular(0.0),
-                  topLeft: Radius.circular(0.0),
-                  topRight: Radius.circular(0.0),
+                  bottomLeft: Radius.circular(0),
+                  bottomRight: Radius.circular(0),
+                  topLeft: Radius.circular(0),
+                  topRight: Radius.circular(0),
                 ),
               ),
             ),
@@ -363,12 +363,12 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
               ),
               icon: Icon(
                 Icons.edit_square,
-                size: 18.0,
+                size: 18,
               ),
               options: FFButtonOptions(
-                height: 35.0,
-                padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 18.0, 0.0),
-                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                height: 35,
+                padding: EdgeInsetsDirectional.fromSTEB(18, 0, 18, 0),
+                iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 textStyle: FlutterFlowTheme.of(context).labelLarge.override(
                       fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
@@ -376,16 +376,16 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
                       useGoogleFonts: GoogleFonts.asMap().containsKey(
                           FlutterFlowTheme.of(context).labelLargeFamily),
                     ),
-                elevation: 0.0,
+                elevation: 0,
                 borderSide: BorderSide(
                   color: Colors.transparent,
-                  width: 1.0,
+                  width: 1,
                 ),
                 borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(0.0),
-                  bottomRight: Radius.circular(0.0),
-                  topLeft: Radius.circular(0.0),
-                  topRight: Radius.circular(0.0),
+                  bottomLeft: Radius.circular(0),
+                  bottomRight: Radius.circular(0),
+                  topLeft: Radius.circular(0),
+                  topRight: Radius.circular(0),
                 ),
               ),
             ),
@@ -414,12 +414,12 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
               ),
               icon: Icon(
                 Icons.power_settings_new,
-                size: 18.0,
+                size: 18,
               ),
               options: FFButtonOptions(
-                height: 35.0,
-                padding: EdgeInsetsDirectional.fromSTEB(18.0, 0.0, 18.0, 0.0),
-                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                height: 35,
+                padding: EdgeInsetsDirectional.fromSTEB(18, 0, 18, 0),
+                iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                 color: FlutterFlowTheme.of(context).secondaryBackground,
                 textStyle: FlutterFlowTheme.of(context).labelLarge.override(
                       fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
@@ -427,21 +427,21 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
                       useGoogleFonts: GoogleFonts.asMap().containsKey(
                           FlutterFlowTheme.of(context).labelLargeFamily),
                     ),
-                elevation: 0.0,
+                elevation: 0,
                 borderSide: BorderSide(
                   color: Colors.transparent,
-                  width: 1.0,
+                  width: 1,
                 ),
                 borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(0.0),
-                  bottomRight: Radius.circular(0.0),
-                  topLeft: Radius.circular(0.0),
-                  topRight: Radius.circular(0.0),
+                  bottomLeft: Radius.circular(0),
+                  bottomRight: Radius.circular(0),
+                  topLeft: Radius.circular(0),
+                  topRight: Radius.circular(0),
                 ),
               ),
             ),
           ),
-        ].divide(SizedBox(width: 2.0)),
+        ].divide(SizedBox(width: 2)),
       ),
     );
   }

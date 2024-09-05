@@ -31,7 +31,7 @@ class _TransactionStatusPendingWidgetState
     super.initState();
     _model = createModel(context, () => TransactionStatusPendingModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -46,19 +46,19 @@ class _TransactionStatusPendingWidgetState
     context.watch<FFAppState>();
 
     return Container(
-      width: 450.0,
-      height: 550.0,
+      width: 450,
+      height: 550,
       decoration: BoxDecoration(
         color: Color(0xFFFC730C),
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(16.0),
-          bottomRight: Radius.circular(16.0),
-          topLeft: Radius.circular(16.0),
-          topRight: Radius.circular(16.0),
+          bottomLeft: Radius.circular(16),
+          bottomRight: Radius.circular(16),
+          topLeft: Radius.circular(16),
+          topRight: Radius.circular(16),
         ),
         border: Border.all(
           color: FlutterFlowTheme.of(context).primaryBackground,
-          width: 4.0,
+          width: 4,
         ),
       ),
       child: Column(
@@ -96,7 +96,7 @@ class _TransactionStatusPendingWidgetState
                       fontFamily:
                           FlutterFlowTheme.of(context).displaySmallFamily,
                       color: FlutterFlowTheme.of(context).primaryBackground,
-                      fontSize: 26.0,
+                      fontSize: 26,
                       letterSpacing: 0.0,
                       useGoogleFonts: GoogleFonts.asMap().containsKey(
                           FlutterFlowTheme.of(context).displaySmallFamily),
@@ -132,7 +132,7 @@ class _TransactionStatusPendingWidgetState
                 child: Icon(
                   Icons.info_outlined,
                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                  size: 130.0,
+                  size: 130,
                 ),
               ),
             ],
@@ -177,7 +177,7 @@ class _TransactionStatusPendingWidgetState
             ],
           ),
           StyledDivider(
-            thickness: 4.0,
+            thickness: 4,
             color: FlutterFlowTheme.of(context).accent4,
             lineStyle: DividerLineStyle.dashdotted,
           ),
@@ -192,7 +192,7 @@ class _TransactionStatusPendingWidgetState
                 style: FlutterFlowTheme.of(context).labelLarge.override(
                       fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                       color: FlutterFlowTheme.of(context).primary,
-                      fontSize: 16.0,
+                      fontSize: 16,
                       letterSpacing: 0.0,
                       useGoogleFonts: GoogleFonts.asMap().containsKey(
                           FlutterFlowTheme.of(context).labelLargeFamily),

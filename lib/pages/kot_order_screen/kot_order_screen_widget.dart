@@ -33,7 +33,7 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget> {
     super.initState();
     _model = createModel(context, () => KotOrderScreenModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -62,7 +62,7 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget> {
                 children: [
                   Container(
                     width: double.infinity,
-                    height: 100.0,
+                    height: 100,
                     decoration: BoxDecoration(
                       color: Color(0xFFFEBF6A),
                     ),
@@ -71,21 +71,20 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget> {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              50.0, 0.0, 50.0, 5.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(50, 0, 50, 5),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               FlutterFlowIconButton(
-                                borderRadius: 10.0,
-                                buttonSize: 55.0,
+                                borderRadius: 10,
+                                buttonSize: 55,
                                 icon: Icon(
                                   Icons.chevron_left,
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
-                                  size: 36.0,
+                                  size: 36,
                                 ),
                                 onPressed: () async {
                                   context.safePop();
@@ -116,11 +115,11 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget> {
                                   'gfe5dybr' /* Online */,
                                 ),
                                 options: FFButtonOptions(
-                                  height: 40.0,
+                                  height: 40,
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      24.0, 0.0, 24.0, 0.0),
+                                      24, 0, 24, 0),
                                   iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
+                                      0, 0, 0, 0),
                                   color: FlutterFlowTheme.of(context).success,
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleMedium
@@ -133,12 +132,12 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleMediumFamily),
                                       ),
-                                  elevation: 0.0,
+                                  elevation: 0,
                                   borderSide: BorderSide(
                                     color: Colors.transparent,
-                                    width: 1.0,
+                                    width: 1,
                                   ),
-                                  borderRadius: BorderRadius.circular(0.0),
+                                  borderRadius: BorderRadius.circular(0),
                                 ),
                               ),
                             ],
@@ -150,10 +149,10 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget> {
                   Expanded(
                     child: Container(
                       width: double.infinity,
-                      height: 100.0,
+                      height: 100,
                       decoration: BoxDecoration(),
                       child: Padding(
-                        padding: EdgeInsets.all(30.0),
+                        padding: EdgeInsets.all(30),
                         child: StreamBuilder<List<InvoiceRecord>>(
                           stream: queryInvoiceRecord(
                             parent: FFAppState().outletIdRef,
@@ -168,11 +167,11 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget> {
                             if (!snapshot.hasData) {
                               return Center(
                                 child: SizedBox(
-                                  width: 40.0,
-                                  height: 40.0,
+                                  width: 40,
+                                  height: 40,
                                   child: SpinKitFadingCircle(
                                     color: FlutterFlowTheme.of(context).primary,
-                                    size: 40.0,
+                                    size: 40,
                                   ),
                                 ),
                               );
@@ -185,25 +184,25 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget> {
                                   SliverSimpleGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 3,
                               ),
-                              crossAxisSpacing: 20.0,
-                              mainAxisSpacing: 40.0,
+                              crossAxisSpacing: 20,
+                              mainAxisSpacing: 40,
                               itemCount: staggeredViewInvoiceRecordList.length,
                               itemBuilder: (context, staggeredViewIndex) {
                                 final staggeredViewInvoiceRecord =
                                     staggeredViewInvoiceRecordList[
                                         staggeredViewIndex];
                                 return ClipRRect(
-                                  borderRadius: BorderRadius.circular(15.0),
+                                  borderRadius: BorderRadius.circular(15),
                                   child: Container(
-                                    width: 100.0,
+                                    width: 100,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
-                                      borderRadius: BorderRadius.circular(15.0),
+                                      borderRadius: BorderRadius.circular(15),
                                       border: Border.all(
                                         color: FlutterFlowTheme.of(context)
                                             .customColor2,
-                                        width: 2.0,
+                                        width: 2,
                                       ),
                                     ),
                                     child: Column(
@@ -211,18 +210,18 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget> {
                                       children: [
                                         Container(
                                           width: double.infinity,
-                                          height: 70.0,
+                                          height: 70,
                                           decoration: BoxDecoration(
                                             color: Color(0xFF362E25),
                                             borderRadius: BorderRadius.only(
-                                              bottomLeft: Radius.circular(0.0),
-                                              bottomRight: Radius.circular(0.0),
-                                              topLeft: Radius.circular(15.0),
-                                              topRight: Radius.circular(15.0),
+                                              bottomLeft: Radius.circular(0),
+                                              bottomRight: Radius.circular(0),
+                                              topLeft: Radius.circular(15),
+                                              topRight: Radius.circular(15),
                                             ),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(15.0),
+                                            padding: EdgeInsets.all(15),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -283,8 +282,7 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget> {
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryBtnText,
-                                                                  fontSize:
-                                                                      27.0,
+                                                                  fontSize: 27,
                                                                   letterSpacing:
                                                                       0.0,
                                                                   useGoogleFonts: GoogleFonts
@@ -335,22 +333,16 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget> {
                                                         ),
                                                         options:
                                                             FFButtonOptions(
-                                                          width: 180.0,
-                                                          height: 40.0,
+                                                          width: 180,
+                                                          height: 40,
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      24.0,
-                                                                      0.0,
-                                                                      24.0,
-                                                                      0.0),
+                                                                  .fromSTEB(24,
+                                                                      0, 24, 0),
                                                           iconPadding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           color:
                                                               Color(0xFF1AC568),
                                                           textStyle:
@@ -371,17 +363,16 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget> {
                                                                         .containsKey(
                                                                             FlutterFlowTheme.of(context).titleMediumFamily),
                                                                   ),
-                                                          elevation: 3.0,
+                                                          elevation: 3,
                                                           borderSide:
                                                               BorderSide(
                                                             color: Colors
                                                                 .transparent,
-                                                            width: 1.0,
+                                                            width: 1,
                                                           ),
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      8.0),
+                                                                  .circular(8),
                                                         ),
                                                       ),
                                                     if (staggeredViewInvoiceRecord
@@ -404,22 +395,16 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget> {
                                                         ),
                                                         options:
                                                             FFButtonOptions(
-                                                          width: 180.0,
-                                                          height: 40.0,
+                                                          width: 180,
+                                                          height: 40,
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      24.0,
-                                                                      0.0,
-                                                                      24.0,
-                                                                      0.0),
+                                                                  .fromSTEB(24,
+                                                                      0, 24, 0),
                                                           iconPadding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .info,
@@ -444,17 +429,16 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget> {
                                                                         .containsKey(
                                                                             FlutterFlowTheme.of(context).titleMediumFamily),
                                                                   ),
-                                                          elevation: 3.0,
+                                                          elevation: 3,
                                                           borderSide:
                                                               BorderSide(
                                                             color: Colors
                                                                 .transparent,
-                                                            width: 1.0,
+                                                            width: 1,
                                                           ),
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      8.0),
+                                                                  .circular(8),
                                                         ),
                                                       ),
                                                     if (staggeredViewInvoiceRecord
@@ -473,22 +457,16 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget> {
                                                         ),
                                                         options:
                                                             FFButtonOptions(
-                                                          width: 180.0,
-                                                          height: 40.0,
+                                                          width: 180,
+                                                          height: 40,
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      24.0,
-                                                                      0.0,
-                                                                      24.0,
-                                                                      0.0),
+                                                                  .fromSTEB(24,
+                                                                      0, 24, 0),
                                                           iconPadding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           color:
                                                               Color(0xFFFF9D47),
                                                           textStyle:
@@ -509,17 +487,16 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget> {
                                                                         .containsKey(
                                                                             FlutterFlowTheme.of(context).titleMediumFamily),
                                                                   ),
-                                                          elevation: 3.0,
+                                                          elevation: 3,
                                                           borderSide:
                                                               BorderSide(
                                                             color: Colors
                                                                 .transparent,
-                                                            width: 1.0,
+                                                            width: 1,
                                                           ),
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      8.0),
+                                                                  .circular(8),
                                                         ),
                                                       ),
                                                   ],
@@ -529,7 +506,7 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget> {
                                           ),
                                         ),
                                         Padding(
-                                          padding: EdgeInsets.all(15.0),
+                                          padding: EdgeInsets.all(15),
                                           child: Container(
                                             width: double.infinity,
                                             decoration: BoxDecoration(
@@ -546,8 +523,8 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget> {
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 20.0),
+                                                            .fromSTEB(
+                                                                0, 0, 0, 20),
                                                     child: RichText(
                                                       textScaler:
                                                           MediaQuery.of(context)
@@ -595,8 +572,7 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget> {
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primary,
-                                                                  fontSize:
-                                                                      27.0,
+                                                                  fontSize: 27,
                                                                   letterSpacing:
                                                                       0.0,
                                                                   useGoogleFonts: GoogleFonts
@@ -670,11 +646,8 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget> {
                                                         return Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      10.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 10),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -687,10 +660,10 @@ class _KotOrderScreenWidgetState extends State<KotOrderScreenWidget> {
                                                                 child: Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          20.0,
-                                                                          0.0),
+                                                                          0,
+                                                                          0,
+                                                                          20,
+                                                                          0),
                                                                   child:
                                                                       Container(
                                                                     decoration:

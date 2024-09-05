@@ -53,7 +53,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
         _model.aboutUS?.contains,
         'null',
       );
-      setState(() {});
+      safeSetState(() {});
     });
 
     animationsMap.addAll({
@@ -65,8 +65,8 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: 0.0,
-            end: 1.0,
+            begin: 0,
+            end: 1,
           ),
         ],
       ),
@@ -78,8 +78,8 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: 0.0,
-            end: 1.0,
+            begin: 0,
+            end: 1,
           ),
         ],
       ),
@@ -91,8 +91,8 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: 0.0,
-            end: 1.0,
+            begin: 0,
+            end: 1,
           ),
         ],
       ),
@@ -104,8 +104,8 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: 0.0,
-            end: 1.0,
+            begin: 0,
+            end: 1,
           ),
         ],
       ),
@@ -117,8 +117,8 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: 0.0,
-            end: 1.0,
+            begin: 0,
+            end: 1,
           ),
         ],
       ),
@@ -130,8 +130,8 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: 0.0,
-            end: 1.0,
+            begin: 0,
+            end: 1,
           ),
         ],
       ),
@@ -143,7 +143,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
       this,
     );
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -168,7 +168,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
             body: SafeArea(
               top: true,
               child: Padding(
-                padding: EdgeInsets.all(3.0),
+                padding: EdgeInsets.all(3),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -177,7 +177,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                     Expanded(
                       flex: 1,
                       child: Container(
-                        width: MediaQuery.sizeOf(context).width * 1.0,
+                        width: MediaQuery.sizeOf(context).width,
                         height: MediaQuery.sizeOf(context).height * 0.12,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).primary,
@@ -190,22 +190,22 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                             Expanded(
                               flex: 1,
                               child: Container(
-                                width: 100.0,
-                                height: 100.0,
+                                width: 100,
+                                height: 100,
                                 decoration: BoxDecoration(),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     FlutterFlowIconButton(
                                       borderColor: Colors.transparent,
-                                      borderRadius: 30.0,
-                                      borderWidth: 1.0,
-                                      buttonSize: 60.0,
+                                      borderRadius: 30,
+                                      borderWidth: 1,
+                                      buttonSize: 60,
                                       icon: Icon(
                                         Icons.chevron_left_sharp,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBtnText,
-                                        size: 26.0,
+                                        size: 26,
                                       ),
                                       onPressed: () async {
                                         context.safePop();
@@ -238,7 +238,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                               flex: 1,
                               child: wrapWithModel(
                                 model: _model.headerModel,
-                                updateCallback: () => setState(() {}),
+                                updateCallback: () => safeSetState(() {}),
                                 child: HeaderWidget(),
                               ),
                             ),
@@ -249,8 +249,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                     Expanded(
                       flex: 13,
                       child: Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
                         child: Container(
                           width: double.infinity,
                           decoration: BoxDecoration(
@@ -279,7 +278,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            5.0, 5.0, 5.0, 0.0),
+                                            5, 5, 5, 0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -289,7 +288,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                             FFAppState().htmlview =
                                                 _model.aboutUS!.contains;
                                             FFAppState().colorab = 1;
-                                            setState(() {});
+                                            safeSetState(() {});
                                           },
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
@@ -311,7 +310,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                                     .primaryBackground,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(10.0),
+                                                  BorderRadius.circular(10),
                                               border: Border.all(
                                                 color:
                                                     FlutterFlowTheme.of(context)
@@ -326,15 +325,15 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                                 FlutterFlowIconButton(
                                                   borderColor:
                                                       Colors.transparent,
-                                                  borderRadius: 30.0,
-                                                  borderWidth: 1.0,
-                                                  buttonSize: 60.0,
+                                                  borderRadius: 30,
+                                                  borderWidth: 1,
+                                                  buttonSize: 60,
                                                   icon: Icon(
                                                     Icons.info_outline_rounded,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
-                                                    size: 20.0,
+                                                    size: 20,
                                                   ),
                                                   onPressed: () {
                                                     print(
@@ -373,7 +372,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            5.0, 5.0, 5.0, 0.0),
+                                            5, 5, 5, 0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -388,11 +387,11 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                             ).then((s) => s.firstOrNull);
                                             FFAppState().htmlview = _model
                                                 .termsandcondition!.contains;
-                                            setState(() {});
+                                            safeSetState(() {});
                                             FFAppState().colorab = 2;
-                                            setState(() {});
+                                            safeSetState(() {});
 
-                                            setState(() {});
+                                            safeSetState(() {});
                                           },
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
@@ -414,7 +413,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                                     .primaryBackground,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(10.0),
+                                                  BorderRadius.circular(10),
                                               border: Border.all(
                                                 color:
                                                     FlutterFlowTheme.of(context)
@@ -429,15 +428,15 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                                 FlutterFlowIconButton(
                                                   borderColor:
                                                       Colors.transparent,
-                                                  borderRadius: 30.0,
-                                                  borderWidth: 1.0,
-                                                  buttonSize: 60.0,
+                                                  borderRadius: 30,
+                                                  borderWidth: 1,
+                                                  buttonSize: 60,
                                                   icon: Icon(
                                                     Icons.info_outline_rounded,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
-                                                    size: 20.0,
+                                                    size: 20,
                                                   ),
                                                   onPressed: () {
                                                     print(
@@ -476,7 +475,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            5.0, 5.0, 5.0, 0.0),
+                                            5, 5, 5, 0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -491,11 +490,11 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                             ).then((s) => s.firstOrNull);
                                             FFAppState().htmlview =
                                                 _model.contacvtUS!.contains;
-                                            setState(() {});
+                                            safeSetState(() {});
                                             FFAppState().colorab = 3;
-                                            setState(() {});
+                                            safeSetState(() {});
 
-                                            setState(() {});
+                                            safeSetState(() {});
                                           },
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
@@ -513,7 +512,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                                   : FlutterFlowTheme.of(context)
                                                       .primaryBackground,
                                               borderRadius:
-                                                  BorderRadius.circular(10.0),
+                                                  BorderRadius.circular(10),
                                               border: Border.all(
                                                 color:
                                                     FlutterFlowTheme.of(context)
@@ -528,15 +527,15 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                                 FlutterFlowIconButton(
                                                   borderColor:
                                                       Colors.transparent,
-                                                  borderRadius: 30.0,
-                                                  borderWidth: 1.0,
-                                                  buttonSize: 60.0,
+                                                  borderRadius: 30,
+                                                  borderWidth: 1,
+                                                  buttonSize: 60,
                                                   icon: Icon(
                                                     Icons.info_outline_rounded,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
-                                                    size: 20.0,
+                                                    size: 20,
                                                   ),
                                                   onPressed: () {
                                                     print(
@@ -575,7 +574,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            5.0, 5.0, 5.0, 0.0),
+                                            5, 5, 5, 0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -590,11 +589,11 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                             ).then((s) => s.firstOrNull);
                                             FFAppState().htmlview =
                                                 _model.cancel!.contains;
-                                            setState(() {});
+                                            safeSetState(() {});
                                             FFAppState().colorab = 4;
-                                            setState(() {});
+                                            safeSetState(() {});
 
-                                            setState(() {});
+                                            safeSetState(() {});
                                           },
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
@@ -610,7 +609,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                                   : FlutterFlowTheme.of(context)
                                                       .primaryBackground,
                                               borderRadius:
-                                                  BorderRadius.circular(10.0),
+                                                  BorderRadius.circular(10),
                                               border: Border.all(
                                                 color:
                                                     FlutterFlowTheme.of(context)
@@ -625,15 +624,15 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                                 FlutterFlowIconButton(
                                                   borderColor:
                                                       Colors.transparent,
-                                                  borderRadius: 30.0,
-                                                  borderWidth: 1.0,
-                                                  buttonSize: 60.0,
+                                                  borderRadius: 30,
+                                                  borderWidth: 1,
+                                                  buttonSize: 60,
                                                   icon: Icon(
                                                     Icons.info_outline_rounded,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
-                                                    size: 20.0,
+                                                    size: 20,
                                                   ),
                                                   onPressed: () {
                                                     print(
@@ -672,7 +671,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            5.0, 5.0, 5.0, 0.0),
+                                            5, 5, 5, 0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -687,11 +686,11 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                             ).then((s) => s.firstOrNull);
                                             FFAppState().htmlview =
                                                 _model.shipping!.contains;
-                                            setState(() {});
+                                            safeSetState(() {});
                                             FFAppState().colorab = 5;
-                                            setState(() {});
+                                            safeSetState(() {});
 
-                                            setState(() {});
+                                            safeSetState(() {});
                                           },
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
@@ -707,7 +706,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                                   : FlutterFlowTheme.of(context)
                                                       .primaryBackground,
                                               borderRadius:
-                                                  BorderRadius.circular(10.0),
+                                                  BorderRadius.circular(10),
                                               border: Border.all(
                                                 color:
                                                     FlutterFlowTheme.of(context)
@@ -722,15 +721,15 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                                 FlutterFlowIconButton(
                                                   borderColor:
                                                       Colors.transparent,
-                                                  borderRadius: 30.0,
-                                                  borderWidth: 1.0,
-                                                  buttonSize: 60.0,
+                                                  borderRadius: 30,
+                                                  borderWidth: 1,
+                                                  buttonSize: 60,
                                                   icon: Icon(
                                                     Icons.info_outline_rounded,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
-                                                    size: 20.0,
+                                                    size: 20,
                                                   ),
                                                   onPressed: () {
                                                     print(
@@ -769,7 +768,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            5.0, 5.0, 5.0, 0.0),
+                                            5, 5, 5, 0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -784,11 +783,11 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                             ).then((s) => s.firstOrNull);
                                             FFAppState().htmlview =
                                                 _model.privacypolicy!.contains;
-                                            setState(() {});
+                                            safeSetState(() {});
                                             FFAppState().colorab = 6;
-                                            setState(() {});
+                                            safeSetState(() {});
 
-                                            setState(() {});
+                                            safeSetState(() {});
                                           },
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
@@ -804,7 +803,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                                   : FlutterFlowTheme.of(context)
                                                       .primaryBackground,
                                               borderRadius:
-                                                  BorderRadius.circular(10.0),
+                                                  BorderRadius.circular(10),
                                               border: Border.all(
                                                 color:
                                                     FlutterFlowTheme.of(context)
@@ -819,15 +818,15 @@ class _AboutUsWidgetState extends State<AboutUsWidget>
                                                 FlutterFlowIconButton(
                                                   borderColor:
                                                       Colors.transparent,
-                                                  borderRadius: 30.0,
-                                                  borderWidth: 1.0,
-                                                  buttonSize: 60.0,
+                                                  borderRadius: 30,
+                                                  borderWidth: 1,
+                                                  buttonSize: 60,
                                                   icon: Icon(
                                                     Icons.info_outline_rounded,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
-                                                    size: 20.0,
+                                                    size: 20,
                                                   ),
                                                   onPressed: () {
                                                     print(

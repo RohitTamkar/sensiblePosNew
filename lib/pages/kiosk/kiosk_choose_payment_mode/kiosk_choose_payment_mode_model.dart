@@ -22,7 +22,6 @@ class KioskChoosePaymentModeModel
     extends FlutterFlowModel<KioskChoosePaymentModeWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Stores action output result for [Firestore Query - Query a collection] action in KioskChoosePaymentMode widget.
   FooterRecord? footer;
   // Model for KioskHeader component.

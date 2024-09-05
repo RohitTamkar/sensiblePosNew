@@ -24,7 +24,6 @@ import 'package:provider/provider.dart';
 class LoginPageModel extends FlutterFlowModel<LoginPageWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - checkPlatform] action in LoginPage widget.
   String? platform;
   // Stores action output result for [Custom Action - getPlatformDetails] action in LoginPage widget.

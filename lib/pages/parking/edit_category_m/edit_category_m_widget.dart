@@ -41,7 +41,7 @@ class _EditCategoryMWidgetState extends State<EditCategoryMWidget> {
     _model.nameTextController ??= TextEditingController();
     _model.nameFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -69,8 +69,8 @@ class _EditCategoryMWidgetState extends State<EditCategoryMWidget> {
                 Expanded(
                   flex: 4,
                   child: Container(
-                    width: MediaQuery.sizeOf(context).width * 1.0,
-                    height: 100.0,
+                    width: MediaQuery.sizeOf(context).width,
+                    height: 100,
                     decoration: BoxDecoration(),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -78,21 +78,20 @@ class _EditCategoryMWidgetState extends State<EditCategoryMWidget> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              20.0, 0.0, 20.0, 0.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 30.0,
-                                borderWidth: 1.0,
-                                buttonSize: 45.0,
+                                borderRadius: 30,
+                                borderWidth: 1,
+                                buttonSize: 45,
                                 icon: Icon(
                                   Icons.chevron_left,
                                   color: FlutterFlowTheme.of(context).lineColor,
-                                  size: 24.0,
+                                  size: 24,
                                 ),
                                 onPressed: () async {
                                   context.pop();
@@ -120,13 +119,13 @@ class _EditCategoryMWidgetState extends State<EditCategoryMWidget> {
                               ),
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 30.0,
-                                borderWidth: 1.0,
-                                buttonSize: 45.0,
+                                borderRadius: 30,
+                                borderWidth: 1,
+                                buttonSize: 45,
                                 icon: Icon(
                                   Icons.chevron_left,
                                   color: Colors.transparent,
-                                  size: 30.0,
+                                  size: 30,
                                 ),
                                 onPressed: () {
                                   print('IconButton pressed ...');
@@ -155,11 +154,11 @@ class _EditCategoryMWidgetState extends State<EditCategoryMWidget> {
                       if (!snapshot.hasData) {
                         return Center(
                           child: SizedBox(
-                            width: 40.0,
-                            height: 40.0,
+                            width: 40,
+                            height: 40,
                             child: SpinKitFadingCircle(
                               color: FlutterFlowTheme.of(context).primary,
-                              size: 40.0,
+                              size: 40,
                             ),
                           ),
                         );
@@ -176,21 +175,20 @@ class _EditCategoryMWidgetState extends State<EditCategoryMWidget> {
                               : null;
 
                       return Container(
-                        width: MediaQuery.sizeOf(context).width * 1.0,
-                        height: 100.0,
+                        width: MediaQuery.sizeOf(context).width,
+                        height: 100,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context)
                               .parkingPrimaryBackground,
                           borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(0.0),
-                            bottomRight: Radius.circular(0.0),
-                            topLeft: Radius.circular(0.0),
-                            topRight: Radius.circular(0.0),
+                            bottomLeft: Radius.circular(0),
+                            bottomRight: Radius.circular(0),
+                            topLeft: Radius.circular(0),
+                            topRight: Radius.circular(0),
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 30.0, 0.0, 15.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 15),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.start,
@@ -200,7 +198,7 @@ class _EditCategoryMWidgetState extends State<EditCategoryMWidget> {
                                 height:
                                     MediaQuery.sizeOf(context).height * 0.03,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(5.0),
+                                  borderRadius: BorderRadius.circular(5),
                                 ),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -241,14 +239,14 @@ class _EditCategoryMWidgetState extends State<EditCategoryMWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 20.0),
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
                                 child: Container(
                                   width: MediaQuery.sizeOf(context).width * 0.9,
                                   height:
                                       MediaQuery.sizeOf(context).height * 0.03,
                                   decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(5.0),
+                                    borderRadius: BorderRadius.circular(5),
                                   ),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -298,8 +296,8 @@ class _EditCategoryMWidgetState extends State<EditCategoryMWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 30.0),
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 30),
                                 child: Container(
                                   width: MediaQuery.sizeOf(context).width * 0.9,
                                   height:
@@ -307,7 +305,7 @@ class _EditCategoryMWidgetState extends State<EditCategoryMWidget> {
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
-                                    borderRadius: BorderRadius.circular(5.0),
+                                    borderRadius: BorderRadius.circular(5),
                                     border: Border.all(
                                       color: FlutterFlowTheme.of(context)
                                           .customColor1,
@@ -316,7 +314,7 @@ class _EditCategoryMWidgetState extends State<EditCategoryMWidget> {
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        10.0, 0.0, 10.0, 0.0),
+                                        10, 0, 10, 0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -432,7 +430,7 @@ class _EditCategoryMWidgetState extends State<EditCategoryMWidget> {
                                     MediaQuery.sizeOf(context).height * 0.05,
                                 decoration: BoxDecoration(
                                   color: Color(0xFFEDD28A),
-                                  borderRadius: BorderRadius.circular(5.0),
+                                  borderRadius: BorderRadius.circular(5),
                                 ),
                                 child: FFButtonWidget(
                                   onPressed: () async {
@@ -465,12 +463,12 @@ class _EditCategoryMWidgetState extends State<EditCategoryMWidget> {
                                     'efplktyy' /* Update */,
                                   ),
                                   options: FFButtonOptions(
-                                    width: 130.0,
-                                    height: 40.0,
+                                    width: 130,
+                                    height: 40,
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
+                                        0, 0, 0, 0),
                                     iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
+                                        0, 0, 0, 0),
                                     color: FlutterFlowTheme.of(context)
                                         .parkingSecondaryBackground,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -480,7 +478,7 @@ class _EditCategoryMWidgetState extends State<EditCategoryMWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .titleMediumFamily,
                                           color: Colors.white,
-                                          fontSize: 15.0,
+                                          fontSize: 15,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.normal,
                                           useGoogleFonts: GoogleFonts.asMap()
@@ -488,11 +486,11 @@ class _EditCategoryMWidgetState extends State<EditCategoryMWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .titleMediumFamily),
                                         ),
-                                    elevation: 2.0,
+                                    elevation: 2,
                                     borderSide: BorderSide(
                                       color: Colors.transparent,
                                     ),
-                                    borderRadius: BorderRadius.circular(5.0),
+                                    borderRadius: BorderRadius.circular(5),
                                   ),
                                 ),
                               ),

@@ -26,7 +26,6 @@ import 'package:provider/provider.dart';
 class ProductAndListWINModel extends FlutterFlowModel<ProductAndListWINWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for MenuDrawer component.
   late MenuDrawerModel menuDrawerModel;
   // State field(s) for TextField widget.

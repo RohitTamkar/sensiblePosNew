@@ -40,14 +40,14 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
       vsync: this,
       length: 7,
       initialIndex: 0,
-    )..addListener(() => setState(() {}));
+    )..addListener(() => safeSetState(() {}));
     _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
 
     _model.textController2 ??= TextEditingController();
     _model.textFieldFocusNode2 ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -72,10 +72,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
             drawer: Container(
               width: MediaQuery.sizeOf(context).width * 0.11,
               child: Drawer(
-                elevation: 16.0,
+                elevation: 16,
                 child: wrapWithModel(
                   model: _model.menuDrawerModel,
-                  updateCallback: () => setState(() {}),
+                  updateCallback: () => safeSetState(() {}),
                   child: MenuDrawerWidget(),
                 ),
               ),
@@ -84,7 +84,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -109,7 +109,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                               Icon(
                                 Icons.menu_rounded,
                                 color: FlutterFlowTheme.of(context).primaryText,
-                                size: 18.0,
+                                size: 18,
                               ),
                             ],
                           ),
@@ -124,11 +124,11 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                             if (!snapshot.hasData) {
                               return Center(
                                 child: SizedBox(
-                                  width: 40.0,
-                                  height: 40.0,
+                                  width: 40,
+                                  height: 40,
                                   child: SpinKitFadingCircle(
                                     color: FlutterFlowTheme.of(context).primary,
-                                    size: 40.0,
+                                    size: 40,
                                   ),
                                 ),
                               );
@@ -137,14 +137,14 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                             final containerOutletRecord = snapshot.data!;
 
                             return Container(
-                              width: 100.0,
+                              width: 100,
                               height: MediaQuery.sizeOf(context).height * 0.06,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context).primary,
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    5.0, 0.0, 5.0, 0.0),
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
                                 child: StreamBuilder<List<UserProfileRecord>>(
                                   stream: queryUserProfileRecord(
                                     singleRecord: true,
@@ -154,12 +154,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                     if (!snapshot.hasData) {
                                       return Center(
                                         child: SizedBox(
-                                          width: 40.0,
-                                          height: 40.0,
+                                          width: 40,
+                                          height: 40,
                                           child: SpinKitFadingCircle(
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
-                                            size: 40.0,
+                                            size: 40,
                                           ),
                                         ),
                                       );
@@ -183,16 +183,15 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                       children: [
                                         Expanded(
                                           child: Container(
-                                            width: 100.0,
-                                            height: 100.0,
+                                            width: 100,
+                                            height: 100,
                                             decoration: BoxDecoration(),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 3.0, 0.0),
+                                                      .fromSTEB(0, 0, 3, 0),
                                                   child: Text(
                                                     rowUserProfileRecord!.name,
                                                     style: FlutterFlowTheme.of(
@@ -220,8 +219,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                 ),
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 6.0, 0.0),
+                                                      .fromSTEB(0, 0, 6, 0),
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
@@ -255,7 +253,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 6.0, 0.0),
+                                                  0, 0, 6, 0),
                                           child: Text(
                                             dateTimeFormat(
                                               "yMMMd",
@@ -311,8 +309,8 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                         ),
                                         Expanded(
                                           child: Container(
-                                            width: 100.0,
-                                            height: 100.0,
+                                            width: 100,
+                                            height: 100,
                                             decoration: BoxDecoration(),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -361,8 +359,8 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                         decoration: BoxDecoration(),
                         child: Image.asset(
                           'assets/images/IMG_20220412_140945.png',
-                          width: 100.0,
-                          height: 100.0,
+                          width: 100,
+                          height: 100,
                           fit: BoxFit.contain,
                         ),
                       ),
@@ -380,11 +378,11 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                       if (!snapshot.hasData) {
                         return Center(
                           child: SizedBox(
-                            width: 40.0,
-                            height: 40.0,
+                            width: 40,
+                            height: 40,
                             child: SpinKitFadingCircle(
                               color: FlutterFlowTheme.of(context).primary,
-                              size: 40.0,
+                              size: 40,
                             ),
                           ),
                         );
@@ -394,13 +392,13 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
 
                       return Container(
                         width: double.infinity,
-                        height: 100.0,
+                        height: 100,
                         decoration: BoxDecoration(),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Container(
-                              width: MediaQuery.sizeOf(context).width * 1.0,
+                              width: MediaQuery.sizeOf(context).width,
                               height: MediaQuery.sizeOf(context).height * 0.06,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
@@ -411,7 +409,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                 children: [
                                   Expanded(
                                     child: Container(
-                                      width: 100.0,
+                                      width: 100,
                                       height:
                                           MediaQuery.sizeOf(context).height *
                                               0.05,
@@ -427,7 +425,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .tertiary,
                                               borderRadius:
-                                                  BorderRadius.circular(10.0),
+                                                  BorderRadius.circular(10),
                                               shape: BoxShape.rectangle,
                                             ),
                                             child: Column(
@@ -437,8 +435,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          6.0, 4.0, 6.0, 4.0),
+                                                      .fromSTEB(6, 4, 6, 4),
                                                   child: SelectionArea(
                                                       child: Text(
                                                     containerPurchaseRecordList
@@ -458,7 +455,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .lineColor,
-                                                          fontSize: 12.0,
+                                                          fontSize: 12,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.normal,
@@ -480,7 +477,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                   ),
                                   Expanded(
                                     child: Container(
-                                      width: 100.0,
+                                      width: 100,
                                       height:
                                           MediaQuery.sizeOf(context).height *
                                               0.05,
@@ -496,7 +493,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .tertiary,
                                               borderRadius:
-                                                  BorderRadius.circular(10.0),
+                                                  BorderRadius.circular(10),
                                               shape: BoxShape.rectangle,
                                             ),
                                             child: Column(
@@ -506,8 +503,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          6.0, 4.0, 6.0, 4.0),
+                                                      .fromSTEB(6, 4, 6, 4),
                                                   child: SelectionArea(
                                                       child: Text(
                                                     containerPurchaseRecordList
@@ -527,7 +523,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .lineColor,
-                                                          fontSize: 12.0,
+                                                          fontSize: 12,
                                                           letterSpacing: 0.0,
                                                           useGoogleFonts: GoogleFonts
                                                                   .asMap()
@@ -547,7 +543,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                   ),
                                   Expanded(
                                     child: Container(
-                                      width: 100.0,
+                                      width: 100,
                                       height:
                                           MediaQuery.sizeOf(context).height *
                                               0.05,
@@ -563,7 +559,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .tertiary,
                                               borderRadius:
-                                                  BorderRadius.circular(10.0),
+                                                  BorderRadius.circular(10),
                                               shape: BoxShape.rectangle,
                                             ),
                                             child: Column(
@@ -573,8 +569,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          6.0, 4.0, 6.0, 4.0),
+                                                      .fromSTEB(6, 4, 6, 4),
                                                   child: SelectionArea(
                                                       child: Text(
                                                     containerPurchaseRecordList
@@ -594,7 +589,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .lineColor,
-                                                          fontSize: 12.0,
+                                                          fontSize: 12,
                                                           letterSpacing: 0.0,
                                                           useGoogleFonts: GoogleFonts
                                                                   .asMap()
@@ -614,7 +609,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                   ),
                                   Expanded(
                                     child: Container(
-                                      width: 100.0,
+                                      width: 100,
                                       height:
                                           MediaQuery.sizeOf(context).height *
                                               0.05,
@@ -630,7 +625,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .tertiary,
                                               borderRadius:
-                                                  BorderRadius.circular(10.0),
+                                                  BorderRadius.circular(10),
                                               shape: BoxShape.rectangle,
                                             ),
                                             child: Column(
@@ -640,8 +635,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          6.0, 4.0, 6.0, 4.0),
+                                                      .fromSTEB(6, 4, 6, 4),
                                                   child: SelectionArea(
                                                       child: Text(
                                                     containerPurchaseRecordList
@@ -661,7 +655,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .lineColor,
-                                                          fontSize: 12.0,
+                                                          fontSize: 12,
                                                           letterSpacing: 0.0,
                                                           useGoogleFonts: GoogleFonts
                                                                   .asMap()
@@ -681,7 +675,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                   ),
                                   Expanded(
                                     child: Container(
-                                      width: 100.0,
+                                      width: 100,
                                       height:
                                           MediaQuery.sizeOf(context).height *
                                               0.05,
@@ -697,7 +691,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .tertiary,
                                               borderRadius:
-                                                  BorderRadius.circular(10.0),
+                                                  BorderRadius.circular(10),
                                               shape: BoxShape.rectangle,
                                             ),
                                             child: Column(
@@ -707,8 +701,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          6.0, 4.0, 6.0, 4.0),
+                                                      .fromSTEB(6, 4, 6, 4),
                                                   child: SelectionArea(
                                                       child: Text(
                                                     containerPurchaseRecordList
@@ -728,7 +721,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .lineColor,
-                                                          fontSize: 12.0,
+                                                          fontSize: 12,
                                                           letterSpacing: 0.0,
                                                           useGoogleFonts: GoogleFonts
                                                                   .asMap()
@@ -748,7 +741,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                   ),
                                   Expanded(
                                     child: Container(
-                                      width: 100.0,
+                                      width: 100,
                                       height:
                                           MediaQuery.sizeOf(context).height *
                                               0.05,
@@ -764,7 +757,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .tertiary,
                                               borderRadius:
-                                                  BorderRadius.circular(10.0),
+                                                  BorderRadius.circular(10),
                                               shape: BoxShape.rectangle,
                                             ),
                                             child: Column(
@@ -774,8 +767,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          6.0, 4.0, 6.0, 4.0),
+                                                      .fromSTEB(6, 4, 6, 4),
                                                   child: SelectionArea(
                                                       child: Text(
                                                     containerPurchaseRecordList
@@ -795,7 +787,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .lineColor,
-                                                          fontSize: 12.0,
+                                                          fontSize: 12,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.normal,
@@ -817,7 +809,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                   ),
                                   Expanded(
                                     child: Container(
-                                      width: 100.0,
+                                      width: 100,
                                       height:
                                           MediaQuery.sizeOf(context).height *
                                               0.05,
@@ -833,7 +825,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .tertiary,
                                               borderRadius:
-                                                  BorderRadius.circular(10.0),
+                                                  BorderRadius.circular(10),
                                               shape: BoxShape.rectangle,
                                             ),
                                             child: Column(
@@ -843,8 +835,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          6.0, 4.0, 6.0, 4.0),
+                                                      .fromSTEB(6, 4, 6, 4),
                                                   child: SelectionArea(
                                                       child: Text(
                                                     FFLocalizations.of(context)
@@ -862,7 +853,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .lineColor,
-                                                          fontSize: 12.0,
+                                                          fontSize: 12,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.normal,
@@ -889,7 +880,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                               child: Column(
                                 children: [
                                   Align(
-                                    alignment: Alignment(0.0, 0),
+                                    alignment: Alignment(0, 0),
                                     child: TabBar(
                                       labelColor:
                                           FlutterFlowTheme.of(context).primary,
@@ -913,7 +904,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                       unselectedLabelStyle: TextStyle(),
                                       indicatorColor:
                                           FlutterFlowTheme.of(context).tertiary,
-                                      indicatorWeight: 4.0,
+                                      indicatorWeight: 4,
                                       tabs: [
                                         Tab(
                                           text: FFLocalizations.of(context)
@@ -979,7 +970,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  5.0, 7.0, 5.0, 5.0),
+                                                  5, 7, 5, 5),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -987,20 +978,16 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                 flex: 12,
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 8.0, 0.0),
+                                                      .fromSTEB(0, 0, 8, 0),
                                                   child: Container(
-                                                    width: 100.0,
+                                                    width: 100,
                                                     height: double.infinity,
                                                     decoration: BoxDecoration(),
                                                     child: Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  5.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  5.0),
+                                                                  5, 0, 0, 5),
                                                       child: Builder(
                                                         builder: (context) {
                                                           final purchaceOrderList =
@@ -1018,9 +1005,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 SliverGridDelegateWithFixedCrossAxisCount(
                                                               crossAxisCount: 3,
                                                               crossAxisSpacing:
-                                                                  7.0,
+                                                                  7,
                                                               mainAxisSpacing:
-                                                                  8.0,
+                                                                  8,
                                                               childAspectRatio:
                                                                   1.5,
                                                             ),
@@ -1061,21 +1048,21 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                       .update(
                                                                           () {});
 
-                                                                  setState(
+                                                                  safeSetState(
                                                                       () {});
                                                                 },
                                                                 child:
                                                                     Container(
-                                                                  width: 100.0,
-                                                                  height: 100.0,
+                                                                  width: 100,
+                                                                  height: 100,
                                                                   decoration:
                                                                       BoxDecoration(
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryBackground,
                                                                     borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            5.0),
+                                                                        BorderRadius
+                                                                            .circular(5),
                                                                     border:
                                                                         Border
                                                                             .all(
@@ -1096,7 +1083,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         child:
                                                                             Padding(
                                                                           padding:
-                                                                              EdgeInsets.all(4.0),
+                                                                              EdgeInsets.all(4),
                                                                           child:
                                                                               Column(
                                                                             mainAxisSize:
@@ -1107,7 +1094,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 CrossAxisAlignment.start,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                                                                                 child: SelectionArea(
                                                                                     child: Text(
                                                                                   purchaceOrderListItem.order,
@@ -1119,7 +1106,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 )),
                                                                               ),
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 1, 0, 0),
                                                                                 child: SelectionArea(
                                                                                     child: Text(
                                                                                   purchaceOrderListItem.party,
@@ -1132,7 +1119,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 )),
                                                                               ),
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 1, 0, 0),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
@@ -1175,19 +1162,19 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           borderRadius:
                                                                               BorderRadius.only(
                                                                             bottomLeft:
-                                                                                Radius.circular(5.0),
+                                                                                Radius.circular(5),
                                                                             bottomRight:
-                                                                                Radius.circular(5.0),
+                                                                                Radius.circular(5),
                                                                             topLeft:
-                                                                                Radius.circular(0.0),
+                                                                                Radius.circular(0),
                                                                             topRight:
-                                                                                Radius.circular(0.0),
+                                                                                Radius.circular(0),
                                                                           ),
                                                                         ),
                                                                         child:
                                                                             Padding(
                                                                           padding:
-                                                                              EdgeInsets.all(3.0),
+                                                                              EdgeInsets.all(3),
                                                                           child:
                                                                               Row(
                                                                             mainAxisSize:
@@ -1198,7 +1185,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 CrossAxisAlignment.end,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 5.0, 2.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 2, 5, 2),
                                                                                 child: SelectionArea(
                                                                                     child: Text(
                                                                                   FFLocalizations.of(context).getText(
@@ -1212,7 +1199,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 )),
                                                                               ),
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 2.0, 2.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 2, 2, 2),
                                                                                 child: SelectionArea(
                                                                                     child: Text(
                                                                                   dateTimeFormat(
@@ -1222,7 +1209,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                        fontSize: 10.0,
+                                                                                        fontSize: 10,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
@@ -1247,7 +1234,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                               Expanded(
                                                 flex: 7,
                                                 child: Container(
-                                                  width: 100.0,
+                                                  width: 100,
                                                   height: double.infinity,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
@@ -1255,7 +1242,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                         .secondaryBackground,
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            4.0),
+                                                            4),
                                                     border: Border.all(
                                                       color:
                                                           FlutterFlowTheme.of(
@@ -1281,11 +1268,8 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      10.0,
-                                                                      1.0,
-                                                                      10.0,
-                                                                      1.0),
+                                                                  .fromSTEB(10,
+                                                                      1, 10, 1),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -1352,10 +1336,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    3.0,
-                                                                    0.0,
-                                                                    0.0),
+                                                                    0, 3, 0, 0),
                                                         child: Container(
                                                           width:
                                                               double.infinity,
@@ -1365,10 +1346,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0.0,
-                                                                        3.0,
-                                                                        0.0,
-                                                                        3.0),
+                                                                        0,
+                                                                        3,
+                                                                        0,
+                                                                        3),
                                                             child: Column(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -1383,10 +1364,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -1433,10 +1414,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -1482,10 +1463,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -1531,10 +1512,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -1591,17 +1572,13 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               .customColor2,
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      0.0),
+                                                                  .circular(0),
                                                         ),
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      10.0,
-                                                                      0.0,
-                                                                      10.0,
-                                                                      0.0),
+                                                                  .fromSTEB(10,
+                                                                      0, 10, 0),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -1617,10 +1594,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            2.0,
-                                                                            5.0,
-                                                                            2.0),
+                                                                            0,
+                                                                            2,
+                                                                            5,
+                                                                            2),
                                                                 child:
                                                                     SelectionArea(
                                                                         child:
@@ -1647,10 +1624,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            2.0,
-                                                                            2.0,
-                                                                            2.0),
+                                                                            0,
+                                                                            2,
+                                                                            2,
+                                                                            2),
                                                                 child:
                                                                     SelectionArea(
                                                                         child:
@@ -1667,7 +1644,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         fontFamily:
                                                                             FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         fontSize:
-                                                                            10.0,
+                                                                            10,
                                                                         letterSpacing:
                                                                             0.0,
                                                                         useGoogleFonts:
@@ -1679,10 +1656,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            2.0,
-                                                                            1.0,
-                                                                            2.0),
+                                                                            0,
+                                                                            2,
+                                                                            1,
+                                                                            2),
                                                                 child:
                                                                     SelectionArea(
                                                                         child:
@@ -1699,7 +1676,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         fontFamily:
                                                                             FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         fontSize:
-                                                                            10.0,
+                                                                            10,
                                                                         letterSpacing:
                                                                             0.0,
                                                                         useGoogleFonts:
@@ -1711,10 +1688,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            2.0,
-                                                                            1.0,
-                                                                            2.0),
+                                                                            0,
+                                                                            2,
+                                                                            1,
+                                                                            2),
                                                                 child:
                                                                     SelectionArea(
                                                                         child:
@@ -1731,7 +1708,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         fontFamily:
                                                                             FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         fontSize:
-                                                                            10.0,
+                                                                            10,
                                                                         letterSpacing:
                                                                             0.0,
                                                                         useGoogleFonts:
@@ -1759,11 +1736,8 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      3.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      3, 0, 0),
                                                           child: Builder(
                                                             builder: (context) {
                                                               final prodList =
@@ -1791,10 +1765,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   return Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            4.0),
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            4),
                                                                     child:
                                                                         Container(
                                                                       width: double
@@ -1807,10 +1781,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            10.0,
-                                                                            2.0,
-                                                                            10.0,
-                                                                            2.0),
+                                                                            10,
+                                                                            2,
+                                                                            10,
+                                                                            2),
                                                                         child:
                                                                             Column(
                                                                           mainAxisSize:
@@ -1832,7 +1806,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                   ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 1, 0, 0),
                                                                               child: Row(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1843,7 +1817,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       children: [
                                                                                         Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                           child: Text(
                                                                                             FFLocalizations.of(context).getText(
                                                                                               'x2zakht3' /* Price : */,
@@ -1856,7 +1830,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                           ),
                                                                                         ),
                                                                                         Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 3, 0),
                                                                                           child: Text(
                                                                                             FFLocalizations.of(context).getText(
                                                                                               'ray4l254' /* ₹ */,
@@ -1869,7 +1843,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                           ),
                                                                                         ),
                                                                                         Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 3, 0),
                                                                                           child: Text(
                                                                                             getJsonField(
                                                                                               prodListItem,
@@ -1894,7 +1868,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                         mainAxisAlignment: MainAxisAlignment.end,
                                                                                         children: [
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                             child: Text(
                                                                                               FFLocalizations.of(context).getText(
                                                                                                 's40mxakn' /* Qty : */,
@@ -1947,10 +1921,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -1962,10 +1936,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            5,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -1989,7 +1963,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -2001,10 +1975,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -2012,7 +1986,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -2020,10 +1994,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               valueOrDefault<String>(
@@ -2035,7 +2009,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -2052,10 +2026,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -2067,10 +2041,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            5,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -2094,7 +2068,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -2106,10 +2080,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -2117,7 +2091,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -2125,10 +2099,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               getJsonField(
@@ -2137,7 +2111,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ).toString(),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -2154,10 +2128,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -2169,10 +2143,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            5,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -2196,7 +2170,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -2208,10 +2182,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -2227,10 +2201,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               getJsonField(
@@ -2256,10 +2230,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -2271,10 +2245,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            5,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -2298,7 +2272,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -2310,10 +2284,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -2321,7 +2295,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -2425,7 +2399,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  5.0, 7.0, 5.0, 5.0),
+                                                  5, 7, 5, 5),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -2433,10 +2407,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                 flex: 12,
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 8.0, 0.0),
+                                                      .fromSTEB(0, 0, 8, 0),
                                                   child: Container(
-                                                    width: 100.0,
+                                                    width: 100,
                                                     height: double.infinity,
                                                     decoration: BoxDecoration(),
                                                     child: Column(
@@ -2446,11 +2419,8 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      5.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 5),
                                                           child: Container(
                                                             width:
                                                                 double.infinity,
@@ -2472,22 +2442,22 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                       Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            5,
+                                                                            0),
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       height:
-                                                                          100.0,
+                                                                          100,
                                                                       decoration:
                                                                           BoxDecoration(
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .secondaryBackground,
                                                                         borderRadius:
-                                                                            BorderRadius.circular(5.0),
+                                                                            BorderRadius.circular(5),
                                                                         border:
                                                                             Border.all(
                                                                           color:
@@ -2599,7 +2569,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                             serialNo:
                                                                                 _model.textController1.text,
                                                                           ));
-                                                                      setState(
+                                                                      safeSetState(
                                                                           () {
                                                                         _model
                                                                             .textController1
@@ -2614,17 +2584,19 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     options:
                                                                         FFButtonOptions(
                                                                       width:
-                                                                          130.0,
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          130,
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              0,
+                                                                              0,
+                                                                              0,
+                                                                              0),
+                                                                      iconPadding:
+                                                                          EdgeInsetsDirectional.fromSTEB(
+                                                                              0,
+                                                                              0,
+                                                                              0,
+                                                                              0),
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
@@ -2644,17 +2616,17 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                           ),
                                                                       elevation:
-                                                                          2.0,
+                                                                          2,
                                                                       borderSide:
                                                                           BorderSide(
                                                                         color: Colors
                                                                             .transparent,
                                                                         width:
-                                                                            1.0,
+                                                                            1,
                                                                       ),
                                                                       borderRadius:
                                                                           BorderRadius.circular(
-                                                                              5.0),
+                                                                              5),
                                                                     ),
                                                                   ),
                                                                 ),
@@ -2667,10 +2639,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        5.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        5.0),
+                                                                        5,
+                                                                        0,
+                                                                        0,
+                                                                        5),
                                                             child: Builder(
                                                               builder:
                                                                   (context) {
@@ -2691,9 +2663,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     crossAxisCount:
                                                                         3,
                                                                     crossAxisSpacing:
-                                                                        7.0,
+                                                                        7,
                                                                     mainAxisSpacing:
-                                                                        7.0,
+                                                                        7,
                                                                     childAspectRatio:
                                                                         1.5,
                                                                   ),
@@ -2734,21 +2706,21 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         FFAppState()
                                                                             .update(() {});
 
-                                                                        setState(
+                                                                        safeSetState(
                                                                             () {});
                                                                       },
                                                                       child:
                                                                           Container(
                                                                         width:
-                                                                            100.0,
+                                                                            100,
                                                                         height:
-                                                                            100.0,
+                                                                            100,
                                                                         decoration:
                                                                             BoxDecoration(
                                                                           color:
                                                                               FlutterFlowTheme.of(context).secondaryBackground,
                                                                           borderRadius:
-                                                                              BorderRadius.circular(5.0),
+                                                                              BorderRadius.circular(5),
                                                                           border:
                                                                               Border.all(
                                                                             color:
@@ -2764,14 +2736,14 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           children: [
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsets.all(3.0),
+                                                                                padding: EdgeInsets.all(3),
                                                                                 child: Column(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                                                   children: [
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                                                                                       child: SelectionArea(
                                                                                           child: Text(
                                                                                         purchaceGoodsRecvItem.order,
@@ -2783,7 +2755,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                       )),
                                                                                     ),
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 1, 0, 0),
                                                                                       child: SelectionArea(
                                                                                           child: Text(
                                                                                         purchaceGoodsRecvItem.party,
@@ -2796,7 +2768,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                       )),
                                                                                     ),
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 1, 0, 0),
                                                                                       child: Row(
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         children: [
@@ -2834,21 +2806,21 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               decoration: BoxDecoration(
                                                                                 color: FlutterFlowTheme.of(context).customColor2,
                                                                                 borderRadius: BorderRadius.only(
-                                                                                  bottomLeft: Radius.circular(5.0),
-                                                                                  bottomRight: Radius.circular(5.0),
-                                                                                  topLeft: Radius.circular(0.0),
-                                                                                  topRight: Radius.circular(0.0),
+                                                                                  bottomLeft: Radius.circular(5),
+                                                                                  bottomRight: Radius.circular(5),
+                                                                                  topLeft: Radius.circular(0),
+                                                                                  topRight: Radius.circular(0),
                                                                                 ),
                                                                               ),
                                                                               child: Padding(
-                                                                                padding: EdgeInsets.all(3.0),
+                                                                                padding: EdgeInsets.all(3),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                   crossAxisAlignment: CrossAxisAlignment.end,
                                                                                   children: [
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 5.0, 2.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 2, 5, 2),
                                                                                       child: SelectionArea(
                                                                                           child: Text(
                                                                                         FFLocalizations.of(context).getText(
@@ -2862,7 +2834,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                       )),
                                                                                     ),
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 2.0, 2.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 2, 2, 2),
                                                                                       child: SelectionArea(
                                                                                           child: Text(
                                                                                         dateTimeFormat(
@@ -2872,7 +2844,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                               fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                              fontSize: 10.0,
+                                                                                              fontSize: 10,
                                                                                               letterSpacing: 0.0,
                                                                                               useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                             ),
@@ -2900,7 +2872,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                               Expanded(
                                                 flex: 7,
                                                 child: Container(
-                                                  width: 100.0,
+                                                  width: 100,
                                                   height: double.infinity,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
@@ -2908,7 +2880,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                         .secondaryBackground,
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            4.0),
+                                                            4),
                                                     border: Border.all(
                                                       color:
                                                           FlutterFlowTheme.of(
@@ -2934,11 +2906,8 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      10.0,
-                                                                      1.0,
-                                                                      10.0,
-                                                                      1.0),
+                                                                  .fromSTEB(10,
+                                                                      1, 10, 1),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -3005,10 +2974,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    3.0,
-                                                                    0.0,
-                                                                    0.0),
+                                                                    0, 3, 0, 0),
                                                         child: Container(
                                                           width:
                                                               double.infinity,
@@ -3018,10 +2984,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0.0,
-                                                                        3.0,
-                                                                        0.0,
-                                                                        3.0),
+                                                                        0,
+                                                                        3,
+                                                                        0,
+                                                                        3),
                                                             child: Column(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -3036,10 +3002,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -3086,10 +3052,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -3135,10 +3101,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -3184,10 +3150,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -3239,17 +3205,17 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                             context)
                                                                         .customColor2,
                                                                     borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            0.0),
+                                                                        BorderRadius
+                                                                            .circular(0),
                                                                   ),
                                                                   child:
                                                                       Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            10.0,
-                                                                            0.0,
-                                                                            10.0,
-                                                                            0.0),
+                                                                            10,
+                                                                            0,
+                                                                            10,
+                                                                            0),
                                                                     child: Row(
                                                                       mainAxisSize:
                                                                           MainAxisSize
@@ -3263,10 +3229,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              2.0,
-                                                                              5.0,
-                                                                              2.0),
+                                                                              0,
+                                                                              2,
+                                                                              5,
+                                                                              2),
                                                                           child: SelectionArea(
                                                                               child: Text(
                                                                             FFLocalizations.of(context).getText(
@@ -3281,10 +3247,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              2.0,
-                                                                              2.0,
-                                                                              2.0),
+                                                                              0,
+                                                                              2,
+                                                                              2,
+                                                                              2),
                                                                           child: SelectionArea(
                                                                               child: Text(
                                                                             FFLocalizations.of(context).getText(
@@ -3292,7 +3258,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                   fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                  fontSize: 10.0,
+                                                                                  fontSize: 10,
                                                                                   letterSpacing: 0.0,
                                                                                   useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                 ),
@@ -3300,10 +3266,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              2.0,
-                                                                              1.0,
-                                                                              2.0),
+                                                                              0,
+                                                                              2,
+                                                                              1,
+                                                                              2),
                                                                           child: SelectionArea(
                                                                               child: Text(
                                                                             FFLocalizations.of(context).getText(
@@ -3311,7 +3277,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                   fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                  fontSize: 10.0,
+                                                                                  fontSize: 10,
                                                                                   letterSpacing: 0.0,
                                                                                   useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                 ),
@@ -3319,10 +3285,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              2.0,
-                                                                              1.0,
-                                                                              2.0),
+                                                                              0,
+                                                                              2,
+                                                                              1,
+                                                                              2),
                                                                           child: SelectionArea(
                                                                               child: Text(
                                                                             FFLocalizations.of(context).getText(
@@ -3330,7 +3296,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                   fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                  fontSize: 10.0,
+                                                                                  fontSize: 10,
                                                                                   letterSpacing: 0.0,
                                                                                   useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                 ),
@@ -3356,8 +3322,8 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   child:
                                                                       Padding(
                                                                     padding:
-                                                                        EdgeInsets.all(
-                                                                            2.0),
+                                                                        EdgeInsets
+                                                                            .all(2),
                                                                     child:
                                                                         Builder(
                                                                       builder:
@@ -3382,19 +3348,19 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                             final productGRItem =
                                                                                 productGR[productGRIndex];
                                                                             return Padding(
-                                                                              padding: EdgeInsets.all(3.0),
+                                                                              padding: EdgeInsets.all(3),
                                                                               child: Container(
                                                                                 width: double.infinity,
                                                                                 decoration: BoxDecoration(
                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                  borderRadius: BorderRadius.circular(5.0),
+                                                                                  borderRadius: BorderRadius.circular(5),
                                                                                   border: Border.all(
                                                                                     color: FlutterFlowTheme.of(context).customColor1,
                                                                                     width: 0.5,
                                                                                   ),
                                                                                 ),
                                                                                 child: Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(2.0, 2.0, 5.0, 2.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(2, 2, 5, 2),
                                                                                   child: Column(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     mainAxisAlignment: MainAxisAlignment.end,
@@ -3411,7 +3377,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                               ),
                                                                                               child: Padding(
-                                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 0.0, 0.0),
+                                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 2, 0, 0),
                                                                                                 child: Text(
                                                                                                   getJsonField(
                                                                                                     productGRItem,
@@ -3429,7 +3395,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                         ],
                                                                                       ),
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 2.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 1, 0, 2),
                                                                                         child: Row(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -3443,7 +3409,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                                   children: [
                                                                                                     Padding(
-                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                                       child: Text(
                                                                                                         FFLocalizations.of(context).getText(
                                                                                                           'zb5c79mv' /* Serial : */,
@@ -3456,13 +3422,13 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                                       ),
                                                                                                     ),
                                                                                                     Padding(
-                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 3, 0),
                                                                                                       child: Text(
                                                                                                         functions.genSrno(productGRIndex).toString(),
                                                                                                         style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                                               fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                               color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                              fontSize: 10.0,
+                                                                                                              fontSize: 10,
                                                                                                               letterSpacing: 0.0,
                                                                                                               useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                                             ),
@@ -3483,7 +3449,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                                   mainAxisAlignment: MainAxisAlignment.end,
                                                                                                   children: [
                                                                                                     Padding(
-                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                                       child: Text(
                                                                                                         FFLocalizations.of(context).getText(
                                                                                                           '28hlhf42' /* Total Qty : */,
@@ -3514,7 +3480,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                         ),
                                                                                       ),
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
                                                                                         child: Container(
                                                                                           width: double.infinity,
                                                                                           height: MediaQuery.sizeOf(context).height * 0.05,
@@ -3560,10 +3526,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -3575,10 +3541,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            5,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -3602,7 +3568,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -3614,10 +3580,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -3625,7 +3591,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -3633,10 +3599,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               valueOrDefault<String>(
@@ -3648,7 +3614,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -3665,10 +3631,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -3680,10 +3646,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            5,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -3707,7 +3673,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -3719,10 +3685,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -3730,7 +3696,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -3738,10 +3704,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               getJsonField(
@@ -3750,7 +3716,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ).toString(),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -3767,10 +3733,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -3782,10 +3748,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            5,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -3809,7 +3775,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -3821,10 +3787,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -3840,10 +3806,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               valueOrDefault<String>(
@@ -3872,10 +3838,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -3887,10 +3853,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            5,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -3914,7 +3880,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -3926,10 +3892,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -3937,7 +3903,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -4037,7 +4003,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  5.0, 7.0, 5.0, 5.0),
+                                                  5, 7, 5, 5),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -4045,10 +4011,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                 flex: 12,
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 8.0, 0.0),
+                                                      .fromSTEB(0, 0, 8, 0),
                                                   child: Container(
-                                                    width: 100.0,
+                                                    width: 100,
                                                     height: double.infinity,
                                                     decoration: BoxDecoration(),
                                                     child: Column(
@@ -4058,11 +4023,8 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      2.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 2),
                                                           child: InkWell(
                                                             splashColor: Colors
                                                                 .transparent,
@@ -4093,7 +4055,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            8.0),
+                                                                            8),
                                                               ),
                                                               child: Column(
                                                                 mainAxisSize:
@@ -4137,10 +4099,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        5.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        5.0),
+                                                                        5,
+                                                                        0,
+                                                                        0,
+                                                                        5),
                                                             child: Builder(
                                                               builder:
                                                                   (context) {
@@ -4161,9 +4123,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     crossAxisCount:
                                                                         3,
                                                                     crossAxisSpacing:
-                                                                        7.0,
+                                                                        7,
                                                                     mainAxisSpacing:
-                                                                        7.0,
+                                                                        7,
                                                                     childAspectRatio:
                                                                         1.5,
                                                                   ),
@@ -4204,21 +4166,21 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         FFAppState()
                                                                             .update(() {});
 
-                                                                        setState(
+                                                                        safeSetState(
                                                                             () {});
                                                                       },
                                                                       child:
                                                                           Container(
                                                                         width:
-                                                                            100.0,
+                                                                            100,
                                                                         height:
-                                                                            100.0,
+                                                                            100,
                                                                         decoration:
                                                                             BoxDecoration(
                                                                           color:
                                                                               FlutterFlowTheme.of(context).secondaryBackground,
                                                                           borderRadius:
-                                                                              BorderRadius.circular(5.0),
+                                                                              BorderRadius.circular(5),
                                                                           border:
                                                                               Border.all(
                                                                             color:
@@ -4234,7 +4196,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           children: [
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsets.all(3.0),
+                                                                                padding: EdgeInsets.all(3),
                                                                                 child: Column(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -4250,7 +4212,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                           ),
                                                                                     )),
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 1, 0, 0),
                                                                                       child: SelectionArea(
                                                                                           child: Text(
                                                                                         purchaceQcItem.party,
@@ -4263,7 +4225,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                       )),
                                                                                     ),
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 1, 0, 0),
                                                                                       child: Row(
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         children: [
@@ -4301,21 +4263,21 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               decoration: BoxDecoration(
                                                                                 color: FlutterFlowTheme.of(context).customColor2,
                                                                                 borderRadius: BorderRadius.only(
-                                                                                  bottomLeft: Radius.circular(5.0),
-                                                                                  bottomRight: Radius.circular(5.0),
-                                                                                  topLeft: Radius.circular(0.0),
-                                                                                  topRight: Radius.circular(0.0),
+                                                                                  bottomLeft: Radius.circular(5),
+                                                                                  bottomRight: Radius.circular(5),
+                                                                                  topLeft: Radius.circular(0),
+                                                                                  topRight: Radius.circular(0),
                                                                                 ),
                                                                               ),
                                                                               child: Padding(
-                                                                                padding: EdgeInsets.all(3.0),
+                                                                                padding: EdgeInsets.all(3),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                   crossAxisAlignment: CrossAxisAlignment.end,
                                                                                   children: [
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 5.0, 2.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 2, 5, 2),
                                                                                       child: SelectionArea(
                                                                                           child: Text(
                                                                                         FFLocalizations.of(context).getText(
@@ -4329,7 +4291,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                       )),
                                                                                     ),
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 2.0, 2.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 2, 2, 2),
                                                                                       child: SelectionArea(
                                                                                           child: Text(
                                                                                         dateTimeFormat(
@@ -4339,7 +4301,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                               fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                              fontSize: 10.0,
+                                                                                              fontSize: 10,
                                                                                               letterSpacing: 0.0,
                                                                                               useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                             ),
@@ -4367,7 +4329,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                               Expanded(
                                                 flex: 7,
                                                 child: Container(
-                                                  width: 100.0,
+                                                  width: 100,
                                                   height: double.infinity,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
@@ -4375,7 +4337,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                         .secondaryBackground,
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            4.0),
+                                                            4),
                                                     border: Border.all(
                                                       color:
                                                           FlutterFlowTheme.of(
@@ -4401,11 +4363,8 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      10.0,
-                                                                      1.0,
-                                                                      10.0,
-                                                                      1.0),
+                                                                  .fromSTEB(10,
+                                                                      1, 10, 1),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -4472,10 +4431,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    3.0,
-                                                                    0.0,
-                                                                    0.0),
+                                                                    0, 3, 0, 0),
                                                         child: Container(
                                                           width:
                                                               double.infinity,
@@ -4485,10 +4441,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0.0,
-                                                                        3.0,
-                                                                        0.0,
-                                                                        3.0),
+                                                                        0,
+                                                                        3,
+                                                                        0,
+                                                                        3),
                                                             child: Column(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -4503,10 +4459,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -4553,10 +4509,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -4602,10 +4558,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -4651,10 +4607,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -4711,17 +4667,13 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               .customColor2,
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      0.0),
+                                                                  .circular(0),
                                                         ),
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      10.0,
-                                                                      0.0,
-                                                                      10.0,
-                                                                      0.0),
+                                                                  .fromSTEB(10,
+                                                                      0, 10, 0),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -4737,10 +4689,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            2.0,
-                                                                            5.0,
-                                                                            2.0),
+                                                                            0,
+                                                                            2,
+                                                                            5,
+                                                                            2),
                                                                 child:
                                                                     SelectionArea(
                                                                         child:
@@ -4767,10 +4719,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            2.0,
-                                                                            2.0,
-                                                                            2.0),
+                                                                            0,
+                                                                            2,
+                                                                            2,
+                                                                            2),
                                                                 child:
                                                                     SelectionArea(
                                                                         child:
@@ -4787,7 +4739,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         fontFamily:
                                                                             FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         fontSize:
-                                                                            10.0,
+                                                                            10,
                                                                         letterSpacing:
                                                                             0.0,
                                                                         useGoogleFonts:
@@ -4799,10 +4751,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            2.0,
-                                                                            1.0,
-                                                                            2.0),
+                                                                            0,
+                                                                            2,
+                                                                            1,
+                                                                            2),
                                                                 child:
                                                                     SelectionArea(
                                                                         child:
@@ -4819,7 +4771,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         fontFamily:
                                                                             FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         fontSize:
-                                                                            10.0,
+                                                                            10,
                                                                         letterSpacing:
                                                                             0.0,
                                                                         useGoogleFonts:
@@ -4831,10 +4783,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            2.0,
-                                                                            1.0,
-                                                                            2.0),
+                                                                            0,
+                                                                            2,
+                                                                            1,
+                                                                            2),
                                                                 child:
                                                                     SelectionArea(
                                                                         child:
@@ -4851,7 +4803,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         fontFamily:
                                                                             FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         fontSize:
-                                                                            10.0,
+                                                                            10,
                                                                         letterSpacing:
                                                                             0.0,
                                                                         useGoogleFonts:
@@ -4879,11 +4831,8 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      3.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      3, 0, 0),
                                                           child: Builder(
                                                             builder: (context) {
                                                               final purchaceQC =
@@ -4912,10 +4861,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   return Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            4.0),
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            4),
                                                                     child:
                                                                         Container(
                                                                       width: double
@@ -4928,10 +4877,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            10.0,
-                                                                            2.0,
-                                                                            10.0,
-                                                                            2.0),
+                                                                            10,
+                                                                            2,
+                                                                            10,
+                                                                            2),
                                                                         child:
                                                                             Column(
                                                                           mainAxisSize:
@@ -4953,7 +4902,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                   ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 1, 0, 0),
                                                                               child: Row(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -4964,7 +4913,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       children: [
                                                                                         Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                           child: Text(
                                                                                             FFLocalizations.of(context).getText(
                                                                                               'wt7wabox' /* Serial : */,
@@ -4977,7 +4926,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                           ),
                                                                                         ),
                                                                                         Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 3, 0),
                                                                                           child: Text(
                                                                                             FFLocalizations.of(context).getText(
                                                                                               'gi09mdz7' /* 54654h */,
@@ -4985,7 +4934,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                                   fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                   color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                  fontSize: 10.0,
+                                                                                                  fontSize: 10,
                                                                                                   letterSpacing: 0.0,
                                                                                                   useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                                 ),
@@ -5003,7 +4952,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                         mainAxisAlignment: MainAxisAlignment.end,
                                                                                         children: [
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                             child: Text(
                                                                                               FFLocalizations.of(context).getText(
                                                                                                 'nlz7js9r' /* Qty : */,
@@ -5056,10 +5005,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -5071,10 +5020,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            5,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -5098,7 +5047,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -5110,10 +5059,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -5121,7 +5070,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -5129,10 +5078,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               getJsonField(
@@ -5141,7 +5090,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ).toString(),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -5158,10 +5107,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -5173,10 +5122,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            5,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -5200,7 +5149,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -5212,10 +5161,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -5223,7 +5172,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -5231,10 +5180,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               getJsonField(
@@ -5243,7 +5192,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ).toString(),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -5260,10 +5209,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -5275,10 +5224,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            5,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -5302,7 +5251,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -5314,10 +5263,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -5333,10 +5282,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               getJsonField(
@@ -5362,10 +5311,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -5377,10 +5326,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            5,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -5404,7 +5353,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -5416,10 +5365,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -5427,7 +5376,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -5453,10 +5402,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          3.0,
-                                                                          0.0),
+                                                                          0,
+                                                                          0,
+                                                                          3,
+                                                                          0),
                                                               child: InkWell(
                                                                 splashColor: Colors
                                                                     .transparent,
@@ -5500,7 +5449,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 },
                                                                 child:
                                                                     Container(
-                                                                  width: 100.0,
+                                                                  width: 100,
                                                                   height: MediaQuery.sizeOf(
                                                                               context)
                                                                           .height *
@@ -5625,7 +5574,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  5.0, 7.0, 5.0, 5.0),
+                                                  5, 7, 5, 5),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -5633,10 +5582,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                 flex: 12,
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 8.0, 0.0),
+                                                      .fromSTEB(0, 0, 8, 0),
                                                   child: Container(
-                                                    width: 100.0,
+                                                    width: 100,
                                                     height: double.infinity,
                                                     decoration: BoxDecoration(),
                                                     child: Column(
@@ -5648,10 +5596,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        5.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        5.0),
+                                                                        5,
+                                                                        0,
+                                                                        0,
+                                                                        5),
                                                             child: Builder(
                                                               builder:
                                                                   (context) {
@@ -5672,9 +5620,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     crossAxisCount:
                                                                         3,
                                                                     crossAxisSpacing:
-                                                                        7.0,
+                                                                        7,
                                                                     mainAxisSpacing:
-                                                                        7.0,
+                                                                        7,
                                                                     childAspectRatio:
                                                                         1.5,
                                                                   ),
@@ -5715,21 +5663,21 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         FFAppState()
                                                                             .update(() {});
 
-                                                                        setState(
+                                                                        safeSetState(
                                                                             () {});
                                                                       },
                                                                       child:
                                                                           Container(
                                                                         width:
-                                                                            100.0,
+                                                                            100,
                                                                         height:
-                                                                            100.0,
+                                                                            100,
                                                                         decoration:
                                                                             BoxDecoration(
                                                                           color:
                                                                               FlutterFlowTheme.of(context).secondaryBackground,
                                                                           borderRadius:
-                                                                              BorderRadius.circular(5.0),
+                                                                              BorderRadius.circular(5),
                                                                           border:
                                                                               Border.all(
                                                                             color:
@@ -5745,14 +5693,14 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           children: [
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsets.all(3.0),
+                                                                                padding: EdgeInsets.all(3),
                                                                                 child: Column(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                                                   children: [
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                                                                                       child: SelectionArea(
                                                                                           child: Text(
                                                                                         purchaceSIItem.order,
@@ -5764,7 +5712,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                       )),
                                                                                     ),
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 1, 0, 0),
                                                                                       child: SelectionArea(
                                                                                           child: Text(
                                                                                         purchaceSIItem.party,
@@ -5777,7 +5725,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                       )),
                                                                                     ),
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 1, 0, 0),
                                                                                       child: Row(
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         children: [
@@ -5815,21 +5763,21 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               decoration: BoxDecoration(
                                                                                 color: FlutterFlowTheme.of(context).customColor2,
                                                                                 borderRadius: BorderRadius.only(
-                                                                                  bottomLeft: Radius.circular(5.0),
-                                                                                  bottomRight: Radius.circular(5.0),
-                                                                                  topLeft: Radius.circular(0.0),
-                                                                                  topRight: Radius.circular(0.0),
+                                                                                  bottomLeft: Radius.circular(5),
+                                                                                  bottomRight: Radius.circular(5),
+                                                                                  topLeft: Radius.circular(0),
+                                                                                  topRight: Radius.circular(0),
                                                                                 ),
                                                                               ),
                                                                               child: Padding(
-                                                                                padding: EdgeInsets.all(3.0),
+                                                                                padding: EdgeInsets.all(3),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                   crossAxisAlignment: CrossAxisAlignment.end,
                                                                                   children: [
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 5.0, 2.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 2, 5, 2),
                                                                                       child: SelectionArea(
                                                                                           child: Text(
                                                                                         FFLocalizations.of(context).getText(
@@ -5843,7 +5791,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                       )),
                                                                                     ),
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 2.0, 2.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 2, 2, 2),
                                                                                       child: SelectionArea(
                                                                                           child: Text(
                                                                                         dateTimeFormat(
@@ -5853,7 +5801,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                               fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                              fontSize: 10.0,
+                                                                                              fontSize: 10,
                                                                                               letterSpacing: 0.0,
                                                                                               useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                             ),
@@ -5881,7 +5829,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                               Expanded(
                                                 flex: 7,
                                                 child: Container(
-                                                  width: 100.0,
+                                                  width: 100,
                                                   height: double.infinity,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
@@ -5889,7 +5837,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                         .secondaryBackground,
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            4.0),
+                                                            4),
                                                     border: Border.all(
                                                       color:
                                                           FlutterFlowTheme.of(
@@ -5915,11 +5863,8 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      10.0,
-                                                                      1.0,
-                                                                      10.0,
-                                                                      1.0),
+                                                                  .fromSTEB(10,
+                                                                      1, 10, 1),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -5986,10 +5931,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    3.0,
-                                                                    0.0,
-                                                                    0.0),
+                                                                    0, 3, 0, 0),
                                                         child: Container(
                                                           width:
                                                               double.infinity,
@@ -5999,10 +5941,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0.0,
-                                                                        3.0,
-                                                                        0.0,
-                                                                        0.0),
+                                                                        0,
+                                                                        3,
+                                                                        0,
+                                                                        0),
                                                             child: Column(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -6017,10 +5959,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          2.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          2),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -6054,7 +5996,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 color: FlutterFlowTheme.of(context).tertiary,
                                                                                 width: 1.0,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(5.0),
+                                                                              borderRadius: BorderRadius.circular(5),
                                                                             ),
                                                                             focusedBorder:
                                                                                 OutlineInputBorder(
@@ -6062,7 +6004,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 color: Color(0x00000000),
                                                                                 width: 1.0,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(5.0),
+                                                                              borderRadius: BorderRadius.circular(5),
                                                                             ),
                                                                             errorBorder:
                                                                                 OutlineInputBorder(
@@ -6070,7 +6012,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 color: Color(0x00000000),
                                                                                 width: 1.0,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(5.0),
+                                                                              borderRadius: BorderRadius.circular(5),
                                                                             ),
                                                                             focusedErrorBorder:
                                                                                 OutlineInputBorder(
@@ -6078,10 +6020,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 color: Color(0x00000000),
                                                                                 width: 1.0,
                                                                               ),
-                                                                              borderRadius: BorderRadius.circular(5.0),
+                                                                              borderRadius: BorderRadius.circular(5),
                                                                             ),
                                                                             contentPadding:
-                                                                                EdgeInsets.all(10.0),
+                                                                                EdgeInsets.all(10),
                                                                           ),
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
@@ -6104,10 +6046,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -6154,10 +6096,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -6203,10 +6145,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -6252,10 +6194,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -6312,17 +6254,13 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               .customColor2,
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      0.0),
+                                                                  .circular(0),
                                                         ),
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      10.0,
-                                                                      0.0,
-                                                                      10.0,
-                                                                      0.0),
+                                                                  .fromSTEB(10,
+                                                                      0, 10, 0),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -6338,10 +6276,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            2.0,
-                                                                            5.0,
-                                                                            2.0),
+                                                                            0,
+                                                                            2,
+                                                                            5,
+                                                                            2),
                                                                 child:
                                                                     SelectionArea(
                                                                         child:
@@ -6368,10 +6306,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            2.0,
-                                                                            2.0,
-                                                                            2.0),
+                                                                            0,
+                                                                            2,
+                                                                            2,
+                                                                            2),
                                                                 child:
                                                                     SelectionArea(
                                                                         child:
@@ -6388,7 +6326,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         fontFamily:
                                                                             FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         fontSize:
-                                                                            10.0,
+                                                                            10,
                                                                         letterSpacing:
                                                                             0.0,
                                                                         useGoogleFonts:
@@ -6400,10 +6338,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            2.0,
-                                                                            1.0,
-                                                                            2.0),
+                                                                            0,
+                                                                            2,
+                                                                            1,
+                                                                            2),
                                                                 child:
                                                                     SelectionArea(
                                                                         child:
@@ -6420,7 +6358,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         fontFamily:
                                                                             FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         fontSize:
-                                                                            10.0,
+                                                                            10,
                                                                         letterSpacing:
                                                                             0.0,
                                                                         useGoogleFonts:
@@ -6432,10 +6370,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            2.0,
-                                                                            1.0,
-                                                                            2.0),
+                                                                            0,
+                                                                            2,
+                                                                            1,
+                                                                            2),
                                                                 child:
                                                                     SelectionArea(
                                                                         child:
@@ -6452,7 +6390,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         fontFamily:
                                                                             FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         fontSize:
-                                                                            10.0,
+                                                                            10,
                                                                         letterSpacing:
                                                                             0.0,
                                                                         useGoogleFonts:
@@ -6480,11 +6418,8 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      3.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      3, 0, 0),
                                                           child: Builder(
                                                             builder: (context) {
                                                               final productSI =
@@ -6513,10 +6448,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   return Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            4.0),
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            4),
                                                                     child:
                                                                         Container(
                                                                       width: double
@@ -6529,10 +6464,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            10.0,
-                                                                            2.0,
-                                                                            10.0,
-                                                                            2.0),
+                                                                            10,
+                                                                            2,
+                                                                            10,
+                                                                            2),
                                                                         child:
                                                                             Column(
                                                                           mainAxisSize:
@@ -6554,7 +6489,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                   ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 1, 0, 0),
                                                                               child: Row(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -6565,7 +6500,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       children: [
                                                                                         Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                           child: Text(
                                                                                             FFLocalizations.of(context).getText(
                                                                                               '1ejnu6nj' /* Serial : */,
@@ -6578,7 +6513,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                           ),
                                                                                         ),
                                                                                         Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 3, 0),
                                                                                           child: Text(
                                                                                             FFLocalizations.of(context).getText(
                                                                                               'f6zdkcv4' /* 54654h */,
@@ -6586,7 +6521,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                                   fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                   color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                  fontSize: 10.0,
+                                                                                                  fontSize: 10,
                                                                                                   letterSpacing: 0.0,
                                                                                                   useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                                 ),
@@ -6604,7 +6539,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                         mainAxisAlignment: MainAxisAlignment.end,
                                                                                         children: [
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                             child: Text(
                                                                                               FFLocalizations.of(context).getText(
                                                                                                 'p7d1snxs' /* Qty : */,
@@ -6657,10 +6592,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -6672,10 +6607,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            5,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -6699,7 +6634,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -6711,10 +6646,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -6722,7 +6657,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -6730,10 +6665,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               valueOrDefault<String>(
@@ -6745,7 +6680,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -6762,10 +6697,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -6777,10 +6712,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            5,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -6804,7 +6739,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -6816,10 +6751,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -6827,7 +6762,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -6835,10 +6770,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               getJsonField(
@@ -6847,7 +6782,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ).toString(),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -6864,10 +6799,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -6879,10 +6814,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            5,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -6906,7 +6841,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -6918,10 +6853,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -6937,10 +6872,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               getJsonField(
@@ -6966,10 +6901,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -6981,10 +6916,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            5,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -7008,7 +6943,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -7020,10 +6955,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -7031,7 +6966,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -7076,7 +7011,8 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           .textController2
                                                                           .text,
                                                                     ));
-                                                                setState(() {
+                                                                safeSetState(
+                                                                    () {
                                                                   _model
                                                                       .textController2
                                                                       ?.clear();
@@ -7144,7 +7080,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  5.0, 7.0, 5.0, 5.0),
+                                                  5, 7, 5, 5),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -7152,10 +7088,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                 flex: 12,
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 8.0, 0.0),
+                                                      .fromSTEB(0, 0, 8, 0),
                                                   child: Container(
-                                                    width: 100.0,
+                                                    width: 100,
                                                     height: double.infinity,
                                                     decoration: BoxDecoration(),
                                                     child: Column(
@@ -7167,10 +7102,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        5.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        5.0),
+                                                                        5,
+                                                                        0,
+                                                                        0,
+                                                                        5),
                                                             child: Builder(
                                                               builder:
                                                                   (context) {
@@ -7191,9 +7126,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     crossAxisCount:
                                                                         3,
                                                                     crossAxisSpacing:
-                                                                        7.0,
+                                                                        7,
                                                                     mainAxisSpacing:
-                                                                        7.0,
+                                                                        7,
                                                                     childAspectRatio:
                                                                         1.3,
                                                                   ),
@@ -7234,21 +7169,21 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         FFAppState()
                                                                             .update(() {});
 
-                                                                        setState(
+                                                                        safeSetState(
                                                                             () {});
                                                                       },
                                                                       child:
                                                                           Container(
                                                                         width:
-                                                                            100.0,
+                                                                            100,
                                                                         height:
-                                                                            100.0,
+                                                                            100,
                                                                         decoration:
                                                                             BoxDecoration(
                                                                           color:
                                                                               FlutterFlowTheme.of(context).secondaryBackground,
                                                                           borderRadius:
-                                                                              BorderRadius.circular(5.0),
+                                                                              BorderRadius.circular(5),
                                                                           border:
                                                                               Border.all(
                                                                             color:
@@ -7264,7 +7199,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           children: [
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsets.all(3.0),
+                                                                                padding: EdgeInsets.all(3),
                                                                                 child: Column(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -7282,12 +7217,12 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                           ),
                                                                                           child: FlutterFlowIconButton(
                                                                                             borderColor: Colors.transparent,
-                                                                                            borderRadius: 30.0,
-                                                                                            buttonSize: 60.0,
+                                                                                            borderRadius: 30,
+                                                                                            buttonSize: 60,
                                                                                             icon: Icon(
                                                                                               Icons.info_outline,
                                                                                               color: FlutterFlowTheme.of(context).primary,
-                                                                                              size: 14.0,
+                                                                                              size: 14,
                                                                                             ),
                                                                                             onPressed: () async {
                                                                                               await showModalBottomSheet(
@@ -7323,7 +7258,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                           ),
                                                                                     )),
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 1, 0, 0),
                                                                                       child: SelectionArea(
                                                                                           child: Text(
                                                                                         rejectPurchaceItem.party,
@@ -7336,7 +7271,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                       )),
                                                                                     ),
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 1, 0, 0),
                                                                                       child: Row(
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         children: [
@@ -7374,21 +7309,21 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               decoration: BoxDecoration(
                                                                                 color: FlutterFlowTheme.of(context).customColor2,
                                                                                 borderRadius: BorderRadius.only(
-                                                                                  bottomLeft: Radius.circular(5.0),
-                                                                                  bottomRight: Radius.circular(5.0),
-                                                                                  topLeft: Radius.circular(0.0),
-                                                                                  topRight: Radius.circular(0.0),
+                                                                                  bottomLeft: Radius.circular(5),
+                                                                                  bottomRight: Radius.circular(5),
+                                                                                  topLeft: Radius.circular(0),
+                                                                                  topRight: Radius.circular(0),
                                                                                 ),
                                                                               ),
                                                                               child: Padding(
-                                                                                padding: EdgeInsets.all(3.0),
+                                                                                padding: EdgeInsets.all(3),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                   crossAxisAlignment: CrossAxisAlignment.end,
                                                                                   children: [
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 5.0, 2.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 2, 5, 2),
                                                                                       child: SelectionArea(
                                                                                           child: Text(
                                                                                         FFLocalizations.of(context).getText(
@@ -7402,7 +7337,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                       )),
                                                                                     ),
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 2.0, 2.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 2, 2, 2),
                                                                                       child: SelectionArea(
                                                                                           child: Text(
                                                                                         dateTimeFormat(
@@ -7412,7 +7347,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                               fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                              fontSize: 10.0,
+                                                                                              fontSize: 10,
                                                                                               letterSpacing: 0.0,
                                                                                               useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                             ),
@@ -7440,7 +7375,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                               Expanded(
                                                 flex: 7,
                                                 child: Container(
-                                                  width: 100.0,
+                                                  width: 100,
                                                   height: double.infinity,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
@@ -7448,7 +7383,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                         .secondaryBackground,
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            4.0),
+                                                            4),
                                                     border: Border.all(
                                                       color:
                                                           FlutterFlowTheme.of(
@@ -7474,11 +7409,8 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      10.0,
-                                                                      1.0,
-                                                                      10.0,
-                                                                      1.0),
+                                                                  .fromSTEB(10,
+                                                                      1, 10, 1),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -7545,10 +7477,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    3.0,
-                                                                    0.0,
-                                                                    0.0),
+                                                                    0, 3, 0, 0),
                                                         child: Container(
                                                           width:
                                                               double.infinity,
@@ -7558,10 +7487,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0.0,
-                                                                        3.0,
-                                                                        0.0,
-                                                                        3.0),
+                                                                        0,
+                                                                        3,
+                                                                        0,
+                                                                        3),
                                                             child: Column(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -7576,10 +7505,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -7626,10 +7555,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -7675,10 +7604,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -7724,10 +7653,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -7784,17 +7713,13 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               .customColor2,
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      0.0),
+                                                                  .circular(0),
                                                         ),
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      10.0,
-                                                                      0.0,
-                                                                      10.0,
-                                                                      0.0),
+                                                                  .fromSTEB(10,
+                                                                      0, 10, 0),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -7810,10 +7735,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            2.0,
-                                                                            5.0,
-                                                                            2.0),
+                                                                            0,
+                                                                            2,
+                                                                            5,
+                                                                            2),
                                                                 child:
                                                                     SelectionArea(
                                                                         child:
@@ -7840,10 +7765,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            2.0,
-                                                                            2.0,
-                                                                            2.0),
+                                                                            0,
+                                                                            2,
+                                                                            2,
+                                                                            2),
                                                                 child:
                                                                     SelectionArea(
                                                                         child:
@@ -7860,7 +7785,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         fontFamily:
                                                                             FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         fontSize:
-                                                                            10.0,
+                                                                            10,
                                                                         letterSpacing:
                                                                             0.0,
                                                                         useGoogleFonts:
@@ -7872,10 +7797,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            2.0,
-                                                                            1.0,
-                                                                            2.0),
+                                                                            0,
+                                                                            2,
+                                                                            1,
+                                                                            2),
                                                                 child:
                                                                     SelectionArea(
                                                                         child:
@@ -7892,7 +7817,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         fontFamily:
                                                                             FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         fontSize:
-                                                                            10.0,
+                                                                            10,
                                                                         letterSpacing:
                                                                             0.0,
                                                                         useGoogleFonts:
@@ -7904,10 +7829,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            2.0,
-                                                                            1.0,
-                                                                            2.0),
+                                                                            0,
+                                                                            2,
+                                                                            1,
+                                                                            2),
                                                                 child:
                                                                     SelectionArea(
                                                                         child:
@@ -7924,7 +7849,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         fontFamily:
                                                                             FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         fontSize:
-                                                                            10.0,
+                                                                            10,
                                                                         letterSpacing:
                                                                             0.0,
                                                                         useGoogleFonts:
@@ -7952,11 +7877,8 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      3.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      3, 0, 0),
                                                           child: Builder(
                                                             builder: (context) {
                                                               final rejProdlist =
@@ -7985,10 +7907,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   return Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            4.0),
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            4),
                                                                     child:
                                                                         Container(
                                                                       width: double
@@ -8001,10 +7923,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            10.0,
-                                                                            2.0,
-                                                                            10.0,
-                                                                            2.0),
+                                                                            10,
+                                                                            2,
+                                                                            10,
+                                                                            2),
                                                                         child:
                                                                             Column(
                                                                           mainAxisSize:
@@ -8026,7 +7948,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                   ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 1, 0, 0),
                                                                               child: Row(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -8037,7 +7959,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       children: [
                                                                                         Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                           child: Text(
                                                                                             FFLocalizations.of(context).getText(
                                                                                               '78z84o9o' /* Serial : */,
@@ -8050,7 +7972,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                           ),
                                                                                         ),
                                                                                         Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 3, 0),
                                                                                           child: Text(
                                                                                             FFLocalizations.of(context).getText(
                                                                                               'cvzb7o7r' /* 54654h */,
@@ -8058,7 +7980,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                                   fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                   color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                  fontSize: 10.0,
+                                                                                                  fontSize: 10,
                                                                                                   letterSpacing: 0.0,
                                                                                                   useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                                 ),
@@ -8076,7 +7998,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                         mainAxisAlignment: MainAxisAlignment.end,
                                                                                         children: [
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                             child: Text(
                                                                                               FFLocalizations.of(context).getText(
                                                                                                 '0fhkndo6' /* Qty : */,
@@ -8129,10 +8051,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -8144,10 +8066,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            5,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -8171,7 +8093,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -8183,10 +8105,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -8194,7 +8116,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -8202,10 +8124,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               getJsonField(
@@ -8214,7 +8136,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ).toString(),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -8231,10 +8153,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -8246,10 +8168,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            5,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -8273,7 +8195,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -8285,10 +8207,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -8296,7 +8218,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -8304,10 +8226,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               getJsonField(
@@ -8316,7 +8238,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ).toString(),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -8333,10 +8255,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -8348,10 +8270,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            5,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -8375,7 +8297,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -8387,10 +8309,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -8406,10 +8328,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               getJsonField(
@@ -8435,10 +8357,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -8450,10 +8372,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            5,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -8477,7 +8399,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -8489,10 +8411,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -8500,7 +8422,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -8577,7 +8499,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  5.0, 7.0, 5.0, 5.0),
+                                                  5, 7, 5, 5),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -8585,10 +8507,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                 flex: 12,
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 8.0, 0.0),
+                                                      .fromSTEB(0, 0, 8, 0),
                                                   child: Container(
-                                                    width: 100.0,
+                                                    width: 100,
                                                     height: double.infinity,
                                                     decoration: BoxDecoration(),
                                                     child: Column(
@@ -8600,10 +8521,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        5.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        5.0),
+                                                                        5,
+                                                                        0,
+                                                                        0,
+                                                                        5),
                                                             child: Builder(
                                                               builder:
                                                                   (context) {
@@ -8624,9 +8545,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     crossAxisCount:
                                                                         3,
                                                                     crossAxisSpacing:
-                                                                        7.0,
+                                                                        7,
                                                                     mainAxisSpacing:
-                                                                        7.0,
+                                                                        7,
                                                                     childAspectRatio:
                                                                         1.5,
                                                                   ),
@@ -8667,21 +8588,21 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         FFAppState()
                                                                             .update(() {});
 
-                                                                        setState(
+                                                                        safeSetState(
                                                                             () {});
                                                                       },
                                                                       child:
                                                                           Container(
                                                                         width:
-                                                                            100.0,
+                                                                            100,
                                                                         height:
-                                                                            100.0,
+                                                                            100,
                                                                         decoration:
                                                                             BoxDecoration(
                                                                           color:
                                                                               FlutterFlowTheme.of(context).secondaryBackground,
                                                                           borderRadius:
-                                                                              BorderRadius.circular(5.0),
+                                                                              BorderRadius.circular(5),
                                                                           border:
                                                                               Border.all(
                                                                             color:
@@ -8697,14 +8618,14 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           children: [
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsets.all(3.0),
+                                                                                padding: EdgeInsets.all(3),
                                                                                 child: Column(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                                                   children: [
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                                                                                       child: SelectionArea(
                                                                                           child: Text(
                                                                                         purchaceFinalItem.order,
@@ -8716,7 +8637,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                       )),
                                                                                     ),
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 1, 0, 0),
                                                                                       child: SelectionArea(
                                                                                           child: Text(
                                                                                         purchaceFinalItem.party,
@@ -8729,7 +8650,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                       )),
                                                                                     ),
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 1, 0, 0),
                                                                                       child: Row(
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         children: [
@@ -8767,21 +8688,21 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               decoration: BoxDecoration(
                                                                                 color: FlutterFlowTheme.of(context).customColor2,
                                                                                 borderRadius: BorderRadius.only(
-                                                                                  bottomLeft: Radius.circular(5.0),
-                                                                                  bottomRight: Radius.circular(5.0),
-                                                                                  topLeft: Radius.circular(0.0),
-                                                                                  topRight: Radius.circular(0.0),
+                                                                                  bottomLeft: Radius.circular(5),
+                                                                                  bottomRight: Radius.circular(5),
+                                                                                  topLeft: Radius.circular(0),
+                                                                                  topRight: Radius.circular(0),
                                                                                 ),
                                                                               ),
                                                                               child: Padding(
-                                                                                padding: EdgeInsets.all(3.0),
+                                                                                padding: EdgeInsets.all(3),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                   crossAxisAlignment: CrossAxisAlignment.end,
                                                                                   children: [
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 5.0, 2.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 2, 5, 2),
                                                                                       child: SelectionArea(
                                                                                           child: Text(
                                                                                         FFLocalizations.of(context).getText(
@@ -8795,7 +8716,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                       )),
                                                                                     ),
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 2.0, 2.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 2, 2, 2),
                                                                                       child: SelectionArea(
                                                                                           child: Text(
                                                                                         dateTimeFormat(
@@ -8805,7 +8726,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                               fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                              fontSize: 10.0,
+                                                                                              fontSize: 10,
                                                                                               letterSpacing: 0.0,
                                                                                               useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                             ),
@@ -8833,7 +8754,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                               Expanded(
                                                 flex: 7,
                                                 child: Container(
-                                                  width: 100.0,
+                                                  width: 100,
                                                   height: double.infinity,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
@@ -8842,13 +8763,13 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                     borderRadius:
                                                         BorderRadius.only(
                                                       bottomLeft:
-                                                          Radius.circular(4.0),
+                                                          Radius.circular(4),
                                                       bottomRight:
-                                                          Radius.circular(4.0),
+                                                          Radius.circular(4),
                                                       topLeft:
-                                                          Radius.circular(4.0),
+                                                          Radius.circular(4),
                                                       topRight:
-                                                          Radius.circular(4.0),
+                                                          Radius.circular(4),
                                                     ),
                                                     border: Border.all(
                                                       color:
@@ -8875,11 +8796,8 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      10.0,
-                                                                      1.0,
-                                                                      10.0,
-                                                                      1.0),
+                                                                  .fromSTEB(10,
+                                                                      1, 10, 1),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -8946,10 +8864,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    1.0,
-                                                                    0.0,
-                                                                    0.0),
+                                                                    0, 1, 0, 0),
                                                         child: Container(
                                                           width:
                                                               double.infinity,
@@ -8959,10 +8874,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0.0,
-                                                                        2.0,
-                                                                        0.0,
-                                                                        3.0),
+                                                                        0,
+                                                                        2,
+                                                                        0,
+                                                                        3),
                                                             child: Column(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -8977,10 +8892,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -9027,10 +8942,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -9077,10 +8992,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -9126,10 +9041,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -9175,10 +9090,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -9235,17 +9150,13 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               .customColor2,
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      0.0),
+                                                                  .circular(0),
                                                         ),
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      10.0,
-                                                                      0.0,
-                                                                      10.0,
-                                                                      0.0),
+                                                                  .fromSTEB(10,
+                                                                      0, 10, 0),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -9261,10 +9172,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            2.0,
-                                                                            5.0,
-                                                                            2.0),
+                                                                            0,
+                                                                            2,
+                                                                            5,
+                                                                            2),
                                                                 child:
                                                                     SelectionArea(
                                                                         child:
@@ -9307,11 +9218,8 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      3.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      3, 0, 0),
                                                           child: Builder(
                                                             builder: (context) {
                                                               final finalProdlist =
@@ -9340,10 +9248,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   return Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            4.0),
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            4),
                                                                     child:
                                                                         Container(
                                                                       width: double
@@ -9356,10 +9264,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            10.0,
-                                                                            2.0,
-                                                                            10.0,
-                                                                            2.0),
+                                                                            10,
+                                                                            2,
+                                                                            10,
+                                                                            2),
                                                                         child:
                                                                             Column(
                                                                           mainAxisSize:
@@ -9381,7 +9289,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                   ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 1, 0, 0),
                                                                               child: Row(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -9392,7 +9300,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       children: [
                                                                                         Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                           child: Text(
                                                                                             FFLocalizations.of(context).getText(
                                                                                               '9oxfvh4o' /* Serial : */,
@@ -9405,7 +9313,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                           ),
                                                                                         ),
                                                                                         Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 3, 0),
                                                                                           child: Text(
                                                                                             FFLocalizations.of(context).getText(
                                                                                               '4hwv0hhv' /* 54654h */,
@@ -9413,7 +9321,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                                   fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                                   color: FlutterFlowTheme.of(context).primaryText,
-                                                                                                  fontSize: 10.0,
+                                                                                                  fontSize: 10,
                                                                                                   letterSpacing: 0.0,
                                                                                                   useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                                 ),
@@ -9431,7 +9339,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                         mainAxisAlignment: MainAxisAlignment.end,
                                                                                         children: [
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                             child: Text(
                                                                                               FFLocalizations.of(context).getText(
                                                                                                 '20v76jxv' /* Qty : */,
@@ -9484,10 +9392,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -9499,10 +9407,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            5,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -9526,7 +9434,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -9538,10 +9446,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -9549,7 +9457,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -9557,10 +9465,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               getJsonField(
@@ -9569,7 +9477,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ).toString(),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -9586,10 +9494,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -9601,10 +9509,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            5,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -9628,7 +9536,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -9640,10 +9548,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -9651,7 +9559,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -9659,10 +9567,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               getJsonField(
@@ -9671,7 +9579,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ).toString(),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -9688,10 +9596,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -9703,10 +9611,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            5,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -9730,7 +9638,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -9742,10 +9650,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -9761,10 +9669,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               getJsonField(
@@ -9790,10 +9698,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -9805,10 +9713,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            5,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -9832,7 +9740,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -9844,10 +9752,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -9855,7 +9763,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -9929,7 +9837,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  5.0, 7.0, 5.0, 5.0),
+                                                  5, 7, 5, 5),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -9937,10 +9845,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                 flex: 12,
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 8.0, 0.0),
+                                                      .fromSTEB(0, 0, 8, 0),
                                                   child: Container(
-                                                    width: 100.0,
+                                                    width: 100,
                                                     height: double.infinity,
                                                     decoration: BoxDecoration(),
                                                     child: Column(
@@ -9952,10 +9859,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        5.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        5.0),
+                                                                        5,
+                                                                        0,
+                                                                        0,
+                                                                        5),
                                                             child: GridView(
                                                               padding:
                                                                   EdgeInsets
@@ -9965,9 +9872,9 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 crossAxisCount:
                                                                     3,
                                                                 crossAxisSpacing:
-                                                                    7.0,
+                                                                    7,
                                                                 mainAxisSpacing:
-                                                                    7.0,
+                                                                    7,
                                                                 childAspectRatio:
                                                                     1.5,
                                                               ),
@@ -9975,16 +9882,16 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   Axis.vertical,
                                                               children: [
                                                                 Container(
-                                                                  width: 100.0,
-                                                                  height: 100.0,
+                                                                  width: 100,
+                                                                  height: 100,
                                                                   decoration:
                                                                       BoxDecoration(
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryBackground,
                                                                     borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            5.0),
+                                                                        BorderRadius
+                                                                            .circular(5),
                                                                     border:
                                                                         Border
                                                                             .all(
@@ -10005,7 +9912,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         child:
                                                                             Padding(
                                                                           padding:
-                                                                              EdgeInsets.all(3.0),
+                                                                              EdgeInsets.all(3),
                                                                           child:
                                                                               Column(
                                                                             mainAxisSize:
@@ -10016,7 +9923,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 CrossAxisAlignment.start,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                                                                                 child: SelectionArea(
                                                                                     child: Text(
                                                                                   FFLocalizations.of(context).getText(
@@ -10030,7 +9937,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 )),
                                                                               ),
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 1, 0, 0),
                                                                                 child: SelectionArea(
                                                                                     child: Text(
                                                                                   FFLocalizations.of(context).getText(
@@ -10045,7 +9952,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 )),
                                                                               ),
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 1, 0, 0),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
@@ -10088,19 +9995,19 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           borderRadius:
                                                                               BorderRadius.only(
                                                                             bottomLeft:
-                                                                                Radius.circular(5.0),
+                                                                                Radius.circular(5),
                                                                             bottomRight:
-                                                                                Radius.circular(5.0),
+                                                                                Radius.circular(5),
                                                                             topLeft:
-                                                                                Radius.circular(0.0),
+                                                                                Radius.circular(0),
                                                                             topRight:
-                                                                                Radius.circular(0.0),
+                                                                                Radius.circular(0),
                                                                           ),
                                                                         ),
                                                                         child:
                                                                             Padding(
                                                                           padding:
-                                                                              EdgeInsets.all(3.0),
+                                                                              EdgeInsets.all(3),
                                                                           child:
                                                                               Row(
                                                                             mainAxisSize:
@@ -10111,7 +10018,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 CrossAxisAlignment.end,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 5.0, 2.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 2, 5, 2),
                                                                                 child: SelectionArea(
                                                                                     child: Text(
                                                                                   FFLocalizations.of(context).getText(
@@ -10125,7 +10032,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                 )),
                                                                               ),
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 2.0, 2.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 2, 2, 2),
                                                                                 child: SelectionArea(
                                                                                     child: Text(
                                                                                   FFLocalizations.of(context).getText(
@@ -10133,14 +10040,14 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                        fontSize: 10.0,
+                                                                                        fontSize: 10,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
                                                                                 )),
                                                                               ),
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 1.0, 2.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 2, 1, 2),
                                                                                 child: SelectionArea(
                                                                                     child: Text(
                                                                                   FFLocalizations.of(context).getText(
@@ -10148,14 +10055,14 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                        fontSize: 10.0,
+                                                                                        fontSize: 10,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
                                                                                 )),
                                                                               ),
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 1.0, 2.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 2, 1, 2),
                                                                                 child: SelectionArea(
                                                                                     child: Text(
                                                                                   FFLocalizations.of(context).getText(
@@ -10163,7 +10070,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                        fontSize: 10.0,
+                                                                                        fontSize: 10,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
@@ -10188,7 +10095,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                               Expanded(
                                                 flex: 7,
                                                 child: Container(
-                                                  width: 100.0,
+                                                  width: 100,
                                                   height: double.infinity,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
@@ -10197,13 +10104,13 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                     borderRadius:
                                                         BorderRadius.only(
                                                       bottomLeft:
-                                                          Radius.circular(4.0),
+                                                          Radius.circular(4),
                                                       bottomRight:
-                                                          Radius.circular(4.0),
+                                                          Radius.circular(4),
                                                       topLeft:
-                                                          Radius.circular(4.0),
+                                                          Radius.circular(4),
                                                       topRight:
-                                                          Radius.circular(4.0),
+                                                          Radius.circular(4),
                                                     ),
                                                     border: Border.all(
                                                       color:
@@ -10230,11 +10137,8 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      10.0,
-                                                                      1.0,
-                                                                      10.0,
-                                                                      1.0),
+                                                                  .fromSTEB(10,
+                                                                      1, 10, 1),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -10301,10 +10205,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    1.0,
-                                                                    0.0,
-                                                                    0.0),
+                                                                    0, 1, 0, 0),
                                                         child: Container(
                                                           width:
                                                               double.infinity,
@@ -10314,10 +10215,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0.0,
-                                                                        2.0,
-                                                                        0.0,
-                                                                        3.0),
+                                                                        0,
+                                                                        2,
+                                                                        0,
+                                                                        3),
                                                             child: Column(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -10332,10 +10233,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -10381,10 +10282,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -10430,10 +10331,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -10478,10 +10379,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -10526,10 +10427,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -10585,17 +10486,13 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               .customColor2,
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      0.0),
+                                                                  .circular(0),
                                                         ),
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      10.0,
-                                                                      0.0,
-                                                                      10.0,
-                                                                      0.0),
+                                                                  .fromSTEB(10,
+                                                                      0, 10, 0),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -10611,10 +10508,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            2.0,
-                                                                            5.0,
-                                                                            2.0),
+                                                                            0,
+                                                                            2,
+                                                                            5,
+                                                                            2),
                                                                 child:
                                                                     SelectionArea(
                                                                         child:
@@ -10641,10 +10538,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            2.0,
-                                                                            2.0,
-                                                                            2.0),
+                                                                            0,
+                                                                            2,
+                                                                            2,
+                                                                            2),
                                                                 child:
                                                                     SelectionArea(
                                                                         child:
@@ -10661,7 +10558,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         fontFamily:
                                                                             FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         fontSize:
-                                                                            10.0,
+                                                                            10,
                                                                         letterSpacing:
                                                                             0.0,
                                                                         useGoogleFonts:
@@ -10673,10 +10570,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            2.0,
-                                                                            1.0,
-                                                                            2.0),
+                                                                            0,
+                                                                            2,
+                                                                            1,
+                                                                            2),
                                                                 child:
                                                                     SelectionArea(
                                                                         child:
@@ -10693,7 +10590,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         fontFamily:
                                                                             FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         fontSize:
-                                                                            10.0,
+                                                                            10,
                                                                         letterSpacing:
                                                                             0.0,
                                                                         useGoogleFonts:
@@ -10705,10 +10602,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            2.0,
-                                                                            1.0,
-                                                                            2.0),
+                                                                            0,
+                                                                            2,
+                                                                            1,
+                                                                            2),
                                                                 child:
                                                                     SelectionArea(
                                                                         child:
@@ -10725,7 +10622,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         fontFamily:
                                                                             FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         fontSize:
-                                                                            10.0,
+                                                                            10,
                                                                         letterSpacing:
                                                                             0.0,
                                                                         useGoogleFonts:
@@ -10753,11 +10650,8 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      3.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      3, 0, 0),
                                                           child: ListView(
                                                             padding:
                                                                 EdgeInsets.zero,
@@ -10769,10 +10663,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            4.0),
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            4),
                                                                 child:
                                                                     Container(
                                                                   width: double
@@ -10787,10 +10681,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                       Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            10.0,
-                                                                            2.0,
-                                                                            10.0,
-                                                                            2.0),
+                                                                            10,
+                                                                            2,
+                                                                            10,
+                                                                            2),
                                                                     child:
                                                                         Column(
                                                                       mainAxisSize:
@@ -10818,10 +10712,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              1.0,
-                                                                              0.0,
-                                                                              0.0),
+                                                                              0,
+                                                                              1,
+                                                                              0,
+                                                                              0),
                                                                           child:
                                                                               Row(
                                                                             mainAxisSize:
@@ -10835,7 +10729,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                       child: Text(
                                                                                         FFLocalizations.of(context).getText(
                                                                                           'dwsuhoe1' /* Serial : */,
@@ -10848,7 +10742,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                       ),
                                                                                     ),
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 3, 0),
                                                                                       child: Text(
                                                                                         FFLocalizations.of(context).getText(
                                                                                           'lfbnwq7g' /* 54654h */,
@@ -10856,7 +10750,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                         style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                               fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                               color: FlutterFlowTheme.of(context).primaryText,
-                                                                                              fontSize: 10.0,
+                                                                                              fontSize: 10,
                                                                                               letterSpacing: 0.0,
                                                                                               useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                             ),
@@ -10874,7 +10768,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                                     mainAxisAlignment: MainAxisAlignment.end,
                                                                                     children: [
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                         child: Text(
                                                                                           FFLocalizations.of(context).getText(
                                                                                             'q52o0py0' /* Qty : */,
@@ -10924,10 +10818,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -10939,10 +10833,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            5,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -10966,7 +10860,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -10978,10 +10872,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -10989,7 +10883,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -10997,10 +10891,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -11008,7 +10902,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -11025,10 +10919,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -11040,10 +10934,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            5,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -11067,7 +10961,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -11079,10 +10973,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -11090,7 +10984,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -11098,10 +10992,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -11109,7 +11003,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),
@@ -11126,10 +11020,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -11141,10 +11035,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            5,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -11168,7 +11062,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -11180,10 +11074,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -11199,10 +11093,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                           ),
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -11227,10 +11121,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          1.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          1),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -11242,10 +11136,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            5,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -11269,7 +11163,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -11281,10 +11175,10 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                0,
+                                                                                3,
+                                                                                0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -11292,7 +11186,7 @@ class _GoodsReceivedWidgetState extends State<GoodsReceivedWidget>
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                    fontSize: 10.0,
+                                                                                    fontSize: 10,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                   ),

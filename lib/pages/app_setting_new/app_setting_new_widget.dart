@@ -33,7 +33,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
     super.initState();
     _model = createModel(context, () => AppSettingNewModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -61,7 +61,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                 Expanded(
                   flex: 1,
                   child: Container(
-                    width: MediaQuery.sizeOf(context).width * 1.0,
+                    width: MediaQuery.sizeOf(context).width,
                     height: MediaQuery.sizeOf(context).height * 0.12,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).primary,
@@ -74,22 +74,22 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                         Expanded(
                           flex: 1,
                           child: Container(
-                            width: 100.0,
-                            height: 100.0,
+                            width: 100,
+                            height: 100,
                             decoration: BoxDecoration(),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
-                                  borderRadius: 30.0,
-                                  borderWidth: 1.0,
-                                  buttonSize: 60.0,
+                                  borderRadius: 30,
+                                  borderWidth: 1,
+                                  buttonSize: 60,
                                   icon: Icon(
                                     Icons.chevron_left_sharp,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBtnText,
-                                    size: 26.0,
+                                    size: 26,
                                   ),
                                   onPressed: () async {
                                     context.pop();
@@ -121,7 +121,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                           flex: 1,
                           child: wrapWithModel(
                             model: _model.headerModel,
-                            updateCallback: () => setState(() {}),
+                            updateCallback: () => safeSetState(() {}),
                             child: HeaderWidget(),
                           ),
                         ),
@@ -148,11 +148,11 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                           if (!snapshot.hasData) {
                             return Center(
                               child: SizedBox(
-                                width: 40.0,
-                                height: 40.0,
+                                width: 40,
+                                height: 40,
                                 child: SpinKitFadingCircle(
                                   color: FlutterFlowTheme.of(context).primary,
-                                  size: 40.0,
+                                  size: 40,
                                 ),
                               ),
                             );
@@ -181,7 +181,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 3.0, 0.0, 0.0),
+                                      0, 3, 0, 0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -189,9 +189,9 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 2.0, 0.0),
+                                                  0, 0, 2, 0),
                                           child: Container(
-                                            width: 100.0,
+                                            width: 100,
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
                                                 0.78,
@@ -202,17 +202,15 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                             ),
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      10.0, 0.0, 5.0, 0.0),
+                                                  .fromSTEB(10, 0, 5, 0),
                                               child: ListView(
                                                 padding: EdgeInsets.zero,
                                                 scrollDirection: Axis.vertical,
                                                 children: [
                                                   Padding(
-                                                    padding:
-                                                        EdgeInsets.all(5.0),
+                                                    padding: EdgeInsets.all(5),
                                                     child: Container(
-                                                      width: 100.0,
+                                                      width: 100,
                                                       height: MediaQuery.sizeOf(
                                                                   context)
                                                               .height *
@@ -223,18 +221,18 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                             .secondaryBackground,
                                                         boxShadow: [
                                                           BoxShadow(
-                                                            blurRadius: 5.0,
+                                                            blurRadius: 5,
                                                             color: Color(
                                                                 0x33000000),
                                                             offset: Offset(
-                                                              1.0,
-                                                              1.0,
+                                                              1,
+                                                              1,
                                                             ),
                                                           )
                                                         ],
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(10.0),
+                                                                .circular(10),
                                                       ),
                                                       child: Row(
                                                         mainAxisSize:
@@ -255,7 +253,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                       .tableSetting,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTileTableSetValue =
                                                                         newValue!);
                                                               },
@@ -318,10 +316,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            10.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            10,
+                                                                            0),
                                                                 child:
                                                                     FFButtonWidget(
                                                                   onPressed:
@@ -336,21 +334,20 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                   ),
                                                                   options:
                                                                       FFButtonOptions(
-                                                                    width: 40.0,
-                                                                    height:
-                                                                        30.0,
+                                                                    width: 40,
+                                                                    height: 30,
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            0),
                                                                     iconPadding:
                                                                         EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            0),
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primary,
@@ -368,17 +365,16 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                         ),
                                                                     elevation:
-                                                                        2.0,
+                                                                        2,
                                                                     borderSide:
                                                                         BorderSide(
                                                                       color: Colors
                                                                           .transparent,
-                                                                      width:
-                                                                          1.0,
+                                                                      width: 1,
                                                                     ),
                                                                     borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            8.0),
+                                                                        BorderRadius
+                                                                            .circular(8),
                                                                   ),
                                                                 ),
                                                               ),
@@ -389,10 +385,9 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                     ),
                                                   ),
                                                   Padding(
-                                                    padding:
-                                                        EdgeInsets.all(5.0),
+                                                    padding: EdgeInsets.all(5),
                                                     child: Container(
-                                                      width: 100.0,
+                                                      width: 100,
                                                       height: MediaQuery.sizeOf(
                                                                   context)
                                                               .height *
@@ -403,18 +398,18 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                             .secondaryBackground,
                                                         boxShadow: [
                                                           BoxShadow(
-                                                            blurRadius: 5.0,
+                                                            blurRadius: 5,
                                                             color: Color(
                                                                 0x33000000),
                                                             offset: Offset(
-                                                              1.0,
-                                                              1.0,
+                                                              1,
+                                                              1,
                                                             ),
                                                           )
                                                         ],
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(10.0),
+                                                                .circular(10),
                                                       ),
                                                       child: Row(
                                                         mainAxisSize:
@@ -435,7 +430,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                       .CustSetting,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTileCustSetValue =
                                                                         newValue!);
                                                               },
@@ -498,10 +493,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            10.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            10,
+                                                                            0),
                                                                 child:
                                                                     FFButtonWidget(
                                                                   onPressed:
@@ -516,21 +511,20 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                   ),
                                                                   options:
                                                                       FFButtonOptions(
-                                                                    width: 40.0,
-                                                                    height:
-                                                                        30.0,
+                                                                    width: 40,
+                                                                    height: 30,
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            0),
                                                                     iconPadding:
                                                                         EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            0),
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primary,
@@ -548,17 +542,16 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                         ),
                                                                     elevation:
-                                                                        2.0,
+                                                                        2,
                                                                     borderSide:
                                                                         BorderSide(
                                                                       color: Colors
                                                                           .transparent,
-                                                                      width:
-                                                                          1.0,
+                                                                      width: 1,
                                                                     ),
                                                                     borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            8.0),
+                                                                        BorderRadius
+                                                                            .circular(8),
                                                                   ),
                                                                 ),
                                                               ),
@@ -569,10 +562,9 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                     ),
                                                   ),
                                                   Padding(
-                                                    padding:
-                                                        EdgeInsets.all(5.0),
+                                                    padding: EdgeInsets.all(5),
                                                     child: Container(
-                                                      width: 100.0,
+                                                      width: 100,
                                                       height: MediaQuery.sizeOf(
                                                                   context)
                                                               .height *
@@ -583,18 +575,18 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                             .secondaryBackground,
                                                         boxShadow: [
                                                           BoxShadow(
-                                                            blurRadius: 5.0,
+                                                            blurRadius: 5,
                                                             color: Color(
                                                                 0x33000000),
                                                             offset: Offset(
-                                                              1.0,
-                                                              1.0,
+                                                              1,
+                                                              1,
                                                             ),
                                                           )
                                                         ],
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(10.0),
+                                                                .circular(10),
                                                       ),
                                                       child: Row(
                                                         mainAxisSize:
@@ -615,7 +607,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                       .barcodeSet,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTilebarcodeSetValue =
                                                                         newValue!);
                                                               },
@@ -676,10 +668,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            10.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            10,
+                                                                            0),
                                                                 child:
                                                                     FFButtonWidget(
                                                                   onPressed:
@@ -694,21 +686,20 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                   ),
                                                                   options:
                                                                       FFButtonOptions(
-                                                                    width: 40.0,
-                                                                    height:
-                                                                        30.0,
+                                                                    width: 40,
+                                                                    height: 30,
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            0),
                                                                     iconPadding:
                                                                         EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            0),
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primary,
@@ -726,17 +717,16 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                         ),
                                                                     elevation:
-                                                                        2.0,
+                                                                        2,
                                                                     borderSide:
                                                                         BorderSide(
                                                                       color: Colors
                                                                           .transparent,
-                                                                      width:
-                                                                          1.0,
+                                                                      width: 1,
                                                                     ),
                                                                     borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            8.0),
+                                                                        BorderRadius
+                                                                            .circular(8),
                                                                   ),
                                                                 ),
                                                               ),
@@ -751,9 +741,9 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                       false)
                                                     Padding(
                                                       padding:
-                                                          EdgeInsets.all(5.0),
+                                                          EdgeInsets.all(5),
                                                       child: Container(
-                                                        width: 100.0,
+                                                        width: 100,
                                                         height:
                                                             MediaQuery.sizeOf(
                                                                         context)
@@ -766,19 +756,18 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                               .secondaryBackground,
                                                           boxShadow: [
                                                             BoxShadow(
-                                                              blurRadius: 5.0,
+                                                              blurRadius: 5,
                                                               color: Color(
                                                                   0x33000000),
                                                               offset: Offset(
-                                                                1.0,
-                                                                1.0,
+                                                                1,
+                                                                1,
                                                               ),
                                                             )
                                                           ],
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      10.0),
+                                                                  .circular(10),
                                                         ),
                                                         child: Row(
                                                           mainAxisSize:
@@ -798,7 +787,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                     false,
                                                                 onChanged:
                                                                     (newValue) async {
-                                                                  setState(() =>
+                                                                  safeSetState(() =>
                                                                       _model.switchListTileRfidSetValue =
                                                                           newValue!);
                                                                 },
@@ -855,10 +844,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                 child: Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          0.0),
+                                                                          0,
+                                                                          0,
+                                                                          10,
+                                                                          0),
                                                                   child:
                                                                       FFButtonWidget(
                                                                     onPressed:
@@ -873,20 +862,21 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                     ),
                                                                     options:
                                                                         FFButtonOptions(
-                                                                      width:
-                                                                          40.0,
+                                                                      width: 40,
                                                                       height:
-                                                                          30.0,
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          30,
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              0,
+                                                                              0,
+                                                                              0,
+                                                                              0),
+                                                                      iconPadding:
+                                                                          EdgeInsetsDirectional.fromSTEB(
+                                                                              0,
+                                                                              0,
+                                                                              0,
+                                                                              0),
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
@@ -904,17 +894,17 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                           ),
                                                                       elevation:
-                                                                          2.0,
+                                                                          2,
                                                                       borderSide:
                                                                           BorderSide(
                                                                         color: Colors
                                                                             .transparent,
                                                                         width:
-                                                                            1.0,
+                                                                            1,
                                                                       ),
                                                                       borderRadius:
                                                                           BorderRadius.circular(
-                                                                              8.0),
+                                                                              8),
                                                                     ),
                                                                   ),
                                                                 ),
@@ -925,10 +915,9 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                       ),
                                                     ),
                                                   Padding(
-                                                    padding:
-                                                        EdgeInsets.all(5.0),
+                                                    padding: EdgeInsets.all(5),
                                                     child: Container(
-                                                      width: 100.0,
+                                                      width: 100,
                                                       height: MediaQuery.sizeOf(
                                                                   context)
                                                               .height *
@@ -939,18 +928,18 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                             .secondaryBackground,
                                                         boxShadow: [
                                                           BoxShadow(
-                                                            blurRadius: 5.0,
+                                                            blurRadius: 5,
                                                             color: Color(
                                                                 0x33000000),
                                                             offset: Offset(
-                                                              1.0,
-                                                              1.0,
+                                                              1,
+                                                              1,
                                                             ),
                                                           )
                                                         ],
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(10.0),
+                                                                .circular(10),
                                                       ),
                                                       child: Row(
                                                         mainAxisSize:
@@ -971,7 +960,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                       .salesmanSet,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTilesalesmanSetValue =
                                                                         newValue!);
                                                               },
@@ -1032,10 +1021,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            10.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            10,
+                                                                            0),
                                                                 child:
                                                                     FFButtonWidget(
                                                                   onPressed:
@@ -1050,21 +1039,20 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                   ),
                                                                   options:
                                                                       FFButtonOptions(
-                                                                    width: 40.0,
-                                                                    height:
-                                                                        30.0,
+                                                                    width: 40,
+                                                                    height: 30,
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            0),
                                                                     iconPadding:
                                                                         EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            0),
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primary,
@@ -1082,17 +1070,16 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                         ),
                                                                     elevation:
-                                                                        2.0,
+                                                                        2,
                                                                     borderSide:
                                                                         BorderSide(
                                                                       color: Colors
                                                                           .transparent,
-                                                                      width:
-                                                                          1.0,
+                                                                      width: 1,
                                                                     ),
                                                                     borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            8.0),
+                                                                        BorderRadius
+                                                                            .circular(8),
                                                                   ),
                                                                 ),
                                                               ),
@@ -1103,8 +1090,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                     ),
                                                   ),
                                                   Padding(
-                                                    padding:
-                                                        EdgeInsets.all(5.0),
+                                                    padding: EdgeInsets.all(5),
                                                     child: Container(
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
@@ -1112,22 +1098,22 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                             .secondaryBackground,
                                                         boxShadow: [
                                                           BoxShadow(
-                                                            blurRadius: 5.0,
+                                                            blurRadius: 5,
                                                             color: Color(
                                                                 0x33000000),
                                                             offset: Offset(
-                                                              1.0,
-                                                              1.0,
+                                                              1,
+                                                              1,
                                                             ),
                                                           )
                                                         ],
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(10.0),
+                                                                .circular(10),
                                                       ),
                                                       child: Padding(
-                                                        padding: EdgeInsets.all(
-                                                            10.0),
+                                                        padding:
+                                                            EdgeInsets.all(10),
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -1136,10 +1122,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          10.0),
+                                                                          0,
+                                                                          0,
+                                                                          0,
+                                                                          10),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -1162,25 +1148,25 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              10.0,
-                                                                              0.0),
+                                                                              0,
+                                                                              0,
+                                                                              10,
+                                                                              0),
                                                                           child:
                                                                               Icon(
                                                                             Icons.settings_outlined,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primary,
                                                                             size:
-                                                                                15.0,
+                                                                                15,
                                                                           ),
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              15.0,
-                                                                              0.0),
+                                                                              0,
+                                                                              0,
+                                                                              15,
+                                                                              0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -1200,7 +1186,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       height: MediaQuery.sizeOf(context)
                                                                               .height *
                                                                           0.002,
@@ -1229,7 +1215,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .regularScreen,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTileRegularScrValue =
                                                                             newValue!);
                                                                   },
@@ -1265,7 +1251,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .productAndList,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTileProdAndListValue =
                                                                             newValue!);
                                                                   },
@@ -1301,7 +1287,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .fullScreenQr,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTileFullScrnQRValue =
                                                                             newValue!);
                                                                   },
@@ -1337,7 +1323,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .fullScreenBill,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTileFullScrBillValue =
                                                                             newValue!);
                                                                   },
@@ -1373,7 +1359,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .tableScreen,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTileTableScreenValue =
                                                                             newValue!);
                                                                   },
@@ -1410,8 +1396,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                     ),
                                                   ),
                                                   Padding(
-                                                    padding:
-                                                        EdgeInsets.all(5.0),
+                                                    padding: EdgeInsets.all(5),
                                                     child: Container(
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
@@ -1419,22 +1404,22 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                             .secondaryBackground,
                                                         boxShadow: [
                                                           BoxShadow(
-                                                            blurRadius: 5.0,
+                                                            blurRadius: 5,
                                                             color: Color(
                                                                 0x33000000),
                                                             offset: Offset(
-                                                              1.0,
-                                                              1.0,
+                                                              1,
+                                                              1,
                                                             ),
                                                           )
                                                         ],
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(10.0),
+                                                                .circular(10),
                                                       ),
                                                       child: Padding(
-                                                        padding: EdgeInsets.all(
-                                                            10.0),
+                                                        padding:
+                                                            EdgeInsets.all(10),
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -1443,10 +1428,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          10.0),
+                                                                          0,
+                                                                          0,
+                                                                          0,
+                                                                          10),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -1469,25 +1454,25 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              10.0,
-                                                                              0.0),
+                                                                              0,
+                                                                              0,
+                                                                              10,
+                                                                              0),
                                                                           child:
                                                                               Icon(
                                                                             Icons.settings_outlined,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primary,
                                                                             size:
-                                                                                15.0,
+                                                                                15,
                                                                           ),
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              15.0,
-                                                                              0.0),
+                                                                              0,
+                                                                              0,
+                                                                              15,
+                                                                              0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -1507,7 +1492,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       height: MediaQuery.sizeOf(context)
                                                                               .height *
                                                                           0.001,
@@ -1533,7 +1518,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .openingBalancePopup,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTileenableOpeningBalanceValue =
                                                                             newValue!);
                                                                   },
@@ -1569,7 +1554,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .floatingKeyboard,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTileflottingKeyboardButtonValue =
                                                                             newValue!);
                                                                   },
@@ -1605,7 +1590,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .openingBalanceAmountSet,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTileshowOpeningAmountValue =
                                                                             newValue!);
                                                                   },
@@ -1662,7 +1647,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .saveButton,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTiledisableSaveButtonValue =
                                                                             newValue!);
                                                                   },
@@ -1698,7 +1683,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .showHoldListButton,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTileshowHoldListBtnValue =
                                                                             newValue!);
                                                                   },
@@ -1734,7 +1719,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .kioSKscreen,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.kiskbillingValue =
                                                                             newValue!);
                                                                   },
@@ -1771,8 +1756,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                     ),
                                                   ),
                                                   Padding(
-                                                    padding:
-                                                        EdgeInsets.all(5.0),
+                                                    padding: EdgeInsets.all(5),
                                                     child: Container(
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
@@ -1780,22 +1764,22 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                             .secondaryBackground,
                                                         boxShadow: [
                                                           BoxShadow(
-                                                            blurRadius: 5.0,
+                                                            blurRadius: 5,
                                                             color: Color(
                                                                 0x33000000),
                                                             offset: Offset(
-                                                              1.0,
-                                                              1.0,
+                                                              1,
+                                                              1,
                                                             ),
                                                           )
                                                         ],
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(10.0),
+                                                                .circular(10),
                                                       ),
                                                       child: Padding(
-                                                        padding: EdgeInsets.all(
-                                                            10.0),
+                                                        padding:
+                                                            EdgeInsets.all(10),
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -1804,10 +1788,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          10.0),
+                                                                          0,
+                                                                          0,
+                                                                          0,
+                                                                          10),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -1830,25 +1814,25 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              10.0,
-                                                                              0.0),
+                                                                              0,
+                                                                              0,
+                                                                              10,
+                                                                              0),
                                                                           child:
                                                                               Icon(
                                                                             Icons.settings_outlined,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primary,
                                                                             size:
-                                                                                15.0,
+                                                                                15,
                                                                           ),
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              15.0,
-                                                                              0.0),
+                                                                              0,
+                                                                              0,
+                                                                              15,
+                                                                              0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -1868,7 +1852,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       height: MediaQuery.sizeOf(context)
                                                                               .height *
                                                                           0.002,
@@ -1894,7 +1878,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .billSettlement,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTileestBillSettlementValue =
                                                                             newValue!);
                                                                   },
@@ -1926,10 +1910,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          0.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          0),
                                                                   child:
                                                                       InkWell(
                                                                     splashColor:
@@ -1983,15 +1967,15 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryBackground,
                                                                         borderRadius:
-                                                                            BorderRadius.circular(10.0),
+                                                                            BorderRadius.circular(10),
                                                                       ),
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            5.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                            5,
+                                                                            0,
+                                                                            0,
+                                                                            0),
                                                                         child:
                                                                             Column(
                                                                           mainAxisSize:
@@ -2024,7 +2008,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .billFormatSendToEmail,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTilesendbillFormatToEmailValue =
                                                                             newValue!);
                                                                   },
@@ -2060,7 +2044,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .discountToBill,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTileEnableDisToDirectlyAddBillValue =
                                                                             newValue!);
                                                                   },
@@ -2097,8 +2081,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                     ),
                                                   ),
                                                   Padding(
-                                                    padding:
-                                                        EdgeInsets.all(5.0),
+                                                    padding: EdgeInsets.all(5),
                                                     child: Container(
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
@@ -2106,22 +2089,22 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                             .secondaryBackground,
                                                         boxShadow: [
                                                           BoxShadow(
-                                                            blurRadius: 5.0,
+                                                            blurRadius: 5,
                                                             color: Color(
                                                                 0x33000000),
                                                             offset: Offset(
-                                                              1.0,
-                                                              1.0,
+                                                              1,
+                                                              1,
                                                             ),
                                                           )
                                                         ],
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(10.0),
+                                                                .circular(10),
                                                       ),
                                                       child: Padding(
-                                                        padding: EdgeInsets.all(
-                                                            10.0),
+                                                        padding:
+                                                            EdgeInsets.all(10),
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -2130,10 +2113,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          10.0),
+                                                                          0,
+                                                                          0,
+                                                                          0,
+                                                                          10),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -2156,25 +2139,25 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              10.0,
-                                                                              0.0),
+                                                                              0,
+                                                                              0,
+                                                                              10,
+                                                                              0),
                                                                           child:
                                                                               Icon(
                                                                             Icons.settings_outlined,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primary,
                                                                             size:
-                                                                                15.0,
+                                                                                15,
                                                                           ),
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              15.0,
-                                                                              0.0),
+                                                                              0,
+                                                                              0,
+                                                                              15,
+                                                                              0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -2194,7 +2177,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       height: MediaQuery.sizeOf(context)
                                                                               .height *
                                                                           0.002,
@@ -2220,7 +2203,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .showProductImage,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTileshowProductImgValue =
                                                                             newValue!);
                                                                   },
@@ -2256,7 +2239,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .hideProductSearchCode,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTilehideProductSearchCodeValue =
                                                                             newValue!);
                                                                   },
@@ -2292,7 +2275,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .doNotShowProductList,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTileproductListTyValue =
                                                                             newValue!);
                                                                   },
@@ -2328,7 +2311,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .regionalLanguage,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTileregionalLanguageValue =
                                                                             newValue!);
                                                                   },
@@ -2361,16 +2344,16 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                       RoundedRectangleBorder(
                                                                     borderRadius:
                                                                         BorderRadius.circular(
-                                                                            20.0),
+                                                                            20),
                                                                   ),
                                                                 ),
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          5.0),
+                                                                          10,
+                                                                          0,
+                                                                          0,
+                                                                          5),
                                                                   child: Row(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -2390,7 +2373,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               MainAxisSize.max,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                                                               child: Text(
                                                                                 FFLocalizations.of(context).getText(
                                                                                   't69j8kdg' /* PRINT SETTING */,
@@ -2416,7 +2399,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .trimNameForSingleLine,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTiletrimProductNameForSingleLineValue =
                                                                             newValue!);
                                                                   },
@@ -2448,7 +2431,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                       RoundedRectangleBorder(
                                                                     borderRadius:
                                                                         BorderRadius.circular(
-                                                                            20.0),
+                                                                            20),
                                                                   ),
                                                                 ),
                                                                 SwitchListTile(
@@ -2458,7 +2441,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .hsnNumber,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTilehsnNumberValue =
                                                                             newValue!);
                                                                   },
@@ -2493,7 +2476,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                       false,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTileproductSerialNumberValue =
                                                                             newValue!);
                                                                   },
@@ -2528,7 +2511,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                       false,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTileregionalBillPrintlValue =
                                                                             newValue!);
                                                                   },
@@ -2560,7 +2543,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                       RoundedRectangleBorder(
                                                                     borderRadius:
                                                                         BorderRadius.circular(
-                                                                            20.0),
+                                                                            20),
                                                                   ),
                                                                 ),
                                                               ],
@@ -2571,8 +2554,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                     ),
                                                   ),
                                                   Padding(
-                                                    padding:
-                                                        EdgeInsets.all(5.0),
+                                                    padding: EdgeInsets.all(5),
                                                     child: Container(
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
@@ -2580,22 +2562,22 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                             .secondaryBackground,
                                                         boxShadow: [
                                                           BoxShadow(
-                                                            blurRadius: 5.0,
+                                                            blurRadius: 5,
                                                             color: Color(
                                                                 0x33000000),
                                                             offset: Offset(
-                                                              1.0,
-                                                              1.0,
+                                                              1,
+                                                              1,
                                                             ),
                                                           )
                                                         ],
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(10.0),
+                                                                .circular(10),
                                                       ),
                                                       child: Padding(
-                                                        padding: EdgeInsets.all(
-                                                            10.0),
+                                                        padding:
+                                                            EdgeInsets.all(10),
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -2623,10 +2605,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                     children: [
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            10.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            10,
+                                                                            0),
                                                                         child:
                                                                             Icon(
                                                                           Icons
@@ -2634,15 +2616,15 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primary,
                                                                           size:
-                                                                              15.0,
+                                                                              15,
                                                                         ),
                                                                       ),
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            15.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            15,
+                                                                            0),
                                                                         child:
                                                                             Text(
                                                                           FFLocalizations.of(context)
@@ -2683,10 +2665,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                       .max,
                                                               children: [
                                                                 Container(
-                                                                  width: MediaQuery.sizeOf(
+                                                                  width: MediaQuery
+                                                                          .sizeOf(
                                                                               context)
-                                                                          .width *
-                                                                      1.0,
+                                                                      .width,
                                                                   decoration:
                                                                       BoxDecoration(
                                                                     color: FlutterFlowTheme.of(
@@ -2709,7 +2691,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.calculateReverseQuantity,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTilecalculateReverseQtyValue = newValue!);
                                                                           },
                                                                           title:
@@ -2735,7 +2717,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.sortHotKeys,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTilesortingInHotKeyValue = newValue!);
                                                                           },
                                                                           title:
@@ -2756,19 +2738,19 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           shape:
                                                                               RoundedRectangleBorder(
                                                                             borderRadius:
-                                                                                BorderRadius.circular(20.0),
+                                                                                BorderRadius.circular(20),
                                                                           ),
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              10.0,
-                                                                              0.0,
-                                                                              10.0,
-                                                                              0.0),
+                                                                              10,
+                                                                              0,
+                                                                              10,
+                                                                              0),
                                                                           child:
                                                                               Container(
                                                                             width:
-                                                                                MediaQuery.sizeOf(context).width * 1.0,
+                                                                                MediaQuery.sizeOf(context).width,
                                                                             height:
                                                                                 MediaQuery.sizeOf(context).height * 0.1,
                                                                             decoration:
@@ -2777,7 +2759,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                             ),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 10.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(5, 0, 10, 0),
                                                                               child: Row(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -2794,7 +2776,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                   ),
                                                                                   Expanded(
                                                                                     child: Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                                                                                       child: FlutterFlowDropDown<String>(
                                                                                         controller: _model.dropDownValueController ??= FormFieldController<String>(null),
                                                                                         options: [
@@ -2808,9 +2790,9 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                             'x1nuejh9' /* (-) Minus */,
                                                                                           )
                                                                                         ],
-                                                                                        onChanged: (val) => setState(() => _model.dropDownValue = val),
-                                                                                        width: 240.0,
-                                                                                        height: 30.0,
+                                                                                        onChanged: (val) => safeSetState(() => _model.dropDownValue = val),
+                                                                                        width: 240,
+                                                                                        height: 30,
                                                                                         textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                               fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                               letterSpacing: 0.0,
@@ -2820,11 +2802,11 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                           'wayr45fs' /* PLEASE SELECT */,
                                                                                         ),
                                                                                         fillColor: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                        elevation: 2.0,
+                                                                                        elevation: 2,
                                                                                         borderColor: Colors.transparent,
-                                                                                        borderWidth: 0.0,
-                                                                                        borderRadius: 10.0,
-                                                                                        margin: EdgeInsetsDirectional.fromSTEB(12.0, 4.0, 12.0, 4.0),
+                                                                                        borderWidth: 0,
+                                                                                        borderRadius: 10,
+                                                                                        margin: EdgeInsetsDirectional.fromSTEB(12, 4, 12, 4),
                                                                                         hidesUnderline: true,
                                                                                         isSearchable: false,
                                                                                         isMultiSelect: false,
@@ -2841,7 +2823,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.openSoftKeyWord,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTileopenSoftKeywordValue = newValue!);
                                                                           },
                                                                           title:
@@ -2862,7 +2844,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           shape:
                                                                               RoundedRectangleBorder(
                                                                             borderRadius:
-                                                                                BorderRadius.circular(0.0),
+                                                                                BorderRadius.circular(0),
                                                                           ),
                                                                         ),
                                                                         SwitchListTile(
@@ -2870,7 +2852,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.showPrintButtonsAfterPay,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTileprintBtnAfterPayValue = newValue!);
                                                                           },
                                                                           title:
@@ -2891,7 +2873,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           shape:
                                                                               RoundedRectangleBorder(
                                                                             borderRadius:
-                                                                                BorderRadius.circular(20.0),
+                                                                                BorderRadius.circular(20),
                                                                           ),
                                                                         ),
                                                                         SwitchListTile(
@@ -2899,7 +2881,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.threeCharSearch,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTilethreeCharValue = newValue!);
                                                                           },
                                                                           title:
@@ -2920,7 +2902,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           shape:
                                                                               RoundedRectangleBorder(
                                                                             borderRadius:
-                                                                                BorderRadius.circular(20.0),
+                                                                                BorderRadius.circular(20),
                                                                           ),
                                                                         ),
                                                                       ],
@@ -2930,15 +2912,15 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          0,
+                                                                          5,
+                                                                          0,
+                                                                          0),
                                                                   child:
                                                                       Container(
-                                                                    width: MediaQuery.sizeOf(context)
-                                                                            .width *
-                                                                        1.0,
+                                                                    width: MediaQuery.sizeOf(
+                                                                            context)
+                                                                        .width,
                                                                     decoration:
                                                                         BoxDecoration(),
                                                                     child:
@@ -2955,7 +2937,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.manualPrice,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTilemanualPriceValue = newValue!);
                                                                           },
                                                                           title:
@@ -2976,7 +2958,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           shape:
                                                                               RoundedRectangleBorder(
                                                                             borderRadius:
-                                                                                BorderRadius.circular(20.0),
+                                                                                BorderRadius.circular(20),
                                                                           ),
                                                                         ),
                                                                         SwitchListTile(
@@ -2984,7 +2966,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.estimateMode,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTileestimateModeValue = newValue!);
                                                                           },
                                                                           title:
@@ -3005,7 +2987,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           shape:
                                                                               RoundedRectangleBorder(
                                                                             borderRadius:
-                                                                                BorderRadius.circular(20.0),
+                                                                                BorderRadius.circular(20),
                                                                           ),
                                                                         ),
                                                                         SwitchListTile(
@@ -3013,7 +2995,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.editingSettlement,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTileeditingInSettelementValue = newValue!);
                                                                           },
                                                                           title:
@@ -3034,7 +3016,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           shape:
                                                                               RoundedRectangleBorder(
                                                                             borderRadius:
-                                                                                BorderRadius.circular(20.0),
+                                                                                BorderRadius.circular(20),
                                                                           ),
                                                                         ),
                                                                         SwitchListTile(
@@ -3042,7 +3024,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.openPrice,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTileopenPriceValue = newValue!);
                                                                           },
                                                                           title:
@@ -3063,15 +3045,15 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           shape:
                                                                               RoundedRectangleBorder(
                                                                             borderRadius:
-                                                                                BorderRadius.circular(20.0),
+                                                                                BorderRadius.circular(20),
                                                                           ),
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              10.0,
-                                                                              5.0,
-                                                                              10.0,
-                                                                              0.0),
+                                                                              10,
+                                                                              5,
+                                                                              10,
+                                                                              0),
                                                                           child:
                                                                               Container(
                                                                             width:
@@ -3082,13 +3064,13 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                 BoxDecoration(),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                                                                               child: Row(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                 children: [
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                                                                                     child: Text(
                                                                                       FFLocalizations.of(context).getText(
                                                                                         'nn54xu1v' /* 11. PRODUCT LIST TYPE */,
@@ -3116,9 +3098,9 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                           'fr0y0r6g' /* SMALL */,
                                                                                         )
                                                                                       ],
-                                                                                      onChanged: (val) => setState(() => _model.dropDownListValue = val),
-                                                                                      width: 240.0,
-                                                                                      height: 30.0,
+                                                                                      onChanged: (val) => safeSetState(() => _model.dropDownListValue = val),
+                                                                                      width: 240,
+                                                                                      height: 30,
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                             letterSpacing: 0.0,
@@ -3128,11 +3110,11 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                         'exc5wp3c' /* PLEASE SELECT */,
                                                                                       ),
                                                                                       fillColor: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                      elevation: 2.0,
+                                                                                      elevation: 2,
                                                                                       borderColor: Colors.transparent,
-                                                                                      borderWidth: 0.0,
-                                                                                      borderRadius: 10.0,
-                                                                                      margin: EdgeInsetsDirectional.fromSTEB(12.0, 4.0, 12.0, 4.0),
+                                                                                      borderWidth: 0,
+                                                                                      borderRadius: 10,
+                                                                                      margin: EdgeInsetsDirectional.fromSTEB(12, 4, 12, 4),
                                                                                       hidesUnderline: true,
                                                                                       isSearchable: false,
                                                                                       isMultiSelect: false,
@@ -3148,7 +3130,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.comboPriceUpdate,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTilecomboPriceUpdateValue = newValue!);
                                                                           },
                                                                           title:
@@ -3169,7 +3151,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           shape:
                                                                               RoundedRectangleBorder(
                                                                             borderRadius:
-                                                                                BorderRadius.circular(20.0),
+                                                                                BorderRadius.circular(20),
                                                                           ),
                                                                         ),
                                                                         SwitchListTile(
@@ -3177,7 +3159,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.onlineOrderSystem,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTileonlineOrderSystemValue = newValue!);
                                                                           },
                                                                           title:
@@ -3198,7 +3180,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           shape:
                                                                               RoundedRectangleBorder(
                                                                             borderRadius:
-                                                                                BorderRadius.circular(20.0),
+                                                                                BorderRadius.circular(20),
                                                                           ),
                                                                         ),
                                                                         SwitchListTile(
@@ -3206,7 +3188,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.billModificationtoUser,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTilebillModificationValue = newValue!);
                                                                           },
                                                                           title:
@@ -3230,7 +3212,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.store,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTileenableStoreValue = newValue!);
                                                                           },
                                                                           title:
@@ -3251,7 +3233,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           shape:
                                                                               RoundedRectangleBorder(
                                                                             borderRadius:
-                                                                                BorderRadius.circular(20.0),
+                                                                                BorderRadius.circular(20),
                                                                           ),
                                                                         ),
                                                                         SwitchListTile(
@@ -3259,7 +3241,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.weightMinus,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTileweightMinusValue = newValue!);
                                                                           },
                                                                           title:
@@ -3280,7 +3262,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           shape:
                                                                               RoundedRectangleBorder(
                                                                             borderRadius:
-                                                                                BorderRadius.circular(20.0),
+                                                                                BorderRadius.circular(20),
                                                                           ),
                                                                         ),
                                                                         SwitchListTile(
@@ -3288,7 +3270,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.stockGettingMinus,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTilestockgettinginminusValue = newValue!);
                                                                           },
                                                                           title:
@@ -3309,7 +3291,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           shape:
                                                                               RoundedRectangleBorder(
                                                                             borderRadius:
-                                                                                BorderRadius.circular(20.0),
+                                                                                BorderRadius.circular(20),
                                                                           ),
                                                                         ),
                                                                         SwitchListTile(
@@ -3317,7 +3299,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.deliveryNote,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTileDeliveryDateValue = newValue!);
                                                                           },
                                                                           title:
@@ -3338,7 +3320,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           shape:
                                                                               RoundedRectangleBorder(
                                                                             borderRadius:
-                                                                                BorderRadius.circular(20.0),
+                                                                                BorderRadius.circular(20),
                                                                           ),
                                                                         ),
                                                                         SwitchListTile(
@@ -3346,7 +3328,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.hideKeyboard,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTileHideKeybordValue = newValue!);
                                                                           },
                                                                           title:
@@ -3367,7 +3349,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           shape:
                                                                               RoundedRectangleBorder(
                                                                             borderRadius:
-                                                                                BorderRadius.circular(20.0),
+                                                                                BorderRadius.circular(20),
                                                                           ),
                                                                         ),
                                                                       ],
@@ -3382,8 +3364,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                     ),
                                                   ),
                                                   Padding(
-                                                    padding:
-                                                        EdgeInsets.all(5.0),
+                                                    padding: EdgeInsets.all(5),
                                                     child: Container(
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
@@ -3391,22 +3372,22 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                             .secondaryBackground,
                                                         boxShadow: [
                                                           BoxShadow(
-                                                            blurRadius: 5.0,
+                                                            blurRadius: 5,
                                                             color: Color(
                                                                 0x33000000),
                                                             offset: Offset(
-                                                              1.0,
-                                                              1.0,
+                                                              1,
+                                                              1,
                                                             ),
                                                           )
                                                         ],
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(10.0),
+                                                                .circular(10),
                                                       ),
                                                       child: Padding(
-                                                        padding: EdgeInsets.all(
-                                                            10.0),
+                                                        padding:
+                                                            EdgeInsets.all(10),
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -3440,10 +3421,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                     children: [
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            10.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            10,
+                                                                            0),
                                                                         child:
                                                                             Icon(
                                                                           Icons
@@ -3451,15 +3432,15 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primary,
                                                                           size:
-                                                                              15.0,
+                                                                              15,
                                                                         ),
                                                                       ),
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            15.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            15,
+                                                                            0),
                                                                         child:
                                                                             Text(
                                                                           FFLocalizations.of(context)
@@ -3498,10 +3479,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          10.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          0,
+                                                                          10,
+                                                                          0,
+                                                                          0),
                                                               child: Column(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -3514,7 +3495,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                             .paymentMenu,
                                                                     onChanged:
                                                                         (newValue) async {
-                                                                      setState(() =>
+                                                                      safeSetState(() =>
                                                                           _model.switchListTileenablePaymentMenuValue =
                                                                               newValue!);
                                                                     },
@@ -3552,7 +3533,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primary,
                                                                             fontSize:
-                                                                                10.0,
+                                                                                10,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             useGoogleFonts:
@@ -3571,7 +3552,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                             .goodsReceivedMenu,
                                                                     onChanged:
                                                                         (newValue) async {
-                                                                      setState(() =>
+                                                                      safeSetState(() =>
                                                                           _model.switchListTilegoodsReceiveMenuValue =
                                                                               newValue!);
                                                                     },
@@ -3605,7 +3586,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                             .stockOutMenu,
                                                                     onChanged:
                                                                         (newValue) async {
-                                                                      setState(() =>
+                                                                      safeSetState(() =>
                                                                           _model.switchListTilestockOutMenuValue =
                                                                               newValue!);
                                                                     },
@@ -3642,7 +3623,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                             .barcodeMenu,
                                                                     onChanged:
                                                                         (newValue) async {
-                                                                      setState(() =>
+                                                                      safeSetState(() =>
                                                                           _model.switchListTileEnableBarcodeMenuValue =
                                                                               newValue!);
                                                                     },
@@ -3678,8 +3659,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                     ),
                                                   ),
                                                   Padding(
-                                                    padding:
-                                                        EdgeInsets.all(5.0),
+                                                    padding: EdgeInsets.all(5),
                                                     child: Container(
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
@@ -3687,22 +3667,22 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                             .secondaryBackground,
                                                         boxShadow: [
                                                           BoxShadow(
-                                                            blurRadius: 5.0,
+                                                            blurRadius: 5,
                                                             color: Color(
                                                                 0x33000000),
                                                             offset: Offset(
-                                                              1.0,
-                                                              1.0,
+                                                              1,
+                                                              1,
                                                             ),
                                                           )
                                                         ],
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(10.0),
+                                                                .circular(10),
                                                       ),
                                                       child: Padding(
-                                                        padding: EdgeInsets.all(
-                                                            10.0),
+                                                        padding:
+                                                            EdgeInsets.all(10),
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -3711,10 +3691,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          10.0),
+                                                                          0,
+                                                                          0,
+                                                                          0,
+                                                                          10),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -3737,25 +3717,25 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              10.0,
-                                                                              0.0),
+                                                                              0,
+                                                                              0,
+                                                                              10,
+                                                                              0),
                                                                           child:
                                                                               Icon(
                                                                             Icons.settings_outlined,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primary,
                                                                             size:
-                                                                                15.0,
+                                                                                15,
                                                                           ),
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              15.0,
-                                                                              0.0),
+                                                                              0,
+                                                                              0,
+                                                                              15,
+                                                                              0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -3775,7 +3755,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       height: MediaQuery.sizeOf(context)
                                                                               .height *
                                                                           0.002,
@@ -3802,7 +3782,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                             .shiftEndBtn,
                                                                     onChanged:
                                                                         (newValue) async {
-                                                                      setState(() =>
+                                                                      safeSetState(() =>
                                                                           _model.shiftEndValue =
                                                                               newValue!);
                                                                     },
@@ -3849,7 +3829,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                       ),
                                       Expanded(
                                         child: Container(
-                                          width: 100.0,
+                                          width: 100,
                                           height: MediaQuery.sizeOf(context)
                                                   .height *
                                               0.78,
@@ -3860,7 +3840,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    5.0, 0.0, 10.0, 0.0),
+                                                    5, 0, 10, 0),
                                             child: ListView(
                                               padding: EdgeInsets.zero,
                                               scrollDirection: Axis.vertical,
@@ -3868,8 +3848,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                 if (FFAppState().tableSetting ==
                                                     true)
                                                   Padding(
-                                                    padding:
-                                                        EdgeInsets.all(5.0),
+                                                    padding: EdgeInsets.all(5),
                                                     child: Container(
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
@@ -3877,22 +3856,22 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                             .secondaryBackground,
                                                         boxShadow: [
                                                           BoxShadow(
-                                                            blurRadius: 5.0,
+                                                            blurRadius: 5,
                                                             color: Color(
                                                                 0x33000000),
                                                             offset: Offset(
-                                                              1.0,
-                                                              1.0,
+                                                              1,
+                                                              1,
                                                             ),
                                                           )
                                                         ],
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(10.0),
+                                                                .circular(10),
                                                       ),
                                                       child: Padding(
-                                                        padding: EdgeInsets.all(
-                                                            10.0),
+                                                        padding:
+                                                            EdgeInsets.all(10),
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -3901,10 +3880,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          10.0),
+                                                                          0,
+                                                                          0,
+                                                                          0,
+                                                                          10),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -3927,25 +3906,25 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              10.0,
-                                                                              0.0),
+                                                                              0,
+                                                                              0,
+                                                                              10,
+                                                                              0),
                                                                           child:
                                                                               Icon(
                                                                             Icons.settings_outlined,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primary,
                                                                             size:
-                                                                                15.0,
+                                                                                15,
                                                                           ),
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              15.0,
-                                                                              0.0),
+                                                                              0,
+                                                                              0,
+                                                                              15,
+                                                                              0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -3965,7 +3944,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       height: MediaQuery.sizeOf(context)
                                                                               .height *
                                                                           0.001,
@@ -3991,7 +3970,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .captainDetails,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTileCaptonDetailAtBillCreationValue =
                                                                             newValue!);
                                                                   },
@@ -4027,7 +4006,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .tableForcefully,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTileenabletableForcefullyValue =
                                                                             newValue!);
                                                                   },
@@ -4063,7 +4042,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .captainRequest,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTileCaptonReqestValue =
                                                                             newValue!);
                                                                   },
@@ -4099,7 +4078,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .wlanCommunication,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTilewLanCommunicationValue =
                                                                             newValue!);
                                                                   },
@@ -4135,7 +4114,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .checkInCheckOut,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTilecheckInOutValue =
                                                                             newValue!);
                                                                   },
@@ -4174,8 +4153,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                 if (FFAppState().tableSetting ==
                                                     true)
                                                   Padding(
-                                                    padding:
-                                                        EdgeInsets.all(5.0),
+                                                    padding: EdgeInsets.all(5),
                                                     child: Container(
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
@@ -4183,22 +4161,22 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                             .secondaryBackground,
                                                         boxShadow: [
                                                           BoxShadow(
-                                                            blurRadius: 5.0,
+                                                            blurRadius: 5,
                                                             color: Color(
                                                                 0x33000000),
                                                             offset: Offset(
-                                                              1.0,
-                                                              1.0,
+                                                              1,
+                                                              1,
                                                             ),
                                                           )
                                                         ],
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(10.0),
+                                                                .circular(10),
                                                       ),
                                                       child: Padding(
-                                                        padding: EdgeInsets.all(
-                                                            10.0),
+                                                        padding:
+                                                            EdgeInsets.all(10),
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -4207,10 +4185,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          10.0),
+                                                                          0,
+                                                                          0,
+                                                                          0,
+                                                                          10),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -4233,25 +4211,25 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              10.0,
-                                                                              0.0),
+                                                                              0,
+                                                                              0,
+                                                                              10,
+                                                                              0),
                                                                           child:
                                                                               Icon(
                                                                             Icons.settings_outlined,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primary,
                                                                             size:
-                                                                                15.0,
+                                                                                15,
                                                                           ),
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              15.0,
-                                                                              0.0),
+                                                                              0,
+                                                                              0,
+                                                                              15,
+                                                                              0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -4271,7 +4249,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       height: MediaQuery.sizeOf(context)
                                                                               .height *
                                                                           0.002,
@@ -4297,7 +4275,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .kotReprint,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTilekotRePrintValue =
                                                                             newValue!);
                                                                   },
@@ -4333,7 +4311,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .kotPrintAmountColumn,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTilekotPrintAmountColumnValue =
                                                                             newValue!);
                                                                   },
@@ -4369,7 +4347,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .kotRemark,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTilekotRemarkValue =
                                                                             newValue!);
                                                                   },
@@ -4405,7 +4383,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .saveKot,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTiledisableSaveKotValue =
                                                                             newValue!);
                                                                   },
@@ -4444,8 +4422,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                 if (FFAppState().CustSetting ==
                                                     true)
                                                   Padding(
-                                                    padding:
-                                                        EdgeInsets.all(5.0),
+                                                    padding: EdgeInsets.all(5),
                                                     child: Container(
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
@@ -4453,22 +4430,22 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                             .secondaryBackground,
                                                         boxShadow: [
                                                           BoxShadow(
-                                                            blurRadius: 5.0,
+                                                            blurRadius: 5,
                                                             color: Color(
                                                                 0x33000000),
                                                             offset: Offset(
-                                                              1.0,
-                                                              1.0,
+                                                              1,
+                                                              1,
                                                             ),
                                                           )
                                                         ],
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(10.0),
+                                                                .circular(10),
                                                       ),
                                                       child: Padding(
-                                                        padding: EdgeInsets.all(
-                                                            10.0),
+                                                        padding:
+                                                            EdgeInsets.all(10),
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -4477,10 +4454,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          10.0),
+                                                                          0,
+                                                                          0,
+                                                                          0,
+                                                                          10),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -4503,25 +4480,25 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              10.0,
-                                                                              0.0),
+                                                                              0,
+                                                                              0,
+                                                                              10,
+                                                                              0),
                                                                           child:
                                                                               Icon(
                                                                             Icons.settings_outlined,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primary,
                                                                             size:
-                                                                                15.0,
+                                                                                15,
                                                                           ),
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              15.0,
-                                                                              0.0),
+                                                                              0,
+                                                                              0,
+                                                                              15,
+                                                                              0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -4541,7 +4518,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       height: MediaQuery.sizeOf(context)
                                                                               .height *
                                                                           0.002,
@@ -4568,7 +4545,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                             .customerAdvance,
                                                                     onChanged:
                                                                         (newValue) async {
-                                                                      setState(() =>
+                                                                      safeSetState(() =>
                                                                           _model.switchListTilecustomerAdvValue =
                                                                               newValue!);
                                                                     },
@@ -4605,7 +4582,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                             .customerforcefully,
                                                                     onChanged:
                                                                         (newValue) async {
-                                                                      setState(() =>
+                                                                      safeSetState(() =>
                                                                           _model.switchListTilecustometForcefullyBillValue =
                                                                               newValue!);
                                                                     },
@@ -4642,7 +4619,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                             .vehicleNumber,
                                                                     onChanged:
                                                                         (newValue) async {
-                                                                      setState(() =>
+                                                                      safeSetState(() =>
                                                                           _model.switchListTileaddVehicleNoValue =
                                                                               newValue!);
                                                                     },
@@ -4679,7 +4656,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                             .loyaltyPoints,
                                                                     onChanged:
                                                                         (newValue) async {
-                                                                      setState(() =>
+                                                                      safeSetState(() =>
                                                                           _model.switchListTileloyaltyPointValue =
                                                                               newValue!);
                                                                     },
@@ -4716,7 +4693,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                             .sendSMS,
                                                                     onChanged:
                                                                         (newValue) async {
-                                                                      setState(() =>
+                                                                      safeSetState(() =>
                                                                           _model.switchListTilesendbillSmsValue =
                                                                               newValue!);
                                                                     },
@@ -4753,7 +4730,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                             .itemStockRequestSent,
                                                                     onChanged:
                                                                         (newValue) async {
-                                                                      setState(() =>
+                                                                      safeSetState(() =>
                                                                           _model.switchListTilestockRequestOutletWiseValue =
                                                                               newValue!);
                                                                     },
@@ -4790,7 +4767,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                             .stockRequestAccept,
                                                                     onChanged:
                                                                         (newValue) async {
-                                                                      setState(() =>
+                                                                      safeSetState(() =>
                                                                           _model.switchListTilestockRequestAcceptValue =
                                                                               newValue!);
                                                                     },
@@ -4827,7 +4804,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                             .askCustomerInBillCreation,
                                                                     onChanged:
                                                                         (newValue) async {
-                                                                      setState(() =>
+                                                                      safeSetState(() =>
                                                                           _model.switchListTileAskCustInBillValue =
                                                                               newValue!);
                                                                     },
@@ -4868,8 +4845,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                 if (FFAppState().barcodeSet ==
                                                     true)
                                                   Padding(
-                                                    padding:
-                                                        EdgeInsets.all(5.0),
+                                                    padding: EdgeInsets.all(5),
                                                     child: Container(
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
@@ -4877,22 +4853,22 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                             .secondaryBackground,
                                                         boxShadow: [
                                                           BoxShadow(
-                                                            blurRadius: 5.0,
+                                                            blurRadius: 5,
                                                             color: Color(
                                                                 0x33000000),
                                                             offset: Offset(
-                                                              1.0,
-                                                              1.0,
+                                                              1,
+                                                              1,
                                                             ),
                                                           )
                                                         ],
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(10.0),
+                                                                .circular(10),
                                                       ),
                                                       child: Padding(
-                                                        padding: EdgeInsets.all(
-                                                            10.0),
+                                                        padding:
+                                                            EdgeInsets.all(10),
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -4901,10 +4877,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          10.0),
+                                                                          0,
+                                                                          0,
+                                                                          0,
+                                                                          10),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -4927,25 +4903,25 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              10.0,
-                                                                              0.0),
+                                                                              0,
+                                                                              0,
+                                                                              10,
+                                                                              0),
                                                                           child:
                                                                               Icon(
                                                                             Icons.settings_outlined,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primary,
                                                                             size:
-                                                                                15.0,
+                                                                                15,
                                                                           ),
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              15.0,
-                                                                              0.0),
+                                                                              0,
+                                                                              0,
+                                                                              15,
+                                                                              0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -4965,7 +4941,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       height: MediaQuery.sizeOf(context)
                                                                               .height *
                                                                           0.001,
@@ -4992,7 +4968,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                             .searchWithOnlyBarcode,
                                                                     onChanged:
                                                                         (newValue) async {
-                                                                      setState(() =>
+                                                                      safeSetState(() =>
                                                                           _model.switchListTileSearchonlyWithBarcodeValue =
                                                                               newValue!);
                                                                     },
@@ -5033,8 +5009,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                 if (FFAppState().rfidSetting ==
                                                     true)
                                                   Padding(
-                                                    padding:
-                                                        EdgeInsets.all(5.0),
+                                                    padding: EdgeInsets.all(5),
                                                     child: Container(
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
@@ -5042,22 +5017,22 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                             .secondaryBackground,
                                                         boxShadow: [
                                                           BoxShadow(
-                                                            blurRadius: 5.0,
+                                                            blurRadius: 5,
                                                             color: Color(
                                                                 0x33000000),
                                                             offset: Offset(
-                                                              1.0,
-                                                              1.0,
+                                                              1,
+                                                              1,
                                                             ),
                                                           )
                                                         ],
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(10.0),
+                                                                .circular(10),
                                                       ),
                                                       child: Padding(
-                                                        padding: EdgeInsets.all(
-                                                            10.0),
+                                                        padding:
+                                                            EdgeInsets.all(10),
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -5066,10 +5041,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          10.0),
+                                                                          0,
+                                                                          0,
+                                                                          0,
+                                                                          10),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -5092,25 +5067,25 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              10.0,
-                                                                              0.0),
+                                                                              0,
+                                                                              0,
+                                                                              10,
+                                                                              0),
                                                                           child:
                                                                               Icon(
                                                                             Icons.settings_outlined,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primary,
                                                                             size:
-                                                                                15.0,
+                                                                                15,
                                                                           ),
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              15.0,
-                                                                              0.0),
+                                                                              0,
+                                                                              0,
+                                                                              15,
+                                                                              0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -5130,7 +5105,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       height: MediaQuery.sizeOf(context)
                                                                               .height *
                                                                           0.002,
@@ -5156,7 +5131,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .rfidMasterRead,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTilerfidMasterReadValue =
                                                                             newValue!);
                                                                   },
@@ -5192,7 +5167,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .rfidMasterWrite,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTilerfidmasterWrtValue =
                                                                             newValue!);
                                                                   },
@@ -5231,8 +5206,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                 if (FFAppState().salesmanSet ==
                                                     true)
                                                   Padding(
-                                                    padding:
-                                                        EdgeInsets.all(5.0),
+                                                    padding: EdgeInsets.all(5),
                                                     child: Container(
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
@@ -5240,22 +5214,22 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                             .secondaryBackground,
                                                         boxShadow: [
                                                           BoxShadow(
-                                                            blurRadius: 5.0,
+                                                            blurRadius: 5,
                                                             color: Color(
                                                                 0x33000000),
                                                             offset: Offset(
-                                                              1.0,
-                                                              1.0,
+                                                              1,
+                                                              1,
                                                             ),
                                                           )
                                                         ],
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(10.0),
+                                                                .circular(10),
                                                       ),
                                                       child: Padding(
-                                                        padding: EdgeInsets.all(
-                                                            10.0),
+                                                        padding:
+                                                            EdgeInsets.all(10),
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -5264,10 +5238,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          10.0),
+                                                                          0,
+                                                                          0,
+                                                                          0,
+                                                                          10),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -5290,25 +5264,25 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              10.0,
-                                                                              0.0),
+                                                                              0,
+                                                                              0,
+                                                                              10,
+                                                                              0),
                                                                           child:
                                                                               Icon(
                                                                             Icons.settings_outlined,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primary,
                                                                             size:
-                                                                                15.0,
+                                                                                15,
                                                                           ),
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              15.0,
-                                                                              0.0),
+                                                                              0,
+                                                                              0,
+                                                                              15,
+                                                                              0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -5328,7 +5302,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          100.0,
+                                                                          100,
                                                                       height: MediaQuery.sizeOf(context)
                                                                               .height *
                                                                           0.002,
@@ -5355,7 +5329,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                             .salesmanForcefully,
                                                                     onChanged:
                                                                         (newValue) async {
-                                                                      setState(() =>
+                                                                      safeSetState(() =>
                                                                           _model.switchListTilesalesmanForcefullyValue =
                                                                               newValue!);
                                                                     },
@@ -5392,7 +5366,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                             .salesmanProductWise,
                                                                     onChanged:
                                                                         (newValue) async {
-                                                                      setState(() =>
+                                                                      safeSetState(() =>
                                                                           _model.switchListTilesalesmanProductWiseValue =
                                                                               newValue!);
                                                                     },
@@ -5431,7 +5405,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                     ),
                                                   ),
                                                 Padding(
-                                                  padding: EdgeInsets.all(5.0),
+                                                  padding: EdgeInsets.all(5),
                                                   child: Container(
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
@@ -5439,22 +5413,22 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                           .secondaryBackground,
                                                       boxShadow: [
                                                         BoxShadow(
-                                                          blurRadius: 5.0,
+                                                          blurRadius: 5,
                                                           color:
                                                               Color(0x33000000),
                                                           offset: Offset(
-                                                            1.0,
-                                                            1.0,
+                                                            1,
+                                                            1,
                                                           ),
                                                         )
                                                       ],
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              10.0),
+                                                              10),
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(10.0),
+                                                          EdgeInsets.all(10),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -5463,10 +5437,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        10.0),
+                                                                        0,
+                                                                        0,
+                                                                        0,
+                                                                        10),
                                                             child: Row(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -5490,10 +5464,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                     children: [
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            10.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            10,
+                                                                            0),
                                                                         child:
                                                                             Icon(
                                                                           Icons
@@ -5501,15 +5475,15 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primary,
                                                                           size:
-                                                                              15.0,
+                                                                              15,
                                                                         ),
                                                                       ),
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            15.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            15,
+                                                                            0),
                                                                         child:
                                                                             Text(
                                                                           FFLocalizations.of(context)
@@ -5531,8 +5505,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                 Expanded(
                                                                   child:
                                                                       Container(
-                                                                    width:
-                                                                        100.0,
+                                                                    width: 100,
                                                                     height: MediaQuery.sizeOf(context)
                                                                             .height *
                                                                         0.002,
@@ -5559,7 +5532,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                         .saveMRPinBill,
                                                                 onChanged:
                                                                     (newValue) async {
-                                                                  setState(() =>
+                                                                  safeSetState(() =>
                                                                       _model.switchListTileenableSavedMrpValue =
                                                                           newValue!);
                                                                 },
@@ -5595,7 +5568,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                         .printMrpPrice,
                                                                 onChanged:
                                                                     (newValue) async {
-                                                                  setState(() =>
+                                                                  safeSetState(() =>
                                                                       _model.switchListTileenableMrpPriceColumnValue =
                                                                           newValue!);
                                                                 },
@@ -5650,7 +5623,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsets.all(5.0),
+                                                  padding: EdgeInsets.all(5),
                                                   child: Container(
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
@@ -5658,22 +5631,22 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                           .secondaryBackground,
                                                       boxShadow: [
                                                         BoxShadow(
-                                                          blurRadius: 5.0,
+                                                          blurRadius: 5,
                                                           color:
                                                               Color(0x33000000),
                                                           offset: Offset(
-                                                            1.0,
-                                                            1.0,
+                                                            1,
+                                                            1,
                                                           ),
                                                         )
                                                       ],
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              10.0),
+                                                              10),
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(10.0),
+                                                          EdgeInsets.all(10),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -5682,10 +5655,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        10.0),
+                                                                        0,
+                                                                        0,
+                                                                        0,
+                                                                        10),
                                                             child: Row(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -5709,10 +5682,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                     children: [
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            10.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            10,
+                                                                            0),
                                                                         child:
                                                                             Icon(
                                                                           Icons
@@ -5720,15 +5693,15 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primary,
                                                                           size:
-                                                                              15.0,
+                                                                              15,
                                                                         ),
                                                                       ),
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            15.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            15,
+                                                                            0),
                                                                         child:
                                                                             Text(
                                                                           FFLocalizations.of(context)
@@ -5750,8 +5723,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                 Expanded(
                                                                   child:
                                                                       Container(
-                                                                    width:
-                                                                        100.0,
+                                                                    width: 100,
                                                                     height: MediaQuery.sizeOf(context)
                                                                             .height *
                                                                         0.002,
@@ -5797,7 +5769,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.duplicateBill,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTileduplicateBillValue = newValue!);
                                                                           },
                                                                           title:
@@ -5821,7 +5793,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.doubleprint,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTiledoublePrintValue = newValue!);
                                                                           },
                                                                           title:
@@ -5845,7 +5817,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.largeBillFont,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTilelargeBillFontValue = newValue!);
                                                                           },
                                                                           title:
@@ -5869,7 +5841,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.billPrintingServicesPointWise,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTilebillPrintServicePointWiseValue = newValue!);
                                                                           },
                                                                           title:
@@ -5893,7 +5865,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.fontBoldNetTotal,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTilefontBoldNetTotalValue = newValue!);
                                                                           },
                                                                           title:
@@ -5917,7 +5889,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.billAmountInWords,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTilebillAmountInWordValue = newValue!);
                                                                           },
                                                                           title:
@@ -5941,7 +5913,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.signatureInBill,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTilesignatureBillValue = newValue!);
                                                                           },
                                                                           title:
@@ -5962,7 +5934,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           shape:
                                                                               RoundedRectangleBorder(
                                                                             borderRadius:
-                                                                                BorderRadius.circular(20.0),
+                                                                                BorderRadius.circular(20),
                                                                           ),
                                                                         ),
                                                                         SwitchListTile(
@@ -5970,7 +5942,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.printUnitTypeOnBill,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTileunitTypeOnBillValue = newValue!);
                                                                           },
                                                                           title:
@@ -5994,7 +5966,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.printUserNameInBill,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTileuserNameOnBillValue = newValue!);
                                                                           },
                                                                           title:
@@ -6018,7 +5990,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.regionalKOTPrint,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTileregionalKotPrintValue = newValue!);
                                                                           },
                                                                           title:
@@ -6042,7 +6014,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.dontPrintRateColumn,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTiledontPrintRateColumnValue = newValue!);
                                                                           },
                                                                           title:
@@ -6066,7 +6038,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.dontPrintSerialNoInbill,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTiledontPrintSerialNoValue = newValue!);
                                                                           },
                                                                           title:
@@ -6090,7 +6062,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.dontPrintBillnoInbill,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTiledontPrintBillNumberValue = newValue!);
                                                                           },
                                                                           title:
@@ -6114,7 +6086,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.billRemark,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTileenableBillRemarkValue = newValue!);
                                                                           },
                                                                           title:
@@ -6135,7 +6107,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           shape:
                                                                               RoundedRectangleBorder(
                                                                             borderRadius:
-                                                                                BorderRadius.circular(20.0),
+                                                                                BorderRadius.circular(20),
                                                                           ),
                                                                         ),
                                                                         SwitchListTile(
@@ -6143,7 +6115,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.totalQtyInBill,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTiletotalQtyOnBillValue = newValue!);
                                                                           },
                                                                           title:
@@ -6164,7 +6136,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           shape:
                                                                               RoundedRectangleBorder(
                                                                             borderRadius:
-                                                                                BorderRadius.circular(20.0),
+                                                                                BorderRadius.circular(20),
                                                                           ),
                                                                         ),
                                                                         SwitchListTile(
@@ -6172,7 +6144,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.barcodeOnBill,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTilebarcodeOnBillValue = newValue!);
                                                                           },
                                                                           title:
@@ -6193,7 +6165,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           shape:
                                                                               RoundedRectangleBorder(
                                                                             borderRadius:
-                                                                                BorderRadius.circular(20.0),
+                                                                                BorderRadius.circular(20),
                                                                           ),
                                                                         ),
                                                                         SwitchListTile(
@@ -6201,7 +6173,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.printDiscountOnBill,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTileprintDiscountOnBillValue = newValue!);
                                                                           },
                                                                           title:
@@ -6222,7 +6194,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           shape:
                                                                               RoundedRectangleBorder(
                                                                             borderRadius:
-                                                                                BorderRadius.circular(20.0),
+                                                                                BorderRadius.circular(20),
                                                                           ),
                                                                         ),
                                                                         SwitchListTile(
@@ -6230,7 +6202,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.couponKotSummary,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTilecouponOrKotSummaryValue = newValue!);
                                                                           },
                                                                           title:
@@ -6251,7 +6223,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           shape:
                                                                               RoundedRectangleBorder(
                                                                             borderRadius:
-                                                                                BorderRadius.circular(20.0),
+                                                                                BorderRadius.circular(20),
                                                                           ),
                                                                         ),
                                                                         SwitchListTile(
@@ -6259,7 +6231,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               containerMainAppSettingsRecord!.columnProductNameAndQtyPrint,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTileColumnProductNameAndQtyValue = newValue!);
                                                                           },
                                                                           title:
@@ -6280,7 +6252,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           shape:
                                                                               RoundedRectangleBorder(
                                                                             borderRadius:
-                                                                                BorderRadius.circular(20.0),
+                                                                                BorderRadius.circular(20),
                                                                           ),
                                                                         ),
                                                                       ],
@@ -6296,7 +6268,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsets.all(5.0),
+                                                  padding: EdgeInsets.all(5),
                                                   child: Container(
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
@@ -6304,22 +6276,22 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                           .secondaryBackground,
                                                       boxShadow: [
                                                         BoxShadow(
-                                                          blurRadius: 5.0,
+                                                          blurRadius: 5,
                                                           color:
                                                               Color(0x33000000),
                                                           offset: Offset(
-                                                            1.0,
-                                                            1.0,
+                                                            1,
+                                                            1,
                                                           ),
                                                         )
                                                       ],
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              10.0),
+                                                              10),
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(10.0),
+                                                          EdgeInsets.all(10),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -6346,11 +6318,12 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          0.0),
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              0,
+                                                                              0,
+                                                                              10,
+                                                                              0),
                                                                       child:
                                                                           Icon(
                                                                         Icons
@@ -6358,15 +6331,16 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primary,
                                                                         size:
-                                                                            15.0,
+                                                                            15,
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          15.0,
-                                                                          0.0),
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              0,
+                                                                              0,
+                                                                              15,
+                                                                              0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -6388,7 +6362,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                               Expanded(
                                                                 child:
                                                                     Container(
-                                                                  width: 100.0,
+                                                                  width: 100,
                                                                   height: MediaQuery.sizeOf(
                                                                               context)
                                                                           .height *
@@ -6418,7 +6392,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                         .inclusiveTax,
                                                                 onChanged:
                                                                     (newValue) async {
-                                                                  setState(() =>
+                                                                  safeSetState(() =>
                                                                       _model.switchListTileincluOrReverseTaxValue =
                                                                           newValue!);
                                                                 },
@@ -6454,7 +6428,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                         .allowSaleWithoutTax,
                                                                 onChanged:
                                                                     (newValue) async {
-                                                                  setState(() =>
+                                                                  safeSetState(() =>
                                                                       _model.switchListTileSaleWithTaxValue =
                                                                           newValue!);
                                                                 },
@@ -6484,12 +6458,13 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                         .trailing,
                                                               ),
                                                               Padding(
-                                                                padding: EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        15.0,
-                                                                        10.0,
-                                                                        0.0,
-                                                                        10.0),
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            15,
+                                                                            10,
+                                                                            0,
+                                                                            10),
                                                                 child: Text(
                                                                   FFLocalizations.of(
                                                                           context)
@@ -6532,7 +6507,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               .printConsolidateTax,
                                                                       onChanged:
                                                                           (newValue) async {
-                                                                        setState(() =>
+                                                                        safeSetState(() =>
                                                                             _model.switchListTileprintConsolidateTaxValue =
                                                                                 newValue!);
                                                                       },
@@ -6566,7 +6541,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               .dontPrintTaxInvoiceOnBill,
                                                                       onChanged:
                                                                           (newValue) async {
-                                                                        setState(() =>
+                                                                        safeSetState(() =>
                                                                             _model.switchListTiledontPrintTaxInvoiceValue =
                                                                                 newValue!);
                                                                       },
@@ -6600,7 +6575,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               .cgstSgstOnBill,
                                                                       onChanged:
                                                                           (newValue) async {
-                                                                        setState(() =>
+                                                                        safeSetState(() =>
                                                                             _model.switchListTilecgstAndSgstOnBillValue =
                                                                                 newValue!);
                                                                       },
@@ -6634,7 +6609,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               .gstBreakUpOnBill,
                                                                       onChanged:
                                                                           (newValue) async {
-                                                                        setState(() =>
+                                                                        safeSetState(() =>
                                                                             _model.switchListTiledontPrintGstBreakupOnBillValue =
                                                                                 newValue!);
                                                                       },
@@ -6668,7 +6643,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                               .rateColumnTax,
                                                                       onChanged:
                                                                           (newValue) async {
-                                                                        setState(() =>
+                                                                        safeSetState(() =>
                                                                             _model.switchListTileenableRateColumnValue =
                                                                                 newValue!);
                                                                       },
@@ -6706,7 +6681,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsets.all(5.0),
+                                                  padding: EdgeInsets.all(5),
                                                   child: Container(
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
@@ -6714,22 +6689,22 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                           .secondaryBackground,
                                                       boxShadow: [
                                                         BoxShadow(
-                                                          blurRadius: 5.0,
+                                                          blurRadius: 5,
                                                           color:
                                                               Color(0x33000000),
                                                           offset: Offset(
-                                                            1.0,
-                                                            2.0,
+                                                            1,
+                                                            2,
                                                           ),
                                                         )
                                                       ],
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              10.0),
+                                                              10),
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(10.0),
+                                                          EdgeInsets.all(10),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -6756,11 +6731,12 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          0.0),
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              0,
+                                                                              0,
+                                                                              10,
+                                                                              0),
                                                                       child:
                                                                           Icon(
                                                                         Icons
@@ -6768,15 +6744,16 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primary,
                                                                         size:
-                                                                            15.0,
+                                                                            15,
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          15.0,
-                                                                          0.0),
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              0,
+                                                                              0,
+                                                                              15,
+                                                                              0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -6825,7 +6802,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .couponSaveBill,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTilecouponSaveBillValue =
                                                                             newValue!);
                                                                   },
@@ -6863,7 +6840,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsets.all(5.0),
+                                                  padding: EdgeInsets.all(5),
                                                   child: Container(
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
@@ -6871,22 +6848,22 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                           .secondaryBackground,
                                                       boxShadow: [
                                                         BoxShadow(
-                                                          blurRadius: 5.0,
+                                                          blurRadius: 5,
                                                           color:
                                                               Color(0x33000000),
                                                           offset: Offset(
-                                                            1.0,
-                                                            1.0,
+                                                            1,
+                                                            1,
                                                           ),
                                                         )
                                                       ],
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              10.0),
+                                                              10),
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(10.0),
+                                                          EdgeInsets.all(10),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -6913,11 +6890,12 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          0.0),
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              0,
+                                                                              0,
+                                                                              10,
+                                                                              0),
                                                                       child:
                                                                           Icon(
                                                                         Icons
@@ -6925,15 +6903,16 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primary,
                                                                         size:
-                                                                            15.0,
+                                                                            15,
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          15.0,
-                                                                          0.0),
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              0,
+                                                                              0,
+                                                                              15,
+                                                                              0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -6955,7 +6934,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                               Expanded(
                                                                 child:
                                                                     Container(
-                                                                  width: 100.0,
+                                                                  width: 100,
                                                                   height: MediaQuery.sizeOf(
                                                                               context)
                                                                           .height *
@@ -6983,7 +6962,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .upiButton,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTileenableUPIBtnValue =
                                                                             newValue!);
                                                                   },
@@ -7019,7 +6998,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           .paymentModePrint,
                                                                   onChanged:
                                                                       (newValue) async {
-                                                                    setState(() =>
+                                                                    safeSetState(() =>
                                                                         _model.switchListTileprintPayModeValue =
                                                                             newValue!);
                                                                   },
@@ -7051,15 +7030,15 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          0.0),
+                                                                          10,
+                                                                          0,
+                                                                          10,
+                                                                          0),
                                                                   child:
                                                                       Container(
-                                                                    width: MediaQuery.sizeOf(context)
-                                                                            .width *
-                                                                        1.0,
+                                                                    width: MediaQuery.sizeOf(
+                                                                            context)
+                                                                        .width,
                                                                     height: MediaQuery.sizeOf(context)
                                                                             .height *
                                                                         0.09,
@@ -7071,11 +7050,12 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                     ),
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          0.0),
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              5,
+                                                                              0,
+                                                                              10,
+                                                                              0),
                                                                       child:
                                                                           Row(
                                                                         mainAxisSize:
@@ -7096,7 +7076,7 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                                                                               child: StreamBuilder<List<PaymentModeRecord>>(
                                                                                 stream: queryPaymentModeRecord(),
                                                                                 builder: (context, snapshot) {
@@ -7104,11 +7084,11 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                   if (!snapshot.hasData) {
                                                                                     return Center(
                                                                                       child: SizedBox(
-                                                                                        width: 40.0,
-                                                                                        height: 40.0,
+                                                                                        width: 40,
+                                                                                        height: 40,
                                                                                         child: SpinKitFadingCircle(
                                                                                           color: FlutterFlowTheme.of(context).primary,
-                                                                                          size: 40.0,
+                                                                                          size: 40,
                                                                                         ),
                                                                                       ),
                                                                                     );
@@ -7120,9 +7100,9 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                       _model.dropDownpayModeValue ??= FFAppState().defPayMode,
                                                                                     ),
                                                                                     options: dropDownpayModePaymentModeRecordList.map((e) => e.name).toList(),
-                                                                                    onChanged: (val) => setState(() => _model.dropDownpayModeValue = val),
-                                                                                    width: 240.0,
-                                                                                    height: 30.0,
+                                                                                    onChanged: (val) => safeSetState(() => _model.dropDownpayModeValue = val),
+                                                                                    width: 240,
+                                                                                    height: 30,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
@@ -7132,11 +7112,11 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                                       'nl34cjwn' /* CASH */,
                                                                                     ),
                                                                                     fillColor: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                    elevation: 2.0,
+                                                                                    elevation: 2,
                                                                                     borderColor: Colors.transparent,
-                                                                                    borderWidth: 0.0,
-                                                                                    borderRadius: 10.0,
-                                                                                    margin: EdgeInsetsDirectional.fromSTEB(12.0, 4.0, 12.0, 4.0),
+                                                                                    borderWidth: 0,
+                                                                                    borderRadius: 10,
+                                                                                    margin: EdgeInsetsDirectional.fromSTEB(12, 4, 12, 4),
                                                                                     hidesUnderline: true,
                                                                                     isSearchable: false,
                                                                                     isMultiSelect: false,
@@ -7177,11 +7157,11 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                           .secondaryBackground,
                                       boxShadow: [
                                         BoxShadow(
-                                          blurRadius: 6.0,
+                                          blurRadius: 6,
                                           color: Color(0x58000000),
                                           offset: Offset(
-                                            0.0,
-                                            -1.0,
+                                            0,
+                                            -1,
                                           ),
                                         )
                                       ],
@@ -7457,10 +7437,10 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                             'h8hi4evl' /* Apply Changes */,
                                           ),
                                           options: FFButtonOptions(
-                                            padding: EdgeInsets.all(20.0),
+                                            padding: EdgeInsets.all(20),
                                             iconPadding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
+                                                    0, 0, 0, 0),
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
                                             textStyle:
@@ -7482,13 +7462,13 @@ class _AppSettingNewWidgetState extends State<AppSettingNewWidget> {
                                                                       context)
                                                                   .titleSmallFamily),
                                                     ),
-                                            elevation: 2.0,
+                                            elevation: 2,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
-                                              width: 1.0,
+                                              width: 1,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                         ),
                                       ],

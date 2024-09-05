@@ -40,10 +40,10 @@ class _ProductSaleTestingWidgetState extends State<ProductSaleTestingWidget> {
         FFAppState().outletId,
       );
       FFAppState().resultList = _model.productList!.toList().cast<dynamic>();
-      setState(() {});
+      safeSetState(() {});
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -70,19 +70,19 @@ class _ProductSaleTestingWidgetState extends State<ProductSaleTestingWidget> {
                 print('FloatingActionButton pressed ...');
               },
               backgroundColor: FlutterFlowTheme.of(context).primary,
-              elevation: 8.0,
+              elevation: 8,
               label: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   FlutterFlowIconButton(
                     borderColor: Colors.transparent,
-                    borderRadius: 30.0,
-                    borderWidth: 1.0,
-                    buttonSize: 60.0,
+                    borderRadius: 30,
+                    borderWidth: 1,
+                    buttonSize: 60,
                     icon: Icon(
                       Icons.local_print_shop_sharp,
                       color: FlutterFlowTheme.of(context).primaryBtnText,
-                      size: 30.0,
+                      size: 30,
                     ),
                     onPressed: () async {
                       var _shouldSetState = false;
@@ -123,11 +123,11 @@ class _ProductSaleTestingWidgetState extends State<ProductSaleTestingWidget> {
                             );
                           },
                         );
-                        if (_shouldSetState) setState(() {});
+                        if (_shouldSetState) safeSetState(() {});
                         return;
                       }
 
-                      if (_shouldSetState) setState(() {});
+                      if (_shouldSetState) safeSetState(() {});
                     },
                   ),
                 ],
@@ -140,7 +140,7 @@ class _ProductSaleTestingWidgetState extends State<ProductSaleTestingWidget> {
                 children: [
                   Expanded(
                     child: Container(
-                      width: MediaQuery.sizeOf(context).width * 1.0,
+                      width: MediaQuery.sizeOf(context).width,
                       height: MediaQuery.sizeOf(context).height * 0.12,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primary,
@@ -153,22 +153,22 @@ class _ProductSaleTestingWidgetState extends State<ProductSaleTestingWidget> {
                           Expanded(
                             flex: 2,
                             child: Container(
-                              width: 100.0,
-                              height: 100.0,
+                              width: 100,
+                              height: 100,
                               decoration: BoxDecoration(),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   FlutterFlowIconButton(
                                     borderColor: Colors.transparent,
-                                    borderRadius: 30.0,
-                                    borderWidth: 1.0,
-                                    buttonSize: 60.0,
+                                    borderRadius: 30,
+                                    borderWidth: 1,
+                                    buttonSize: 60,
                                     icon: Icon(
                                       Icons.chevron_left_sharp,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBtnText,
-                                      size: 26.0,
+                                      size: 26,
                                     ),
                                     onPressed: () async {
                                       context.pop();
@@ -200,8 +200,8 @@ class _ProductSaleTestingWidgetState extends State<ProductSaleTestingWidget> {
                           Expanded(
                             flex: 3,
                             child: Container(
-                              width: 100.0,
-                              height: 100.0,
+                              width: 100,
+                              height: 100,
                               decoration: BoxDecoration(),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -209,7 +209,7 @@ class _ProductSaleTestingWidgetState extends State<ProductSaleTestingWidget> {
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 15.0, 0.0),
+                                        0, 0, 15, 0),
                                     child: Text(
                                       dateTimeFormat(
                                         "yMMMd",
@@ -266,23 +266,22 @@ class _ProductSaleTestingWidgetState extends State<ProductSaleTestingWidget> {
                                       );
                                       FFAppState().resultList =
                                           _model.res1!.toList().cast<dynamic>();
-                                      setState(() {});
+                                      safeSetState(() {});
 
-                                      setState(() {});
+                                      safeSetState(() {});
                                     },
                                     child: Material(
                                       color: Colors.transparent,
-                                      elevation: 2.0,
+                                      elevation: 2,
                                       shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(5.0),
+                                        borderRadius: BorderRadius.circular(5),
                                       ),
                                       child: Container(
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .secondary,
                                           borderRadius:
-                                              BorderRadius.circular(5.0),
+                                              BorderRadius.circular(5),
                                         ),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.min,
@@ -291,8 +290,7 @@ class _ProductSaleTestingWidgetState extends State<ProductSaleTestingWidget> {
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      10.0, 15.0, 10.0, 15.0),
+                                                  .fromSTEB(10, 15, 10, 15),
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -333,7 +331,7 @@ class _ProductSaleTestingWidgetState extends State<ProductSaleTestingWidget> {
                             flex: 2,
                             child: wrapWithModel(
                               model: _model.headerModel,
-                              updateCallback: () => setState(() {}),
+                              updateCallback: () => safeSetState(() {}),
                               child: HeaderWidget(),
                             ),
                           ),
@@ -345,7 +343,7 @@ class _ProductSaleTestingWidgetState extends State<ProductSaleTestingWidget> {
                     flex: 13,
                     child: Container(
                       width: double.infinity,
-                      height: 100.0,
+                      height: 100,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                       ),
@@ -431,11 +429,12 @@ class _ProductSaleTestingWidgetState extends State<ProductSaleTestingWidget> {
                                             );
                                           },
                                         );
-                                        if (_shouldSetState) setState(() {});
+                                        if (_shouldSetState)
+                                          safeSetState(() {});
                                         return;
                                       }
 
-                                      if (_shouldSetState) setState(() {});
+                                      if (_shouldSetState) safeSetState(() {});
                                     },
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -536,7 +535,7 @@ class _ProductSaleTestingWidgetState extends State<ProductSaleTestingWidget> {
                                 .mapIndexed((pListIndex, pListItem) => [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 5.0, 0.0, 5.0),
+                                            0, 5, 0, 5),
                                         child: Text(
                                           functions
                                               .genSrno(pListIndex)
@@ -658,17 +657,17 @@ class _ProductSaleTestingWidgetState extends State<ProductSaleTestingWidget> {
                             headingRowColor: MaterialStateProperty.all(
                               FlutterFlowTheme.of(context).primaryBackground,
                             ),
-                            headingRowHeight: 56.0,
+                            headingRowHeight: 56,
                             dataRowColor: MaterialStateProperty.all(
                               FlutterFlowTheme.of(context).secondaryBackground,
                             ),
-                            dataRowHeight: 56.0,
+                            dataRowHeight: 56,
                             border: TableBorder(
-                              borderRadius: BorderRadius.circular(0.0),
+                              borderRadius: BorderRadius.circular(0),
                             ),
-                            dividerThickness: 1.0,
+                            dividerThickness: 1,
                             showBottomBorder: false,
-                            minWidth: 49.0,
+                            minWidth: 49,
                           );
                         },
                       ),

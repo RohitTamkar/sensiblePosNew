@@ -37,7 +37,7 @@ class _RejectionDetailsWidgetState extends State<RejectionDetailsWidget> {
     super.initState();
     _model = createModel(context, () => RejectionDetailsModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -69,11 +69,11 @@ class _RejectionDetailsWidgetState extends State<RejectionDetailsWidget> {
             if (!snapshot.hasData) {
               return Center(
                 child: SizedBox(
-                  width: 40.0,
-                  height: 40.0,
+                  width: 40,
+                  height: 40,
                   child: SpinKitFadingCircle(
                     color: FlutterFlowTheme.of(context).primary,
-                    size: 40.0,
+                    size: 40,
                   ),
                 ),
               );
@@ -89,8 +89,8 @@ class _RejectionDetailsWidgetState extends State<RejectionDetailsWidget> {
                     : null;
 
             return Container(
-              width: 250.0,
-              height: 160.0,
+              width: 250,
+              height: 160,
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
               ),
@@ -99,15 +99,13 @@ class _RejectionDetailsWidgetState extends State<RejectionDetailsWidget> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 5.0, 0.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                           child: InkWell(
                             splashColor: Colors.transparent,
                             focusColor: Colors.transparent,
@@ -117,21 +115,21 @@ class _RejectionDetailsWidgetState extends State<RejectionDetailsWidget> {
                               Navigator.pop(context);
                             },
                             child: Container(
-                              width: 48.0,
-                              height: 48.0,
+                              width: 48,
+                              height: 48,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
                               ),
                               child: FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderWidth: 1.0,
-                                buttonSize: 30.0,
+                                borderWidth: 1,
+                                buttonSize: 30,
                                 icon: Icon(
                                   Icons.close_rounded,
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
-                                  size: 16.0,
+                                  size: 16,
                                 ),
                                 onPressed: () {
                                   print('IconButton pressed ...');
@@ -144,15 +142,13 @@ class _RejectionDetailsWidgetState extends State<RejectionDetailsWidget> {
                     ),
                   ),
                   Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              10.0, 0.0, 0.0, 0.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                           child: Text(
                             containerPurchaseRecord!.comment,
                             style: FlutterFlowTheme.of(context)

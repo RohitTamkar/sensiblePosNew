@@ -41,7 +41,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
       }
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -64,7 +64,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(25.0, 0.0, 25.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(25, 0, 25, 0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -74,7 +74,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
                     children: [
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.all(15.0),
+                          padding: EdgeInsets.all(15),
                           child: InkWell(
                             splashColor: Colors.transparent,
                             focusColor: Colors.transparent,
@@ -82,7 +82,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
                             highlightColor: Colors.transparent,
                             onTap: () async {
                               FFAppState().navigate = 'REGULAR';
-                              setState(() {});
+                              safeSetState(() {});
                               if (isAndroid == true) {
                                 context.pushNamed('welcomeScreenNew');
                               } else {
@@ -91,21 +91,21 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
                             },
                             child: Material(
                               color: Colors.transparent,
-                              elevation: 2.0,
+                              elevation: 2,
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(25.0),
+                                borderRadius: BorderRadius.circular(25),
                               ),
                               child: Container(
-                                width: 100.0,
+                                width: 100,
                                 height: MediaQuery.sizeOf(context).height * 0.4,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  borderRadius: BorderRadius.circular(25.0),
+                                  borderRadius: BorderRadius.circular(25),
                                   border: Border.all(
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
-                                    width: 10.0,
+                                    width: 10,
                                   ),
                                 ),
                                 child: Column(
@@ -114,12 +114,12 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 10.0),
+                                          0, 0, 0, 10),
                                       child: Icon(
                                         Icons.local_dining_outlined,
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
-                                        size: 60.0,
+                                        size: 60,
                                       ),
                                     ),
                                     Text(
@@ -135,7 +135,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
                                                     .headlineMediumFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            fontSize: 25.0,
+                                            fontSize: 25,
                                             letterSpacing: 0.0,
                                             useGoogleFonts: GoogleFonts.asMap()
                                                 .containsKey(
@@ -152,7 +152,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
                       ),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.all(15.0),
+                          padding: EdgeInsets.all(15),
                           child: InkWell(
                             splashColor: Colors.transparent,
                             focusColor: Colors.transparent,
@@ -160,27 +160,27 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
                             highlightColor: Colors.transparent,
                             onTap: () async {
                               FFAppState().navigate = 'PARKING';
-                              setState(() {});
+                              safeSetState(() {});
 
                               context.pushNamed('phoneAuthPage');
                             },
                             child: Material(
                               color: Colors.transparent,
-                              elevation: 2.0,
+                              elevation: 2,
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(25.0),
+                                borderRadius: BorderRadius.circular(25),
                               ),
                               child: Container(
-                                width: 100.0,
+                                width: 100,
                                 height: MediaQuery.sizeOf(context).height * 0.4,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  borderRadius: BorderRadius.circular(25.0),
+                                  borderRadius: BorderRadius.circular(25),
                                   border: Border.all(
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
-                                    width: 10.0,
+                                    width: 10,
                                   ),
                                 ),
                                 child: Column(
@@ -189,12 +189,12 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 10.0),
+                                          0, 0, 0, 10),
                                       child: Icon(
                                         Icons.local_parking,
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
-                                        size: 60.0,
+                                        size: 60,
                                       ),
                                     ),
                                     Text(
@@ -209,7 +209,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
                                                     .headlineMediumFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            fontSize: 25.0,
+                                            fontSize: 25,
                                             letterSpacing: 0.0,
                                             useGoogleFonts: GoogleFonts.asMap()
                                                 .containsKey(
@@ -231,7 +231,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
                     children: [
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.all(15.0),
+                          padding: EdgeInsets.all(15),
                           child: InkWell(
                             splashColor: Colors.transparent,
                             focusColor: Colors.transparent,
@@ -239,27 +239,27 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
                             highlightColor: Colors.transparent,
                             onTap: () async {
                               FFAppState().navigate = 'KIOSK';
-                              setState(() {});
+                              safeSetState(() {});
 
                               context.pushNamed('KioskSplashScreen');
                             },
                             child: Material(
                               color: Colors.transparent,
-                              elevation: 2.0,
+                              elevation: 2,
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(25.0),
+                                borderRadius: BorderRadius.circular(25),
                               ),
                               child: Container(
-                                width: 100.0,
+                                width: 100,
                                 height: MediaQuery.sizeOf(context).height * 0.4,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  borderRadius: BorderRadius.circular(25.0),
+                                  borderRadius: BorderRadius.circular(25),
                                   border: Border.all(
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
-                                    width: 10.0,
+                                    width: 10,
                                   ),
                                 ),
                                 child: Column(
@@ -268,12 +268,12 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 10.0),
+                                          0, 0, 0, 10),
                                       child: Icon(
                                         Icons.restaurant_rounded,
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
-                                        size: 60.0,
+                                        size: 60,
                                       ),
                                     ),
                                     Text(
@@ -289,7 +289,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
                                                     .headlineMediumFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            fontSize: 25.0,
+                                            fontSize: 25,
                                             letterSpacing: 0.0,
                                             useGoogleFonts: GoogleFonts.asMap()
                                                 .containsKey(
@@ -306,7 +306,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
                       ),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.all(15.0),
+                          padding: EdgeInsets.all(15),
                           child: InkWell(
                             splashColor: Colors.transparent,
                             focusColor: Colors.transparent,
@@ -314,27 +314,27 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
                             highlightColor: Colors.transparent,
                             onTap: () async {
                               FFAppState().navigate = 'GROCERY';
-                              setState(() {});
+                              safeSetState(() {});
 
                               context.pushNamed('SplashScreenWindows');
                             },
                             child: Material(
                               color: Colors.transparent,
-                              elevation: 2.0,
+                              elevation: 2,
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(25.0),
+                                borderRadius: BorderRadius.circular(25),
                               ),
                               child: Container(
-                                width: 100.0,
+                                width: 100,
                                 height: MediaQuery.sizeOf(context).height * 0.4,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  borderRadius: BorderRadius.circular(25.0),
+                                  borderRadius: BorderRadius.circular(25),
                                   border: Border.all(
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
-                                    width: 10.0,
+                                    width: 10,
                                   ),
                                 ),
                                 child: Column(
@@ -343,12 +343,12 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 10.0),
+                                          0, 0, 0, 10),
                                       child: Icon(
                                         Icons.shopify_rounded,
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
-                                        size: 60.0,
+                                        size: 60,
                                       ),
                                     ),
                                     Text(
@@ -364,7 +364,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
                                                     .headlineMediumFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            fontSize: 25.0,
+                                            fontSize: 25,
                                             letterSpacing: 0.0,
                                             useGoogleFonts: GoogleFonts.asMap()
                                                 .containsKey(

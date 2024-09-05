@@ -40,7 +40,7 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
       FFAppState().update(() {});
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -66,11 +66,11 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Center(
               child: SizedBox(
-                width: 40.0,
-                height: 40.0,
+                width: 40,
+                height: 40,
                 child: SpinKitFadingCircle(
                   color: FlutterFlowTheme.of(context).primary,
-                  size: 40.0,
+                  size: 40,
                 ),
               ),
             ),
@@ -123,7 +123,7 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                           FFAppState().isPrinterConnected.toString(),
                           FFAppState().paperSize,
                         );
-                        if (_shouldSetState) setState(() {});
+                        if (_shouldSetState) safeSetState(() {});
                         return;
                       } else {
                         await showDialog(
@@ -142,15 +142,15 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                             );
                           },
                         );
-                        if (_shouldSetState) setState(() {});
+                        if (_shouldSetState) safeSetState(() {});
                         return;
                       }
 
-                      if (_shouldSetState) setState(() {});
+                      if (_shouldSetState) safeSetState(() {});
                     },
                     backgroundColor:
                         FlutterFlowTheme.of(context).secondaryBackground,
-                    elevation: 8.0,
+                    elevation: 8,
                     label: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -159,11 +159,11 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                           children: [
                             FlutterFlowIconButton(
                               borderColor: Colors.transparent,
-                              buttonSize: 30.0,
+                              buttonSize: 30,
                               icon: Icon(
                                 Icons.print,
                                 color: FlutterFlowTheme.of(context).primary,
-                                size: 20.0,
+                                size: 20,
                               ),
                               showLoadingIndicator: true,
                               onPressed: () {
@@ -181,7 +181,7 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                                         .bodySmallFamily,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
-                                    fontSize: 12.0,
+                                    fontSize: 12,
                                     letterSpacing: 0.0,
                                     useGoogleFonts: GoogleFonts.asMap()
                                         .containsKey(
@@ -196,13 +196,13 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                   ),
                 ),
                 body: Padding(
-                  padding: EdgeInsets.all(3.0),
+                  padding: EdgeInsets.all(3),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Expanded(
                         child: Container(
-                          width: MediaQuery.sizeOf(context).width * 1.0,
+                          width: MediaQuery.sizeOf(context).width,
                           height: MediaQuery.sizeOf(context).height * 0.12,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context).primary,
@@ -215,22 +215,22 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                               Expanded(
                                 flex: 2,
                                 child: Container(
-                                  width: 100.0,
-                                  height: 100.0,
+                                  width: 100,
+                                  height: 100,
                                   decoration: BoxDecoration(),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       FlutterFlowIconButton(
                                         borderColor: Colors.transparent,
-                                        borderRadius: 30.0,
-                                        borderWidth: 1.0,
-                                        buttonSize: 60.0,
+                                        borderRadius: 30,
+                                        borderWidth: 1,
+                                        buttonSize: 60,
                                         icon: Icon(
                                           Icons.chevron_left_sharp,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBtnText,
-                                          size: 26.0,
+                                          size: 26,
                                         ),
                                         onPressed: () async {
                                           context.pop();
@@ -265,8 +265,8 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                               Expanded(
                                 flex: 3,
                                 child: Container(
-                                  width: 100.0,
-                                  height: 100.0,
+                                  width: 100,
+                                  height: 100,
                                   decoration: BoxDecoration(),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -274,7 +274,7 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 15.0, 0.0),
+                                            0, 0, 15, 0),
                                         child: Text(
                                           dateTimeFormat(
                                             "yMMMd",
@@ -332,10 +332,10 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                                         },
                                         child: Material(
                                           color: Colors.transparent,
-                                          elevation: 2.0,
+                                          elevation: 2,
                                           shape: RoundedRectangleBorder(
                                             borderRadius:
-                                                BorderRadius.circular(5.0),
+                                                BorderRadius.circular(5),
                                           ),
                                           child: Container(
                                             decoration: BoxDecoration(
@@ -343,7 +343,7 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .secondary,
                                               borderRadius:
-                                                  BorderRadius.circular(5.0),
+                                                  BorderRadius.circular(5),
                                             ),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.min,
@@ -352,8 +352,7 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(10.0, 15.0,
-                                                          10.0, 15.0),
+                                                      .fromSTEB(10, 15, 10, 15),
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
@@ -394,7 +393,7 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                                 flex: 2,
                                 child: wrapWithModel(
                                   model: _model.headerModel,
-                                  updateCallback: () => setState(() {}),
+                                  updateCallback: () => safeSetState(() {}),
                                   child: HeaderWidget(),
                                 ),
                               ),
@@ -405,11 +404,10 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                       Expanded(
                         flex: 13,
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 3.0, 0.0, 0.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
                           child: Container(
-                            width: MediaQuery.sizeOf(context).width * 1.0,
-                            height: 100.0,
+                            width: MediaQuery.sizeOf(context).width,
+                            height: 100,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
@@ -418,10 +416,9 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Align(
-                                  alignment: AlignmentDirectional(-0.8, 0.0),
+                                  alignment: AlignmentDirectional(-0.8, 0),
                                   child: Container(
-                                    width:
-                                        MediaQuery.sizeOf(context).width * 1.0,
+                                    width: MediaQuery.sizeOf(context).width,
                                     height: MediaQuery.sizeOf(context).height *
                                         0.06,
                                     decoration: BoxDecoration(
@@ -442,7 +439,7 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                                               0.08,
                                           decoration: BoxDecoration(
                                             borderRadius:
-                                                BorderRadius.circular(0.0),
+                                                BorderRadius.circular(0),
                                           ),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -487,11 +484,11 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                                                 0.08,
                                             decoration: BoxDecoration(
                                               borderRadius:
-                                                  BorderRadius.circular(0.0),
+                                                  BorderRadius.circular(0),
                                             ),
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                  .fromSTEB(5, 0, 0, 0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -539,7 +536,7 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                                                 0.08,
                                             decoration: BoxDecoration(
                                               borderRadius:
-                                                  BorderRadius.circular(0.0),
+                                                  BorderRadius.circular(0),
                                             ),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -586,7 +583,7 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                                                 0.08,
                                             decoration: BoxDecoration(
                                               borderRadius:
-                                                  BorderRadius.circular(0.0),
+                                                  BorderRadius.circular(0),
                                             ),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -633,7 +630,7 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                                                 0.08,
                                             decoration: BoxDecoration(
                                               borderRadius:
-                                                  BorderRadius.circular(0.0),
+                                                  BorderRadius.circular(0),
                                             ),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -680,7 +677,7 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                                                 0.08,
                                             decoration: BoxDecoration(
                                               borderRadius:
-                                                  BorderRadius.circular(0.0),
+                                                  BorderRadius.circular(0),
                                             ),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -728,7 +725,7 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                                                 0.08,
                                             decoration: BoxDecoration(
                                               borderRadius:
-                                                  BorderRadius.circular(0.0),
+                                                  BorderRadius.circular(0),
                                             ),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -771,8 +768,7 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                                 ),
                                 Expanded(
                                   child: Container(
-                                    width:
-                                        MediaQuery.sizeOf(context).width * 1.0,
+                                    width: MediaQuery.sizeOf(context).width,
                                     height:
                                         MediaQuery.sizeOf(context).height * 0.8,
                                     decoration: BoxDecoration(
@@ -804,25 +800,23 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                                                 prodlist[prodlistIndex];
                                             return Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                  .fromSTEB(0, 5, 0, 0),
                                               child: Container(
                                                 width:
                                                     MediaQuery.sizeOf(context)
-                                                            .width *
-                                                        1.0,
+                                                        .width,
                                                 height:
                                                     MediaQuery.sizeOf(context)
                                                             .height *
                                                         0.08,
                                                 decoration: BoxDecoration(
                                                   borderRadius:
-                                                      BorderRadius.circular(
-                                                          0.0),
+                                                      BorderRadius.circular(0),
                                                   border: Border.all(
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .secondaryBackground,
-                                                    width: 2.0,
+                                                    width: 2,
                                                   ),
                                                 ),
                                                 child: Row(
@@ -848,16 +842,16 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                                                             BorderRadius.only(
                                                           bottomLeft:
                                                               Radius.circular(
-                                                                  5.0),
+                                                                  5),
                                                           bottomRight:
                                                               Radius.circular(
-                                                                  0.0),
+                                                                  0),
                                                           topLeft:
                                                               Radius.circular(
-                                                                  5.0),
+                                                                  5),
                                                           topRight:
                                                               Radius.circular(
-                                                                  0.0),
+                                                                  0),
                                                         ),
                                                       ),
                                                       child: Column(
@@ -908,17 +902,13 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                                                             BoxDecoration(
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      0.0),
+                                                                  .circular(0),
                                                         ),
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      5.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(5,
+                                                                      0, 0, 0),
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -971,8 +961,7 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                                                             BoxDecoration(
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      0.0),
+                                                                  .circular(0),
                                                         ),
                                                         child: Column(
                                                           mainAxisSize:
@@ -1021,8 +1010,7 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                                                             BoxDecoration(
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      0.0),
+                                                                  .circular(0),
                                                         ),
                                                         child: Column(
                                                           mainAxisSize:
@@ -1072,8 +1060,7 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                                                             BoxDecoration(
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      0.0),
+                                                                  .circular(0),
                                                         ),
                                                         child: Column(
                                                           mainAxisSize:
@@ -1123,8 +1110,7 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                                                             BoxDecoration(
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      0.0),
+                                                                  .circular(0),
                                                         ),
                                                         child: Column(
                                                           mainAxisSize:
@@ -1175,16 +1161,16 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                                                               BorderRadius.only(
                                                             bottomLeft:
                                                                 Radius.circular(
-                                                                    0.0),
+                                                                    0),
                                                             bottomRight:
                                                                 Radius.circular(
-                                                                    5.0),
+                                                                    5),
                                                             topLeft:
                                                                 Radius.circular(
-                                                                    0.0),
+                                                                    0),
                                                             topRight:
                                                                 Radius.circular(
-                                                                    5.0),
+                                                                    5),
                                                           ),
                                                         ),
                                                         child: Column(

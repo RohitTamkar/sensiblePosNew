@@ -151,7 +151,7 @@ class _WelcomeScreenNewWidgetState extends State<WelcomeScreenNewWidget>
         ),
         0.0,
       );
-      setState(() {});
+      safeSetState(() {});
       if (FFAppState().targetPlatform == 'android') {
         context.pushNamed('LoginPageNew');
       } else {
@@ -239,7 +239,7 @@ class _WelcomeScreenNewWidgetState extends State<WelcomeScreenNewWidget>
       this,
     );
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -269,9 +269,9 @@ class _WelcomeScreenNewWidgetState extends State<WelcomeScreenNewWidget>
                   FlutterFlowTheme.of(context).primaryBtnText,
                   FlutterFlowTheme.of(context).error
                 ],
-                stops: [1.0, 1.0],
-                begin: AlignmentDirectional(0.0, -1.0),
-                end: AlignmentDirectional(0, 1.0),
+                stops: [1, 1],
+                begin: AlignmentDirectional(0, -1),
+                end: AlignmentDirectional(0, 1),
               ),
             ),
             child: Column(
@@ -280,7 +280,7 @@ class _WelcomeScreenNewWidgetState extends State<WelcomeScreenNewWidget>
               children: [
                 Image.asset(
                   'assets/images/Sensible_Connect_Logo_2.png',
-                  height: 180.0,
+                  height: 180,
                   fit: BoxFit.contain,
                 ).animateOnPageLoad(animationsMap['imageOnPageLoadAnimation']!),
               ],

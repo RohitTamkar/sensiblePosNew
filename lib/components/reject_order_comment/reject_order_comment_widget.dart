@@ -38,7 +38,7 @@ class _RejectOrderCommentWidgetState extends State<RejectOrderCommentWidget> {
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -56,13 +56,13 @@ class _RejectOrderCommentWidgetState extends State<RejectOrderCommentWidget> {
       mainAxisSize: MainAxisSize.max,
       children: [
         Container(
-          width: 300.0,
-          height: 200.0,
+          width: 300,
+          height: 200,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
           ),
           child: Padding(
-            padding: EdgeInsets.all(5.0),
+            padding: EdgeInsets.all(5),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -72,8 +72,7 @@ class _RejectOrderCommentWidgetState extends State<RejectOrderCommentWidget> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -83,19 +82,19 @@ class _RejectOrderCommentWidgetState extends State<RejectOrderCommentWidget> {
                           Navigator.pop(context);
                         },
                         child: Container(
-                          width: 48.0,
-                          height: 48.0,
+                          width: 48,
+                          height: 48,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
                           ),
                           child: FlutterFlowIconButton(
                             borderColor: Colors.transparent,
-                            borderWidth: 1.0,
+                            borderWidth: 1,
                             icon: Icon(
                               Icons.close,
                               color: FlutterFlowTheme.of(context).primaryText,
-                              size: 20.0,
+                              size: 20,
                             ),
                             onPressed: () {
                               print('IconButton pressed ...');
@@ -110,8 +109,7 @@ class _RejectOrderCommentWidgetState extends State<RejectOrderCommentWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                      padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           'voqpg7vl' /* Comment */,
@@ -136,8 +134,7 @@ class _RejectOrderCommentWidgetState extends State<RejectOrderCommentWidget> {
                   children: [
                     Expanded(
                       child: Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
                         child: TextFormField(
                           controller: _model.textController,
                           focusNode: _model.textFieldFocusNode,
@@ -217,14 +214,13 @@ class _RejectOrderCommentWidgetState extends State<RejectOrderCommentWidget> {
                   ],
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                         child: StreamBuilder<List<UserProfileRecord>>(
                           stream: queryUserProfileRecord(
                             singleRecord: true,
@@ -234,11 +230,11 @@ class _RejectOrderCommentWidgetState extends State<RejectOrderCommentWidget> {
                             if (!snapshot.hasData) {
                               return Center(
                                 child: SizedBox(
-                                  width: 40.0,
-                                  height: 40.0,
+                                  width: 40,
+                                  height: 40,
                                   child: SpinKitFadingCircle(
                                     color: FlutterFlowTheme.of(context).primary,
-                                    size: 40.0,
+                                    size: 40,
                                   ),
                                 ),
                               );
@@ -266,7 +262,7 @@ class _RejectOrderCommentWidgetState extends State<RejectOrderCommentWidget> {
                                       modifiedBy:
                                           buttonUserProfileRecord?.reference,
                                     ));
-                                setState(() {
+                                safeSetState(() {
                                   _model.textController?.clear();
                                 });
                                 Navigator.pop(context);
@@ -275,12 +271,12 @@ class _RejectOrderCommentWidgetState extends State<RejectOrderCommentWidget> {
                                 'bj6s2jsn' /* Reject Order */,
                               ),
                               options: FFButtonOptions(
-                                width: 120.0,
-                                height: 30.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
+                                width: 120,
+                                height: 30,
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                iconPadding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
@@ -294,12 +290,12 @@ class _RejectOrderCommentWidgetState extends State<RejectOrderCommentWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .titleSmallFamily),
                                     ),
-                                elevation: 2.0,
+                                elevation: 2,
                                 borderSide: BorderSide(
                                   color: Colors.transparent,
-                                  width: 1.0,
+                                  width: 1,
                                 ),
-                                borderRadius: BorderRadius.circular(8.0),
+                                borderRadius: BorderRadius.circular(8),
                               ),
                             );
                           },

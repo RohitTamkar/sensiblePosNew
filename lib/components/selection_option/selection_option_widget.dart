@@ -35,7 +35,7 @@ class _SelectionOptionWidgetState extends State<SelectionOptionWidget> {
     super.initState();
     _model = createModel(context, () => SelectionOptionModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -55,42 +55,40 @@ class _SelectionOptionWidgetState extends State<SelectionOptionWidget> {
       children: [
         Material(
           color: Colors.transparent,
-          elevation: 5.0,
+          elevation: 5,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(0.0),
+            borderRadius: BorderRadius.circular(0),
           ),
           child: Container(
-            width: 286.0,
-            height: 320.0,
+            width: 286,
+            height: 320,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).primaryBackground,
-              borderRadius: BorderRadius.circular(0.0),
+              borderRadius: BorderRadius.circular(0),
             ),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 24.0, 0.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 24, 0),
                           child: FlutterFlowIconButton(
                             borderColor: Colors.transparent,
-                            borderRadius: 6.0,
-                            borderWidth: 1.0,
-                            buttonSize: 40.0,
+                            borderRadius: 6,
+                            borderWidth: 1,
+                            buttonSize: 40,
                             icon: Icon(
                               Icons.close_rounded,
                               color: FlutterFlowTheme.of(context).primaryText,
-                              size: 24.0,
+                              size: 24,
                             ),
                             onPressed: () async {
                               context.pop();
@@ -101,8 +99,7 @@ class _SelectionOptionWidgetState extends State<SelectionOptionWidget> {
                     ),
                   ),
                   Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(16, 4, 16, 0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -123,19 +120,19 @@ class _SelectionOptionWidgetState extends State<SelectionOptionWidget> {
                             },
                             child: Material(
                               color: Colors.transparent,
-                              elevation: 3.0,
+                              elevation: 3,
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(0.0),
+                                borderRadius: BorderRadius.circular(0),
                               ),
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width * 0.5,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context).secondary,
-                                  borderRadius: BorderRadius.circular(0.0),
+                                  borderRadius: BorderRadius.circular(0),
                                 ),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      16.0, 12.0, 16.0, 12.0),
+                                      16, 12, 16, 12),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -170,8 +167,8 @@ class _SelectionOptionWidgetState extends State<SelectionOptionWidget> {
                           ),
                         if (widget!.nav == 2)
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 12.0, 0.0, 0.0),
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
                             child: InkWell(
                               splashColor: Colors.transparent,
                               focusColor: Colors.transparent,
@@ -187,20 +184,20 @@ class _SelectionOptionWidgetState extends State<SelectionOptionWidget> {
                               },
                               child: Material(
                                 color: Colors.transparent,
-                                elevation: 3.0,
+                                elevation: 3,
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(0.0),
+                                  borderRadius: BorderRadius.circular(0),
                                 ),
                                 child: Container(
                                   width: MediaQuery.sizeOf(context).width * 0.5,
                                   decoration: BoxDecoration(
                                     color:
                                         FlutterFlowTheme.of(context).secondary,
-                                    borderRadius: BorderRadius.circular(0.0),
+                                    borderRadius: BorderRadius.circular(0),
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 12.0, 16.0, 12.0),
+                                        16, 12, 16, 12),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -237,8 +234,8 @@ class _SelectionOptionWidgetState extends State<SelectionOptionWidget> {
                           ),
                         if (widget!.nav == 1)
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 12.0, 0.0, 0.0),
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
                             child: InkWell(
                               splashColor: Colors.transparent,
                               focusColor: Colors.transparent,
@@ -256,20 +253,20 @@ class _SelectionOptionWidgetState extends State<SelectionOptionWidget> {
                               },
                               child: Material(
                                 color: Colors.transparent,
-                                elevation: 3.0,
+                                elevation: 3,
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(0.0),
+                                  borderRadius: BorderRadius.circular(0),
                                 ),
                                 child: Container(
                                   width: MediaQuery.sizeOf(context).width * 0.5,
                                   decoration: BoxDecoration(
                                     color:
                                         FlutterFlowTheme.of(context).secondary,
-                                    borderRadius: BorderRadius.circular(0.0),
+                                    borderRadius: BorderRadius.circular(0),
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 12.0, 16.0, 12.0),
+                                        16, 12, 16, 12),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -306,8 +303,8 @@ class _SelectionOptionWidgetState extends State<SelectionOptionWidget> {
                           ),
                         if (widget!.nav == 1)
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 12.0, 0.0, 0.0),
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
                             child: InkWell(
                               splashColor: Colors.transparent,
                               focusColor: Colors.transparent,
@@ -325,20 +322,20 @@ class _SelectionOptionWidgetState extends State<SelectionOptionWidget> {
                               },
                               child: Material(
                                 color: Colors.transparent,
-                                elevation: 3.0,
+                                elevation: 3,
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(0.0),
+                                  borderRadius: BorderRadius.circular(0),
                                 ),
                                 child: Container(
                                   width: MediaQuery.sizeOf(context).width * 0.5,
                                   decoration: BoxDecoration(
                                     color:
                                         FlutterFlowTheme.of(context).secondary,
-                                    borderRadius: BorderRadius.circular(0.0),
+                                    borderRadius: BorderRadius.circular(0),
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 12.0, 16.0, 12.0),
+                                        16, 12, 16, 12),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:

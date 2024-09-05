@@ -61,7 +61,7 @@ class _CategoryReportWidgetState extends State<CategoryReportWidget> {
       );
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -87,11 +87,11 @@ class _CategoryReportWidgetState extends State<CategoryReportWidget> {
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Center(
               child: SizedBox(
-                width: 40.0,
-                height: 40.0,
+                width: 40,
+                height: 40,
                 child: SpinKitFadingCircle(
                   color: FlutterFlowTheme.of(context).primary,
-                  size: 40.0,
+                  size: 40,
                 ),
               ),
             ),
@@ -143,7 +143,7 @@ class _CategoryReportWidgetState extends State<CategoryReportWidget> {
                           FFAppState().isPrinterConnected.toString(),
                           FFAppState().paperSize,
                         );
-                        if (_shouldSetState) setState(() {});
+                        if (_shouldSetState) safeSetState(() {});
                         return;
                       } else {
                         await showDialog(
@@ -162,15 +162,15 @@ class _CategoryReportWidgetState extends State<CategoryReportWidget> {
                             );
                           },
                         );
-                        if (_shouldSetState) setState(() {});
+                        if (_shouldSetState) safeSetState(() {});
                         return;
                       }
 
-                      if (_shouldSetState) setState(() {});
+                      if (_shouldSetState) safeSetState(() {});
                     },
                     backgroundColor:
                         FlutterFlowTheme.of(context).secondaryBackground,
-                    elevation: 8.0,
+                    elevation: 8,
                     label: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -180,11 +180,11 @@ class _CategoryReportWidgetState extends State<CategoryReportWidget> {
                           children: [
                             FlutterFlowIconButton(
                               borderColor: Colors.transparent,
-                              buttonSize: 30.0,
+                              buttonSize: 30,
                               icon: Icon(
                                 Icons.print,
                                 color: FlutterFlowTheme.of(context).primary,
-                                size: 20.0,
+                                size: 20,
                               ),
                               showLoadingIndicator: true,
                               onPressed: () {
@@ -202,7 +202,7 @@ class _CategoryReportWidgetState extends State<CategoryReportWidget> {
                                         .bodySmallFamily,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
-                                    fontSize: 12.0,
+                                    fontSize: 12,
                                     letterSpacing: 0.0,
                                     useGoogleFonts: GoogleFonts.asMap()
                                         .containsKey(
@@ -217,14 +217,14 @@ class _CategoryReportWidgetState extends State<CategoryReportWidget> {
                   ),
                 ),
                 body: Padding(
-                  padding: EdgeInsets.all(3.0),
+                  padding: EdgeInsets.all(3),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Expanded(
                         flex: 1,
                         child: Container(
-                          width: MediaQuery.sizeOf(context).width * 1.0,
+                          width: MediaQuery.sizeOf(context).width,
                           height: MediaQuery.sizeOf(context).height * 0.12,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context).primary,
@@ -237,8 +237,8 @@ class _CategoryReportWidgetState extends State<CategoryReportWidget> {
                               Expanded(
                                 flex: 2,
                                 child: Container(
-                                  width: 100.0,
-                                  height: 100.0,
+                                  width: 100,
+                                  height: 100,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context).primary,
                                   ),
@@ -247,14 +247,14 @@ class _CategoryReportWidgetState extends State<CategoryReportWidget> {
                                     children: [
                                       FlutterFlowIconButton(
                                         borderColor: Colors.transparent,
-                                        borderRadius: 30.0,
-                                        borderWidth: 1.0,
-                                        buttonSize: 60.0,
+                                        borderRadius: 30,
+                                        borderWidth: 1,
+                                        buttonSize: 60,
                                         icon: Icon(
                                           Icons.chevron_left_sharp,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBtnText,
-                                          size: 26.0,
+                                          size: 26,
                                         ),
                                         onPressed: () async {
                                           context.pop();
@@ -289,8 +289,8 @@ class _CategoryReportWidgetState extends State<CategoryReportWidget> {
                               Expanded(
                                 flex: 3,
                                 child: Container(
-                                  width: 100.0,
-                                  height: 100.0,
+                                  width: 100,
+                                  height: 100,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context).primary,
                                   ),
@@ -301,7 +301,7 @@ class _CategoryReportWidgetState extends State<CategoryReportWidget> {
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 15.0, 0.0),
+                                            0, 0, 15, 0),
                                         child: Text(
                                           dateTimeFormat(
                                             "yMMMd",
@@ -359,10 +359,10 @@ class _CategoryReportWidgetState extends State<CategoryReportWidget> {
                                         },
                                         child: Material(
                                           color: Colors.transparent,
-                                          elevation: 2.0,
+                                          elevation: 2,
                                           shape: RoundedRectangleBorder(
                                             borderRadius:
-                                                BorderRadius.circular(5.0),
+                                                BorderRadius.circular(5),
                                           ),
                                           child: Container(
                                             decoration: BoxDecoration(
@@ -370,7 +370,7 @@ class _CategoryReportWidgetState extends State<CategoryReportWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .secondary,
                                               borderRadius:
-                                                  BorderRadius.circular(5.0),
+                                                  BorderRadius.circular(5),
                                             ),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.min,
@@ -379,8 +379,7 @@ class _CategoryReportWidgetState extends State<CategoryReportWidget> {
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(10.0, 15.0,
-                                                          10.0, 15.0),
+                                                      .fromSTEB(10, 15, 10, 15),
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
@@ -421,7 +420,7 @@ class _CategoryReportWidgetState extends State<CategoryReportWidget> {
                                 flex: 2,
                                 child: wrapWithModel(
                                   model: _model.headerModel,
-                                  updateCallback: () => setState(() {}),
+                                  updateCallback: () => safeSetState(() {}),
                                   child: HeaderWidget(),
                                 ),
                               ),
@@ -432,11 +431,10 @@ class _CategoryReportWidgetState extends State<CategoryReportWidget> {
                       Expanded(
                         flex: 13,
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 3.0, 0.0, 0.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
                           child: Container(
-                            width: MediaQuery.sizeOf(context).width * 1.0,
-                            height: 100.0,
+                            width: MediaQuery.sizeOf(context).width,
+                            height: 100,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
@@ -445,7 +443,7 @@ class _CategoryReportWidgetState extends State<CategoryReportWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Container(
-                                  width: MediaQuery.sizeOf(context).width * 1.0,
+                                  width: MediaQuery.sizeOf(context).width,
                                   height:
                                       MediaQuery.sizeOf(context).height * 0.06,
                                   decoration: BoxDecoration(
@@ -458,8 +456,8 @@ class _CategoryReportWidgetState extends State<CategoryReportWidget> {
                                       Expanded(
                                         flex: 1,
                                         child: Container(
-                                          width: 100.0,
-                                          height: 100.0,
+                                          width: 100,
+                                          height: 100,
                                           decoration: BoxDecoration(),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -500,8 +498,8 @@ class _CategoryReportWidgetState extends State<CategoryReportWidget> {
                                       Expanded(
                                         flex: 1,
                                         child: Container(
-                                          width: 100.0,
-                                          height: 100.0,
+                                          width: 100,
+                                          height: 100,
                                           decoration: BoxDecoration(),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -541,8 +539,8 @@ class _CategoryReportWidgetState extends State<CategoryReportWidget> {
                                       ),
                                       Expanded(
                                         child: Container(
-                                          width: 100.0,
-                                          height: 100.0,
+                                          width: 100,
+                                          height: 100,
                                           decoration: BoxDecoration(),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -609,7 +607,7 @@ class _CategoryReportWidgetState extends State<CategoryReportWidget> {
                                               catListIndex,
                                             ),
                                             updateCallback: () =>
-                                                setState(() {}),
+                                                safeSetState(() {}),
                                             child: CatgWidget(
                                               key: Key(
                                                 'Keypjk_${catListItem.toString()}',

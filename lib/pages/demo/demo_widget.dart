@@ -25,7 +25,7 @@ class _DemoWidgetState extends State<DemoWidget> {
     super.initState();
     _model = createModel(context, () => DemoModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

@@ -32,7 +32,7 @@ class _AppSettingNewPosWidgetState extends State<AppSettingNewPosWidget> {
     super.initState();
     _model = createModel(context, () => AppSettingNewPosModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -60,7 +60,7 @@ class _AppSettingNewPosWidgetState extends State<AppSettingNewPosWidget> {
                 Expanded(
                   flex: 1,
                   child: Container(
-                    width: MediaQuery.sizeOf(context).width * 1.0,
+                    width: MediaQuery.sizeOf(context).width,
                     height: MediaQuery.sizeOf(context).height * 0.12,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).primary,
@@ -73,22 +73,22 @@ class _AppSettingNewPosWidgetState extends State<AppSettingNewPosWidget> {
                         Expanded(
                           flex: 1,
                           child: Container(
-                            width: 100.0,
-                            height: 100.0,
+                            width: 100,
+                            height: 100,
                             decoration: BoxDecoration(),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
-                                  borderRadius: 30.0,
-                                  borderWidth: 1.0,
-                                  buttonSize: 60.0,
+                                  borderRadius: 30,
+                                  borderWidth: 1,
+                                  buttonSize: 60,
                                   icon: Icon(
                                     Icons.chevron_left_sharp,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBtnText,
-                                    size: 26.0,
+                                    size: 26,
                                   ),
                                   onPressed: () async {
                                     context.pop();
@@ -120,7 +120,7 @@ class _AppSettingNewPosWidgetState extends State<AppSettingNewPosWidget> {
                           flex: 1,
                           child: wrapWithModel(
                             model: _model.headerModel,
-                            updateCallback: () => setState(() {}),
+                            updateCallback: () => safeSetState(() {}),
                             child: HeaderWidget(),
                           ),
                         ),
@@ -147,11 +147,11 @@ class _AppSettingNewPosWidgetState extends State<AppSettingNewPosWidget> {
                           if (!snapshot.hasData) {
                             return Center(
                               child: SizedBox(
-                                width: 40.0,
-                                height: 40.0,
+                                width: 40,
+                                height: 40,
                                 child: SpinKitFadingCircle(
                                   color: FlutterFlowTheme.of(context).primary,
-                                  size: 40.0,
+                                  size: 40,
                                 ),
                               ),
                             );
@@ -180,13 +180,13 @@ class _AppSettingNewPosWidgetState extends State<AppSettingNewPosWidget> {
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 3.0, 0.0, 0.0),
+                                      0, 3, 0, 0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Expanded(
                                         child: Container(
-                                          width: 100.0,
+                                          width: 100,
                                           height: MediaQuery.sizeOf(context)
                                                   .height *
                                               0.78,
@@ -197,7 +197,7 @@ class _AppSettingNewPosWidgetState extends State<AppSettingNewPosWidget> {
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    5.0, 0.0, 10.0, 0.0),
+                                                    5, 0, 10, 0),
                                             child: Builder(
                                               builder: (context) {
                                                 final settinglist =
@@ -218,7 +218,7 @@ class _AppSettingNewPosWidgetState extends State<AppSettingNewPosWidget> {
                                                             settinglistIndex];
                                                     return Padding(
                                                       padding:
-                                                          EdgeInsets.all(5.0),
+                                                          EdgeInsets.all(5),
                                                       child: Container(
                                                         decoration:
                                                             BoxDecoration(
@@ -227,24 +227,23 @@ class _AppSettingNewPosWidgetState extends State<AppSettingNewPosWidget> {
                                                               .secondaryBackground,
                                                           boxShadow: [
                                                             BoxShadow(
-                                                              blurRadius: 5.0,
+                                                              blurRadius: 5,
                                                               color: Color(
                                                                   0x33000000),
                                                               offset: Offset(
-                                                                1.0,
-                                                                1.0,
+                                                                1,
+                                                                1,
                                                               ),
                                                             )
                                                           ],
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      10.0),
+                                                                  .circular(10),
                                                         ),
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsets.all(
-                                                                  10.0),
+                                                                  10),
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -284,11 +283,11 @@ class _AppSettingNewPosWidgetState extends State<AppSettingNewPosWidget> {
                                           .secondaryBackground,
                                       boxShadow: [
                                         BoxShadow(
-                                          blurRadius: 6.0,
+                                          blurRadius: 6,
                                           color: Color(0x58000000),
                                           offset: Offset(
-                                            0.0,
-                                            -1.0,
+                                            0,
+                                            -1,
                                           ),
                                         )
                                       ],
@@ -352,10 +351,10 @@ class _AppSettingNewPosWidgetState extends State<AppSettingNewPosWidget> {
                                             'ac7fz2a0' /* Apply Changes */,
                                           ),
                                           options: FFButtonOptions(
-                                            padding: EdgeInsets.all(20.0),
+                                            padding: EdgeInsets.all(20),
                                             iconPadding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
+                                                    0, 0, 0, 0),
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
                                             textStyle:
@@ -377,13 +376,13 @@ class _AppSettingNewPosWidgetState extends State<AppSettingNewPosWidget> {
                                                                       context)
                                                                   .titleSmallFamily),
                                                     ),
-                                            elevation: 2.0,
+                                            elevation: 2,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
-                                              width: 1.0,
+                                              width: 1,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                         ),
                                       ],

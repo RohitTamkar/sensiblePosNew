@@ -66,7 +66,6 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - getProductlistHive] action in ProductAndListNew widget.
   List<ProductStructStruct>? hiveProductList;
   // Stores action output result for [Custom Action - getCategorylistHive] action in ProductAndListNew widget.

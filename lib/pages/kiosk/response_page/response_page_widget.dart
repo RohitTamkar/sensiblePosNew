@@ -57,12 +57,12 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       FFAppState().shiftDetailsNEw = widget!.shiftdetails!;
       FFAppState().msg = widget!.doc!.msg;
-      setState(() {});
+      safeSetState(() {});
       FFAppState().shiftDetailsJson = widget!.shiftdetails!;
       FFAppState().kioskAmt = FFAppState().finalAmt;
-      setState(() {});
+      safeSetState(() {});
       FFAppState().shiftexist = 'True';
-      setState(() {});
+      safeSetState(() {});
       if (!FFAppState().isBillPrinted) {
         if (widget!.doc!.status) {
           _model.prdListkiosk = await actions.filterProducts(
@@ -176,9 +176,9 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
               ),
               0,
             );
-            setState(() {});
+            safeSetState(() {});
             FFAppState().billcount = FFAppState().billcount + 1;
-            setState(() {});
+            safeSetState(() {});
             _model.shiftSummarRkiosk = await actions.calShiftSummary(
               _model.docInvoicekiosk!,
               FFAppState().shiftDetailsJson,
@@ -353,7 +353,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                 .first
                 .value) {
               FFAppState().startLoop = 0;
-              setState(() {});
+              safeSetState(() {});
               while (FFAppState().startLoop < _model.prdListkiosk!.length) {
                 _model.stockupdateprd = await queryProductRecordOnce(
                   parent: FFAppState().outletIdRef,
@@ -376,7 +376,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                   ),
                 });
                 FFAppState().startLoop = FFAppState().startLoop + 1;
-                setState(() {});
+                safeSetState(() {});
               }
             }
             await actions.removeFromAllBillList(
@@ -558,7 +558,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
       ),
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -589,23 +589,22 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                     Expanded(
                       flex: 7,
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            50.0, 50.0, 50.0, 50.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(50, 50, 50, 50),
                         child: Container(
                           width: double.infinity,
-                          height: 100.0,
+                          height: 100,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
                             borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(6.0),
-                              bottomRight: Radius.circular(6.0),
-                              topLeft: Radius.circular(6.0),
-                              topRight: Radius.circular(6.0),
+                              bottomLeft: Radius.circular(6),
+                              bottomRight: Radius.circular(6),
+                              topLeft: Radius.circular(6),
+                              topRight: Radius.circular(6),
                             ),
                             border: Border.all(
                               color: FlutterFlowTheme.of(context).tertiary,
-                              width: 2.0,
+                              width: 2,
                             ),
                           ),
                           child: Column(
@@ -613,8 +612,8 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 75.0),
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 75),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
                                     'y4rnysxj' /* Thank You ! */,
@@ -626,7 +625,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                                             .displayLargeFamily,
                                         color: FlutterFlowTheme.of(context)
                                             .success,
-                                        fontSize: 36.0,
+                                        fontSize: 36,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                         fontStyle: FontStyle.italic,
@@ -640,7 +639,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                               ),
                               wrapWithModel(
                                 model: _model.transactionStatusModel,
-                                updateCallback: () => setState(() {}),
+                                updateCallback: () => safeSetState(() {}),
                                 child: TransactionStatusWidget(
                                   doc: widget!.doc,
                                 ),
@@ -832,7 +831,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                                       },
                                     );
 
-                                    if (_shouldSetState) setState(() {});
+                                    if (_shouldSetState) safeSetState(() {});
                                     return;
                                   } else {
                                     await showDialog(
@@ -856,7 +855,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                                     context.pushNamed('printSettingkiosk');
                                   }
 
-                                  if (_shouldSetState) setState(() {});
+                                  if (_shouldSetState) safeSetState(() {});
                                 },
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -869,7 +868,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                                             .bodyMediumFamily,
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
-                                        fontSize: 16.0,
+                                        fontSize: 16,
                                         letterSpacing: 0.0,
                                         useGoogleFonts: GoogleFonts.asMap()
                                             .containsKey(
@@ -887,23 +886,22 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                     Expanded(
                       flex: 7,
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            50.0, 50.0, 50.0, 50.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(50, 50, 50, 50),
                         child: Container(
                           width: double.infinity,
-                          height: 100.0,
+                          height: 100,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
                             borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(6.0),
-                              bottomRight: Radius.circular(6.0),
-                              topLeft: Radius.circular(6.0),
-                              topRight: Radius.circular(6.0),
+                              bottomLeft: Radius.circular(6),
+                              bottomRight: Radius.circular(6),
+                              topLeft: Radius.circular(6),
+                              topRight: Radius.circular(6),
                             ),
                             border: Border.all(
                               color: FlutterFlowTheme.of(context).tertiary,
-                              width: 2.0,
+                              width: 2,
                             ),
                           ),
                           child: Column(
@@ -912,7 +910,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                             children: [
                               wrapWithModel(
                                 model: _model.transactionStatusFailedModel,
-                                updateCallback: () => setState(() {}),
+                                updateCallback: () => safeSetState(() {}),
                                 child: TransactionStatusFailedWidget(),
                               ).animateOnPageLoad(animationsMap[
                                   'transactionStatusFailedOnPageLoadAnimation']!),
@@ -925,23 +923,22 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                     Expanded(
                       flex: 7,
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            50.0, 50.0, 50.0, 50.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(50, 50, 50, 50),
                         child: Container(
                           width: double.infinity,
-                          height: 100.0,
+                          height: 100,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
                             borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(6.0),
-                              bottomRight: Radius.circular(6.0),
-                              topLeft: Radius.circular(6.0),
-                              topRight: Radius.circular(6.0),
+                              bottomLeft: Radius.circular(6),
+                              bottomRight: Radius.circular(6),
+                              topLeft: Radius.circular(6),
+                              topRight: Radius.circular(6),
                             ),
                             border: Border.all(
                               color: FlutterFlowTheme.of(context).tertiary,
-                              width: 2.0,
+                              width: 2,
                             ),
                           ),
                           child: Column(
@@ -950,7 +947,7 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                             children: [
                               wrapWithModel(
                                 model: _model.transactionStatusPendingModel,
-                                updateCallback: () => setState(() {}),
+                                updateCallback: () => safeSetState(() {}),
                                 child: TransactionStatusPendingWidget(),
                               ).animateOnPageLoad(animationsMap[
                                   'transactionStatusPendingOnPageLoadAnimation']!),

@@ -35,7 +35,7 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
     _model.textFieldsearchTextController ??= TextEditingController();
     _model.textFieldsearchFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -62,11 +62,11 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
             if (!snapshot.hasData) {
               return Center(
                 child: SizedBox(
-                  width: 40.0,
-                  height: 40.0,
+                  width: 40,
+                  height: 40,
                   child: SpinKitFadingCircle(
                     color: FlutterFlowTheme.of(context).primary,
-                    size: 40.0,
+                    size: 40,
                   ),
                 ),
               );
@@ -74,21 +74,21 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
             List<PartyRecord> containerPartyRecordList = snapshot.data!;
 
             return Container(
-              width: 360.0,
-              height: 560.0,
+              width: 360,
+              height: 560,
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).primaryBackground,
               ),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: EdgeInsets.all(10),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Container(
-                      width: 360.0,
-                      height: 40.0,
+                      width: 360,
+                      height: 40,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                       ),
@@ -98,13 +98,13 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                         children: [
                           FlutterFlowIconButton(
                             borderColor: Colors.transparent,
-                            borderRadius: 30.0,
-                            borderWidth: 1.0,
-                            buttonSize: 40.0,
+                            borderRadius: 30,
+                            borderWidth: 1,
+                            buttonSize: 40,
                             icon: Icon(
                               Icons.chevron_left,
                               color: FlutterFlowTheme.of(context).primaryText,
-                              size: 22.0,
+                              size: 22,
                             ),
                             onPressed: () async {
                               context.pop();
@@ -117,7 +117,7 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      20.0, 0.0, 0.0, 0.0),
+                                      20, 0, 0, 0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
                                       'j1baq0eq' /* CUSTOMER DETAILS */,
@@ -141,13 +141,13 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                           ),
                           FlutterFlowIconButton(
                             borderColor: Colors.transparent,
-                            borderRadius: 30.0,
-                            borderWidth: 1.0,
-                            buttonSize: 40.0,
+                            borderRadius: 30,
+                            borderWidth: 1,
+                            buttonSize: 40,
                             icon: Icon(
                               Icons.person_add,
                               color: FlutterFlowTheme.of(context).primaryText,
-                              size: 22.0,
+                              size: 22,
                             ),
                             onPressed: () async {
                               context.pushNamed('AddCustomer');
@@ -157,14 +157,13 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                       ),
                     ),
                     Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                       child: Material(
                         color: Colors.transparent,
-                        elevation: 2.0,
+                        elevation: 2,
                         child: Container(
-                          width: 360.0,
-                          height: 40.0,
+                          width: 360,
+                          height: 40,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
@@ -176,7 +175,7 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                               Expanded(
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      6.0, 0.0, 0.0, 0.0),
+                                      6, 0, 0, 0),
                                   child: TextFormField(
                                     controller:
                                         _model.textFieldsearchTextController,
@@ -289,14 +288,14 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                               ),
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderWidth: 1.0,
-                                buttonSize: 50.0,
+                                borderWidth: 1,
+                                buttonSize: 50,
                                 fillColor:
                                     FlutterFlowTheme.of(context).secondary,
                                 icon: Icon(
                                   Icons.search,
                                   color: FlutterFlowTheme.of(context).lineColor,
-                                  size: 20.0,
+                                  size: 20,
                                 ),
                                 onPressed: () {
                                   print('IconButton pressed ...');
@@ -308,21 +307,20 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                       ),
                     ),
                     Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                       child: Container(
-                        width: 340.0,
-                        height: 440.0,
+                        width: 340,
+                        height: 440,
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
                           boxShadow: [
                             BoxShadow(
-                              blurRadius: 3.0,
+                              blurRadius: 3,
                               color: Color(0x33000000),
                               offset: Offset(
-                                0.0,
-                                1.0,
+                                0,
+                                1,
                               ),
                             )
                           ],
@@ -363,7 +361,7 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                               .secondaryBackground,
                                           shape: RoundedRectangleBorder(
                                             borderRadius:
-                                                BorderRadius.circular(4.0),
+                                                BorderRadius.circular(4),
                                           ),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -372,15 +370,15 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                             children: [
                                               FlutterFlowIconButton(
                                                 borderColor: Colors.transparent,
-                                                borderRadius: 30.0,
-                                                borderWidth: 1.0,
-                                                buttonSize: 60.0,
+                                                borderRadius: 30,
+                                                borderWidth: 1,
+                                                buttonSize: 60,
                                                 icon: Icon(
                                                   Icons.account_circle,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
-                                                  size: 30.0,
+                                                  size: 30,
                                                 ),
                                                 onPressed: () {
                                                   print(
@@ -388,8 +386,8 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                                 },
                                               ),
                                               Container(
-                                                width: 170.0,
-                                                height: 60.0,
+                                                width: 170,
+                                                height: 60,
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
@@ -446,8 +444,8 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                                 ),
                                               ),
                                               Container(
-                                                width: 100.0,
-                                                height: 60.0,
+                                                width: 100,
+                                                height: 60,
                                                 decoration: BoxDecoration(),
                                                 child: Column(
                                                   mainAxisSize:
@@ -517,7 +515,7 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                                       ),
                                                     Container(
                                                       width: double.infinity,
-                                                      height: 20.0,
+                                                      height: 20,
                                                       decoration:
                                                           BoxDecoration(),
                                                       child: Column(
@@ -569,7 +567,7 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                               ),
                             if (FFAppState().isCustListShown == true)
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0, 0),
                                 child: Builder(
                                   builder: (context) {
                                     final containerVar =
@@ -605,7 +603,7 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                                 .secondaryBackground,
                                             shape: RoundedRectangleBorder(
                                               borderRadius:
-                                                  BorderRadius.circular(4.0),
+                                                  BorderRadius.circular(4),
                                             ),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -615,15 +613,15 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                                 FlutterFlowIconButton(
                                                   borderColor:
                                                       Colors.transparent,
-                                                  borderRadius: 30.0,
-                                                  borderWidth: 1.0,
-                                                  buttonSize: 60.0,
+                                                  borderRadius: 30,
+                                                  borderWidth: 1,
+                                                  buttonSize: 60,
                                                   icon: Icon(
                                                     Icons.account_circle,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
-                                                    size: 30.0,
+                                                    size: 30,
                                                   ),
                                                   onPressed: () {
                                                     print(
@@ -631,8 +629,8 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                                   },
                                                 ),
                                                 Container(
-                                                  width: 170.0,
-                                                  height: 60.0,
+                                                  width: 170,
+                                                  height: 60,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -690,8 +688,8 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                                   ),
                                                 ),
                                                 Container(
-                                                  width: 100.0,
-                                                  height: 60.0,
+                                                  width: 100,
+                                                  height: 60,
                                                   decoration: BoxDecoration(),
                                                   child: Column(
                                                     mainAxisSize:
@@ -762,7 +760,7 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                                         ),
                                                       Container(
                                                         width: double.infinity,
-                                                        height: 20.0,
+                                                        height: 20,
                                                         decoration:
                                                             BoxDecoration(),
                                                         child: Column(

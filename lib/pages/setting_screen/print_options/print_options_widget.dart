@@ -35,7 +35,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
         ExpandableController(initialExpanded: false);
     _model.expandableExpandableController2 =
         ExpandableController(initialExpanded: false);
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -58,14 +58,14 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Padding(
-              padding: EdgeInsets.all(3.0),
+              padding: EdgeInsets.all(3),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Expanded(
                     flex: 1,
                     child: Container(
-                      width: MediaQuery.sizeOf(context).width * 1.0,
+                      width: MediaQuery.sizeOf(context).width,
                       height: MediaQuery.sizeOf(context).height * 0.12,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primary,
@@ -78,22 +78,22 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                           Expanded(
                             flex: 1,
                             child: Container(
-                              width: 100.0,
-                              height: 100.0,
+                              width: 100,
+                              height: 100,
                               decoration: BoxDecoration(),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   FlutterFlowIconButton(
                                     borderColor: Colors.transparent,
-                                    borderRadius: 30.0,
-                                    borderWidth: 1.0,
-                                    buttonSize: 60.0,
+                                    borderRadius: 30,
+                                    borderWidth: 1,
+                                    buttonSize: 60,
                                     icon: Icon(
                                       Icons.chevron_left_sharp,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBtnText,
-                                      size: 26.0,
+                                      size: 26,
                                     ),
                                     onPressed: () async {
                                       context.pushNamed('SettingHomepage');
@@ -125,7 +125,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                           Expanded(
                             child: wrapWithModel(
                               model: _model.headerModel,
-                              updateCallback: () => setState(() {}),
+                              updateCallback: () => safeSetState(() {}),
                               child: HeaderWidget(),
                             ),
                           ),
@@ -136,8 +136,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                   Expanded(
                     flex: 13,
                     child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
                       child: Stack(
                         children: [
                           StreamBuilder<List<PrintSettingsRecord>>(
@@ -150,12 +149,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                               if (!snapshot.hasData) {
                                 return Center(
                                   child: SizedBox(
-                                    width: 40.0,
-                                    height: 40.0,
+                                    width: 40,
+                                    height: 40,
                                     child: SpinKitFadingCircle(
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      size: 40.0,
+                                      size: 40,
                                     ),
                                   ),
                                 );
@@ -175,7 +174,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                       : null;
 
                               return Container(
-                                width: MediaQuery.sizeOf(context).width * 1.0,
+                                width: MediaQuery.sizeOf(context).width,
                                 decoration: BoxDecoration(),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -194,7 +193,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    7.0, 7.0, 15.0, 7.0),
+                                                    7, 7, 15, 7),
                                             child: FFButtonWidget(
                                               onPressed: () async {
                                                 await containerMainPrintSettingsRecord!
@@ -272,18 +271,16 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                               ),
                                               icon: Icon(
                                                 Icons.track_changes,
-                                                size: 15.0,
+                                                size: 15,
                                               ),
                                               options: FFButtonOptions(
-                                                width: 150.0,
-                                                height: 40.0,
+                                                width: 150,
+                                                height: 40,
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 0.0, 0.0),
+                                                    .fromSTEB(0, 0, 0, 0),
                                                 iconPadding:
                                                     EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
+                                                        .fromSTEB(0, 0, 0, 0),
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondary,
@@ -306,13 +303,13 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                           context)
                                                                       .titleSmallFamily),
                                                         ),
-                                                elevation: 5.0,
+                                                elevation: 5,
                                                 borderSide: BorderSide(
                                                   color: Colors.transparent,
-                                                  width: 1.0,
+                                                  width: 1,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(0.0),
+                                                    BorderRadius.circular(0),
                                               ),
                                             ),
                                           ),
@@ -353,7 +350,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                         header: Padding(
                                                           padding:
                                                               EdgeInsets.all(
-                                                                  15.0),
+                                                                  15),
                                                           child: Text(
                                                             FFLocalizations.of(
                                                                     context)
@@ -399,7 +396,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                         .printConsolidateTax,
                                                                 onChanged:
                                                                     (newValue) async {
-                                                                  setState(() =>
+                                                                  safeSetState(() =>
                                                                       _model.switchListTileprintConsolidateTaxValue =
                                                                           newValue!);
                                                                 },
@@ -430,8 +427,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                               ),
                                                               Divider(
                                                                 thickness: 0.5,
-                                                                indent: 10.0,
-                                                                endIndent: 10.0,
+                                                                indent: 10,
+                                                                endIndent: 10,
                                                                 color: Color(
                                                                     0xFFD4D1D1),
                                                               ),
@@ -442,7 +439,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                         .dontPrintTaxInvoiceOnBill,
                                                                 onChanged:
                                                                     (newValue) async {
-                                                                  setState(() =>
+                                                                  safeSetState(() =>
                                                                       _model.switchListTiledontPrintTaxInvoiceValue =
                                                                           newValue!);
                                                                 },
@@ -473,8 +470,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                               ),
                                                               Divider(
                                                                 thickness: 0.5,
-                                                                indent: 10.0,
-                                                                endIndent: 10.0,
+                                                                indent: 10,
+                                                                endIndent: 10,
                                                                 color: Color(
                                                                     0xFFD4D1D1),
                                                               ),
@@ -485,7 +482,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                         .cgstSgstOnBill,
                                                                 onChanged:
                                                                     (newValue) async {
-                                                                  setState(() =>
+                                                                  safeSetState(() =>
                                                                       _model.switchListTilecgstAndSgstOnBillValue =
                                                                           newValue!);
                                                                 },
@@ -516,8 +513,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                               ),
                                                               Divider(
                                                                 thickness: 0.5,
-                                                                indent: 10.0,
-                                                                endIndent: 10.0,
+                                                                indent: 10,
+                                                                endIndent: 10,
                                                                 color: Color(
                                                                     0xFFD4D1D1),
                                                               ),
@@ -528,7 +525,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                         .gstBreakUpOnBill,
                                                                 onChanged:
                                                                     (newValue) async {
-                                                                  setState(() =>
+                                                                  safeSetState(() =>
                                                                       _model.switchListTiledontPrintGstBreakupOnBillValue =
                                                                           newValue!);
                                                                 },
@@ -559,8 +556,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                               ),
                                                               Divider(
                                                                 thickness: 0.5,
-                                                                indent: 10.0,
-                                                                endIndent: 10.0,
+                                                                indent: 10,
+                                                                endIndent: 10,
                                                                 color: Color(
                                                                     0xFFD4D1D1),
                                                               ),
@@ -571,7 +568,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                         .dontPrintRateColumn,
                                                                 onChanged:
                                                                     (newValue) async {
-                                                                  setState(() =>
+                                                                  safeSetState(() =>
                                                                       _model.switchListTileenableRateColumnValue =
                                                                           newValue!);
                                                                 },
@@ -634,7 +631,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                         header: Padding(
                                                           padding:
                                                               EdgeInsets.all(
-                                                                  15.0),
+                                                                  15),
                                                           child: Text(
                                                             FFLocalizations.of(
                                                                     context)
@@ -680,7 +677,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                         .saveMRPinBill,
                                                                 onChanged:
                                                                     (newValue) async {
-                                                                  setState(() =>
+                                                                  safeSetState(() =>
                                                                       _model.switchListTileenableSavedMrpValue =
                                                                           newValue!);
                                                                 },
@@ -711,8 +708,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                               ),
                                                               Divider(
                                                                 thickness: 0.5,
-                                                                indent: 10.0,
-                                                                endIndent: 10.0,
+                                                                indent: 10,
+                                                                endIndent: 10,
                                                                 color: Color(
                                                                     0xFFD4D1D1),
                                                               ),
@@ -723,7 +720,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                         .printMrpPrice,
                                                                 onChanged:
                                                                     (newValue) async {
-                                                                  setState(() =>
+                                                                  safeSetState(() =>
                                                                       _model.switchListTileenableMrpPriceColumnValue =
                                                                           newValue!);
                                                                 },
@@ -794,8 +791,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                             ),
                                             Container(
                                               width: MediaQuery.sizeOf(context)
-                                                      .width *
-                                                  1.0,
+                                                  .width,
                                               decoration: BoxDecoration(
                                                 color: Color(0xFFEEEEEE),
                                               ),
@@ -827,7 +823,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                       .paymentModePrint,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTilepayModeInBillValue =
                                                                         newValue!);
                                                               },
@@ -859,8 +855,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10.0,
-                                                              endIndent: 10.0,
+                                                              indent: 10,
+                                                              endIndent: 10,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -871,7 +867,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                       .duplicateBill,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTileduplicateBillValue =
                                                                         newValue!);
                                                               },
@@ -903,8 +899,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10.0,
-                                                              endIndent: 10.0,
+                                                              indent: 10,
+                                                              endIndent: 10,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -915,7 +911,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                       .doubleprint,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTiledoublePrintValue =
                                                                         newValue!);
                                                               },
@@ -947,8 +943,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10.0,
-                                                              endIndent: 10.0,
+                                                              indent: 10,
+                                                              endIndent: 10,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -959,7 +955,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                       .largeBillFont,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTilelargeBillFontValue =
                                                                         newValue!);
                                                               },
@@ -991,8 +987,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10.0,
-                                                              endIndent: 10.0,
+                                                              indent: 10,
+                                                              endIndent: 10,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1003,7 +999,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                       .billPrintingServicesPointWise,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTilebillPrintServicePointWiseValue =
                                                                         newValue!);
                                                               },
@@ -1035,8 +1031,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10.0,
-                                                              endIndent: 10.0,
+                                                              indent: 10,
+                                                              endIndent: 10,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1047,7 +1043,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                       .fontBoldNetTotal,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTilefontBoldNetTotalValue =
                                                                         newValue!);
                                                               },
@@ -1079,8 +1075,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10.0,
-                                                              endIndent: 10.0,
+                                                              indent: 10,
+                                                              endIndent: 10,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1091,7 +1087,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                       .billAmountInWords,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTilebillAmountInWordValue =
                                                                         newValue!);
                                                               },
@@ -1123,8 +1119,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10.0,
-                                                              endIndent: 10.0,
+                                                              indent: 10,
+                                                              endIndent: 10,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1135,7 +1131,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                       .signatureInBill,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTilesignatureBillValue =
                                                                         newValue!);
                                                               },
@@ -1169,13 +1165,13 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            20.0),
+                                                                            20),
                                                               ),
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10.0,
-                                                              endIndent: 10.0,
+                                                              indent: 10,
+                                                              endIndent: 10,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1186,7 +1182,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                       .printUnitTypeOnBill,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTileunitTypeOnBillValue =
                                                                         newValue!);
                                                               },
@@ -1218,8 +1214,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10.0,
-                                                              endIndent: 10.0,
+                                                              indent: 10,
+                                                              endIndent: 10,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1230,7 +1226,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                       .printUserNameInBill,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTileuserNameOnBillValue =
                                                                         newValue!);
                                                               },
@@ -1262,8 +1258,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10.0,
-                                                              endIndent: 10.0,
+                                                              indent: 10,
+                                                              endIndent: 10,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1274,7 +1270,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                       .regionalBillPrint,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTileregionalBillPrintlValue =
                                                                         newValue!);
                                                               },
@@ -1308,13 +1304,13 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            20.0),
+                                                                            20),
                                                               ),
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10.0,
-                                                              endIndent: 10.0,
+                                                              indent: 10,
+                                                              endIndent: 10,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1325,7 +1321,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                       .regionalKOTPrint,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTileregionalKotPrintValue =
                                                                         newValue!);
                                                               },
@@ -1357,8 +1353,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10.0,
-                                                              endIndent: 10.0,
+                                                              indent: 10,
+                                                              endIndent: 10,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1369,7 +1365,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                       .dontPrintRateColumn,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTiledontPrintRateColumnValue =
                                                                         newValue!);
                                                               },
@@ -1401,8 +1397,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10.0,
-                                                              endIndent: 10.0,
+                                                              indent: 10,
+                                                              endIndent: 10,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1413,7 +1409,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                       .dontPrintSerialNoInbill,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTiledontPrintSerialNoValue =
                                                                         newValue!);
                                                               },
@@ -1445,8 +1441,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10.0,
-                                                              endIndent: 10.0,
+                                                              indent: 10,
+                                                              endIndent: 10,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1457,7 +1453,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                       .dontPrintBillnoInbill,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTiledontPrintBillNumberValue =
                                                                         newValue!);
                                                               },
@@ -1489,8 +1485,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10.0,
-                                                              endIndent: 10.0,
+                                                              indent: 10,
+                                                              endIndent: 10,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1501,7 +1497,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                       .billRemark,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTileenableBillRemarkValue =
                                                                         newValue!);
                                                               },
@@ -1535,13 +1531,13 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            20.0),
+                                                                            20),
                                                               ),
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10.0,
-                                                              endIndent: 10.0,
+                                                              indent: 10,
+                                                              endIndent: 10,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1552,7 +1548,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                       .productSerialNumber,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTileproductSerialNumberValue =
                                                                         newValue!);
                                                               },
@@ -1584,8 +1580,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10.0,
-                                                              endIndent: 10.0,
+                                                              indent: 10,
+                                                              endIndent: 10,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1596,7 +1592,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                       .hsnNumber,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTilehsnNumberValue =
                                                                         newValue!);
                                                               },
@@ -1628,8 +1624,8 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10.0,
-                                                              endIndent: 10.0,
+                                                              indent: 10,
+                                                              endIndent: 10,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1640,7 +1636,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                       .totalQtyInBill,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTiletotalQtyOnBillValue =
                                                                         newValue!);
                                                               },
@@ -1674,13 +1670,13 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            20.0),
+                                                                            20),
                                                               ),
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10.0,
-                                                              endIndent: 10.0,
+                                                              indent: 10,
+                                                              endIndent: 10,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1691,7 +1687,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                       .barcodeOnBill,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTilebarcodeOnBillValue =
                                                                         newValue!);
                                                               },
@@ -1725,13 +1721,13 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            20.0),
+                                                                            20),
                                                               ),
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10.0,
-                                                              endIndent: 10.0,
+                                                              indent: 10,
+                                                              endIndent: 10,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1742,7 +1738,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                       .trimNameForSingleLine,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTiletrimProductNameForSingleLineValue =
                                                                         newValue!);
                                                               },
@@ -1776,13 +1772,13 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            20.0),
+                                                                            20),
                                                               ),
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10.0,
-                                                              endIndent: 10.0,
+                                                              indent: 10,
+                                                              endIndent: 10,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1793,7 +1789,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                       .printDiscountOnBill,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTileprintDiscountOnBillValue =
                                                                         newValue!);
                                                               },
@@ -1827,13 +1823,13 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            20.0),
+                                                                            20),
                                                               ),
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10.0,
-                                                              endIndent: 10.0,
+                                                              indent: 10,
+                                                              endIndent: 10,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1844,7 +1840,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                       .couponKotSummary,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTilecouponOrKotSummaryValue =
                                                                         newValue!);
                                                               },
@@ -1878,13 +1874,13 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            20.0),
+                                                                            20),
                                                               ),
                                                             ),
                                                             Divider(
                                                               thickness: 0.5,
-                                                              indent: 10.0,
-                                                              endIndent: 10.0,
+                                                              indent: 10,
+                                                              endIndent: 10,
                                                               color: Color(
                                                                   0xFFD4D1D1),
                                                             ),
@@ -1895,7 +1891,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                       .columnProductNameAndQtyPrint,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTileColumnProductNameAndQtyValue =
                                                                         newValue!);
                                                               },
@@ -1929,7 +1925,7 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            20.0),
+                                                                            20),
                                                               ),
                                                             ),
                                                           ],
@@ -2021,13 +2017,13 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                       'kkhd51p8' /* Generate Default Setting */,
                                     ),
                                     options: FFButtonOptions(
-                                      width: 210.0,
-                                      height: 40.0,
+                                      width: 210,
+                                      height: 40,
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 0.0),
+                                          0, 0, 0, 0),
                                       iconPadding:
                                           EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
+                                              0, 0, 0, 0),
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBackground,
                                       textStyle: FlutterFlowTheme.of(context)
@@ -2044,12 +2040,12 @@ class _PrintOptionsWidgetState extends State<PrintOptionsWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .titleMediumFamily),
                                           ),
-                                      elevation: 3.0,
+                                      elevation: 3,
                                       borderSide: BorderSide(
                                         color: Colors.transparent,
-                                        width: 1.0,
+                                        width: 1,
                                       ),
-                                      borderRadius: BorderRadius.circular(8.0),
+                                      borderRadius: BorderRadius.circular(8),
                                     ),
                                   ),
                                 ],

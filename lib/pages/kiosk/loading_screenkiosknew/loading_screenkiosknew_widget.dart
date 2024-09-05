@@ -92,7 +92,7 @@ class _LoadingScreenkiosknewWidgetState
         )?.toString()?.toString(),
         '0',
       );
-      setState(() {});
+      safeSetState(() {});
       _model.shiftboolean = await actions.shiftkiosknew(
         valueOrDefault<String>(
           getJsonField(
@@ -106,7 +106,7 @@ class _LoadingScreenkiosknewWidgetState
         FFAppState().appSettings = _model.isAppSetExistsNew!.settingList
             .toList()
             .cast<AppSettingsStruct>();
-        setState(() {});
+        safeSetState(() {});
         _model.returnAppsettiing2 = await actions.returnAppsetting(
           _model.masterAppsetting!.toList(),
           FFAppState().appSettings.toList(),
@@ -418,7 +418,7 @@ class _LoadingScreenkiosknewWidgetState
             ..newIDShift = functions.getShiftIdInt(FFAppState().shiftCount)
             ..version = FFAppState().shiftStructVersion,
         );
-        setState(() {});
+        safeSetState(() {});
         FFAppState().shiftCount = getJsonField(
           widget!.shiftDoc,
           r'''$.shiftCount''',
@@ -584,7 +584,7 @@ class _LoadingScreenkiosknewWidgetState
       }
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -623,11 +623,11 @@ class _LoadingScreenkiosknewWidgetState
                     if (!snapshot.hasData) {
                       return Center(
                         child: SizedBox(
-                          width: 40.0,
-                          height: 40.0,
+                          width: 40,
+                          height: 40,
                           child: SpinKitFadingCircle(
                             color: FlutterFlowTheme.of(context).primary,
-                            size: 40.0,
+                            size: 40,
                           ),
                         ),
                       );
@@ -644,8 +644,8 @@ class _LoadingScreenkiosknewWidgetState
                             : null;
 
                     return Container(
-                      width: MediaQuery.sizeOf(context).width * 1.0,
-                      height: MediaQuery.sizeOf(context).height * 1.0,
+                      width: MediaQuery.sizeOf(context).width,
+                      height: MediaQuery.sizeOf(context).height * 1,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                       ),
@@ -655,8 +655,8 @@ class _LoadingScreenkiosknewWidgetState
                           Expanded(
                             flex: 5,
                             child: Container(
-                              width: MediaQuery.sizeOf(context).width * 1.0,
-                              height: MediaQuery.sizeOf(context).height * 1.0,
+                              width: MediaQuery.sizeOf(context).width,
+                              height: MediaQuery.sizeOf(context).height * 1,
                               decoration: BoxDecoration(),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -664,22 +664,22 @@ class _LoadingScreenkiosknewWidgetState
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 5.0, 0.0, 0.0),
+                                        0, 5, 0, 0),
                                     child: Container(
-                                      width: 85.0,
-                                      height: 85.0,
+                                      width: 85,
+                                      height: 85,
                                       decoration: BoxDecoration(),
                                       child: Image.asset(
                                         'assets/images/IMG_20220412_140945.png',
-                                        width: 100.0,
-                                        height: 160.0,
+                                        width: 100,
+                                        height: 160,
                                         fit: BoxFit.contain,
                                       ),
                                     ),
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 5.0, 0.0, 0.0),
+                                        0, 5, 0, 0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
                                         'qbvs5rrx' /* SENSIBLE */,
@@ -690,7 +690,7 @@ class _LoadingScreenkiosknewWidgetState
                                             fontFamily:
                                                 FlutterFlowTheme.of(context)
                                                     .displaySmallFamily,
-                                            fontSize: 36.0,
+                                            fontSize: 36,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                             useGoogleFonts: GoogleFonts.asMap()
@@ -702,7 +702,7 @@ class _LoadingScreenkiosknewWidgetState
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 5.0, 0.0, 0.0),
+                                        0, 5, 0, 0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
                                         'laf4ajsw' /* CONNECT */,
@@ -715,7 +715,7 @@ class _LoadingScreenkiosknewWidgetState
                                                     .headlineSmallFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
-                                            letterSpacing: 5.0,
+                                            letterSpacing: 5,
                                             useGoogleFonts: GoogleFonts.asMap()
                                                 .containsKey(
                                                     FlutterFlowTheme.of(context)
@@ -730,8 +730,8 @@ class _LoadingScreenkiosknewWidgetState
                           Expanded(
                             flex: 2,
                             child: Container(
-                              width: MediaQuery.sizeOf(context).width * 1.0,
-                              height: MediaQuery.sizeOf(context).height * 1.0,
+                              width: MediaQuery.sizeOf(context).width,
+                              height: MediaQuery.sizeOf(context).height * 1,
                               decoration: BoxDecoration(),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -778,19 +778,18 @@ class _LoadingScreenkiosknewWidgetState
                             Expanded(
                               flex: 5,
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 20.0),
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
                                 child: Container(
-                                  width: MediaQuery.sizeOf(context).width * 1.0,
-                                  height:
-                                      MediaQuery.sizeOf(context).height * 1.0,
+                                  width: MediaQuery.sizeOf(context).width,
+                                  height: MediaQuery.sizeOf(context).height * 1,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        10.0, 10.0, 10.0, 15.0),
+                                        10, 10, 10, 15),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment: MainAxisAlignment.end,
@@ -800,7 +799,7 @@ class _LoadingScreenkiosknewWidgetState
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 10.0),
+                                                  0, 0, 0, 10),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -846,15 +845,14 @@ class _LoadingScreenkiosknewWidgetState
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 5.0, 0.0),
+                                                      .fromSTEB(0, 0, 5, 0),
                                                   child: LinearPercentIndicator(
                                                     percent: 0.9,
                                                     width: MediaQuery.sizeOf(
                                                                 context)
                                                             .width *
                                                         0.3,
-                                                    lineHeight: 22.0,
+                                                    lineHeight: 22,
                                                     animation: true,
                                                     animateFromLastPercent:
                                                         true,
@@ -892,14 +890,13 @@ class _LoadingScreenkiosknewWidgetState
                                                               ),
                                                     ),
                                                     barRadius:
-                                                        Radius.circular(20.0),
+                                                        Radius.circular(20),
                                                     padding: EdgeInsets.zero,
                                                   ),
                                                 ),
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 5.0, 0.0, 5.0),
+                                                      .fromSTEB(0, 5, 0, 5),
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
@@ -932,8 +929,7 @@ class _LoadingScreenkiosknewWidgetState
                                         ),
                                         Container(
                                           width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  1.0,
+                                              MediaQuery.sizeOf(context).width,
                                           height: MediaQuery.sizeOf(context)
                                                   .height *
                                               0.08,
@@ -941,7 +937,7 @@ class _LoadingScreenkiosknewWidgetState
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
                                             borderRadius:
-                                                BorderRadius.circular(10.0),
+                                                BorderRadius.circular(10),
                                           ),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -956,8 +952,8 @@ class _LoadingScreenkiosknewWidgetState
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                5.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 0, 5, 0),
                                                     child: Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -988,8 +984,8 @@ class _LoadingScreenkiosknewWidgetState
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                3.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 0, 3, 0),
                                                     child: Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -1052,8 +1048,8 @@ class _LoadingScreenkiosknewWidgetState
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                5.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 0, 5, 0),
                                                     child: Text(
                                                       FFLocalizations.of(
                                                               context)

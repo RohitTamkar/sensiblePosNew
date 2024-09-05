@@ -19,7 +19,6 @@ import 'package:provider/provider.dart';
 class WiFiSettingModel extends FlutterFlowModel<WiFiSettingWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - checkInternetConnection] action in WiFiSetting widget.
   bool? internetConnectionOutput;
   // Model for Header component.

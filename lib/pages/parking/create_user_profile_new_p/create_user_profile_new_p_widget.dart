@@ -55,7 +55,7 @@ class _CreateUserProfileNewPWidgetState
     _model.pINTextFieldTextController ??= TextEditingController();
     _model.pINTextFieldFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -86,8 +86,8 @@ class _CreateUserProfileNewPWidgetState
                   Expanded(
                     flex: 4,
                     child: Container(
-                      width: MediaQuery.sizeOf(context).width * 1.0,
-                      height: 100.0,
+                      width: MediaQuery.sizeOf(context).width,
+                      height: 100,
                       decoration: BoxDecoration(),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
@@ -95,22 +95,22 @@ class _CreateUserProfileNewPWidgetState
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                20.0, 0.0, 20.0, 0.0),
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
-                                  borderRadius: 30.0,
-                                  borderWidth: 1.0,
-                                  buttonSize: 45.0,
+                                  borderRadius: 30,
+                                  borderWidth: 1,
+                                  buttonSize: 45,
                                   icon: Icon(
                                     Icons.chevron_left,
                                     color:
                                         FlutterFlowTheme.of(context).lineColor,
-                                    size: 24.0,
+                                    size: 24,
                                   ),
                                   onPressed: () async {
                                     context.safePop();
@@ -138,13 +138,13 @@ class _CreateUserProfileNewPWidgetState
                                 ),
                                 FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
-                                  borderRadius: 30.0,
-                                  borderWidth: 1.0,
-                                  buttonSize: 45.0,
+                                  borderRadius: 30,
+                                  borderWidth: 1,
+                                  buttonSize: 45,
                                   icon: Icon(
                                     Icons.chevron_left,
                                     color: FlutterFlowTheme.of(context).primary,
-                                    size: 0.0,
+                                    size: 0,
                                   ),
                                   onPressed: () {
                                     print('IconButton pressed ...');
@@ -160,16 +160,16 @@ class _CreateUserProfileNewPWidgetState
                   Expanded(
                     flex: 24,
                     child: Container(
-                      width: MediaQuery.sizeOf(context).width * 1.0,
-                      height: 100.0,
+                      width: MediaQuery.sizeOf(context).width,
+                      height: 100,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context)
                             .parkingPrimaryBackground,
                         borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(0.0),
-                          bottomRight: Radius.circular(0.0),
-                          topLeft: Radius.circular(0.0),
-                          topRight: Radius.circular(0.0),
+                          bottomLeft: Radius.circular(0),
+                          bottomRight: Radius.circular(0),
+                          topLeft: Radius.circular(0),
+                          topRight: Radius.circular(0),
                         ),
                       ),
                       child: SingleChildScrollView(
@@ -177,15 +177,15 @@ class _CreateUserProfileNewPWidgetState
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 10.0, 0.0, 0.0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width * 0.85,
                                 height: MediaQuery.sizeOf(context).height * 0.7,
                                 decoration: BoxDecoration(),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 5.0, 0.0, 5.0),
+                                      0, 5, 0, 5),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:
@@ -193,7 +193,7 @@ class _CreateUserProfileNewPWidgetState
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            15.0, 0.0, 0.0, 0.0),
+                                            15, 0, 0, 0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -226,7 +226,7 @@ class _CreateUserProfileNewPWidgetState
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 20.0),
+                                            0, 0, 0, 20),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -244,12 +244,11 @@ class _CreateUserProfileNewPWidgetState
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
                                                 borderRadius:
-                                                    BorderRadius.circular(10.0),
+                                                    BorderRadius.circular(10),
                                               ),
                                               child: Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        10.0, 0.0, 0.0, 0.0),
+                                                    .fromSTEB(10, 0, 0, 0),
                                                 child: TextFormField(
                                                   controller: _model
                                                       .textFieldNameTextController,
@@ -260,7 +259,7 @@ class _CreateUserProfileNewPWidgetState
                                                     '_model.textFieldNameTextController',
                                                     Duration(
                                                         milliseconds: 2000),
-                                                    () => setState(() {}),
+                                                    () => safeSetState(() {}),
                                                   ),
                                                   autofocus: false,
                                                   textCapitalization:
@@ -367,7 +366,7 @@ class _CreateUserProfileNewPWidgetState
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            15.0, 0.0, 0.0, 0.0),
+                                            15, 0, 0, 0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -400,7 +399,7 @@ class _CreateUserProfileNewPWidgetState
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 20.0),
+                                            0, 0, 0, 20),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -418,12 +417,11 @@ class _CreateUserProfileNewPWidgetState
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
                                                 borderRadius:
-                                                    BorderRadius.circular(10.0),
+                                                    BorderRadius.circular(10),
                                               ),
                                               child: Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        10.0, 0.0, 0.0, 0.0),
+                                                    .fromSTEB(10, 0, 0, 0),
                                                 child: TextFormField(
                                                   controller: _model
                                                       .textFieldMobileTextController,
@@ -434,7 +432,7 @@ class _CreateUserProfileNewPWidgetState
                                                     '_model.textFieldMobileTextController',
                                                     Duration(
                                                         milliseconds: 2000),
-                                                    () => setState(() {}),
+                                                    () => safeSetState(() {}),
                                                   ),
                                                   autofocus: true,
                                                   readOnly: true,
@@ -531,7 +529,7 @@ class _CreateUserProfileNewPWidgetState
                                                       ),
                                                   keyboardType:
                                                       const TextInputType
-                                                          .numberWithOptions(
+                                                              .numberWithOptions(
                                                           signed: true,
                                                           decimal: true),
                                                   validator: _model
@@ -545,7 +543,7 @@ class _CreateUserProfileNewPWidgetState
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            15.0, 0.0, 0.0, 0.0),
+                                            15, 0, 0, 0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -578,7 +576,7 @@ class _CreateUserProfileNewPWidgetState
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 20.0),
+                                            0, 0, 0, 20),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -596,7 +594,7 @@ class _CreateUserProfileNewPWidgetState
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
                                                 borderRadius:
-                                                    BorderRadius.circular(10.0),
+                                                    BorderRadius.circular(10),
                                               ),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
@@ -604,8 +602,8 @@ class _CreateUserProfileNewPWidgetState
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(10.0, 0.0,
-                                                                0.0, 0.0),
+                                                            .fromSTEB(
+                                                                10, 0, 0, 0),
                                                     child: TextFormField(
                                                       controller: _model
                                                           .textFieldEmailTextController,
@@ -616,7 +614,8 @@ class _CreateUserProfileNewPWidgetState
                                                         '_model.textFieldEmailTextController',
                                                         Duration(
                                                             milliseconds: 2000),
-                                                        () => setState(() {}),
+                                                        () =>
+                                                            safeSetState(() {}),
                                                       ),
                                                       autofocus: true,
                                                       obscureText: false,
@@ -732,7 +731,7 @@ class _CreateUserProfileNewPWidgetState
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            15.0, 0.0, 0.0, 0.0),
+                                            15, 0, 0, 0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -765,7 +764,7 @@ class _CreateUserProfileNewPWidgetState
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 20.0),
+                                            0, 0, 0, 20),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -783,12 +782,11 @@ class _CreateUserProfileNewPWidgetState
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
                                                 borderRadius:
-                                                    BorderRadius.circular(10.0),
+                                                    BorderRadius.circular(10),
                                               ),
                                               child: Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        10.0, 0.0, 0.0, 0.0),
+                                                    .fromSTEB(10, 0, 0, 0),
                                                 child: TextFormField(
                                                   controller: _model
                                                       .pwdTextFieldTextController,
@@ -799,7 +797,7 @@ class _CreateUserProfileNewPWidgetState
                                                     '_model.pwdTextFieldTextController',
                                                     Duration(
                                                         milliseconds: 2000),
-                                                    () => setState(() {}),
+                                                    () => safeSetState(() {}),
                                                   ),
                                                   autofocus: true,
                                                   obscureText: !_model
@@ -879,7 +877,7 @@ class _CreateUserProfileNewPWidgetState
                                                       ),
                                                     ),
                                                     suffixIcon: InkWell(
-                                                      onTap: () => setState(
+                                                      onTap: () => safeSetState(
                                                         () => _model
                                                                 .pwdTextFieldVisibility =
                                                             !_model
@@ -895,7 +893,7 @@ class _CreateUserProfileNewPWidgetState
                                                                 .visibility_off_outlined,
                                                         color:
                                                             Color(0xFF757575),
-                                                        size: 15.0,
+                                                        size: 15,
                                                       ),
                                                     ),
                                                   ),
@@ -926,7 +924,7 @@ class _CreateUserProfileNewPWidgetState
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            15.0, 0.0, 0.0, 0.0),
+                                            15, 0, 0, 0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -959,7 +957,7 @@ class _CreateUserProfileNewPWidgetState
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 20.0),
+                                            0, 0, 0, 20),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -977,12 +975,11 @@ class _CreateUserProfileNewPWidgetState
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
                                                 borderRadius:
-                                                    BorderRadius.circular(10.0),
+                                                    BorderRadius.circular(10),
                                               ),
                                               child: Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        10.0, 0.0, 0.0, 0.0),
+                                                    .fromSTEB(10, 0, 0, 0),
                                                 child: TextFormField(
                                                   controller: _model
                                                       .pINTextFieldTextController,
@@ -993,7 +990,7 @@ class _CreateUserProfileNewPWidgetState
                                                     '_model.pINTextFieldTextController',
                                                     Duration(
                                                         milliseconds: 2000),
-                                                    () => setState(() {}),
+                                                    () => safeSetState(() {}),
                                                   ),
                                                   autofocus: true,
                                                   obscureText: !_model
@@ -1073,7 +1070,7 @@ class _CreateUserProfileNewPWidgetState
                                                       ),
                                                     ),
                                                     suffixIcon: InkWell(
-                                                      onTap: () => setState(
+                                                      onTap: () => safeSetState(
                                                         () => _model
                                                                 .pINTextFieldVisibility =
                                                             !_model
@@ -1089,7 +1086,7 @@ class _CreateUserProfileNewPWidgetState
                                                                 .visibility_off_outlined,
                                                         color:
                                                             Color(0xFF757575),
-                                                        size: 15.0,
+                                                        size: 15,
                                                       ),
                                                     ),
                                                   ),
@@ -1191,7 +1188,7 @@ class _CreateUserProfileNewPWidgetState
                                                 );
                                               },
                                             );
-                                            setState(() {
+                                            safeSetState(() {
                                               _model.pINTextFieldTextController
                                                   ?.clear();
                                               _model
@@ -1242,25 +1239,26 @@ class _CreateUserProfileNewPWidgetState
                                               },
                                             );
                                             if (_shouldSetState)
-                                              setState(() {});
+                                              safeSetState(() {});
                                             return;
                                           }
 
-                                          if (_shouldSetState) setState(() {});
+                                          if (_shouldSetState)
+                                            safeSetState(() {});
                                         },
                                         text:
                                             FFLocalizations.of(context).getText(
                                           'oyfmptoh' /* Next */,
                                         ),
                                         options: FFButtonOptions(
-                                          width: 130.0,
-                                          height: 40.0,
+                                          width: 130,
+                                          height: 40,
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
+                                                  0, 0, 0, 0),
                                           iconPadding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
+                                                  0, 0, 0, 0),
                                           color: FlutterFlowTheme.of(context)
                                               .parkingSecondaryBackground,
                                           textStyle: FlutterFlowTheme.of(
@@ -1280,12 +1278,12 @@ class _CreateUserProfileNewPWidgetState
                                                             .of(context)
                                                         .headlineSmallFamily),
                                               ),
-                                          elevation: 2.0,
+                                          elevation: 2,
                                           borderSide: BorderSide(
                                             color: Colors.transparent,
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(5.0),
+                                              BorderRadius.circular(5),
                                         ),
                                       ),
                                     ],

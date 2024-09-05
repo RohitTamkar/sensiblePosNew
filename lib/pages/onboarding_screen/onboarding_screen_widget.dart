@@ -27,7 +27,7 @@ class _OnboardingScreenWidgetState extends State<OnboardingScreenWidget> {
     super.initState();
     _model = createModel(context, () => OnboardingScreenModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -55,50 +55,50 @@ class _OnboardingScreenWidgetState extends State<OnboardingScreenWidget> {
                   Expanded(
                     child: Container(
                       width: double.infinity,
-                      height: 500.0,
+                      height: 500,
                       child: Stack(
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 40.0),
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 40),
                             child: PageView(
                               controller: _model.pageViewController ??=
                                   PageController(initialPage: 0),
                               scrollDirection: Axis.horizontal,
                               children: [
                                 ClipRRect(
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(8),
                                   child: Image.asset(
                                     'assets/images/Onboarding_Screens_9.jpg',
-                                    width: 300.0,
-                                    height: 200.0,
+                                    width: 300,
+                                    height: 200,
                                     fit: BoxFit.cover,
                                   ),
                                 ),
                                 ClipRRect(
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(8),
                                   child: Image.asset(
                                     'assets/images/Onboarding_Screens_10.jpg',
-                                    width: 300.0,
-                                    height: 200.0,
+                                    width: 300,
+                                    height: 200,
                                     fit: BoxFit.cover,
                                   ),
                                 ),
                                 ClipRRect(
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(8),
                                   child: Image.asset(
                                     'assets/images/Onboarding_Screens_11.jpg',
-                                    width: 300.0,
-                                    height: 200.0,
+                                    width: 300,
+                                    height: 200,
                                     fit: BoxFit.cover,
                                   ),
                                 ),
                                 ClipRRect(
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(8),
                                   child: Image.asset(
                                     'assets/images/Onboarding_Screens_12.jpg',
-                                    width: 300.0,
-                                    height: 200.0,
+                                    width: 300,
+                                    height: 200,
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -106,10 +106,10 @@ class _OnboardingScreenWidgetState extends State<OnboardingScreenWidget> {
                             ),
                           ),
                           Align(
-                            alignment: AlignmentDirectional(0.0, 1.0),
+                            alignment: AlignmentDirectional(0, 1),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 0.0, 0.0, 16.0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(16, 0, 0, 16),
                               child: smooth_page_indicator.SmoothPageIndicator(
                                 controller: _model.pageViewController ??=
                                     PageController(initialPage: 0),
@@ -122,15 +122,15 @@ class _OnboardingScreenWidgetState extends State<OnboardingScreenWidget> {
                                     duration: Duration(milliseconds: 500),
                                     curve: Curves.ease,
                                   );
-                                  setState(() {});
+                                  safeSetState(() {});
                                 },
                                 effect:
                                     smooth_page_indicator.ExpandingDotsEffect(
-                                  expansionFactor: 3.0,
-                                  spacing: 8.0,
-                                  radius: 16.0,
-                                  dotWidth: 16.0,
-                                  dotHeight: 8.0,
+                                  expansionFactor: 3,
+                                  spacing: 8,
+                                  radius: 16,
+                                  dotWidth: 16,
+                                  dotHeight: 8,
                                   dotColor: Color(0xFF1E83CB),
                                   activeDotColor:
                                       FlutterFlowTheme.of(context).tertiary,

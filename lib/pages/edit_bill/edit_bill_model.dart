@@ -26,7 +26,6 @@ import 'package:provider/provider.dart';
 class EditBillModel extends FlutterFlowModel<EditBillWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for Header component.
   late HeaderModel headerModel;
   // State field(s) for ListView widget.

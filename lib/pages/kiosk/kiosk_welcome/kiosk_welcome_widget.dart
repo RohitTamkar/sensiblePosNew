@@ -142,7 +142,7 @@ class _KioskWelcomeWidgetState extends State<KioskWelcomeWidget> {
       context.pushNamed('KioskLogin');
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -165,7 +165,7 @@ class _KioskWelcomeWidgetState extends State<KioskWelcomeWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Align(
-              alignment: AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0, 0),
               child: Container(
                 width: double.infinity,
                 height: double.infinity,
@@ -182,42 +182,42 @@ class _KioskWelcomeWidgetState extends State<KioskWelcomeWidget> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ClipRRect(
-                      borderRadius: BorderRadius.circular(0.0),
+                      borderRadius: BorderRadius.circular(0),
                       child: BackdropFilter(
                         filter: ImageFilter.blur(
-                          sigmaX: 20.0,
-                          sigmaY: 20.0,
+                          sigmaX: 20,
+                          sigmaY: 20,
                         ),
                         child: Container(
                           width: MediaQuery.sizeOf(context).width * 0.8,
                           height: MediaQuery.sizeOf(context).height * 0.85,
                           decoration: BoxDecoration(
                             color: Color(0x59000000),
-                            borderRadius: BorderRadius.circular(50.0),
+                            borderRadius: BorderRadius.circular(50),
                           ),
                           child: Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                50.0, 250.0, 50.0, 250.0),
+                                50, 250, 50, 250),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 100.0),
+                                      0, 0, 0, 100),
                                   child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(15.0),
+                                    borderRadius: BorderRadius.circular(15),
                                     child: Image.asset(
                                       'assets/images/Sensible_Connect_Logo_White.png',
-                                      width: 150.0,
-                                      height: 150.0,
+                                      width: 150,
+                                      height: 150,
                                       fit: BoxFit.contain,
                                     ),
                                   ),
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 40.0),
+                                      0, 0, 0, 40),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
                                       'e7xczi7s' /* Welcome to */,
@@ -230,7 +230,7 @@ class _KioskWelcomeWidgetState extends State<KioskWelcomeWidget> {
                                                   .displayLargeFamily,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBtnText,
-                                          fontSize: 32.0,
+                                          fontSize: 32,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.normal,
                                           useGoogleFonts: GoogleFonts.asMap()
@@ -251,7 +251,7 @@ class _KioskWelcomeWidgetState extends State<KioskWelcomeWidget> {
                                             .displayLargeFamily,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBtnText,
-                                        fontSize: 55.0,
+                                        fontSize: 55,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.bold,
                                         useGoogleFonts: GoogleFonts.asMap()
@@ -271,8 +271,8 @@ class _KioskWelcomeWidgetState extends State<KioskWelcomeWidget> {
                                             .displayLargeFamily,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBtnText,
-                                        fontSize: 55.0,
-                                        letterSpacing: 15.0,
+                                        fontSize: 55,
+                                        letterSpacing: 15,
                                         fontWeight: FontWeight.bold,
                                         useGoogleFonts: GoogleFonts.asMap()
                                             .containsKey(
@@ -281,11 +281,11 @@ class _KioskWelcomeWidgetState extends State<KioskWelcomeWidget> {
                                       ),
                                 ),
                                 ClipRRect(
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(8),
                                   child: Image.asset(
                                     'assets/images/threeArchedCircle-unscreen.gif',
-                                    width: 300.0,
-                                    height: 200.0,
+                                    width: 300,
+                                    height: 200,
                                     fit: BoxFit.cover,
                                   ),
                                 ),

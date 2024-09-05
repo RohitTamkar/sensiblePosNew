@@ -72,7 +72,7 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
     _model.textController14 ??= TextEditingController();
     _model.textFieldFocusNode14 ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -85,7 +85,7 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0, 0),
       child: Container(
         width: MediaQuery.sizeOf(context).width * 0.8,
         height: MediaQuery.sizeOf(context).height * 0.9,
@@ -93,12 +93,12 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
           color: FlutterFlowTheme.of(context).primaryBackground,
         ),
         child: Padding(
-          padding: EdgeInsets.all(15.0),
+          padding: EdgeInsets.all(15),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -119,13 +119,13 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                     ),
                     FlutterFlowIconButton(
                       borderColor: Colors.transparent,
-                      borderRadius: 30.0,
-                      buttonSize: 40.0,
+                      borderRadius: 30,
+                      buttonSize: 40,
                       fillColor: FlutterFlowTheme.of(context).primary,
                       icon: Icon(
                         Icons.close_sharp,
                         color: FlutterFlowTheme.of(context).primaryBtnText,
-                        size: 24.0,
+                        size: 24,
                       ),
                       onPressed: () async {
                         Navigator.pop(context);
@@ -135,16 +135,15 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 15),
                 child: Container(
                   width: double.infinity,
-                  height: 35.0,
+                  height: 35,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).customColor2,
                   ),
                   child: Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -170,7 +169,7 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 15),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -179,8 +178,8 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 10.0, 0.0),
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'w3ss58td' /* GRN No. */,
@@ -202,8 +201,8 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                           Expanded(
                             flex: 3,
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 15.0, 0.0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 15, 0),
                               child: TextFormField(
                                 controller: _model.textController1,
                                 focusNode: _model.textFieldFocusNode1,
@@ -237,35 +236,35 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context)
                                           .customColor1,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).info,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   errorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).error,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).error,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   filled: true,
                                   fillColor: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  contentPadding: EdgeInsets.all(12.0),
+                                  contentPadding: EdgeInsets.all(12),
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
@@ -292,8 +291,8 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                         children: [
                           Expanded(
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 10.0, 0.0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
                                   'yrfpgf8v' /* Acc. Group ID */,
@@ -348,35 +347,35 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context)
                                         .customColor1,
-                                    width: 1.0,
+                                    width: 1,
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).info,
-                                    width: 1.0,
+                                    width: 1,
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
                                 errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1.0,
+                                    width: 1,
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
                                 focusedErrorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1.0,
+                                    width: 1,
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                contentPadding: EdgeInsets.all(12.0),
+                                contentPadding: EdgeInsets.all(12),
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
@@ -400,7 +399,7 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 35.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 35),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -409,8 +408,8 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 10.0, 0.0),
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'z2lftwvt' /* Remark */,
@@ -432,8 +431,8 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                           Expanded(
                             flex: 3,
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 15.0, 0.0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 15, 0),
                               child: TextFormField(
                                 controller: _model.textController3,
                                 focusNode: _model.textFieldFocusNode3,
@@ -467,35 +466,35 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context)
                                           .customColor1,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).info,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   errorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).error,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).error,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   filled: true,
                                   fillColor: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  contentPadding: EdgeInsets.all(12.0),
+                                  contentPadding: EdgeInsets.all(12),
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
@@ -522,8 +521,8 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                         children: [
                           Expanded(
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 10.0, 0.0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
                                   'j2k1r89t' /* Port ID */,
@@ -578,35 +577,35 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context)
                                         .customColor1,
-                                    width: 1.0,
+                                    width: 1,
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).info,
-                                    width: 1.0,
+                                    width: 1,
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
                                 errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1.0,
+                                    width: 1,
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
                                 focusedErrorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1.0,
+                                    width: 1,
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                contentPadding: EdgeInsets.all(12.0),
+                                contentPadding: EdgeInsets.all(12),
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
@@ -630,16 +629,15 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 15),
                 child: Container(
                   width: double.infinity,
-                  height: 35.0,
+                  height: 35,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).customColor2,
                   ),
                   child: Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -665,7 +663,7 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 15),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -674,8 +672,8 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 10.0, 0.0),
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 '3ppn54yb' /* Mobile No. */,
@@ -697,8 +695,8 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                           Expanded(
                             flex: 3,
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 15.0, 0.0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 15, 0),
                               child: TextFormField(
                                 controller: _model.textController5,
                                 focusNode: _model.textFieldFocusNode5,
@@ -732,35 +730,35 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context)
                                           .customColor1,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).info,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   errorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).error,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).error,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   filled: true,
                                   fillColor: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  contentPadding: EdgeInsets.all(12.0),
+                                  contentPadding: EdgeInsets.all(12),
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
@@ -783,8 +781,8 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                     ),
                     Expanded(
                       child: Container(
-                        width: 100.0,
-                        height: 10.0,
+                        width: 100,
+                        height: 10,
                         decoration: BoxDecoration(),
                       ),
                     ),
@@ -792,7 +790,7 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 15),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -801,8 +799,8 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 10.0, 0.0),
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'amp5j5h0' /* Address 1 */,
@@ -856,35 +854,35 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context)
                                         .customColor1,
-                                    width: 1.0,
+                                    width: 1,
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).info,
-                                    width: 1.0,
+                                    width: 1,
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
                                 errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1.0,
+                                    width: 1,
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
                                 focusedErrorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1.0,
+                                    width: 1,
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                contentPadding: EdgeInsets.all(12.0),
+                                contentPadding: EdgeInsets.all(12),
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
@@ -908,7 +906,7 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 15),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -917,8 +915,8 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 10.0, 0.0),
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'hcmqhiiz' /* Area */,
@@ -972,35 +970,35 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context)
                                         .customColor1,
-                                    width: 1.0,
+                                    width: 1,
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).info,
-                                    width: 1.0,
+                                    width: 1,
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
                                 errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1.0,
+                                    width: 1,
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
                                 focusedErrorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1.0,
+                                    width: 1,
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                contentPadding: EdgeInsets.all(12.0),
+                                contentPadding: EdgeInsets.all(12),
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
@@ -1024,7 +1022,7 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 15),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -1033,8 +1031,8 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 10.0, 0.0),
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'kw3k55s0' /* Pincode */,
@@ -1056,8 +1054,8 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                           Expanded(
                             flex: 3,
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 15.0, 0.0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 15, 0),
                               child: TextFormField(
                                 controller: _model.textController8,
                                 focusNode: _model.textFieldFocusNode8,
@@ -1091,35 +1089,35 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context)
                                           .customColor1,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).info,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   errorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).error,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).error,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   filled: true,
                                   fillColor: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  contentPadding: EdgeInsets.all(12.0),
+                                  contentPadding: EdgeInsets.all(12),
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
@@ -1145,8 +1143,8 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 10.0, 0.0),
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'cb70aril' /* City */,
@@ -1168,8 +1166,8 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                           Expanded(
                             flex: 3,
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 15.0, 0.0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 15, 0),
                               child: TextFormField(
                                 controller: _model.textController9,
                                 focusNode: _model.textFieldFocusNode9,
@@ -1203,35 +1201,35 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context)
                                           .customColor1,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).info,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   errorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).error,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).error,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   filled: true,
                                   fillColor: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  contentPadding: EdgeInsets.all(12.0),
+                                  contentPadding: EdgeInsets.all(12),
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
@@ -1257,8 +1255,8 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 10.0, 0.0),
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'duz142xh' /* State */,
@@ -1280,8 +1278,8 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                           Expanded(
                             flex: 3,
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 15.0, 0.0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 15, 0),
                               child: TextFormField(
                                 controller: _model.textController10,
                                 focusNode: _model.textFieldFocusNode10,
@@ -1315,35 +1313,35 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context)
                                           .customColor1,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).info,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   errorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).error,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).error,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   filled: true,
                                   fillColor: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  contentPadding: EdgeInsets.all(12.0),
+                                  contentPadding: EdgeInsets.all(12),
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
@@ -1369,8 +1367,8 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 10.0, 0.0),
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 't5az2o3c' /* Country  */,
@@ -1424,35 +1422,35 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context)
                                         .customColor1,
-                                    width: 1.0,
+                                    width: 1,
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).info,
-                                    width: 1.0,
+                                    width: 1,
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
                                 errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1.0,
+                                    width: 1,
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
                                 focusedErrorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1.0,
+                                    width: 1,
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                contentPadding: EdgeInsets.all(12.0),
+                                contentPadding: EdgeInsets.all(12),
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
@@ -1476,7 +1474,7 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 15),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -1485,8 +1483,8 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 10.0, 0.0),
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 '76k7jlp2' /* ARNumber */,
@@ -1508,8 +1506,8 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                           Expanded(
                             flex: 3,
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 15.0, 0.0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 15, 0),
                               child: TextFormField(
                                 controller: _model.textController12,
                                 focusNode: _model.textFieldFocusNode12,
@@ -1543,35 +1541,35 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context)
                                           .customColor1,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).info,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   errorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).error,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).error,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   filled: true,
                                   fillColor: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  contentPadding: EdgeInsets.all(12.0),
+                                  contentPadding: EdgeInsets.all(12),
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
@@ -1597,8 +1595,8 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 10.0, 0.0),
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'olwopzcr' /* GSTIN */,
@@ -1620,8 +1618,8 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                           Expanded(
                             flex: 3,
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 15.0, 0.0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 15, 0),
                               child: TextFormField(
                                 controller: _model.textController13,
                                 focusNode: _model.textFieldFocusNode13,
@@ -1655,35 +1653,35 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context)
                                           .customColor1,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).info,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   errorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).error,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).error,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   filled: true,
                                   fillColor: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  contentPadding: EdgeInsets.all(12.0),
+                                  contentPadding: EdgeInsets.all(12),
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
@@ -1709,8 +1707,8 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 10.0, 0.0),
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'wnrcnw86' /* GST State Code */,
@@ -1764,35 +1762,35 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context)
                                         .customColor1,
-                                    width: 1.0,
+                                    width: 1,
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).info,
-                                    width: 1.0,
+                                    width: 1,
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
                                 errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1.0,
+                                    width: 1,
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
                                 focusedErrorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
-                                    width: 1.0,
+                                    width: 1,
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                contentPadding: EdgeInsets.all(12.0),
+                                contentPadding: EdgeInsets.all(12),
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
@@ -1816,7 +1814,7 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 35.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 35, 0, 0),
                 child: FFButtonWidget(
                   onPressed: () {
                     print('Button pressed ...');
@@ -1825,11 +1823,9 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                     'm6zehjes' /* Submit */,
                   ),
                   options: FFButtonOptions(
-                    height: 40.0,
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                    iconPadding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    height: 40,
+                    padding: EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
+                    iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily:
@@ -1839,12 +1835,12 @@ class _SpplierGroWidgetState extends State<SpplierGroWidget> {
                           useGoogleFonts: GoogleFonts.asMap().containsKey(
                               FlutterFlowTheme.of(context).titleSmallFamily),
                         ),
-                    elevation: 3.0,
+                    elevation: 3,
                     borderSide: BorderSide(
                       color: Colors.transparent,
-                      width: 1.0,
+                      width: 1,
                     ),
-                    borderRadius: BorderRadius.circular(8.0),
+                    borderRadius: BorderRadius.circular(8),
                   ),
                 ),
               ),

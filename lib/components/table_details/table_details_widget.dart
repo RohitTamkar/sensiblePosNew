@@ -28,7 +28,7 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
     super.initState();
     _model = createModel(context, () => TableDetailsModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -44,32 +44,31 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
       mainAxisSize: MainAxisSize.max,
       children: [
         Container(
-          width: 600.0,
-          height: 400.0,
+          width: 600,
+          height: 400,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).primaryBackground,
           ),
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(10.0, 15.0, 10.0, 10.0),
+            padding: EdgeInsetsDirectional.fromSTEB(10, 15, 10, 10),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 25, 0),
                         child: Container(
                           decoration: BoxDecoration(),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 3.0, 0.0),
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 0, 3, 0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
                                     '5qa49c1f' /* Details of Table No. : */,
@@ -98,7 +97,7 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                           .headlineMediumFamily,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
-                                      fontSize: 18.0,
+                                      fontSize: 18,
                                       letterSpacing: 0.0,
                                       useGoogleFonts: GoogleFonts.asMap()
                                           .containsKey(
@@ -112,14 +111,14 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                       ),
                       Expanded(
                         child: Container(
-                          width: 100.0,
+                          width: 100,
                           decoration: BoxDecoration(),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 3.0, 0.0),
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 0, 3, 0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
                                     'al48ge11' /* 32 */,
@@ -130,7 +129,7 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                         fontFamily: FlutterFlowTheme.of(context)
                                             .headlineSmallFamily,
                                         color: Color(0xFF3B58FF),
-                                        fontSize: 12.0,
+                                        fontSize: 12,
                                         letterSpacing: 0.0,
                                         useGoogleFonts: GoogleFonts.asMap()
                                             .containsKey(
@@ -162,10 +161,9 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                       ),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 10.0, 0.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                           child: Container(
-                            width: 100.0,
+                            width: 100,
                             decoration: BoxDecoration(),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -173,7 +171,7 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 3.0, 0.0),
+                                      0, 0, 3, 0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
                                       'vjiteb9y' /* Assign To : */,
@@ -214,13 +212,13 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                         ),
                       ),
                       Container(
-                        width: 38.0,
-                        height: 38.0,
+                        width: 38,
+                        height: 38,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5.0),
+                          borderRadius: BorderRadius.circular(5),
                           border: Border.all(
                             color: FlutterFlowTheme.of(context).primaryText,
-                            width: 1.0,
+                            width: 1,
                           ),
                         ),
                         child: InkWell(
@@ -234,7 +232,7 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                           child: Icon(
                             Icons.close,
                             color: FlutterFlowTheme.of(context).primaryText,
-                            size: 20.0,
+                            size: 20,
                           ),
                         ),
                       ),
@@ -247,14 +245,13 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                     Expanded(
                       flex: 12,
                       child: Container(
-                        width: 100.0,
-                        height: 20.0,
+                        width: 100,
+                        height: 20,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).secondary,
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              5.0, 0.0, 0.0, 0.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -284,8 +281,8 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                     Expanded(
                       flex: 2,
                       child: Container(
-                        width: 100.0,
-                        height: 20.0,
+                        width: 100,
+                        height: 20,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).secondary,
                         ),
@@ -316,8 +313,8 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                     Expanded(
                       flex: 3,
                       child: Container(
-                        width: 100.0,
-                        height: 20.0,
+                        width: 100,
+                        height: 20,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).secondary,
                         ),
@@ -348,14 +345,13 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                     Expanded(
                       flex: 3,
                       child: Container(
-                        width: 100.0,
-                        height: 20.0,
+                        width: 100,
+                        height: 20,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).secondary,
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 10.0, 0.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -387,32 +383,31 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                 ),
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 9.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 9),
                     child: Container(
                       width: double.infinity,
-                      height: 290.0,
+                      height: 290,
                       decoration: BoxDecoration(),
                       child: ListView(
                         padding: EdgeInsets.zero,
                         scrollDirection: Axis.vertical,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 2.0),
+                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 2),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Expanded(
                                   flex: 12,
                                   child: Container(
-                                    width: 100.0,
+                                    width: 100,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
                                     ),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          5.0, 0.0, 0.0, 0.0),
+                                          5, 0, 0, 0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -423,7 +418,7 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 3.0, 0.0, 3.0),
+                                                    0, 3, 0, 3),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -455,7 +450,7 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                 Expanded(
                                   flex: 2,
                                   child: Container(
-                                    width: 100.0,
+                                    width: 100,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
@@ -468,7 +463,7 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 3.0, 0.0, 3.0),
+                                                  0, 3, 0, 3),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               '8h73f9zk' /* 2 */,
@@ -497,7 +492,7 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                 Expanded(
                                   flex: 3,
                                   child: Container(
-                                    width: 100.0,
+                                    width: 100,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
@@ -510,7 +505,7 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 3.0, 0.0, 3.0),
+                                                  0, 3, 0, 3),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               '0vhvfooc' /* 80 */,
@@ -539,14 +534,14 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                 Expanded(
                                   flex: 3,
                                   child: Container(
-                                    width: 100.0,
+                                    width: 100,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
                                     ),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 10.0, 0.0),
+                                          0, 0, 10, 0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -557,7 +552,7 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 3.0, 0.0, 3.0),
+                                                    0, 3, 0, 3),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -596,17 +591,16 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 10.0, 0.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                           child: Container(
-                            width: 100.0,
+                            width: 100,
                             decoration: BoxDecoration(),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -614,7 +608,7 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 3.0, 0.0),
+                                      0, 0, 3, 0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
                                       'kuepccr8' /* Bill No. : */,
@@ -656,15 +650,15 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                       ),
                       Expanded(
                         child: Container(
-                          width: 100.0,
+                          width: 100,
                           decoration: BoxDecoration(),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 3.0, 0.0),
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 0, 3, 0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
                                     'jswwo6ja' /* Total Amount : */,
@@ -683,8 +677,8 @@ class _TableDetailsWidgetState extends State<TableDetailsWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 3.0, 0.0),
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 0, 3, 0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
                                     'ys47yyvb' /* ₹ */,

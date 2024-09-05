@@ -58,7 +58,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
         ExpandableController(initialExpanded: false);
     _model.expandableExpandableController12 =
         ExpandableController(initialExpanded: false);
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -81,7 +81,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Padding(
-              padding: EdgeInsets.all(3.0),
+              padding: EdgeInsets.all(3),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -89,7 +89,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                   Expanded(
                     flex: 1,
                     child: Container(
-                      width: MediaQuery.sizeOf(context).width * 1.0,
+                      width: MediaQuery.sizeOf(context).width,
                       height: MediaQuery.sizeOf(context).height * 0.12,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primary,
@@ -102,22 +102,22 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                           Expanded(
                             flex: 1,
                             child: Container(
-                              width: 100.0,
-                              height: 100.0,
+                              width: 100,
+                              height: 100,
                               decoration: BoxDecoration(),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   FlutterFlowIconButton(
                                     borderColor: Colors.transparent,
-                                    borderRadius: 30.0,
-                                    borderWidth: 1.0,
-                                    buttonSize: 60.0,
+                                    borderRadius: 30,
+                                    borderWidth: 1,
+                                    buttonSize: 60,
                                     icon: Icon(
                                       Icons.chevron_left_sharp,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBtnText,
-                                      size: 26.0,
+                                      size: 26,
                                     ),
                                     onPressed: () async {
                                       context.pop();
@@ -150,7 +150,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                             flex: 1,
                             child: wrapWithModel(
                               model: _model.headerModel,
-                              updateCallback: () => setState(() {}),
+                              updateCallback: () => safeSetState(() {}),
                               child: HeaderWidget(),
                             ),
                           ),
@@ -161,8 +161,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                   Expanded(
                     flex: 13,
                     child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
                       child: Stack(
                         children: [
                           StreamBuilder<List<AppSettingsRecord>>(
@@ -175,12 +174,12 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                               if (!snapshot.hasData) {
                                 return Center(
                                   child: SizedBox(
-                                    width: 40.0,
-                                    height: 40.0,
+                                    width: 40,
+                                    height: 40,
                                     child: SpinKitFadingCircle(
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      size: 40.0,
+                                      size: 40,
                                     ),
                                   ),
                                 );
@@ -194,7 +193,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                       : null;
 
                               return Container(
-                                width: MediaQuery.sizeOf(context).width * 1.0,
+                                width: MediaQuery.sizeOf(context).width,
                                 height: double.infinity,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
@@ -207,11 +206,9 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          1.0, 0.0, 1.0, 0.0),
+                                          1, 0, 1, 0),
                                       child: Container(
-                                        width:
-                                            MediaQuery.sizeOf(context).width *
-                                                1.0,
+                                        width: MediaQuery.sizeOf(context).width,
                                         height:
                                             MediaQuery.sizeOf(context).height *
                                                 0.11,
@@ -224,7 +221,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                               MainAxisAlignment.end,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsets.all(7.0),
+                                              padding: EdgeInsets.all(7),
                                               child: FFButtonWidget(
                                                 onPressed: () async {
                                                   await containerAppSettingsRecord!
@@ -373,18 +370,16 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .lineColor,
-                                                  size: 15.0,
+                                                  size: 15,
                                                 ),
                                                 options: FFButtonOptions(
-                                                  width: 150.0,
-                                                  height: 40.0,
+                                                  width: 150,
+                                                  height: 40,
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 0.0, 0.0),
+                                                      .fromSTEB(0, 0, 0, 0),
                                                   iconPadding:
                                                       EdgeInsetsDirectional
-                                                          .fromSTEB(0.0, 0.0,
-                                                              0.0, 0.0),
+                                                          .fromSTEB(0, 0, 0, 0),
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondary,
@@ -408,14 +403,13 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                         context)
                                                                     .titleSmallFamily),
                                                       ),
-                                                  elevation: 5.0,
+                                                  elevation: 5,
                                                   borderSide: BorderSide(
                                                     color: Colors.transparent,
-                                                    width: 1.0,
+                                                    width: 1,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(
-                                                          0.0),
+                                                      BorderRadius.circular(0),
                                                 ),
                                               ),
                                             ),
@@ -458,11 +452,8 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      3.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      3, 0, 0),
                                                           child: Container(
                                                             decoration:
                                                                 BoxDecoration(
@@ -486,7 +477,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       Padding(
                                                                     padding:
                                                                         EdgeInsets.all(
-                                                                            15.0),
+                                                                            15),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -529,7 +520,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                               containerAppSettingsRecord!.paymentMenu,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTileenablePaymentMenuValue = newValue!);
                                                                           },
                                                                           title:
@@ -564,11 +555,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                         ),
                                                                         Divider(
                                                                           thickness:
-                                                                              1.0,
+                                                                              1,
                                                                           indent:
-                                                                              10.0,
+                                                                              10,
                                                                           endIndent:
-                                                                              10.0,
+                                                                              10,
                                                                           color:
                                                                               Color(0xFFD4D1D1),
                                                                         ),
@@ -577,7 +568,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                               containerAppSettingsRecord!.goodsReceivedMenu,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTilegoodsReceiveMenuValue = newValue!);
                                                                           },
                                                                           title:
@@ -600,11 +591,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                         ),
                                                                         Divider(
                                                                           thickness:
-                                                                              1.0,
+                                                                              1,
                                                                           indent:
-                                                                              10.0,
+                                                                              10,
                                                                           endIndent:
-                                                                              10.0,
+                                                                              10,
                                                                           color:
                                                                               Color(0xFFD4D1D1),
                                                                         ),
@@ -613,7 +604,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                               containerAppSettingsRecord!.stockOutMenu,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTilestockOutMenuValue = newValue!);
                                                                           },
                                                                           title:
@@ -636,11 +627,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                         ),
                                                                         Divider(
                                                                           thickness:
-                                                                              1.0,
+                                                                              1,
                                                                           indent:
-                                                                              10.0,
+                                                                              10,
                                                                           endIndent:
-                                                                              10.0,
+                                                                              10,
                                                                           color:
                                                                               Color(0xFFD4D1D1),
                                                                         ),
@@ -649,7 +640,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                               containerAppSettingsRecord!.barcodeMenu,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTileEnableBarodeMenuValue = newValue!);
                                                                           },
                                                                           title:
@@ -714,7 +705,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                   padding:
                                                                       EdgeInsets
                                                                           .all(
-                                                                              15.0),
+                                                                              15),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -756,7 +747,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                             containerAppSettingsRecord!.openingBalancePopup,
                                                                         onChanged:
                                                                             (newValue) async {
-                                                                          setState(() =>
+                                                                          safeSetState(() =>
                                                                               _model.switchListTileenableOpeningBalanceValue = newValue!);
                                                                         },
                                                                         title:
@@ -782,11 +773,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1.0,
+                                                                            1,
                                                                         indent:
-                                                                            10.0,
+                                                                            10,
                                                                         endIndent:
-                                                                            10.0,
+                                                                            10,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -795,7 +786,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                             containerAppSettingsRecord!.floatingKeyboard,
                                                                         onChanged:
                                                                             (newValue) async {
-                                                                          setState(() =>
+                                                                          safeSetState(() =>
                                                                               _model.switchListTileflottingKeyboardButtonValue = newValue!);
                                                                         },
                                                                         title:
@@ -821,11 +812,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1.0,
+                                                                            1,
                                                                         indent:
-                                                                            10.0,
+                                                                            10,
                                                                         endIndent:
-                                                                            10.0,
+                                                                            10,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -834,7 +825,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                             containerAppSettingsRecord!.openingBalancePopup,
                                                                         onChanged:
                                                                             (newValue) async {
-                                                                          setState(() =>
+                                                                          safeSetState(() =>
                                                                               _model.switchListTileshowOpeningAmountValue = newValue!);
                                                                         },
                                                                         title:
@@ -875,11 +866,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1.0,
+                                                                            1,
                                                                         indent:
-                                                                            10.0,
+                                                                            10,
                                                                         endIndent:
-                                                                            10.0,
+                                                                            10,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -888,7 +879,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                             containerAppSettingsRecord!.saveButton,
                                                                         onChanged:
                                                                             (newValue) async {
-                                                                          setState(() =>
+                                                                          safeSetState(() =>
                                                                               _model.switchListTiledisableSaveButtonValue = newValue!);
                                                                         },
                                                                         title:
@@ -914,11 +905,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1.0,
+                                                                            1,
                                                                         indent:
-                                                                            10.0,
+                                                                            10,
                                                                         endIndent:
-                                                                            10.0,
+                                                                            10,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -927,7 +918,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                             containerAppSettingsRecord!.showHoldListButton,
                                                                         onChanged:
                                                                             (newValue) async {
-                                                                          setState(() =>
+                                                                          safeSetState(() =>
                                                                               _model.switchListTileshowHoldListBtnValue = newValue!);
                                                                         },
                                                                         title:
@@ -993,7 +984,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                   padding:
                                                                       EdgeInsets
                                                                           .all(
-                                                                              15.0),
+                                                                              15),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -1038,7 +1029,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                               false,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTilecustomerDetailsValue = newValue!);
                                                                           },
                                                                           title:
@@ -1061,11 +1052,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                         ),
                                                                         Divider(
                                                                           thickness:
-                                                                              1.0,
+                                                                              1,
                                                                           indent:
-                                                                              10.0,
+                                                                              10,
                                                                           endIndent:
-                                                                              10.0,
+                                                                              10,
                                                                           color:
                                                                               Color(0xFFD4D1D1),
                                                                         ),
@@ -1074,7 +1065,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                               containerAppSettingsRecord!.customerAdvance,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTilecustomerAdvValue = newValue!);
                                                                           },
                                                                           title:
@@ -1097,11 +1088,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                         ),
                                                                         Divider(
                                                                           thickness:
-                                                                              1.0,
+                                                                              1,
                                                                           indent:
-                                                                              10.0,
+                                                                              10,
                                                                           endIndent:
-                                                                              10.0,
+                                                                              10,
                                                                           color:
                                                                               Color(0xFFD4D1D1),
                                                                         ),
@@ -1110,7 +1101,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                               containerAppSettingsRecord!.customerforcefully,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTilecustometForcefullyBillValue = newValue!);
                                                                           },
                                                                           title:
@@ -1133,11 +1124,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                         ),
                                                                         Divider(
                                                                           thickness:
-                                                                              1.0,
+                                                                              1,
                                                                           indent:
-                                                                              10.0,
+                                                                              10,
                                                                           endIndent:
-                                                                              10.0,
+                                                                              10,
                                                                           color:
                                                                               Color(0xFFD4D1D1),
                                                                         ),
@@ -1146,7 +1137,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                               containerAppSettingsRecord!.vehicleNumber,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTileaddVehicleNoValue = newValue!);
                                                                           },
                                                                           title:
@@ -1169,11 +1160,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                         ),
                                                                         Divider(
                                                                           thickness:
-                                                                              1.0,
+                                                                              1,
                                                                           indent:
-                                                                              10.0,
+                                                                              10,
                                                                           endIndent:
-                                                                              10.0,
+                                                                              10,
                                                                           color:
                                                                               Color(0xFFD4D1D1),
                                                                         ),
@@ -1182,7 +1173,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                               containerAppSettingsRecord!.loyaltyPoints,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTileloyaltyPointValue = newValue!);
                                                                           },
                                                                           title:
@@ -1205,11 +1196,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                         ),
                                                                         Divider(
                                                                           thickness:
-                                                                              1.0,
+                                                                              1,
                                                                           indent:
-                                                                              10.0,
+                                                                              10,
                                                                           endIndent:
-                                                                              10.0,
+                                                                              10,
                                                                           color:
                                                                               Color(0xFFD4D1D1),
                                                                         ),
@@ -1218,7 +1209,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                               containerAppSettingsRecord!.sendSMS,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTilesendbillSmsValue = newValue!);
                                                                           },
                                                                           title:
@@ -1241,11 +1232,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                         ),
                                                                         Divider(
                                                                           thickness:
-                                                                              1.0,
+                                                                              1,
                                                                           indent:
-                                                                              10.0,
+                                                                              10,
                                                                           endIndent:
-                                                                              10.0,
+                                                                              10,
                                                                           color:
                                                                               Color(0xFFD4D1D1),
                                                                         ),
@@ -1254,7 +1245,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                               containerAppSettingsRecord!.itemStockRequestSent,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTilestockRequestOutletWiseValue = newValue!);
                                                                           },
                                                                           title:
@@ -1277,11 +1268,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                         ),
                                                                         Divider(
                                                                           thickness:
-                                                                              1.0,
+                                                                              1,
                                                                           indent:
-                                                                              10.0,
+                                                                              10,
                                                                           endIndent:
-                                                                              10.0,
+                                                                              10,
                                                                           color:
                                                                               Color(0xFFD4D1D1),
                                                                         ),
@@ -1290,7 +1281,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                               containerAppSettingsRecord!.stockRequestAccept,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTilestockRequestAcceptValue = newValue!);
                                                                           },
                                                                           title:
@@ -1354,7 +1345,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                   padding:
                                                                       EdgeInsets
                                                                           .all(
-                                                                              15.0),
+                                                                              15),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -1399,7 +1390,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                               containerAppSettingsRecord!.searchWithOnlyBarcode,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTileSearchonlyWithBarcodeValue = newValue!);
                                                                           },
                                                                           title:
@@ -1456,8 +1447,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                 child: Container(
                                                   width:
                                                       MediaQuery.sizeOf(context)
-                                                              .width *
-                                                          1.0,
+                                                          .width,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -1478,9 +1468,9 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                   .regionalLanguage,
                                                           onChanged:
                                                               (newValue) async {
-                                                            setState(() => _model
-                                                                    .switchListTileregionalLanguageValue =
-                                                                newValue!);
+                                                            safeSetState(() =>
+                                                                _model.switchListTileregionalLanguageValue =
+                                                                    newValue!);
                                                           },
                                                           title: Text(
                                                             FFLocalizations.of(
@@ -1516,13 +1506,13 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        20.0),
+                                                                        20),
                                                           ),
                                                         ),
                                                         Divider(
                                                           thickness: 0.5,
-                                                          indent: 10.0,
-                                                          endIndent: 10.0,
+                                                          indent: 10,
+                                                          endIndent: 10,
                                                           color:
                                                               Color(0xFFD4D1D1),
                                                         ),
@@ -1533,9 +1523,9 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                   .calculateReverseQuantity,
                                                           onChanged:
                                                               (newValue) async {
-                                                            setState(() => _model
-                                                                    .switchListTilecalculateReverseQtyValue =
-                                                                newValue!);
+                                                            safeSetState(() =>
+                                                                _model.switchListTilecalculateReverseQtyValue =
+                                                                    newValue!);
                                                           },
                                                           title: Text(
                                                             FFLocalizations.of(
@@ -1569,8 +1559,8 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                         ),
                                                         Divider(
                                                           thickness: 0.5,
-                                                          indent: 10.0,
-                                                          endIndent: 10.0,
+                                                          indent: 10,
+                                                          endIndent: 10,
                                                           color:
                                                               Color(0xFFD4D1D1),
                                                         ),
@@ -1581,9 +1571,9 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                   .sortHotKeys,
                                                           onChanged:
                                                               (newValue) async {
-                                                            setState(() => _model
-                                                                    .switchListTilesortingInHotKeyValue =
-                                                                newValue!);
+                                                            safeSetState(() =>
+                                                                _model.switchListTilesortingInHotKeyValue =
+                                                                    newValue!);
                                                           },
                                                           title: Text(
                                                             FFLocalizations.of(
@@ -1616,30 +1606,26 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        20.0),
+                                                                        20),
                                                           ),
                                                         ),
                                                         Divider(
                                                           thickness: 0.5,
-                                                          indent: 10.0,
-                                                          endIndent: 10.0,
+                                                          indent: 10,
+                                                          endIndent: 10,
                                                           color:
                                                               Color(0xFFD4D1D1),
                                                         ),
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      10.0,
-                                                                      0.0,
-                                                                      10.0,
-                                                                      0.0),
+                                                                  .fromSTEB(10,
+                                                                      0, 10, 0),
                                                           child: Container(
                                                             width: MediaQuery
-                                                                        .sizeOf(
-                                                                            context)
-                                                                    .width *
-                                                                1.0,
+                                                                    .sizeOf(
+                                                                        context)
+                                                                .width,
                                                             height: MediaQuery
                                                                         .sizeOf(
                                                                             context)
@@ -1655,10 +1641,10 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          0.0),
+                                                                          5,
+                                                                          0,
+                                                                          10,
+                                                                          0),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -1709,13 +1695,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       )
                                                                     ],
                                                                     onChanged: (val) =>
-                                                                        setState(() =>
+                                                                        safeSetState(() =>
                                                                             _model.dropDownValue1 =
                                                                                 val),
-                                                                    width:
-                                                                        240.0,
-                                                                    height:
-                                                                        50.0,
+                                                                    width: 240,
+                                                                    height: 50,
                                                                     textStyle: FlutterFlowTheme.of(
                                                                             context)
                                                                         .titleMedium
@@ -1736,20 +1720,20 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                             context)
                                                                         .primaryBackground,
                                                                     elevation:
-                                                                        2.0,
+                                                                        2,
                                                                     borderColor:
                                                                         Colors
                                                                             .transparent,
                                                                     borderWidth:
-                                                                        0.0,
+                                                                        0,
                                                                     borderRadius:
-                                                                        0.0,
+                                                                        0,
                                                                     margin: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            12.0,
-                                                                            4.0,
-                                                                            12.0,
-                                                                            4.0),
+                                                                            12,
+                                                                            4,
+                                                                            12,
+                                                                            4),
                                                                     hidesUnderline:
                                                                         true,
                                                                     isSearchable:
@@ -1764,8 +1748,8 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                         ),
                                                         Divider(
                                                           thickness: 0.5,
-                                                          indent: 10.0,
-                                                          endIndent: 10.0,
+                                                          indent: 10,
+                                                          endIndent: 10,
                                                           color:
                                                               Color(0xFFD4D1D1),
                                                         ),
@@ -1775,9 +1759,9 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                               false,
                                                           onChanged:
                                                               (newValue) async {
-                                                            setState(() => _model
-                                                                    .switchListTileopenSoftKeywordValue =
-                                                                newValue!);
+                                                            safeSetState(() =>
+                                                                _model.switchListTileopenSoftKeywordValue =
+                                                                    newValue!);
                                                           },
                                                           title: Text(
                                                             FFLocalizations.of(
@@ -1810,13 +1794,13 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        0.0),
+                                                                        0),
                                                           ),
                                                         ),
                                                         Divider(
                                                           thickness: 0.5,
-                                                          indent: 10.0,
-                                                          endIndent: 10.0,
+                                                          indent: 10,
+                                                          endIndent: 10,
                                                           color:
                                                               Color(0xFFD4D1D1),
                                                         ),
@@ -1827,9 +1811,9 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                   .showPrintButtonsAfterPay,
                                                           onChanged:
                                                               (newValue) async {
-                                                            setState(() => _model
-                                                                    .switchListTileprintBtnAfterPayValue =
-                                                                newValue!);
+                                                            safeSetState(() =>
+                                                                _model.switchListTileprintBtnAfterPayValue =
+                                                                    newValue!);
                                                           },
                                                           title: Text(
                                                             FFLocalizations.of(
@@ -1862,13 +1846,13 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        20.0),
+                                                                        20),
                                                           ),
                                                         ),
                                                         Divider(
                                                           thickness: 0.5,
-                                                          indent: 10.0,
-                                                          endIndent: 10.0,
+                                                          indent: 10,
+                                                          endIndent: 10,
                                                           color:
                                                               Color(0xFFD4D1D1),
                                                         ),
@@ -1879,9 +1863,9 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                   .upiButton,
                                                           onChanged:
                                                               (newValue) async {
-                                                            setState(() => _model
-                                                                    .switchListTileenableUpiBtnValue =
-                                                                newValue!);
+                                                            safeSetState(() =>
+                                                                _model.switchListTileenableUpiBtnValue =
+                                                                    newValue!);
                                                           },
                                                           title: Text(
                                                             FFLocalizations.of(
@@ -1914,13 +1898,13 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        20.0),
+                                                                        20),
                                                           ),
                                                         ),
                                                         Divider(
                                                           thickness: 0.5,
-                                                          indent: 10.0,
-                                                          endIndent: 10.0,
+                                                          indent: 10,
+                                                          endIndent: 10,
                                                           color:
                                                               Color(0xFFC1C1C1),
                                                         ),
@@ -1931,9 +1915,9 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                   .threeCharSearch,
                                                           onChanged:
                                                               (newValue) async {
-                                                            setState(() => _model
-                                                                    .switchListTilethreeCharValue =
-                                                                newValue!);
+                                                            safeSetState(() =>
+                                                                _model.switchListTilethreeCharValue =
+                                                                    newValue!);
                                                           },
                                                           title: Text(
                                                             FFLocalizations.of(
@@ -1966,7 +1950,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        20.0),
+                                                                        20),
                                                           ),
                                                         ),
                                                       ],
@@ -1975,7 +1959,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsets.all(10.0),
+                                                padding: EdgeInsets.all(10),
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
@@ -2000,9 +1984,9 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                 ),
                                               ),
                                               Divider(
-                                                thickness: 1.0,
-                                                indent: 10.0,
-                                                endIndent: 10.0,
+                                                thickness: 1,
+                                                indent: 10,
+                                                endIndent: 10,
                                                 color: Color(0xFFD4D1D1),
                                               ),
                                               Container(
@@ -2043,7 +2027,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                   padding:
                                                                       EdgeInsets
                                                                           .all(
-                                                                              15.0),
+                                                                              15),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -2085,7 +2069,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                             containerAppSettingsRecord!.inclusiveTax,
                                                                         onChanged:
                                                                             (newValue) async {
-                                                                          setState(() =>
+                                                                          safeSetState(() =>
                                                                               _model.switchListTileincluOrReverseTaxValue = newValue!);
                                                                         },
                                                                         title:
@@ -2111,11 +2095,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1.0,
+                                                                            1,
                                                                         indent:
-                                                                            10.0,
+                                                                            10,
                                                                         endIndent:
-                                                                            10.0,
+                                                                            10,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -2124,7 +2108,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                             containerAppSettingsRecord!.allowSaleWithoutTax,
                                                                         onChanged:
                                                                             (newValue) async {
-                                                                          setState(() =>
+                                                                          safeSetState(() =>
                                                                               _model.switchListTileSaleWithTaxValue = newValue!);
                                                                         },
                                                                         title:
@@ -2187,7 +2171,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                   padding:
                                                                       EdgeInsets
                                                                           .all(
-                                                                              15.0),
+                                                                              15),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -2229,7 +2213,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                             containerAppSettingsRecord!.tables,
                                                                         onChanged:
                                                                             (newValue) async {
-                                                                          setState(() =>
+                                                                          safeSetState(() =>
                                                                               _model.switchListTileenableTableValue = newValue!);
                                                                         },
                                                                         title:
@@ -2255,11 +2239,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1.0,
+                                                                            1,
                                                                         indent:
-                                                                            10.0,
+                                                                            10,
                                                                         endIndent:
-                                                                            10.0,
+                                                                            10,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -2268,7 +2252,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                             containerAppSettingsRecord!.captainDetails,
                                                                         onChanged:
                                                                             (newValue) async {
-                                                                          setState(() =>
+                                                                          safeSetState(() =>
                                                                               _model.switchListTileCaptonDetailAtBillCreationValue = newValue!);
                                                                         },
                                                                         title:
@@ -2294,11 +2278,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1.0,
+                                                                            1,
                                                                         indent:
-                                                                            10.0,
+                                                                            10,
                                                                         endIndent:
-                                                                            10.0,
+                                                                            10,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -2307,7 +2291,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                             containerAppSettingsRecord!.tableForcefully,
                                                                         onChanged:
                                                                             (newValue) async {
-                                                                          setState(() =>
+                                                                          safeSetState(() =>
                                                                               _model.switchListTileenabletableForcefullyValue = newValue!);
                                                                         },
                                                                         title:
@@ -2333,11 +2317,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1.0,
+                                                                            1,
                                                                         indent:
-                                                                            10.0,
+                                                                            10,
                                                                         endIndent:
-                                                                            10.0,
+                                                                            10,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -2346,7 +2330,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                             containerAppSettingsRecord!.captainRequest,
                                                                         onChanged:
                                                                             (newValue) async {
-                                                                          setState(() =>
+                                                                          safeSetState(() =>
                                                                               _model.switchListTileCaptonReqestValue = newValue!);
                                                                         },
                                                                         title:
@@ -2372,11 +2356,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1.0,
+                                                                            1,
                                                                         indent:
-                                                                            10.0,
+                                                                            10,
                                                                         endIndent:
-                                                                            10.0,
+                                                                            10,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -2385,7 +2369,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                             containerAppSettingsRecord!.wlanCommunication,
                                                                         onChanged:
                                                                             (newValue) async {
-                                                                          setState(() =>
+                                                                          safeSetState(() =>
                                                                               _model.switchListTilewLanCommunicationValue = newValue!);
                                                                         },
                                                                         title:
@@ -2411,11 +2395,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1.0,
+                                                                            1,
                                                                         indent:
-                                                                            10.0,
+                                                                            10,
                                                                         endIndent:
-                                                                            10.0,
+                                                                            10,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -2424,7 +2408,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                             containerAppSettingsRecord!.checkInCheckOut,
                                                                         onChanged:
                                                                             (newValue) async {
-                                                                          setState(() =>
+                                                                          safeSetState(() =>
                                                                               _model.switchListTilecheckInOutValue = newValue!);
                                                                         },
                                                                         title:
@@ -2487,7 +2471,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                   padding:
                                                                       EdgeInsets
                                                                           .all(
-                                                                              15.0),
+                                                                              15),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -2532,7 +2516,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                               containerAppSettingsRecord!.salesman,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTileenableSmanValue = newValue!);
                                                                           },
                                                                           title:
@@ -2555,11 +2539,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                         ),
                                                                         Divider(
                                                                           thickness:
-                                                                              1.0,
+                                                                              1,
                                                                           indent:
-                                                                              10.0,
+                                                                              10,
                                                                           endIndent:
-                                                                              10.0,
+                                                                              10,
                                                                           color:
                                                                               Color(0xFFD4D1D1),
                                                                         ),
@@ -2568,7 +2552,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                               containerAppSettingsRecord!.salesmanForcefully,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTilesalesmanForcefullyValue = newValue!);
                                                                           },
                                                                           title:
@@ -2591,11 +2575,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                         ),
                                                                         Divider(
                                                                           thickness:
-                                                                              1.0,
+                                                                              1,
                                                                           indent:
-                                                                              10.0,
+                                                                              10,
                                                                           endIndent:
-                                                                              10.0,
+                                                                              10,
                                                                           color:
                                                                               Color(0xFFD4D1D1),
                                                                         ),
@@ -2604,7 +2588,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                               containerAppSettingsRecord!.salesmanProductWise,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTilesalesmanProductWiseValue = newValue!);
                                                                           },
                                                                           title:
@@ -2665,7 +2649,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                   padding:
                                                                       EdgeInsets
                                                                           .all(
-                                                                              15.0),
+                                                                              15),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -2710,7 +2694,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                               containerAppSettingsRecord!.couponSaveBill,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTilecouponSaveBillValue = newValue!);
                                                                           },
                                                                           title:
@@ -2733,11 +2717,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                         ),
                                                                         Divider(
                                                                           thickness:
-                                                                              1.0,
+                                                                              1,
                                                                           indent:
-                                                                              10.0,
+                                                                              10,
                                                                           endIndent:
-                                                                              10.0,
+                                                                              10,
                                                                           color:
                                                                               Color(0xFFD4D1D1),
                                                                         ),
@@ -2746,7 +2730,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                               containerAppSettingsRecord!.couponPrintBill,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTilecouponPrintBillValue = newValue!);
                                                                           },
                                                                           title:
@@ -2769,11 +2753,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                         ),
                                                                         Divider(
                                                                           thickness:
-                                                                              1.0,
+                                                                              1,
                                                                           indent:
-                                                                              10.0,
+                                                                              10,
                                                                           endIndent:
-                                                                              10.0,
+                                                                              10,
                                                                           color:
                                                                               Color(0xFFD4D1D1),
                                                                         ),
@@ -2782,7 +2766,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                               containerAppSettingsRecord!.couponKotHeader,
                                                                           onChanged:
                                                                               (newValue) async {
-                                                                            setState(() =>
+                                                                            safeSetState(() =>
                                                                                 _model.switchListTilecouponOrKotHeaderValue = newValue!);
                                                                           },
                                                                           title:
@@ -2843,7 +2827,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                   padding:
                                                                       EdgeInsets
                                                                           .all(
-                                                                              15.0),
+                                                                              15),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -2885,7 +2869,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                             containerAppSettingsRecord!.kotReprint,
                                                                         onChanged:
                                                                             (newValue) async {
-                                                                          setState(() =>
+                                                                          safeSetState(() =>
                                                                               _model.switchListTilekotRePrintValue = newValue!);
                                                                         },
                                                                         title:
@@ -2911,11 +2895,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1.0,
+                                                                            1,
                                                                         indent:
-                                                                            10.0,
+                                                                            10,
                                                                         endIndent:
-                                                                            10.0,
+                                                                            10,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -2924,7 +2908,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                             containerAppSettingsRecord!.kotPrintAmountColumn,
                                                                         onChanged:
                                                                             (newValue) async {
-                                                                          setState(() =>
+                                                                          safeSetState(() =>
                                                                               _model.switchListTilekotPrintAmountColumnValue = newValue!);
                                                                         },
                                                                         title:
@@ -2950,11 +2934,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1.0,
+                                                                            1,
                                                                         indent:
-                                                                            10.0,
+                                                                            10,
                                                                         endIndent:
-                                                                            10.0,
+                                                                            10,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -2963,7 +2947,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                             containerAppSettingsRecord!.kotRemark,
                                                                         onChanged:
                                                                             (newValue) async {
-                                                                          setState(() =>
+                                                                          safeSetState(() =>
                                                                               _model.switchListTilekotRemarkValue = newValue!);
                                                                         },
                                                                         title:
@@ -2989,11 +2973,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1.0,
+                                                                            1,
                                                                         indent:
-                                                                            10.0,
+                                                                            10,
                                                                         endIndent:
-                                                                            10.0,
+                                                                            10,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -3002,7 +2986,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                             containerAppSettingsRecord!.saveKot,
                                                                         onChanged:
                                                                             (newValue) async {
-                                                                          setState(() =>
+                                                                          safeSetState(() =>
                                                                               _model.switchListTiledisableSaveKotValue = newValue!);
                                                                         },
                                                                         title:
@@ -3065,7 +3049,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                   padding:
                                                                       EdgeInsets
                                                                           .all(
-                                                                              15.0),
+                                                                              15),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -3107,7 +3091,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                             containerAppSettingsRecord!.rfidMasterRead,
                                                                         onChanged:
                                                                             (newValue) async {
-                                                                          setState(() =>
+                                                                          safeSetState(() =>
                                                                               _model.switchListTilerfidMasterReadValue = newValue!);
                                                                         },
                                                                         title:
@@ -3133,11 +3117,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1.0,
+                                                                            1,
                                                                         indent:
-                                                                            10.0,
+                                                                            10,
                                                                         endIndent:
-                                                                            10.0,
+                                                                            10,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -3146,7 +3130,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                             containerAppSettingsRecord!.rfidMasterWrite,
                                                                         onChanged:
                                                                             (newValue) async {
-                                                                          setState(() =>
+                                                                          safeSetState(() =>
                                                                               _model.switchListTilerfidmasterWrtValue = newValue!);
                                                                         },
                                                                         title:
@@ -3212,7 +3196,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                   padding:
                                                                       EdgeInsets
                                                                           .all(
-                                                                              15.0),
+                                                                              15),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -3254,7 +3238,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                             containerAppSettingsRecord!.showProductImage,
                                                                         onChanged:
                                                                             (newValue) async {
-                                                                          setState(() =>
+                                                                          safeSetState(() =>
                                                                               _model.switchListTileshowProductImgValue = newValue!);
                                                                         },
                                                                         title:
@@ -3280,11 +3264,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1.0,
+                                                                            1,
                                                                         indent:
-                                                                            10.0,
+                                                                            10,
                                                                         endIndent:
-                                                                            10.0,
+                                                                            10,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -3293,7 +3277,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                             containerAppSettingsRecord!.hideProductSearchCode,
                                                                         onChanged:
                                                                             (newValue) async {
-                                                                          setState(() =>
+                                                                          safeSetState(() =>
                                                                               _model.switchListTilehideProductSearchCodeValue = newValue!);
                                                                         },
                                                                         title:
@@ -3319,11 +3303,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1.0,
+                                                                            1,
                                                                         indent:
-                                                                            10.0,
+                                                                            10,
                                                                         endIndent:
-                                                                            10.0,
+                                                                            10,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -3332,7 +3316,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                             false,
                                                                         onChanged:
                                                                             (newValue) async {
-                                                                          setState(() =>
+                                                                          safeSetState(() =>
                                                                               _model.switchListTileproductListTypeEnableValue = newValue!);
                                                                         },
                                                                         title:
@@ -3358,11 +3342,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1.0,
+                                                                            1,
                                                                         indent:
-                                                                            10.0,
+                                                                            10,
                                                                         endIndent:
-                                                                            10.0,
+                                                                            10,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -3371,7 +3355,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                             containerAppSettingsRecord!.productSuggestionRemove,
                                                                         onChanged:
                                                                             (newValue) async {
-                                                                          setState(() =>
+                                                                          safeSetState(() =>
                                                                               _model.switchListTileproductSuggREportValue = newValue!);
                                                                         },
                                                                         title:
@@ -3437,7 +3421,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                   padding:
                                                                       EdgeInsets
                                                                           .all(
-                                                                              15.0),
+                                                                              15),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -3476,11 +3460,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                     children: [
                                                                       Divider(
                                                                         thickness:
-                                                                            1.0,
+                                                                            1,
                                                                         indent:
-                                                                            10.0,
+                                                                            10,
                                                                         endIndent:
-                                                                            10.0,
+                                                                            10,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -3489,7 +3473,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                             containerAppSettingsRecord!.billSettlement,
                                                                         onChanged:
                                                                             (newValue) async {
-                                                                          setState(() =>
+                                                                          safeSetState(() =>
                                                                               _model.switchListTileestBillSettlementValue = newValue!);
                                                                         },
                                                                         title:
@@ -3515,20 +3499,20 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1.0,
+                                                                            1,
                                                                         indent:
-                                                                            10.0,
+                                                                            10,
                                                                         endIndent:
-                                                                            10.0,
+                                                                            10,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            10.0,
-                                                                            0.0,
-                                                                            10.0,
-                                                                            0.0),
+                                                                            10,
+                                                                            0,
+                                                                            10,
+                                                                            0),
                                                                         child:
                                                                             InkWell(
                                                                           splashColor:
@@ -3570,7 +3554,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                             ),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -3594,11 +3578,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1.0,
+                                                                            1,
                                                                         indent:
-                                                                            10.0,
+                                                                            10,
                                                                         endIndent:
-                                                                            10.0,
+                                                                            10,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -3607,7 +3591,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                             containerAppSettingsRecord!.billFormatSendToEmail,
                                                                         onChanged:
                                                                             (newValue) async {
-                                                                          setState(() =>
+                                                                          safeSetState(() =>
                                                                               _model.switchListTilesendbillFormatToEmailValue = newValue!);
                                                                         },
                                                                         title:
@@ -3633,11 +3617,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                       ),
                                                                       Divider(
                                                                         thickness:
-                                                                            1.0,
+                                                                            1,
                                                                         indent:
-                                                                            10.0,
+                                                                            10,
                                                                         endIndent:
-                                                                            10.0,
+                                                                            10,
                                                                         color: Color(
                                                                             0xFFD4D1D1),
                                                                       ),
@@ -3646,7 +3630,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                             containerAppSettingsRecord!.discountToBill,
                                                                         onChanged:
                                                                             (newValue) async {
-                                                                          setState(() =>
+                                                                          safeSetState(() =>
                                                                               _model.switchListTileEnableDisToDirectlyAddBillValue = newValue!);
                                                                         },
                                                                         title:
@@ -3698,8 +3682,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                               Container(
                                                 width:
                                                     MediaQuery.sizeOf(context)
-                                                            .width *
-                                                        1.0,
+                                                        .width,
                                                 decoration: BoxDecoration(),
                                                 child: Column(
                                                   mainAxisSize:
@@ -3714,7 +3697,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                               .manualPrice,
                                                       onChanged:
                                                           (newValue) async {
-                                                        setState(() => _model
+                                                        safeSetState(() => _model
                                                                 .switchListTilemanualPriceValue =
                                                             newValue!);
                                                       },
@@ -3749,13 +3732,13 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                           RoundedRectangleBorder(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(20.0),
+                                                                .circular(20),
                                                       ),
                                                     ),
                                                     Divider(
                                                       thickness: 0.5,
-                                                      indent: 10.0,
-                                                      endIndent: 10.0,
+                                                      indent: 10,
+                                                      endIndent: 10,
                                                       color: Color(0xFFD4D1D1),
                                                     ),
                                                     SwitchListTile(
@@ -3765,7 +3748,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                               .estimateMode,
                                                       onChanged:
                                                           (newValue) async {
-                                                        setState(() => _model
+                                                        safeSetState(() => _model
                                                                 .switchListTileestimateModeValue =
                                                             newValue!);
                                                       },
@@ -3800,13 +3783,13 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                           RoundedRectangleBorder(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(20.0),
+                                                                .circular(20),
                                                       ),
                                                     ),
                                                     Divider(
                                                       thickness: 0.5,
-                                                      indent: 10.0,
-                                                      endIndent: 10.0,
+                                                      indent: 10,
+                                                      endIndent: 10,
                                                       color: Color(0xFFD4D1D1),
                                                     ),
                                                     SwitchListTile(
@@ -3816,7 +3799,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                               .editingSettlement,
                                                       onChanged:
                                                           (newValue) async {
-                                                        setState(() => _model
+                                                        safeSetState(() => _model
                                                                 .switchListTileeditingInSettelementValue =
                                                             newValue!);
                                                       },
@@ -3851,13 +3834,13 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                           RoundedRectangleBorder(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(20.0),
+                                                                .circular(20),
                                                       ),
                                                     ),
                                                     Divider(
                                                       thickness: 0.5,
-                                                      indent: 10.0,
-                                                      endIndent: 10.0,
+                                                      indent: 10,
+                                                      endIndent: 10,
                                                       color: Color(0xFFD4D1D1),
                                                     ),
                                                     SwitchListTile(
@@ -3867,7 +3850,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                               .openPrice,
                                                       onChanged:
                                                           (newValue) async {
-                                                        setState(() => _model
+                                                        safeSetState(() => _model
                                                                 .switchListTileopenPriceValue =
                                                             newValue!);
                                                       },
@@ -3902,23 +3885,20 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                           RoundedRectangleBorder(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(20.0),
+                                                                .circular(20),
                                                       ),
                                                     ),
                                                     Divider(
                                                       thickness: 0.5,
-                                                      indent: 10.0,
-                                                      endIndent: 10.0,
+                                                      indent: 10,
+                                                      endIndent: 10,
                                                       color: Color(0xFFD4D1D1),
                                                     ),
                                                     Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  10.0,
-                                                                  5.0,
-                                                                  10.0,
-                                                                  0.0),
+                                                                  10, 5, 10, 0),
                                                       child: Container(
                                                         width: double.infinity,
                                                         height:
@@ -3939,10 +3919,10 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          10.0,
-                                                                          10.0,
-                                                                          0.0),
+                                                                          0,
+                                                                          10,
+                                                                          10,
+                                                                          0),
                                                               child: Text(
                                                                 FFLocalizations.of(
                                                                         context)
@@ -3990,11 +3970,11 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                                 )
                                                               ],
                                                               onChanged: (val) =>
-                                                                  setState(() =>
+                                                                  safeSetState(() =>
                                                                       _model.dropDownValue2 =
                                                                           val),
-                                                              width: 240.0,
-                                                              height: 50.0,
+                                                              width: 240,
+                                                              height: 50,
                                                               textStyle:
                                                                   FlutterFlowTheme.of(
                                                                           context)
@@ -4016,18 +3996,18 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                               fillColor: FlutterFlowTheme
                                                                       .of(context)
                                                                   .secondaryBackground,
-                                                              elevation: 2.0,
+                                                              elevation: 2,
                                                               borderColor: Colors
                                                                   .transparent,
-                                                              borderWidth: 0.0,
-                                                              borderRadius: 0.0,
+                                                              borderWidth: 0,
+                                                              borderRadius: 0,
                                                               margin:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          12.0,
-                                                                          4.0,
-                                                                          12.0,
-                                                                          4.0),
+                                                                          12,
+                                                                          4,
+                                                                          12,
+                                                                          4),
                                                               hidesUnderline:
                                                                   true,
                                                               isSearchable:
@@ -4041,8 +4021,8 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                     ),
                                                     Divider(
                                                       thickness: 0.5,
-                                                      indent: 10.0,
-                                                      endIndent: 10.0,
+                                                      indent: 10,
+                                                      endIndent: 10,
                                                       color: Color(0xFFD4D1D1),
                                                     ),
                                                     SwitchListTile(
@@ -4052,7 +4032,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                               .comboPriceUpdate,
                                                       onChanged:
                                                           (newValue) async {
-                                                        setState(() => _model
+                                                        safeSetState(() => _model
                                                                 .switchListTilecomboPriceUpdateValue =
                                                             newValue!);
                                                       },
@@ -4087,13 +4067,13 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                           RoundedRectangleBorder(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(20.0),
+                                                                .circular(20),
                                                       ),
                                                     ),
                                                     Divider(
                                                       thickness: 0.5,
-                                                      indent: 10.0,
-                                                      endIndent: 10.0,
+                                                      indent: 10,
+                                                      endIndent: 10,
                                                       color: Color(0xFFD4D1D1),
                                                     ),
                                                     SwitchListTile(
@@ -4103,7 +4083,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                               .onlineOrderSystem,
                                                       onChanged:
                                                           (newValue) async {
-                                                        setState(() => _model
+                                                        safeSetState(() => _model
                                                                 .switchListTileonlineOrderSystemValue =
                                                             newValue!);
                                                       },
@@ -4138,13 +4118,13 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                           RoundedRectangleBorder(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(20.0),
+                                                                .circular(20),
                                                       ),
                                                     ),
                                                     Divider(
                                                       thickness: 0.5,
-                                                      indent: 10.0,
-                                                      endIndent: 10.0,
+                                                      indent: 10,
+                                                      endIndent: 10,
                                                       color: Color(0xFFD4D1D1),
                                                     ),
                                                     SwitchListTile(
@@ -4154,7 +4134,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                               .billModificationtoUser,
                                                       onChanged:
                                                           (newValue) async {
-                                                        setState(() => _model
+                                                        safeSetState(() => _model
                                                                 .switchListTilebillModificationValue =
                                                             newValue!);
                                                       },
@@ -4188,8 +4168,8 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                     ),
                                                     Divider(
                                                       thickness: 0.5,
-                                                      indent: 10.0,
-                                                      endIndent: 10.0,
+                                                      indent: 10,
+                                                      endIndent: 10,
                                                       color: Color(0xFFD4D1D1),
                                                     ),
                                                     SwitchListTile(
@@ -4199,7 +4179,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                               .store,
                                                       onChanged:
                                                           (newValue) async {
-                                                        setState(() => _model
+                                                        safeSetState(() => _model
                                                                 .switchListTileenableStoreValue =
                                                             newValue!);
                                                       },
@@ -4234,13 +4214,13 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                           RoundedRectangleBorder(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(20.0),
+                                                                .circular(20),
                                                       ),
                                                     ),
                                                     Divider(
                                                       thickness: 0.5,
-                                                      indent: 10.0,
-                                                      endIndent: 10.0,
+                                                      indent: 10,
+                                                      endIndent: 10,
                                                       color: Color(0xFFD4D1D1),
                                                     ),
                                                     SwitchListTile(
@@ -4250,7 +4230,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                               .weightMinus,
                                                       onChanged:
                                                           (newValue) async {
-                                                        setState(() => _model
+                                                        safeSetState(() => _model
                                                                 .switchListTileweightMinusValue =
                                                             newValue!);
                                                       },
@@ -4285,13 +4265,13 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                           RoundedRectangleBorder(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(20.0),
+                                                                .circular(20),
                                                       ),
                                                     ),
                                                     Divider(
                                                       thickness: 0.5,
-                                                      indent: 10.0,
-                                                      endIndent: 10.0,
+                                                      indent: 10,
+                                                      endIndent: 10,
                                                       color: Color(0xFFD4D1D1),
                                                     ),
                                                     SwitchListTile(
@@ -4301,7 +4281,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                               .stockGettingMinus,
                                                       onChanged:
                                                           (newValue) async {
-                                                        setState(() => _model
+                                                        safeSetState(() => _model
                                                                 .switchListTilestockgettinginminusValue =
                                                             newValue!);
                                                       },
@@ -4336,13 +4316,13 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                           RoundedRectangleBorder(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(20.0),
+                                                                .circular(20),
                                                       ),
                                                     ),
                                                     Divider(
                                                       thickness: 0.5,
-                                                      indent: 10.0,
-                                                      endIndent: 10.0,
+                                                      indent: 10,
+                                                      endIndent: 10,
                                                       color: Color(0xFFD4D1D1),
                                                     ),
                                                     SwitchListTile(
@@ -4352,7 +4332,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                               .deliveryNote,
                                                       onChanged:
                                                           (newValue) async {
-                                                        setState(() => _model
+                                                        safeSetState(() => _model
                                                                 .switchListTileDeliveryDateValue =
                                                             newValue!);
                                                       },
@@ -4387,13 +4367,13 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                           RoundedRectangleBorder(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(20.0),
+                                                                .circular(20),
                                                       ),
                                                     ),
                                                     Divider(
                                                       thickness: 0.5,
-                                                      indent: 10.0,
-                                                      endIndent: 10.0,
+                                                      indent: 10,
+                                                      endIndent: 10,
                                                       color: Color(0xFFD4D1D1),
                                                     ),
                                                     SwitchListTile(
@@ -4403,7 +4383,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                               .deliveryNote,
                                                       onChanged:
                                                           (newValue) async {
-                                                        setState(() => _model
+                                                        safeSetState(() => _model
                                                                 .switchListTileHideKeybordValue =
                                                             newValue!);
                                                       },
@@ -4438,7 +4418,7 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                           RoundedRectangleBorder(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(20.0),
+                                                                .circular(20),
                                                       ),
                                                     ),
                                                   ],
@@ -4641,19 +4621,19 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                       FFAppState().showAppSettings = true;
                                       FFAppState().update(() {});
 
-                                      setState(() {});
+                                      safeSetState(() {});
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'f4hwledx' /* Generate Defaualt settings */,
                                     ),
                                     options: FFButtonOptions(
-                                      width: 210.0,
-                                      height: 40.0,
+                                      width: 210,
+                                      height: 40,
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 0.0),
+                                          0, 0, 0, 0),
                                       iconPadding:
                                           EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
+                                              0, 0, 0, 0),
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBackground,
                                       textStyle: FlutterFlowTheme.of(context)
@@ -4670,12 +4650,12 @@ class _AppSettingWidgetState extends State<AppSettingWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .titleMediumFamily),
                                           ),
-                                      elevation: 3.0,
+                                      elevation: 3,
                                       borderSide: BorderSide(
                                         color: Colors.transparent,
-                                        width: 1.0,
+                                        width: 1,
                                       ),
-                                      borderRadius: BorderRadius.circular(8.0),
+                                      borderRadius: BorderRadius.circular(8),
                                     ),
                                   ),
                                 ],

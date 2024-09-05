@@ -16,10 +16,6 @@ import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
 
 class LoadingScreenModel extends FlutterFlowModel<LoadingScreenWidget> {
-  ///  State fields for stateful widgets in this page.
-
-  final unfocusNode = FocusNode();
-
   @override
   void initState(BuildContext context) {}
 

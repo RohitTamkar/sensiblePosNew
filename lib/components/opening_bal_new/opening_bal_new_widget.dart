@@ -46,7 +46,7 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -61,7 +61,7 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
     context.watch<FFAppState>();
 
     return Align(
-      alignment: AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0, 0),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -89,11 +89,11 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
               if (!snapshot.hasData) {
                 return Center(
                   child: SizedBox(
-                    width: 40.0,
-                    height: 40.0,
+                    width: 40,
+                    height: 40,
                     child: SpinKitFadingCircle(
                       color: FlutterFlowTheme.of(context).primary,
-                      size: 40.0,
+                      size: 40,
                     ),
                   ),
                 );
@@ -108,11 +108,11 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                   : null;
 
               return Container(
-                width: 500.0,
-                height: 250.0,
+                width: 500,
+                height: 250,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).primaryBackground,
-                  borderRadius: BorderRadius.circular(4.0),
+                  borderRadius: BorderRadius.circular(4),
                   border: Border.all(
                     color: FlutterFlowTheme.of(context).customColor2,
                   ),
@@ -122,8 +122,8 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Container(
-                      width: 440.0,
-                      height: 210.0,
+                      width: 440,
+                      height: 210,
                       decoration: BoxDecoration(),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
@@ -136,11 +136,11 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                               false)
                             Expanded(
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    2.0, 5.0, 2.0, 0.0),
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(2, 5, 2, 0),
                                 child: Container(
-                                  width: 480.0,
-                                  height: 200.0,
+                                  width: 480,
+                                  height: 200,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
@@ -160,10 +160,10 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    7.0, 0.0, 0.0, 0.0),
+                                                    7, 0, 0, 0),
                                             child: Container(
-                                              width: 250.0,
-                                              height: 40.0,
+                                              width: 250,
+                                              height: 40,
                                               decoration: BoxDecoration(),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -199,8 +199,8 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                             ),
                                           ),
                                           Container(
-                                            width: 160.0,
-                                            height: 37.0,
+                                            width: 160,
+                                            height: 37,
                                             decoration: BoxDecoration(),
                                             child: TextFormField(
                                               controller: _model.textController,
@@ -240,8 +240,7 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                     width: 0.5,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(
-                                                          2.0),
+                                                      BorderRadius.circular(2),
                                                 ),
                                                 focusedBorder:
                                                     OutlineInputBorder(
@@ -250,8 +249,7 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                     width: 0.5,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(
-                                                          2.0),
+                                                      BorderRadius.circular(2),
                                                 ),
                                                 errorBorder: OutlineInputBorder(
                                                   borderSide: BorderSide(
@@ -259,8 +257,7 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                     width: 0.5,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(
-                                                          2.0),
+                                                      BorderRadius.circular(2),
                                                 ),
                                                 focusedErrorBorder:
                                                     OutlineInputBorder(
@@ -269,8 +266,7 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                     width: 0.5,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(
-                                                          2.0),
+                                                      BorderRadius.circular(2),
                                                 ),
                                               ),
                                               style:
@@ -310,8 +306,8 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                           Expanded(
                             flex: 2,
                             child: Container(
-                              width: 480.0,
-                              height: 100.0,
+                              width: 480,
+                              height: 100,
                               decoration: BoxDecoration(),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -322,15 +318,15 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                   Expanded(
                                     flex: 2,
                                     child: Container(
-                                      width: 380.0,
-                                      height: 100.0,
+                                      width: 380,
+                                      height: 100,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
                                       ),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            10.0, 0.0, 0.0, 0.0),
+                                            10, 0, 0, 0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -341,11 +337,10 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          5.0, 0.0, 0.0, 0.0),
+                                                      .fromSTEB(5, 0, 0, 0),
                                                   child: Container(
-                                                    width: 330.0,
-                                                    height: 30.0,
+                                                    width: 330,
+                                                    height: 30,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
@@ -391,11 +386,10 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          5.0, 0.0, 0.0, 0.0),
+                                                      .fromSTEB(5, 0, 0, 0),
                                                   child: Container(
-                                                    width: 290.0,
-                                                    height: 30.0,
+                                                    width: 290,
+                                                    height: 30,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
@@ -440,10 +434,10 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        10.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
+                                                                        10,
+                                                                        0,
+                                                                        0,
+                                                                        0),
                                                             child: Text(
                                                               valueOrDefault<
                                                                   String>(
@@ -494,10 +488,10 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                   Expanded(
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 5.0),
+                                          0, 0, 0, 5),
                                       child: Container(
-                                        width: 400.0,
-                                        height: 100.0,
+                                        width: 400,
+                                        height: 100,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
@@ -505,7 +499,7 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  30.0, 0.0, 0.0, 0.0),
+                                                  30, 0, 0, 0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -521,15 +515,13 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                   'hig23h1e' /* Cancel */,
                                                 ),
                                                 options: FFButtonOptions(
-                                                  width: 90.0,
-                                                  height: 36.0,
+                                                  width: 90,
+                                                  height: 36,
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 0.0, 0.0),
+                                                      .fromSTEB(0, 0, 0, 0),
                                                   iconPadding:
                                                       EdgeInsetsDirectional
-                                                          .fromSTEB(0.0, 0.0,
-                                                              0.0, 0.0),
+                                                          .fromSTEB(0, 0, 0, 0),
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .customColor2,
@@ -553,14 +545,13 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                                         context)
                                                                     .titleSmallFamily),
                                                       ),
-                                                  elevation: 2.0,
+                                                  elevation: 2,
                                                   borderSide: BorderSide(
                                                     color: Colors.transparent,
-                                                    width: 1.0,
+                                                    width: 1,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
+                                                      BorderRadius.circular(8),
                                                 ),
                                               ),
                                               FFButtonWidget(
@@ -610,7 +601,7 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                             .toList()
                                                             .cast<
                                                                 AppSettingsStruct>();
-                                                    setState(() {});
+                                                    safeSetState(() {});
                                                     _model.returnAppsettiing2 =
                                                         await actions
                                                             .returnAppsetting(
@@ -1134,7 +1125,7 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                         ..id = _model.shiftDoc1
                                                             ?.reference.id,
                                                     );
-                                                    setState(() {});
+                                                    safeSetState(() {});
 
                                                     await _model
                                                         .shiftDoc1!.reference
@@ -1183,11 +1174,11 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                             .toList()
                                                             .cast<
                                                                 ShiftDetailsStruct>();
-                                                    setState(() {});
+                                                    safeSetState(() {});
                                                     FFAppState().shiftDetails =
                                                         _model
                                                             .createdshiftDetailshive!;
-                                                    setState(() {});
+                                                    safeSetState(() {});
                                                     _model.shiftDetailsNew2 =
                                                         await actions
                                                             .shiftDetailNew(
@@ -1267,7 +1258,7 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                     }
 
                                                     if (_shouldSetState)
-                                                      setState(() {});
+                                                      safeSetState(() {});
                                                     return;
                                                   } else {
                                                     FFAppState().shiftCount =
@@ -1416,7 +1407,7 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                             r'''$.ref''',
                                                           ).toString(),
                                                       );
-                                                      setState(() {});
+                                                      safeSetState(() {});
                                                       _model.createdshiftDetailshivenew =
                                                           await actions
                                                               .hiveShiftCrud(
@@ -1444,7 +1435,7 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                       FFAppState().count = _model
                                                           .getOfflineShiftdetailsagain!
                                                           .billCount;
-                                                      setState(() {});
+                                                      safeSetState(() {});
                                                     } else {
                                                       FFAppState()
                                                               .shiftDetails =
@@ -1453,7 +1444,7 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                       FFAppState().count = _model
                                                           .getOfflineShiftdetails!
                                                           .billCount;
-                                                      setState(() {});
+                                                      safeSetState(() {});
                                                     }
 
                                                     ScaffoldMessenger.of(
@@ -1547,12 +1538,12 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                     }
 
                                                     if (_shouldSetState)
-                                                      setState(() {});
+                                                      safeSetState(() {});
                                                     return;
                                                   }
 
                                                   if (_shouldSetState)
-                                                    setState(() {});
+                                                    safeSetState(() {});
                                                 },
                                                 text:
                                                     FFLocalizations.of(context)
@@ -1560,15 +1551,13 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                   'dw10x265' /* Ok */,
                                                 ),
                                                 options: FFButtonOptions(
-                                                  width: 90.0,
-                                                  height: 36.0,
+                                                  width: 90,
+                                                  height: 36,
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 0.0, 0.0),
+                                                      .fromSTEB(0, 0, 0, 0),
                                                   iconPadding:
                                                       EdgeInsetsDirectional
-                                                          .fromSTEB(0.0, 0.0,
-                                                              0.0, 0.0),
+                                                          .fromSTEB(0, 0, 0, 0),
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
@@ -1590,14 +1579,13 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                                             context)
                                                                         .titleSmallFamily),
                                                           ),
-                                                  elevation: 2.0,
+                                                  elevation: 2,
                                                   borderSide: BorderSide(
                                                     color: Colors.transparent,
-                                                    width: 1.0,
+                                                    width: 1,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
+                                                      BorderRadius.circular(8),
                                                 ),
                                               ),
                                             ],

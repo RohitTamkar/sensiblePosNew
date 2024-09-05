@@ -44,7 +44,7 @@ class _OpeningBalWidgetState extends State<OpeningBalWidget> {
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -59,22 +59,22 @@ class _OpeningBalWidgetState extends State<OpeningBalWidget> {
     context.watch<FFAppState>();
 
     return Align(
-      alignment: AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0, 0),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            width: 500.0,
-            height: 250.0,
+            width: 500,
+            height: 250,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).primaryBackground,
               borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(4.0),
-                bottomRight: Radius.circular(4.0),
-                topLeft: Radius.circular(4.0),
-                topRight: Radius.circular(4.0),
+                bottomLeft: Radius.circular(4),
+                bottomRight: Radius.circular(4),
+                topLeft: Radius.circular(4),
+                topRight: Radius.circular(4),
               ),
               border: Border.all(
                 color: FlutterFlowTheme.of(context).customColor2,
@@ -85,8 +85,8 @@ class _OpeningBalWidgetState extends State<OpeningBalWidget> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Container(
-                  width: 440.0,
-                  height: 210.0,
+                  width: 440,
+                  height: 210,
                   decoration: BoxDecoration(),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -99,11 +99,10 @@ class _OpeningBalWidgetState extends State<OpeningBalWidget> {
                           false)
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                2.0, 5.0, 2.0, 0.0),
+                            padding: EdgeInsetsDirectional.fromSTEB(2, 5, 2, 0),
                             child: Container(
-                              width: 480.0,
-                              height: 200.0,
+                              width: 480,
+                              height: 200,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .primaryBackground,
@@ -121,10 +120,10 @@ class _OpeningBalWidgetState extends State<OpeningBalWidget> {
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            7.0, 0.0, 0.0, 0.0),
+                                            7, 0, 0, 0),
                                         child: Container(
-                                          width: 200.0,
-                                          height: 40.0,
+                                          width: 200,
+                                          height: 40,
                                           decoration: BoxDecoration(),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -171,8 +170,8 @@ class _OpeningBalWidgetState extends State<OpeningBalWidget> {
                                         ),
                                       ),
                                       Container(
-                                        width: 160.0,
-                                        height: 37.0,
+                                        width: 160,
+                                        height: 37,
                                         decoration: BoxDecoration(),
                                         child: TextFormField(
                                           controller: _model.textController,
@@ -210,7 +209,7 @@ class _OpeningBalWidgetState extends State<OpeningBalWidget> {
                                                 width: 0.5,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(2.0),
+                                                  BorderRadius.circular(2),
                                             ),
                                             focusedBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -218,7 +217,7 @@ class _OpeningBalWidgetState extends State<OpeningBalWidget> {
                                                 width: 0.5,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(2.0),
+                                                  BorderRadius.circular(2),
                                             ),
                                             errorBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -226,7 +225,7 @@ class _OpeningBalWidgetState extends State<OpeningBalWidget> {
                                                 width: 0.5,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(2.0),
+                                                  BorderRadius.circular(2),
                                             ),
                                             focusedErrorBorder:
                                                 OutlineInputBorder(
@@ -235,7 +234,7 @@ class _OpeningBalWidgetState extends State<OpeningBalWidget> {
                                                 width: 0.5,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(2.0),
+                                                  BorderRadius.circular(2),
                                             ),
                                           ),
                                           style: FlutterFlowTheme.of(context)
@@ -270,8 +269,8 @@ class _OpeningBalWidgetState extends State<OpeningBalWidget> {
                       Expanded(
                         flex: 2,
                         child: Container(
-                          width: 480.0,
-                          height: 100.0,
+                          width: 480,
+                          height: 100,
                           decoration: BoxDecoration(),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -281,15 +280,15 @@ class _OpeningBalWidgetState extends State<OpeningBalWidget> {
                               Expanded(
                                 flex: 2,
                                 child: Container(
-                                  width: 380.0,
-                                  height: 100.0,
+                                  width: 380,
+                                  height: 100,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        10.0, 0.0, 0.0, 0.0),
+                                        10, 0, 0, 0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -300,10 +299,10 @@ class _OpeningBalWidgetState extends State<OpeningBalWidget> {
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                  .fromSTEB(5, 0, 0, 0),
                                               child: Container(
-                                                width: 330.0,
-                                                height: 30.0,
+                                                width: 330,
+                                                height: 30,
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
@@ -348,10 +347,10 @@ class _OpeningBalWidgetState extends State<OpeningBalWidget> {
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                  .fromSTEB(5, 0, 0, 0),
                                               child: Container(
-                                                width: 290.0,
-                                                height: 30.0,
+                                                width: 290,
+                                                height: 30,
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
@@ -394,11 +393,8 @@ class _OpeningBalWidgetState extends State<OpeningBalWidget> {
                                                       Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    10.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0),
+                                                                .fromSTEB(10, 0,
+                                                                    0, 0),
                                                         child: Text(
                                                           valueOrDefault<
                                                               String>(
@@ -452,17 +448,17 @@ class _OpeningBalWidgetState extends State<OpeningBalWidget> {
                               Expanded(
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 5.0),
+                                      0, 0, 0, 5),
                                   child: Container(
-                                    width: 400.0,
-                                    height: 100.0,
+                                    width: 400,
+                                    height: 100,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBackground,
                                     ),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          30.0, 0.0, 0.0, 0.0),
+                                          30, 0, 0, 0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -477,12 +473,12 @@ class _OpeningBalWidgetState extends State<OpeningBalWidget> {
                                               'uuw1285j' /* Cancel */,
                                             ),
                                             options: FFButtonOptions(
-                                              width: 90.0,
-                                              height: 36.0,
+                                              width: 90,
+                                              height: 36,
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                  .fromSTEB(0, 0, 0, 0),
                                               iconPadding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                  .fromSTEB(0, 0, 0, 0),
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .customColor2,
@@ -506,13 +502,13 @@ class _OpeningBalWidgetState extends State<OpeningBalWidget> {
                                                                         context)
                                                                     .titleSmallFamily),
                                                       ),
-                                              elevation: 2.0,
+                                              elevation: 2,
                                               borderSide: BorderSide(
                                                 color: Colors.transparent,
-                                                width: 1.0,
+                                                width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(8),
                                             ),
                                           ),
                                           FFButtonWidget(
@@ -868,7 +864,7 @@ class _OpeningBalWidgetState extends State<OpeningBalWidget> {
                                                       'ProductAndListWIN');
 
                                                   if (_shouldSetState)
-                                                    setState(() {});
+                                                    safeSetState(() {});
                                                   return;
                                                 } else {
                                                   var shiftRecordReference =
@@ -967,7 +963,7 @@ class _OpeningBalWidgetState extends State<OpeningBalWidget> {
                                                 );
 
                                                 if (_shouldSetState)
-                                                  setState(() {});
+                                                  safeSetState(() {});
                                                 return;
                                               } else {
                                                 FFAppState().shiftCount =
@@ -994,24 +990,24 @@ class _OpeningBalWidgetState extends State<OpeningBalWidget> {
                                                 );
 
                                                 if (_shouldSetState)
-                                                  setState(() {});
+                                                  safeSetState(() {});
                                                 return;
                                               }
 
                                               if (_shouldSetState)
-                                                setState(() {});
+                                                safeSetState(() {});
                                             },
                                             text: FFLocalizations.of(context)
                                                 .getText(
                                               '0bk0pfix' /* Ok */,
                                             ),
                                             options: FFButtonOptions(
-                                              width: 90.0,
-                                              height: 36.0,
+                                              width: 90,
+                                              height: 36,
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                  .fromSTEB(0, 0, 0, 0),
                                               iconPadding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                  .fromSTEB(0, 0, 0, 0),
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
@@ -1032,13 +1028,13 @@ class _OpeningBalWidgetState extends State<OpeningBalWidget> {
                                                                         context)
                                                                     .titleSmallFamily),
                                                       ),
-                                              elevation: 2.0,
+                                              elevation: 2,
                                               borderSide: BorderSide(
                                                 color: Colors.transparent,
-                                                width: 1.0,
+                                                width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(8),
                                             ),
                                           ),
                                         ],

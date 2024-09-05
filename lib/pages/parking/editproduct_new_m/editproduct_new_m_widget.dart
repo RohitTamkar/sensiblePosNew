@@ -76,7 +76,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
 
     _model.textFieldFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -104,8 +104,8 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                 Expanded(
                   flex: 4,
                   child: Container(
-                    width: MediaQuery.sizeOf(context).width * 1.0,
-                    height: 100.0,
+                    width: MediaQuery.sizeOf(context).width,
+                    height: 100,
                     decoration: BoxDecoration(),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -113,21 +113,20 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              15.0, 0.0, 15.0, 0.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(15, 0, 15, 0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 30.0,
-                                borderWidth: 1.0,
-                                buttonSize: 45.0,
+                                borderRadius: 30,
+                                borderWidth: 1,
+                                buttonSize: 45,
                                 icon: Icon(
                                   Icons.chevron_left,
                                   color: FlutterFlowTheme.of(context).lineColor,
-                                  size: 24.0,
+                                  size: 24,
                                 ),
                                 onPressed: () async {
                                   context.pushNamed('productListNewM');
@@ -155,13 +154,13 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                               ),
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 30.0,
-                                borderWidth: 1.0,
-                                buttonSize: 45.0,
+                                borderRadius: 30,
+                                borderWidth: 1,
+                                buttonSize: 45,
                                 icon: Icon(
                                   Icons.add,
                                   color: FlutterFlowTheme.of(context).lineColor,
-                                  size: 0.0,
+                                  size: 0,
                                 ),
                                 onPressed: () {
                                   print('IconButton pressed ...');
@@ -190,11 +189,11 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                       if (!snapshot.hasData) {
                         return Center(
                           child: SizedBox(
-                            width: 40.0,
-                            height: 40.0,
+                            width: 40,
+                            height: 40,
                             child: SpinKitFadingCircle(
                               color: FlutterFlowTheme.of(context).primary,
-                              size: 40.0,
+                              size: 40,
                             ),
                           ),
                         );
@@ -207,16 +206,16 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                               : null;
 
                       return Container(
-                        width: MediaQuery.sizeOf(context).width * 1.0,
-                        height: 100.0,
+                        width: MediaQuery.sizeOf(context).width,
+                        height: 100,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context)
                               .parkingPrimaryBackground,
                           borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(0.0),
-                            bottomRight: Radius.circular(0.0),
-                            topLeft: Radius.circular(0.0),
-                            topRight: Radius.circular(0.0),
+                            bottomLeft: Radius.circular(0),
+                            bottomRight: Radius.circular(0),
+                            topLeft: Radius.circular(0),
+                            topRight: Radius.circular(0),
                           ),
                         ),
                         child: Form(
@@ -245,7 +244,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 3.0),
+                                                  .fromSTEB(0, 0, 0, 3),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -303,7 +302,8 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                           Duration(
                                                               milliseconds:
                                                                   2000),
-                                                          () => setState(() {}),
+                                                          () => safeSetState(
+                                                              () {}),
                                                         ),
                                                         autofocus: true,
                                                         readOnly: true,
@@ -349,16 +349,16 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                     .only(
                                                               bottomLeft: Radius
                                                                   .circular(
-                                                                      2000.0),
-                                                              bottomRight: Radius
-                                                                  .circular(
-                                                                      2000.0),
+                                                                      2000),
+                                                              bottomRight:
+                                                                  Radius
+                                                                      .circular(
+                                                                          2000),
                                                               topLeft: Radius
                                                                   .circular(
-                                                                      100.0),
+                                                                      100),
                                                               topRight: Radius
-                                                                  .circular(
-                                                                      1.0),
+                                                                  .circular(1),
                                                             ),
                                                           ),
                                                           focusedBorder:
@@ -374,16 +374,16 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                     .only(
                                                               bottomLeft: Radius
                                                                   .circular(
-                                                                      2000.0),
-                                                              bottomRight: Radius
-                                                                  .circular(
-                                                                      2000.0),
+                                                                      2000),
+                                                              bottomRight:
+                                                                  Radius
+                                                                      .circular(
+                                                                          2000),
                                                               topLeft: Radius
                                                                   .circular(
-                                                                      100.0),
+                                                                      100),
                                                               topRight: Radius
-                                                                  .circular(
-                                                                      1.0),
+                                                                  .circular(1),
                                                             ),
                                                           ),
                                                           errorBorder:
@@ -399,16 +399,16 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                     .only(
                                                               bottomLeft: Radius
                                                                   .circular(
-                                                                      2000.0),
-                                                              bottomRight: Radius
-                                                                  .circular(
-                                                                      2000.0),
+                                                                      2000),
+                                                              bottomRight:
+                                                                  Radius
+                                                                      .circular(
+                                                                          2000),
                                                               topLeft: Radius
                                                                   .circular(
-                                                                      100.0),
+                                                                      100),
                                                               topRight: Radius
-                                                                  .circular(
-                                                                      1.0),
+                                                                  .circular(1),
                                                             ),
                                                           ),
                                                           focusedErrorBorder:
@@ -424,16 +424,16 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                     .only(
                                                               bottomLeft: Radius
                                                                   .circular(
-                                                                      2000.0),
-                                                              bottomRight: Radius
-                                                                  .circular(
-                                                                      2000.0),
+                                                                      2000),
+                                                              bottomRight:
+                                                                  Radius
+                                                                      .circular(
+                                                                          2000),
                                                               topLeft: Radius
                                                                   .circular(
-                                                                      100.0),
+                                                                      100),
                                                               topRight: Radius
-                                                                  .circular(
-                                                                      1.0),
+                                                                  .circular(1),
                                                             ),
                                                           ),
                                                         ),
@@ -470,8 +470,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 0.0, 0.0, 15.0),
+                                                  .fromSTEB(0, 0, 0, 15),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -493,7 +492,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                           .secondaryBackground,
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              10.0),
+                                                              10),
                                                     ),
                                                     child: Row(
                                                       mainAxisSize:
@@ -514,14 +513,14 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                 .hasData) {
                                                               return Center(
                                                                 child: SizedBox(
-                                                                  width: 40.0,
-                                                                  height: 40.0,
+                                                                  width: 40,
+                                                                  height: 40,
                                                                   child:
                                                                       SpinKitFadingCircle(
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primary,
-                                                                    size: 40.0,
+                                                                    size: 40,
                                                                   ),
                                                                 ),
                                                               );
@@ -546,7 +545,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                           e.name)
                                                                       .toList(),
                                                               onChanged: (val) =>
-                                                                  setState(() =>
+                                                                  safeSetState(() =>
                                                                       _model.productDropDownValue =
                                                                           val),
                                                               width: MediaQuery
@@ -571,21 +570,20 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                         useGoogleFonts:
                                                                             GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                       ),
-                                                              elevation: 0.0,
+                                                              elevation: 0,
                                                               borderColor:
                                                                   FlutterFlowTheme.of(
                                                                           context)
                                                                       .customColor2,
-                                                              borderWidth: 0.0,
-                                                              borderRadius:
-                                                                  10.0,
+                                                              borderWidth: 0,
+                                                              borderRadius: 10,
                                                               margin:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          12.0,
-                                                                          4.0,
-                                                                          12.0,
-                                                                          4.0),
+                                                                          12,
+                                                                          4,
+                                                                          12,
+                                                                          4),
                                                               hidesUnderline:
                                                                   true,
                                                               isSearchable:
@@ -603,8 +601,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 0.0, 0.0, 10.0),
+                                                  .fromSTEB(0, 0, 0, 10),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -616,10 +613,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  5.0,
-                                                                  0.0,
-                                                                  5.0,
-                                                                  0.0),
+                                                                  5, 0, 5, 0),
                                                       child: TextFormField(
                                                         controller: _model
                                                                 .textFieldSellingPriceTextController ??=
@@ -683,7 +677,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        8.0),
+                                                                        8),
                                                           ),
                                                           focusedBorder:
                                                               OutlineInputBorder(
@@ -696,7 +690,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        8.0),
+                                                                        8),
                                                           ),
                                                           errorBorder:
                                                               OutlineInputBorder(
@@ -709,7 +703,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        8.0),
+                                                                        8),
                                                           ),
                                                           focusedErrorBorder:
                                                               OutlineInputBorder(
@@ -722,7 +716,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        8.0),
+                                                                        8),
                                                           ),
                                                           filled: true,
                                                           fillColor: FlutterFlowTheme
@@ -763,10 +757,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    5.0,
-                                                                    0.0,
-                                                                    5.0,
-                                                                    0.0),
+                                                                    5, 0, 5, 0),
                                                         child: TextFormField(
                                                           controller: _model
                                                                   .textFieldMRPPriceTextController ??=
@@ -830,7 +821,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          8.0),
+                                                                          8),
                                                             ),
                                                             focusedBorder:
                                                                 OutlineInputBorder(
@@ -843,7 +834,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          8.0),
+                                                                          8),
                                                             ),
                                                             errorBorder:
                                                                 OutlineInputBorder(
@@ -856,7 +847,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          8.0),
+                                                                          8),
                                                             ),
                                                             focusedErrorBorder:
                                                                 OutlineInputBorder(
@@ -869,7 +860,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          8.0),
+                                                                          8),
                                                             ),
                                                             filled: true,
                                                             fillColor: FlutterFlowTheme
@@ -909,10 +900,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    5.0,
-                                                                    0.0,
-                                                                    5.0,
-                                                                    0.0),
+                                                                    5, 0, 5, 0),
                                                         child: TextFormField(
                                                           controller: _model
                                                                   .textFieldPurchasePriceTextController ??=
@@ -960,7 +948,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          8.0),
+                                                                          8),
                                                             ),
                                                             focusedBorder:
                                                                 OutlineInputBorder(
@@ -973,7 +961,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          8.0),
+                                                                          8),
                                                             ),
                                                             errorBorder:
                                                                 OutlineInputBorder(
@@ -986,7 +974,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          8.0),
+                                                                          8),
                                                             ),
                                                             focusedErrorBorder:
                                                                 OutlineInputBorder(
@@ -999,7 +987,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          8.0),
+                                                                          8),
                                                             ),
                                                             filled: true,
                                                             fillColor: FlutterFlowTheme
@@ -1038,7 +1026,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 5.0),
+                                                  .fromSTEB(0, 0, 0, 5),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -1069,8 +1057,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 0.0, 0.0, 15.0),
+                                                  .fromSTEB(0, 0, 0, 15),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -1087,14 +1074,14 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                         if (!snapshot.hasData) {
                                                           return Center(
                                                             child: SizedBox(
-                                                              width: 40.0,
-                                                              height: 40.0,
+                                                              width: 40,
+                                                              height: 40,
                                                               child:
                                                                   SpinKitFadingCircle(
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
-                                                                size: 40.0,
+                                                                size: 40,
                                                               ),
                                                             ),
                                                           );
@@ -1132,16 +1119,15 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                   return Center(
                                                                     child:
                                                                         SizedBox(
-                                                                      width:
-                                                                          40.0,
+                                                                      width: 40,
                                                                       height:
-                                                                          40.0,
+                                                                          40,
                                                                       child:
                                                                           SpinKitFadingCircle(
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primary,
                                                                         size:
-                                                                            40.0,
+                                                                            40,
                                                                       ),
                                                                     ),
                                                                   );
@@ -1166,7 +1152,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                           e.name)
                                                                       .toList(),
                                                                   onChanged: (val) =>
-                                                                      setState(() =>
+                                                                      safeSetState(() =>
                                                                           _model.catDropDownValue =
                                                                               val),
                                                                   width: MediaQuery.sizeOf(
@@ -1187,21 +1173,20 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                   fillColor: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryBackground,
-                                                                  elevation:
-                                                                      2.0,
+                                                                  elevation: 2,
                                                                   borderColor:
                                                                       Colors
                                                                           .transparent,
                                                                   borderWidth:
-                                                                      0.0,
+                                                                      0,
                                                                   borderRadius:
-                                                                      10.0,
+                                                                      10,
                                                                   margin: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          12.0,
-                                                                          4.0,
-                                                                          12.0,
-                                                                          4.0),
+                                                                          12,
+                                                                          4,
+                                                                          12,
+                                                                          4),
                                                                   hidesUnderline:
                                                                       true,
                                                                   isSearchable:
@@ -1222,8 +1207,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                             if (false)
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 0.0, 15.0),
+                                                    .fromSTEB(0, 0, 0, 15),
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -1249,7 +1233,8 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                           Duration(
                                                               milliseconds:
                                                                   2000),
-                                                          () => setState(() {}),
+                                                          () => safeSetState(
+                                                              () {}),
                                                         ),
                                                         autofocus: false,
                                                         obscureText: false,
@@ -1303,7 +1288,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        8.0),
+                                                                        8),
                                                           ),
                                                           focusedBorder:
                                                               OutlineInputBorder(
@@ -1316,7 +1301,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        8.0),
+                                                                        8),
                                                           ),
                                                           errorBorder:
                                                               OutlineInputBorder(
@@ -1329,7 +1314,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        8.0),
+                                                                        8),
                                                           ),
                                                           focusedErrorBorder:
                                                               OutlineInputBorder(
@@ -1342,7 +1327,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        8.0),
+                                                                        8),
                                                           ),
                                                           filled: true,
                                                           fillColor: FlutterFlowTheme
@@ -1376,10 +1361,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    5.0,
-                                                                    0.0,
-                                                                    5.0,
-                                                                    0.0),
+                                                                    5, 0, 5, 0),
                                                         child: TextFormField(
                                                           controller: _model
                                                                   .textFieldRecorderLevelTextController ??=
@@ -1397,8 +1379,8 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                             Duration(
                                                                 milliseconds:
                                                                     2000),
-                                                            () =>
-                                                                setState(() {}),
+                                                            () => safeSetState(
+                                                                () {}),
                                                           ),
                                                           autofocus: false,
                                                           obscureText: false,
@@ -1437,7 +1419,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          8.0),
+                                                                          8),
                                                             ),
                                                             focusedBorder:
                                                                 OutlineInputBorder(
@@ -1450,7 +1432,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          8.0),
+                                                                          8),
                                                             ),
                                                             errorBorder:
                                                                 OutlineInputBorder(
@@ -1463,7 +1445,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          8.0),
+                                                                          8),
                                                             ),
                                                             focusedErrorBorder:
                                                                 OutlineInputBorder(
@@ -1476,7 +1458,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          8.0),
+                                                                          8),
                                                             ),
                                                             filled: true,
                                                             fillColor: FlutterFlowTheme
@@ -1514,8 +1496,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                             if (false)
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 0.0, 15.0),
+                                                    .fromSTEB(0, 0, 0, 15),
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -1542,7 +1523,8 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                           Duration(
                                                               milliseconds:
                                                                   2000),
-                                                          () => setState(() {}),
+                                                          () => safeSetState(
+                                                              () {}),
                                                         ),
                                                         autofocus: false,
                                                         obscureText: false,
@@ -1581,7 +1563,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        8.0),
+                                                                        8),
                                                           ),
                                                           focusedBorder:
                                                               OutlineInputBorder(
@@ -1594,7 +1576,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        8.0),
+                                                                        8),
                                                           ),
                                                           errorBorder:
                                                               OutlineInputBorder(
@@ -1607,7 +1589,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        8.0),
+                                                                        8),
                                                           ),
                                                           focusedErrorBorder:
                                                               OutlineInputBorder(
@@ -1620,7 +1602,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        8.0),
+                                                                        8),
                                                           ),
                                                           filled: true,
                                                           fillColor: FlutterFlowTheme
@@ -1657,10 +1639,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    5.0,
-                                                                    0.0,
-                                                                    5.0,
-                                                                    0.0),
+                                                                    5, 0, 5, 0),
                                                         child: TextFormField(
                                                           controller: _model
                                                                   .textFieldDiscountAmtTextController ??=
@@ -1678,8 +1657,8 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                             Duration(
                                                                 milliseconds:
                                                                     2000),
-                                                            () =>
-                                                                setState(() {}),
+                                                            () => safeSetState(
+                                                                () {}),
                                                           ),
                                                           autofocus: false,
                                                           obscureText: false,
@@ -1718,7 +1697,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          8.0),
+                                                                          8),
                                                             ),
                                                             focusedBorder:
                                                                 OutlineInputBorder(
@@ -1731,7 +1710,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          8.0),
+                                                                          8),
                                                             ),
                                                             errorBorder:
                                                                 OutlineInputBorder(
@@ -1744,7 +1723,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          8.0),
+                                                                          8),
                                                             ),
                                                             focusedErrorBorder:
                                                                 OutlineInputBorder(
@@ -1757,7 +1736,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          8.0),
+                                                                          8),
                                                             ),
                                                             filled: true,
                                                             fillColor: FlutterFlowTheme
@@ -1795,8 +1774,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                             if (false)
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 0.0, 15.0),
+                                                    .fromSTEB(0, 0, 0, 15),
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -1818,9 +1796,9 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                   .weightable,
                                                           onChanged:
                                                               (newValue) async {
-                                                            setState(() => _model
-                                                                    .wightCheckboValue =
-                                                                newValue!);
+                                                            safeSetState(() =>
+                                                                _model.wightCheckboValue =
+                                                                    newValue!);
                                                           },
                                                           title: Text(
                                                             FFLocalizations.of(
@@ -1878,9 +1856,9 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                   .stockable,
                                                           onChanged:
                                                               (newValue) async {
-                                                            setState(() => _model
-                                                                    .stockCheckboxValue =
-                                                                newValue!);
+                                                            safeSetState(() =>
+                                                                _model.stockCheckboxValue =
+                                                                    newValue!);
                                                           },
                                                           title: Text(
                                                             FFLocalizations.of(
@@ -1928,8 +1906,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                               ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 0.0, 0.0, 15.0),
+                                                  .fromSTEB(0, 0, 0, 15),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -1950,10 +1927,10 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          10,
+                                                                          0,
+                                                                          0,
+                                                                          0),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -1990,7 +1967,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                             expanded: Padding(
                                                               padding:
                                                                   EdgeInsets
-                                                                      .all(5.0),
+                                                                      .all(5),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -2027,10 +2004,10 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                       ),
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            8.0),
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            8),
                                                                         child:
                                                                             Row(
                                                                           mainAxisSize:
@@ -2049,11 +2026,11 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                                 if (!snapshot.hasData) {
                                                                                   return Center(
                                                                                     child: SizedBox(
-                                                                                      width: 40.0,
-                                                                                      height: 40.0,
+                                                                                      width: 40,
+                                                                                      height: 40,
                                                                                       child: SpinKitFadingCircle(
                                                                                         color: FlutterFlowTheme.of(context).primary,
-                                                                                        size: 40.0,
+                                                                                        size: 40,
                                                                                       ),
                                                                                     ),
                                                                                   );
@@ -2072,11 +2049,11 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                                       if (!snapshot.hasData) {
                                                                                         return Center(
                                                                                           child: SizedBox(
-                                                                                            width: 40.0,
-                                                                                            height: 40.0,
+                                                                                            width: 40,
+                                                                                            height: 40,
                                                                                             child: SpinKitFadingCircle(
                                                                                               color: FlutterFlowTheme.of(context).primary,
-                                                                                              size: 40.0,
+                                                                                              size: 40,
                                                                                             ),
                                                                                           ),
                                                                                         );
@@ -2088,20 +2065,20 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                                           _model.subDropDownValue ??= containerSubCategoryRecord != null ? containerSubCategoryRecord?.name : '#',
                                                                                         ),
                                                                                         options: subDropDownSubCategoryRecordList.map((e) => e.name).toList(),
-                                                                                        onChanged: (val) => setState(() => _model.subDropDownValue = val),
+                                                                                        onChanged: (val) => safeSetState(() => _model.subDropDownValue = val),
                                                                                         width: MediaQuery.sizeOf(context).width * 0.6,
-                                                                                        height: 50.0,
+                                                                                        height: 50,
                                                                                         textStyle: FlutterFlowTheme.of(context).titleMedium.override(
                                                                                               fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                               letterSpacing: 0.0,
                                                                                               useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                                             ),
                                                                                         fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                        elevation: 2.0,
+                                                                                        elevation: 2,
                                                                                         borderColor: FlutterFlowTheme.of(context).customColor2,
                                                                                         borderWidth: 0.5,
-                                                                                        borderRadius: 5.0,
-                                                                                        margin: EdgeInsetsDirectional.fromSTEB(12.0, 4.0, 12.0, 4.0),
+                                                                                        borderRadius: 5,
+                                                                                        margin: EdgeInsetsDirectional.fromSTEB(12, 4, 12, 4),
                                                                                         hidesUnderline: true,
                                                                                         isSearchable: false,
                                                                                         isMultiSelect: false,
@@ -2151,11 +2128,11 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                               if (!snapshot.hasData) {
                                                                                 return Center(
                                                                                   child: SizedBox(
-                                                                                    width: 40.0,
-                                                                                    height: 40.0,
+                                                                                    width: 40,
+                                                                                    height: 40,
                                                                                     child: SpinKitFadingCircle(
                                                                                       color: FlutterFlowTheme.of(context).primary,
-                                                                                      size: 40.0,
+                                                                                      size: 40,
                                                                                     ),
                                                                                   ),
                                                                                 );
@@ -2178,11 +2155,11 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                                     if (!snapshot.hasData) {
                                                                                       return Center(
                                                                                         child: SizedBox(
-                                                                                          width: 40.0,
-                                                                                          height: 40.0,
+                                                                                          width: 40,
+                                                                                          height: 40,
                                                                                           child: SpinKitFadingCircle(
                                                                                             color: FlutterFlowTheme.of(context).primary,
-                                                                                            size: 40.0,
+                                                                                            size: 40,
                                                                                           ),
                                                                                         ),
                                                                                       );
@@ -2194,20 +2171,20 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                                         _model.serviceDropDownValue ??= containerServicePointOutletRecord != null ? containerServicePointOutletRecord?.name : '#',
                                                                                       ),
                                                                                       options: serviceDropDownServicePointOutletRecordList.map((e) => e.name).toList(),
-                                                                                      onChanged: (val) => setState(() => _model.serviceDropDownValue = val),
+                                                                                      onChanged: (val) => safeSetState(() => _model.serviceDropDownValue = val),
                                                                                       width: MediaQuery.sizeOf(context).width * 0.6,
-                                                                                      height: 50.0,
+                                                                                      height: 50,
                                                                                       textStyle: FlutterFlowTheme.of(context).titleMedium.override(
                                                                                             fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                             letterSpacing: 0.0,
                                                                                             useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                                           ),
                                                                                       fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      elevation: 2.0,
+                                                                                      elevation: 2,
                                                                                       borderColor: FlutterFlowTheme.of(context).customColor2,
                                                                                       borderWidth: 0.5,
-                                                                                      borderRadius: 5.0,
-                                                                                      margin: EdgeInsetsDirectional.fromSTEB(12.0, 4.0, 12.0, 4.0),
+                                                                                      borderRadius: 5,
+                                                                                      margin: EdgeInsetsDirectional.fromSTEB(12, 4, 12, 4),
                                                                                       hidesUnderline: true,
                                                                                       isSearchable: false,
                                                                                       isMultiSelect: false,
@@ -2247,10 +2224,10 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                       ),
                                                                       Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            8.0),
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            8),
                                                                         child:
                                                                             Row(
                                                                           mainAxisSize:
@@ -2269,11 +2246,11 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                                 if (!snapshot.hasData) {
                                                                                   return Center(
                                                                                     child: SizedBox(
-                                                                                      width: 40.0,
-                                                                                      height: 40.0,
+                                                                                      width: 40,
+                                                                                      height: 40,
                                                                                       child: SpinKitFadingCircle(
                                                                                         color: FlutterFlowTheme.of(context).primary,
-                                                                                        size: 40.0,
+                                                                                        size: 40,
                                                                                       ),
                                                                                     ),
                                                                                   );
@@ -2294,11 +2271,11 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                                       if (!snapshot.hasData) {
                                                                                         return Center(
                                                                                           child: SizedBox(
-                                                                                            width: 40.0,
-                                                                                            height: 40.0,
+                                                                                            width: 40,
+                                                                                            height: 40,
                                                                                             child: SpinKitFadingCircle(
                                                                                               color: FlutterFlowTheme.of(context).primary,
-                                                                                              size: 40.0,
+                                                                                              size: 40,
                                                                                             ),
                                                                                           ),
                                                                                         );
@@ -2310,20 +2287,20 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                                           _model.unitDropDownValue ??= containerUnitTypeRecord != null ? containerUnitTypeRecord?.name : '#',
                                                                                         ),
                                                                                         options: unitDropDownUnitTypeRecordList.map((e) => e.name).toList(),
-                                                                                        onChanged: (val) => setState(() => _model.unitDropDownValue = val),
+                                                                                        onChanged: (val) => safeSetState(() => _model.unitDropDownValue = val),
                                                                                         width: MediaQuery.sizeOf(context).width * 0.6,
-                                                                                        height: 50.0,
+                                                                                        height: 50,
                                                                                         textStyle: FlutterFlowTheme.of(context).titleMedium.override(
                                                                                               fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                               letterSpacing: 0.0,
                                                                                               useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                                             ),
                                                                                         fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                        elevation: 2.0,
+                                                                                        elevation: 2,
                                                                                         borderColor: FlutterFlowTheme.of(context).customColor2,
                                                                                         borderWidth: 0.5,
-                                                                                        borderRadius: 5.0,
-                                                                                        margin: EdgeInsetsDirectional.fromSTEB(12.0, 4.0, 12.0, 4.0),
+                                                                                        borderRadius: 5,
+                                                                                        margin: EdgeInsetsDirectional.fromSTEB(12, 4, 12, 4),
                                                                                         hidesUnderline: true,
                                                                                         isSearchable: false,
                                                                                         isMultiSelect: false,
@@ -2372,11 +2349,11 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                               if (!snapshot.hasData) {
                                                                                 return Center(
                                                                                   child: SizedBox(
-                                                                                    width: 40.0,
-                                                                                    height: 40.0,
+                                                                                    width: 40,
+                                                                                    height: 40,
                                                                                     child: SpinKitFadingCircle(
                                                                                       color: FlutterFlowTheme.of(context).primary,
-                                                                                      size: 40.0,
+                                                                                      size: 40,
                                                                                     ),
                                                                                   ),
                                                                                 );
@@ -2397,11 +2374,11 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                                     if (!snapshot.hasData) {
                                                                                       return Center(
                                                                                         child: SizedBox(
-                                                                                          width: 40.0,
-                                                                                          height: 40.0,
+                                                                                          width: 40,
+                                                                                          height: 40,
                                                                                           child: SpinKitFadingCircle(
                                                                                             color: FlutterFlowTheme.of(context).primary,
-                                                                                            size: 40.0,
+                                                                                            size: 40,
                                                                                           ),
                                                                                         ),
                                                                                       );
@@ -2413,20 +2390,20 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                                         _model.taxDropDownValue ??= containerTax1TaxMasterRecord != null ? containerTax1TaxMasterRecord?.name : '#',
                                                                                       ),
                                                                                       options: taxDropDownTaxMasterRecordList.map((e) => e.name).toList(),
-                                                                                      onChanged: (val) => setState(() => _model.taxDropDownValue = val),
-                                                                                      width: 180.0,
-                                                                                      height: 50.0,
+                                                                                      onChanged: (val) => safeSetState(() => _model.taxDropDownValue = val),
+                                                                                      width: 180,
+                                                                                      height: 50,
                                                                                       textStyle: FlutterFlowTheme.of(context).titleMedium.override(
                                                                                             fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                             letterSpacing: 0.0,
                                                                                             useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                                           ),
                                                                                       fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      elevation: 2.0,
+                                                                                      elevation: 2,
                                                                                       borderColor: FlutterFlowTheme.of(context).customColor2,
                                                                                       borderWidth: 0.5,
-                                                                                      borderRadius: 0.0,
-                                                                                      margin: EdgeInsetsDirectional.fromSTEB(12.0, 4.0, 12.0, 4.0),
+                                                                                      borderRadius: 0,
+                                                                                      margin: EdgeInsetsDirectional.fromSTEB(12, 4, 12, 4),
                                                                                       hidesUnderline: true,
                                                                                       isSearchable: false,
                                                                                       isMultiSelect: false,
@@ -2465,8 +2442,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 0.0, 0.0, 15.0),
+                                                  .fromSTEB(0, 0, 0, 15),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -2487,10 +2463,10 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          10,
+                                                                          0,
+                                                                          0,
+                                                                          0),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -2527,7 +2503,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                             expanded: Padding(
                                                               padding:
                                                                   EdgeInsets
-                                                                      .all(5.0),
+                                                                      .all(5),
                                                               child: Column(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -2536,10 +2512,10 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            15.0),
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            15),
                                                                     child: Row(
                                                                       mainAxisSize:
                                                                           MainAxisSize
@@ -2558,7 +2534,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondary,
                                                                             borderRadius:
-                                                                                BorderRadius.circular(5.0),
+                                                                                BorderRadius.circular(5),
                                                                           ),
                                                                           child:
                                                                               Row(
@@ -2601,12 +2577,12 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                                     FFAppState().barcode = _model.barcode!;
                                                                                     FFAppState().update(() {});
 
-                                                                                    setState(() {});
+                                                                                    safeSetState(() {});
                                                                                   },
                                                                                   child: Icon(
                                                                                     Icons.qr_code_scanner,
                                                                                     color: Colors.black,
-                                                                                    size: 28.0,
+                                                                                    size: 28,
                                                                                   ),
                                                                                 ),
                                                                               ),
@@ -2643,7 +2619,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                                 _model.barcode2!;
                                                                             FFAppState().update(() {});
 
-                                                                            setState(() {});
+                                                                            safeSetState(() {});
                                                                           },
                                                                           child:
                                                                               Container(
@@ -2654,7 +2630,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                             decoration:
                                                                                 BoxDecoration(
                                                                               color: FlutterFlowTheme.of(context).secondary,
-                                                                              borderRadius: BorderRadius.circular(5.0),
+                                                                              borderRadius: BorderRadius.circular(5),
                                                                             ),
                                                                             child:
                                                                                 Row(
@@ -2690,10 +2666,10 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                         child:
                                                                             Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              3.0,
-                                                                              0.0),
+                                                                              0,
+                                                                              0,
+                                                                              3,
+                                                                              0),
                                                                           child:
                                                                               Container(
                                                                             width:
@@ -2703,7 +2679,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                             decoration:
                                                                                 BoxDecoration(
                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              borderRadius: BorderRadius.circular(5.0),
+                                                                              borderRadius: BorderRadius.circular(5),
                                                                             ),
                                                                             child:
                                                                                 Row(
@@ -2776,10 +2752,10 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                         child:
                                                                             Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              3.0,
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0),
+                                                                              3,
+                                                                              0,
+                                                                              0,
+                                                                              0),
                                                                           child:
                                                                               Container(
                                                                             width:
@@ -2789,7 +2765,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                             decoration:
                                                                                 BoxDecoration(
                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              borderRadius: BorderRadius.circular(5.0),
+                                                                              borderRadius: BorderRadius.circular(5),
                                                                             ),
                                                                             child:
                                                                                 TextFormField(
@@ -2886,8 +2862,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 0.0, 0.0, 15.0),
+                                                  .fromSTEB(0, 0, 0, 15),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -3007,19 +2982,21 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                     options:
                                                                         FFButtonOptions(
                                                                       width:
-                                                                          150.0,
+                                                                          150,
                                                                       height:
-                                                                          50.0,
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          50,
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              0,
+                                                                              0,
+                                                                              0,
+                                                                              0),
+                                                                      iconPadding:
+                                                                          EdgeInsetsDirectional.fromSTEB(
+                                                                              0,
+                                                                              0,
+                                                                              0,
+                                                                              0),
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .parkingSecondaryBackground,
@@ -3039,7 +3016,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                                 GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                           ),
                                                                       elevation:
-                                                                          2.0,
+                                                                          2,
                                                                       borderSide:
                                                                           BorderSide(
                                                                         color: Colors
@@ -3047,7 +3024,7 @@ class _EditproductNewMWidgetState extends State<EditproductNewMWidget> {
                                                                       ),
                                                                       borderRadius:
                                                                           BorderRadius.circular(
-                                                                              5.0),
+                                                                              5),
                                                                     ),
                                                                   ),
                                                                 ],

@@ -75,8 +75,8 @@ class _KioskDineParcelCopyWidgetState extends State<KioskDineParcelCopyWidget>
             delay: 0.0.ms,
             duration: 1500.0.ms,
             color: Color(0xFFFFDD42),
-            begin: 0.0,
-            end: 1.0,
+            begin: 0,
+            end: 1,
           ),
         ],
       ),
@@ -97,14 +97,14 @@ class _KioskDineParcelCopyWidgetState extends State<KioskDineParcelCopyWidget>
             delay: 0.0.ms,
             duration: 1500.0.ms,
             color: Color(0xFFFFDD42),
-            begin: 0.0,
-            end: 1.0,
+            begin: 0,
+            end: 1,
           ),
         ],
       ),
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -129,14 +129,14 @@ class _KioskDineParcelCopyWidgetState extends State<KioskDineParcelCopyWidget>
               key: scaffoldKey,
               backgroundColor: Color(0xFFF4ECE5),
               body: Transform.rotate(
-                angle: 90.0 * (math.pi / 180),
+                angle: 90 * (math.pi / 180),
                 child: Container(
                   width: double.infinity,
                   height: double.infinity,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       fit: BoxFit.fitWidth,
-                      alignment: AlignmentDirectional(1.0, 0.0),
+                      alignment: AlignmentDirectional(1, 0),
                       image: Image.asset(
                         'assets/images/Top_img_3.png',
                       ).image,
@@ -147,8 +147,7 @@ class _KioskDineParcelCopyWidgetState extends State<KioskDineParcelCopyWidget>
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 80.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 80),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             'gxg9qi0w' /* Choose Order Type  */,
@@ -159,8 +158,8 @@ class _KioskDineParcelCopyWidgetState extends State<KioskDineParcelCopyWidget>
                                 fontFamily: FlutterFlowTheme.of(context)
                                     .displayLargeFamily,
                                 color: FlutterFlowTheme.of(context).info,
-                                fontSize: 40.0,
-                                letterSpacing: 5.0,
+                                fontSize: 40,
+                                letterSpacing: 5,
                                 fontWeight: FontWeight.w600,
                                 useGoogleFonts: GoogleFonts.asMap().containsKey(
                                     FlutterFlowTheme.of(context)
@@ -169,8 +168,7 @@ class _KioskDineParcelCopyWidgetState extends State<KioskDineParcelCopyWidget>
                         ),
                       ),
                       Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 50.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 50),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -179,7 +177,7 @@ class _KioskDineParcelCopyWidgetState extends State<KioskDineParcelCopyWidget>
                           onTap: () async {
                             FFAppState().orderType = 'DINE IN';
                             FFAppState().delCharges = 0.0;
-                            setState(() {});
+                            safeSetState(() {});
 
                             context.pushNamed(
                               'KioskBillScreen',
@@ -215,18 +213,18 @@ class _KioskDineParcelCopyWidgetState extends State<KioskDineParcelCopyWidget>
                               color: FlutterFlowTheme.of(context).primary,
                               boxShadow: [
                                 BoxShadow(
-                                  blurRadius: 12.0,
+                                  blurRadius: 12,
                                   color: Color(0x26000000),
                                   offset: Offset(
-                                    9.0,
-                                    9.0,
+                                    9,
+                                    9,
                                   ),
                                 )
                               ],
-                              borderRadius: BorderRadius.circular(30.0),
+                              borderRadius: BorderRadius.circular(30),
                             ),
                             child: Padding(
-                              padding: EdgeInsets.all(60.0),
+                              padding: EdgeInsets.all(60),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -235,7 +233,7 @@ class _KioskDineParcelCopyWidgetState extends State<KioskDineParcelCopyWidget>
                                       Icons.dinner_dining,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBtnText,
-                                      size: 50.0,
+                                      size: 50,
                                     ).animateOnPageLoad(animationsMap[
                                         'iconOnPageLoadAnimation1']!),
                                   ),
@@ -254,7 +252,7 @@ class _KioskDineParcelCopyWidgetState extends State<KioskDineParcelCopyWidget>
                                                     .displayLargeFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBtnText,
-                                            fontSize: 36.0,
+                                            fontSize: 36,
                                             letterSpacing: 0.0,
                                             useGoogleFonts: GoogleFonts.asMap()
                                                 .containsKey(
@@ -278,8 +276,7 @@ class _KioskDineParcelCopyWidgetState extends State<KioskDineParcelCopyWidget>
                         false,
                       ))
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 50.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 50),
                           child: InkWell(
                             splashColor: Colors.transparent,
                             focusColor: Colors.transparent,
@@ -291,7 +288,7 @@ class _KioskDineParcelCopyWidgetState extends State<KioskDineParcelCopyWidget>
                                 _model.footer?.parcelCharges,
                                 0.0,
                               );
-                              setState(() {});
+                              safeSetState(() {});
 
                               context.pushNamed(
                                 'KioskBillScreen',
@@ -327,18 +324,18 @@ class _KioskDineParcelCopyWidgetState extends State<KioskDineParcelCopyWidget>
                                 color: FlutterFlowTheme.of(context).primary,
                                 boxShadow: [
                                   BoxShadow(
-                                    blurRadius: 12.0,
+                                    blurRadius: 12,
                                     color: Color(0x27000000),
                                     offset: Offset(
-                                      9.0,
-                                      9.0,
+                                      9,
+                                      9,
                                     ),
                                   )
                                 ],
-                                borderRadius: BorderRadius.circular(30.0),
+                                borderRadius: BorderRadius.circular(30),
                               ),
                               child: Padding(
-                                padding: EdgeInsets.all(60.0),
+                                padding: EdgeInsets.all(60),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -347,7 +344,7 @@ class _KioskDineParcelCopyWidgetState extends State<KioskDineParcelCopyWidget>
                                         Icons.takeout_dining_rounded,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBtnText,
-                                        size: 45.0,
+                                        size: 45,
                                       ).animateOnPageLoad(animationsMap[
                                           'iconOnPageLoadAnimation2']!),
                                     ),
@@ -367,7 +364,7 @@ class _KioskDineParcelCopyWidgetState extends State<KioskDineParcelCopyWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBtnText,
-                                              fontSize: 36.0,
+                                              fontSize: 36,
                                               letterSpacing: 0.0,
                                               useGoogleFonts: GoogleFonts
                                                       .asMap()

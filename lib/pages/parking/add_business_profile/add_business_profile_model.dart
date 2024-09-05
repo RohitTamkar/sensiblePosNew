@@ -20,7 +20,6 @@ class AddBusinessProfileModel
     extends FlutterFlowModel<AddBusinessProfileWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
   // State field(s) for TextBusinessName widget.
   FocusNode? textBusinessNameFocusNode;

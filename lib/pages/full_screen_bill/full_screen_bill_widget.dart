@@ -30,7 +30,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
     super.initState();
     _model = createModel(context, () => FullScreenBillModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -55,22 +55,21 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
             drawer: Container(
               width: MediaQuery.sizeOf(context).width * 0.6,
               child: Drawer(
-                elevation: 16.0,
+                elevation: 16,
                 child: Container(
-                  width: 100.0,
-                  height: 100.0,
+                  width: 100,
+                  height: 100,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).primaryBackground,
                   ),
                   child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(7.0, 0.0, 7.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(7, 0, 7, 0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 10.0, 0.0, 0.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                           child: Text(
                             FFLocalizations.of(context).getText(
                               'j449nctd' /* Selected Items */,
@@ -88,8 +87,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 10.0, 0.0, 0.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                           child: Container(
                             width: double.infinity,
                             height: MediaQuery.sizeOf(context).height * 0.8,
@@ -106,7 +104,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                     final billItem = bill[billIndex];
                                     return Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 4.0),
+                                          0, 0, 0, 4),
                                       child: Container(
                                         width:
                                             MediaQuery.sizeOf(context).width *
@@ -147,11 +145,8 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      2.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      2, 0, 0),
                                                           child: Text(
                                                             functions
                                                                 .genSrno(
@@ -185,8 +180,8 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                   child: Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(2.0, 0.0,
-                                                                0.0, 0.0),
+                                                            .fromSTEB(
+                                                                2, 0, 0, 0),
                                                     child: Container(
                                                       width: MediaQuery.sizeOf(
                                                                   context)
@@ -215,10 +210,10 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        1.0),
+                                                                        0,
+                                                                        0,
+                                                                        0,
+                                                                        1),
                                                             child: Text(
                                                               getJsonField(
                                                                 billItem,
@@ -274,8 +269,8 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                   child: Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                1.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 0, 1, 0),
                                                     child: Container(
                                                       width: MediaQuery.sizeOf(
                                                                   context)
@@ -318,7 +313,8 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                                       .toList(),
                                                                 );
 
-                                                                setState(() {});
+                                                                safeSetState(
+                                                                    () {});
                                                               },
                                                               child: Container(
                                                                 width: MediaQuery.sizeOf(
@@ -340,7 +336,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primary,
-                                                                  size: 18.0,
+                                                                  size: 18,
                                                                 ),
                                                               ),
                                                             ),
@@ -366,7 +362,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                               ),
                                                               alignment:
                                                                   AlignmentDirectional(
-                                                                      0.0, 0.0),
+                                                                      0, 0),
                                                               child: Column(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -426,7 +422,8 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                                       .toList(),
                                                                 );
 
-                                                                setState(() {});
+                                                                safeSetState(
+                                                                    () {});
                                                               },
                                                               child: Container(
                                                                 width: MediaQuery.sizeOf(
@@ -448,7 +445,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primary,
-                                                                  size: 18.0,
+                                                                  size: 18,
                                                                 ),
                                                               ),
                                                             ),
@@ -463,8 +460,8 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                   child: Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                1.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 0, 1, 0),
                                                     child: Container(
                                                       width: MediaQuery.sizeOf(
                                                                   context)
@@ -482,7 +479,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                       child: Align(
                                                         alignment:
                                                             AlignmentDirectional(
-                                                                0.0, 0.0),
+                                                                0, 0),
                                                         child: Text(
                                                           functions
                                                               .getTotal(
@@ -557,7 +554,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                         FFAppState().delCharges,
                                                       );
 
-                                                      setState(() {});
+                                                      safeSetState(() {});
                                                     },
                                                     child: Container(
                                                       width: MediaQuery.sizeOf(
@@ -579,7 +576,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primary,
-                                                        size: 16.0,
+                                                        size: 16,
                                                       ),
                                                     ),
                                                   ),
@@ -602,8 +599,8 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                             height: MediaQuery.sizeOf(context).height * 0.1,
                             decoration: BoxDecoration(),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  5.0, 5.0, 5.0, 10.0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(5, 5, 5, 10),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment:
@@ -612,7 +609,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                   Container(
                                     width:
                                         MediaQuery.sizeOf(context).width * 0.1,
-                                    height: 100.0,
+                                    height: 100,
                                     decoration: BoxDecoration(),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -622,12 +619,12 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 5.0, 0.0),
+                                                  0, 0, 5, 0),
                                           child: Icon(
                                             Icons.shopping_cart,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            size: 18.0,
+                                            size: 18,
                                           ),
                                         ),
                                         Text(
@@ -655,7 +652,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                   Container(
                                     width:
                                         MediaQuery.sizeOf(context).width * 0.15,
-                                    height: 100.0,
+                                    height: 100,
                                     decoration: BoxDecoration(),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -665,7 +662,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 5.0, 0.0),
+                                                  0, 0, 5, 0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'yfd89ou1' /* ₹ */,
@@ -680,7 +677,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
-                                                  fontSize: 14.0,
+                                                  fontSize: 14,
                                                   letterSpacing: 0.0,
                                                   useGoogleFonts: GoogleFonts
                                                           .asMap()
@@ -694,7 +691,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 4.0, 0.0),
+                                                  0, 0, 4, 0),
                                           child: Text(
                                             FFAppState().subTotal.toString(),
                                             style: FlutterFlowTheme.of(context)
@@ -707,7 +704,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
-                                                  fontSize: 16.0,
+                                                  fontSize: 16,
                                                   letterSpacing: 0.0,
                                                   useGoogleFonts: GoogleFonts
                                                           .asMap()
@@ -732,12 +729,11 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                     child: Container(
                                       width: MediaQuery.sizeOf(context).width *
                                           0.15,
-                                      height: 100.0,
+                                      height: 100,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
-                                        borderRadius:
-                                            BorderRadius.circular(5.0),
+                                        borderRadius: BorderRadius.circular(5),
                                         border: Border.all(
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
@@ -763,7 +759,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
-                                                  fontSize: 16.0,
+                                                  fontSize: 16,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.normal,
                                                   useGoogleFonts: GoogleFonts
@@ -792,10 +788,10 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
             endDrawer: Container(
               width: MediaQuery.sizeOf(context).width * 0.11,
               child: Drawer(
-                elevation: 16.0,
+                elevation: 16,
                 child: wrapWithModel(
                   model: _model.menuDrawerModel,
-                  updateCallback: () => setState(() {}),
+                  updateCallback: () => safeSetState(() {}),
                   child: MenuDrawerWidget(),
                 ),
               ),
@@ -806,7 +802,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                 Expanded(
                   child: Container(
                     width: double.infinity,
-                    height: 100.0,
+                    height: 100,
                     decoration: BoxDecoration(),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
@@ -823,7 +819,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 2.0, 0.0),
+                                        0, 0, 2, 0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
                                       focusColor: Colors.transparent,
@@ -842,7 +838,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
                                           borderRadius:
-                                              BorderRadius.circular(0.0),
+                                              BorderRadius.circular(0),
                                         ),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -851,8 +847,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      15.0, 0.0, 15.0, 0.0),
+                                                  .fromSTEB(15, 0, 15, 0),
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -888,9 +883,9 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                     flex: 10,
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 2.0, 0.0),
+                                          0, 0, 2, 0),
                                       child: Container(
-                                        width: 100.0,
+                                        width: 100,
                                         height:
                                             MediaQuery.sizeOf(context).height *
                                                 0.08,
@@ -905,13 +900,13 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                             if (!snapshot.hasData) {
                                               return Center(
                                                 child: SizedBox(
-                                                  width: 40.0,
-                                                  height: 40.0,
+                                                  width: 40,
+                                                  height: 40,
                                                   child: SpinKitFadingCircle(
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primary,
-                                                    size: 40.0,
+                                                    size: 40,
                                                   ),
                                                 ),
                                               );
@@ -933,8 +928,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                         listViewIndex];
                                                 return Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 2.0, 0.0),
+                                                      .fromSTEB(0, 0, 2, 0),
                                                   child: InkWell(
                                                     splashColor:
                                                         Colors.transparent,
@@ -964,7 +958,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                                 .primary,
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(0.0),
+                                                                .circular(0),
                                                       ),
                                                       child: Column(
                                                         mainAxisSize:
@@ -977,10 +971,10 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        15.0,
-                                                                        0.0,
-                                                                        15.0,
-                                                                        0.0),
+                                                                        15,
+                                                                        0,
+                                                                        15,
+                                                                        0),
                                                             child: Text(
                                                               listViewCategoryRecord
                                                                   .name,
@@ -1027,13 +1021,13 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                       },
                                       child: Material(
                                         color: Colors.transparent,
-                                        elevation: 30.0,
+                                        elevation: 30,
                                         shape: RoundedRectangleBorder(
                                           borderRadius:
-                                              BorderRadius.circular(0.0),
+                                              BorderRadius.circular(0),
                                         ),
                                         child: Container(
-                                          width: 100.0,
+                                          width: 100,
                                           height: MediaQuery.sizeOf(context)
                                                   .height *
                                               0.08,
@@ -1041,13 +1035,13 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                             color: FlutterFlowTheme.of(context)
                                                 .secondary,
                                             borderRadius:
-                                                BorderRadius.circular(0.0),
+                                                BorderRadius.circular(0),
                                           ),
                                           child: Icon(
                                             Icons.menu_rounded,
                                             color: FlutterFlowTheme.of(context)
                                                 .lineColor,
-                                            size: 24.0,
+                                            size: 24,
                                           ),
                                         ),
                                       ),
@@ -1072,7 +1066,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  7.0, 5.0, 7.0, 5.0),
+                                                  7, 5, 7, 5),
                                           child: StreamBuilder<
                                               List<ProductRecord>>(
                                             stream: queryProductRecord(
@@ -1089,14 +1083,14 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                               if (!snapshot.hasData) {
                                                 return Center(
                                                   child: SizedBox(
-                                                    width: 40.0,
-                                                    height: 40.0,
+                                                    width: 40,
+                                                    height: 40,
                                                     child: SpinKitFadingCircle(
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primary,
-                                                      size: 40.0,
+                                                      size: 40,
                                                     ),
                                                   ),
                                                 );
@@ -1116,8 +1110,8 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                 gridDelegate:
                                                     SliverGridDelegateWithFixedCrossAxisCount(
                                                   crossAxisCount: 5,
-                                                  crossAxisSpacing: 4.0,
-                                                  mainAxisSpacing: 4.0,
+                                                  crossAxisSpacing: 4,
+                                                  mainAxisSpacing: 4,
                                                   childAspectRatio: 1.5,
                                                 ),
                                                 scrollDirection: Axis.vertical,
@@ -1141,14 +1135,14 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                       if (!snapshot.hasData) {
                                                         return Center(
                                                           child: SizedBox(
-                                                            width: 40.0,
-                                                            height: 40.0,
+                                                            width: 40,
+                                                            height: 40,
                                                             child:
                                                                 SpinKitFadingCircle(
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .primary,
-                                                              size: 40.0,
+                                                              size: 40,
                                                             ),
                                                           ),
                                                         );
@@ -1158,7 +1152,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                           snapshot.data!;
 
                                                       return Container(
-                                                        width: 100.0,
+                                                        width: 100,
                                                         height:
                                                             MediaQuery.sizeOf(
                                                                         context)
@@ -1203,15 +1197,15 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                                         .delCharges,
                                                                   );
 
-                                                                  setState(
+                                                                  safeSetState(
                                                                       () {});
                                                                 },
                                                                 child:
                                                                     Container(
-                                                                  width: MediaQuery.sizeOf(
+                                                                  width: MediaQuery
+                                                                          .sizeOf(
                                                                               context)
-                                                                          .width *
-                                                                      1.0,
+                                                                      .width,
                                                                   height: MediaQuery.sizeOf(
                                                                               context)
                                                                           .height *
@@ -1231,14 +1225,14 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                                       ),
                                                                     ),
                                                                     borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            5.0),
+                                                                        BorderRadius
+                                                                            .circular(5),
                                                                   ),
                                                                   child:
                                                                       Padding(
                                                                     padding:
-                                                                        EdgeInsets.all(
-                                                                            1.0),
+                                                                        EdgeInsets
+                                                                            .all(1),
                                                                     child:
                                                                         Column(
                                                                       mainAxisSize:
@@ -1261,13 +1255,13 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                                             decoration:
                                                                                 BoxDecoration(
                                                                               color: Color(0x1A000000),
-                                                                              borderRadius: BorderRadius.circular(5.0),
+                                                                              borderRadius: BorderRadius.circular(5),
                                                                             ),
                                                                             child:
                                                                                 Align(
-                                                                              alignment: AlignmentDirectional(0.0, 1.0),
+                                                                              alignment: AlignmentDirectional(0, 1),
                                                                               child: Container(
-                                                                                width: MediaQuery.sizeOf(context).width * 1.0,
+                                                                                width: MediaQuery.sizeOf(context).width,
                                                                                 height: MediaQuery.sizeOf(context).height * 0.18,
                                                                                 decoration: BoxDecoration(
                                                                                   gradient: LinearGradient(
@@ -1275,28 +1269,25 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                                                       Colors.transparent,
                                                                                       Color(0xA5000000)
                                                                                     ],
-                                                                                    stops: [
-                                                                                      0.0,
-                                                                                      1.0
-                                                                                    ],
-                                                                                    begin: AlignmentDirectional(0.0, -1.0),
-                                                                                    end: AlignmentDirectional(0, 1.0),
+                                                                                    stops: [0, 1],
+                                                                                    begin: AlignmentDirectional(0, -1),
+                                                                                    end: AlignmentDirectional(0, 1),
                                                                                   ),
                                                                                   borderRadius: BorderRadius.only(
-                                                                                    bottomLeft: Radius.circular(5.0),
-                                                                                    bottomRight: Radius.circular(5.0),
-                                                                                    topLeft: Radius.circular(0.0),
-                                                                                    topRight: Radius.circular(0.0),
+                                                                                    bottomLeft: Radius.circular(5),
+                                                                                    bottomRight: Radius.circular(5),
+                                                                                    topLeft: Radius.circular(0),
+                                                                                    topRight: Radius.circular(0),
                                                                                   ),
                                                                                 ),
                                                                                 child: Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(3.0, 0.0, 3.0, 5.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(3, 0, 3, 5),
                                                                                   child: Column(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     mainAxisAlignment: MainAxisAlignment.end,
                                                                                     children: [
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 2),
                                                                                         child: Text(
                                                                                           gridViewProductRecord.name,
                                                                                           textAlign: TextAlign.center,
@@ -1310,14 +1301,14 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                                                         ),
                                                                                       ),
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 2),
                                                                                         child: Row(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           mainAxisAlignment: MainAxisAlignment.center,
                                                                                           crossAxisAlignment: CrossAxisAlignment.end,
                                                                                           children: [
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 3, 0),
                                                                                               child: Text(
                                                                                                 FFLocalizations.of(context).getText(
                                                                                                   '8og2xmn2' /* ₹ */,
@@ -1377,7 +1368,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                     Expanded(
                                       child: Container(
                                         width: double.infinity,
-                                        height: 100.0,
+                                        height: 100,
                                         decoration: BoxDecoration(),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -1391,7 +1382,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                     MediaQuery.sizeOf(context)
                                                             .width *
                                                         0.25,
-                                                height: 100.0,
+                                                height: 100,
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
@@ -1399,13 +1390,12 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                   borderRadius:
                                                       BorderRadius.only(
                                                     bottomLeft:
-                                                        Radius.circular(0.0),
+                                                        Radius.circular(0),
                                                     bottomRight:
-                                                        Radius.circular(0.0),
-                                                    topLeft:
-                                                        Radius.circular(0.0),
+                                                        Radius.circular(0),
+                                                    topLeft: Radius.circular(0),
                                                     topRight:
-                                                        Radius.circular(7.0),
+                                                        Radius.circular(7),
                                                   ),
                                                 ),
                                                 child: Row(
@@ -1444,10 +1434,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  6.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
+                                                                  6, 0, 0, 0),
                                                       child: Text(
                                                         dateTimeFormat(
                                                           "yMMMd",
@@ -1483,8 +1470,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                               flex: 5,
                                               child: Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        2.0, 0.0, 2.0, 0.0),
+                                                    .fromSTEB(2, 0, 2, 0),
                                                 child: InkWell(
                                                   splashColor:
                                                       Colors.transparent,
@@ -1503,7 +1489,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                                 context)
                                                             .width *
                                                         0.25,
-                                                    height: 100.0,
+                                                    height: 100,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
@@ -1511,17 +1497,13 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                       borderRadius:
                                                           BorderRadius.only(
                                                         bottomLeft:
-                                                            Radius.circular(
-                                                                0.0),
+                                                            Radius.circular(0),
                                                         bottomRight:
-                                                            Radius.circular(
-                                                                0.0),
+                                                            Radius.circular(0),
                                                         topLeft:
-                                                            Radius.circular(
-                                                                7.0),
+                                                            Radius.circular(7),
                                                         topRight:
-                                                            Radius.circular(
-                                                                7.0),
+                                                            Radius.circular(7),
                                                       ),
                                                     ),
                                                     child: Row(
@@ -1534,11 +1516,8 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      5.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 5, 0),
                                                           child: Text(
                                                             FFLocalizations.of(
                                                                     context)
@@ -1605,7 +1584,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                       MediaQuery.sizeOf(context)
                                                               .width *
                                                           0.25,
-                                                  height: 100.0,
+                                                  height: 100,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -1613,13 +1592,13 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                     borderRadius:
                                                         BorderRadius.only(
                                                       bottomLeft:
-                                                          Radius.circular(0.0),
+                                                          Radius.circular(0),
                                                       bottomRight:
-                                                          Radius.circular(0.0),
+                                                          Radius.circular(0),
                                                       topLeft:
-                                                          Radius.circular(7.0),
+                                                          Radius.circular(7),
                                                       topRight:
-                                                          Radius.circular(0.0),
+                                                          Radius.circular(0),
                                                     ),
                                                   ),
                                                   child: Row(
@@ -1633,10 +1612,7 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    5.0,
-                                                                    0.0),
+                                                                    0, 0, 5, 0),
                                                         child: Text(
                                                           FFLocalizations.of(
                                                                   context)
@@ -1666,11 +1642,8 @@ class _FullScreenBillWidgetState extends State<FullScreenBillWidget> {
                                                       Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    15.0,
-                                                                    0.0),
+                                                                .fromSTEB(0, 0,
+                                                                    15, 0),
                                                         child: Text(
                                                           FFAppState()
                                                               .finalAmt

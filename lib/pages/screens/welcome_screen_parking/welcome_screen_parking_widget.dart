@@ -143,7 +143,7 @@ class _WelcomeScreenParkingWidgetState extends State<WelcomeScreenParkingWidget>
         ),
         0.0,
       );
-      setState(() {});
+      safeSetState(() {});
       if (true == true) {
         _model.userProfile = await queryUserProfileRecordOnce(
           queryBuilder: (userProfileRecord) => userProfileRecord.where(
@@ -157,7 +157,7 @@ class _WelcomeScreenParkingWidgetState extends State<WelcomeScreenParkingWidget>
         );
         FFAppState().userName = _model.userProfile!.name;
         FFAppState().outletName = widget!.deviceDoc!.outletName;
-        setState(() {});
+        safeSetState(() {});
         _model.internetconnection = await actions.checkInternetConnection();
         if (true == true) {
           if (true == true) {
@@ -166,7 +166,7 @@ class _WelcomeScreenParkingWidgetState extends State<WelcomeScreenParkingWidget>
                 _model.shiftdetailfirebase?.toList(),
               );
               FFAppState().shiftdetails = _model.shiftDetailsNewcar!;
-              setState(() {});
+              safeSetState(() {});
               await Future.delayed(const Duration(milliseconds: 2000));
               await showModalBottomSheet(
                 isScrollControlled: true,
@@ -321,7 +321,7 @@ class _WelcomeScreenParkingWidgetState extends State<WelcomeScreenParkingWidget>
       this,
     );
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -351,9 +351,9 @@ class _WelcomeScreenParkingWidgetState extends State<WelcomeScreenParkingWidget>
                   FlutterFlowTheme.of(context).primaryBtnText,
                   FlutterFlowTheme.of(context).error
                 ],
-                stops: [1.0, 1.0],
-                begin: AlignmentDirectional(0.0, -1.0),
-                end: AlignmentDirectional(0, 1.0),
+                stops: [1, 1],
+                begin: AlignmentDirectional(0, -1),
+                end: AlignmentDirectional(0, 1),
               ),
             ),
             child: Column(
@@ -362,7 +362,7 @@ class _WelcomeScreenParkingWidgetState extends State<WelcomeScreenParkingWidget>
               children: [
                 Image.asset(
                   'assets/images/98092-loading.gif',
-                  height: 180.0,
+                  height: 180,
                   fit: BoxFit.contain,
                 ).animateOnPageLoad(animationsMap['imageOnPageLoadAnimation']!),
               ],

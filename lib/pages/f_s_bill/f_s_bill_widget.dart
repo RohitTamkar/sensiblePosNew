@@ -57,7 +57,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
     _model.textFieldsearchTextController ??= TextEditingController();
     _model.textFieldsearchFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -82,7 +82,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
             endDrawer: Container(
               width: MediaQuery.sizeOf(context).width * 0.45,
               child: Drawer(
-                elevation: 16.0,
+                elevation: 16,
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -96,11 +96,11 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                         if (!snapshot.hasData) {
                           return Center(
                             child: SizedBox(
-                              width: 40.0,
-                              height: 40.0,
+                              width: 40,
+                              height: 40,
                               child: SpinKitFadingCircle(
                                 color: FlutterFlowTheme.of(context).primary,
-                                size: 40.0,
+                                size: 40,
                               ),
                             ),
                           );
@@ -109,14 +109,14 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                             snapshot.data!;
 
                         return Container(
-                          width: MediaQuery.sizeOf(context).width * 1.0,
-                          height: MediaQuery.sizeOf(context).height * 1.0,
+                          width: MediaQuery.sizeOf(context).width,
+                          height: MediaQuery.sizeOf(context).height * 1,
                           decoration: BoxDecoration(
                             color:
                                 FlutterFlowTheme.of(context).primaryBackground,
                           ),
                           child: Padding(
-                            padding: EdgeInsets.all(10.0),
+                            padding: EdgeInsets.all(10),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -137,14 +137,14 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                     children: [
                                       FlutterFlowIconButton(
                                         borderColor: Colors.transparent,
-                                        borderRadius: 30.0,
-                                        borderWidth: 1.0,
-                                        buttonSize: 40.0,
+                                        borderRadius: 30,
+                                        borderWidth: 1,
+                                        buttonSize: 40,
                                         icon: Icon(
                                           Icons.chevron_left,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
-                                          size: 22.0,
+                                          size: 22,
                                         ),
                                         onPressed: () async {
                                           context.pop();
@@ -158,8 +158,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      20.0, 0.0, 0.0, 0.0),
+                                                  .fromSTEB(20, 0, 0, 0),
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -188,14 +187,14 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                       ),
                                       FlutterFlowIconButton(
                                         borderColor: Colors.transparent,
-                                        borderRadius: 30.0,
-                                        borderWidth: 1.0,
-                                        buttonSize: 40.0,
+                                        borderRadius: 30,
+                                        borderWidth: 1,
+                                        buttonSize: 40,
                                         icon: Icon(
                                           Icons.person_add,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
-                                          size: 22.0,
+                                          size: 22,
                                         ),
                                         onPressed: () async {
                                           context.pushNamed('AddCustomer');
@@ -206,10 +205,10 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 10.0, 0.0, 0.0),
+                                      0, 10, 0, 0),
                                   child: Material(
                                     color: Colors.transparent,
-                                    elevation: 2.0,
+                                    elevation: 2,
                                     child: Container(
                                       width: double.infinity,
                                       height:
@@ -227,7 +226,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                           Expanded(
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(6.0, 0.0, 0.0, 0.0),
+                                                  .fromSTEB(6, 0, 0, 0),
                                               child: TextFormField(
                                                 controller: _model
                                                     .textFieldsearchTextController,
@@ -386,8 +385,8 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                             ),
                                             child: FlutterFlowIconButton(
                                               borderColor: Colors.transparent,
-                                              borderWidth: 1.0,
-                                              buttonSize: 50.0,
+                                              borderWidth: 1,
+                                              buttonSize: 50,
                                               fillColor:
                                                   FlutterFlowTheme.of(context)
                                                       .secondary,
@@ -396,7 +395,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .lineColor,
-                                                size: 22.0,
+                                                size: 22,
                                               ),
                                               onPressed: () {
                                                 print('IconButton pressed ...');
@@ -410,7 +409,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 5.0, 0.0, 0.0),
+                                      0, 5, 0, 0),
                                   child: Container(
                                     width: double.infinity,
                                     height:
@@ -420,11 +419,11 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                           .secondaryBackground,
                                       boxShadow: [
                                         BoxShadow(
-                                          blurRadius: 3.0,
+                                          blurRadius: 3,
                                           color: Color(0x33000000),
                                           offset: Offset(
-                                            0.0,
-                                            1.0,
+                                            0,
+                                            1,
                                           ),
                                         )
                                       ],
@@ -487,8 +486,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                             RoundedRectangleBorder(
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      4.0),
+                                                                  .circular(4),
                                                         ),
                                                         child: Row(
                                                           mainAxisSize:
@@ -500,17 +498,16 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                             FlutterFlowIconButton(
                                                               borderColor: Colors
                                                                   .transparent,
-                                                              borderRadius:
-                                                                  30.0,
-                                                              borderWidth: 1.0,
-                                                              buttonSize: 60.0,
+                                                              borderRadius: 30,
+                                                              borderWidth: 1,
+                                                              buttonSize: 60,
                                                               icon: Icon(
                                                                 Icons
                                                                     .account_circle,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
-                                                                size: 30.0,
+                                                                size: 30,
                                                               ),
                                                               onPressed: () {
                                                                 print(
@@ -519,8 +516,8 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                             ),
                                                             Expanded(
                                                               child: Container(
-                                                                width: 170.0,
-                                                                height: 60.0,
+                                                                width: 170,
+                                                                height: 60,
                                                                 decoration:
                                                                     BoxDecoration(
                                                                   color: FlutterFlowTheme.of(
@@ -574,8 +571,8 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                             ),
                                                             Expanded(
                                                               child: Container(
-                                                                width: 100.0,
-                                                                height: 60.0,
+                                                                width: 100,
+                                                                height: 60,
                                                                 decoration:
                                                                     BoxDecoration(),
                                                                 child: Column(
@@ -623,7 +620,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                       width: double
                                                                           .infinity,
                                                                       height:
-                                                                          20.0,
+                                                                          20,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -720,16 +717,16 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                               BorderRadius.only(
                                                             bottomLeft:
                                                                 Radius.circular(
-                                                                    4.0),
+                                                                    4),
                                                             bottomRight:
                                                                 Radius.circular(
-                                                                    4.0),
+                                                                    4),
                                                             topLeft:
                                                                 Radius.circular(
-                                                                    4.0),
+                                                                    4),
                                                             topRight:
                                                                 Radius.circular(
-                                                                    4.0),
+                                                                    4),
                                                           ),
                                                         ),
                                                         child: Row(
@@ -742,17 +739,16 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                             FlutterFlowIconButton(
                                                               borderColor: Colors
                                                                   .transparent,
-                                                              borderRadius:
-                                                                  30.0,
-                                                              borderWidth: 1.0,
-                                                              buttonSize: 60.0,
+                                                              borderRadius: 30,
+                                                              borderWidth: 1,
+                                                              buttonSize: 60,
                                                               icon: Icon(
                                                                 Icons
                                                                     .account_circle,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
-                                                                size: 30.0,
+                                                                size: 30,
                                                               ),
                                                               onPressed: () {
                                                                 print(
@@ -761,8 +757,8 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                             ),
                                                             Expanded(
                                                               child: Container(
-                                                                width: 170.0,
-                                                                height: 60.0,
+                                                                width: 170,
+                                                                height: 60,
                                                                 decoration:
                                                                     BoxDecoration(
                                                                   color: FlutterFlowTheme.of(
@@ -816,8 +812,8 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                             ),
                                                             Expanded(
                                                               child: Container(
-                                                                width: 100.0,
-                                                                height: 60.0,
+                                                                width: 100,
+                                                                height: 60,
                                                                 decoration:
                                                                     BoxDecoration(),
                                                                 child: Column(
@@ -865,7 +861,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                       width: double
                                                                           .infinity,
                                                                       height:
-                                                                          20.0,
+                                                                          20,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -920,14 +916,14 @@ class _FSBillWidgetState extends State<FSBillWidget> {
               ),
             ),
             body: Padding(
-              padding: EdgeInsets.all(3.0),
+              padding: EdgeInsets.all(3),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Expanded(
                     flex: 1,
                     child: Container(
-                      width: MediaQuery.sizeOf(context).width * 1.0,
+                      width: MediaQuery.sizeOf(context).width,
                       height: MediaQuery.sizeOf(context).height * 0.12,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).tertiary,
@@ -940,8 +936,8 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                           Expanded(
                             flex: 1,
                             child: Container(
-                              width: 100.0,
-                              height: 100.0,
+                              width: 100,
+                              height: 100,
                               decoration: BoxDecoration(
                                 color: Color(0xFFB6001A),
                               ),
@@ -950,14 +946,14 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                 children: [
                                   FlutterFlowIconButton(
                                     borderColor: Colors.transparent,
-                                    borderRadius: 30.0,
-                                    borderWidth: 1.0,
-                                    buttonSize: 60.0,
+                                    borderRadius: 30,
+                                    borderWidth: 1,
+                                    buttonSize: 60,
                                     icon: Icon(
                                       Icons.chevron_left_sharp,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBtnText,
-                                      size: 26.0,
+                                      size: 26,
                                     ),
                                     onPressed: () async {
                                       context.pushNamed('FullScreenBill');
@@ -989,7 +985,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                           Expanded(
                             child: wrapWithModel(
                               model: _model.headerCopyModel,
-                              updateCallback: () => setState(() {}),
+                              updateCallback: () => safeSetState(() {}),
                               child: HeaderCopyWidget(),
                             ),
                           ),
@@ -1000,19 +996,18 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                   Expanded(
                     flex: 8,
                     child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
                       child: Container(
                         width: double.infinity,
-                        height: 100.0,
+                        height: 100,
                         decoration: BoxDecoration(),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Expanded(
                               child: Container(
-                                width: 100.0,
-                                height: MediaQuery.sizeOf(context).height * 1.0,
+                                width: 100,
+                                height: MediaQuery.sizeOf(context).height * 1,
                                 decoration: BoxDecoration(),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -1054,7 +1049,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                     MediaQuery.sizeOf(context)
                                                             .width *
                                                         0.2,
-                                                height: 100.0,
+                                                height: 100,
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)
@@ -1072,10 +1067,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  10.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
+                                                                  10, 0, 0, 0),
                                                       child: Text(
                                                         FFAppState()
                                                             .setCustName,
@@ -1121,15 +1113,15 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                               decoration: BoxDecoration(),
                                               child: FlutterFlowIconButton(
                                                 borderColor: Colors.transparent,
-                                                borderWidth: 1.0,
-                                                buttonSize: 60.0,
+                                                borderWidth: 1,
+                                                buttonSize: 60,
                                                 fillColor: Color(0x51F5929F),
                                                 icon: Icon(
                                                   Icons.search,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
-                                                  size: 20.0,
+                                                  size: 20,
                                                 ),
                                                 onPressed: () {
                                                   print(
@@ -1155,7 +1147,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                  .fromSTEB(0, 5, 0, 0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -1167,10 +1159,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  5.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
+                                                                  5, 0, 0, 0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -1190,10 +1179,10 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            5.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                            5,
+                                                                            0,
+                                                                            0,
+                                                                            0),
                                                                 child: Text(
                                                                   FFLocalizations.of(
                                                                           context)
@@ -1219,10 +1208,10 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0.0,
-                                                                        5.0,
-                                                                        0.0,
-                                                                        0.0),
+                                                                        0,
+                                                                        5,
+                                                                        0,
+                                                                        0),
                                                             child: Container(
                                                               width: MediaQuery
                                                                           .sizeOf(
@@ -1274,7 +1263,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                             double.parse(_model.textFieldDeliverycharTextController.text),
                                                                           );
 
-                                                                          setState(
+                                                                          safeSetState(
                                                                               () {});
                                                                         },
                                                                       ),
@@ -1394,21 +1383,20 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                         Colors
                                                                             .transparent,
                                                                     borderWidth:
-                                                                        1.0,
+                                                                        1,
                                                                     buttonSize:
-                                                                        40.0,
+                                                                        40,
                                                                     icon: Icon(
                                                                       Icons
                                                                           .refresh,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryText,
-                                                                      size:
-                                                                          18.0,
+                                                                      size: 18,
                                                                     ),
                                                                     onPressed:
                                                                         () async {
-                                                                      setState(
+                                                                      safeSetState(
                                                                           () {
                                                                         _model
                                                                             .textFieldDisTextController
@@ -1429,10 +1417,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  5.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
+                                                                  5, 0, 0, 0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -1475,10 +1460,10 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0.0,
-                                                                        5.0,
-                                                                        0.0,
-                                                                        0.0),
+                                                                        0,
+                                                                        5,
+                                                                        0,
+                                                                        0),
                                                             child: Container(
                                                               width: MediaQuery
                                                                           .sizeOf(
@@ -1632,23 +1617,22 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                         Colors
                                                                             .transparent,
                                                                     borderRadius:
-                                                                        30.0,
+                                                                        30,
                                                                     borderWidth:
-                                                                        1.0,
+                                                                        1,
                                                                     buttonSize:
-                                                                        40.0,
+                                                                        40,
                                                                     icon: Icon(
                                                                       Icons
                                                                           .refresh,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryText,
-                                                                      size:
-                                                                          18.0,
+                                                                      size: 18,
                                                                     ),
                                                                     onPressed:
                                                                         () async {
-                                                                      setState(
+                                                                      safeSetState(
                                                                           () {
                                                                         _model
                                                                             .textFieldDisPercentTextController
@@ -1669,10 +1653,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  5.0,
-                                                                  0.0,
-                                                                  5.0,
-                                                                  0.0),
+                                                                  5, 0, 5, 0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -1684,10 +1665,10 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        10.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
+                                                                        10,
+                                                                        0,
+                                                                        0,
+                                                                        0),
                                                             child: Text(
                                                               FFLocalizations.of(
                                                                       context)
@@ -1714,10 +1695,10 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0.0,
-                                                                        5.0,
-                                                                        0.0,
-                                                                        0.0),
+                                                                        0,
+                                                                        5,
+                                                                        0,
+                                                                        0),
                                                             child: Container(
                                                               width: MediaQuery
                                                                           .sizeOf(
@@ -1769,7 +1750,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                             double.parse(_model.textFieldDeliverycharTextController.text),
                                                                           );
 
-                                                                          setState(
+                                                                          safeSetState(
                                                                               () {});
                                                                         },
                                                                       ),
@@ -1889,23 +1870,22 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                         Colors
                                                                             .transparent,
                                                                     borderRadius:
-                                                                        30.0,
+                                                                        30,
                                                                     borderWidth:
-                                                                        1.0,
+                                                                        1,
                                                                     buttonSize:
-                                                                        40.0,
+                                                                        40,
                                                                     icon: Icon(
                                                                       Icons
                                                                           .refresh,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryText,
-                                                                      size:
-                                                                          18.0,
+                                                                      size: 18,
                                                                     ),
                                                                     onPressed:
                                                                         () async {
-                                                                      setState(
+                                                                      safeSetState(
                                                                           () {
                                                                         _model
                                                                             .textFieldDeliverycharTextController
@@ -1926,7 +1906,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                  .fromSTEB(0, 5, 0, 0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -1944,11 +1924,8 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      10.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(10,
+                                                                      0, 0, 0),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -1984,11 +1961,8 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      10.0,
-                                                                      5.0,
-                                                                      10.0,
-                                                                      0.0),
+                                                                  .fromSTEB(10,
+                                                                      5, 10, 0),
                                                           child: Container(
                                                             width: MediaQuery
                                                                         .sizeOf(
@@ -2159,22 +2133,22 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                       Colors
                                                                           .transparent,
                                                                   borderRadius:
-                                                                      30.0,
+                                                                      30,
                                                                   borderWidth:
-                                                                      1.0,
+                                                                      1,
                                                                   buttonSize:
-                                                                      40.0,
+                                                                      40,
                                                                   icon: Icon(
                                                                     Icons
                                                                         .refresh,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryText,
-                                                                    size: 18.0,
+                                                                    size: 18,
                                                                   ),
                                                                   onPressed:
                                                                       () async {
-                                                                    setState(
+                                                                    safeSetState(
                                                                         () {
                                                                       _model
                                                                           .textFieldTEnderTextController
@@ -2194,10 +2168,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  15.0,
-                                                                  0.0),
+                                                                  0, 0, 15, 0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -2209,10 +2180,10 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        10.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
+                                                                        10,
+                                                                        0,
+                                                                        0,
+                                                                        0),
                                                             child: Text(
                                                               FFLocalizations.of(
                                                                       context)
@@ -2239,10 +2210,10 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        10.0,
-                                                                        5.0,
-                                                                        10.0,
-                                                                        0.0),
+                                                                        10,
+                                                                        5,
+                                                                        10,
+                                                                        0),
                                                             child: Container(
                                                               width: MediaQuery
                                                                           .sizeOf(
@@ -2392,23 +2363,22 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                         Colors
                                                                             .transparent,
                                                                     borderRadius:
-                                                                        30.0,
+                                                                        30,
                                                                     borderWidth:
-                                                                        1.0,
+                                                                        1,
                                                                     buttonSize:
-                                                                        40.0,
+                                                                        40,
                                                                     icon: Icon(
                                                                       Icons
                                                                           .refresh,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryText,
-                                                                      size:
-                                                                          18.0,
+                                                                      size: 18,
                                                                     ),
                                                                     onPressed:
                                                                         () async {
-                                                                      setState(
+                                                                      safeSetState(
                                                                           () {
                                                                         _model
                                                                             .textFieldReturnTextController
@@ -2429,8 +2399,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 10.0, 0.0, 0.0),
+                                                  .fromSTEB(0, 10, 0, 0),
                                               child: Container(
                                                 width: double.infinity,
                                                 height:
@@ -2461,11 +2430,8 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      10.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(10,
+                                                                      0, 0, 0),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -2502,11 +2468,8 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                       Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    5.0,
-                                                                    10.0,
-                                                                    5.0,
-                                                                    0.0),
+                                                                .fromSTEB(5, 10,
+                                                                    5, 0),
                                                         child: StreamBuilder<
                                                             List<
                                                                 PaymentModeRecord>>(
@@ -2519,14 +2482,14 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                 .hasData) {
                                                               return Center(
                                                                 child: SizedBox(
-                                                                  width: 40.0,
-                                                                  height: 40.0,
+                                                                  width: 40,
+                                                                  height: 40,
                                                                   child:
                                                                       SpinKitFadingCircle(
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primary,
-                                                                    size: 40.0,
+                                                                    size: 40,
                                                                   ),
                                                                 ),
                                                               );
@@ -2545,9 +2508,9 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                 crossAxisCount:
                                                                     5,
                                                                 crossAxisSpacing:
-                                                                    6.0,
+                                                                    6,
                                                                 mainAxisSpacing:
-                                                                    5.0,
+                                                                    5,
                                                                 childAspectRatio:
                                                                     1.3,
                                                               ),
@@ -2565,10 +2528,10 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                 return Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          5,
+                                                                          0,
+                                                                          0,
+                                                                          0),
                                                                   child:
                                                                       InkWell(
                                                                     splashColor:
@@ -2598,11 +2561,11 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                       color: Colors
                                                                           .transparent,
                                                                       elevation:
-                                                                          3.0,
+                                                                          3,
                                                                       shape:
                                                                           RoundedRectangleBorder(
                                                                         borderRadius:
-                                                                            BorderRadius.circular(5.0),
+                                                                            BorderRadius.circular(5),
                                                                       ),
                                                                       child:
                                                                           Container(
@@ -2615,7 +2578,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                           color:
                                                                               FlutterFlowTheme.of(context).customColor2,
                                                                           borderRadius:
-                                                                              BorderRadius.circular(5.0),
+                                                                              BorderRadius.circular(5),
                                                                         ),
                                                                         child:
                                                                             Column(
@@ -2631,7 +2594,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                                     fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                     letterSpacing: 0.0,
                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                    lineHeight: 1.0,
+                                                                                    lineHeight: 1,
                                                                                   ),
                                                                             ),
                                                                           ],
@@ -2660,15 +2623,15 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                             ),
                             Expanded(
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    3.0, 0.0, 0.0, 0.0),
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(3, 0, 0, 0),
                                 child: Material(
                                   color: Colors.transparent,
-                                  elevation: 3.0,
+                                  elevation: 3,
                                   child: Container(
-                                    width: 100.0,
+                                    width: 100,
                                     height:
-                                        MediaQuery.sizeOf(context).height * 1.0,
+                                        MediaQuery.sizeOf(context).height * 1,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBackground,
@@ -2706,8 +2669,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                 ),
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          10.0, 0.0, 0.0, 0.0),
+                                                      .fromSTEB(10, 0, 0, 0),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -2779,7 +2741,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                               Axis.vertical,
                                                           children: [
                                                             Container(
-                                                              width: 100.0,
+                                                              width: 100,
                                                               height: MediaQuery
                                                                           .sizeOf(
                                                                               context)
@@ -2798,10 +2760,10 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            10.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                            10,
+                                                                            0,
+                                                                            0,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -2824,10 +2786,10 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            10.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            10,
+                                                                            0),
                                                                     child: Text(
                                                                       FFAppState()
                                                                           .billAmt
@@ -2849,7 +2811,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                               ),
                                                             ),
                                                             Container(
-                                                              width: 100.0,
+                                                              width: 100,
                                                               height: MediaQuery
                                                                           .sizeOf(
                                                                               context)
@@ -2868,10 +2830,10 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            10.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                            10,
+                                                                            0,
+                                                                            0,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -2894,10 +2856,10 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            10.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            10,
+                                                                            0),
                                                                     child: Text(
                                                                       _model
                                                                           .textFieldDisTextController
@@ -2919,7 +2881,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                               ),
                                                             ),
                                                             Container(
-                                                              width: 100.0,
+                                                              width: 100,
                                                               height: MediaQuery
                                                                           .sizeOf(
                                                                               context)
@@ -2938,10 +2900,10 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            10.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                            10,
+                                                                            0,
+                                                                            0,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -2964,17 +2926,17 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            5,
+                                                                            0),
                                                                     child:
                                                                         Container(
                                                                       width: MediaQuery.sizeOf(context)
                                                                               .width *
                                                                           0.03,
                                                                       height:
-                                                                          100.0,
+                                                                          100,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -3084,7 +3046,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                               ),
                                                             ),
                                                             Container(
-                                                              width: 100.0,
+                                                              width: 100,
                                                               height: MediaQuery
                                                                           .sizeOf(
                                                                               context)
@@ -3103,10 +3065,10 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            10.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                            10,
+                                                                            0,
+                                                                            0,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -3129,10 +3091,10 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            10.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            10,
+                                                                            0),
                                                                     child: Text(
                                                                       _model
                                                                           .textFieldDeliverycharTextController
@@ -3154,7 +3116,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                               ),
                                                             ),
                                                             Container(
-                                                              width: 100.0,
+                                                              width: 100,
                                                               height: MediaQuery
                                                                           .sizeOf(
                                                                               context)
@@ -3173,10 +3135,10 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            10.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                            10,
+                                                                            0,
+                                                                            0,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -3199,10 +3161,10 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            10.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            10,
+                                                                            0),
                                                                     child: Text(
                                                                       FFAppState()
                                                                           .PayMode,
@@ -3235,7 +3197,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                       decoration:
                                                           BoxDecoration(),
                                                       child: Container(
-                                                        width: 100.0,
+                                                        width: 100,
                                                         height:
                                                             MediaQuery.sizeOf(
                                                                         context)
@@ -3254,10 +3216,10 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          10,
+                                                                          0,
+                                                                          0,
+                                                                          0),
                                                               child: Text(
                                                                 FFLocalizations.of(
                                                                         context)
@@ -3287,10 +3249,10 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          0.0),
+                                                                          0,
+                                                                          0,
+                                                                          10,
+                                                                          0),
                                                               child: Text(
                                                                 FFAppState()
                                                                     .finalAmt
@@ -3328,7 +3290,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 5.0, 0.0, 5.0),
+                                                    0, 5, 0, 5),
                                             child: Container(
                                               width: double.infinity,
                                               height: MediaQuery.sizeOf(context)
@@ -3336,7 +3298,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                   0.1,
                                               decoration: BoxDecoration(
                                                 borderRadius:
-                                                    BorderRadius.circular(3.0),
+                                                    BorderRadius.circular(3),
                                               ),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -3510,7 +3472,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                           .itemCartList = [];
                                                       FFAppState()
                                                           .update(() {});
-                                                      setState(() {
+                                                      safeSetState(() {
                                                         _model
                                                             .textFieldDisPercentTextController
                                                             ?.clear();
@@ -3540,7 +3502,7 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                       context.pushNamed(
                                                           'FullScreenBill');
 
-                                                      setState(() {});
+                                                      safeSetState(() {});
                                                     },
                                                     text: FFLocalizations.of(
                                                             context)
@@ -3548,22 +3510,16 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                       'heakwqdm' /* Save */,
                                                     ),
                                                     options: FFButtonOptions(
-                                                      width: 160.0,
-                                                      height: 40.0,
+                                                      width: 160,
+                                                      height: 40,
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
+                                                                  0, 0, 0, 0),
                                                       iconPadding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
+                                                                  0, 0, 0, 0),
                                                       color: Color(0xFFB6001A),
                                                       textStyle:
                                                           FlutterFlowTheme.of(
@@ -3583,15 +3539,15 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                         FlutterFlowTheme.of(context)
                                                                             .titleSmallFamily),
                                                               ),
-                                                      elevation: 2.0,
+                                                      elevation: 2,
                                                       borderSide: BorderSide(
                                                         color:
                                                             Colors.transparent,
-                                                        width: 1.0,
+                                                        width: 1,
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              4.0),
+                                                              4),
                                                     ),
                                                   ),
                                                   FFButtonWidget(
@@ -3605,22 +3561,16 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                       'b78ogutm' /* Print */,
                                                     ),
                                                     options: FFButtonOptions(
-                                                      width: 160.0,
-                                                      height: 40.0,
+                                                      width: 160,
+                                                      height: 40,
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
+                                                                  0, 0, 0, 0),
                                                       iconPadding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
+                                                                  0, 0, 0, 0),
                                                       color: Color(0xFFB6001A),
                                                       textStyle:
                                                           FlutterFlowTheme.of(
@@ -3640,26 +3590,22 @@ class _FSBillWidgetState extends State<FSBillWidget> {
                                                                         FlutterFlowTheme.of(context)
                                                                             .titleSmallFamily),
                                                               ),
-                                                      elevation: 2.0,
+                                                      elevation: 2,
                                                       borderSide: BorderSide(
                                                         color:
                                                             Colors.transparent,
-                                                        width: 1.0,
+                                                        width: 1,
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.only(
                                                         bottomLeft:
-                                                            Radius.circular(
-                                                                4.0),
+                                                            Radius.circular(4),
                                                         bottomRight:
-                                                            Radius.circular(
-                                                                4.0),
+                                                            Radius.circular(4),
                                                         topLeft:
-                                                            Radius.circular(
-                                                                4.0),
+                                                            Radius.circular(4),
                                                         topRight:
-                                                            Radius.circular(
-                                                                4.0),
+                                                            Radius.circular(4),
                                                       ),
                                                     ),
                                                   ),

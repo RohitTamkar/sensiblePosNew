@@ -32,14 +32,14 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
       vsync: this,
       length: 3,
       initialIndex: 0,
-    )..addListener(() => setState(() {}));
+    )..addListener(() => safeSetState(() {}));
     _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
 
     _model.textController2 ??= TextEditingController();
     _model.textFieldFocusNode2 ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -64,10 +64,10 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
             drawer: Container(
               width: MediaQuery.sizeOf(context).width * 0.11,
               child: Drawer(
-                elevation: 16.0,
+                elevation: 16,
                 child: wrapWithModel(
                   model: _model.menuDrawerModel,
-                  updateCallback: () => setState(() {}),
+                  updateCallback: () => safeSetState(() {}),
                   child: MenuDrawerWidget(),
                 ),
               ),
@@ -76,7 +76,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -101,7 +101,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                               Icon(
                                 Icons.menu_rounded,
                                 color: FlutterFlowTheme.of(context).primaryText,
-                                size: 18.0,
+                                size: 18,
                               ),
                             ],
                           ),
@@ -116,11 +116,11 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                             if (!snapshot.hasData) {
                               return Center(
                                 child: SizedBox(
-                                  width: 40.0,
-                                  height: 40.0,
+                                  width: 40,
+                                  height: 40,
                                   child: SpinKitFadingCircle(
                                     color: FlutterFlowTheme.of(context).primary,
-                                    size: 40.0,
+                                    size: 40,
                                   ),
                                 ),
                               );
@@ -129,14 +129,14 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                             final containerOutletRecord = snapshot.data!;
 
                             return Container(
-                              width: 100.0,
+                              width: 100,
                               height: MediaQuery.sizeOf(context).height * 0.06,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context).primary,
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    5.0, 0.0, 5.0, 0.0),
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
                                 child: StreamBuilder<List<UserProfileRecord>>(
                                   stream: queryUserProfileRecord(
                                     singleRecord: true,
@@ -146,12 +146,12 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                     if (!snapshot.hasData) {
                                       return Center(
                                         child: SizedBox(
-                                          width: 40.0,
-                                          height: 40.0,
+                                          width: 40,
+                                          height: 40,
                                           child: SpinKitFadingCircle(
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
-                                            size: 40.0,
+                                            size: 40,
                                           ),
                                         ),
                                       );
@@ -175,16 +175,15 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                       children: [
                                         Expanded(
                                           child: Container(
-                                            width: 100.0,
-                                            height: 100.0,
+                                            width: 100,
+                                            height: 100,
                                             decoration: BoxDecoration(),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 3.0, 0.0),
+                                                      .fromSTEB(0, 0, 3, 0),
                                                   child: Text(
                                                     rowUserProfileRecord!.name,
                                                     style: FlutterFlowTheme.of(
@@ -212,8 +211,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                 ),
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 6.0, 0.0),
+                                                      .fromSTEB(0, 0, 6, 0),
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
@@ -247,7 +245,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 6.0, 0.0),
+                                                  0, 0, 6, 0),
                                           child: Text(
                                             dateTimeFormat(
                                               "yMMMd",
@@ -303,8 +301,8 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                         ),
                                         Expanded(
                                           child: Container(
-                                            width: 100.0,
-                                            height: 100.0,
+                                            width: 100,
+                                            height: 100,
                                             decoration: BoxDecoration(),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -353,8 +351,8 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                         decoration: BoxDecoration(),
                         child: Image.asset(
                           'assets/images/IMG_20220412_140945.png',
-                          width: 100.0,
-                          height: 100.0,
+                          width: 100,
+                          height: 100,
                           fit: BoxFit.contain,
                         ),
                       ),
@@ -364,17 +362,16 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                 Expanded(
                   child: Container(
                     width: double.infinity,
-                    height: 100.0,
+                    height: 100,
                     decoration: BoxDecoration(),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 5.0, 0.0),
+                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                             child: Container(
-                              width: 100.0,
+                              width: 100,
                               height: double.infinity,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
@@ -385,7 +382,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                   Column(
                                     children: [
                                       Align(
-                                        alignment: Alignment(0.0, 0),
+                                        alignment: Alignment(0, 0),
                                         child: TabBar(
                                           isScrollable: true,
                                           labelColor:
@@ -420,11 +417,10 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 3.0, 0.0),
+                                                      .fromSTEB(0, 0, 3, 0),
                                                   child: Icon(
                                                     Icons.person_rounded,
-                                                    size: 20.0,
+                                                    size: 20,
                                                   ),
                                                 ),
                                                 Tab(
@@ -442,11 +438,10 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          35.0, 0.0, 5.0, 0.0),
+                                                      .fromSTEB(35, 0, 5, 0),
                                                   child: Icon(
                                                     Icons.devices_rounded,
-                                                    size: 20.0,
+                                                    size: 20,
                                                   ),
                                                 ),
                                                 Tab(
@@ -464,11 +459,10 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          20.0, 0.0, 3.0, 0.0),
+                                                      .fromSTEB(20, 0, 3, 0),
                                                   child: Icon(
                                                     Icons.alt_route_outlined,
-                                                    size: 20.0,
+                                                    size: 20,
                                                   ),
                                                 ),
                                                 Tab(
@@ -497,8 +491,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      10.0, 5.0, 10.0, 5.0),
+                                                  .fromSTEB(10, 5, 10, 5),
                                               child: ListView(
                                                 padding: EdgeInsets.zero,
                                                 scrollDirection: Axis.vertical,
@@ -506,19 +499,19 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 5.0),
+                                                            .fromSTEB(
+                                                                0, 0, 0, 5),
                                                     child: Material(
                                                       color: Colors.transparent,
-                                                      elevation: 2.0,
+                                                      elevation: 2,
                                                       shape:
                                                           RoundedRectangleBorder(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(5.0),
+                                                                .circular(5),
                                                       ),
                                                       child: Container(
-                                                        width: 100.0,
+                                                        width: 100,
                                                         decoration:
                                                             BoxDecoration(
                                                           color: FlutterFlowTheme
@@ -526,13 +519,12 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                               .secondaryBackground,
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      5.0),
+                                                                  .circular(5),
                                                         ),
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsets.all(
-                                                                  10.0),
+                                                                  10),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -576,7 +568,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                                           FlutterFlowTheme.of(context)
                                                                               .titleSmallFamily,
                                                                       fontSize:
-                                                                          11.0,
+                                                                          11,
                                                                       letterSpacing:
                                                                           0.0,
                                                                       useGoogleFonts: GoogleFonts
@@ -596,7 +588,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                  .fromSTEB(0, 5, 0, 0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -619,11 +611,8 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      2.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 2, 0),
                                                           child: Container(
                                                             decoration:
                                                                 BoxDecoration(
@@ -634,7 +623,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                             child: Padding(
                                                               padding:
                                                                   EdgeInsets
-                                                                      .all(3.0),
+                                                                      .all(3),
                                                               child: Column(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -646,10 +635,10 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            5.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
+                                                                            5,
+                                                                            0,
+                                                                            5,
+                                                                            0),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -683,10 +672,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                     padding:
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(
-                                                                10.0,
-                                                                10.0,
-                                                                10.0,
-                                                                5.0),
+                                                                10, 10, 10, 5),
                                                     child: ListView(
                                                       padding: EdgeInsets.zero,
                                                       shrinkWrap: true,
@@ -696,24 +682,21 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      5.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 5),
                                                           child: Material(
                                                             color: Colors
                                                                 .transparent,
-                                                            elevation: 2.0,
+                                                            elevation: 2,
                                                             shape:
                                                                 RoundedRectangleBorder(
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          5.0),
+                                                                          5),
                                                             ),
                                                             child: Container(
-                                                              width: 100.0,
+                                                              width: 100,
                                                               decoration:
                                                                   BoxDecoration(
                                                                 color: FlutterFlowTheme.of(
@@ -722,24 +705,25 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            5.0),
+                                                                            5),
                                                               ),
                                                               child: Padding(
                                                                 padding:
                                                                     EdgeInsets
                                                                         .all(
-                                                                            10.0),
+                                                                            10),
                                                                 child: Column(
                                                                   mainAxisSize:
                                                                       MainAxisSize
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          3.0),
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              0,
+                                                                              0,
+                                                                              0,
+                                                                              3),
                                                                       child:
                                                                           Row(
                                                                         mainAxisSize:
@@ -818,7 +802,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                       flex: 18,
                                                       child: Container(
                                                         width: double.infinity,
-                                                        height: 100.0,
+                                                        height: 100,
                                                         decoration:
                                                             BoxDecoration(
                                                           color: FlutterFlowTheme
@@ -836,10 +820,10 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          7.0),
+                                                                          0,
+                                                                          0,
+                                                                          0,
+                                                                          7),
                                                               child: Container(
                                                                 decoration:
                                                                     BoxDecoration(
@@ -849,7 +833,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              5.0),
+                                                                              5),
                                                                 ),
                                                                 child: Column(
                                                                   mainAxisSize:
@@ -859,7 +843,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                                     Padding(
                                                                       padding:
                                                                           EdgeInsets.all(
-                                                                              10.0),
+                                                                              10),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -888,7 +872,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            5.0),
+                                                                            5),
                                                               ),
                                                               child: Column(
                                                                 mainAxisSize:
@@ -898,7 +882,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                                   Padding(
                                                                     padding:
                                                                         EdgeInsets.all(
-                                                                            10.0),
+                                                                            10),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -929,7 +913,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                       flex: 2,
                                                       child: Container(
                                                         width: double.infinity,
-                                                        height: 100.0,
+                                                        height: 100,
                                                         decoration:
                                                             BoxDecoration(
                                                           color: FlutterFlowTheme
@@ -960,7 +944,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                                             context)
                                                                         .primaryBtnText,
                                                                     fontSize:
-                                                                        16.0,
+                                                                        16,
                                                                     letterSpacing:
                                                                         0.0,
                                                                     fontWeight:
@@ -997,11 +981,8 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      7.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 7),
                                                           child: InkWell(
                                                             splashColor: Colors
                                                                 .transparent,
@@ -1028,7 +1009,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            5.0),
+                                                                            5),
                                                               ),
                                                               child: Column(
                                                                 mainAxisSize:
@@ -1038,7 +1019,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                                   Padding(
                                                                     padding:
                                                                         EdgeInsets.all(
-                                                                            10.0),
+                                                                            10),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -1066,11 +1047,8 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      7.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 7),
                                                           child: InkWell(
                                                             splashColor: Colors
                                                                 .transparent,
@@ -1097,7 +1075,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            5.0),
+                                                                            5),
                                                               ),
                                                               child: Column(
                                                                 mainAxisSize:
@@ -1107,7 +1085,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                                   Padding(
                                                                     padding:
                                                                         EdgeInsets.all(
-                                                                            10.0),
+                                                                            10),
                                                                     child: Text(
                                                                       FFLocalizations.of(
                                                                               context)
@@ -1144,7 +1122,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                   ),
                                   if (FFAppState().show)
                                     Align(
-                                      alignment: AlignmentDirectional(0.0, 1.0),
+                                      alignment: AlignmentDirectional(0, 1),
                                       child: Container(
                                         width: double.infinity,
                                         height: double.infinity,
@@ -1153,7 +1131,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                               .customColor2,
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(10.0),
+                                          padding: EdgeInsets.all(10),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -1186,12 +1164,12 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                         ),
                                                   ),
                                                   Container(
-                                                    width: 30.0,
-                                                    height: 30.0,
+                                                    width: 30,
+                                                    height: 30,
                                                     decoration: BoxDecoration(
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              5.0),
+                                                              5),
                                                       border: Border.all(
                                                         color:
                                                             FlutterFlowTheme.of(
@@ -1220,7 +1198,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primary,
-                                                        size: 16.0,
+                                                        size: 16,
                                                       ),
                                                     ),
                                                   ),
@@ -1235,8 +1213,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                               Expanded(
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 5.0, 0.0, 5.0),
+                                                      .fromSTEB(0, 5, 0, 5),
                                                   child: ListView(
                                                     padding: EdgeInsets.zero,
                                                     shrinkWrap: true,
@@ -1247,12 +1224,9 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    3.0),
+                                                                    0, 0, 0, 3),
                                                         child: Container(
-                                                          width: 100.0,
+                                                          width: 100,
                                                           decoration:
                                                               BoxDecoration(
                                                             color: FlutterFlowTheme
@@ -1261,7 +1235,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        5.0),
+                                                                        5),
                                                           ),
                                                           child: Column(
                                                             mainAxisSize:
@@ -1272,12 +1246,13 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                                     .start,
                                                             children: [
                                                               Padding(
-                                                                padding: EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        10.0,
-                                                                        5.0,
-                                                                        10.0,
-                                                                        5.0),
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            10,
+                                                                            5,
+                                                                            10,
+                                                                            5),
                                                                 child: Text(
                                                                   FFLocalizations.of(
                                                                           context)
@@ -1366,22 +1341,22 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                         ),
                         Expanded(
                           child: Container(
-                            width: 100.0,
+                            width: 100,
                             height: double.infinity,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 5.0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 3.0),
+                                        0, 0, 0, 3),
                                     child: Container(
                                       width: double.infinity,
                                       decoration: BoxDecoration(
@@ -1390,13 +1365,13 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                       ),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            7.0, 3.0, 7.0, 3.0),
+                                            7, 3, 7, 3),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                  .fromSTEB(0, 0, 5, 0),
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -1413,7 +1388,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .lineColor,
-                                                          fontSize: 10.0,
+                                                          fontSize: 10,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.normal,
@@ -1459,8 +1434,8 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                         ),
                                                   ),
                                                   Container(
-                                                    width: 25.0,
-                                                    height: 25.0,
+                                                    width: 25,
+                                                    height: 25,
                                                     decoration: BoxDecoration(),
                                                     child: Icon(
                                                       Icons.delete_outline,
@@ -1468,7 +1443,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primary,
-                                                      size: 24.0,
+                                                      size: 24,
                                                     ),
                                                   ),
                                                 ],
@@ -1486,7 +1461,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 3.0),
+                                                  0, 0, 0, 3),
                                           child: TextFormField(
                                             controller: _model.textController1,
                                             focusNode:
@@ -1604,7 +1579,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                               CrossAxisAlignment.center,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsets.all(8.0),
+                                              padding: EdgeInsets.all(8),
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -1640,7 +1615,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 3.0),
+                                                  0, 0, 0, 3),
                                           child: TextFormField(
                                             controller: _model.textController2,
                                             focusNode:
@@ -1756,7 +1731,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                               MainAxisAlignment.center,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsets.all(8.0),
+                                              padding: EdgeInsets.all(8),
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -1788,7 +1763,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                   Expanded(
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 7.0, 0.0, 5.0),
+                                          0, 7, 0, 5),
                                       child: ListView(
                                         padding: EdgeInsets.zero,
                                         shrinkWrap: true,
@@ -1797,16 +1772,16 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 5.0),
+                                                    0, 0, 0, 5),
                                             child: Container(
-                                              width: 100.0,
+                                              width: 100,
                                               decoration: BoxDecoration(
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsets.all(10.0),
+                                                padding: EdgeInsets.all(10),
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -1824,11 +1799,8 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      7.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 7),
                                                           child: Text(
                                                             FFLocalizations.of(
                                                                     context)
@@ -1881,10 +1853,10 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          10.0,
-                                                                          0.0),
+                                                                          0,
+                                                                          0,
+                                                                          10,
+                                                                          0),
                                                               child: Text(
                                                                 FFLocalizations.of(
                                                                         context)
@@ -1973,8 +1945,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                             BoxDecoration(
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      7.0),
+                                                                  .circular(7),
                                                           border: Border.all(
                                                             color: FlutterFlowTheme
                                                                     .of(context)
@@ -1988,7 +1959,7 @@ class _ImsInwardOutwardWidgetState extends State<ImsInwardOutwardWidget>
                                                             Padding(
                                                               padding:
                                                                   EdgeInsets
-                                                                      .all(5.0),
+                                                                      .all(5),
                                                               child: Text(
                                                                 FFLocalizations.of(
                                                                         context)

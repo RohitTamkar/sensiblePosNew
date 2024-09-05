@@ -16,7 +16,6 @@ import 'package:provider/provider.dart';
 class EditCategoryMModel extends FlutterFlowModel<EditCategoryMWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for Name widget.
   FocusNode? nameFocusNode;
   TextEditingController? nameTextController;

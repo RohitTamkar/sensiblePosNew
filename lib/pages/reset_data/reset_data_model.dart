@@ -13,7 +13,6 @@ import 'package:provider/provider.dart';
 class ResetDataModel extends FlutterFlowModel<ResetDataWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for Header component.
   late HeaderModel headerModel;
   // State field(s) for CheckboxListTile widget.

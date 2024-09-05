@@ -64,7 +64,7 @@ class _ParkingReportWidgetState extends State<ParkingReportWidget> {
       }
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -98,11 +98,11 @@ class _ParkingReportWidgetState extends State<ParkingReportWidget> {
                       if (!snapshot.hasData) {
                         return Center(
                           child: SizedBox(
-                            width: 40.0,
-                            height: 40.0,
+                            width: 40,
+                            height: 40,
                             child: SpinKitFadingCircle(
                               color: FlutterFlowTheme.of(context).primary,
-                              size: 40.0,
+                              size: 40,
                             ),
                           ),
                         );
@@ -111,14 +111,13 @@ class _ParkingReportWidgetState extends State<ParkingReportWidget> {
                       final containerOutletRecord = snapshot.data!;
 
                       return Container(
-                        width: MediaQuery.sizeOf(context).width * 1.0,
-                        height: 100.0,
+                        width: MediaQuery.sizeOf(context).width,
+                        height: 100,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).primary,
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 5.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.end,
@@ -126,7 +125,7 @@ class _ParkingReportWidgetState extends State<ParkingReportWidget> {
                             children: [
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    20.0, 0.0, 20.0, 0.0),
+                                    20, 0, 20, 0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment:
@@ -134,14 +133,14 @@ class _ParkingReportWidgetState extends State<ParkingReportWidget> {
                                   children: [
                                     FlutterFlowIconButton(
                                       borderColor: Colors.transparent,
-                                      borderRadius: 30.0,
-                                      borderWidth: 1.0,
-                                      buttonSize: 45.0,
+                                      borderRadius: 30,
+                                      borderWidth: 1,
+                                      buttonSize: 45,
                                       icon: Icon(
                                         Icons.chevron_left,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBtnText,
-                                        size: 30.0,
+                                        size: 30,
                                       ),
                                       onPressed: () async {
                                         context.safePop();
@@ -149,7 +148,7 @@ class _ParkingReportWidgetState extends State<ParkingReportWidget> {
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 3.0),
+                                          0, 0, 0, 3),
                                       child: AutoSizeText(
                                         containerOutletRecord.name,
                                         style: FlutterFlowTheme.of(context)
@@ -173,9 +172,9 @@ class _ParkingReportWidgetState extends State<ParkingReportWidget> {
                                     ),
                                     FlutterFlowIconButton(
                                       borderColor: Colors.transparent,
-                                      borderRadius: 30.0,
-                                      borderWidth: 1.0,
-                                      buttonSize: 45.0,
+                                      borderRadius: 30,
+                                      borderWidth: 1,
+                                      buttonSize: 45,
                                       icon: Icon(
                                         Icons.chevron_left,
                                         color: FlutterFlowTheme.of(context)
@@ -214,27 +213,26 @@ class _ParkingReportWidgetState extends State<ParkingReportWidget> {
                 Expanded(
                   flex: 22,
                   child: Container(
-                    width: MediaQuery.sizeOf(context).width * 1.0,
-                    height: 100.0,
+                    width: MediaQuery.sizeOf(context).width,
+                    height: 100,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).primaryBackground,
                       borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(0.0),
-                        bottomRight: Radius.circular(0.0),
-                        topLeft: Radius.circular(40.0),
-                        topRight: Radius.circular(40.0),
+                        bottomLeft: Radius.circular(0),
+                        bottomRight: Radius.circular(0),
+                        topLeft: Radius.circular(40),
+                        topRight: Radius.circular(40),
                       ),
                     ),
                     child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                       child: SingleChildScrollView(
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  15.0, 20.0, 15.0, 0.0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(15, 20, 15, 0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment:
@@ -248,11 +246,11 @@ class _ParkingReportWidgetState extends State<ParkingReportWidget> {
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
-                                      borderRadius: BorderRadius.circular(10.0),
+                                      borderRadius: BorderRadius.circular(10),
                                     ),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          5.0, 10.0, 5.0, 5.0),
+                                          5, 10, 5, 5),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -262,7 +260,7 @@ class _ParkingReportWidgetState extends State<ParkingReportWidget> {
                                             Icons.receipt,
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
-                                            size: 36.0,
+                                            size: 36,
                                           ),
                                           AutoSizeText(
                                             FFLocalizations.of(context).getText(
@@ -291,7 +289,7 @@ Report */
                                             Icons.keyboard_arrow_down_sharp,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            size: 24.0,
+                                            size: 24,
                                           ),
                                         ],
                                       ),
@@ -305,11 +303,11 @@ Report */
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
-                                      borderRadius: BorderRadius.circular(10.0),
+                                      borderRadius: BorderRadius.circular(10),
                                     ),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          5.0, 10.0, 5.0, 5.0),
+                                          5, 10, 5, 5),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -319,7 +317,7 @@ Report */
                                             Icons.fastfood,
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
-                                            size: 36.0,
+                                            size: 36,
                                           ),
                                           AutoSizeText(
                                             FFLocalizations.of(context).getText(
@@ -346,7 +344,7 @@ Report */
                                             Icons.keyboard_arrow_down_sharp,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            size: 24.0,
+                                            size: 24,
                                           ),
                                         ],
                                       ),
@@ -356,8 +354,8 @@ Report */
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  15.0, 20.0, 15.0, 0.0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(15, 20, 15, 0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment:
@@ -371,11 +369,11 @@ Report */
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
-                                      borderRadius: BorderRadius.circular(10.0),
+                                      borderRadius: BorderRadius.circular(10),
                                     ),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          5.0, 10.0, 5.0, 5.0),
+                                          5, 10, 5, 5),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -385,7 +383,7 @@ Report */
                                             Icons.store,
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
-                                            size: 30.0,
+                                            size: 30,
                                           ),
                                           AutoSizeText(
                                             FFLocalizations.of(context).getText(
@@ -412,7 +410,7 @@ Report */
                                             Icons.keyboard_arrow_down_sharp,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            size: 24.0,
+                                            size: 24,
                                           ),
                                         ],
                                       ),
@@ -426,11 +424,11 @@ Report */
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
-                                      borderRadius: BorderRadius.circular(10.0),
+                                      borderRadius: BorderRadius.circular(10),
                                     ),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          5.0, 10.0, 5.0, 5.0),
+                                          5, 10, 5, 5),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -440,7 +438,7 @@ Report */
                                             Icons.category,
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
-                                            size: 32.0,
+                                            size: 32,
                                           ),
                                           AutoSizeText(
                                             FFLocalizations.of(context).getText(
@@ -469,7 +467,7 @@ Sale */
                                             Icons.keyboard_arrow_down_sharp,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            size: 24.0,
+                                            size: 24,
                                           ),
                                         ],
                                       ),

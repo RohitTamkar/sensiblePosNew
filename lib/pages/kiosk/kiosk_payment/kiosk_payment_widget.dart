@@ -62,10 +62,10 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
       _model.timerController.onStartTimer();
       await actions.hideStatusBar();
       FFAppState().shiftDetailsNEw = widget!.shiftdetails!;
-      setState(() {});
+      safeSetState(() {});
       FFAppState().shiftDetailsJson = widget!.shiftdetails!;
       FFAppState().kioskAmt = FFAppState().finalAmt;
-      setState(() {});
+      safeSetState(() {});
       _model.outlet2 = await queryOutletRecordOnce(
         queryBuilder: (outletRecord) => outletRecord.where(
           'id',
@@ -89,7 +89,7 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
       );
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -119,20 +119,19 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                   image: DecorationImage(
                     fit: BoxFit.fitWidth,
-                    alignment: AlignmentDirectional(0.0, -1.0),
+                    alignment: AlignmentDirectional(0, -1),
                     image: Image.asset(
                       'assets/images/Top_img_4.png',
                     ).image,
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.all(20.0),
+                  padding: EdgeInsets.all(20),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            30.0, 0.0, 30.0, 15.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(30, 0, 30, 15),
                         child: Container(
                           width: double.infinity,
                           height: MediaQuery.sizeOf(context).height * 0.13,
@@ -144,7 +143,7 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                             children: [
                               wrapWithModel(
                                 model: _model.kioskHeaderModel,
-                                updateCallback: () => setState(() {}),
+                                updateCallback: () => safeSetState(() {}),
                                 child: KioskHeaderWidget(),
                               ),
                               Row(
@@ -160,14 +159,14 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 20.0, 0.0),
+                                                  0, 0, 20, 0),
                                           child: FlutterFlowIconButton(
                                             borderColor:
                                                 FlutterFlowTheme.of(context)
                                                     .primary,
-                                            borderRadius: 15.0,
+                                            borderRadius: 15,
                                             borderWidth: 0.5,
-                                            buttonSize: 75.0,
+                                            buttonSize: 75,
                                             fillColor:
                                                 FlutterFlowTheme.of(context)
                                                     .secondaryBackground,
@@ -176,7 +175,7 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              size: 40.0,
+                                              size: 40,
                                             ),
                                             onPressed: () async {
                                               context.pushNamed('KioskCart');
@@ -196,7 +195,7 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              fontSize: 30.0,
+                                              fontSize: 30,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
                                               useGoogleFonts: GoogleFonts
@@ -207,7 +206,7 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                                           .headlineSmallFamily),
                                             ),
                                       ),
-                                    ].divide(SizedBox(width: 60.0)),
+                                    ].divide(SizedBox(width: 60)),
                                   ),
                                   FFButtonWidget(
                                     onPressed: () async {
@@ -273,18 +272,18 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                         ));
                                       }
 
-                                      setState(() {});
+                                      safeSetState(() {});
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'zok72012' /* Cancel Order ! */,
                                     ),
                                     options: FFButtonOptions(
-                                      height: 40.0,
+                                      height: 40,
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          24.0, 0.0, 24.0, 0.0),
+                                          24, 0, 24, 0),
                                       iconPadding:
                                           EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
+                                              0, 0, 0, 0),
                                       color:
                                           FlutterFlowTheme.of(context).primary,
                                       textStyle: FlutterFlowTheme.of(context)
@@ -300,12 +299,12 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmallFamily),
                                           ),
-                                      elevation: 3.0,
+                                      elevation: 3,
                                       borderSide: BorderSide(
                                         color: Colors.transparent,
-                                        width: 1.0,
+                                        width: 1,
                                       ),
-                                      borderRadius: BorderRadius.circular(8.0),
+                                      borderRadius: BorderRadius.circular(8),
                                     ),
                                   ),
                                   Stack(
@@ -323,16 +322,16 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                             Icons.dinner_dining_rounded,
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
-                                            size: 30.0,
+                                            size: 30,
                                           ),
                                           options: FFButtonOptions(
-                                            height: 65.0,
+                                            height: 65,
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    24.0, 0.0, 24.0, 0.0),
+                                                    24, 0, 24, 0),
                                             iconPadding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
+                                                    0, 0, 0, 0),
                                             color: Color(0x00B6001A),
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
@@ -346,7 +345,7 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primary,
-                                                      fontSize: 24.0,
+                                                      fontSize: 24,
                                                       letterSpacing: 0.0,
                                                       useGoogleFonts: GoogleFonts
                                                               .asMap()
@@ -355,13 +354,13 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                                                       context)
                                                                   .titleSmallFamily),
                                                     ),
-                                            elevation: 0.0,
+                                            elevation: 0,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
-                                              width: 1.0,
+                                              width: 1,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                         ),
                                       if (FFAppState().orderType == 'PARCEL')
@@ -377,16 +376,16 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                             Icons.takeout_dining_rounded,
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
-                                            size: 30.0,
+                                            size: 30,
                                           ),
                                           options: FFButtonOptions(
-                                            height: 65.0,
+                                            height: 65,
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    24.0, 0.0, 24.0, 0.0),
+                                                    24, 0, 24, 0),
                                             iconPadding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
+                                                    0, 0, 0, 0),
                                             color: Color(0x00B6001A),
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
@@ -400,7 +399,7 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primary,
-                                                      fontSize: 24.0,
+                                                      fontSize: 24,
                                                       letterSpacing: 0.0,
                                                       useGoogleFonts: GoogleFonts
                                                               .asMap()
@@ -409,13 +408,13 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                                                       context)
                                                                   .titleSmallFamily),
                                                     ),
-                                            elevation: 0.0,
+                                            elevation: 0,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
-                                              width: 1.0,
+                                              width: 1,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                         ),
                                     ],
@@ -429,32 +428,31 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                       Expanded(
                         child: Container(
                           width: double.infinity,
-                          height: 100.0,
+                          height: 100,
                           decoration: BoxDecoration(),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                30.0, 0.0, 30.0, 20.0),
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(30, 0, 30, 20),
                             child: Container(
                               height: double.infinity,
                               child: Stack(
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 20.0),
+                                        0, 0, 0, 20),
                                     child: Container(
                                       width: double.infinity,
                                       height: double.infinity,
                                       decoration: BoxDecoration(
                                         color: Color(0xFFF0FFF0),
-                                        borderRadius:
-                                            BorderRadius.circular(40.0),
+                                        borderRadius: BorderRadius.circular(40),
                                         border: Border.all(
                                           color: Color(0xFF61D36B),
                                         ),
                                       ),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            25.0, 10.0, 25.0, 25.0),
+                                            25, 10, 25, 25),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -473,14 +471,14 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                                   if (!snapshot.hasData) {
                                                     return Center(
                                                       child: SizedBox(
-                                                        width: 40.0,
-                                                        height: 40.0,
+                                                        width: 40,
+                                                        height: 40,
                                                         child:
                                                             SpinKitFadingCircle(
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
-                                                          size: 40.0,
+                                                          size: 40,
                                                         ),
                                                       ),
                                                     );
@@ -502,7 +500,7 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                                   return ClipRRect(
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            8.0),
+                                                            8),
                                                     child: Image.network(
                                                       valueOrDefault<String>(
                                                         functions.imageurltostring(
@@ -510,8 +508,8 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                                                 ?.logoImageUrl),
                                                         'https://as1.ftcdn.net/v2/jpg/04/34/72/82/1000_F_434728286_OWQQvAFoXZLdGHlObozsolNeuSxhpr84.jpg',
                                                       ),
-                                                      width: 200.0,
-                                                      height: 200.0,
+                                                      width: 200,
+                                                      height: 200,
                                                       fit: BoxFit.cover,
                                                     ),
                                                   );
@@ -520,8 +518,7 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 0.0, 0.0, 10.0),
+                                                  .fromSTEB(0, 0, 0, 10),
                                               child: Text(
                                                 'Orderid  : ${widget!.paytmOrderId}',
                                                 style:
@@ -535,7 +532,7 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .info,
-                                                          fontSize: 18.0,
+                                                          fontSize: 18,
                                                           letterSpacing: 0.0,
                                                           useGoogleFonts: GoogleFonts
                                                                   .asMap()
@@ -548,8 +545,7 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 0.0, 0.0, 20.0),
+                                                  .fromSTEB(0, 0, 0, 20),
                                               child: FlutterFlowTimer(
                                                 initialTime:
                                                     _model.timerInitialTimeMs,
@@ -571,7 +567,7 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                                   _model.timerValue =
                                                       displayTime;
                                                   if (shouldUpdate)
-                                                    setState(() {});
+                                                    safeSetState(() {});
                                                 },
                                                 onEnded: () async {
                                                   _model.outlet =
@@ -621,7 +617,7 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                                     msg: 'QR CODE IS EXPIRED !',
                                                   ));
 
-                                                  setState(() {});
+                                                  safeSetState(() {});
                                                 },
                                                 textAlign: TextAlign.start,
                                                 style:
@@ -635,7 +631,7 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .info,
-                                                          fontSize: 50.0,
+                                                          fontSize: 50,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
@@ -652,12 +648,12 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                               children: [
                                                 if (widget!.isPaytm ?? true)
                                                   Container(
-                                                    width: 400.0,
-                                                    height: 400.0,
+                                                    width: 400,
+                                                    height: 400,
                                                     child: custom_widgets
                                                         .DynamicQR(
-                                                      width: 400.0,
-                                                      height: 400.0,
+                                                      width: 400,
+                                                      height: 400,
                                                       data: getJsonField(
                                                         widget!.qrJson,
                                                         r'''$.body.qrData''',
@@ -669,14 +665,14 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                                   ClipRRect(
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            8.0),
+                                                            8),
                                                     child: Image.network(
                                                       getJsonField(
                                                         widget!.qrJson,
                                                         r'''$.image_url''',
                                                       ).toString(),
-                                                      width: 400.0,
-                                                      height: 400.0,
+                                                      width: 400,
+                                                      height: 400,
                                                       fit: BoxFit.cover,
                                                     ),
                                                   ),
@@ -708,11 +704,11 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                             ),
                                             ClipRRect(
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(8),
                                               child: Image.asset(
                                                 'assets/images/payment-logo-icons-1024x272-1.webp',
-                                                width: 400.0,
-                                                height: 150.0,
+                                                width: 400,
+                                                height: 150,
                                                 fit: BoxFit.contain,
                                               ),
                                             ),
@@ -848,7 +844,7 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                                         }
                                                       }
 
-                                                      setState(() {});
+                                                      safeSetState(() {});
                                                     }();
                                                   }
                                                   _model.listViewPreviousSnapshot =
@@ -859,15 +855,15 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                                 if (!snapshot.hasData) {
                                                   return Center(
                                                     child: SizedBox(
-                                                      width: 40.0,
-                                                      height: 40.0,
+                                                      width: 40,
+                                                      height: 40,
                                                       child:
                                                           SpinKitFadingCircle(
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primary,
-                                                        size: 40.0,
+                                                        size: 40,
                                                       ),
                                                     ),
                                                   );
@@ -893,8 +889,7 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 25.0, 0.0, 0.0),
+                                                  .fromSTEB(0, 25, 0, 0),
                                               child: StreamBuilder<
                                                   List<OutletRecord>>(
                                                 stream: queryOutletRecord(
@@ -913,14 +908,14 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                                   if (!snapshot.hasData) {
                                                     return Center(
                                                       child: SizedBox(
-                                                        width: 40.0,
-                                                        height: 40.0,
+                                                        width: 40,
+                                                        height: 40,
                                                         child:
                                                             SpinKitFadingCircle(
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
-                                                          size: 40.0,
+                                                          size: 40,
                                                         ),
                                                       ),
                                                     );
@@ -952,7 +947,7 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                                               FlutterFlowTheme.of(
                                                                       context)
                                                                   .displayLargeFamily,
-                                                          fontSize: 30.0,
+                                                          fontSize: 30,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
@@ -973,7 +968,7 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: AlignmentDirectional(0, 0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment: MainAxisAlignment.end,
@@ -989,7 +984,7 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
                                                 borderRadius:
-                                                    BorderRadius.circular(15.0),
+                                                    BorderRadius.circular(15),
                                                 border: Border.all(
                                                   color: Color(0xFF033BE8),
                                                   width: 0.5,
@@ -997,8 +992,7 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                               ),
                                               child: Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        25.0, 15.0, 25.0, 15.0),
+                                                    .fromSTEB(25, 15, 25, 15),
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -1007,10 +1001,7 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  10.0,
-                                                                  0.0),
+                                                                  0, 0, 10, 0),
                                                       child: Text(
                                                         FFLocalizations.of(
                                                                 context)
@@ -1027,8 +1018,7 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                                                       .headlineLargeFamily,
                                                                   color: Color(
                                                                       0xFF033BE8),
-                                                                  fontSize:
-                                                                      25.0,
+                                                                  fontSize: 25,
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
@@ -1063,8 +1053,7 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                                                       .headlineSmallFamily,
                                                                   color: Color(
                                                                       0xFF0046D3),
-                                                                  fontSize:
-                                                                      30.0,
+                                                                  fontSize: 30,
                                                                   letterSpacing:
                                                                       0.0,
                                                                   useGoogleFonts: GoogleFonts
@@ -1087,8 +1076,7 @@ class _KioskPaymentWidgetState extends State<KioskPaymentWidget> {
                                                                       .headlineSmallFamily,
                                                                   color: Color(
                                                                       0xFF0046D3),
-                                                                  fontSize:
-                                                                      40.0,
+                                                                  fontSize: 40,
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:

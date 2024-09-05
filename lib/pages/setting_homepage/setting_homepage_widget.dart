@@ -47,8 +47,8 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: 0.0,
-            end: 1.0,
+            begin: 0,
+            end: 1,
           ),
         ],
       ),
@@ -86,7 +86,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
       this,
     );
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -109,7 +109,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Padding(
-              padding: EdgeInsets.all(3.0),
+              padding: EdgeInsets.all(3),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -118,7 +118,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                   Expanded(
                     flex: 1,
                     child: Container(
-                      width: MediaQuery.sizeOf(context).width * 1.0,
+                      width: MediaQuery.sizeOf(context).width,
                       height: MediaQuery.sizeOf(context).height * 0.12,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primary,
@@ -131,22 +131,22 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                           Expanded(
                             flex: 1,
                             child: Container(
-                              width: 100.0,
-                              height: 100.0,
+                              width: 100,
+                              height: 100,
                               decoration: BoxDecoration(),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   FlutterFlowIconButton(
                                     borderColor: Colors.transparent,
-                                    borderRadius: 30.0,
-                                    borderWidth: 1.0,
-                                    buttonSize: 60.0,
+                                    borderRadius: 30,
+                                    borderWidth: 1,
+                                    buttonSize: 60,
                                     icon: Icon(
                                       Icons.chevron_left_sharp,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBtnText,
-                                      size: 26.0,
+                                      size: 26,
                                     ),
                                     onPressed: () async {
                                       context.safePop();
@@ -179,7 +179,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                             flex: 1,
                             child: wrapWithModel(
                               model: _model.headerModel,
-                              updateCallback: () => setState(() {}),
+                              updateCallback: () => safeSetState(() {}),
                               child: HeaderWidget(),
                             ),
                           ),
@@ -190,8 +190,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                   Expanded(
                     flex: 13,
                     child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
                       child: Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
@@ -215,7 +214,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          5.0, 5.0, 5.0, 0.0),
+                                          5, 5, 5, 0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -237,7 +236,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
                                             borderRadius:
-                                                BorderRadius.circular(10.0),
+                                                BorderRadius.circular(10),
                                           ),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -246,15 +245,15 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                             children: [
                                               FlutterFlowIconButton(
                                                 borderColor: Colors.transparent,
-                                                borderRadius: 30.0,
-                                                borderWidth: 1.0,
-                                                buttonSize: 60.0,
+                                                borderRadius: 30,
+                                                borderWidth: 1,
+                                                buttonSize: 60,
                                                 icon: Icon(
                                                   Icons.info_outline_rounded,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
-                                                  size: 20.0,
+                                                  size: 20,
                                                 ),
                                                 onPressed: () {
                                                   print(
@@ -292,13 +291,13 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                       ),
                                     ),
                                     Divider(
-                                      thickness: 0.0,
+                                      thickness: 0,
                                       color: FlutterFlowTheme.of(context)
                                           .customColor2,
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          5.0, 5.0, 5.0, 0.0),
+                                          5, 5, 5, 0),
                                       child: Container(
                                         width:
                                             MediaQuery.sizeOf(context).width *
@@ -310,7 +309,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
                                           borderRadius:
-                                              BorderRadius.circular(10.0),
+                                              BorderRadius.circular(10),
                                         ),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -321,27 +320,27 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                           children: [
                                             FlutterFlowIconButton(
                                               borderColor: Colors.transparent,
-                                              borderRadius: 30.0,
-                                              borderWidth: 1.0,
-                                              buttonSize: 60.0,
+                                              borderRadius: 30,
+                                              borderWidth: 1,
+                                              buttonSize: 60,
                                               icon: Icon(
                                                 Icons.wifi_rounded,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
-                                                size: 20.0,
+                                                size: 20,
                                               ),
                                               onPressed: () {
                                                 print('IconButton pressed ...');
                                               },
                                             ),
                                             Container(
-                                              width: 140.0,
-                                              height: 500.0,
+                                              width: 140,
+                                              height: 500,
                                               child: custom_widgets
                                                   .OpenWIFISetting(
-                                                width: 140.0,
-                                                height: 500.0,
+                                                width: 140,
+                                                height: 500,
                                               ),
                                             ),
                                           ],
@@ -354,7 +353,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          5.0, 5.0, 5.0, 0.0),
+                                          5, 5, 5, 0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -377,7 +376,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
                                             borderRadius:
-                                                BorderRadius.circular(10.0),
+                                                BorderRadius.circular(10),
                                           ),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -386,15 +385,15 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                             children: [
                                               FlutterFlowIconButton(
                                                 borderColor: Colors.transparent,
-                                                borderRadius: 30.0,
-                                                borderWidth: 1.0,
-                                                buttonSize: 60.0,
+                                                borderRadius: 30,
+                                                borderWidth: 1,
+                                                buttonSize: 60,
                                                 icon: Icon(
                                                   Icons.settings_rounded,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
-                                                  size: 20.0,
+                                                  size: 20,
                                                 ),
                                                 onPressed: () {
                                                   print(
@@ -434,7 +433,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          5.0, 5.0, 5.0, 0.0),
+                                          5, 5, 5, 0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -456,7 +455,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
                                             borderRadius:
-                                                BorderRadius.circular(10.0),
+                                                BorderRadius.circular(10),
                                           ),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -465,15 +464,15 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                             children: [
                                               FlutterFlowIconButton(
                                                 borderColor: Colors.transparent,
-                                                borderRadius: 30.0,
-                                                borderWidth: 1.0,
-                                                buttonSize: 60.0,
+                                                borderRadius: 30,
+                                                borderWidth: 1,
+                                                buttonSize: 60,
                                                 icon: Icon(
                                                   Icons.update_outlined,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
-                                                  size: 20.0,
+                                                  size: 20,
                                                 ),
                                                 onPressed: () {
                                                   print(
@@ -513,7 +512,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          5.0, 5.0, 5.0, 0.0),
+                                          5, 5, 5, 0),
                                       child: Container(
                                         width:
                                             MediaQuery.sizeOf(context).width *
@@ -525,7 +524,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
                                           borderRadius:
-                                              BorderRadius.circular(10.0),
+                                              BorderRadius.circular(10),
                                         ),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -534,15 +533,15 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                           children: [
                                             FlutterFlowIconButton(
                                               borderColor: Colors.transparent,
-                                              borderRadius: 30.0,
-                                              borderWidth: 1.0,
-                                              buttonSize: 60.0,
+                                              borderRadius: 30,
+                                              borderWidth: 1,
+                                              buttonSize: 60,
                                               icon: Icon(
                                                 Icons.color_lens_rounded,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
-                                                size: 20.0,
+                                                size: 20,
                                               ),
                                               onPressed: () {
                                                 print('IconButton pressed ...');
@@ -550,7 +549,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 1.0, 0.0, 0.0),
+                                                  .fromSTEB(0, 1, 0, 0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -575,7 +574,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                         if (animationsMap[
                                                                 'containerOnActionTriggerAnimation3'] !=
                                                             null) {
-                                                          setState(() =>
+                                                          safeSetState(() =>
                                                               hasContainerTriggered3 =
                                                                   true);
                                                           SchedulerBinding
@@ -629,13 +628,13 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          30.0,
-                                                                          0.0),
+                                                                          0,
+                                                                          0,
+                                                                          30,
+                                                                          0),
                                                               child: Container(
-                                                                width: 80.0,
-                                                                height: 40.0,
+                                                                width: 80,
+                                                                height: 40,
                                                                 decoration:
                                                                     BoxDecoration(
                                                                   color: FlutterFlowTheme.of(
@@ -644,7 +643,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              20.0),
+                                                                              20),
                                                                   border: Border
                                                                       .all(
                                                                     color: FlutterFlowTheme.of(
@@ -656,21 +655,20 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                 child: Stack(
                                                                   alignment:
                                                                       AlignmentDirectional(
-                                                                          0.0,
-                                                                          0.0),
+                                                                          0, 0),
                                                                   children: [
                                                                     Align(
                                                                       alignment:
                                                                           AlignmentDirectional(
                                                                               0.95,
-                                                                              0.0),
+                                                                              0),
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            8.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            8,
+                                                                            0),
                                                                         child:
                                                                             Icon(
                                                                           Icons
@@ -678,36 +676,37 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                           color:
                                                                               FlutterFlowTheme.of(context).accent1,
                                                                           size:
-                                                                              20.0,
+                                                                              20,
                                                                         ),
                                                                       ),
                                                                     ),
                                                                     Align(
-                                                                      alignment: AlignmentDirectional(
-                                                                          -0.85,
-                                                                          0.0),
+                                                                      alignment:
+                                                                          AlignmentDirectional(
+                                                                              -0.85,
+                                                                              0),
                                                                       child:
                                                                           Container(
                                                                         width:
-                                                                            36.0,
+                                                                            36,
                                                                         height:
-                                                                            36.0,
+                                                                            36,
                                                                         decoration:
                                                                             BoxDecoration(
                                                                           color:
                                                                               FlutterFlowTheme.of(context).accent1,
                                                                           boxShadow: [
                                                                             BoxShadow(
-                                                                              blurRadius: 4.0,
+                                                                              blurRadius: 4,
                                                                               color: Color(0x430B0D0F),
                                                                               offset: Offset(
                                                                                 0.0,
-                                                                                2.0,
+                                                                                2,
                                                                               ),
                                                                             )
                                                                           ],
                                                                           borderRadius:
-                                                                              BorderRadius.circular(30.0),
+                                                                              BorderRadius.circular(30),
                                                                           shape:
                                                                               BoxShape.rectangle,
                                                                         ),
@@ -742,7 +741,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                         if (animationsMap[
                                                                 'containerOnActionTriggerAnimation2'] !=
                                                             null) {
-                                                          setState(() =>
+                                                          safeSetState(() =>
                                                               hasContainerTriggered2 =
                                                                   true);
                                                           SchedulerBinding
@@ -769,12 +768,12 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                               .primaryBackground,
                                                           boxShadow: [
                                                             BoxShadow(
-                                                              blurRadius: 1.0,
+                                                              blurRadius: 1,
                                                               color: Color(
                                                                   0xFF1A1F24),
                                                               offset: Offset(
                                                                 0.0,
-                                                                0.0,
+                                                                0,
                                                               ),
                                                             )
                                                           ],
@@ -808,8 +807,8 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                   ),
                                                             ),
                                                             Container(
-                                                              width: 80.0,
-                                                              height: 40.0,
+                                                              width: 80,
+                                                              height: 40,
                                                               decoration:
                                                                   BoxDecoration(
                                                                 color: Color(
@@ -817,26 +816,26 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            20.0),
+                                                                            20),
                                                               ),
                                                               child: Stack(
                                                                 alignment:
                                                                     AlignmentDirectional(
-                                                                        0.0,
-                                                                        0.0),
+                                                                        0, 0),
                                                                 children: [
                                                                   Align(
                                                                     alignment:
                                                                         AlignmentDirectional(
                                                                             -0.9,
-                                                                            0.0),
+                                                                            0),
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          8.0,
-                                                                          2.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              8,
+                                                                              2,
+                                                                              0,
+                                                                              0),
                                                                       child:
                                                                           Icon(
                                                                         Icons
@@ -844,7 +843,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                         color: Color(
                                                                             0xFF95A1AC),
                                                                         size:
-                                                                            24.0,
+                                                                            24,
                                                                       ),
                                                                     ),
                                                                   ),
@@ -852,13 +851,12 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                     alignment:
                                                                         AlignmentDirectional(
                                                                             0.9,
-                                                                            0.0),
+                                                                            0),
                                                                     child:
                                                                         Container(
-                                                                      width:
-                                                                          36.0,
+                                                                      width: 36,
                                                                       height:
-                                                                          36.0,
+                                                                          36,
                                                                       decoration:
                                                                           BoxDecoration(
                                                                         color: Color(
@@ -866,18 +864,18 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                         boxShadow: [
                                                                           BoxShadow(
                                                                             blurRadius:
-                                                                                4.0,
+                                                                                4,
                                                                             color:
                                                                                 Color(0x430B0D0F),
                                                                             offset:
                                                                                 Offset(
                                                                               0.0,
-                                                                              2.0,
+                                                                              2,
                                                                             ),
                                                                           )
                                                                         ],
                                                                         borderRadius:
-                                                                            BorderRadius.circular(30.0),
+                                                                            BorderRadius.circular(30),
                                                                         shape: BoxShape
                                                                             .rectangle,
                                                                       ),
@@ -907,7 +905,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          5.0, 5.0, 5.0, 0.0),
+                                          5, 5, 5, 0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -927,10 +925,10 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
                                             borderRadius:
-                                                BorderRadius.circular(10.0),
+                                                BorderRadius.circular(10),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(5.0),
+                                            padding: EdgeInsets.all(5),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               crossAxisAlignment:
@@ -939,13 +937,13 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                 FlutterFlowIconButton(
                                                   borderColor:
                                                       Colors.transparent,
-                                                  buttonSize: 50.0,
+                                                  buttonSize: 50,
                                                   icon: Icon(
                                                     Icons.payments,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
-                                                    size: 20.0,
+                                                    size: 20,
                                                   ),
                                                   onPressed: () {
                                                     print(
@@ -954,8 +952,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                 ),
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          10.0, 0.0, 0.0, 0.0),
+                                                      .fromSTEB(10, 0, 0, 0),
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
@@ -991,7 +988,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          5.0, 5.0, 5.0, 0.0),
+                                          5, 5, 5, 0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -1011,7 +1008,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
                                             borderRadius:
-                                                BorderRadius.circular(10.0),
+                                                BorderRadius.circular(10),
                                             border: Border.all(
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -1019,7 +1016,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                             ),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(5.0),
+                                            padding: EdgeInsets.all(5),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               crossAxisAlignment:
@@ -1028,13 +1025,13 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                 FlutterFlowIconButton(
                                                   borderColor:
                                                       Colors.transparent,
-                                                  buttonSize: 50.0,
+                                                  buttonSize: 50,
                                                   icon: Icon(
                                                     Icons.cloud_done_rounded,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
-                                                    size: 20.0,
+                                                    size: 20,
                                                   ),
                                                   onPressed: () {
                                                     print(
@@ -1043,8 +1040,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                 ),
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          10.0, 0.0, 0.0, 0.0),
+                                                      .fromSTEB(10, 0, 0, 0),
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
@@ -1093,13 +1089,13 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                         if (!snapshot.hasData) {
                                           return Center(
                                             child: SizedBox(
-                                              width: 40.0,
-                                              height: 40.0,
+                                              width: 40,
+                                              height: 40,
                                               child: SpinKitFadingCircle(
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
-                                                size: 40.0,
+                                                size: 40,
                                               ),
                                             ),
                                           );
@@ -1128,8 +1124,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                             children: [
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        7.0, 0.0, 0.0, 0.0),
+                                                    .fromSTEB(7, 0, 0, 0),
                                                 child: Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -1150,14 +1145,14 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                               .hasData) {
                                                             return Center(
                                                               child: SizedBox(
-                                                                width: 40.0,
-                                                                height: 40.0,
+                                                                width: 40,
+                                                                height: 40,
                                                                 child:
                                                                     SpinKitFadingCircle(
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primary,
-                                                                  size: 40.0,
+                                                                  size: 40,
                                                                 ),
                                                               ),
                                                             );
@@ -1185,7 +1180,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          0.0),
+                                                                          0),
                                                               border:
                                                                   Border.all(
                                                                 color: FlutterFlowTheme.of(
@@ -1207,16 +1202,15 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                   return Center(
                                                                     child:
                                                                         SizedBox(
-                                                                      width:
-                                                                          40.0,
+                                                                      width: 40,
                                                                       height:
-                                                                          40.0,
+                                                                          40,
                                                                       child:
                                                                           SpinKitFadingCircle(
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primary,
                                                                         size:
-                                                                            40.0,
+                                                                            40,
                                                                       ),
                                                                     ),
                                                                   );
@@ -1233,10 +1227,10 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                       Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            15.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                            15,
+                                                                            0,
+                                                                            0,
+                                                                            0),
                                                                     child:
                                                                         Column(
                                                                       mainAxisSize:
@@ -1251,10 +1245,10 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              5.0,
-                                                                              5.0,
-                                                                              0.0),
+                                                                              0,
+                                                                              5,
+                                                                              5,
+                                                                              0),
                                                                           child:
                                                                               Row(
                                                                             mainAxisSize:
@@ -1278,10 +1272,10 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              5.0,
-                                                                              0.0,
-                                                                              0.0),
+                                                                              0,
+                                                                              5,
+                                                                              0,
+                                                                              0),
                                                                           child:
                                                                               Row(
                                                                             mainAxisSize:
@@ -1313,10 +1307,10 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              5.0,
-                                                                              0.0,
-                                                                              0.0),
+                                                                              0,
+                                                                              5,
+                                                                              0,
+                                                                              0),
                                                                           child:
                                                                               Row(
                                                                             mainAxisSize:
@@ -1349,10 +1343,10 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              5.0,
-                                                                              0.0,
-                                                                              0.0),
+                                                                              0,
+                                                                              5,
+                                                                              0,
+                                                                              0),
                                                                           child:
                                                                               Row(
                                                                             mainAxisSize:
@@ -1385,10 +1379,10 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              5.0,
-                                                                              0.0,
-                                                                              0.0),
+                                                                              0,
+                                                                              5,
+                                                                              0,
+                                                                              0),
                                                                           child:
                                                                               Row(
                                                                             mainAxisSize:
@@ -1419,10 +1413,10 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              5.0,
-                                                                              0.0,
-                                                                              0.0),
+                                                                              0,
+                                                                              5,
+                                                                              0,
+                                                                              0),
                                                                           child:
                                                                               Row(
                                                                             mainAxisSize:
@@ -1458,10 +1452,10 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              5.0,
-                                                                              5.0,
-                                                                              0.0),
+                                                                              0,
+                                                                              5,
+                                                                              5,
+                                                                              0),
                                                                           child:
                                                                               Row(
                                                                             mainAxisSize:
@@ -1524,32 +1518,29 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                               BorderRadius.only(
                                                             bottomLeft:
                                                                 Radius.circular(
-                                                                    0.0),
+                                                                    0),
                                                             bottomRight:
                                                                 Radius.circular(
-                                                                    0.0),
+                                                                    0),
                                                             topLeft:
                                                                 Radius.circular(
-                                                                    3.0),
+                                                                    3),
                                                             topRight:
                                                                 Radius.circular(
-                                                                    3.0),
+                                                                    3),
                                                           ),
                                                           border: Border.all(
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .secondaryBackground,
-                                                            width: 2.0,
+                                                            width: 2,
                                                           ),
                                                         ),
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      15.0,
-                                                                      1.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(15,
+                                                                      1, 0, 0),
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -1565,10 +1556,10 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            10.0),
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            10),
                                                                 child:
                                                                     Image.asset(
                                                                   'assets/images/sensible-logo.png',
@@ -1672,8 +1663,7 @@ class _SettingHomepageWidgetState extends State<SettingHomepageWidget>
                                                         .primaryBackground,
                                                   ),
                                                   child: Padding(
-                                                    padding:
-                                                        EdgeInsets.all(5.0),
+                                                    padding: EdgeInsets.all(5),
                                                     child: Column(
                                                       mainAxisSize:
                                                           MainAxisSize.max,

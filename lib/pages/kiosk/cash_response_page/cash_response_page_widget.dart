@@ -52,12 +52,12 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       FFAppState().shiftDetailsNEw = widget!.shiftdetails!;
-      setState(() {});
+      safeSetState(() {});
       FFAppState().shiftDetailsJson = widget!.shiftdetails!;
       FFAppState().kioskAmt = FFAppState().finalAmt;
-      setState(() {});
+      safeSetState(() {});
       FFAppState().shiftexist = 'True';
-      setState(() {});
+      safeSetState(() {});
       if (!FFAppState().isBillPrinted) {
         _model.prdListkiosk = await actions.filterProducts(
           FFAppState().selBill,
@@ -207,9 +207,9 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
             ),
             0,
           );
-          setState(() {});
+          safeSetState(() {});
           FFAppState().billcount = FFAppState().billcount + 1;
-          setState(() {});
+          safeSetState(() {});
           _model.shiftSummarRkiosk = await actions.calShiftSummary(
             _model.docInvoicekiosk!,
             FFAppState().shiftDetailsJson,
@@ -384,7 +384,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
               .first
               .value) {
             FFAppState().startLoop = 0;
-            setState(() {});
+            safeSetState(() {});
             while (FFAppState().startLoop < _model.prdListkiosk!.length) {
               _model.stockupdateprd = await queryProductRecordOnce(
                 parent: FFAppState().outletIdRef,
@@ -406,7 +406,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
                 ),
               });
               FFAppState().startLoop = FFAppState().startLoop + 1;
-              setState(() {});
+              safeSetState(() {});
             }
           }
           await actions.removeFromAllBillList(
@@ -494,7 +494,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
       ),
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -524,23 +524,22 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
                   Expanded(
                     flex: 7,
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(
-                          50.0, 50.0, 50.0, 50.0),
+                      padding: EdgeInsetsDirectional.fromSTEB(50, 50, 50, 50),
                       child: Container(
                         width: double.infinity,
-                        height: 100.0,
+                        height: 100,
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
                           borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(6.0),
-                            bottomRight: Radius.circular(6.0),
-                            topLeft: Radius.circular(6.0),
-                            topRight: Radius.circular(6.0),
+                            bottomLeft: Radius.circular(6),
+                            bottomRight: Radius.circular(6),
+                            topLeft: Radius.circular(6),
+                            topRight: Radius.circular(6),
                           ),
                           border: Border.all(
                             color: FlutterFlowTheme.of(context).tertiary,
-                            width: 2.0,
+                            width: 2,
                           ),
                         ),
                         child: Column(
@@ -548,8 +547,8 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 75.0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 75),
                               child: Text(
                                 FFLocalizations.of(context).getText(
                                   'le02ktpk' /* Thank You ! */,
@@ -561,7 +560,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
                                           .displayLargeFamily,
                                       color:
                                           FlutterFlowTheme.of(context).success,
-                                      fontSize: 36.0,
+                                      fontSize: 36,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w600,
                                       fontStyle: FontStyle.italic,
@@ -575,7 +574,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
                             ),
                             wrapWithModel(
                               model: _model.cashConfirmOrderModel,
-                              updateCallback: () => setState(() {}),
+                              updateCallback: () => safeSetState(() {}),
                               child: CashConfirmOrderWidget(
                                 orderId: FFAppState().paytmOrderId,
                               ),
@@ -765,7 +764,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
                                     },
                                   );
 
-                                  if (_shouldSetState) setState(() {});
+                                  if (_shouldSetState) safeSetState(() {});
                                   return;
                                 } else {
                                   await showDialog(
@@ -788,7 +787,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
                                   context.pushNamed('printSettingkiosk');
                                 }
 
-                                if (_shouldSetState) setState(() {});
+                                if (_shouldSetState) safeSetState(() {});
                               },
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -801,7 +800,7 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
                                           .bodyMediumFamily,
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      fontSize: 16.0,
+                                      fontSize: 16,
                                       letterSpacing: 0.0,
                                       useGoogleFonts: GoogleFonts.asMap()
                                           .containsKey(

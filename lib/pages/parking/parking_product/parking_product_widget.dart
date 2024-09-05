@@ -35,7 +35,7 @@ class _ParkingProductWidgetState extends State<ParkingProductWidget> {
     super.initState();
     _model = createModel(context, () => ParkingProductModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -64,11 +64,10 @@ class _ParkingProductWidgetState extends State<ParkingProductWidget> {
                   flex: 4,
                   child: Container(
                     width: double.infinity,
-                    height: 100.0,
+                    height: 100,
                     decoration: BoxDecoration(),
                     child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(25.0, 0.0, 25.0, 5.0),
+                      padding: EdgeInsetsDirectional.fromSTEB(25, 0, 25, 5),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -79,13 +78,13 @@ class _ParkingProductWidgetState extends State<ParkingProductWidget> {
                             children: [
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 30.0,
-                                buttonSize: 40.0,
+                                borderRadius: 30,
+                                buttonSize: 40,
                                 icon: Icon(
                                   Icons.keyboard_arrow_left_sharp,
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
-                                  size: 24.0,
+                                  size: 24,
                                 ),
                                 onPressed: () async {
                                   context.safePop();
@@ -110,15 +109,15 @@ class _ParkingProductWidgetState extends State<ParkingProductWidget> {
                               ),
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 10.0,
-                                buttonSize: 40.0,
+                                borderRadius: 10,
+                                buttonSize: 40,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
                                 icon: Icon(
                                   Icons.playlist_add_check,
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
-                                  size: 24.0,
+                                  size: 24,
                                 ),
                                 onPressed: () async {
                                   context.pushNamed('ParkingCustomers');
@@ -142,11 +141,11 @@ class _ParkingProductWidgetState extends State<ParkingProductWidget> {
                       if (!snapshot.hasData) {
                         return Center(
                           child: SizedBox(
-                            width: 40.0,
-                            height: 40.0,
+                            width: 40,
+                            height: 40,
                             child: SpinKitFadingCircle(
                               color: FlutterFlowTheme.of(context).primary,
-                              size: 40.0,
+                              size: 40,
                             ),
                           ),
                         );
@@ -156,13 +155,13 @@ class _ParkingProductWidgetState extends State<ParkingProductWidget> {
 
                       return Container(
                         width: double.infinity,
-                        height: 100.0,
+                        height: 100,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context)
                               .parkingPrimaryBackground,
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(25.0),
+                          padding: EdgeInsets.all(25),
                           child: Builder(
                             builder: (context) {
                               final containerVar =
@@ -176,7 +175,7 @@ class _ParkingProductWidgetState extends State<ParkingProductWidget> {
                                       containerVar[containerVarIndex];
                                   return Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 20.0),
+                                        0, 0, 0, 20),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
                                       focusColor: Colors.transparent,
@@ -187,7 +186,7 @@ class _ParkingProductWidgetState extends State<ParkingProductWidget> {
                                             containerVarItem.sellingPrice;
                                         FFAppState().shiftdetails =
                                             widget!.shiftdoc!;
-                                        setState(() {});
+                                        safeSetState(() {});
                                         await showDialog(
                                           context: context,
                                           builder: (alertDialogContext) {
@@ -233,21 +232,21 @@ class _ParkingProductWidgetState extends State<ParkingProductWidget> {
                                               .secondaryBackground,
                                           boxShadow: [
                                             BoxShadow(
-                                              blurRadius: 5.0,
+                                              blurRadius: 5,
                                               color: Color(0xFFD2CFDC),
                                               offset: Offset(
-                                                1.0,
-                                                4.0,
+                                                1,
+                                                4,
                                               ),
                                             )
                                           ],
                                           borderRadius:
-                                              BorderRadius.circular(10.0),
+                                              BorderRadius.circular(10),
                                         ),
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  40.0, 25.0, 40.0, 25.0),
+                                                  40, 25, 40, 25),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -256,7 +255,7 @@ class _ParkingProductWidgetState extends State<ParkingProductWidget> {
                                               Icon(
                                                 Icons.two_wheeler,
                                                 color: Color(0xFFEE8B60),
-                                                size: 45.0,
+                                                size: 45,
                                               ),
                                               Text(
                                                 containerVarItem.name,

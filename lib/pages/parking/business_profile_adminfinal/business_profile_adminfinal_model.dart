@@ -24,7 +24,6 @@ class BusinessProfileAdminfinalModel
     extends FlutterFlowModel<BusinessProfileAdminfinalWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Stores action output result for [Firestore Query - Query a collection] action in businessProfileAdminfinal widget.
   UserProfileRecord? userDetails;
   // Stores action output result for [Firestore Query - Query a collection] action in businessProfileAdminfinal widget.

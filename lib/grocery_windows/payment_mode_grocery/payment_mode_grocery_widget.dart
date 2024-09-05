@@ -47,8 +47,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       _model.amount = FFAppState().finalAmt.toString();
-      setState(() {});
-      setState(() {
+      safeSetState(() {});
+      safeSetState(() {
         _model.textController1?.text = _model.amount!;
         _model.textController1?.selection = TextSelection.collapsed(
             offset: _model.textController1!.text.length);
@@ -70,7 +70,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
     _model.textFieldextraTextController ??= TextEditingController();
     _model.textFieldextraFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {
           _model.textFielddisperTextController?.text =
               FFLocalizations.of(context).getText(
             'afq50yu0' /* 0 */,
@@ -102,7 +102,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
     context.watch<FFAppState>();
 
     return Align(
-      alignment: AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0, 0),
       child: StreamBuilder<List<AppSettingsRecord>>(
         stream: queryAppSettingsRecord(
           parent: FFAppState().outletIdRef,
@@ -117,11 +117,11 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
           if (!snapshot.hasData) {
             return Center(
               child: SizedBox(
-                width: 40.0,
-                height: 40.0,
+                width: 40,
+                height: 40,
                 child: SpinKitFadingCircle(
                   color: FlutterFlowTheme.of(context).primary,
-                  size: 40.0,
+                  size: 40,
                 ),
               ),
             );
@@ -138,19 +138,18 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                   : null;
 
           return Container(
-            width: 800.0,
-            height: 700.0,
+            width: 800,
+            height: 700,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).primaryBackground,
             ),
             child: Padding(
-              padding: EdgeInsets.all(15.0),
+              padding: EdgeInsets.all(15),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -174,13 +173,13 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                         ),
                         FlutterFlowIconButton(
                           borderColor: Colors.transparent,
-                          borderRadius: 30.0,
-                          buttonSize: 40.0,
+                          borderRadius: 30,
+                          buttonSize: 40,
                           fillColor: FlutterFlowTheme.of(context).primary,
                           icon: Icon(
                             Icons.close_sharp,
                             color: FlutterFlowTheme.of(context).primaryBtnText,
-                            size: 24.0,
+                            size: 24,
                           ),
                           onPressed: () async {
                             Navigator.pop(context);
@@ -197,11 +196,11 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                         if (!snapshot.hasData) {
                           return Center(
                             child: SizedBox(
-                              width: 40.0,
-                              height: 40.0,
+                              width: 40,
+                              height: 40,
                               child: SpinKitFadingCircle(
                                 color: FlutterFlowTheme.of(context).primary,
-                                size: 40.0,
+                                size: 40,
                               ),
                             ),
                           );
@@ -211,7 +210,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
 
                         return Container(
                           width: double.infinity,
-                          height: 550.0,
+                          height: 550,
                           decoration: BoxDecoration(
                             border: Border.all(
                               color: FlutterFlowTheme.of(context).customColor1,
@@ -224,7 +223,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                               Expanded(
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 20.0),
+                                      0, 0, 0, 20),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.start,
@@ -234,17 +233,17 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                       Expanded(
                                         flex: 3,
                                         child: Container(
-                                          width: 250.0,
+                                          width: 250,
                                           decoration: BoxDecoration(
                                             border: Border.all(
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .customColor3,
-                                              width: 1.0,
+                                              width: 1,
                                             ),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(10.0),
+                                            padding: EdgeInsets.all(10),
                                             child: Builder(
                                               builder: (context) {
                                                 final paymentMode =
@@ -256,8 +255,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                   gridDelegate:
                                                       SliverGridDelegateWithFixedCrossAxisCount(
                                                     crossAxisCount: 2,
-                                                    crossAxisSpacing: 5.0,
-                                                    mainAxisSpacing: 10.0,
+                                                    crossAxisSpacing: 5,
+                                                    mainAxisSpacing: 10,
                                                     childAspectRatio: 1.75,
                                                   ),
                                                   scrollDirection:
@@ -282,7 +281,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                 .secondaryBackground,
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(10.0),
+                                                                .circular(10),
                                                       ),
                                                       child: InkWell(
                                                         splashColor:
@@ -297,7 +296,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                           FFAppState().PayMode =
                                                               paymentModeItem
                                                                   .name;
-                                                          setState(() {});
+                                                          safeSetState(() {});
                                                         },
                                                         child: Column(
                                                           mainAxisSize:
@@ -343,7 +342,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                         child: Container(
                                           decoration: BoxDecoration(),
                                           child: Padding(
-                                            padding: EdgeInsets.all(10.0),
+                                            padding: EdgeInsets.all(10),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -465,11 +464,11 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .alternate,
-                                                        width: 1.0,
+                                                        width: 1,
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              15.0),
+                                                              15),
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
@@ -478,11 +477,11 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .info,
-                                                        width: 1.0,
+                                                        width: 1,
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              15.0),
+                                                              15),
                                                     ),
                                                     errorBorder:
                                                         OutlineInputBorder(
@@ -491,11 +490,11 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .error,
-                                                        width: 1.0,
+                                                        width: 1,
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              15.0),
+                                                              15),
                                                     ),
                                                     focusedErrorBorder:
                                                         OutlineInputBorder(
@@ -504,11 +503,11 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .error,
-                                                        width: 1.0,
+                                                        width: 1,
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              15.0),
+                                                              15),
                                                     ),
                                                     filled: true,
                                                     fillColor: FlutterFlowTheme
@@ -527,7 +526,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primary,
-                                                        fontSize: 22.0,
+                                                        fontSize: 22,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,
@@ -553,8 +552,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                         onPressed: () async {
                                                           _model.amount =
                                                               '${_model.textController1.text}1';
-                                                          setState(() {});
-                                                          setState(() {
+                                                          safeSetState(() {});
+                                                          safeSetState(() {
                                                             _model.textController1
                                                                     ?.text =
                                                                 _model.amount!;
@@ -575,21 +574,15 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                         ),
                                                         options:
                                                             FFButtonOptions(
-                                                          height: 50.0,
+                                                          height: 50,
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           iconPadding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .customColor2,
@@ -605,7 +598,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                             context)
                                                                         .primaryText,
                                                                     fontSize:
-                                                                        19.0,
+                                                                        19,
                                                                     letterSpacing:
                                                                         0.0,
                                                                     useGoogleFonts: GoogleFonts
@@ -613,17 +606,16 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                         .containsKey(
                                                                             FlutterFlowTheme.of(context).titleSmallFamily),
                                                                   ),
-                                                          elevation: 3.0,
+                                                          elevation: 3,
                                                           borderSide:
                                                               BorderSide(
                                                             color: Colors
                                                                 .transparent,
-                                                            width: 1.0,
+                                                            width: 1,
                                                           ),
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      8.0),
+                                                                  .circular(8),
                                                         ),
                                                       ),
                                                     ),
@@ -632,8 +624,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                         onPressed: () async {
                                                           _model.amount =
                                                               '${_model.textController1.text}2';
-                                                          setState(() {});
-                                                          setState(() {
+                                                          safeSetState(() {});
+                                                          safeSetState(() {
                                                             _model.textController1
                                                                     ?.text =
                                                                 _model.amount!;
@@ -654,21 +646,15 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                         ),
                                                         options:
                                                             FFButtonOptions(
-                                                          height: 50.0,
+                                                          height: 50,
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           iconPadding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .customColor2,
@@ -684,7 +670,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                             context)
                                                                         .primaryText,
                                                                     fontSize:
-                                                                        19.0,
+                                                                        19,
                                                                     letterSpacing:
                                                                         0.0,
                                                                     useGoogleFonts: GoogleFonts
@@ -692,17 +678,16 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                         .containsKey(
                                                                             FlutterFlowTheme.of(context).titleSmallFamily),
                                                                   ),
-                                                          elevation: 3.0,
+                                                          elevation: 3,
                                                           borderSide:
                                                               BorderSide(
                                                             color: Colors
                                                                 .transparent,
-                                                            width: 1.0,
+                                                            width: 1,
                                                           ),
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      8.0),
+                                                                  .circular(8),
                                                         ),
                                                       ),
                                                     ),
@@ -711,8 +696,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                         onPressed: () async {
                                                           _model.amount =
                                                               '${_model.textController1.text}3';
-                                                          setState(() {});
-                                                          setState(() {
+                                                          safeSetState(() {});
+                                                          safeSetState(() {
                                                             _model.textController1
                                                                     ?.text =
                                                                 _model.amount!;
@@ -733,21 +718,15 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                         ),
                                                         options:
                                                             FFButtonOptions(
-                                                          height: 50.0,
+                                                          height: 50,
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           iconPadding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .customColor2,
@@ -763,7 +742,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                             context)
                                                                         .primaryText,
                                                                     fontSize:
-                                                                        19.0,
+                                                                        19,
                                                                     letterSpacing:
                                                                         0.0,
                                                                     useGoogleFonts: GoogleFonts
@@ -771,22 +750,20 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                         .containsKey(
                                                                             FlutterFlowTheme.of(context).titleSmallFamily),
                                                                   ),
-                                                          elevation: 3.0,
+                                                          elevation: 3,
                                                           borderSide:
                                                               BorderSide(
                                                             color: Colors
                                                                 .transparent,
-                                                            width: 1.0,
+                                                            width: 1,
                                                           ),
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      8.0),
+                                                                  .circular(8),
                                                         ),
                                                       ),
                                                     ),
-                                                  ].divide(
-                                                      SizedBox(width: 15.0)),
+                                                  ].divide(SizedBox(width: 15)),
                                                 ),
                                                 Row(
                                                   mainAxisSize:
@@ -799,8 +776,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                         onPressed: () async {
                                                           _model.amount =
                                                               '${_model.textController1.text}4';
-                                                          setState(() {});
-                                                          setState(() {
+                                                          safeSetState(() {});
+                                                          safeSetState(() {
                                                             _model.textController1
                                                                     ?.text =
                                                                 _model.amount!;
@@ -821,21 +798,15 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                         ),
                                                         options:
                                                             FFButtonOptions(
-                                                          height: 50.0,
+                                                          height: 50,
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           iconPadding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .customColor2,
@@ -851,7 +822,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                             context)
                                                                         .primaryText,
                                                                     fontSize:
-                                                                        19.0,
+                                                                        19,
                                                                     letterSpacing:
                                                                         0.0,
                                                                     useGoogleFonts: GoogleFonts
@@ -859,17 +830,16 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                         .containsKey(
                                                                             FlutterFlowTheme.of(context).titleSmallFamily),
                                                                   ),
-                                                          elevation: 3.0,
+                                                          elevation: 3,
                                                           borderSide:
                                                               BorderSide(
                                                             color: Colors
                                                                 .transparent,
-                                                            width: 1.0,
+                                                            width: 1,
                                                           ),
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      8.0),
+                                                                  .circular(8),
                                                         ),
                                                       ),
                                                     ),
@@ -878,8 +848,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                         onPressed: () async {
                                                           _model.amount =
                                                               '${_model.textController1.text}5';
-                                                          setState(() {});
-                                                          setState(() {
+                                                          safeSetState(() {});
+                                                          safeSetState(() {
                                                             _model.textController1
                                                                     ?.text =
                                                                 _model.amount!;
@@ -900,21 +870,15 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                         ),
                                                         options:
                                                             FFButtonOptions(
-                                                          height: 50.0,
+                                                          height: 50,
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           iconPadding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .customColor2,
@@ -930,7 +894,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                             context)
                                                                         .primaryText,
                                                                     fontSize:
-                                                                        19.0,
+                                                                        19,
                                                                     letterSpacing:
                                                                         0.0,
                                                                     useGoogleFonts: GoogleFonts
@@ -938,17 +902,16 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                         .containsKey(
                                                                             FlutterFlowTheme.of(context).titleSmallFamily),
                                                                   ),
-                                                          elevation: 3.0,
+                                                          elevation: 3,
                                                           borderSide:
                                                               BorderSide(
                                                             color: Colors
                                                                 .transparent,
-                                                            width: 1.0,
+                                                            width: 1,
                                                           ),
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      8.0),
+                                                                  .circular(8),
                                                         ),
                                                       ),
                                                     ),
@@ -957,8 +920,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                         onPressed: () async {
                                                           _model.amount =
                                                               '${_model.textController1.text}6';
-                                                          setState(() {});
-                                                          setState(() {
+                                                          safeSetState(() {});
+                                                          safeSetState(() {
                                                             _model.textController1
                                                                     ?.text =
                                                                 _model.amount!;
@@ -979,21 +942,15 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                         ),
                                                         options:
                                                             FFButtonOptions(
-                                                          height: 50.0,
+                                                          height: 50,
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           iconPadding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .customColor2,
@@ -1009,7 +966,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                             context)
                                                                         .primaryText,
                                                                     fontSize:
-                                                                        19.0,
+                                                                        19,
                                                                     letterSpacing:
                                                                         0.0,
                                                                     useGoogleFonts: GoogleFonts
@@ -1017,22 +974,20 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                         .containsKey(
                                                                             FlutterFlowTheme.of(context).titleSmallFamily),
                                                                   ),
-                                                          elevation: 3.0,
+                                                          elevation: 3,
                                                           borderSide:
                                                               BorderSide(
                                                             color: Colors
                                                                 .transparent,
-                                                            width: 1.0,
+                                                            width: 1,
                                                           ),
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      8.0),
+                                                                  .circular(8),
                                                         ),
                                                       ),
                                                     ),
-                                                  ].divide(
-                                                      SizedBox(width: 15.0)),
+                                                  ].divide(SizedBox(width: 15)),
                                                 ),
                                                 Row(
                                                   mainAxisSize:
@@ -1045,8 +1000,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                         onPressed: () async {
                                                           _model.amount =
                                                               '${_model.textController1.text}7';
-                                                          setState(() {});
-                                                          setState(() {
+                                                          safeSetState(() {});
+                                                          safeSetState(() {
                                                             _model.textController1
                                                                     ?.text =
                                                                 _model.amount!;
@@ -1067,21 +1022,15 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                         ),
                                                         options:
                                                             FFButtonOptions(
-                                                          height: 50.0,
+                                                          height: 50,
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           iconPadding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .customColor2,
@@ -1097,7 +1046,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                             context)
                                                                         .primaryText,
                                                                     fontSize:
-                                                                        19.0,
+                                                                        19,
                                                                     letterSpacing:
                                                                         0.0,
                                                                     useGoogleFonts: GoogleFonts
@@ -1105,17 +1054,16 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                         .containsKey(
                                                                             FlutterFlowTheme.of(context).titleSmallFamily),
                                                                   ),
-                                                          elevation: 3.0,
+                                                          elevation: 3,
                                                           borderSide:
                                                               BorderSide(
                                                             color: Colors
                                                                 .transparent,
-                                                            width: 1.0,
+                                                            width: 1,
                                                           ),
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      8.0),
+                                                                  .circular(8),
                                                         ),
                                                       ),
                                                     ),
@@ -1124,8 +1072,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                         onPressed: () async {
                                                           _model.amount =
                                                               '${_model.textController1.text}8';
-                                                          setState(() {});
-                                                          setState(() {
+                                                          safeSetState(() {});
+                                                          safeSetState(() {
                                                             _model.textController1
                                                                     ?.text =
                                                                 _model.amount!;
@@ -1146,21 +1094,15 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                         ),
                                                         options:
                                                             FFButtonOptions(
-                                                          height: 50.0,
+                                                          height: 50,
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           iconPadding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .customColor2,
@@ -1176,7 +1118,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                             context)
                                                                         .primaryText,
                                                                     fontSize:
-                                                                        19.0,
+                                                                        19,
                                                                     letterSpacing:
                                                                         0.0,
                                                                     useGoogleFonts: GoogleFonts
@@ -1184,17 +1126,16 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                         .containsKey(
                                                                             FlutterFlowTheme.of(context).titleSmallFamily),
                                                                   ),
-                                                          elevation: 3.0,
+                                                          elevation: 3,
                                                           borderSide:
                                                               BorderSide(
                                                             color: Colors
                                                                 .transparent,
-                                                            width: 1.0,
+                                                            width: 1,
                                                           ),
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      8.0),
+                                                                  .circular(8),
                                                         ),
                                                       ),
                                                     ),
@@ -1203,8 +1144,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                         onPressed: () async {
                                                           _model.amount =
                                                               '${_model.textController1.text}9';
-                                                          setState(() {});
-                                                          setState(() {
+                                                          safeSetState(() {});
+                                                          safeSetState(() {
                                                             _model.textController1
                                                                     ?.text =
                                                                 _model.amount!;
@@ -1225,21 +1166,15 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                         ),
                                                         options:
                                                             FFButtonOptions(
-                                                          height: 50.0,
+                                                          height: 50,
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           iconPadding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .customColor2,
@@ -1255,7 +1190,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                             context)
                                                                         .primaryText,
                                                                     fontSize:
-                                                                        19.0,
+                                                                        19,
                                                                     letterSpacing:
                                                                         0.0,
                                                                     useGoogleFonts: GoogleFonts
@@ -1263,22 +1198,20 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                         .containsKey(
                                                                             FlutterFlowTheme.of(context).titleSmallFamily),
                                                                   ),
-                                                          elevation: 3.0,
+                                                          elevation: 3,
                                                           borderSide:
                                                               BorderSide(
                                                             color: Colors
                                                                 .transparent,
-                                                            width: 1.0,
+                                                            width: 1,
                                                           ),
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      8.0),
+                                                                  .circular(8),
                                                         ),
                                                       ),
                                                     ),
-                                                  ].divide(
-                                                      SizedBox(width: 15.0)),
+                                                  ].divide(SizedBox(width: 15)),
                                                 ),
                                                 Row(
                                                   mainAxisSize:
@@ -1291,8 +1224,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                         onPressed: () async {
                                                           _model.amount =
                                                               '${_model.textController1.text}.';
-                                                          setState(() {});
-                                                          setState(() {
+                                                          safeSetState(() {});
+                                                          safeSetState(() {
                                                             _model.textController1
                                                                     ?.text =
                                                                 _model.amount!;
@@ -1313,21 +1246,15 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                         ),
                                                         options:
                                                             FFButtonOptions(
-                                                          height: 50.0,
+                                                          height: 50,
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           iconPadding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .customColor2,
@@ -1343,7 +1270,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                             context)
                                                                         .primaryText,
                                                                     fontSize:
-                                                                        28.0,
+                                                                        28,
                                                                     letterSpacing:
                                                                         0.0,
                                                                     fontWeight:
@@ -1354,17 +1281,16 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                         .containsKey(
                                                                             FlutterFlowTheme.of(context).titleSmallFamily),
                                                                   ),
-                                                          elevation: 3.0,
+                                                          elevation: 3,
                                                           borderSide:
                                                               BorderSide(
                                                             color: Colors
                                                                 .transparent,
-                                                            width: 1.0,
+                                                            width: 1,
                                                           ),
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      8.0),
+                                                                  .circular(8),
                                                         ),
                                                       ),
                                                     ),
@@ -1373,8 +1299,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                         onPressed: () async {
                                                           _model.amount =
                                                               '${_model.textController1.text}0';
-                                                          setState(() {});
-                                                          setState(() {
+                                                          safeSetState(() {});
+                                                          safeSetState(() {
                                                             _model.textController1
                                                                     ?.text =
                                                                 _model.amount!;
@@ -1395,21 +1321,15 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                         ),
                                                         options:
                                                             FFButtonOptions(
-                                                          height: 50.0,
+                                                          height: 50,
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           iconPadding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .customColor2,
@@ -1425,7 +1345,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                             context)
                                                                         .primaryText,
                                                                     fontSize:
-                                                                        19.0,
+                                                                        19,
                                                                     letterSpacing:
                                                                         0.0,
                                                                     useGoogleFonts: GoogleFonts
@@ -1433,17 +1353,16 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                         .containsKey(
                                                                             FlutterFlowTheme.of(context).titleSmallFamily),
                                                                   ),
-                                                          elevation: 3.0,
+                                                          elevation: 3,
                                                           borderSide:
                                                               BorderSide(
                                                             color: Colors
                                                                 .transparent,
-                                                            width: 1.0,
+                                                            width: 1,
                                                           ),
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      8.0),
+                                                                  .circular(8),
                                                         ),
                                                       ),
                                                     ),
@@ -1459,8 +1378,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                               .taxAmtPay = 0.0;
                                                           FFAppState()
                                                               .delCharges = 0.0;
-                                                          setState(() {});
-                                                          setState(() {
+                                                          safeSetState(() {});
+                                                          safeSetState(() {
                                                             _model
                                                                 .textFielddisamtTextController
                                                                 ?.clear();
@@ -1508,7 +1427,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                           FFAppState()
                                                               .update(() {});
 
-                                                          setState(() {});
+                                                          safeSetState(() {});
                                                         },
                                                         text:
                                                             FFLocalizations.of(
@@ -1518,21 +1437,15 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                         ),
                                                         options:
                                                             FFButtonOptions(
-                                                          height: 50.0,
+                                                          height: 50,
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           iconPadding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .customColor2,
@@ -1548,7 +1461,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                             context)
                                                                         .primaryText,
                                                                     fontSize:
-                                                                        10.0,
+                                                                        10,
                                                                     letterSpacing:
                                                                         0.0,
                                                                     useGoogleFonts: GoogleFonts
@@ -1556,17 +1469,16 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                         .containsKey(
                                                                             FlutterFlowTheme.of(context).titleSmallFamily),
                                                                   ),
-                                                          elevation: 3.0,
+                                                          elevation: 3,
                                                           borderSide:
                                                               BorderSide(
                                                             color: Colors
                                                                 .transparent,
-                                                            width: 1.0,
+                                                            width: 1,
                                                           ),
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      8.0),
+                                                                  .circular(8),
                                                         ),
                                                         showLoadingIndicator:
                                                             false,
@@ -1576,8 +1488,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                       child: FFButtonWidget(
                                                         onPressed: () async {
                                                           _model.amount = '';
-                                                          setState(() {});
-                                                          setState(() {
+                                                          safeSetState(() {});
+                                                          safeSetState(() {
                                                             _model.textController1
                                                                     ?.text =
                                                                 _model.amount!;
@@ -1594,25 +1506,19 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                         icon: Icon(
                                                           Icons
                                                               .backspace_rounded,
-                                                          size: 15.0,
+                                                          size: 15,
                                                         ),
                                                         options:
                                                             FFButtonOptions(
-                                                          height: 50.0,
+                                                          height: 50,
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           iconPadding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .customColor2,
@@ -1628,7 +1534,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                             context)
                                                                         .primaryText,
                                                                     fontSize:
-                                                                        19.0,
+                                                                        19,
                                                                     letterSpacing:
                                                                         0.0,
                                                                     useGoogleFonts: GoogleFonts
@@ -1636,17 +1542,16 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                         .containsKey(
                                                                             FlutterFlowTheme.of(context).titleSmallFamily),
                                                                   ),
-                                                          elevation: 3.0,
+                                                          elevation: 3,
                                                           borderSide:
                                                               BorderSide(
                                                             color: Colors
                                                                 .transparent,
-                                                            width: 1.0,
+                                                            width: 1,
                                                           ),
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      8.0),
+                                                                  .circular(8),
                                                         ),
                                                         showLoadingIndicator:
                                                             false,
@@ -1673,10 +1578,10 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                           FFAppState()
                                                                   .groceryJson =
                                                               _model.result233!;
-                                                          setState(() {});
+                                                          safeSetState(() {});
                                                           _model.amount = '';
-                                                          setState(() {});
-                                                          setState(() {
+                                                          safeSetState(() {});
+                                                          safeSetState(() {
                                                             _model.textController1
                                                                     ?.text =
                                                                 _model.amount!;
@@ -1689,30 +1594,24 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                         .length);
                                                           });
 
-                                                          setState(() {});
+                                                          safeSetState(() {});
                                                         },
                                                         text: '',
                                                         icon: Icon(
                                                           Icons.done_sharp,
-                                                          size: 25.0,
+                                                          size: 25,
                                                         ),
                                                         options:
                                                             FFButtonOptions(
-                                                          height: 50.0,
+                                                          height: 50,
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           iconPadding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .customColor2,
@@ -1728,7 +1627,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                             context)
                                                                         .primaryText,
                                                                     fontSize:
-                                                                        19.0,
+                                                                        19,
                                                                     letterSpacing:
                                                                         0.0,
                                                                     useGoogleFonts: GoogleFonts
@@ -1736,37 +1635,35 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                         .containsKey(
                                                                             FlutterFlowTheme.of(context).titleSmallFamily),
                                                                   ),
-                                                          elevation: 3.0,
+                                                          elevation: 3,
                                                           borderSide:
                                                               BorderSide(
                                                             color: Colors
                                                                 .transparent,
-                                                            width: 1.0,
+                                                            width: 1,
                                                           ),
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      8.0),
+                                                                  .circular(8),
                                                         ),
                                                         showLoadingIndicator:
                                                             false,
                                                       ),
                                                     ),
-                                                  ].divide(
-                                                      SizedBox(width: 15.0)),
+                                                  ].divide(SizedBox(width: 15)),
                                                 ),
-                                              ].divide(SizedBox(height: 15.0)),
+                                              ].divide(SizedBox(height: 15)),
                                             ),
                                           ),
                                         ),
                                       ),
-                                    ].divide(SizedBox(width: 10.0)),
+                                    ].divide(SizedBox(width: 10)),
                                   ),
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 10.0),
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -1782,8 +1679,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                               Expanded(
                                                 flex: 7,
                                                 child: Container(
-                                                  width: 100.0,
-                                                  height: 31.0,
+                                                  width: 100,
+                                                  height: 31,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -1798,7 +1695,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                   child: Align(
                                                     alignment:
                                                         AlignmentDirectional(
-                                                            0.0, 0.0),
+                                                            0, 0),
                                                     child: Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -1816,7 +1713,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .error,
-                                                                fontSize: 17.0,
+                                                                fontSize: 17,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 useGoogleFonts: GoogleFonts
@@ -1833,11 +1730,10 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 flex: 4,
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 5.0, 0.0),
+                                                      .fromSTEB(0, 0, 5, 0),
                                                   child: Container(
-                                                    width: 100.0,
-                                                    height: 31.0,
+                                                    width: 100,
+                                                    height: 31,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
@@ -1852,7 +1748,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                     child: Align(
                                                       alignment:
                                                           AlignmentDirectional(
-                                                              0.0, 0.0),
+                                                              0, 0),
                                                       child: Text(
                                                         valueOrDefault<String>(
                                                           getJsonField(
@@ -1873,8 +1769,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .error,
-                                                                  fontSize:
-                                                                      17.0,
+                                                                  fontSize: 17,
                                                                   letterSpacing:
                                                                       0.0,
                                                                   useGoogleFonts: GoogleFonts
@@ -1892,11 +1787,10 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 flex: 7,
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          5.0, 0.0, 0.0, 0.0),
+                                                      .fromSTEB(5, 0, 0, 0),
                                                   child: Container(
-                                                    width: 100.0,
-                                                    height: 31.0,
+                                                    width: 100,
+                                                    height: 31,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
@@ -1911,7 +1805,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                     child: Align(
                                                       alignment:
                                                           AlignmentDirectional(
-                                                              0.0, 0.0),
+                                                              0, 0),
                                                       child: Text(
                                                         FFLocalizations.of(
                                                                 context)
@@ -1929,8 +1823,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryText,
-                                                                  fontSize:
-                                                                      17.0,
+                                                                  fontSize: 17,
                                                                   letterSpacing:
                                                                       0.0,
                                                                   useGoogleFonts: GoogleFonts
@@ -1947,8 +1840,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                               Expanded(
                                                 flex: 4,
                                                 child: Container(
-                                                  width: 100.0,
-                                                  height: 31.0,
+                                                  width: 100,
+                                                  height: 31,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -1963,7 +1856,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                   child: Align(
                                                     alignment:
                                                         AlignmentDirectional(
-                                                            0.0, 0.0),
+                                                            0, 0),
                                                     child: Text(
                                                       valueOrDefault<String>(
                                                         getJsonField(
@@ -1984,7 +1877,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .error,
-                                                                fontSize: 17.0,
+                                                                fontSize: 17,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 useGoogleFonts: GoogleFonts
@@ -2005,8 +1898,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                               Expanded(
                                                 flex: 7,
                                                 child: Container(
-                                                  width: 100.0,
-                                                  height: 31.0,
+                                                  width: 100,
+                                                  height: 31,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -2021,7 +1914,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                   child: Align(
                                                     alignment:
                                                         AlignmentDirectional(
-                                                            0.0, 0.0),
+                                                            0, 0),
                                                     child: Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -2039,7 +1932,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
-                                                                fontSize: 17.0,
+                                                                fontSize: 17,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 useGoogleFonts: GoogleFonts
@@ -2056,11 +1949,10 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 flex: 4,
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 5.0, 0.0),
+                                                      .fromSTEB(0, 0, 5, 0),
                                                   child: Container(
-                                                    width: 100.0,
-                                                    height: 31.0,
+                                                    width: 100,
+                                                    height: 31,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
@@ -2075,7 +1967,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                     child: Align(
                                                       alignment:
                                                           AlignmentDirectional(
-                                                              0.0, 0.0),
+                                                              0, 0),
                                                       child: Text(
                                                         valueOrDefault<String>(
                                                           getJsonField(
@@ -2096,8 +1988,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .error,
-                                                                  fontSize:
-                                                                      17.0,
+                                                                  fontSize: 17,
                                                                   letterSpacing:
                                                                       0.0,
                                                                   useGoogleFonts: GoogleFonts
@@ -2115,11 +2006,10 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 flex: 7,
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          5.0, 0.0, 0.0, 0.0),
+                                                      .fromSTEB(5, 0, 0, 0),
                                                   child: Container(
-                                                    width: 100.0,
-                                                    height: 31.0,
+                                                    width: 100,
+                                                    height: 31,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
@@ -2134,7 +2024,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                     child: Align(
                                                       alignment:
                                                           AlignmentDirectional(
-                                                              0.0, 0.0),
+                                                              0, 0),
                                                       child: Text(
                                                         FFLocalizations.of(
                                                                 context)
@@ -2152,8 +2042,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .info,
-                                                                  fontSize:
-                                                                      17.0,
+                                                                  fontSize: 17,
                                                                   letterSpacing:
                                                                       0.0,
                                                                   useGoogleFonts: GoogleFonts
@@ -2170,8 +2059,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                               Expanded(
                                                 flex: 4,
                                                 child: Container(
-                                                  width: 100.0,
-                                                  height: 31.0,
+                                                  width: 100,
+                                                  height: 31,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -2186,7 +2075,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                   child: Align(
                                                     alignment:
                                                         AlignmentDirectional(
-                                                            0.0, 0.0),
+                                                            0, 0),
                                                     child: Text(
                                                       valueOrDefault<String>(
                                                         getJsonField(
@@ -2207,7 +2096,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .error,
-                                                                fontSize: 17.0,
+                                                                fontSize: 17,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 useGoogleFonts: GoogleFonts
@@ -2228,8 +2117,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                               Expanded(
                                                 flex: 7,
                                                 child: Container(
-                                                  width: 100.0,
-                                                  height: 31.0,
+                                                  width: 100,
+                                                  height: 31,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -2244,7 +2133,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                   child: Align(
                                                     alignment:
                                                         AlignmentDirectional(
-                                                            0.0, 0.0),
+                                                            0, 0),
                                                     child: Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -2262,7 +2151,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
-                                                                fontSize: 17.0,
+                                                                fontSize: 17,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 useGoogleFonts: GoogleFonts
@@ -2279,11 +2168,10 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 flex: 4,
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 5.0, 0.0),
+                                                      .fromSTEB(0, 0, 5, 0),
                                                   child: Container(
-                                                    width: 100.0,
-                                                    height: 31.0,
+                                                    width: 100,
+                                                    height: 31,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
@@ -2298,15 +2186,12 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                     child: Align(
                                                       alignment:
                                                           AlignmentDirectional(
-                                                              0.0, 0.0),
+                                                              0, 0),
                                                       child: Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    8.0,
-                                                                    0.0,
-                                                                    8.0,
-                                                                    0.0),
+                                                                    8, 0, 8, 0),
                                                         child: TextFormField(
                                                           controller: _model
                                                               .textFielddisperTextController,
@@ -2343,7 +2228,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                   .value
                                                                   .toString(),
                                                             );
-                                                            setState(() {
+                                                            safeSetState(() {
                                                               _model.textFielddisamtTextController
                                                                       ?.text =
                                                                   FFAppState()
@@ -2375,7 +2260,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                               context)
                                                                           .error,
                                                                       fontSize:
-                                                                          17.0,
+                                                                          17,
                                                                       letterSpacing:
                                                                           0.0,
                                                                       useGoogleFonts: GoogleFonts
@@ -2410,12 +2295,12 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                   BorderSide(
                                                                 color: Color(
                                                                     0x00000000),
-                                                                width: 2.0,
+                                                                width: 2,
                                                               ),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          0.0),
+                                                                          0),
                                                             ),
                                                             focusedBorder:
                                                                 UnderlineInputBorder(
@@ -2424,12 +2309,12 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
-                                                                width: 2.0,
+                                                                width: 2,
                                                               ),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          0.0),
+                                                                          0),
                                                             ),
                                                             errorBorder:
                                                                 UnderlineInputBorder(
@@ -2438,12 +2323,12 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .error,
-                                                                width: 2.0,
+                                                                width: 2,
                                                               ),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          0.0),
+                                                                          0),
                                                             ),
                                                             focusedErrorBorder:
                                                                 UnderlineInputBorder(
@@ -2452,12 +2337,12 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .error,
-                                                                width: 2.0,
+                                                                width: 2,
                                                               ),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          0.0),
+                                                                          0),
                                                             ),
                                                           ),
                                                           style: FlutterFlowTheme
@@ -2467,7 +2352,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                 fontFamily: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMediumFamily,
-                                                                fontSize: 17.0,
+                                                                fontSize: 17,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
@@ -2495,11 +2380,10 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 flex: 7,
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          5.0, 0.0, 0.0, 0.0),
+                                                      .fromSTEB(5, 0, 0, 0),
                                                   child: Container(
-                                                    width: 100.0,
-                                                    height: 31.0,
+                                                    width: 100,
+                                                    height: 31,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
@@ -2514,7 +2398,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                     child: Align(
                                                       alignment:
                                                           AlignmentDirectional(
-                                                              0.0, 0.0),
+                                                              0, 0),
                                                       child: Text(
                                                         FFLocalizations.of(
                                                                 context)
@@ -2532,8 +2416,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .info,
-                                                                  fontSize:
-                                                                      17.0,
+                                                                  fontSize: 17,
                                                                   letterSpacing:
                                                                       0.0,
                                                                   useGoogleFonts: GoogleFonts
@@ -2550,8 +2433,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                               Expanded(
                                                 flex: 4,
                                                 child: Container(
-                                                  width: 100.0,
-                                                  height: 31.0,
+                                                  width: 100,
+                                                  height: 31,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -2566,15 +2449,12 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                   child: Align(
                                                     alignment:
                                                         AlignmentDirectional(
-                                                            0.0, 0.0),
+                                                            0, 0),
                                                     child: Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  8.0,
-                                                                  0.0,
-                                                                  8.0,
-                                                                  0.0),
+                                                                  8, 0, 8, 0),
                                                       child: TextFormField(
                                                         controller: _model
                                                             .textFielddisamtTextController,
@@ -2622,7 +2502,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                 .value
                                                                 .toString(),
                                                           );
-                                                          setState(() {
+                                                          safeSetState(() {
                                                             _model.textFielddisperTextController
                                                                     ?.text =
                                                                 FFAppState()
@@ -2653,7 +2533,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                             context)
                                                                         .error,
                                                                     fontSize:
-                                                                        17.0,
+                                                                        17,
                                                                     letterSpacing:
                                                                         0.0,
                                                                     useGoogleFonts: GoogleFonts
@@ -2688,7 +2568,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                 BorderSide(
                                                               color: Color(
                                                                   0x00000000),
-                                                              width: 2.0,
+                                                              width: 2,
                                                             ),
                                                             borderRadius:
                                                                 const BorderRadius
@@ -2708,7 +2588,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .primary,
-                                                              width: 2.0,
+                                                              width: 2,
                                                             ),
                                                             borderRadius:
                                                                 const BorderRadius
@@ -2728,7 +2608,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .error,
-                                                              width: 2.0,
+                                                              width: 2,
                                                             ),
                                                             borderRadius:
                                                                 const BorderRadius
@@ -2748,7 +2628,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .error,
-                                                              width: 2.0,
+                                                              width: 2,
                                                             ),
                                                             borderRadius:
                                                                 const BorderRadius
@@ -2770,8 +2650,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                   fontFamily: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMediumFamily,
-                                                                  fontSize:
-                                                                      17.0,
+                                                                  fontSize: 17,
                                                                   letterSpacing:
                                                                       0.0,
                                                                   useGoogleFonts: GoogleFonts
@@ -2799,8 +2678,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                               Expanded(
                                                 flex: 7,
                                                 child: Container(
-                                                  width: 100.0,
-                                                  height: 31.0,
+                                                  width: 100,
+                                                  height: 31,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -2822,7 +2701,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                       Align(
                                                         alignment:
                                                             AlignmentDirectional(
-                                                                0.0, 0.0),
+                                                                0, 0),
                                                         child: Text(
                                                           FFLocalizations.of(
                                                                   context)
@@ -2839,7 +2718,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
-                                                                fontSize: 17.0,
+                                                                fontSize: 17,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 useGoogleFonts: GoogleFonts
@@ -2853,7 +2732,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                       Align(
                                                         alignment:
                                                             AlignmentDirectional(
-                                                                0.0, 0.0),
+                                                                0, 0),
                                                         child: Text(
                                                           '(${valueOrDefault<String>(
                                                             FFAppState()
@@ -2871,7 +2750,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
-                                                                fontSize: 17.0,
+                                                                fontSize: 17,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 useGoogleFonts: GoogleFonts
@@ -2890,11 +2769,10 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 flex: 4,
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 5.0, 0.0),
+                                                      .fromSTEB(0, 0, 5, 0),
                                                   child: Container(
-                                                    width: 100.0,
-                                                    height: 31.0,
+                                                    width: 100,
+                                                    height: 31,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
@@ -2909,15 +2787,12 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                     child: Align(
                                                       alignment:
                                                           AlignmentDirectional(
-                                                              0.0, 0.0),
+                                                              0, 0),
                                                       child: Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    8.0,
-                                                                    0.0,
-                                                                    8.0,
-                                                                    0.0),
+                                                                    8, 0, 8, 0),
                                                         child: TextFormField(
                                                           controller: _model
                                                               .textFieldgstperTextController,
@@ -2964,7 +2839,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                               context)
                                                                           .error,
                                                                       fontSize:
-                                                                          17.0,
+                                                                          17,
                                                                       letterSpacing:
                                                                           0.0,
                                                                       useGoogleFonts: GoogleFonts
@@ -2999,7 +2874,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                   BorderSide(
                                                                 color: Color(
                                                                     0x00000000),
-                                                                width: 2.0,
+                                                                width: 2,
                                                               ),
                                                               borderRadius:
                                                                   const BorderRadius
@@ -3019,7 +2894,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
-                                                                width: 2.0,
+                                                                width: 2,
                                                               ),
                                                               borderRadius:
                                                                   const BorderRadius
@@ -3039,7 +2914,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .error,
-                                                                width: 2.0,
+                                                                width: 2,
                                                               ),
                                                               borderRadius:
                                                                   const BorderRadius
@@ -3059,7 +2934,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .error,
-                                                                width: 2.0,
+                                                                width: 2,
                                                               ),
                                                               borderRadius:
                                                                   const BorderRadius
@@ -3080,7 +2955,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                 fontFamily: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMediumFamily,
-                                                                fontSize: 17.0,
+                                                                fontSize: 17,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 useGoogleFonts: GoogleFonts
@@ -3105,11 +2980,10 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 flex: 7,
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          5.0, 0.0, 0.0, 0.0),
+                                                      .fromSTEB(5, 0, 0, 0),
                                                   child: Container(
-                                                    width: 100.0,
-                                                    height: 31.0,
+                                                    width: 100,
+                                                    height: 31,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
@@ -3124,7 +2998,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                     child: Align(
                                                       alignment:
                                                           AlignmentDirectional(
-                                                              0.0, 0.0),
+                                                              0, 0),
                                                       child: Text(
                                                         FFLocalizations.of(
                                                                 context)
@@ -3142,8 +3016,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .info,
-                                                                  fontSize:
-                                                                      17.0,
+                                                                  fontSize: 17,
                                                                   letterSpacing:
                                                                       0.0,
                                                                   useGoogleFonts: GoogleFonts
@@ -3160,8 +3033,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                               Expanded(
                                                 flex: 4,
                                                 child: Container(
-                                                  width: 100.0,
-                                                  height: 31.0,
+                                                  width: 100,
+                                                  height: 31,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -3176,15 +3049,12 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                   child: Align(
                                                     alignment:
                                                         AlignmentDirectional(
-                                                            0.0, 0.0),
+                                                            0, 0),
                                                     child: Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  8.0,
-                                                                  0.0,
-                                                                  8.0,
-                                                                  0.0),
+                                                                  8, 0, 8, 0),
                                                       child: TextFormField(
                                                         controller: _model
                                                             .textFieldextraTextController,
@@ -3242,7 +3112,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                             context)
                                                                         .error,
                                                                     fontSize:
-                                                                        17.0,
+                                                                        17,
                                                                     letterSpacing:
                                                                         0.0,
                                                                     useGoogleFonts: GoogleFonts
@@ -3277,7 +3147,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                 BorderSide(
                                                               color: Color(
                                                                   0x00000000),
-                                                              width: 2.0,
+                                                              width: 2,
                                                             ),
                                                             borderRadius:
                                                                 const BorderRadius
@@ -3297,7 +3167,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .primary,
-                                                              width: 2.0,
+                                                              width: 2,
                                                             ),
                                                             borderRadius:
                                                                 const BorderRadius
@@ -3317,7 +3187,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .error,
-                                                              width: 2.0,
+                                                              width: 2,
                                                             ),
                                                             borderRadius:
                                                                 const BorderRadius
@@ -3337,7 +3207,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .error,
-                                                              width: 2.0,
+                                                              width: 2,
                                                             ),
                                                             borderRadius:
                                                                 const BorderRadius
@@ -3359,8 +3229,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                                   fontFamily: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMediumFamily,
-                                                                  fontSize:
-                                                                      17.0,
+                                                                  fontSize: 17,
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
@@ -3409,7 +3278,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                           )) {
                                             FFAppState().count =
                                                 FFAppState().count + 1;
-                                            setState(() {});
+                                            safeSetState(() {});
                                           }
                                           _model.prdlistsavebill =
                                               await actions.filterProducts2(
@@ -3461,7 +3330,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                   },
                                                 );
                                                 if (_shouldSetState)
-                                                  setState(() {});
+                                                  safeSetState(() {});
                                                 return;
                                               }
                                             }
@@ -3650,7 +3519,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                     .shiftDetails
                                                     .id,
                                             );
-                                            setState(() {});
+                                            safeSetState(() {});
                                             _model.updatedShift =
                                                 await actions.hiveShiftCrud(
                                               _model.shiftidhive2,
@@ -3691,7 +3560,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             FFAppState().update(() {});
                                             Navigator.pop(context);
                                             if (_shouldSetState)
-                                              setState(() {});
+                                              safeSetState(() {});
                                             return;
                                           } else {
                                             ScaffoldMessenger.of(context)
@@ -3712,7 +3581,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                               ),
                                             );
                                             if (_shouldSetState)
-                                              setState(() {});
+                                              safeSetState(() {});
                                             return;
                                           }
                                         } else {
@@ -3734,23 +3603,25 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                       .alternate,
                                             ),
                                           );
-                                          if (_shouldSetState) setState(() {});
+                                          if (_shouldSetState)
+                                            safeSetState(() {});
                                           return;
                                         }
 
-                                        if (_shouldSetState) setState(() {});
+                                        if (_shouldSetState)
+                                          safeSetState(() {});
                                       },
                                       text: FFLocalizations.of(context).getText(
                                         '93l6u4so' /* Save */,
                                       ),
                                       options: FFButtonOptions(
-                                        width: 90.0,
-                                        height: 50.0,
+                                        width: 90,
+                                        height: 50,
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            24.0, 0.0, 24.0, 0.0),
+                                            24, 0, 24, 0),
                                         iconPadding:
                                             EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
+                                                0, 0, 0, 0),
                                         color: FlutterFlowTheme.of(context)
                                             .customColor2,
                                         textStyle: FlutterFlowTheme.of(context)
@@ -3771,8 +3642,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                         borderSide: BorderSide(
                                           color: Colors.transparent,
                                         ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
+                                        borderRadius: BorderRadius.circular(8),
                                       ),
                                     ),
                                   ),
@@ -3791,11 +3661,11 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                           )) {
                                             FFAppState().count =
                                                 FFAppState().count + 1;
-                                            setState(() {});
+                                            safeSetState(() {});
                                           } else {
                                             FFAppState().count =
                                                 FFAppState().count + 1;
-                                            setState(() {});
+                                            safeSetState(() {});
                                           }
 
                                           _model.prdlinstnewtx =
@@ -3881,7 +3751,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                   },
                                                 );
                                                 if (_shouldSetState)
-                                                  setState(() {});
+                                                  safeSetState(() {});
                                                 return;
                                               }
                                             } else {
@@ -3903,7 +3773,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 },
                                               );
                                               if (_shouldSetState)
-                                                setState(() {});
+                                                safeSetState(() {});
                                               return;
                                             }
                                           }
@@ -4083,7 +3953,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                     .shiftDetails
                                                     .id,
                                             );
-                                            setState(() {});
+                                            safeSetState(() {});
                                             _model.updatedShiftDetails =
                                                 await actions.hiveShiftCrud(
                                               FFAppState()
@@ -4112,7 +3982,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                               ),
                                             );
                                             if (_shouldSetState)
-                                              setState(() {});
+                                              safeSetState(() {});
                                             return;
                                           }
 
@@ -4189,7 +4059,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             FFAppState().update(() {});
                                             Navigator.pop(context);
                                             if (_shouldSetState)
-                                              setState(() {});
+                                              safeSetState(() {});
                                             return;
                                           } else {
                                             await showDialog(
@@ -4212,7 +4082,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                               },
                                             );
                                             if (_shouldSetState)
-                                              setState(() {});
+                                              safeSetState(() {});
                                             return;
                                           }
                                         } else {
@@ -4236,19 +4106,20 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                           );
                                         }
 
-                                        if (_shouldSetState) setState(() {});
+                                        if (_shouldSetState)
+                                          safeSetState(() {});
                                       },
                                       text: FFLocalizations.of(context).getText(
                                         'yftp2ms2' /* Print */,
                                       ),
                                       options: FFButtonOptions(
-                                        width: 90.0,
-                                        height: 50.0,
+                                        width: 90,
+                                        height: 50,
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            24.0, 0.0, 24.0, 0.0),
+                                            24, 0, 24, 0),
                                         iconPadding:
                                             EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
+                                                0, 0, 0, 0),
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         textStyle: FlutterFlowTheme.of(context)
@@ -4269,17 +4140,16 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                               context)
                                                           .headlineLargeFamily),
                                             ),
-                                        elevation: 3.0,
+                                        elevation: 3,
                                         borderSide: BorderSide(
                                           color: Colors.transparent,
-                                          width: 1.0,
+                                          width: 1,
                                         ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
+                                        borderRadius: BorderRadius.circular(8),
                                       ),
                                     ),
                                   ),
-                                ].divide(SizedBox(width: 10.0)),
+                                ].divide(SizedBox(width: 10)),
                               ),
                             ],
                           ),

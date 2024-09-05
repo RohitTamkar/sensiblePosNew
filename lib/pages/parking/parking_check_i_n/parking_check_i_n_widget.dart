@@ -48,7 +48,7 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
     _model.advanceAmtTextController ??= TextEditingController();
     _model.advanceAmtFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -71,7 +71,7 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
             key: scaffoldKey,
             backgroundColor: Color(0x2712191C),
             body: Align(
-              alignment: AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0, 0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -82,7 +82,7 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                     hoverColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     onTap: () async {
-                      setState(() {});
+                      safeSetState(() {});
                     },
                     child: Container(
                       width: MediaQuery.sizeOf(context).width * 0.85,
@@ -90,42 +90,41 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                         boxShadow: [
                           BoxShadow(
-                            blurRadius: 10.0,
+                            blurRadius: 10,
                             color: Color(0x33000000),
                             offset: Offset(
-                              3.0,
-                              6.0,
+                              3,
+                              6,
                             ),
                           )
                         ],
-                        borderRadius: BorderRadius.circular(15.0),
+                        borderRadius: BorderRadius.circular(15),
                       ),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            20.0, 20.0, 20.0, 20.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 10.0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   FlutterFlowIconButton(
-                                    borderRadius: 5.0,
-                                    buttonSize: 40.0,
+                                    borderRadius: 5,
+                                    buttonSize: 40,
                                     fillColor: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
                                     icon: Icon(
                                       Icons.settings_sharp,
                                       color: FlutterFlowTheme.of(context)
                                           .parkingPrimary,
-                                      size: 20.0,
+                                      size: 20,
                                     ),
                                     onPressed: () async {
                                       context.pushNamed(
@@ -141,14 +140,14 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                     },
                                   ),
                                   FlutterFlowIconButton(
-                                    borderRadius: 5.0,
-                                    buttonSize: 40.0,
+                                    borderRadius: 5,
+                                    buttonSize: 40,
                                     fillColor: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
                                     icon: Icon(
                                       Icons.clear,
                                       color: Color(0xFFFF5963),
-                                      size: 24.0,
+                                      size: 24,
                                     ),
                                     onPressed: () async {
                                       context.pushNamed(
@@ -173,12 +172,12 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                       );
                                     },
                                   ),
-                                ].divide(SizedBox(width: 10.0)),
+                                ].divide(SizedBox(width: 10)),
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 10.0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -198,13 +197,13 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                         if (!snapshot.hasData) {
                                           return Center(
                                             child: SizedBox(
-                                              width: 40.0,
-                                              height: 40.0,
+                                              width: 40,
+                                              height: 40,
                                               child: SpinKitFadingCircle(
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
-                                                size: 40.0,
+                                                size: 40,
                                               ),
                                             ),
                                           );
@@ -222,7 +221,7 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                                   .map((e) => e.name)
                                                   .toList(),
                                           onChanged: (val) async {
-                                            setState(() => _model
+                                            safeSetState(() => _model
                                                 .dropDownvechicleValue = val);
                                             _model.prd =
                                                 await queryProductRecordOnce(
@@ -236,17 +235,17 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                               singleRecord: true,
                                             ).then((s) => s.firstOrNull);
                                             FFAppState().parkingCharges = 0.0;
-                                            setState(() {});
+                                            safeSetState(() {});
                                             FFAppState().parkingCharges =
                                                 valueOrDefault<double>(
                                               _model.prd?.sellingPrice,
                                               0.0,
                                             );
-                                            setState(() {});
+                                            safeSetState(() {});
 
-                                            setState(() {});
+                                            safeSetState(() {});
                                           },
-                                          width: 300.0,
+                                          width: 300,
                                           textStyle: FlutterFlowTheme.of(
                                                   context)
                                               .titleMedium
@@ -271,20 +270,20 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                             Icons.keyboard_arrow_down_rounded,
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryText,
-                                            size: 24.0,
+                                            size: 24,
                                           ),
                                           fillColor:
                                               FlutterFlowTheme.of(context)
                                                   .secondaryBackground,
-                                          elevation: 2.0,
+                                          elevation: 2,
                                           borderColor:
                                               FlutterFlowTheme.of(context)
                                                   .accent3,
-                                          borderWidth: 2.0,
-                                          borderRadius: 8.0,
+                                          borderWidth: 2,
+                                          borderRadius: 8,
                                           margin:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 4.0, 16.0, 4.0),
+                                                  16, 4, 16, 4),
                                           hidesUnderline: true,
                                           isOverButton: true,
                                           isSearchable: false,
@@ -297,8 +296,8 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 10.0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
                               child: TextFormField(
                                 controller: _model.textController1,
                                 focusNode: _model.textFieldFocusNode,
@@ -336,31 +335,31 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                     borderSide: BorderSide(
                                       color:
                                           FlutterFlowTheme.of(context).accent3,
-                                      width: 2.0,
+                                      width: 2,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      width: 2.0,
+                                      width: 2,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   errorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).error,
-                                      width: 2.0,
+                                      width: 2,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: FlutterFlowTheme.of(context).error,
-                                      width: 2.0,
+                                      width: 2,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                 ),
                                 style: FlutterFlowTheme.of(context)
@@ -381,8 +380,8 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 10.0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -398,7 +397,7 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                             fontFamily:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMediumFamily,
-                                            fontSize: 16.0,
+                                            fontSize: 16,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                             useGoogleFonts: GoogleFonts.asMap()
@@ -412,7 +411,7 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                     flex: 2,
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          10.0, 0.0, 0.0, 0.0),
+                                          10, 0, 0, 0),
                                       child: StreamBuilder<
                                           List<PaymentModeRecord>>(
                                         stream: queryPaymentModeRecord(),
@@ -421,13 +420,13 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                           if (!snapshot.hasData) {
                                             return Center(
                                               child: SizedBox(
-                                                width: 40.0,
-                                                height: 40.0,
+                                                width: 40,
+                                                height: 40,
                                                 child: SpinKitFadingCircle(
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
-                                                  size: 40.0,
+                                                  size: 40,
                                                 ),
                                               ),
                                             );
@@ -445,9 +444,10 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                                 dropDownPaymentModeRecordList
                                                     .map((e) => e.name)
                                                     .toList(),
-                                            onChanged: (val) => setState(() =>
-                                                _model.dropDownValue = val),
-                                            width: 300.0,
+                                            onChanged: (val) => safeSetState(
+                                                () =>
+                                                    _model.dropDownValue = val),
+                                            width: 300,
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .labelLarge
@@ -474,20 +474,20 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
-                                              size: 24.0,
+                                              size: 24,
                                             ),
                                             fillColor:
                                                 FlutterFlowTheme.of(context)
                                                     .secondaryBackground,
-                                            elevation: 2.0,
+                                            elevation: 2,
                                             borderColor:
                                                 FlutterFlowTheme.of(context)
                                                     .accent3,
-                                            borderWidth: 2.0,
-                                            borderRadius: 8.0,
+                                            borderWidth: 2,
+                                            borderRadius: 8,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    10.0, 4.0, 5.0, 4.0),
+                                                    10, 4, 5, 4),
                                             hidesUnderline: true,
                                             isOverButton: true,
                                             isSearchable: false,
@@ -506,7 +506,7 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                 Expanded(
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 30.0),
+                                        0, 0, 0, 30),
                                     child: TextFormField(
                                       controller:
                                           _model.advanceAmtTextController,
@@ -550,37 +550,37 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
                                                 .accent3,
-                                            width: 2.0,
+                                            width: 2,
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(8.0),
+                                              BorderRadius.circular(8),
                                         ),
                                         focusedBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
-                                            width: 2.0,
+                                            width: 2,
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(8.0),
+                                              BorderRadius.circular(8),
                                         ),
                                         errorBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
                                                 .error,
-                                            width: 2.0,
+                                            width: 2,
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(8.0),
+                                              BorderRadius.circular(8),
                                         ),
                                         focusedErrorBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
                                                 .error,
-                                            width: 2.0,
+                                            width: 2,
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(8.0),
+                                              BorderRadius.circular(8),
                                         ),
                                       ),
                                       style: FlutterFlowTheme.of(context)
@@ -643,18 +643,18 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                         _model.countdatagetPRINT?.count,
                                         1,
                                       );
-                                      setState(() {});
+                                      safeSetState(() {});
                                       if (getJsonField(
                                         widget!.shiftDoc,
                                         r'''$.shiftExists''',
                                       )) {
                                         FFAppState().count =
                                             FFAppState().count + 1;
-                                        setState(() {});
+                                        safeSetState(() {});
                                       } else {
                                         FFAppState().count =
                                             FFAppState().count + 1;
-                                        setState(() {});
+                                        safeSetState(() {});
                                       }
 
                                       FFAppState()
@@ -664,7 +664,7 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                         price: FFAppState().parkingCharges,
                                         categoryP: _model.dropDownvechicleValue,
                                       ));
-                                      setState(() {});
+                                      safeSetState(() {});
 
                                       var invoiceRecordReference =
                                           InvoiceRecord.createDoc(
@@ -899,7 +899,8 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                             backgroundColor: Color(0x00000000),
                                           ),
                                         );
-                                        if (_shouldSetState) setState(() {});
+                                        if (_shouldSetState)
+                                          safeSetState(() {});
                                         return;
                                       }
 
@@ -981,7 +982,8 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                           }.withoutNulls,
                                         );
 
-                                        if (_shouldSetState) setState(() {});
+                                        if (_shouldSetState)
+                                          safeSetState(() {});
                                         return;
                                       } else {
                                         await showDialog(
@@ -1022,21 +1024,21 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                       );
                                     }
 
-                                    if (_shouldSetState) setState(() {});
+                                    if (_shouldSetState) safeSetState(() {});
                                   },
                                   text: FFLocalizations.of(context).getText(
                                     'vwt3qvjt' /* PRINT */,
                                   ),
                                   icon: Icon(
                                     Icons.print_outlined,
-                                    size: 18.0,
+                                    size: 18,
                                   ),
                                   options: FFButtonOptions(
-                                    height: 45.0,
+                                    height: 45,
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        24.0, 0.0, 24.0, 0.0),
+                                        24, 0, 24, 0),
                                     iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
+                                        0, 0, 0, 0),
                                     color: FlutterFlowTheme.of(context)
                                         .parkingSecondaryBackground,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -1053,12 +1055,12 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmallFamily),
                                         ),
-                                    elevation: 3.0,
+                                    elevation: 3,
                                     borderSide: BorderSide(
                                       color: Colors.transparent,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                 ),
                                 FFButtonWidget(
@@ -1090,18 +1092,18 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                       _shouldSetState = true;
                                       FFAppState().count =
                                           _model.countdataget!.count;
-                                      setState(() {});
+                                      safeSetState(() {});
                                       if (getJsonField(
                                         widget!.shiftDoc,
                                         r'''$.shiftExists''',
                                       )) {
                                         FFAppState().count =
                                             FFAppState().count + 1;
-                                        setState(() {});
+                                        safeSetState(() {});
                                       } else {
                                         FFAppState().count =
                                             FFAppState().count + 1;
-                                        setState(() {});
+                                        safeSetState(() {});
                                       }
 
                                       FFAppState()
@@ -1111,7 +1113,7 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                         price: FFAppState().parkingCharges,
                                         categoryP: _model.dropDownvechicleValue,
                                       ));
-                                      setState(() {});
+                                      safeSetState(() {});
 
                                       var invoiceRecordReference =
                                           InvoiceRecord.createDoc(
@@ -1338,7 +1340,8 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                           }.withoutNulls,
                                         );
 
-                                        if (_shouldSetState) setState(() {});
+                                        if (_shouldSetState)
+                                          safeSetState(() {});
                                         return;
                                       } else {
                                         ScaffoldMessenger.of(context)
@@ -1357,7 +1360,8 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                             backgroundColor: Color(0x00000000),
                                           ),
                                         );
-                                        if (_shouldSetState) setState(() {});
+                                        if (_shouldSetState)
+                                          safeSetState(() {});
                                         return;
                                       }
                                     } else {
@@ -1379,17 +1383,17 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                       );
                                     }
 
-                                    if (_shouldSetState) setState(() {});
+                                    if (_shouldSetState) safeSetState(() {});
                                   },
                                   text: FFLocalizations.of(context).getText(
                                     'f34rpgfl' /* SAVE */,
                                   ),
                                   options: FFButtonOptions(
-                                    height: 45.0,
+                                    height: 45,
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        24.0, 0.0, 24.0, 0.0),
+                                        24, 0, 24, 0),
                                     iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
+                                        0, 0, 0, 0),
                                     color: FlutterFlowTheme.of(context).info,
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
@@ -1405,15 +1409,15 @@ class _ParkingCheckINWidgetState extends State<ParkingCheckINWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmallFamily),
                                         ),
-                                    elevation: 3.0,
+                                    elevation: 3,
                                     borderSide: BorderSide(
                                       color: Colors.transparent,
-                                      width: 1.0,
+                                      width: 1,
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                 ),
-                              ].divide(SizedBox(width: 6.0)),
+                              ].divide(SizedBox(width: 6)),
                             ),
                           ],
                         ),

@@ -15,7 +15,6 @@ import 'package:provider/provider.dart';
 class MKPrinterSettingModel extends FlutterFlowModel<MKPrinterSettingWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for DropDown widget.
   String? dropDownValue1;
   FormFieldController<String>? dropDownValueController1;

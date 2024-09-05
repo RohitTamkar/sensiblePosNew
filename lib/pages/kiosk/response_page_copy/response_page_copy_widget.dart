@@ -58,12 +58,12 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       FFAppState().shiftDetailsNEw = widget!.shiftdetails!;
       FFAppState().msg = widget!.doc!.msg;
-      setState(() {});
+      safeSetState(() {});
       FFAppState().shiftDetailsJson = widget!.shiftdetails!;
       FFAppState().kioskAmt = FFAppState().finalAmt;
-      setState(() {});
+      safeSetState(() {});
       FFAppState().shiftexist = 'True';
-      setState(() {});
+      safeSetState(() {});
       if (!FFAppState().isBillPrinted) {
         if (widget!.doc!.status) {
           _model.prdListkiosk = await actions.filterProducts(
@@ -183,9 +183,9 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
               ),
               0,
             );
-            setState(() {});
+            safeSetState(() {});
             FFAppState().billcount = FFAppState().billcount + 1;
-            setState(() {});
+            safeSetState(() {});
             _model.shiftSummarRkiosk = await actions.calShiftSummary(
               _model.docInvoicekiosk!,
               FFAppState().shiftDetailsJson,
@@ -515,7 +515,7 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
       ),
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -540,13 +540,13 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
               key: scaffoldKey,
               backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
               body: Padding(
-                padding: EdgeInsets.all(20.0),
+                padding: EdgeInsets.all(20),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     wrapWithModel(
                       model: _model.kioskHeaderModel,
-                      updateCallback: () => setState(() {}),
+                      updateCallback: () => safeSetState(() {}),
                       child: KioskHeaderWidget(),
                     ),
                     Expanded(
@@ -555,7 +555,7 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
                           if (widget!.doc?.status ?? true)
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  50.0, 50.0, 50.0, 50.0),
+                                  50, 50, 50, 50),
                               child: Container(
                                 width: double.infinity,
                                 height: double.infinity,
@@ -563,15 +563,15 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
                                   borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(6.0),
-                                    bottomRight: Radius.circular(6.0),
-                                    topLeft: Radius.circular(6.0),
-                                    topRight: Radius.circular(6.0),
+                                    bottomLeft: Radius.circular(6),
+                                    bottomRight: Radius.circular(6),
+                                    topLeft: Radius.circular(6),
+                                    topRight: Radius.circular(6),
                                   ),
                                   border: Border.all(
                                     color:
                                         FlutterFlowTheme.of(context).tertiary,
-                                    width: 2.0,
+                                    width: 2,
                                   ),
                                 ),
                                 child: Column(
@@ -580,7 +580,7 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 75.0),
+                                          0, 0, 0, 75),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
                                           '8qbzlfkm' /* Thank You ! */,
@@ -594,7 +594,7 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .success,
-                                              fontSize: 36.0,
+                                              fontSize: 36,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
                                               fontStyle: FontStyle.italic,
@@ -610,7 +610,7 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
                                     ),
                                     wrapWithModel(
                                       model: _model.transactionStatusModel,
-                                      updateCallback: () => setState(() {}),
+                                      updateCallback: () => safeSetState(() {}),
                                       child: TransactionStatusWidget(),
                                     ).animateOnPageLoad(animationsMap[
                                         'transactionStatusOnPageLoadAnimation']!),
@@ -788,7 +788,8 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
                                             },
                                           );
 
-                                          if (_shouldSetState) setState(() {});
+                                          if (_shouldSetState)
+                                            safeSetState(() {});
                                           return;
                                         } else {
                                           await showDialog(
@@ -815,7 +816,8 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
                                               .pushNamed('printSettingkiosk');
                                         }
 
-                                        if (_shouldSetState) setState(() {});
+                                        if (_shouldSetState)
+                                          safeSetState(() {});
                                       },
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -830,7 +832,7 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              fontSize: 16.0,
+                                              fontSize: 16,
                                               letterSpacing: 0.0,
                                               useGoogleFonts: GoogleFonts
                                                       .asMap()
@@ -848,7 +850,7 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
                           if (!widget!.doc!.status)
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  50.0, 50.0, 50.0, 50.0),
+                                  50, 50, 50, 50),
                               child: Container(
                                 width: double.infinity,
                                 height: double.infinity,
@@ -856,15 +858,15 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
                                   borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(6.0),
-                                    bottomRight: Radius.circular(6.0),
-                                    topLeft: Radius.circular(6.0),
-                                    topRight: Radius.circular(6.0),
+                                    bottomLeft: Radius.circular(6),
+                                    bottomRight: Radius.circular(6),
+                                    topLeft: Radius.circular(6),
+                                    topRight: Radius.circular(6),
                                   ),
                                   border: Border.all(
                                     color:
                                         FlutterFlowTheme.of(context).tertiary,
-                                    width: 2.0,
+                                    width: 2,
                                   ),
                                 ),
                                 child: Column(
@@ -874,7 +876,7 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
                                     wrapWithModel(
                                       model:
                                           _model.transactionStatusFailedModel,
-                                      updateCallback: () => setState(() {}),
+                                      updateCallback: () => safeSetState(() {}),
                                       child: TransactionStatusFailedWidget(),
                                     ).animateOnPageLoad(animationsMap[
                                         'transactionStatusFailedOnPageLoadAnimation']!),
@@ -885,7 +887,7 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
                           if (widget!.doc?.resultStatus == 'PENDING')
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  50.0, 50.0, 50.0, 50.0),
+                                  50, 50, 50, 50),
                               child: Container(
                                 width: double.infinity,
                                 height: double.infinity,
@@ -893,15 +895,15 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
                                   borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(6.0),
-                                    bottomRight: Radius.circular(6.0),
-                                    topLeft: Radius.circular(6.0),
-                                    topRight: Radius.circular(6.0),
+                                    bottomLeft: Radius.circular(6),
+                                    bottomRight: Radius.circular(6),
+                                    topLeft: Radius.circular(6),
+                                    topRight: Radius.circular(6),
                                   ),
                                   border: Border.all(
                                     color:
                                         FlutterFlowTheme.of(context).tertiary,
-                                    width: 2.0,
+                                    width: 2,
                                   ),
                                 ),
                                 child: Column(
@@ -911,7 +913,7 @@ class _ResponsePageCopyWidgetState extends State<ResponsePageCopyWidget>
                                     wrapWithModel(
                                       model:
                                           _model.transactionStatusPendingModel,
-                                      updateCallback: () => setState(() {}),
+                                      updateCallback: () => safeSetState(() {}),
                                       child: TransactionStatusPendingWidget(),
                                     ).animateOnPageLoad(animationsMap[
                                         'transactionStatusPendingOnPageLoadAnimation']!),

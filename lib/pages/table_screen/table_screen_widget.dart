@@ -52,7 +52,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
       vsync: this,
       length: 2,
       initialIndex: 0,
-    )..addListener(() => setState(() {}));
+    )..addListener(() => safeSetState(() {}));
     _model.textController4 ??= TextEditingController();
     _model.textFieldFocusNode4 ??= FocusNode();
 
@@ -62,7 +62,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
     _model.textFieldsearchTextController ??= TextEditingController();
     _model.textFieldsearchFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -87,10 +87,10 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
             drawer: Container(
               width: MediaQuery.sizeOf(context).width * 0.11,
               child: Drawer(
-                elevation: 16.0,
+                elevation: 16,
                 child: wrapWithModel(
                   model: _model.menuDrawerModel,
-                  updateCallback: () => setState(() {}),
+                  updateCallback: () => safeSetState(() {}),
                   child: MenuDrawerWidget(),
                 ),
               ),
@@ -98,7 +98,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
             endDrawer: Container(
               width: MediaQuery.sizeOf(context).width * 0.45,
               child: Drawer(
-                elevation: 16.0,
+                elevation: 16,
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -112,11 +112,11 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                         if (!snapshot.hasData) {
                           return Center(
                             child: SizedBox(
-                              width: 40.0,
-                              height: 40.0,
+                              width: 40,
+                              height: 40,
                               child: SpinKitFadingCircle(
                                 color: FlutterFlowTheme.of(context).primary,
-                                size: 40.0,
+                                size: 40,
                               ),
                             ),
                           );
@@ -125,14 +125,14 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                             snapshot.data!;
 
                         return Container(
-                          width: MediaQuery.sizeOf(context).width * 1.0,
-                          height: MediaQuery.sizeOf(context).height * 1.0,
+                          width: MediaQuery.sizeOf(context).width,
+                          height: MediaQuery.sizeOf(context).height * 1,
                           decoration: BoxDecoration(
                             color:
                                 FlutterFlowTheme.of(context).primaryBackground,
                           ),
                           child: Padding(
-                            padding: EdgeInsets.all(10.0),
+                            padding: EdgeInsets.all(10),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -153,14 +153,14 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                     children: [
                                       FlutterFlowIconButton(
                                         borderColor: Colors.transparent,
-                                        borderRadius: 30.0,
-                                        borderWidth: 1.0,
-                                        buttonSize: 40.0,
+                                        borderRadius: 30,
+                                        borderWidth: 1,
+                                        buttonSize: 40,
                                         icon: Icon(
                                           Icons.chevron_left,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
-                                          size: 22.0,
+                                          size: 22,
                                         ),
                                         onPressed: () async {
                                           context.pop();
@@ -174,8 +174,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      20.0, 0.0, 0.0, 0.0),
+                                                  .fromSTEB(20, 0, 0, 0),
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -204,14 +203,14 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                       ),
                                       FlutterFlowIconButton(
                                         borderColor: Colors.transparent,
-                                        borderRadius: 30.0,
-                                        borderWidth: 1.0,
-                                        buttonSize: 40.0,
+                                        borderRadius: 30,
+                                        borderWidth: 1,
+                                        buttonSize: 40,
                                         icon: Icon(
                                           Icons.person_add,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
-                                          size: 22.0,
+                                          size: 22,
                                         ),
                                         onPressed: () async {
                                           context.pushNamed('AddCustomer');
@@ -222,10 +221,10 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 10.0, 0.0, 0.0),
+                                      0, 10, 0, 0),
                                   child: Material(
                                     color: Colors.transparent,
-                                    elevation: 2.0,
+                                    elevation: 2,
                                     child: Container(
                                       width: double.infinity,
                                       height:
@@ -243,7 +242,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                           Expanded(
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(6.0, 0.0, 0.0, 0.0),
+                                                  .fromSTEB(6, 0, 0, 0),
                                               child: TextFormField(
                                                 controller: _model
                                                     .textFieldsearchTextController,
@@ -402,9 +401,9 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                             ),
                                             child: FlutterFlowIconButton(
                                               borderColor: Colors.transparent,
-                                              borderRadius: 30.0,
-                                              borderWidth: 1.0,
-                                              buttonSize: 50.0,
+                                              borderRadius: 30,
+                                              borderWidth: 1,
+                                              buttonSize: 50,
                                               fillColor:
                                                   FlutterFlowTheme.of(context)
                                                       .secondary,
@@ -413,7 +412,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryBtnText,
-                                                size: 22.0,
+                                                size: 22,
                                               ),
                                               onPressed: () {
                                                 print('IconButton pressed ...');
@@ -427,7 +426,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 5.0, 0.0, 0.0),
+                                      0, 5, 0, 0),
                                   child: Container(
                                     width: double.infinity,
                                     height:
@@ -437,11 +436,11 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                           .secondaryBackground,
                                       boxShadow: [
                                         BoxShadow(
-                                          blurRadius: 3.0,
+                                          blurRadius: 3,
                                           color: Color(0x33000000),
                                           offset: Offset(
-                                            0.0,
-                                            1.0,
+                                            0,
+                                            1,
                                           ),
                                         )
                                       ],
@@ -510,16 +509,16 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                               BorderRadius.only(
                                                             bottomLeft:
                                                                 Radius.circular(
-                                                                    4.0),
+                                                                    4),
                                                             bottomRight:
                                                                 Radius.circular(
-                                                                    4.0),
+                                                                    4),
                                                             topLeft:
                                                                 Radius.circular(
-                                                                    4.0),
+                                                                    4),
                                                             topRight:
                                                                 Radius.circular(
-                                                                    4.0),
+                                                                    4),
                                                           ),
                                                         ),
                                                         child: Row(
@@ -532,17 +531,16 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                             FlutterFlowIconButton(
                                                               borderColor: Colors
                                                                   .transparent,
-                                                              borderRadius:
-                                                                  30.0,
-                                                              borderWidth: 1.0,
-                                                              buttonSize: 60.0,
+                                                              borderRadius: 30,
+                                                              borderWidth: 1,
+                                                              buttonSize: 60,
                                                               icon: Icon(
                                                                 Icons
                                                                     .account_circle,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
-                                                                size: 30.0,
+                                                                size: 30,
                                                               ),
                                                               onPressed: () {
                                                                 print(
@@ -551,7 +549,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                             ),
                                                             Expanded(
                                                               child: Container(
-                                                                width: 170.0,
+                                                                width: 170,
                                                                 height: MediaQuery.sizeOf(
                                                                             context)
                                                                         .height *
@@ -624,7 +622,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                             ),
                                                             Expanded(
                                                               child: Container(
-                                                                width: 100.0,
+                                                                width: 100,
                                                                 height: MediaQuery.sizeOf(
                                                                             context)
                                                                         .height *
@@ -661,7 +659,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                       width: double
                                                                           .infinity,
                                                                       height:
-                                                                          20.0,
+                                                                          20,
                                                                       decoration:
                                                                           BoxDecoration(),
                                                                       child:
@@ -719,11 +717,11 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                           Colors
                                                                               .transparent,
                                                                       borderRadius:
-                                                                          30.0,
+                                                                          30,
                                                                       borderWidth:
-                                                                          1.0,
+                                                                          1,
                                                                       buttonSize:
-                                                                          60.0,
+                                                                          60,
                                                                       icon:
                                                                           Icon(
                                                                         Icons
@@ -731,7 +729,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .secondary,
                                                                         size:
-                                                                            24.0,
+                                                                            24,
                                                                       ),
                                                                       onPressed:
                                                                           () async {
@@ -818,16 +816,16 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                               BorderRadius.only(
                                                             bottomLeft:
                                                                 Radius.circular(
-                                                                    4.0),
+                                                                    4),
                                                             bottomRight:
                                                                 Radius.circular(
-                                                                    4.0),
+                                                                    4),
                                                             topLeft:
                                                                 Radius.circular(
-                                                                    4.0),
+                                                                    4),
                                                             topRight:
                                                                 Radius.circular(
-                                                                    4.0),
+                                                                    4),
                                                           ),
                                                         ),
                                                         child: Row(
@@ -840,17 +838,16 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                             FlutterFlowIconButton(
                                                               borderColor: Colors
                                                                   .transparent,
-                                                              borderRadius:
-                                                                  30.0,
-                                                              borderWidth: 1.0,
-                                                              buttonSize: 60.0,
+                                                              borderRadius: 30,
+                                                              borderWidth: 1,
+                                                              buttonSize: 60,
                                                               icon: Icon(
                                                                 Icons
                                                                     .account_circle,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
-                                                                size: 30.0,
+                                                                size: 30,
                                                               ),
                                                               onPressed: () {
                                                                 print(
@@ -859,7 +856,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                             ),
                                                             Expanded(
                                                               child: Container(
-                                                                width: 170.0,
+                                                                width: 170,
                                                                 height: MediaQuery.sizeOf(
                                                                             context)
                                                                         .height *
@@ -932,7 +929,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                             ),
                                                             Expanded(
                                                               child: Container(
-                                                                width: 100.0,
+                                                                width: 100,
                                                                 height: MediaQuery.sizeOf(
                                                                             context)
                                                                         .height *
@@ -1016,11 +1013,11 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                           Colors
                                                                               .transparent,
                                                                       borderRadius:
-                                                                          30.0,
+                                                                          30,
                                                                       borderWidth:
-                                                                          1.0,
+                                                                          1,
                                                                       buttonSize:
-                                                                          60.0,
+                                                                          60,
                                                                       icon:
                                                                           Icon(
                                                                         Icons
@@ -1028,7 +1025,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .secondary,
                                                                         size:
-                                                                            24.0,
+                                                                            24,
                                                                       ),
                                                                       onPressed:
                                                                           () async {
@@ -1074,7 +1071,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
               ),
             ),
             body: Padding(
-              padding: EdgeInsets.all(3.0),
+              padding: EdgeInsets.all(3),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1084,7 +1081,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                     children: [
                       Expanded(
                         child: Container(
-                          width: 100.0,
+                          width: 100,
                           height: MediaQuery.sizeOf(context).height * 0.04,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context).primary,
@@ -1097,12 +1094,12 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                               if (!snapshot.hasData) {
                                 return Center(
                                   child: SizedBox(
-                                    width: 40.0,
-                                    height: 40.0,
+                                    width: 40,
+                                    height: 40,
                                     child: SpinKitFadingCircle(
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      size: 40.0,
+                                      size: 40,
                                     ),
                                   ),
                                 );
@@ -1116,7 +1113,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 3.0, 0.0),
+                                        0, 0, 3, 0),
                                     child: Text(
                                       rowUserProfileRecord.name,
                                       style: FlutterFlowTheme.of(context)
@@ -1138,7 +1135,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 6.0, 0.0),
+                                        0, 0, 6, 0),
                                     child: Text(
                                       rowUserProfileRecord.role,
                                       style: FlutterFlowTheme.of(context)
@@ -1159,7 +1156,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 6.0, 0.0),
+                                        0, 0, 6, 0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
                                         'zdmevq8v' /* 15-09-2022 14:41 */,
@@ -1192,8 +1189,8 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                         decoration: BoxDecoration(),
                         child: Image.asset(
                           'assets/images/IMG_20220412_140945.png',
-                          width: 100.0,
-                          height: 100.0,
+                          width: 100,
+                          height: 100,
                           fit: BoxFit.contain,
                         ),
                       ),
@@ -1201,15 +1198,14 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                   ),
                   Expanded(
                     child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Expanded(
                             flex: 15,
                             child: Container(
-                              width: 100.0,
+                              width: 100,
                               height: double.infinity,
                               decoration: BoxDecoration(),
                               child: Column(
@@ -1217,7 +1213,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 3.0),
+                                        0, 0, 0, 3),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -1254,7 +1250,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .lineColor,
-                                                  size: 18.0,
+                                                  size: 18,
                                                 ),
                                               ],
                                             ),
@@ -1264,7 +1260,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 3.0, 0.0),
+                                                    0, 0, 3, 0),
                                             child: Container(
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
@@ -1277,7 +1273,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
                                                 borderRadius:
-                                                    BorderRadius.circular(0.0),
+                                                    BorderRadius.circular(0),
                                               ),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
@@ -1315,7 +1311,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 3.0, 0.0),
+                                                    0, 0, 3, 0),
                                             child: Container(
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
@@ -1328,7 +1324,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
                                                 borderRadius:
-                                                    BorderRadius.circular(0.0),
+                                                    BorderRadius.circular(0),
                                               ),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
@@ -1366,7 +1362,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 3.0, 0.0),
+                                                    0, 0, 3, 0),
                                             child: Container(
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
@@ -1379,7 +1375,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
                                                 borderRadius:
-                                                    BorderRadius.circular(0.0),
+                                                    BorderRadius.circular(0),
                                               ),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
@@ -1424,7 +1420,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
                                             borderRadius:
-                                                BorderRadius.circular(0.0),
+                                                BorderRadius.circular(0),
                                           ),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -1450,8 +1446,8 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                     FFAppState().update(() {});
                                                   },
                                                   child: Container(
-                                                    width: 100.0,
-                                                    height: 100.0,
+                                                    width: 100,
+                                                    height: 100,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
@@ -1476,21 +1472,21 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .customColor1,
-                                                          size: 30.0,
+                                                          size: 30,
                                                         ),
                                                         Icon(
                                                           Icons.sync_alt,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
-                                                          size: 25.0,
+                                                          size: 25,
                                                         ),
                                                         Icon(
                                                           Icons.table_bar_sharp,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .customColor1,
-                                                          size: 30.0,
+                                                          size: 30,
                                                         ),
                                                       ],
                                                     ),
@@ -1522,15 +1518,14 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 0.0, 5.0),
+                                                      .fromSTEB(0, 0, 0, 5),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
                                                       Expanded(
                                                         child: Container(
-                                                          width: 100.0,
+                                                          width: 100,
                                                           decoration:
                                                               BoxDecoration(
                                                             color: FlutterFlowTheme
@@ -1547,7 +1542,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                   padding:
                                                                       EdgeInsets
                                                                           .all(
-                                                                              2.0),
+                                                                              2),
                                                                   child:
                                                                       TextFormField(
                                                                     controller:
@@ -1576,7 +1571,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                             fontFamily:
                                                                                 FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                             fontSize:
-                                                                                11.0,
+                                                                                11,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             useGoogleFonts:
@@ -1679,7 +1674,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                   padding:
                                                                       EdgeInsets
                                                                           .all(
-                                                                              2.0),
+                                                                              2),
                                                                   child:
                                                                       TextFormField(
                                                                     controller:
@@ -1708,7 +1703,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                             fontFamily:
                                                                                 FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                             fontSize:
-                                                                                11.0,
+                                                                                11,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             useGoogleFonts:
@@ -1811,7 +1806,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                   padding:
                                                                       EdgeInsets
                                                                           .all(
-                                                                              2.0),
+                                                                              2),
                                                                   child:
                                                                       TextFormField(
                                                                     controller:
@@ -1840,7 +1835,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                             fontFamily:
                                                                                 FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                             fontSize:
-                                                                                11.0,
+                                                                                11,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             useGoogleFonts:
@@ -1954,13 +1949,10 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      3.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 3, 0),
                                                           child: Container(
-                                                            width: 100.0,
+                                                            width: 100,
                                                             height:
                                                                 double.infinity,
                                                             decoration:
@@ -1973,9 +1965,9 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
+                                                                          0,
+                                                                          0,
+                                                                          0,
                                                                           1.5),
                                                                   child:
                                                                       InkWell(
@@ -2013,10 +2005,10 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            2.0,
-                                                                            0.0,
-                                                                            2.0,
-                                                                            0.0),
+                                                                            2,
+                                                                            0,
+                                                                            2,
+                                                                            0),
                                                                         child:
                                                                             Column(
                                                                           mainAxisSize:
@@ -2025,7 +2017,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                               MainAxisAlignment.center,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 8),
                                                                               child: Text(
                                                                                 FFLocalizations.of(context).getText(
                                                                                   'u22432ph' /* All */,
@@ -2064,13 +2056,13 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                           child:
                                                                               SizedBox(
                                                                             width:
-                                                                                40.0,
+                                                                                40,
                                                                             height:
-                                                                                40.0,
+                                                                                40,
                                                                             child:
                                                                                 SpinKitFadingCircle(
                                                                               color: FlutterFlowTheme.of(context).primary,
-                                                                              size: 40.0,
+                                                                              size: 40,
                                                                             ),
                                                                           ),
                                                                         );
@@ -2095,9 +2087,9 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                               listViewCategoryRecordList[listViewIndex];
                                                                           return Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0,
+                                                                                0,
+                                                                                0,
+                                                                                0,
                                                                                 1.5),
                                                                             child:
                                                                                 InkWell(
@@ -2116,13 +2108,13 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                   color: FlutterFlowTheme.of(context).secondary,
                                                                                 ),
                                                                                 child: Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 2.0, 0.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(2, 0, 2, 0),
                                                                                   child: Column(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     mainAxisAlignment: MainAxisAlignment.center,
                                                                                     children: [
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 8),
                                                                                         child: Text(
                                                                                           listViewCategoryRecord.name,
                                                                                           textAlign: TextAlign.center,
@@ -2153,7 +2145,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                       Expanded(
                                                         flex: 18,
                                                         child: Container(
-                                                          width: 100.0,
+                                                          width: 100,
                                                           height:
                                                               double.infinity,
                                                           decoration:
@@ -2183,16 +2175,14 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                 return Center(
                                                                   child:
                                                                       SizedBox(
-                                                                    width: 40.0,
-                                                                    height:
-                                                                        40.0,
+                                                                    width: 40,
+                                                                    height: 40,
                                                                     child:
                                                                         SpinKitFadingCircle(
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
-                                                                      size:
-                                                                          40.0,
+                                                                      size: 40,
                                                                     ),
                                                                   ),
                                                                 );
@@ -2212,9 +2202,9 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                   crossAxisCount:
                                                                       4,
                                                                   crossAxisSpacing:
-                                                                      2.0,
+                                                                      2,
                                                                   mainAxisSpacing:
-                                                                      2.0,
+                                                                      2,
                                                                   childAspectRatio:
                                                                       1.3,
                                                                 ),
@@ -2244,13 +2234,13 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                           child:
                                                                               SizedBox(
                                                                             width:
-                                                                                40.0,
+                                                                                40,
                                                                             height:
-                                                                                40.0,
+                                                                                40,
                                                                             child:
                                                                                 SpinKitFadingCircle(
                                                                               color: FlutterFlowTheme.of(context).primary,
-                                                                              size: 40.0,
+                                                                              size: 40,
                                                                             ),
                                                                           ),
                                                                         );
@@ -2277,9 +2267,9 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                         child:
                                                                             Container(
                                                                           width:
-                                                                              100.0,
+                                                                              100,
                                                                           height:
-                                                                              100.0,
+                                                                              100,
                                                                           decoration:
                                                                               BoxDecoration(
                                                                             color:
@@ -2308,7 +2298,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                     height: MediaQuery.sizeOf(context).height * 0.12,
                                                                                     decoration: BoxDecoration(
                                                                                       color: Color(0x1A000000),
-                                                                                      borderRadius: BorderRadius.circular(5.0),
+                                                                                      borderRadius: BorderRadius.circular(5),
                                                                                     ),
                                                                                     child: Column(
                                                                                       mainAxisSize: MainAxisSize.max,
@@ -2317,7 +2307,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                       children: [
                                                                                         Expanded(
                                                                                           child: Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
                                                                                             child: Container(
                                                                                               width: double.infinity,
                                                                                               height: MediaQuery.sizeOf(context).height * 0.15,
@@ -2327,20 +2317,20 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                                     Colors.transparent,
                                                                                                     Color(0xA7000000)
                                                                                                   ],
-                                                                                                  stops: [0.0, 1.0],
-                                                                                                  begin: AlignmentDirectional(0.0, -1.0),
-                                                                                                  end: AlignmentDirectional(0, 1.0),
+                                                                                                  stops: [0, 1],
+                                                                                                  begin: AlignmentDirectional(0, -1),
+                                                                                                  end: AlignmentDirectional(0, 1),
                                                                                                 ),
-                                                                                                borderRadius: BorderRadius.circular(5.0),
+                                                                                                borderRadius: BorderRadius.circular(5),
                                                                                               ),
                                                                                               child: Padding(
-                                                                                                padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 2.0, 3.0),
+                                                                                                padding: EdgeInsetsDirectional.fromSTEB(2, 0, 2, 3),
                                                                                                 child: Column(
                                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                                   mainAxisAlignment: MainAxisAlignment.end,
                                                                                                   children: [
                                                                                                     Padding(
-                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 2),
                                                                                                       child: Text(
                                                                                                         gridViewProductRecord.name,
                                                                                                         textAlign: TextAlign.center,
@@ -2354,13 +2344,13 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                                       ),
                                                                                                     ),
                                                                                                     Padding(
-                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 2),
                                                                                                       child: Row(
                                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                                         mainAxisAlignment: MainAxisAlignment.center,
                                                                                                         children: [
                                                                                                           Padding(
-                                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
+                                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 3, 0),
                                                                                                             child: Text(
                                                                                                               FFLocalizations.of(context).getText(
                                                                                                                 '1i40n55o' /* ₹ */,
@@ -2416,8 +2406,8 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                           ),
                                           if (FFAppState().tableViewHideShow)
                                             Align(
-                                              alignment: AlignmentDirectional(
-                                                  0.0, 0.0),
+                                              alignment:
+                                                  AlignmentDirectional(0, 0),
                                               child: StreamBuilder<
                                                   List<PremisesRecord>>(
                                                 stream: queryPremisesRecord(
@@ -2429,14 +2419,14 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                   if (!snapshot.hasData) {
                                                     return Center(
                                                       child: SizedBox(
-                                                        width: 40.0,
-                                                        height: 40.0,
+                                                        width: 40,
+                                                        height: 40,
                                                         child:
                                                             SpinKitFadingCircle(
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
-                                                          size: 40.0,
+                                                          size: 40,
                                                         ),
                                                       ),
                                                     );
@@ -2492,10 +2482,10 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                   return Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            3.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            3,
+                                                                            0),
                                                                     child:
                                                                         InkWell(
                                                                       splashColor:
@@ -2528,7 +2518,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                           color:
                                                                               FlutterFlowTheme.of(context).secondary,
                                                                           borderRadius:
-                                                                              BorderRadius.circular(0.0),
+                                                                              BorderRadius.circular(0),
                                                                         ),
                                                                         child:
                                                                             Column(
@@ -2560,7 +2550,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                           child: Padding(
                                                             padding:
                                                                 EdgeInsets.all(
-                                                                    5.0),
+                                                                    5),
                                                             child: Builder(
                                                               builder:
                                                                   (context) {
@@ -2584,9 +2574,9 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                     crossAxisCount:
                                                                         5,
                                                                     crossAxisSpacing:
-                                                                        6.0,
+                                                                        6,
                                                                     mainAxisSpacing:
-                                                                        6.0,
+                                                                        6,
                                                                     childAspectRatio:
                                                                         1.1,
                                                                   ),
@@ -2624,9 +2614,9 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                       child:
                                                                           Container(
                                                                         width:
-                                                                            100.0,
+                                                                            100,
                                                                         height:
-                                                                            100.0,
+                                                                            100,
                                                                         decoration:
                                                                             BoxDecoration(
                                                                           color:
@@ -2653,13 +2643,13 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 children: [
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 6.0, 0.0, 3.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 6, 0, 3),
                                                                                     child: Row(
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       mainAxisAlignment: MainAxisAlignment.center,
                                                                                       children: [
                                                                                         Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 3, 0),
                                                                                           child: Text(
                                                                                             getJsonField(
                                                                                               tablelistItem,
@@ -2698,20 +2688,20 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                     Expanded(
                                                                                       child: Container(
                                                                                         width: double.infinity,
-                                                                                        height: 100.0,
+                                                                                        height: 100,
                                                                                         decoration: BoxDecoration(),
                                                                                         child: Column(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                                                                           children: [
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(3.0, 0.0, 3.0, 0.0),
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(3, 0, 3, 0),
                                                                                               child: Row(
                                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                                 mainAxisAlignment: MainAxisAlignment.center,
                                                                                                 children: [
                                                                                                   Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 3, 0),
                                                                                                     child: Text(
                                                                                                       FFLocalizations.of(context).getText(
                                                                                                         '46t805ng' /* 45 */,
@@ -2741,7 +2731,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                               ),
                                                                                             ),
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(3.0, 0.0, 3.0, 0.0),
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(3, 0, 3, 0),
                                                                                               child: Row(
                                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -2782,13 +2772,13 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                       children: [
                                                                                         Expanded(
                                                                                           child: Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 1.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 1, 0),
                                                                                             child: Container(
                                                                                               width: MediaQuery.sizeOf(context).width * 0.04,
                                                                                               height: MediaQuery.sizeOf(context).height * 0.04,
                                                                                               decoration: BoxDecoration(
                                                                                                 color: FlutterFlowTheme.of(context).primaryBtnText,
-                                                                                                borderRadius: BorderRadius.circular(0.0),
+                                                                                                borderRadius: BorderRadius.circular(0),
                                                                                               ),
                                                                                               child: Column(
                                                                                                 mainAxisSize: MainAxisSize.max,
@@ -2811,7 +2801,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                         ),
                                                                                         Expanded(
                                                                                           child: Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(1.0, 0.0, 0.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(1, 0, 0, 0),
                                                                                             child: InkWell(
                                                                                               splashColor: Colors.transparent,
                                                                                               focusColor: Colors.transparent,
@@ -2842,7 +2832,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                                 height: MediaQuery.sizeOf(context).height * 0.04,
                                                                                                 decoration: BoxDecoration(
                                                                                                   color: FlutterFlowTheme.of(context).primaryBtnText,
-                                                                                                  borderRadius: BorderRadius.circular(0.0),
+                                                                                                  borderRadius: BorderRadius.circular(0),
                                                                                                 ),
                                                                                                 child: Column(
                                                                                                   mainAxisSize: MainAxisSize.max,
@@ -2897,10 +2887,10 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                           Expanded(
                             flex: 9,
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  3.0, 0.0, 0.0, 0.0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(3, 0, 0, 0),
                               child: Container(
-                                width: 100.0,
+                                width: 100,
                                 height: double.infinity,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
@@ -2911,14 +2901,14 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 1.0),
+                                          0, 0, 0, 1),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 1.0, 0.0),
+                                                    0, 0, 1, 0),
                                             child: Container(
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
@@ -2965,7 +2955,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 1.0, 0.0),
+                                                    0, 0, 1, 0),
                                             child: Container(
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
@@ -3048,13 +3038,13 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 1.0),
+                                          0, 0, 0, 1),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Expanded(
                                             child: Container(
-                                              width: 100.0,
+                                              width: 100,
                                               height: MediaQuery.sizeOf(context)
                                                       .height *
                                                   0.05,
@@ -3068,14 +3058,14 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                1.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 0, 1, 0),
                                                     child: Container(
                                                       width: MediaQuery.sizeOf(
                                                                   context)
                                                               .width *
                                                           0.09,
-                                                      height: 100.0,
+                                                      height: 100,
                                                       decoration: BoxDecoration(
                                                         color:
                                                             FlutterFlowTheme.of(
@@ -3121,14 +3111,14 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                1.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 0, 1, 0),
                                                     child: Container(
                                                       width: MediaQuery.sizeOf(
                                                                   context)
                                                               .width *
                                                           0.09,
-                                                      height: 100.0,
+                                                      height: 100,
                                                       decoration: BoxDecoration(
                                                         color:
                                                             FlutterFlowTheme.of(
@@ -3204,17 +3194,13 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                               .secondary,
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      0.0),
+                                                                  .circular(0),
                                                         ),
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      2.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(2,
+                                                                      0, 0, 0),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -3229,16 +3215,16 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .lineColor,
-                                                                size: 15.0,
+                                                                size: 15,
                                                               ),
                                                               Padding(
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            5.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                            5,
+                                                                            0,
+                                                                            0,
+                                                                            0),
                                                                 child: Text(
                                                                   FFAppState()
                                                                       .setCustName,
@@ -3276,7 +3262,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                     Expanded(
                                       child: Container(
                                         width: double.infinity,
-                                        height: 100.0,
+                                        height: 100,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryBackground,
@@ -3288,8 +3274,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                               child: Column(
                                                 children: [
                                                   Align(
-                                                    alignment:
-                                                        Alignment(0.0, 0),
+                                                    alignment: Alignment(0, 0),
                                                     child: TabBar(
                                                       labelColor:
                                                           FlutterFlowTheme.of(
@@ -3357,11 +3342,8 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      2.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      2, 0, 0),
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -3371,10 +3353,10 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            2.0),
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            2),
                                                                 child: Row(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -3384,7 +3366,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                       child:
                                                                           Container(
                                                                         width:
-                                                                            100.0,
+                                                                            100,
                                                                         height: MediaQuery.sizeOf(context).height *
                                                                             0.04,
                                                                         decoration:
@@ -3401,10 +3383,10 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                               flex: 16,
                                                                               child: Container(
                                                                                 width: MediaQuery.sizeOf(context).width * 0.12,
-                                                                                height: 100.0,
+                                                                                height: 100,
                                                                                 decoration: BoxDecoration(),
                                                                                 child: Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
                                                                                   child: Column(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -3429,7 +3411,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                               flex: 6,
                                                                               child: Container(
                                                                                 width: MediaQuery.sizeOf(context).width * 0.08,
-                                                                                height: 100.0,
+                                                                                height: 100,
                                                                                 decoration: BoxDecoration(),
                                                                                 child: Column(
                                                                                   mainAxisSize: MainAxisSize.max,
@@ -3453,7 +3435,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                               flex: 4,
                                                                               child: Container(
                                                                                 width: MediaQuery.sizeOf(context).width * 0.08,
-                                                                                height: 100.0,
+                                                                                height: 100,
                                                                                 decoration: BoxDecoration(),
                                                                                 child: Column(
                                                                                   mainAxisSize: MainAxisSize.max,
@@ -3477,7 +3459,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                               flex: 2,
                                                                               child: Container(
                                                                                 width: MediaQuery.sizeOf(context).width * 0.08,
-                                                                                height: 100.0,
+                                                                                height: 100,
                                                                                 decoration: BoxDecoration(),
                                                                               ),
                                                                             ),
@@ -3492,16 +3474,15 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                 child: Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          2.0),
+                                                                          0,
+                                                                          0,
+                                                                          0,
+                                                                          2),
                                                                   child:
                                                                       Container(
                                                                     width: double
                                                                         .infinity,
-                                                                    height:
-                                                                        100.0,
+                                                                    height: 100,
                                                                     decoration:
                                                                         BoxDecoration(),
                                                                     child:
@@ -3527,7 +3508,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                             final billListItem =
                                                                                 billList[billListIndex];
                                                                             return Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
                                                                               child: Row(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 children: [
@@ -3538,14 +3519,14 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                       height: MediaQuery.sizeOf(context).height * 0.065,
                                                                                       decoration: BoxDecoration(),
                                                                                       child: Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(3.0, 0.0, 0.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(3, 0, 0, 0),
                                                                                         child: Column(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           mainAxisAlignment: MainAxisAlignment.center,
                                                                                           crossAxisAlignment: CrossAxisAlignment.start,
                                                                                           children: [
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 4.0),
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 4),
                                                                                               child: Text(
                                                                                                 getJsonField(
                                                                                                   billListItem,
@@ -3602,18 +3583,18 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                                   FFAppState().delCharges,
                                                                                                 );
 
-                                                                                                setState(() {});
+                                                                                                safeSetState(() {});
                                                                                               },
                                                                                               child: Container(
-                                                                                                width: 100.0,
-                                                                                                height: 100.0,
+                                                                                                width: 100,
+                                                                                                height: 100,
                                                                                                 decoration: BoxDecoration(
                                                                                                   color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                                 ),
                                                                                                 child: Icon(
                                                                                                   Icons.remove,
                                                                                                   color: Color(0xFFB6001A),
-                                                                                                  size: 18.0,
+                                                                                                  size: 18,
                                                                                                 ),
                                                                                               ),
                                                                                             ),
@@ -3621,8 +3602,8 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                           Expanded(
                                                                                             flex: 6,
                                                                                             child: Container(
-                                                                                              width: 100.0,
-                                                                                              height: 100.0,
+                                                                                              width: 100,
+                                                                                              height: 100,
                                                                                               decoration: BoxDecoration(
                                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                               ),
@@ -3673,18 +3654,18 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                                   FFAppState().delCharges,
                                                                                                 );
 
-                                                                                                setState(() {});
+                                                                                                safeSetState(() {});
                                                                                               },
                                                                                               child: Container(
-                                                                                                width: 100.0,
-                                                                                                height: 100.0,
+                                                                                                width: 100,
+                                                                                                height: 100,
                                                                                                 decoration: BoxDecoration(
                                                                                                   color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                                 ),
                                                                                                 child: Icon(
                                                                                                   Icons.add,
                                                                                                   color: Color(0xFFB6001A),
-                                                                                                  size: 18.0,
+                                                                                                  size: 18,
                                                                                                 ),
                                                                                               ),
                                                                                             ),
@@ -3743,7 +3724,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                           FFAppState().itemCartList.toList(),
                                                                                         );
 
-                                                                                        setState(() {});
+                                                                                        safeSetState(() {});
                                                                                       },
                                                                                       child: Container(
                                                                                         width: MediaQuery.sizeOf(context).width * 0.08,
@@ -3752,7 +3733,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                         child: Icon(
                                                                                           Icons.delete,
                                                                                           color: Color(0xFFB6001A),
-                                                                                          size: 15.0,
+                                                                                          size: 15,
                                                                                         ),
                                                                                       ),
                                                                                     ),
@@ -3771,10 +3752,10 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            2.0),
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            2),
                                                                 child: Row(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -3785,10 +3766,10 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            2.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            2,
+                                                                            0),
                                                                         child:
                                                                             Container(
                                                                           width:
@@ -3854,7 +3835,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                   topRight: Radius.circular(4.0),
                                                                                 ),
                                                                               ),
-                                                                              contentPadding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+                                                                              contentPadding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                   fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
@@ -3874,10 +3855,10 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            2.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                            2,
+                                                                            0,
+                                                                            0,
+                                                                            0),
                                                                         child:
                                                                             Container(
                                                                           width:
@@ -3943,7 +3924,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                   topRight: Radius.circular(4.0),
                                                                                 ),
                                                                               ),
-                                                                              contentPadding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+                                                                              contentPadding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                   fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
@@ -3973,11 +3954,12 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                     flex: 5,
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          1.0,
-                                                                          0.0),
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              0,
+                                                                              0,
+                                                                              1,
+                                                                              0),
                                                                       child:
                                                                           Container(
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -4017,11 +3999,12 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                     flex: 7,
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          1.0,
-                                                                          0.0),
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              0,
+                                                                              0,
+                                                                              1,
+                                                                              0),
                                                                       child:
                                                                           Container(
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -4113,11 +4096,8 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      2.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      2, 0, 0),
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -4127,10 +4107,10 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            3.0),
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            3),
                                                                 child: Row(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -4140,7 +4120,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                       child:
                                                                           Container(
                                                                         width:
-                                                                            100.0,
+                                                                            100,
                                                                         height: MediaQuery.sizeOf(context).height *
                                                                             0.045,
                                                                         decoration:
@@ -4157,10 +4137,10 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                               flex: 16,
                                                                               child: Container(
                                                                                 width: MediaQuery.sizeOf(context).width * 0.12,
-                                                                                height: 100.0,
+                                                                                height: 100,
                                                                                 decoration: BoxDecoration(),
                                                                                 child: Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
                                                                                   child: Column(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -4185,7 +4165,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                               flex: 4,
                                                                               child: Container(
                                                                                 width: MediaQuery.sizeOf(context).width * 0.08,
-                                                                                height: 100.0,
+                                                                                height: 100,
                                                                                 decoration: BoxDecoration(),
                                                                                 child: Column(
                                                                                   mainAxisSize: MainAxisSize.max,
@@ -4209,7 +4189,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                               flex: 5,
                                                                               child: Container(
                                                                                 width: MediaQuery.sizeOf(context).width * 0.08,
-                                                                                height: 100.0,
+                                                                                height: 100,
                                                                                 decoration: BoxDecoration(),
                                                                                 child: Column(
                                                                                   mainAxisSize: MainAxisSize.max,
@@ -4240,16 +4220,15 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                 child: Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          2.0),
+                                                                          0,
+                                                                          0,
+                                                                          0,
+                                                                          2),
                                                                   child:
                                                                       Container(
                                                                     width: double
                                                                         .infinity,
-                                                                    height:
-                                                                        100.0,
+                                                                    height: 100,
                                                                     decoration:
                                                                         BoxDecoration(),
                                                                     child:
@@ -4264,10 +4243,10 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0,
-                                                                              2.0),
+                                                                              0,
+                                                                              0,
+                                                                              0,
+                                                                              2),
                                                                           child:
                                                                               Row(
                                                                             mainAxisSize:
@@ -4280,7 +4259,7 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                   height: MediaQuery.sizeOf(context).height * 0.065,
                                                                                   decoration: BoxDecoration(),
                                                                                   child: Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
                                                                                     child: Column(
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       mainAxisAlignment: MainAxisAlignment.center,
@@ -4322,8 +4301,8 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                     children: [
                                                                                       Expanded(
                                                                                         child: Container(
-                                                                                          width: 100.0,
-                                                                                          height: 100.0,
+                                                                                          width: 100,
+                                                                                          height: 100,
                                                                                           decoration: BoxDecoration(
                                                                                             color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                           ),
@@ -4405,31 +4384,31 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            5,
+                                                                            0),
                                                                         child:
                                                                             Container(
                                                                           width:
-                                                                              100.0,
+                                                                              100,
                                                                           height:
-                                                                              100.0,
+                                                                              100,
                                                                           decoration:
                                                                               BoxDecoration(),
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                10.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0),
+                                                                                10,
+                                                                                0,
+                                                                                0,
+                                                                                0),
                                                                             child:
                                                                                 Row(
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                                                                                   child: Container(
                                                                                     width: MediaQuery.sizeOf(context).width * 0.029,
                                                                                     height: MediaQuery.sizeOf(context).width * 0.029,
@@ -4439,12 +4418,12 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                     child: Icon(
                                                                                       Icons.remove_red_eye_rounded,
                                                                                       color: FlutterFlowTheme.of(context).lineColor,
-                                                                                      size: 18.0,
+                                                                                      size: 18,
                                                                                     ),
                                                                                   ),
                                                                                 ),
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                                                                                   child: InkWell(
                                                                                     splashColor: Colors.transparent,
                                                                                     focusColor: Colors.transparent,
@@ -4477,11 +4456,11 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                         shape: BoxShape.circle,
                                                                                       ),
                                                                                       child: Align(
-                                                                                        alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                        alignment: AlignmentDirectional(0, 0),
                                                                                         child: FaIcon(
                                                                                           FontAwesomeIcons.receipt,
                                                                                           color: FlutterFlowTheme.of(context).lineColor,
-                                                                                          size: 16.0,
+                                                                                          size: 16,
                                                                                         ),
                                                                                       ),
                                                                                     ),
@@ -4557,9 +4536,9 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                     '9ywjkltd' /* PhonePe */,
                                                                                   )
                                                                                 ],
-                                                                                onChanged: (val) => setState(() => _model.dropDownValue = val),
-                                                                                width: 180.0,
-                                                                                height: 50.0,
+                                                                                onChanged: (val) => safeSetState(() => _model.dropDownValue = val),
+                                                                                width: 180,
+                                                                                height: 50,
                                                                                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                       fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                       color: FlutterFlowTheme.of(context).lineColor,
@@ -4569,13 +4548,13 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                                 icon: Icon(
                                                                                   Icons.keyboard_arrow_down,
                                                                                   color: FlutterFlowTheme.of(context).lineColor,
-                                                                                  size: 15.0,
+                                                                                  size: 15,
                                                                                 ),
-                                                                                elevation: 2.0,
+                                                                                elevation: 2,
                                                                                 borderColor: Colors.transparent,
-                                                                                borderWidth: 0.0,
-                                                                                borderRadius: 0.0,
-                                                                                margin: EdgeInsetsDirectional.fromSTEB(1.0, 4.0, 4.0, 4.0),
+                                                                                borderWidth: 0,
+                                                                                borderRadius: 0,
+                                                                                margin: EdgeInsetsDirectional.fromSTEB(1, 4, 4, 4),
                                                                                 hidesUnderline: true,
                                                                                 isSearchable: false,
                                                                                 isMultiSelect: false,
@@ -4641,11 +4620,12 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                     flex: 5,
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          1.5,
-                                                                          0.0),
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              0,
+                                                                              0,
+                                                                              1.5,
+                                                                              0),
                                                                       child:
                                                                           Container(
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -4685,11 +4665,12 @@ class _TableScreenWidgetState extends State<TableScreenWidget>
                                                                     flex: 7,
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          1.5,
-                                                                          0.0),
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              0,
+                                                                              0,
+                                                                              1.5,
+                                                                              0),
                                                                       child:
                                                                           Container(
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -4732,11 +4713,12 @@ KOT */
                                                                     flex: 5,
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          1.5,
-                                                                          0.0),
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              0,
+                                                                              0,
+                                                                              1.5,
+                                                                              0),
                                                                       child:
                                                                           Container(
                                                                         width: MediaQuery.sizeOf(context).width *

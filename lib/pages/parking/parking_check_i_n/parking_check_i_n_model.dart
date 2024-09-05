@@ -20,7 +20,6 @@ import 'package:provider/provider.dart';
 class ParkingCheckINModel extends FlutterFlowModel<ParkingCheckINWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for DropDownvechicle widget.
   String? dropDownvechicleValue;
   FormFieldController<String>? dropDownvechicleValueController;

@@ -75,8 +75,8 @@ class _EditBillWidgetState extends State<EditBillWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: 0.0,
-            end: 1.0,
+            begin: 0,
+            end: 1,
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
@@ -102,8 +102,8 @@ class _EditBillWidgetState extends State<EditBillWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: 0.0,
-            end: 1.0,
+            begin: 0,
+            end: 1,
           ),
         ],
       ),
@@ -122,8 +122,8 @@ class _EditBillWidgetState extends State<EditBillWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: 0.0,
-            end: 1.0,
+            begin: 0,
+            end: 1,
           ),
         ],
       ),
@@ -142,8 +142,8 @@ class _EditBillWidgetState extends State<EditBillWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: 0.0,
-            end: 1.0,
+            begin: 0,
+            end: 1,
           ),
         ],
       ),
@@ -155,8 +155,8 @@ class _EditBillWidgetState extends State<EditBillWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: 0.0,
-            end: 1.0,
+            begin: 0,
+            end: 1,
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
@@ -175,7 +175,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
       this,
     );
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -198,7 +198,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Padding(
-              padding: EdgeInsets.all(3.0),
+              padding: EdgeInsets.all(3),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -211,7 +211,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                         Expanded(
                           flex: 1,
                           child: Container(
-                            width: MediaQuery.sizeOf(context).width * 1.0,
+                            width: MediaQuery.sizeOf(context).width,
                             height: double.infinity,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context).primary,
@@ -221,12 +221,12 @@ class _EditBillWidgetState extends State<EditBillWidget>
                               children: [
                                 FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
-                                  buttonSize: 50.0,
+                                  buttonSize: 50,
                                   icon: Icon(
                                     Icons.chevron_left,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBtnText,
-                                    size: 25.0,
+                                    size: 25,
                                   ),
                                   onPressed: () async {
                                     context.safePop();
@@ -257,7 +257,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                         Expanded(
                           flex: 2,
                           child: Container(
-                            width: 100.0,
+                            width: 100,
                             height: double.infinity,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context).primary,
@@ -268,7 +268,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                           flex: 2,
                           child: wrapWithModel(
                             model: _model.headerModel,
-                            updateCallback: () => setState(() {}),
+                            updateCallback: () => safeSetState(() {}),
                             child: HeaderWidget(),
                           ),
                         ),
@@ -285,14 +285,14 @@ class _EditBillWidgetState extends State<EditBillWidget>
                         Expanded(
                           flex: 3,
                           child: Container(
-                            width: 100.0,
+                            width: 100,
                             height: double.infinity,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
                               border: Border.all(
                                 color: FlutterFlowTheme.of(context).secondary,
-                                width: 1.0,
+                                width: 1,
                               ),
                             ),
                             child: Column(
@@ -300,7 +300,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Container(
-                                  width: MediaQuery.sizeOf(context).width * 1.0,
+                                  width: MediaQuery.sizeOf(context).width,
                                   height:
                                       MediaQuery.sizeOf(context).height * 0.04,
                                   decoration: BoxDecoration(
@@ -337,7 +337,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                   ),
                                 ),
                                 Container(
-                                  width: MediaQuery.sizeOf(context).width * 1.0,
+                                  width: MediaQuery.sizeOf(context).width,
                                   height:
                                       MediaQuery.sizeOf(context).height * 0.72,
                                   decoration: BoxDecoration(
@@ -345,7 +345,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                         .primaryBackground,
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsets.all(2.0),
+                                    padding: EdgeInsets.all(2),
                                     child: PagedListView<
                                         DocumentSnapshot<Object?>?,
                                         InvoiceRecord>(
@@ -375,13 +375,13 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                         firstPageProgressIndicatorBuilder:
                                             (_) => Center(
                                           child: SizedBox(
-                                            width: 40.0,
-                                            height: 40.0,
+                                            width: 40,
+                                            height: 40,
                                             child: SpinKitFadingCircle(
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              size: 40.0,
+                                              size: 40,
                                             ),
                                           ),
                                         ),
@@ -389,13 +389,13 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                         newPageProgressIndicatorBuilder: (_) =>
                                             Center(
                                           child: SizedBox(
-                                            width: 40.0,
-                                            height: 40.0,
+                                            width: 40,
+                                            height: 40,
                                             child: SpinKitFadingCircle(
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              size: 40.0,
+                                              size: 40,
                                             ),
                                           ),
                                         ),
@@ -408,7 +408,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                           return Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 7.0),
+                                                    0, 0, 0, 7),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
                                               focusColor: Colors.transparent,
@@ -438,16 +438,15 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                     listViewInvoiceRecord.id;
                                                 FFAppState().update(() {});
 
-                                                setState(() {});
+                                                safeSetState(() {});
                                               },
                                               child: Material(
                                                 color: Colors.transparent,
-                                                elevation: 1.0,
+                                                elevation: 1,
                                                 child: Container(
                                                   width:
                                                       MediaQuery.sizeOf(context)
-                                                              .width *
-                                                          1.0,
+                                                          .width,
                                                   height:
                                                       MediaQuery.sizeOf(context)
                                                               .height *
@@ -465,16 +464,14 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                             .primaryBackground,
                                                   ),
                                                   child: Padding(
-                                                    padding:
-                                                        EdgeInsets.all(5.0),
+                                                    padding: EdgeInsets.all(5),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsets.all(
-                                                                  1.0),
+                                                              EdgeInsets.all(1),
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -555,11 +552,8 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      4.0,
-                                                                      1.0,
-                                                                      1.0,
-                                                                      1.0),
+                                                                  .fromSTEB(4,
+                                                                      1, 1, 1),
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -674,7 +668,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                     if (animationsMap[
                                             'containerOnActionTriggerAnimation1'] !=
                                         null) {
-                                      setState(
+                                      safeSetState(
                                           () => hasContainerTriggered1 = true);
                                       SchedulerBinding.instance
                                           .addPostFrameCallback((_) async =>
@@ -685,8 +679,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                     }
                                   },
                                   child: Container(
-                                    width:
-                                        MediaQuery.sizeOf(context).width * 1.0,
+                                    width: MediaQuery.sizeOf(context).width,
                                     height: MediaQuery.sizeOf(context).height *
                                         0.06,
                                     decoration: BoxDecoration(
@@ -701,12 +694,12 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 10.0, 2.0),
+                                                  0, 0, 10, 2),
                                           child: Icon(
                                             Icons.calendar_today_outlined,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBtnText,
-                                            size: 20.0,
+                                            size: 20,
                                           ),
                                         ),
                                         Text(
@@ -746,17 +739,16 @@ class _EditBillWidgetState extends State<EditBillWidget>
                         Expanded(
                           flex: 6,
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                3.0, 0.0, 3.0, 0.0),
+                            padding: EdgeInsetsDirectional.fromSTEB(3, 0, 3, 0),
                             child: Container(
-                              width: 100.0,
+                              width: 100,
                               height: double.infinity,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .primaryBackground,
                                 border: Border.all(
                                   color: FlutterFlowTheme.of(context).secondary,
-                                  width: 1.0,
+                                  width: 1,
                                 ),
                               ),
                               child: Column(
@@ -766,8 +758,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Container(
-                                    width:
-                                        MediaQuery.sizeOf(context).width * 1.0,
+                                    width: MediaQuery.sizeOf(context).width,
                                     height: MediaQuery.sizeOf(context).height *
                                         0.04,
                                     decoration: BoxDecoration(
@@ -818,13 +809,13 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                       if (!snapshot.hasData) {
                                         return Center(
                                           child: SizedBox(
-                                            width: 40.0,
-                                            height: 40.0,
+                                            width: 40,
+                                            height: 40,
                                             child: SpinKitFadingCircle(
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              size: 40.0,
+                                              size: 40,
                                             ),
                                           ),
                                         );
@@ -838,9 +829,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                               : null;
 
                                       return Container(
-                                        width:
-                                            MediaQuery.sizeOf(context).width *
-                                                1.0,
+                                        width: MediaQuery.sizeOf(context).width,
                                         height:
                                             MediaQuery.sizeOf(context).height *
                                                 0.72,
@@ -855,16 +844,15 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      10.0, 0.0, 10.0, 3.0),
+                                                  .fromSTEB(10, 0, 10, 3),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                15.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 0, 15, 0),
                                                     child: Container(
                                                       width: MediaQuery.sizeOf(
                                                                   context)
@@ -958,16 +946,15 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      10.0, 0.0, 10.0, 3.0),
+                                                  .fromSTEB(10, 0, 10, 3),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                15.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 0, 15, 0),
                                                     child: Container(
                                                       width: MediaQuery.sizeOf(
                                                                   context)
@@ -1048,7 +1035,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
-                                                          fontSize: 14.0,
+                                                          fontSize: 14,
                                                           letterSpacing: 0.0,
                                                           useGoogleFonts: GoogleFonts
                                                                   .asMap()
@@ -1063,16 +1050,15 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      10.0, 0.0, 10.0, 3.0),
+                                                  .fromSTEB(10, 0, 10, 3),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                15.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 0, 15, 0),
                                                     child: Container(
                                                       width: MediaQuery.sizeOf(
                                                                   context)
@@ -1165,16 +1151,15 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      10.0, 0.0, 10.0, 3.0),
+                                                  .fromSTEB(10, 0, 10, 3),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                15.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 0, 15, 0),
                                                     child: Container(
                                                       width: MediaQuery.sizeOf(
                                                                   context)
@@ -1267,16 +1252,15 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      10.0, 0.0, 10.0, 3.0),
+                                                  .fromSTEB(10, 0, 10, 3),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                15.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 0, 15, 0),
                                                     child: Container(
                                                       width: MediaQuery.sizeOf(
                                                                   context)
@@ -1346,8 +1330,8 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                4.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 0, 4, 0),
                                                     child: Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -1398,16 +1382,15 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      10.0, 0.0, 10.0, 3.0),
+                                                  .fromSTEB(10, 0, 10, 3),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                15.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 0, 15, 0),
                                                     child: Container(
                                                       width: MediaQuery.sizeOf(
                                                                   context)
@@ -1488,10 +1471,10 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        5.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
+                                                                        5,
+                                                                        0,
+                                                                        0,
+                                                                        0),
                                                             child: Text(
                                                               valueOrDefault<
                                                                   String>(
@@ -1534,16 +1517,14 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                 return Center(
                                                                   child:
                                                                       SizedBox(
-                                                                    width: 40.0,
-                                                                    height:
-                                                                        40.0,
+                                                                    width: 40,
+                                                                    height: 40,
                                                                     child:
                                                                         SpinKitFadingCircle(
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
-                                                                      size:
-                                                                          40.0,
+                                                                      size: 40,
                                                                     ),
                                                                   ),
                                                                 );
@@ -1572,10 +1553,10 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                   return Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            3.0),
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            3),
                                                                     child:
                                                                         InkWell(
                                                                       splashColor:
@@ -1600,7 +1581,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                             listViewPaymentModeRecord.name;
                                                                         FFAppState().prevMode =
                                                                             containerInvoiceRecord!.paymentMode;
-                                                                        setState(
+                                                                        safeSetState(
                                                                             () {});
                                                                       },
                                                                       child:
@@ -1608,7 +1589,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                         color: Colors
                                                                             .transparent,
                                                                         elevation:
-                                                                            3.0,
+                                                                            3,
                                                                         child:
                                                                             Container(
                                                                           width:
@@ -1623,10 +1604,10 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5.0,
-                                                                                0.0,
-                                                                                5.0,
-                                                                                0.0),
+                                                                                5,
+                                                                                0,
+                                                                                5,
+                                                                                0),
                                                                             child:
                                                                                 Row(
                                                                               mainAxisSize: MainAxisSize.max,
@@ -1672,16 +1653,15 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      10.0, 0.0, 10.0, 3.0),
+                                                  .fromSTEB(10, 0, 10, 3),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                15.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 0, 15, 0),
                                                     child: Container(
                                                       width: MediaQuery.sizeOf(
                                                                   context)
@@ -1751,8 +1731,8 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                4.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 0, 4, 0),
                                                     child: Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -1803,16 +1783,15 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      10.0, 0.0, 10.0, 3.0),
+                                                  .fromSTEB(10, 0, 10, 3),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                15.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 0, 15, 0),
                                                     child: Container(
                                                       width: MediaQuery.sizeOf(
                                                                   context)
@@ -1835,10 +1814,10 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        5.0,
-                                                                        0.0),
+                                                                        0,
+                                                                        0,
+                                                                        5,
+                                                                        0),
                                                             child: Text(
                                                               FFLocalizations.of(
                                                                       context)
@@ -1890,8 +1869,8 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                4.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 0, 4, 0),
                                                     child: Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -1943,16 +1922,15 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      10.0, 0.0, 10.0, 3.0),
+                                                  .fromSTEB(10, 0, 10, 3),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                15.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 0, 15, 0),
                                                     child: Container(
                                                       width: MediaQuery.sizeOf(
                                                                   context)
@@ -1975,10 +1953,10 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        5.0,
-                                                                        0.0),
+                                                                        0,
+                                                                        0,
+                                                                        5,
+                                                                        0),
                                                             child: Text(
                                                               FFLocalizations.of(
                                                                       context)
@@ -2030,8 +2008,8 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                4.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 0, 4, 0),
                                                     child: Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -2083,16 +2061,15 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      10.0, 20.0, 10.0, 0.0),
+                                                  .fromSTEB(10, 20, 10, 0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                15.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 0, 15, 0),
                                                     child: Container(
                                                       width: MediaQuery.sizeOf(
                                                                   context)
@@ -2168,8 +2145,8 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                4.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 0, 4, 0),
                                                     child: Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -2226,8 +2203,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      10.0, 20.0, 10.0, 0.0),
+                                                  .fromSTEB(10, 20, 10, 0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -2238,11 +2214,8 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                       Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    15.0,
-                                                                    0.0),
+                                                                .fromSTEB(0, 0,
+                                                                    15, 0),
                                                         child: Container(
                                                           width:
                                                               MediaQuery.sizeOf(
@@ -2300,7 +2273,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                       color: Color(
                                                                           0xFF566AA1),
                                                                       fontSize:
-                                                                          18.0,
+                                                                          18,
                                                                       letterSpacing:
                                                                           0.0,
                                                                       fontWeight:
@@ -2319,11 +2292,8 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                       Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    15.0,
-                                                                    0.0),
+                                                                .fromSTEB(0, 0,
+                                                                    15, 0),
                                                         child: Container(
                                                           width:
                                                               MediaQuery.sizeOf(
@@ -2359,10 +2329,10 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        4.0,
-                                                                        0.0),
+                                                                        0,
+                                                                        0,
+                                                                        4,
+                                                                        0),
                                                             child: Text(
                                                               containerInvoiceRecord!
                                                                   .party,
@@ -2411,10 +2381,10 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            4.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            4,
+                                                                            0),
                                                                 child: Text(
                                                                   containerInvoiceRecord!
                                                                       .partyMobNo,
@@ -2459,7 +2429,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                             if (animationsMap[
                                                     'containerOnActionTriggerAnimation2'] !=
                                                 null) {
-                                              setState(() =>
+                                              safeSetState(() =>
                                                   hasContainerTriggered2 =
                                                       true);
                                               SchedulerBinding.instance
@@ -2519,12 +2489,12 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                 },
                                               );
                                               if (_shouldSetState)
-                                                setState(() {});
+                                                safeSetState(() {});
                                               return;
                                             }
 
                                             if (_shouldSetState)
-                                              setState(() {});
+                                              safeSetState(() {});
                                           },
                                           child: Container(
                                             width: MediaQuery.sizeOf(context)
@@ -2590,14 +2560,14 @@ class _EditBillWidgetState extends State<EditBillWidget>
                         Expanded(
                           flex: 7,
                           child: Container(
-                            width: 100.0,
+                            width: 100,
                             height: double.infinity,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
                               border: Border.all(
                                 color: FlutterFlowTheme.of(context).secondary,
-                                width: 1.0,
+                                width: 1,
                               ),
                             ),
                             child: Column(
@@ -2606,7 +2576,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Container(
-                                  width: MediaQuery.sizeOf(context).width * 1.0,
+                                  width: MediaQuery.sizeOf(context).width,
                                   height:
                                       MediaQuery.sizeOf(context).height * 0.04,
                                   decoration: BoxDecoration(
@@ -2644,7 +2614,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 2.0),
+                                      0, 0, 0, 2),
                                   child: Container(
                                     width: double.infinity,
                                     height: MediaQuery.sizeOf(context).height *
@@ -2655,7 +2625,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                       border: Border.all(
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
-                                        width: 2.0,
+                                        width: 2,
                                       ),
                                     ),
                                     child: Row(
@@ -2668,7 +2638,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    2.0, 0.0, 0.0, 0.0),
+                                                    2, 0, 0, 0),
                                             child: Container(
                                               height: MediaQuery.sizeOf(context)
                                                       .height *
@@ -2695,7 +2665,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                               FlutterFlowTheme.of(
                                                                       context)
                                                                   .bodyMediumFamily,
-                                                          fontSize: 14.0,
+                                                          fontSize: 14,
                                                           letterSpacing: 0.0,
                                                           useGoogleFonts: GoogleFonts
                                                                   .asMap()
@@ -2715,7 +2685,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    2.0, 0.0, 0.0, 0.0),
+                                                    2, 0, 0, 0),
                                             child: Container(
                                               height: MediaQuery.sizeOf(context)
                                                       .height *
@@ -2729,7 +2699,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                   Expanded(
                                                     flex: 3,
                                                     child: Container(
-                                                      width: 100.0,
+                                                      width: 100,
                                                       height: MediaQuery.sizeOf(
                                                                   context)
                                                               .height *
@@ -2746,7 +2716,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                           Align(
                                                             alignment:
                                                                 AlignmentDirectional(
-                                                                    0.0, 0.0),
+                                                                    0, 0),
                                                             child: Text(
                                                               FFLocalizations.of(
                                                                       context)
@@ -2764,7 +2734,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                         FlutterFlowTheme.of(context)
                                                                             .bodyMediumFamily,
                                                                     fontSize:
-                                                                        14.0,
+                                                                        14,
                                                                     letterSpacing:
                                                                         0.0,
                                                                     useGoogleFonts: GoogleFonts
@@ -2788,15 +2758,15 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    2.0, 0.0, 0.0, 0.0),
+                                                    2, 0, 0, 0),
                                             child: Container(
                                               height: MediaQuery.sizeOf(context)
                                                       .height *
                                                   0.06,
                                               decoration: BoxDecoration(),
                                               child: Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
+                                                alignment:
+                                                    AlignmentDirectional(0, 0),
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
@@ -2811,7 +2781,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .bodyMediumFamily,
-                                                        fontSize: 14.0,
+                                                        fontSize: 14,
                                                         letterSpacing: 0.0,
                                                         useGoogleFonts: GoogleFonts
                                                                 .asMap()
@@ -2830,7 +2800,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    2.0, 0.0, 0.0, 0.0),
+                                                    2, 0, 0, 0),
                                             child: Container(
                                               height: MediaQuery.sizeOf(context)
                                                       .height *
@@ -2849,8 +2819,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                       if (_model.resultItem == null)
                                         Container(
                                           width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  1.0,
+                                              MediaQuery.sizeOf(context).width,
                                           height: MediaQuery.sizeOf(context)
                                                   .height *
                                               0.75,
@@ -2862,8 +2831,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                       if (_model.resultItem != null)
                                         Container(
                                           width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  1.0,
+                                              MediaQuery.sizeOf(context).width,
                                           height: MediaQuery.sizeOf(context)
                                                   .height *
                                               0.75,
@@ -2890,8 +2858,8 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                   return Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 4.0),
+                                                            .fromSTEB(
+                                                                0, 0, 0, 4),
                                                     child: Container(
                                                       width: MediaQuery.sizeOf(
                                                                   context)
@@ -2923,10 +2891,10 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                 child: Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          2.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          2,
+                                                                          0,
+                                                                          0,
+                                                                          0),
                                                                   child:
                                                                       Container(
                                                                     height: MediaQuery.sizeOf(context)
@@ -2940,11 +2908,12 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                     ),
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          3.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              3,
+                                                                              0,
+                                                                              0,
+                                                                              0),
                                                                       child:
                                                                           Column(
                                                                         mainAxisSize:
@@ -2956,10 +2925,10 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                         children: [
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                2.0),
+                                                                                0,
+                                                                                0,
+                                                                                0,
+                                                                                2),
                                                                             child:
                                                                                 Text(
                                                                               getJsonField(
@@ -2991,7 +2960,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                       fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                      fontSize: 13.0,
+                                                                                      fontSize: 13,
                                                                                       letterSpacing: 0.0,
                                                                                       useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                     ),
@@ -3011,7 +2980,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                                               true
                                                                                           ? FlutterFlowTheme.of(context).primary
                                                                                           : FlutterFlowTheme.of(context).primaryText,
-                                                                                      fontSize: 13.0,
+                                                                                      fontSize: 13,
                                                                                       letterSpacing: 0.0,
                                                                                       useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                     ),
@@ -3068,40 +3037,40 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                               FFAppState().selectedInvoiceJson,
                                                                             );
 
-                                                                            setState(() {});
+                                                                            safeSetState(() {});
                                                                           },
                                                                           child:
                                                                               Material(
                                                                             color:
                                                                                 Colors.transparent,
                                                                             elevation:
-                                                                                5.0,
+                                                                                5,
                                                                             shape:
                                                                                 RoundedRectangleBorder(
                                                                               borderRadius: BorderRadius.only(
-                                                                                bottomLeft: Radius.circular(5.0),
-                                                                                bottomRight: Radius.circular(0.0),
-                                                                                topLeft: Radius.circular(5.0),
-                                                                                topRight: Radius.circular(0.0),
+                                                                                bottomLeft: Radius.circular(5),
+                                                                                bottomRight: Radius.circular(0),
+                                                                                topLeft: Radius.circular(5),
+                                                                                topRight: Radius.circular(0),
                                                                               ),
                                                                             ),
                                                                             child:
                                                                                 Container(
-                                                                              width: 100.0,
+                                                                              width: 100,
                                                                               height: MediaQuery.sizeOf(context).height * 0.08,
                                                                               decoration: BoxDecoration(
                                                                                 color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                 borderRadius: BorderRadius.only(
-                                                                                  bottomLeft: Radius.circular(5.0),
-                                                                                  bottomRight: Radius.circular(0.0),
-                                                                                  topLeft: Radius.circular(5.0),
-                                                                                  topRight: Radius.circular(0.0),
+                                                                                  bottomLeft: Radius.circular(5),
+                                                                                  bottomRight: Radius.circular(0),
+                                                                                  topLeft: Radius.circular(5),
+                                                                                  topRight: Radius.circular(0),
                                                                                 ),
                                                                               ),
                                                                               child: Icon(
                                                                                 Icons.remove,
                                                                                 color: FlutterFlowTheme.of(context).primary,
-                                                                                size: 18.0,
+                                                                                size: 18,
                                                                               ),
                                                                             ),
                                                                           ),
@@ -3114,7 +3083,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                         child:
                                                                             Container(
                                                                           width:
-                                                                              100.0,
+                                                                              100,
                                                                           height:
                                                                               MediaQuery.sizeOf(context).height * 0.083,
                                                                           decoration:
@@ -3130,7 +3099,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                                 MainAxisAlignment.center,
                                                                             children: [
                                                                               Align(
-                                                                                alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                alignment: AlignmentDirectional(0, 0),
                                                                                 child: Text(
                                                                                   getJsonField(
                                                                                     list3Item,
@@ -3146,7 +3115,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                                                 true
                                                                                             ? FlutterFlowTheme.of(context).primary
                                                                                             : FlutterFlowTheme.of(context).primaryText,
-                                                                                        fontSize: 13.0,
+                                                                                        fontSize: 13,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
@@ -3177,8 +3146,8 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                   child: Align(
                                                                     alignment:
                                                                         AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0),
                                                                     child: Text(
                                                                       functions
                                                                           .getTotal(
@@ -3214,7 +3183,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                                 ? FlutterFlowTheme.of(context).primary
                                                                                 : FlutterFlowTheme.of(context).primaryText,
                                                                             fontSize:
-                                                                                13.0,
+                                                                                13,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             useGoogleFonts:
@@ -3229,10 +3198,10 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                 child: Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          2.0,
-                                                                          0.0),
+                                                                          0,
+                                                                          0,
+                                                                          2,
+                                                                          0),
                                                                   child:
                                                                       InkWell(
                                                                     splashColor:
@@ -3263,7 +3232,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                             .selectedInvoiceJson,
                                                                       );
 
-                                                                      setState(
+                                                                      safeSetState(
                                                                           () {});
                                                                     },
                                                                     child:
@@ -3283,7 +3252,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primary,
                                                                         size:
-                                                                            18.0,
+                                                                            18,
                                                                       ),
                                                                     ),
                                                                   ).animateOnActionTrigger(
@@ -3410,7 +3379,7 @@ class _EditBillWidgetState extends State<EditBillWidget>
                                             },
                                           );
 
-                                          setState(() {});
+                                          safeSetState(() {});
                                         },
                                         child: Container(
                                           width:

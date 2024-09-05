@@ -68,7 +68,7 @@ class _LoadingScreenWidgetState extends State<LoadingScreenWidget> {
       ).then((value) => safeSetState(() {}));
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -107,11 +107,11 @@ class _LoadingScreenWidgetState extends State<LoadingScreenWidget> {
                     if (!snapshot.hasData) {
                       return Center(
                         child: SizedBox(
-                          width: 40.0,
-                          height: 40.0,
+                          width: 40,
+                          height: 40,
                           child: SpinKitFadingCircle(
                             color: FlutterFlowTheme.of(context).primary,
-                            size: 40.0,
+                            size: 40,
                           ),
                         ),
                       );
@@ -128,8 +128,8 @@ class _LoadingScreenWidgetState extends State<LoadingScreenWidget> {
                             : null;
 
                     return Container(
-                      width: MediaQuery.sizeOf(context).width * 1.0,
-                      height: MediaQuery.sizeOf(context).height * 1.0,
+                      width: MediaQuery.sizeOf(context).width,
+                      height: MediaQuery.sizeOf(context).height * 1,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                       ),
@@ -139,8 +139,8 @@ class _LoadingScreenWidgetState extends State<LoadingScreenWidget> {
                           Expanded(
                             flex: 5,
                             child: Container(
-                              width: MediaQuery.sizeOf(context).width * 1.0,
-                              height: MediaQuery.sizeOf(context).height * 1.0,
+                              width: MediaQuery.sizeOf(context).width,
+                              height: MediaQuery.sizeOf(context).height * 1,
                               decoration: BoxDecoration(),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -148,22 +148,22 @@ class _LoadingScreenWidgetState extends State<LoadingScreenWidget> {
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 5.0, 0.0, 0.0),
+                                        0, 5, 0, 0),
                                     child: Container(
-                                      width: 85.0,
-                                      height: 85.0,
+                                      width: 85,
+                                      height: 85,
                                       decoration: BoxDecoration(),
                                       child: Image.asset(
                                         'assets/images/IMG_20220412_140945.png',
-                                        width: 100.0,
-                                        height: 160.0,
+                                        width: 100,
+                                        height: 160,
                                         fit: BoxFit.contain,
                                       ),
                                     ),
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 5.0, 0.0, 0.0),
+                                        0, 5, 0, 0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
                                         'aui0uzts' /* SENSIBLE */,
@@ -174,7 +174,7 @@ class _LoadingScreenWidgetState extends State<LoadingScreenWidget> {
                                             fontFamily:
                                                 FlutterFlowTheme.of(context)
                                                     .displaySmallFamily,
-                                            fontSize: 36.0,
+                                            fontSize: 36,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                             useGoogleFonts: GoogleFonts.asMap()
@@ -186,7 +186,7 @@ class _LoadingScreenWidgetState extends State<LoadingScreenWidget> {
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 5.0, 0.0, 0.0),
+                                        0, 5, 0, 0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
                                         'rhq0w8x3' /* CONNECT */,
@@ -199,7 +199,7 @@ class _LoadingScreenWidgetState extends State<LoadingScreenWidget> {
                                                     .headlineSmallFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
-                                            letterSpacing: 5.0,
+                                            letterSpacing: 5,
                                             useGoogleFonts: GoogleFonts.asMap()
                                                 .containsKey(
                                                     FlutterFlowTheme.of(context)
@@ -214,8 +214,8 @@ class _LoadingScreenWidgetState extends State<LoadingScreenWidget> {
                           Expanded(
                             flex: 2,
                             child: Container(
-                              width: MediaQuery.sizeOf(context).width * 1.0,
-                              height: MediaQuery.sizeOf(context).height * 1.0,
+                              width: MediaQuery.sizeOf(context).width,
+                              height: MediaQuery.sizeOf(context).height * 1,
                               decoration: BoxDecoration(),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -262,19 +262,18 @@ class _LoadingScreenWidgetState extends State<LoadingScreenWidget> {
                             Expanded(
                               flex: 5,
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 20.0),
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
                                 child: Container(
-                                  width: MediaQuery.sizeOf(context).width * 1.0,
-                                  height:
-                                      MediaQuery.sizeOf(context).height * 1.0,
+                                  width: MediaQuery.sizeOf(context).width,
+                                  height: MediaQuery.sizeOf(context).height * 1,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        10.0, 10.0, 10.0, 15.0),
+                                        10, 10, 10, 15),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment: MainAxisAlignment.end,
@@ -284,7 +283,7 @@ class _LoadingScreenWidgetState extends State<LoadingScreenWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 10.0),
+                                                  0, 0, 0, 10),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -327,15 +326,14 @@ class _LoadingScreenWidgetState extends State<LoadingScreenWidget> {
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 5.0, 0.0),
+                                                      .fromSTEB(0, 0, 5, 0),
                                                   child: LinearPercentIndicator(
                                                     percent: 0.9,
                                                     width: MediaQuery.sizeOf(
                                                                 context)
                                                             .width *
                                                         0.3,
-                                                    lineHeight: 22.0,
+                                                    lineHeight: 22,
                                                     animation: true,
                                                     animateFromLastPercent:
                                                         true,
@@ -373,14 +371,13 @@ class _LoadingScreenWidgetState extends State<LoadingScreenWidget> {
                                                               ),
                                                     ),
                                                     barRadius:
-                                                        Radius.circular(20.0),
+                                                        Radius.circular(20),
                                                     padding: EdgeInsets.zero,
                                                   ),
                                                 ),
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 5.0, 0.0, 5.0),
+                                                      .fromSTEB(0, 5, 0, 5),
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
@@ -413,8 +410,7 @@ class _LoadingScreenWidgetState extends State<LoadingScreenWidget> {
                                         ),
                                         Container(
                                           width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  1.0,
+                                              MediaQuery.sizeOf(context).width,
                                           height: MediaQuery.sizeOf(context)
                                                   .height *
                                               0.08,
@@ -422,7 +418,7 @@ class _LoadingScreenWidgetState extends State<LoadingScreenWidget> {
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
                                             borderRadius:
-                                                BorderRadius.circular(10.0),
+                                                BorderRadius.circular(10),
                                           ),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -437,8 +433,8 @@ class _LoadingScreenWidgetState extends State<LoadingScreenWidget> {
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                5.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 0, 5, 0),
                                                     child: Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -469,8 +465,8 @@ class _LoadingScreenWidgetState extends State<LoadingScreenWidget> {
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                3.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 0, 3, 0),
                                                     child: Text(
                                                       FFLocalizations.of(
                                                               context)
@@ -533,8 +529,8 @@ class _LoadingScreenWidgetState extends State<LoadingScreenWidget> {
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                5.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 0, 5, 0),
                                                     child: Text(
                                                       FFLocalizations.of(
                                                               context)

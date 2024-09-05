@@ -29,7 +29,7 @@ class _ExitConfirmWidgetState extends State<ExitConfirmWidget> {
     super.initState();
     _model = createModel(context, () => ExitConfirmModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -46,8 +46,8 @@ class _ExitConfirmWidgetState extends State<ExitConfirmWidget> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          width: 500.0,
-          height: 200.0,
+          width: 500,
+          height: 200,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).primaryBackground,
           ),
@@ -94,14 +94,14 @@ class _ExitConfirmWidgetState extends State<ExitConfirmWidget> {
                         context.pushNamed('WindowsLogin');
                       }
 
-                      setState(() {});
+                      safeSetState(() {});
                     },
                     child: Container(
-                      width: 100.0,
-                      height: 40.0,
+                      width: 100,
+                      height: 40,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        borderRadius: BorderRadius.circular(5.0),
+                        borderRadius: BorderRadius.circular(5),
                         border: Border.all(
                           color: FlutterFlowTheme.of(context).customColor1,
                         ),
@@ -138,11 +138,11 @@ class _ExitConfirmWidgetState extends State<ExitConfirmWidget> {
                       context.safePop();
                     },
                     child: Container(
-                      width: 100.0,
-                      height: 40.0,
+                      width: 100,
+                      height: 40,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        borderRadius: BorderRadius.circular(5.0),
+                        borderRadius: BorderRadius.circular(5),
                         border: Border.all(
                           color: FlutterFlowTheme.of(context).customColor1,
                         ),

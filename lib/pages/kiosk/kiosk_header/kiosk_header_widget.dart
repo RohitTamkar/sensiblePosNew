@@ -28,7 +28,7 @@ class _KioskHeaderWidgetState extends State<KioskHeaderWidget> {
     super.initState();
     _model = createModel(context, () => KioskHeaderModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -44,38 +44,38 @@ class _KioskHeaderWidgetState extends State<KioskHeaderWidget> {
 
     return Container(
       width: double.infinity,
-      height: 65.0,
+      height: 65,
       decoration: BoxDecoration(
         color: Color(0xDAFFFFFF),
-        borderRadius: BorderRadius.circular(10.0),
+        borderRadius: BorderRadius.circular(10),
         border: Border.all(
           color: FlutterFlowTheme.of(context).primary,
           width: 0.5,
         ),
       ),
       child: Padding(
-        padding: EdgeInsets.all(5.0),
+        padding: EdgeInsets.all(5),
         child: Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.circular(8.0),
+              borderRadius: BorderRadius.circular(8),
               child: Image.asset(
                 'assets/images/Sensible_Connect_Logo_1.png',
-                width: 150.0,
+                width: 150,
                 height: double.infinity,
                 fit: BoxFit.fitHeight,
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 20, 0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
                     child: Text(
                       dateTimeFormat(
                         "d MMM y",
@@ -86,7 +86,7 @@ class _KioskHeaderWidgetState extends State<KioskHeaderWidget> {
                           FlutterFlowTheme.of(context).headlineSmall.override(
                                 fontFamily: FlutterFlowTheme.of(context)
                                     .headlineSmallFamily,
-                                fontSize: 18.0,
+                                fontSize: 18,
                                 letterSpacing: 0.0,
                                 useGoogleFonts: GoogleFonts.asMap().containsKey(
                                     FlutterFlowTheme.of(context)
@@ -107,7 +107,7 @@ class _KioskHeaderWidgetState extends State<KioskHeaderWidget> {
                                   fontFamily: FlutterFlowTheme.of(context)
                                       .headlineSmallFamily,
                                   color: FlutterFlowTheme.of(context).primary,
-                                  fontSize: 10.0,
+                                  fontSize: 10,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
                                   useGoogleFonts: GoogleFonts.asMap()
@@ -135,7 +135,7 @@ class _KioskHeaderWidgetState extends State<KioskHeaderWidget> {
                                 fontFamily: FlutterFlowTheme.of(context)
                                     .headlineSmallFamily,
                                 color: FlutterFlowTheme.of(context).primary,
-                                fontSize: 10.0,
+                                fontSize: 10,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w600,
                                 useGoogleFonts: GoogleFonts.asMap().containsKey(

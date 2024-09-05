@@ -75,8 +75,8 @@ class _MiniKioskDineParcelWidgetState extends State<MiniKioskDineParcelWidget>
             delay: 0.0.ms,
             duration: 1500.0.ms,
             color: Color(0xFFFFDD42),
-            begin: 0.0,
-            end: 1.0,
+            begin: 0,
+            end: 1,
           ),
         ],
       ),
@@ -97,14 +97,14 @@ class _MiniKioskDineParcelWidgetState extends State<MiniKioskDineParcelWidget>
             delay: 0.0.ms,
             duration: 1500.0.ms,
             color: Color(0xFFFFDD42),
-            begin: 0.0,
-            end: 1.0,
+            begin: 0,
+            end: 1,
           ),
         ],
       ),
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -134,20 +134,19 @@ class _MiniKioskDineParcelWidgetState extends State<MiniKioskDineParcelWidget>
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     fit: BoxFit.fitHeight,
-                    alignment: AlignmentDirectional(1.0, 0.0),
+                    alignment: AlignmentDirectional(1, 0),
                     image: Image.asset(
                       'assets/images/Top_img_5.png',
                     ).image,
                   ),
                 ),
                 child: Transform.rotate(
-                  angle: 90.0 * (math.pi / 180),
+                  angle: 90 * (math.pi / 180),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 80.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 80),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             '8lm0f3n3' /* Choose Order Type  */,
@@ -158,8 +157,8 @@ class _MiniKioskDineParcelWidgetState extends State<MiniKioskDineParcelWidget>
                                 fontFamily: FlutterFlowTheme.of(context)
                                     .displayLargeFamily,
                                 color: FlutterFlowTheme.of(context).info,
-                                fontSize: 40.0,
-                                letterSpacing: 5.0,
+                                fontSize: 40,
+                                letterSpacing: 5,
                                 fontWeight: FontWeight.w600,
                                 useGoogleFonts: GoogleFonts.asMap().containsKey(
                                     FlutterFlowTheme.of(context)
@@ -168,8 +167,7 @@ class _MiniKioskDineParcelWidgetState extends State<MiniKioskDineParcelWidget>
                         ),
                       ),
                       Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 50.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 50),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -183,18 +181,18 @@ class _MiniKioskDineParcelWidgetState extends State<MiniKioskDineParcelWidget>
                               color: FlutterFlowTheme.of(context).primary,
                               boxShadow: [
                                 BoxShadow(
-                                  blurRadius: 12.0,
+                                  blurRadius: 12,
                                   color: Color(0x26000000),
                                   offset: Offset(
-                                    9.0,
-                                    9.0,
+                                    9,
+                                    9,
                                   ),
                                 )
                               ],
-                              borderRadius: BorderRadius.circular(30.0),
+                              borderRadius: BorderRadius.circular(30),
                             ),
                             child: Padding(
-                              padding: EdgeInsets.all(60.0),
+                              padding: EdgeInsets.all(60),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -203,7 +201,7 @@ class _MiniKioskDineParcelWidgetState extends State<MiniKioskDineParcelWidget>
                                       Icons.dinner_dining,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBtnText,
-                                      size: 50.0,
+                                      size: 50,
                                     ).animateOnPageLoad(animationsMap[
                                         'iconOnPageLoadAnimation1']!),
                                   ),
@@ -222,7 +220,7 @@ class _MiniKioskDineParcelWidgetState extends State<MiniKioskDineParcelWidget>
                                                     .displayLargeFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBtnText,
-                                            fontSize: 36.0,
+                                            fontSize: 36,
                                             letterSpacing: 0.0,
                                             useGoogleFonts: GoogleFonts.asMap()
                                                 .containsKey(
@@ -246,8 +244,7 @@ class _MiniKioskDineParcelWidgetState extends State<MiniKioskDineParcelWidget>
                         false,
                       ))
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 50.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 50),
                           child: InkWell(
                             splashColor: Colors.transparent,
                             focusColor: Colors.transparent,
@@ -261,18 +258,18 @@ class _MiniKioskDineParcelWidgetState extends State<MiniKioskDineParcelWidget>
                                 color: FlutterFlowTheme.of(context).primary,
                                 boxShadow: [
                                   BoxShadow(
-                                    blurRadius: 12.0,
+                                    blurRadius: 12,
                                     color: Color(0x27000000),
                                     offset: Offset(
-                                      9.0,
-                                      9.0,
+                                      9,
+                                      9,
                                     ),
                                   )
                                 ],
-                                borderRadius: BorderRadius.circular(30.0),
+                                borderRadius: BorderRadius.circular(30),
                               ),
                               child: Padding(
-                                padding: EdgeInsets.all(60.0),
+                                padding: EdgeInsets.all(60),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -281,7 +278,7 @@ class _MiniKioskDineParcelWidgetState extends State<MiniKioskDineParcelWidget>
                                         Icons.takeout_dining_rounded,
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBtnText,
-                                        size: 45.0,
+                                        size: 45,
                                       ).animateOnPageLoad(animationsMap[
                                           'iconOnPageLoadAnimation2']!),
                                     ),
@@ -301,7 +298,7 @@ class _MiniKioskDineParcelWidgetState extends State<MiniKioskDineParcelWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBtnText,
-                                              fontSize: 36.0,
+                                              fontSize: 36,
                                               letterSpacing: 0.0,
                                               useGoogleFonts: GoogleFonts
                                                       .asMap()

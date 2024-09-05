@@ -46,7 +46,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
         ExpandableController(initialExpanded: false);
     _model.expandableExpandableController2 =
         ExpandableController(initialExpanded: false);
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -75,7 +75,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                   flex: 4,
                   child: Container(
                     width: double.infinity,
-                    height: 100.0,
+                    height: 100,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).primary,
                     ),
@@ -85,22 +85,21 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              20.0, 0.0, 20.0, 0.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 30.0,
-                                borderWidth: 1.0,
-                                buttonSize: 45.0,
+                                borderRadius: 30,
+                                borderWidth: 1,
+                                buttonSize: 45,
                                 icon: Icon(
                                   Icons.chevron_left,
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBtnText,
-                                  size: 30.0,
+                                  size: 30,
                                 ),
                                 onPressed: () async {
                                   context.pop();
@@ -128,13 +127,13 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                               ),
                               FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 30.0,
-                                borderWidth: 1.0,
-                                buttonSize: 45.0,
+                                borderRadius: 30,
+                                borderWidth: 1,
+                                buttonSize: 45,
                                 icon: Icon(
                                   Icons.chevron_left,
                                   color: Colors.transparent,
-                                  size: 30.0,
+                                  size: 30,
                                 ),
                                 onPressed: () {
                                   print('IconButton pressed ...');
@@ -163,11 +162,11 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                       if (!snapshot.hasData) {
                         return Center(
                           child: SizedBox(
-                            width: 40.0,
-                            height: 40.0,
+                            width: 40,
+                            height: 40,
                             child: SpinKitFadingCircle(
                               color: FlutterFlowTheme.of(context).primary,
-                              size: 40.0,
+                              size: 40,
                             ),
                           ),
                         );
@@ -181,37 +180,36 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
 
                       return Container(
                         width: double.infinity,
-                        height: 100.0,
+                        height: 100,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).primaryBackground,
                           borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(0.0),
-                            bottomRight: Radius.circular(0.0),
-                            topLeft: Radius.circular(40.0),
-                            topRight: Radius.circular(40.0),
+                            bottomLeft: Radius.circular(0),
+                            bottomRight: Radius.circular(0),
+                            topLeft: Radius.circular(40),
+                            topRight: Radius.circular(40),
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              5.0, 20.0, 5.0, 0.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(5, 20, 5, 0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    20.0, 0.0, 20.0, 0.0),
+                                    20, 0, 20, 0),
                                 child: Container(
                                   height:
                                       MediaQuery.sizeOf(context).height * 0.065,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
-                                    borderRadius: BorderRadius.circular(10.0),
+                                    borderRadius: BorderRadius.circular(10),
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        10.0, 0.0, 10.0, 0.0),
+                                        10, 0, 10, 0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -220,7 +218,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 2.0, 0.0, 0.0),
+                                                  0, 2, 0, 0),
                                           child: SelectionArea(
                                               child: Text(
                                             FFLocalizations.of(context).getText(
@@ -236,7 +234,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .customColor3,
-                                                  fontSize: 20.0,
+                                                  fontSize: 20,
                                                   letterSpacing: 0.0,
                                                   useGoogleFonts: GoogleFonts
                                                           .asMap()
@@ -250,7 +248,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 7.0),
+                                                  0, 0, 0, 7),
                                           child: SelectionArea(
                                               child: Text(
                                             containerUserProfileRecord!.name,
@@ -281,12 +279,12 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                               Expanded(
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 15.0, 0.0, 0.0),
+                                      0, 15, 0, 0),
                                   child: Container(
                                     width: double.infinity,
-                                    height: 100.0,
+                                    height: 100,
                                     decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10.0),
+                                      borderRadius: BorderRadius.circular(10),
                                     ),
                                     child: SingleChildScrollView(
                                       child: Column(
@@ -295,7 +293,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 15.0),
+                                                    0, 0, 0, 15),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
@@ -312,11 +310,8 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                         header: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      15.0,
-                                                                      8.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(15,
+                                                                      8, 0, 0),
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -368,7 +363,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                     ),
                                                               ),
                                                               Divider(
-                                                                thickness: 1.0,
+                                                                thickness: 1,
                                                               ),
                                                             ],
                                                           ),
@@ -390,7 +385,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                   : false,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTileValue1 =
                                                                         newValue!);
                                                               },
@@ -464,7 +459,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                   : false,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTileValue2 =
                                                                         newValue!);
                                                               },
@@ -538,7 +533,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                   : false,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTileValue3 =
                                                                         newValue!);
                                                               },
@@ -612,7 +607,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                   : false,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTileValue4 =
                                                                         newValue!);
                                                               },
@@ -686,7 +681,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                   : false,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTileValue5 =
                                                                         newValue!);
                                                               },
@@ -760,7 +755,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                   : false,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTileValue6 =
                                                                         newValue!);
                                                               },
@@ -834,7 +829,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                   : false,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTileValue7 =
                                                                         newValue!);
                                                               },
@@ -908,7 +903,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                   : false,
                                                               onChanged:
                                                                   (newValue) async {
-                                                                setState(() =>
+                                                                safeSetState(() =>
                                                                     _model.switchListTileValue8 =
                                                                         newValue!);
                                                               },
@@ -1008,11 +1003,8 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                       header: Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    15.0,
-                                                                    8.0,
-                                                                    0.0,
-                                                                    0.0),
+                                                                .fromSTEB(15, 8,
+                                                                    0, 0),
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -1063,7 +1055,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                   ),
                                                             ),
                                                             Divider(
-                                                              thickness: 1.0,
+                                                              thickness: 1,
                                                             ),
                                                           ],
                                                         ),
@@ -1077,10 +1069,10 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        7.0),
+                                                                        0,
+                                                                        0,
+                                                                        0,
+                                                                        7),
                                                             child: Container(
                                                               width: double
                                                                   .infinity,
@@ -1096,12 +1088,13 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                     .secondary,
                                                               ),
                                                               child: Padding(
-                                                                padding: EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        15.0,
-                                                                        0.0,
-                                                                        15.0,
-                                                                        0.0),
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            15,
+                                                                            0,
+                                                                            15,
+                                                                            0),
                                                                 child: Row(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -1111,11 +1104,12 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                           .spaceBetween,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          5.0),
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              0,
+                                                                              0,
+                                                                              0,
+                                                                              5),
                                                                       child: SelectionArea(
                                                                           child: Text(
                                                                         FFLocalizations.of(context)
@@ -1165,7 +1159,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                       ],
                                                                       onChanged:
                                                                           (val) async {
-                                                                        setState(() =>
+                                                                        safeSetState(() =>
                                                                             _model.dropDownValue1 =
                                                                                 val);
                                                                         _model.d1 =
@@ -1175,14 +1169,14 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                         );
                                                                         FFAppState().accessPo =
                                                                             _model.d1!;
-                                                                        setState(
+                                                                        safeSetState(
                                                                             () {});
 
-                                                                        setState(
+                                                                        safeSetState(
                                                                             () {});
                                                                       },
                                                                       width:
-                                                                          150.0,
+                                                                          150,
                                                                       height: MediaQuery.sizeOf(context)
                                                                               .height *
                                                                           0.045,
@@ -1204,25 +1198,26 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                         Icons
                                                                             .arrow_drop_down_circle_sharp,
                                                                         size:
-                                                                            15.0,
+                                                                            15,
                                                                       ),
                                                                       fillColor:
                                                                           Colors
                                                                               .white,
                                                                       elevation:
-                                                                          2.0,
+                                                                          2,
                                                                       borderColor:
                                                                           Color(
                                                                               0x00CBB0FF),
                                                                       borderWidth:
-                                                                          0.0,
+                                                                          0,
                                                                       borderRadius:
-                                                                          8.0,
-                                                                      margin: EdgeInsetsDirectional.fromSTEB(
-                                                                          12.0,
-                                                                          4.0,
-                                                                          12.0,
-                                                                          4.0),
+                                                                          8,
+                                                                      margin: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              12,
+                                                                              4,
+                                                                              12,
+                                                                              4),
                                                                       hidesUnderline:
                                                                           true,
                                                                       isSearchable:
@@ -1239,10 +1234,10 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        7.0),
+                                                                        0,
+                                                                        0,
+                                                                        0,
+                                                                        7),
                                                             child: Container(
                                                               width: double
                                                                   .infinity,
@@ -1258,12 +1253,13 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                     .secondary,
                                                               ),
                                                               child: Padding(
-                                                                padding: EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        15.0,
-                                                                        0.0,
-                                                                        15.0,
-                                                                        0.0),
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            15,
+                                                                            0,
+                                                                            15,
+                                                                            0),
                                                                 child: Row(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -1273,11 +1269,12 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                           .spaceBetween,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          5.0),
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              0,
+                                                                              0,
+                                                                              0,
+                                                                              5),
                                                                       child: SelectionArea(
                                                                           child: Text(
                                                                         FFLocalizations.of(context)
@@ -1327,7 +1324,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                       ],
                                                                       onChanged:
                                                                           (val) async {
-                                                                        setState(() =>
+                                                                        safeSetState(() =>
                                                                             _model.dropDownValue2 =
                                                                                 val);
                                                                         _model.d2 =
@@ -1337,14 +1334,14 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                         );
                                                                         FFAppState().accessSo =
                                                                             _model.d2!;
-                                                                        setState(
+                                                                        safeSetState(
                                                                             () {});
 
-                                                                        setState(
+                                                                        safeSetState(
                                                                             () {});
                                                                       },
                                                                       width:
-                                                                          150.0,
+                                                                          150,
                                                                       height: MediaQuery.sizeOf(context)
                                                                               .height *
                                                                           0.045,
@@ -1366,25 +1363,26 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                         Icons
                                                                             .arrow_drop_down_circle_sharp,
                                                                         size:
-                                                                            15.0,
+                                                                            15,
                                                                       ),
                                                                       fillColor:
                                                                           Colors
                                                                               .white,
                                                                       elevation:
-                                                                          2.0,
+                                                                          2,
                                                                       borderColor:
                                                                           Color(
                                                                               0x00CBB0FF),
                                                                       borderWidth:
-                                                                          0.0,
+                                                                          0,
                                                                       borderRadius:
-                                                                          8.0,
-                                                                      margin: EdgeInsetsDirectional.fromSTEB(
-                                                                          12.0,
-                                                                          4.0,
-                                                                          12.0,
-                                                                          4.0),
+                                                                          8,
+                                                                      margin: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              12,
+                                                                              4,
+                                                                              12,
+                                                                              4),
                                                                       hidesUnderline:
                                                                           true,
                                                                       isSearchable:
@@ -1401,10 +1399,10 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        7.0),
+                                                                        0,
+                                                                        0,
+                                                                        0,
+                                                                        7),
                                                             child: Container(
                                                               width: double
                                                                   .infinity,
@@ -1420,12 +1418,13 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                     .secondary,
                                                               ),
                                                               child: Padding(
-                                                                padding: EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        15.0,
-                                                                        0.0,
-                                                                        15.0,
-                                                                        0.0),
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            15,
+                                                                            0,
+                                                                            15,
+                                                                            0),
                                                                 child: Row(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -1435,11 +1434,12 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                           .spaceBetween,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          5.0),
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              0,
+                                                                              0,
+                                                                              0,
+                                                                              5),
                                                                       child: SelectionArea(
                                                                           child: Text(
                                                                         FFLocalizations.of(context)
@@ -1489,7 +1489,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                       ],
                                                                       onChanged:
                                                                           (val) async {
-                                                                        setState(() =>
+                                                                        safeSetState(() =>
                                                                             _model.dropDownValue3 =
                                                                                 val);
                                                                         _model.d3 =
@@ -1499,14 +1499,14 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                         );
                                                                         FFAppState().accessLeads =
                                                                             _model.d3!;
-                                                                        setState(
+                                                                        safeSetState(
                                                                             () {});
 
-                                                                        setState(
+                                                                        safeSetState(
                                                                             () {});
                                                                       },
                                                                       width:
-                                                                          150.0,
+                                                                          150,
                                                                       height: MediaQuery.sizeOf(context)
                                                                               .height *
                                                                           0.045,
@@ -1528,25 +1528,26 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                         Icons
                                                                             .arrow_drop_down_circle_sharp,
                                                                         size:
-                                                                            15.0,
+                                                                            15,
                                                                       ),
                                                                       fillColor:
                                                                           Colors
                                                                               .white,
                                                                       elevation:
-                                                                          2.0,
+                                                                          2,
                                                                       borderColor:
                                                                           Color(
                                                                               0x00CBB0FF),
                                                                       borderWidth:
-                                                                          0.0,
+                                                                          0,
                                                                       borderRadius:
-                                                                          8.0,
-                                                                      margin: EdgeInsetsDirectional.fromSTEB(
-                                                                          12.0,
-                                                                          4.0,
-                                                                          12.0,
-                                                                          4.0),
+                                                                          8,
+                                                                      margin: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              12,
+                                                                              4,
+                                                                              12,
+                                                                              4),
                                                                       hidesUnderline:
                                                                           true,
                                                                       isSearchable:
@@ -1563,10 +1564,10 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        7.0),
+                                                                        0,
+                                                                        0,
+                                                                        0,
+                                                                        7),
                                                             child: Container(
                                                               width: double
                                                                   .infinity,
@@ -1582,12 +1583,13 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                     .secondary,
                                                               ),
                                                               child: Padding(
-                                                                padding: EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        15.0,
-                                                                        0.0,
-                                                                        15.0,
-                                                                        0.0),
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            15,
+                                                                            0,
+                                                                            15,
+                                                                            0),
                                                                 child: Row(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -1597,11 +1599,12 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                           .spaceBetween,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          5.0),
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              0,
+                                                                              0,
+                                                                              0,
+                                                                              5),
                                                                       child: SelectionArea(
                                                                           child: Text(
                                                                         FFLocalizations.of(context)
@@ -1651,7 +1654,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                       ],
                                                                       onChanged:
                                                                           (val) async {
-                                                                        setState(() =>
+                                                                        safeSetState(() =>
                                                                             _model.dropDownValue4 =
                                                                                 val);
                                                                         _model.d4 =
@@ -1661,14 +1664,14 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                         );
                                                                         FFAppState().accessServiceCall =
                                                                             _model.d4!;
-                                                                        setState(
+                                                                        safeSetState(
                                                                             () {});
 
-                                                                        setState(
+                                                                        safeSetState(
                                                                             () {});
                                                                       },
                                                                       width:
-                                                                          150.0,
+                                                                          150,
                                                                       height: MediaQuery.sizeOf(context)
                                                                               .height *
                                                                           0.045,
@@ -1690,25 +1693,26 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                         Icons
                                                                             .arrow_drop_down_circle_sharp,
                                                                         size:
-                                                                            15.0,
+                                                                            15,
                                                                       ),
                                                                       fillColor:
                                                                           Colors
                                                                               .white,
                                                                       elevation:
-                                                                          2.0,
+                                                                          2,
                                                                       borderColor:
                                                                           Color(
                                                                               0x00CBB0FF),
                                                                       borderWidth:
-                                                                          0.0,
+                                                                          0,
                                                                       borderRadius:
-                                                                          8.0,
-                                                                      margin: EdgeInsetsDirectional.fromSTEB(
-                                                                          12.0,
-                                                                          4.0,
-                                                                          12.0,
-                                                                          4.0),
+                                                                          8,
+                                                                      margin: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              12,
+                                                                              4,
+                                                                              12,
+                                                                              4),
                                                                       hidesUnderline:
                                                                           true,
                                                                       isSearchable:
@@ -1725,10 +1729,10 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        7.0),
+                                                                        0,
+                                                                        0,
+                                                                        0,
+                                                                        7),
                                                             child: Container(
                                                               width: double
                                                                   .infinity,
@@ -1744,12 +1748,13 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                     .secondary,
                                                               ),
                                                               child: Padding(
-                                                                padding: EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        15.0,
-                                                                        0.0,
-                                                                        15.0,
-                                                                        0.0),
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            15,
+                                                                            0,
+                                                                            15,
+                                                                            0),
                                                                 child: Row(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -1759,11 +1764,12 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                           .spaceBetween,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          5.0),
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              0,
+                                                                              0,
+                                                                              0,
+                                                                              5),
                                                                       child: SelectionArea(
                                                                           child: Text(
                                                                         FFLocalizations.of(context)
@@ -1813,7 +1819,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                       ],
                                                                       onChanged:
                                                                           (val) async {
-                                                                        setState(() =>
+                                                                        safeSetState(() =>
                                                                             _model.dropDownValue5 =
                                                                                 val);
                                                                         _model.d5 =
@@ -1823,14 +1829,14 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                         );
                                                                         FFAppState().accessExpence =
                                                                             _model.d5!;
-                                                                        setState(
+                                                                        safeSetState(
                                                                             () {});
 
-                                                                        setState(
+                                                                        safeSetState(
                                                                             () {});
                                                                       },
                                                                       width:
-                                                                          150.0,
+                                                                          150,
                                                                       height: MediaQuery.sizeOf(context)
                                                                               .height *
                                                                           0.045,
@@ -1852,25 +1858,26 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                         Icons
                                                                             .arrow_drop_down_circle_sharp,
                                                                         size:
-                                                                            15.0,
+                                                                            15,
                                                                       ),
                                                                       fillColor:
                                                                           Colors
                                                                               .white,
                                                                       elevation:
-                                                                          2.0,
+                                                                          2,
                                                                       borderColor:
                                                                           Color(
                                                                               0x00CBB0FF),
                                                                       borderWidth:
-                                                                          0.0,
+                                                                          0,
                                                                       borderRadius:
-                                                                          8.0,
-                                                                      margin: EdgeInsetsDirectional.fromSTEB(
-                                                                          12.0,
-                                                                          4.0,
-                                                                          12.0,
-                                                                          4.0),
+                                                                          8,
+                                                                      margin: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              12,
+                                                                              4,
+                                                                              12,
+                                                                              4),
                                                                       hidesUnderline:
                                                                           true,
                                                                       isSearchable:
@@ -1887,10 +1894,10 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        15.0),
+                                                                        0,
+                                                                        0,
+                                                                        0,
+                                                                        15),
                                                             child: Container(
                                                               width: double
                                                                   .infinity,
@@ -1906,12 +1913,13 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                     .secondary,
                                                               ),
                                                               child: Padding(
-                                                                padding: EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        15.0,
-                                                                        0.0,
-                                                                        15.0,
-                                                                        0.0),
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            15,
+                                                                            0,
+                                                                            15,
+                                                                            0),
                                                                 child: Row(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -1921,11 +1929,12 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                           .spaceBetween,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          5.0),
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              0,
+                                                                              0,
+                                                                              0,
+                                                                              5),
                                                                       child: SelectionArea(
                                                                           child: Text(
                                                                         FFLocalizations.of(context)
@@ -1975,7 +1984,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                       ],
                                                                       onChanged:
                                                                           (val) async {
-                                                                        setState(() =>
+                                                                        safeSetState(() =>
                                                                             _model.dropDownValue6 =
                                                                                 val);
                                                                         _model.d6 =
@@ -1985,14 +1994,14 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                         );
                                                                         FFAppState().accessProduction =
                                                                             _model.d6!;
-                                                                        setState(
+                                                                        safeSetState(
                                                                             () {});
 
-                                                                        setState(
+                                                                        safeSetState(
                                                                             () {});
                                                                       },
                                                                       width:
-                                                                          150.0,
+                                                                          150,
                                                                       height: MediaQuery.sizeOf(context)
                                                                               .height *
                                                                           0.045,
@@ -2014,25 +2023,26 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                         Icons
                                                                             .arrow_drop_down_circle_sharp,
                                                                         size:
-                                                                            15.0,
+                                                                            15,
                                                                       ),
                                                                       fillColor:
                                                                           Colors
                                                                               .white,
                                                                       elevation:
-                                                                          2.0,
+                                                                          2,
                                                                       borderColor:
                                                                           Color(
                                                                               0x00CBB0FF),
                                                                       borderWidth:
-                                                                          0.0,
+                                                                          0,
                                                                       borderRadius:
-                                                                          8.0,
-                                                                      margin: EdgeInsetsDirectional.fromSTEB(
-                                                                          12.0,
-                                                                          4.0,
-                                                                          12.0,
-                                                                          4.0),
+                                                                          8,
+                                                                      margin: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              12,
+                                                                              4,
+                                                                              12,
+                                                                              4),
                                                                       hidesUnderline:
                                                                           true,
                                                                       isSearchable:
@@ -2049,10 +2059,10 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        15.0),
+                                                                        0,
+                                                                        0,
+                                                                        0,
+                                                                        15),
                                                             child: Container(
                                                               width: double
                                                                   .infinity,
@@ -2068,12 +2078,13 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                     .secondary,
                                                               ),
                                                               child: Padding(
-                                                                padding: EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        15.0,
-                                                                        0.0,
-                                                                        15.0,
-                                                                        0.0),
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            15,
+                                                                            0,
+                                                                            15,
+                                                                            0),
                                                                 child: Row(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -2083,11 +2094,12 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                           .spaceBetween,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          5.0),
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              0,
+                                                                              0,
+                                                                              0,
+                                                                              5),
                                                                       child: SelectionArea(
                                                                           child: Text(
                                                                         FFLocalizations.of(context)
@@ -2137,7 +2149,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                       ],
                                                                       onChanged:
                                                                           (val) async {
-                                                                        setState(() =>
+                                                                        safeSetState(() =>
                                                                             _model.dropDownValue7 =
                                                                                 val);
                                                                         _model.d7 =
@@ -2147,14 +2159,14 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                         );
                                                                         FFAppState().accessAttendance =
                                                                             _model.d7!;
-                                                                        setState(
+                                                                        safeSetState(
                                                                             () {});
 
-                                                                        setState(
+                                                                        safeSetState(
                                                                             () {});
                                                                       },
                                                                       width:
-                                                                          150.0,
+                                                                          150,
                                                                       height: MediaQuery.sizeOf(context)
                                                                               .height *
                                                                           0.045,
@@ -2176,25 +2188,26 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                         Icons
                                                                             .arrow_drop_down_circle_sharp,
                                                                         size:
-                                                                            15.0,
+                                                                            15,
                                                                       ),
                                                                       fillColor:
                                                                           Colors
                                                                               .white,
                                                                       elevation:
-                                                                          2.0,
+                                                                          2,
                                                                       borderColor:
                                                                           Color(
                                                                               0x00CBB0FF),
                                                                       borderWidth:
-                                                                          0.0,
+                                                                          0,
                                                                       borderRadius:
-                                                                          8.0,
-                                                                      margin: EdgeInsetsDirectional.fromSTEB(
-                                                                          12.0,
-                                                                          4.0,
-                                                                          12.0,
-                                                                          4.0),
+                                                                          8,
+                                                                      margin: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              12,
+                                                                              4,
+                                                                              12,
+                                                                              4),
                                                                       hidesUnderline:
                                                                           true,
                                                                       isSearchable:
@@ -2230,8 +2243,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                               true)
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 15.0, 0.0, 7.0),
+                                                  .fromSTEB(0, 15, 0, 7),
                                               child: Container(
                                                 width: double.infinity,
                                                 decoration: BoxDecoration(
@@ -2241,8 +2253,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                 ),
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(15.0, 10.0,
-                                                          15.0, 10.0),
+                                                      .fromSTEB(15, 10, 15, 10),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -2254,10 +2265,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    5.0),
+                                                                    0, 0, 0, 5),
                                                         child: SelectionArea(
                                                             child: Text(
                                                           FFLocalizations.of(
@@ -2286,10 +2294,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    5.0),
+                                                                    0, 0, 0, 5),
                                                         child: SelectionArea(
                                                             child: Text(
                                                           FFLocalizations.of(
@@ -2307,7 +2312,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .customColor3,
-                                                                fontSize: 11.0,
+                                                                fontSize: 11,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
@@ -2332,11 +2337,8 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      3.0,
-                                                                      0.0,
-                                                                      3.0),
+                                                                  .fromSTEB(0,
+                                                                      3, 0, 3),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -2376,7 +2378,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .customColor3,
-                                                                size: 20.0,
+                                                                size: 20,
                                                               ),
                                                             ],
                                                           ),
@@ -2391,7 +2393,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                               true)
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 7.0),
+                                                  .fromSTEB(0, 0, 0, 7),
                                               child: Container(
                                                 width: double.infinity,
                                                 decoration: BoxDecoration(
@@ -2401,8 +2403,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                 ),
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(15.0, 10.0,
-                                                          15.0, 10.0),
+                                                      .fromSTEB(15, 10, 15, 10),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -2414,10 +2415,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    5.0),
+                                                                    0, 0, 0, 5),
                                                         child: SelectionArea(
                                                             child: Text(
                                                           FFLocalizations.of(
@@ -2446,10 +2444,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    5.0),
+                                                                    0, 0, 0, 5),
                                                         child: SelectionArea(
                                                             child: Text(
                                                           FFLocalizations.of(
@@ -2467,7 +2462,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .customColor3,
-                                                                fontSize: 11.0,
+                                                                fontSize: 11,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
@@ -2492,11 +2487,8 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      3.0,
-                                                                      0.0,
-                                                                      3.0),
+                                                                  .fromSTEB(0,
+                                                                      3, 0, 3),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -2536,7 +2528,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .customColor3,
-                                                                size: 20.0,
+                                                                size: 20,
                                                               ),
                                                             ],
                                                           ),
@@ -2551,7 +2543,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                               true)
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 7.0),
+                                                  .fromSTEB(0, 0, 0, 7),
                                               child: Container(
                                                 width: double.infinity,
                                                 decoration: BoxDecoration(
@@ -2561,8 +2553,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                 ),
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(15.0, 10.0,
-                                                          15.0, 10.0),
+                                                      .fromSTEB(15, 10, 15, 10),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -2574,10 +2565,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    5.0),
+                                                                    0, 0, 0, 5),
                                                         child: SelectionArea(
                                                             child: Text(
                                                           FFLocalizations.of(
@@ -2606,10 +2594,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    5.0),
+                                                                    0, 0, 0, 5),
                                                         child: SelectionArea(
                                                             child: Text(
                                                           FFLocalizations.of(
@@ -2627,7 +2612,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .customColor3,
-                                                                fontSize: 11.0,
+                                                                fontSize: 11,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
@@ -2652,11 +2637,8 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      3.0,
-                                                                      0.0,
-                                                                      3.0),
+                                                                  .fromSTEB(0,
+                                                                      3, 0, 3),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -2696,7 +2678,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .customColor3,
-                                                                size: 20.0,
+                                                                size: 20,
                                                               ),
                                                             ],
                                                           ),
@@ -2711,7 +2693,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                               true)
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 7.0),
+                                                  .fromSTEB(0, 0, 0, 7),
                                               child: Container(
                                                 width: double.infinity,
                                                 decoration: BoxDecoration(
@@ -2721,8 +2703,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                 ),
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(15.0, 10.0,
-                                                          15.0, 10.0),
+                                                      .fromSTEB(15, 10, 15, 10),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -2734,10 +2715,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    5.0),
+                                                                    0, 0, 0, 5),
                                                         child: SelectionArea(
                                                             child: Text(
                                                           FFLocalizations.of(
@@ -2766,10 +2744,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    5.0),
+                                                                    0, 0, 0, 5),
                                                         child: SelectionArea(
                                                             child: Text(
                                                           FFLocalizations.of(
@@ -2787,7 +2762,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .customColor3,
-                                                                fontSize: 11.0,
+                                                                fontSize: 11,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
@@ -2812,11 +2787,8 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      3.0,
-                                                                      0.0,
-                                                                      3.0),
+                                                                  .fromSTEB(0,
+                                                                      3, 0, 3),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -2856,7 +2828,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .customColor3,
-                                                                size: 20.0,
+                                                                size: 20,
                                                               ),
                                                             ],
                                                           ),
@@ -2871,7 +2843,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                               true)
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 7.0),
+                                                  .fromSTEB(0, 0, 0, 7),
                                               child: InkWell(
                                                 splashColor: Colors.transparent,
                                                 focusColor: Colors.transparent,
@@ -2890,10 +2862,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                     padding:
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(
-                                                                15.0,
-                                                                10.0,
-                                                                15.0,
-                                                                10.0),
+                                                                15, 10, 15, 10),
                                                     child: Column(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -2904,11 +2873,8 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      5.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 5),
                                                           child: SelectionArea(
                                                               child: Text(
                                                             FFLocalizations.of(
@@ -2936,11 +2902,8 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      5.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 5),
                                                           child: SelectionArea(
                                                               child: Text(
                                                             FFLocalizations.of(
@@ -2958,8 +2921,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .customColor3,
-                                                                  fontSize:
-                                                                      11.0,
+                                                                  fontSize: 11,
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
@@ -2986,10 +2948,10 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0.0,
-                                                                        3.0,
-                                                                        0.0,
-                                                                        3.0),
+                                                                        0,
+                                                                        3,
+                                                                        0,
+                                                                        3),
                                                             child: Row(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -3025,7 +2987,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .customColor3,
-                                                                  size: 20.0,
+                                                                  size: 20,
                                                                 ),
                                                               ],
                                                             ),
@@ -3041,7 +3003,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                               true)
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 7.0),
+                                                  .fromSTEB(0, 0, 0, 7),
                                               child: Container(
                                                 width: double.infinity,
                                                 decoration: BoxDecoration(
@@ -3051,8 +3013,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                 ),
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(15.0, 10.0,
-                                                          15.0, 10.0),
+                                                      .fromSTEB(15, 10, 15, 10),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -3064,10 +3025,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    5.0),
+                                                                    0, 0, 0, 5),
                                                         child: SelectionArea(
                                                             child: Text(
                                                           FFLocalizations.of(
@@ -3096,10 +3054,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    5.0),
+                                                                    0, 0, 0, 5),
                                                         child: SelectionArea(
                                                             child: Text(
                                                           FFLocalizations.of(
@@ -3117,7 +3072,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .customColor3,
-                                                                fontSize: 11.0,
+                                                                fontSize: 11,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
@@ -3142,11 +3097,8 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      3.0,
-                                                                      0.0,
-                                                                      3.0),
+                                                                  .fromSTEB(0,
+                                                                      3, 0, 3),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -3186,7 +3138,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .customColor3,
-                                                                size: 20.0,
+                                                                size: 20,
                                                               ),
                                                             ],
                                                           ),
@@ -3201,7 +3153,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                               true)
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 7.0),
+                                                  .fromSTEB(0, 0, 0, 7),
                                               child: Container(
                                                 width: double.infinity,
                                                 decoration: BoxDecoration(
@@ -3211,8 +3163,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                 ),
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          15.0, 5.0, 15.0, 5.0),
+                                                      .fromSTEB(15, 5, 15, 5),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -3224,10 +3175,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    5.0),
+                                                                    0, 0, 0, 5),
                                                         child: SelectionArea(
                                                             child: Text(
                                                           FFLocalizations.of(
@@ -3256,10 +3204,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    5.0),
+                                                                    0, 0, 0, 5),
                                                         child: SelectionArea(
                                                             child: Text(
                                                           FFLocalizations.of(
@@ -3277,7 +3222,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .customColor3,
-                                                                fontSize: 11.0,
+                                                                fontSize: 11,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
@@ -3302,11 +3247,8 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      3.0,
-                                                                      0.0,
-                                                                      3.0),
+                                                                  .fromSTEB(0,
+                                                                      3, 0, 3),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -3346,7 +3288,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .customColor3,
-                                                                size: 20.0,
+                                                                size: 20,
                                                               ),
                                                             ],
                                                           ),
@@ -3361,7 +3303,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                               true)
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 7.0),
+                                                  .fromSTEB(0, 0, 0, 7),
                                               child: Container(
                                                 width: double.infinity,
                                                 decoration: BoxDecoration(
@@ -3371,8 +3313,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                 ),
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(15.0, 10.0,
-                                                          15.0, 10.0),
+                                                      .fromSTEB(15, 10, 15, 10),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -3384,10 +3325,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    5.0),
+                                                                    0, 0, 0, 5),
                                                         child: SelectionArea(
                                                             child: Text(
                                                           FFLocalizations.of(
@@ -3416,10 +3354,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    5.0),
+                                                                    0, 0, 0, 5),
                                                         child: SelectionArea(
                                                             child: Text(
                                                           FFLocalizations.of(
@@ -3437,7 +3372,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .customColor3,
-                                                                fontSize: 11.0,
+                                                                fontSize: 11,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
@@ -3457,9 +3392,9 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                             true,
                                                         onChanged:
                                                             (newValue) async {
-                                                          setState(() => _model
-                                                                  .switchListTileValue9 =
-                                                              newValue!);
+                                                          safeSetState(() =>
+                                                              _model.switchListTileValue9 =
+                                                                  newValue!);
                                                         },
                                                         title: Text(
                                                           FFLocalizations.of(
@@ -3505,8 +3440,8 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 8.0),
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 8),
                                 child: Container(
                                   width: double.infinity,
                                   height:
@@ -3516,7 +3451,7 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                         MediaQuery.sizeOf(context).width * 0.6,
                                   ),
                                   decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8.0),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                   child: FFButtonWidget(
                                     onPressed: () async {
@@ -3580,19 +3515,19 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                       FFAppState().accessServiceCall = 0;
                                       FFAppState().update(() {});
 
-                                      setState(() {});
+                                      safeSetState(() {});
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'doapdzgy' /* Save */,
                                     ),
                                     options: FFButtonOptions(
-                                      width: 130.0,
-                                      height: 40.0,
+                                      width: 130,
+                                      height: 40,
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 0.0),
+                                          0, 0, 0, 0),
                                       iconPadding:
                                           EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
+                                              0, 0, 0, 0),
                                       color:
                                           FlutterFlowTheme.of(context).primary,
                                       textStyle: FlutterFlowTheme.of(context)
@@ -3610,12 +3545,12 @@ class _EditUserPermissionWidgetState extends State<EditUserPermissionWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .headlineSmallFamily),
                                           ),
-                                      elevation: 2.0,
+                                      elevation: 2,
                                       borderSide: BorderSide(
                                         color: Colors.transparent,
-                                        width: 1.0,
+                                        width: 1,
                                       ),
-                                      borderRadius: BorderRadius.circular(8.0),
+                                      borderRadius: BorderRadius.circular(8),
                                     ),
                                   ),
                                 ),

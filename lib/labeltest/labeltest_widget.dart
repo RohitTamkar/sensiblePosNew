@@ -27,7 +27,7 @@ class _LabeltestWidgetState extends State<LabeltestWidget> {
     super.initState();
     _model = createModel(context, () => LabeltestModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -48,38 +48,36 @@ class _LabeltestWidgetState extends State<LabeltestWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: Size.fromHeight(100.0),
+              preferredSize: Size.fromHeight(100),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primary,
                 automaticallyImplyLeading: false,
                 actions: [],
                 flexibleSpace: FlexibleSpaceBar(
                   title: Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 14.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 14),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.end,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 8.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 8),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 0.0, 0.0),
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
                                 child: FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
-                                  borderRadius: 30.0,
-                                  borderWidth: 1.0,
-                                  buttonSize: 50.0,
+                                  borderRadius: 30,
+                                  borderWidth: 1,
+                                  buttonSize: 50,
                                   icon: Icon(
                                     Icons.arrow_back_rounded,
                                     color: Colors.white,
-                                    size: 30.0,
+                                    size: 30,
                                   ),
                                   onPressed: () async {
                                     context.pop();
@@ -87,8 +85,8 @@ class _LabeltestWidgetState extends State<LabeltestWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    4.0, 0.0, 0.0, 0.0),
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(4, 0, 0, 0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
                                     '06ufgit9' /* Back */,
@@ -99,7 +97,7 @@ class _LabeltestWidgetState extends State<LabeltestWidget> {
                                         fontFamily: FlutterFlowTheme.of(context)
                                             .headlineMediumFamily,
                                         color: Colors.white,
-                                        fontSize: 16.0,
+                                        fontSize: 16,
                                         letterSpacing: 0.0,
                                         useGoogleFonts: GoogleFonts.asMap()
                                             .containsKey(
@@ -112,8 +110,7 @@ class _LabeltestWidgetState extends State<LabeltestWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              24.0, 0.0, 0.0, 0.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(24, 0, 0, 0),
                           child: Text(
                             FFLocalizations.of(context).getText(
                               '3yvumpgd' /* Page Title */,
@@ -124,7 +121,7 @@ class _LabeltestWidgetState extends State<LabeltestWidget> {
                                   fontFamily: FlutterFlowTheme.of(context)
                                       .headlineMediumFamily,
                                   color: Colors.white,
-                                  fontSize: 22.0,
+                                  fontSize: 22,
                                   letterSpacing: 0.0,
                                   useGoogleFonts: GoogleFonts.asMap()
                                       .containsKey(FlutterFlowTheme.of(context)
@@ -138,7 +135,7 @@ class _LabeltestWidgetState extends State<LabeltestWidget> {
                   centerTitle: true,
                   expandedTitleScale: 1.0,
                 ),
-                elevation: 2.0,
+                elevation: 2,
               ),
             ),
             body: SafeArea(
@@ -148,10 +145,10 @@ class _LabeltestWidgetState extends State<LabeltestWidget> {
                 children: [
                   Container(
                     width: double.infinity,
-                    height: 500.0,
+                    height: 500,
                     child: custom_widgets.UserInput(
                       width: double.infinity,
-                      height: 500.0,
+                      height: 500,
                     ),
                   ),
                 ],

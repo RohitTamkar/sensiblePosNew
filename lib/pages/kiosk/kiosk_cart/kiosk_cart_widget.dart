@@ -46,7 +46,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
     super.initState();
     _model = createModel(context, () => KioskCartModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -76,7 +76,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                   image: DecorationImage(
                     fit: BoxFit.fitWidth,
-                    alignment: AlignmentDirectional(0.0, -1.0),
+                    alignment: AlignmentDirectional(0, -1),
                     image: Image.asset(
                       'assets/images/Top_img_4.png',
                     ).image,
@@ -86,26 +86,24 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 30.0, 15.0),
+                      padding: EdgeInsetsDirectional.fromSTEB(30, 0, 30, 15),
                       child: Container(
                         width: double.infinity,
                         height: MediaQuery.sizeOf(context).height * 0.14,
                         decoration: BoxDecoration(),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 20.0, 0.0, 0.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 10.0),
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
                                 child: wrapWithModel(
                                   model: _model.kioskHeaderModel,
-                                  updateCallback: () => setState(() {}),
+                                  updateCallback: () => safeSetState(() {}),
                                   child: KioskHeaderWidget(),
                                 ),
                               ),
@@ -121,14 +119,14 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 20.0, 0.0),
+                                            0, 0, 20, 0),
                                         child: FlutterFlowIconButton(
                                           borderColor:
                                               FlutterFlowTheme.of(context)
                                                   .primary,
-                                          borderRadius: 15.0,
+                                          borderRadius: 15,
                                           borderWidth: 0.5,
-                                          buttonSize: 65.0,
+                                          buttonSize: 65,
                                           fillColor:
                                               FlutterFlowTheme.of(context)
                                                   .secondaryBackground,
@@ -136,7 +134,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                             Icons.keyboard_backspace_outlined,
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
-                                            size: 40.0,
+                                            size: 40,
                                           ),
                                           onPressed: () async {
                                             context.pushNamed(
@@ -183,7 +181,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              fontSize: 30.0,
+                                              fontSize: 30,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
                                               useGoogleFonts: GoogleFonts
@@ -196,8 +194,8 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                       ),
                                       FlutterFlowIconButton(
                                         borderColor: Colors.transparent,
-                                        borderRadius: 5.0,
-                                        buttonSize: 75.0,
+                                        borderRadius: 5,
+                                        buttonSize: 75,
                                         icon: Icon(
                                           Icons.keyboard_backspace_outlined,
                                           color: Colors.transparent,
@@ -223,16 +221,16 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                             Icons.dinner_dining_rounded,
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
-                                            size: 30.0,
+                                            size: 30,
                                           ),
                                           options: FFButtonOptions(
-                                            height: 65.0,
+                                            height: 65,
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    24.0, 0.0, 24.0, 0.0),
+                                                    24, 0, 24, 0),
                                             iconPadding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
+                                                    0, 0, 0, 0),
                                             color: Color(0x00B6001A),
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
@@ -246,7 +244,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primary,
-                                                      fontSize: 24.0,
+                                                      fontSize: 24,
                                                       letterSpacing: 0.0,
                                                       useGoogleFonts: GoogleFonts
                                                               .asMap()
@@ -255,13 +253,13 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                       context)
                                                                   .titleSmallFamily),
                                                     ),
-                                            elevation: 0.0,
+                                            elevation: 0,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
-                                              width: 1.0,
+                                              width: 1,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                         ),
                                       if (FFAppState().orderType == 'PARCEL')
@@ -277,16 +275,16 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                             Icons.takeout_dining_rounded,
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
-                                            size: 30.0,
+                                            size: 30,
                                           ),
                                           options: FFButtonOptions(
-                                            height: 65.0,
+                                            height: 65,
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    24.0, 0.0, 24.0, 0.0),
+                                                    24, 0, 24, 0),
                                             iconPadding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
+                                                    0, 0, 0, 0),
                                             color: Color(0x00B6001A),
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
@@ -300,7 +298,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primary,
-                                                      fontSize: 24.0,
+                                                      fontSize: 24,
                                                       letterSpacing: 0.0,
                                                       useGoogleFonts: GoogleFonts
                                                               .asMap()
@@ -309,13 +307,13 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                       context)
                                                                   .titleSmallFamily),
                                                     ),
-                                            elevation: 0.0,
+                                            elevation: 0,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
-                                              width: 1.0,
+                                              width: 1,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                           ),
                                         ),
                                     ],
@@ -330,19 +328,19 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                     Expanded(
                       child: Container(
                         width: double.infinity,
-                        height: 100.0,
+                        height: 100,
                         decoration: BoxDecoration(),
                         child: Stack(
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  25.0, 0.0, 25.0, 20.0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(25, 0, 25, 20),
                               child: Container(
                                 width: double.infinity,
                                 height: double.infinity,
                                 decoration: BoxDecoration(
                                   color: Color(0xFFF0FFF0),
-                                  borderRadius: BorderRadius.circular(40.0),
+                                  borderRadius: BorderRadius.circular(40),
                                   border: Border.all(
                                     color: Color(0xFF61D36B),
                                   ),
@@ -354,7 +352,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                       flex: 2,
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            25.0, 25.0, 25.0, 75.0),
+                                            25, 25, 25, 75),
                                         child: Builder(
                                           builder: (context) {
                                             final listview = functions
@@ -376,32 +374,31 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                     listview[listviewIndex];
                                                 return Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 0.0, 10.0),
+                                                      .fromSTEB(0, 0, 0, 10),
                                                   child: Container(
-                                                    width: 100.0,
+                                                    width: 100,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
                                                           .secondaryBackground,
                                                       boxShadow: [
                                                         BoxShadow(
-                                                          blurRadius: 7.0,
+                                                          blurRadius: 7,
                                                           color:
                                                               Color(0x25000000),
                                                           offset: Offset(
-                                                            3.0,
-                                                            5.0,
+                                                            3,
+                                                            5,
                                                           ),
                                                         )
                                                       ],
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              12.0),
+                                                              12),
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsets.all(15.0),
+                                                          EdgeInsets.all(15),
                                                       child: Row(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -415,15 +412,15 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          8.0),
+                                                                          8),
                                                               child:
                                                                   Image.network(
                                                                 getJsonField(
                                                                   listviewItem,
                                                                   r'''$.imageUrl''',
                                                                 ).toString(),
-                                                                width: 300.0,
-                                                                height: 110.0,
+                                                                width: 300,
+                                                                height: 110,
                                                                 fit: BoxFit
                                                                     .cover,
                                                               ),
@@ -435,10 +432,10 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          15.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          15,
+                                                                          0,
+                                                                          0,
+                                                                          0),
                                                               child: Container(
                                                                 decoration:
                                                                     BoxDecoration(),
@@ -457,10 +454,10 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            15.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            15,
+                                                                            0),
                                                                         child:
                                                                             Column(
                                                                           mainAxisSize:
@@ -475,7 +472,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                               crossAxisAlignment: CrossAxisAlignment.start,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 8),
                                                                                   child: Text(
                                                                                     valueOrDefault<String>(
                                                                                       functions.returnTitlecase(getJsonField(
@@ -487,7 +484,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                     style: FlutterFlowTheme.of(context).headlineLarge.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).headlineLargeFamily,
                                                                                           color: Color(0xFF033BE8),
-                                                                                          fontSize: 18.0,
+                                                                                          fontSize: 18,
                                                                                           letterSpacing: 0.0,
                                                                                           fontWeight: FontWeight.w600,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineLargeFamily),
@@ -499,7 +496,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                   false,
                                                                                 ))
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 15),
                                                                                     child: Text(
                                                                                       getJsonField(
                                                                                         listviewItem,
@@ -508,7 +505,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                       style: FlutterFlowTheme.of(context).titleMedium.override(
                                                                                             fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                             color: Color(0xFF033BE8),
-                                                                                            fontSize: 14.0,
+                                                                                            fontSize: 14,
                                                                                             letterSpacing: 0.0,
                                                                                             useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                                           ),
@@ -527,7 +524,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                     style: FlutterFlowTheme.of(context).headlineSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                                           color: Color(0xFF0046D3),
-                                                                                          fontSize: 13.0,
+                                                                                          fontSize: 13,
                                                                                           letterSpacing: 0.0,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
                                                                                         ),
@@ -540,7 +537,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                     style: FlutterFlowTheme.of(context).headlineSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).headlineSmallFamily,
                                                                                           color: Color(0xFF0046D3),
-                                                                                          fontSize: 14.0,
+                                                                                          fontSize: 14,
                                                                                           letterSpacing: 0.0,
                                                                                           fontWeight: FontWeight.w600,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineSmallFamily),
@@ -573,24 +570,24 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                       children: [
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0,
-                                                                              25.0),
+                                                                              0,
+                                                                              0,
+                                                                              0,
+                                                                              25),
                                                                           child:
                                                                               Container(
                                                                             width:
-                                                                                170.0,
+                                                                                170,
                                                                             height:
                                                                                 MediaQuery.sizeOf(context).height * 0.033,
                                                                             decoration:
                                                                                 BoxDecoration(
                                                                               color: Color(0xFFC6E88C),
                                                                               borderRadius: BorderRadius.only(
-                                                                                bottomLeft: Radius.circular(12.0),
-                                                                                bottomRight: Radius.circular(12.0),
-                                                                                topLeft: Radius.circular(12.0),
-                                                                                topRight: Radius.circular(12.0),
+                                                                                bottomLeft: Radius.circular(12),
+                                                                                bottomRight: Radius.circular(12),
+                                                                                topLeft: Radius.circular(12),
+                                                                                topRight: Radius.circular(12),
                                                                               ),
                                                                             ),
                                                                             child:
@@ -600,13 +597,13 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                 Expanded(
                                                                                   child: FlutterFlowIconButton(
                                                                                     borderColor: Colors.transparent,
-                                                                                    borderRadius: 12.0,
+                                                                                    borderRadius: 12,
                                                                                     buttonSize: double.infinity,
                                                                                     fillColor: Color(0xFFA7D348),
                                                                                     icon: Icon(
                                                                                       Icons.remove_sharp,
                                                                                       color: FlutterFlowTheme.of(context).primaryText,
-                                                                                      size: 20.0,
+                                                                                      size: 20,
                                                                                     ),
                                                                                     onPressed: () async {
                                                                                       _model.res2cart = await actions.reduceQuantityHoldListkiosk(
@@ -637,13 +634,13 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                         FFAppState().delCharges,
                                                                                       );
 
-                                                                                      setState(() {});
+                                                                                      safeSetState(() {});
                                                                                     },
                                                                                   ),
                                                                                 ),
                                                                                 Expanded(
                                                                                   child: Align(
-                                                                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                    alignment: AlignmentDirectional(0, 0),
                                                                                     child: Text(
                                                                                       getJsonField(
                                                                                         listviewItem,
@@ -652,7 +649,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                       textAlign: TextAlign.center,
                                                                                       style: FlutterFlowTheme.of(context).headlineLarge.override(
                                                                                             fontFamily: FlutterFlowTheme.of(context).headlineLargeFamily,
-                                                                                            fontSize: 15.0,
+                                                                                            fontSize: 15,
                                                                                             letterSpacing: 0.0,
                                                                                             fontWeight: FontWeight.w600,
                                                                                             useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineLargeFamily),
@@ -663,13 +660,13 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                 Expanded(
                                                                                   child: FlutterFlowIconButton(
                                                                                     borderColor: Colors.transparent,
-                                                                                    borderRadius: 12.0,
+                                                                                    borderRadius: 12,
                                                                                     buttonSize: double.infinity,
                                                                                     fillColor: Color(0xFFA7D348),
                                                                                     icon: Icon(
                                                                                       Icons.add,
                                                                                       color: FlutterFlowTheme.of(context).primaryText,
-                                                                                      size: 20.0,
+                                                                                      size: 20,
                                                                                     ),
                                                                                     onPressed: () async {
                                                                                       var _shouldSetState = false;
@@ -697,7 +694,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                               );
                                                                                             },
                                                                                           );
-                                                                                          if (_shouldSetState) setState(() {});
+                                                                                          if (_shouldSetState) safeSetState(() {});
                                                                                           return;
                                                                                         }
                                                                                       }
@@ -734,7 +731,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                         FFAppState().delCharges,
                                                                                       );
                                                                                       _shouldSetState = true;
-                                                                                      if (_shouldSetState) setState(() {});
+                                                                                      if (_shouldSetState) safeSetState(() {});
                                                                                     },
                                                                                   ),
                                                                                 ),
@@ -751,13 +748,13 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                               CrossAxisAlignment.end,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 15.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 15, 0),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 crossAxisAlignment: CrossAxisAlignment.end,
                                                                                 children: [
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
                                                                                     child: Text(
                                                                                       FFLocalizations.of(context).getText(
                                                                                         'tsogvgdy' /* Sub Total : */,
@@ -765,7 +762,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                       style: FlutterFlowTheme.of(context).labelSmall.override(
                                                                                             fontFamily: FlutterFlowTheme.of(context).labelSmallFamily,
                                                                                             color: Color(0xFF00A03F),
-                                                                                            fontSize: 12.0,
+                                                                                            fontSize: 12,
                                                                                             letterSpacing: 0.0,
                                                                                             fontWeight: FontWeight.w600,
                                                                                             useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelSmallFamily),
@@ -783,7 +780,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                           style: FlutterFlowTheme.of(context).titleMedium.override(
                                                                                                 fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
                                                                                                 color: Color(0xFF00A03F),
-                                                                                                fontSize: 13.0,
+                                                                                                fontSize: 13,
                                                                                                 letterSpacing: 0.0,
                                                                                                 fontWeight: FontWeight.normal,
                                                                                                 useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
@@ -804,7 +801,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                           style: FlutterFlowTheme.of(context).headlineLarge.override(
                                                                                                 fontFamily: FlutterFlowTheme.of(context).headlineLargeFamily,
                                                                                                 color: Color(0xFF00A03F),
-                                                                                                fontSize: 15.0,
+                                                                                                fontSize: 15,
                                                                                                 letterSpacing: 0.0,
                                                                                                 fontWeight: FontWeight.w600,
                                                                                                 useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineLargeFamily),
@@ -825,14 +822,14 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                             ),
                                                                             FlutterFlowIconButton(
                                                                               borderColor: FlutterFlowTheme.of(context).primary,
-                                                                              borderRadius: 12.0,
+                                                                              borderRadius: 12,
                                                                               borderWidth: 0.5,
-                                                                              buttonSize: 40.0,
+                                                                              buttonSize: 40,
                                                                               fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                                                                               icon: Icon(
                                                                                 Icons.delete_rounded,
                                                                                 color: FlutterFlowTheme.of(context).primary,
-                                                                                size: 18.0,
+                                                                                size: 18,
                                                                               ),
                                                                               onPressed: () async {
                                                                                 _model.res20Copy = await actions.removeHoldListItem(
@@ -859,9 +856,9 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                                       r'''$.id''',
                                                                                     ).toString(),
                                                                                     FFAppState().outletIdRef!.id)!);
-                                                                                setState(() {});
+                                                                                safeSetState(() {});
 
-                                                                                setState(() {});
+                                                                                safeSetState(() {});
                                                                               },
                                                                             ),
                                                                           ],
@@ -889,29 +886,28 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(1.0, 1.0),
+                              alignment: AlignmentDirectional(1, 1),
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 100.0),
+                                    0, 0, 0, 100),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
                                     if (false)
                                       Align(
-                                        alignment:
-                                            AlignmentDirectional(0.0, 1.0),
+                                        alignment: AlignmentDirectional(0, 1),
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 10.0, 0.0, 10.0),
+                                                  0, 10, 0, 10),
                                           child: FFButtonWidget(
                                             onPressed: () async {
                                               FFAppState().orderId =
                                                   FFAppState().orderId + 10;
                                               FFAppState().paytmOrderId =
                                                   'ORD-${FFAppState().orderId.toString()}${getCurrentTimestamp.millisecondsSinceEpoch.toString()}';
-                                              setState(() {});
+                                              safeSetState(() {});
                                               _model.closeUnixTime =
                                                   await actions
                                                       .setCloseUnixTime(
@@ -1002,7 +998,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                 },
                                               );
 
-                                              setState(() {});
+                                              safeSetState(() {});
                                             },
                                             text: FFLocalizations.of(context)
                                                 .getText(
@@ -1010,18 +1006,17 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                             ),
                                             icon: Icon(
                                               Icons.chevron_right,
-                                              size: 25.0,
+                                              size: 25,
                                             ),
                                             options: FFButtonOptions(
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
                                                   0.4,
-                                              height: 65.0,
+                                              height: 65,
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      24.0, 0.0, 24.0, 0.0),
+                                                  .fromSTEB(24, 0, 24, 0),
                                               iconPadding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                  .fromSTEB(0, 0, 0, 0),
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .tertiary,
@@ -1044,13 +1039,13 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                         context)
                                                                     .titleLargeFamily),
                                                       ),
-                                              elevation: 3.0,
+                                              elevation: 3,
                                               borderSide: BorderSide(
                                                 color: Colors.transparent,
-                                                width: 1.0,
+                                                width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                  BorderRadius.circular(8),
                                             ),
                                           ),
                                         ),
@@ -1060,10 +1055,10 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 1.0),
+                              alignment: AlignmentDirectional(0, 1),
                               child: Container(
                                 width: double.infinity,
-                                height: 95.0,
+                                height: 95,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
@@ -1154,18 +1149,18 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                       ),
                                       icon: Icon(
                                         Icons.close,
-                                        size: 24.0,
+                                        size: 24,
                                       ),
                                       options: FFButtonOptions(
                                         width:
                                             MediaQuery.sizeOf(context).width *
                                                 0.25,
-                                        height: 95.0,
+                                        height: 95,
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 12.0, 0.0),
+                                            12, 0, 12, 0),
                                         iconPadding:
                                             EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
+                                                0, 0, 0, 0),
                                         color: Color(0x00B6001A),
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
@@ -1176,7 +1171,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              fontSize: 20.0,
+                                              fontSize: 20,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
                                               useGoogleFonts: GoogleFonts
@@ -1186,13 +1181,12 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                               context)
                                                           .titleSmallFamily),
                                             ),
-                                        elevation: 0.0,
+                                        elevation: 0,
                                         borderSide: BorderSide(
                                           color: Colors.transparent,
-                                          width: 1.0,
+                                          width: 1,
                                         ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
+                                        borderRadius: BorderRadius.circular(8),
                                       ),
                                     ),
                                     Row(
@@ -1201,12 +1195,12 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 5.0, 0.0),
+                                                  0, 0, 5, 0),
                                           child: Icon(
                                             Icons.shopping_cart_rounded,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            size: 24.0,
+                                            size: 24,
                                           ),
                                         ),
                                         Text(
@@ -1220,7 +1214,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                 fontFamily:
                                                     FlutterFlowTheme.of(context)
                                                         .displayLargeFamily,
-                                                fontSize: 24.0,
+                                                fontSize: 24,
                                                 letterSpacing: 0.0,
                                                 useGoogleFonts: GoogleFonts
                                                         .asMap()
@@ -1252,7 +1246,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
-                                                  fontSize: 20.0,
+                                                  fontSize: 20,
                                                   letterSpacing: 0.0,
                                                   useGoogleFonts: GoogleFonts
                                                           .asMap()
@@ -1275,7 +1269,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
-                                                  fontSize: 24.0,
+                                                  fontSize: 24,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
                                                   useGoogleFonts: GoogleFonts
@@ -1307,7 +1301,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                       textAlign: TextAlign.center,
                                     ),
                                     Align(
-                                      alignment: AlignmentDirectional(0.0, 1.0),
+                                      alignment: AlignmentDirectional(0, 1),
                                       child: FFButtonWidget(
                                         onPressed: () async {
                                           if (FFAppState().isPrinterConnected) {
@@ -1345,10 +1339,10 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                 )),
                                                 0,
                                               );
-                                              setState(() {});
+                                              safeSetState(() {});
                                             } else {
                                               FFAppState().count = 0;
-                                              setState(() {});
+                                              safeSetState(() {});
                                             }
 
                                             if (functions
@@ -1370,11 +1364,11 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                 )) {
                                                   FFAppState().count =
                                                       FFAppState().count + 1;
-                                                  setState(() {});
+                                                  safeSetState(() {});
                                                 } else {
                                                   FFAppState().count =
                                                       FFAppState().count + 1;
-                                                  setState(() {});
+                                                  safeSetState(() {});
                                                 }
 
                                                 FFAppState().orderId =
@@ -1389,7 +1383,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                 );
                                                 FFAppState().outletId =
                                                     _model.outletDOc!.id;
-                                                setState(() {});
+                                                safeSetState(() {});
                                                 _model.paymentQrResponse =
                                                     await CreateQRCall.call(
                                                   mid: valueOrDefault<String>(
@@ -1553,7 +1547,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                             );
                                           }
 
-                                          setState(() {});
+                                          safeSetState(() {});
                                         },
                                         text:
                                             FFLocalizations.of(context).getText(
@@ -1561,19 +1555,19 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                         ),
                                         icon: Icon(
                                           Icons.chevron_right,
-                                          size: 25.0,
+                                          size: 25,
                                         ),
                                         options: FFButtonOptions(
                                           width:
                                               MediaQuery.sizeOf(context).width *
                                                   0.35,
-                                          height: 95.0,
+                                          height: 95,
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  12.0, 0.0, 12.0, 0.0),
+                                                  12, 0, 12, 0),
                                           iconPadding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
+                                                  0, 0, 0, 0),
                                           color: Color(0xFF00A03F),
                                           textStyle: FlutterFlowTheme.of(
                                                   context)
@@ -1583,7 +1577,7 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmallFamily,
                                                 color: Colors.white,
-                                                fontSize: 20.0,
+                                                fontSize: 20,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
                                                 useGoogleFonts: GoogleFonts
@@ -1593,13 +1587,13 @@ class _KioskCartWidgetState extends State<KioskCartWidget> {
                                                                 context)
                                                             .titleSmallFamily),
                                               ),
-                                          elevation: 3.0,
+                                          elevation: 3,
                                           borderSide: BorderSide(
                                             color: Colors.transparent,
-                                            width: 1.0,
+                                            width: 1,
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(8.0),
+                                              BorderRadius.circular(8),
                                         ),
                                       ),
                                     ),

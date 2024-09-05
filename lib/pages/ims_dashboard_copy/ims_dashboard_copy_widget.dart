@@ -25,7 +25,7 @@ class _ImsDashboardCopyWidgetState extends State<ImsDashboardCopyWidget> {
     super.initState();
     _model = createModel(context, () => ImsDashboardCopyModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -46,7 +46,7 @@ class _ImsDashboardCopyWidgetState extends State<ImsDashboardCopyWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(25.0, 0.0, 25.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(25, 0, 25, 0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -56,7 +56,7 @@ class _ImsDashboardCopyWidgetState extends State<ImsDashboardCopyWidget> {
                     children: [
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.all(15.0),
+                          padding: EdgeInsets.all(15),
                           child: InkWell(
                             splashColor: Colors.transparent,
                             focusColor: Colors.transparent,
@@ -67,21 +67,21 @@ class _ImsDashboardCopyWidgetState extends State<ImsDashboardCopyWidget> {
                             },
                             child: Material(
                               color: Colors.transparent,
-                              elevation: 2.0,
+                              elevation: 2,
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(25.0),
+                                borderRadius: BorderRadius.circular(25),
                               ),
                               child: Container(
-                                width: 100.0,
+                                width: 100,
                                 height: MediaQuery.sizeOf(context).height * 0.4,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  borderRadius: BorderRadius.circular(25.0),
+                                  borderRadius: BorderRadius.circular(25),
                                   border: Border.all(
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
-                                    width: 10.0,
+                                    width: 10,
                                   ),
                                 ),
                                 child: Column(
@@ -90,12 +90,12 @@ class _ImsDashboardCopyWidgetState extends State<ImsDashboardCopyWidget> {
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 10.0),
+                                          0, 0, 0, 10),
                                       child: Icon(
                                         Icons.inbox_sharp,
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
-                                        size: 42.0,
+                                        size: 42,
                                       ),
                                     ),
                                     Text(
@@ -110,7 +110,7 @@ class _ImsDashboardCopyWidgetState extends State<ImsDashboardCopyWidget> {
                                                     .headlineMediumFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            fontSize: 18.0,
+                                            fontSize: 18,
                                             letterSpacing: 0.0,
                                             useGoogleFonts: GoogleFonts.asMap()
                                                 .containsKey(
@@ -127,7 +127,7 @@ class _ImsDashboardCopyWidgetState extends State<ImsDashboardCopyWidget> {
                       ),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.all(15.0),
+                          padding: EdgeInsets.all(15),
                           child: InkWell(
                             splashColor: Colors.transparent,
                             focusColor: Colors.transparent,
@@ -138,21 +138,21 @@ class _ImsDashboardCopyWidgetState extends State<ImsDashboardCopyWidget> {
                             },
                             child: Material(
                               color: Colors.transparent,
-                              elevation: 2.0,
+                              elevation: 2,
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(25.0),
+                                borderRadius: BorderRadius.circular(25),
                               ),
                               child: Container(
-                                width: 100.0,
+                                width: 100,
                                 height: MediaQuery.sizeOf(context).height * 0.4,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  borderRadius: BorderRadius.circular(25.0),
+                                  borderRadius: BorderRadius.circular(25),
                                   border: Border.all(
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
-                                    width: 10.0,
+                                    width: 10,
                                   ),
                                 ),
                                 child: Column(
@@ -161,12 +161,12 @@ class _ImsDashboardCopyWidgetState extends State<ImsDashboardCopyWidget> {
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 10.0),
+                                          0, 0, 0, 10),
                                       child: Icon(
                                         Icons.swap_calls_outlined,
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
-                                        size: 52.0,
+                                        size: 52,
                                       ),
                                     ),
                                     Text(
@@ -181,7 +181,7 @@ class _ImsDashboardCopyWidgetState extends State<ImsDashboardCopyWidget> {
                                                     .headlineMediumFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            fontSize: 18.0,
+                                            fontSize: 18,
                                             letterSpacing: 0.0,
                                             useGoogleFonts: GoogleFonts.asMap()
                                                 .containsKey(
@@ -198,24 +198,24 @@ class _ImsDashboardCopyWidgetState extends State<ImsDashboardCopyWidget> {
                       ),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.all(15.0),
+                          padding: EdgeInsets.all(15),
                           child: Material(
                             color: Colors.transparent,
-                            elevation: 2.0,
+                            elevation: 2,
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(25.0),
+                              borderRadius: BorderRadius.circular(25),
                             ),
                             child: Container(
-                              width: 100.0,
+                              width: 100,
                               height: MediaQuery.sizeOf(context).height * 0.4,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                borderRadius: BorderRadius.circular(25.0),
+                                borderRadius: BorderRadius.circular(25),
                                 border: Border.all(
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBackground,
-                                  width: 10.0,
+                                  width: 10,
                                 ),
                               ),
                               child: Column(
@@ -224,12 +224,12 @@ class _ImsDashboardCopyWidgetState extends State<ImsDashboardCopyWidget> {
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 10.0),
+                                        0, 0, 0, 10),
                                     child: Icon(
                                       Icons.money,
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      size: 42.0,
+                                      size: 42,
                                     ),
                                   ),
                                   Text(
@@ -244,7 +244,7 @@ class _ImsDashboardCopyWidgetState extends State<ImsDashboardCopyWidget> {
                                                   .headlineMediumFamily,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
-                                          fontSize: 18.0,
+                                          fontSize: 18,
                                           letterSpacing: 0.0,
                                           useGoogleFonts: GoogleFonts.asMap()
                                               .containsKey(
@@ -265,7 +265,7 @@ class _ImsDashboardCopyWidgetState extends State<ImsDashboardCopyWidget> {
                     children: [
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.all(15.0),
+                          padding: EdgeInsets.all(15),
                           child: InkWell(
                             splashColor: Colors.transparent,
                             focusColor: Colors.transparent,
@@ -276,21 +276,21 @@ class _ImsDashboardCopyWidgetState extends State<ImsDashboardCopyWidget> {
                             },
                             child: Material(
                               color: Colors.transparent,
-                              elevation: 2.0,
+                              elevation: 2,
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(25.0),
+                                borderRadius: BorderRadius.circular(25),
                               ),
                               child: Container(
-                                width: 100.0,
+                                width: 100,
                                 height: MediaQuery.sizeOf(context).height * 0.4,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  borderRadius: BorderRadius.circular(25.0),
+                                  borderRadius: BorderRadius.circular(25),
                                   border: Border.all(
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
-                                    width: 10.0,
+                                    width: 10,
                                   ),
                                 ),
                                 child: Column(
@@ -299,12 +299,12 @@ class _ImsDashboardCopyWidgetState extends State<ImsDashboardCopyWidget> {
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 10.0),
+                                          0, 0, 0, 10),
                                       child: Icon(
                                         Icons.home_repair_service,
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
-                                        size: 40.0,
+                                        size: 40,
                                       ),
                                     ),
                                     Text(
@@ -319,7 +319,7 @@ class _ImsDashboardCopyWidgetState extends State<ImsDashboardCopyWidget> {
                                                     .headlineMediumFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            fontSize: 18.0,
+                                            fontSize: 18,
                                             letterSpacing: 0.0,
                                             useGoogleFonts: GoogleFonts.asMap()
                                                 .containsKey(
@@ -336,7 +336,7 @@ class _ImsDashboardCopyWidgetState extends State<ImsDashboardCopyWidget> {
                       ),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.all(15.0),
+                          padding: EdgeInsets.all(15),
                           child: InkWell(
                             splashColor: Colors.transparent,
                             focusColor: Colors.transparent,
@@ -347,21 +347,21 @@ class _ImsDashboardCopyWidgetState extends State<ImsDashboardCopyWidget> {
                             },
                             child: Material(
                               color: Colors.transparent,
-                              elevation: 2.0,
+                              elevation: 2,
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(25.0),
+                                borderRadius: BorderRadius.circular(25),
                               ),
                               child: Container(
-                                width: 100.0,
+                                width: 100,
                                 height: MediaQuery.sizeOf(context).height * 0.4,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  borderRadius: BorderRadius.circular(25.0),
+                                  borderRadius: BorderRadius.circular(25),
                                   border: Border.all(
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
-                                    width: 10.0,
+                                    width: 10,
                                   ),
                                 ),
                                 child: Column(
@@ -370,12 +370,12 @@ class _ImsDashboardCopyWidgetState extends State<ImsDashboardCopyWidget> {
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 10.0),
+                                          0, 0, 0, 10),
                                       child: Icon(
                                         Icons.developer_board,
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
-                                        size: 47.0,
+                                        size: 47,
                                       ),
                                     ),
                                     Text(
@@ -390,7 +390,7 @@ class _ImsDashboardCopyWidgetState extends State<ImsDashboardCopyWidget> {
                                                     .headlineMediumFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            fontSize: 18.0,
+                                            fontSize: 18,
                                             letterSpacing: 0.0,
                                             useGoogleFonts: GoogleFonts.asMap()
                                                 .containsKey(
@@ -407,7 +407,7 @@ class _ImsDashboardCopyWidgetState extends State<ImsDashboardCopyWidget> {
                       ),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.all(15.0),
+                          padding: EdgeInsets.all(15),
                           child: InkWell(
                             splashColor: Colors.transparent,
                             focusColor: Colors.transparent,
@@ -418,21 +418,21 @@ class _ImsDashboardCopyWidgetState extends State<ImsDashboardCopyWidget> {
                             },
                             child: Material(
                               color: Colors.transparent,
-                              elevation: 2.0,
+                              elevation: 2,
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(25.0),
+                                borderRadius: BorderRadius.circular(25),
                               ),
                               child: Container(
-                                width: 100.0,
+                                width: 100,
                                 height: MediaQuery.sizeOf(context).height * 0.4,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  borderRadius: BorderRadius.circular(25.0),
+                                  borderRadius: BorderRadius.circular(25),
                                   border: Border.all(
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
-                                    width: 10.0,
+                                    width: 10,
                                   ),
                                 ),
                                 child: Column(
@@ -441,12 +441,12 @@ class _ImsDashboardCopyWidgetState extends State<ImsDashboardCopyWidget> {
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 10.0),
+                                          0, 0, 0, 10),
                                       child: Icon(
                                         Icons.store,
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
-                                        size: 40.0,
+                                        size: 40,
                                       ),
                                     ),
                                     Text(
@@ -461,7 +461,7 @@ class _ImsDashboardCopyWidgetState extends State<ImsDashboardCopyWidget> {
                                                     .headlineMediumFamily,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            fontSize: 18.0,
+                                            fontSize: 18,
                                             letterSpacing: 0.0,
                                             useGoogleFonts: GoogleFonts.asMap()
                                                 .containsKey(

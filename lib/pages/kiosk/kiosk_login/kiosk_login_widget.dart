@@ -63,7 +63,7 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
     _model.quickPinTextController ??= TextEditingController();
     _model.quickPinFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -114,8 +114,8 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                               onTap: () async {},
                               child: Image.asset(
                                 'assets/images/Sensible_Connect_Logo_2.png',
-                                width: 100.0,
-                                height: 100.0,
+                                width: 100,
+                                height: 100,
                                 fit: BoxFit.contain,
                               ),
                             ),
@@ -158,12 +158,12 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                               if (!snapshot.hasData) {
                                 return Center(
                                   child: SizedBox(
-                                    width: 40.0,
-                                    height: 40.0,
+                                    width: 40,
+                                    height: 40,
                                     child: SpinKitFadingCircle(
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      size: 40.0,
+                                      size: 40,
                                     ),
                                   ),
                                 );
@@ -180,14 +180,14 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                       : null;
 
                               return Container(
-                                width: 100.0,
-                                height: 100.0,
+                                width: 100,
+                                height: 100,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsets.all(15.0),
+                                  padding: EdgeInsets.all(15),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:
@@ -202,15 +202,14 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                 0.05,
                                         decoration: BoxDecoration(),
                                         child: Align(
-                                          alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                          alignment: AlignmentDirectional(0, 0),
                                           child: Container(
-                                            width: 300.0,
-                                            height: 200.0,
+                                            width: 300,
+                                            height: 200,
                                             child: custom_widgets
                                                 .Datetimecountdown(
-                                              width: 300.0,
-                                              height: 200.0,
+                                              width: 300,
+                                              height: 200,
                                               parameter: 1,
                                             ),
                                           ),
@@ -230,8 +229,8 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                               MainAxisAlignment.center,
                                           children: [
                                             Align(
-                                              alignment: AlignmentDirectional(
-                                                  0.0, 0.0),
+                                              alignment:
+                                                  AlignmentDirectional(0, 0),
                                               child: Text(
                                                 containerDeviceRecord!
                                                     .outletName,
@@ -247,7 +246,7 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
-                                                          fontSize: 27.0,
+                                                          fontSize: 27,
                                                           letterSpacing: 0.0,
                                                           useGoogleFonts: GoogleFonts
                                                                   .asMap()
@@ -286,19 +285,18 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 1.0, 0.0, 20.0),
+                                            0, 1, 0, 20),
                                         child: Container(
-                                          width: 300.0,
-                                          height: 320.0,
+                                          width: 300,
+                                          height: 320,
                                           decoration: BoxDecoration(),
                                           child: Stack(
                                             alignment:
-                                                AlignmentDirectional(0.0, -1.0),
+                                                AlignmentDirectional(0, -1),
                                             children: [
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 0.0, 5.0),
+                                                    .fromSTEB(0, 0, 0, 5),
                                                 child: StreamBuilder<
                                                     List<UserProfileRecord>>(
                                                   stream:
@@ -335,14 +333,14 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                     if (!snapshot.hasData) {
                                                       return Center(
                                                         child: SizedBox(
-                                                          width: 40.0,
-                                                          height: 40.0,
+                                                          width: 40,
+                                                          height: 40,
                                                           child:
                                                               SpinKitFadingCircle(
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .primary,
-                                                            size: 40.0,
+                                                            size: 40,
                                                           ),
                                                         ),
                                                       );
@@ -352,18 +350,15 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                         snapshot.data!;
 
                                                     return Container(
-                                                      width: 275.0,
-                                                      height: 290.0,
+                                                      width: 275,
+                                                      height: 290,
                                                       decoration:
                                                           BoxDecoration(),
                                                       child: Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    5.0,
-                                                                    0.0,
-                                                                    0.0),
+                                                                    0, 5, 0, 0),
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -377,10 +372,10 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            5.0),
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            5),
                                                                 child:
                                                                     Container(
                                                                   decoration:
@@ -399,7 +394,7 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                     children: [
                                                                       Padding(
                                                                         padding:
-                                                                            EdgeInsets.all(1.0),
+                                                                            EdgeInsets.all(1),
                                                                         child: FlutterFlowDropDown<
                                                                             String>(
                                                                           controller: _model.dropDownNameValueController ??=
@@ -408,7 +403,7 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                               .map((e) => e.name)
                                                                               .toList(),
                                                                           onChanged: (val) =>
-                                                                              setState(() => _model.dropDownNameValue = val),
+                                                                              safeSetState(() => _model.dropDownNameValue = val),
                                                                           width:
                                                                               double.infinity,
                                                                           height:
@@ -430,23 +425,23 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primaryText,
                                                                             size:
-                                                                                16.0,
+                                                                                16,
                                                                           ),
                                                                           fillColor:
                                                                               FlutterFlowTheme.of(context).secondaryBackground,
                                                                           elevation:
-                                                                              2.0,
+                                                                              2,
                                                                           borderColor:
                                                                               Colors.transparent,
                                                                           borderWidth:
-                                                                              0.0,
+                                                                              0,
                                                                           borderRadius:
-                                                                              0.0,
+                                                                              0,
                                                                           margin: EdgeInsetsDirectional.fromSTEB(
-                                                                              12.0,
-                                                                              4.0,
-                                                                              12.0,
-                                                                              4.0),
+                                                                              12,
+                                                                              4,
+                                                                              12,
+                                                                              4),
                                                                           hidesUnderline:
                                                                               true,
                                                                           isSearchable:
@@ -465,10 +460,10 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            10.0),
+                                                                            0,
+                                                                            0,
+                                                                            0,
+                                                                            10),
                                                                 child:
                                                                     Container(
                                                                   decoration:
@@ -620,10 +615,10 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            2.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            2,
+                                                                            0),
                                                                         child:
                                                                             Column(
                                                                           mainAxisSize:
@@ -633,7 +628,7 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                           children: [
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 2, 3),
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     _model.one = await actions.setQuickPin(
@@ -642,35 +637,35 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                     FFAppState().quickPin = _model.one!;
                                                                                     FFAppState().update(() {});
 
-                                                                                    setState(() {});
+                                                                                    safeSetState(() {});
                                                                                   },
                                                                                   text: FFLocalizations.of(context).getText(
                                                                                     'faixqsx3' /* 1 */,
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     width: double.infinity,
-                                                                                    height: 33.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    height: 33,
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                         ),
-                                                                                    elevation: 2.0,
+                                                                                    elevation: 2,
                                                                                     borderSide: BorderSide(
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      width: 2.0,
+                                                                                      width: 2,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                    borderRadius: BorderRadius.circular(8),
                                                                                   ),
                                                                                 ),
                                                                               ),
                                                                             ),
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 2, 3),
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     _model.four = await actions.setQuickPin(
@@ -679,7 +674,7 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                     FFAppState().quickPin = _model.four!;
                                                                                     FFAppState().update(() {});
 
-                                                                                    setState(() {});
+                                                                                    safeSetState(() {});
                                                                                   },
                                                                                   text: valueOrDefault<String>(
                                                                                     FFAppState().pin2,
@@ -687,28 +682,28 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     width: double.infinity,
-                                                                                    height: 33.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    height: 33,
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                         ),
-                                                                                    elevation: 2.0,
+                                                                                    elevation: 2,
                                                                                     borderSide: BorderSide(
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      width: 2.0,
+                                                                                      width: 2,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                    borderRadius: BorderRadius.circular(8),
                                                                                   ),
                                                                                 ),
                                                                               ),
                                                                             ),
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 2, 3),
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     _model.seven = await actions.setQuickPin(
@@ -717,35 +712,35 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                     FFAppState().quickPin = _model.seven!;
                                                                                     FFAppState().update(() {});
 
-                                                                                    setState(() {});
+                                                                                    safeSetState(() {});
                                                                                   },
                                                                                   text: FFLocalizations.of(context).getText(
                                                                                     'dfrta3n7' /* 7 */,
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     width: double.infinity,
-                                                                                    height: 33.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    height: 33,
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                         ),
-                                                                                    elevation: 2.0,
+                                                                                    elevation: 2,
                                                                                     borderSide: BorderSide(
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      width: 2.0,
+                                                                                      width: 2,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                    borderRadius: BorderRadius.circular(8),
                                                                                   ),
                                                                                 ),
                                                                               ),
                                                                             ),
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 0.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 2, 0),
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     FFAppState().quickPin = '';
@@ -755,25 +750,25 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                   icon: Icon(
                                                                                     Icons.backspace_sharp,
                                                                                     color: FlutterFlowTheme.of(context).primaryText,
-                                                                                    size: 16.0,
+                                                                                    size: 16,
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     width: double.infinity,
-                                                                                    height: 33.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    height: 33,
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                         ),
-                                                                                    elevation: 2.0,
+                                                                                    elevation: 2,
                                                                                     borderSide: BorderSide(
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      width: 2.0,
+                                                                                      width: 2,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                    borderRadius: BorderRadius.circular(8),
                                                                                   ),
                                                                                 ),
                                                                               ),
@@ -786,10 +781,10 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            2.0,
-                                                                            0.0),
+                                                                            0,
+                                                                            0,
+                                                                            2,
+                                                                            0),
                                                                         child:
                                                                             Column(
                                                                           mainAxisSize:
@@ -799,7 +794,7 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                           children: [
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     _model.two = await actions.setQuickPin(
@@ -808,35 +803,35 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                     FFAppState().quickPin = _model.two!;
                                                                                     FFAppState().update(() {});
 
-                                                                                    setState(() {});
+                                                                                    safeSetState(() {});
                                                                                   },
                                                                                   text: FFLocalizations.of(context).getText(
                                                                                     'i42mrrjy' /* 2 */,
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     width: double.infinity,
-                                                                                    height: 33.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    height: 33,
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                         ),
-                                                                                    elevation: 2.0,
+                                                                                    elevation: 2,
                                                                                     borderSide: BorderSide(
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      width: 2.0,
+                                                                                      width: 2,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                    borderRadius: BorderRadius.circular(8),
                                                                                   ),
                                                                                 ),
                                                                               ),
                                                                             ),
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     _model.five = await actions.setQuickPin(
@@ -845,35 +840,35 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                     FFAppState().quickPin = _model.five!;
                                                                                     FFAppState().update(() {});
 
-                                                                                    setState(() {});
+                                                                                    safeSetState(() {});
                                                                                   },
                                                                                   text: FFLocalizations.of(context).getText(
                                                                                     'ib64jgoj' /* 5 */,
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     width: double.infinity,
-                                                                                    height: 33.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    height: 33,
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                         ),
-                                                                                    elevation: 2.0,
+                                                                                    elevation: 2,
                                                                                     borderSide: BorderSide(
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      width: 2.0,
+                                                                                      width: 2,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                    borderRadius: BorderRadius.circular(8),
                                                                                   ),
                                                                                 ),
                                                                               ),
                                                                             ),
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
                                                                                 child: FFButtonWidget(
                                                                                   onPressed: () async {
                                                                                     _model.eight = await actions.setQuickPin(
@@ -882,28 +877,28 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                     FFAppState().quickPin = _model.eight!;
                                                                                     FFAppState().update(() {});
 
-                                                                                    setState(() {});
+                                                                                    safeSetState(() {});
                                                                                   },
                                                                                   text: FFLocalizations.of(context).getText(
                                                                                     'ynaxk2eg' /* 8 */,
                                                                                   ),
                                                                                   options: FFButtonOptions(
                                                                                     width: double.infinity,
-                                                                                    height: 33.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                    height: 33,
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
                                                                                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                           letterSpacing: 0.0,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                         ),
-                                                                                    elevation: 2.0,
+                                                                                    elevation: 2,
                                                                                     borderSide: BorderSide(
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      width: 2.0,
+                                                                                      width: 2,
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                    borderRadius: BorderRadius.circular(8),
                                                                                   ),
                                                                                 ),
                                                                               ),
@@ -917,28 +912,28 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                   FFAppState().quickPin = _model.zero!;
                                                                                   FFAppState().update(() {});
 
-                                                                                  setState(() {});
+                                                                                  safeSetState(() {});
                                                                                 },
                                                                                 text: FFLocalizations.of(context).getText(
                                                                                   'avsaz7f0' /* 0 */,
                                                                                 ),
                                                                                 options: FFButtonOptions(
                                                                                   width: double.infinity,
-                                                                                  height: 33.0,
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  height: 33,
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                   color: FlutterFlowTheme.of(context).customColor2,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
-                                                                                  elevation: 2.0,
+                                                                                  elevation: 2,
                                                                                   borderSide: BorderSide(
                                                                                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    width: 2.0,
+                                                                                    width: 2,
                                                                                   ),
-                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                  borderRadius: BorderRadius.circular(8),
                                                                                 ),
                                                                               ),
                                                                             ),
@@ -957,7 +952,7 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 3.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(2, 0, 0, 3),
                                                                               child: FFButtonWidget(
                                                                                 onPressed: () async {
                                                                                   _model.three = await actions.setQuickPin(
@@ -966,28 +961,28 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                   FFAppState().quickPin = _model.three!;
                                                                                   FFAppState().update(() {});
 
-                                                                                  setState(() {});
+                                                                                  safeSetState(() {});
                                                                                 },
                                                                                 text: FFLocalizations.of(context).getText(
                                                                                   '8uqrwlxt' /* 3 */,
                                                                                 ),
                                                                                 options: FFButtonOptions(
                                                                                   width: double.infinity,
-                                                                                  height: 33.0,
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  height: 33,
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                   color: FlutterFlowTheme.of(context).customColor2,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
-                                                                                  elevation: 2.0,
+                                                                                  elevation: 2,
                                                                                   borderSide: BorderSide(
                                                                                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    width: 2.0,
+                                                                                    width: 2,
                                                                                   ),
-                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                  borderRadius: BorderRadius.circular(8),
                                                                                 ),
                                                                               ),
                                                                             ),
@@ -995,7 +990,7 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 3.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(2, 0, 0, 3),
                                                                               child: FFButtonWidget(
                                                                                 onPressed: () async {
                                                                                   _model.six = await actions.setQuickPin(
@@ -1004,28 +999,28 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                   FFAppState().quickPin = _model.six!;
                                                                                   FFAppState().update(() {});
 
-                                                                                  setState(() {});
+                                                                                  safeSetState(() {});
                                                                                 },
                                                                                 text: FFLocalizations.of(context).getText(
                                                                                   'vv6xosfd' /* 6 */,
                                                                                 ),
                                                                                 options: FFButtonOptions(
                                                                                   width: double.infinity,
-                                                                                  height: 33.0,
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  height: 33,
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                   color: FlutterFlowTheme.of(context).customColor2,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
-                                                                                  elevation: 2.0,
+                                                                                  elevation: 2,
                                                                                   borderSide: BorderSide(
                                                                                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    width: 2.0,
+                                                                                    width: 2,
                                                                                   ),
-                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                  borderRadius: BorderRadius.circular(8),
                                                                                 ),
                                                                               ),
                                                                             ),
@@ -1033,7 +1028,7 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 3.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(2, 0, 0, 3),
                                                                               child: FFButtonWidget(
                                                                                 onPressed: () async {
                                                                                   _model.nine = await actions.setQuickPin(
@@ -1042,28 +1037,28 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                   FFAppState().quickPin = _model.nine!;
                                                                                   FFAppState().update(() {});
 
-                                                                                  setState(() {});
+                                                                                  safeSetState(() {});
                                                                                 },
                                                                                 text: FFLocalizations.of(context).getText(
                                                                                   '9lq1m1ry' /* 9 */,
                                                                                 ),
                                                                                 options: FFButtonOptions(
                                                                                   width: double.infinity,
-                                                                                  height: 33.0,
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  height: 33,
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                   color: FlutterFlowTheme.of(context).customColor2,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                       ),
-                                                                                  elevation: 2.0,
+                                                                                  elevation: 2,
                                                                                   borderSide: BorderSide(
                                                                                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    width: 2.0,
+                                                                                    width: 2,
                                                                                   ),
-                                                                                  borderRadius: BorderRadius.circular(8.0),
+                                                                                  borderRadius: BorderRadius.circular(8),
                                                                                 ),
                                                                               ),
                                                                             ),
@@ -1071,7 +1066,7 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(2, 0, 0, 0),
                                                                               child: StreamBuilder<List<AppSettingsRecord>>(
                                                                                 stream: queryAppSettingsRecord(
                                                                                   parent: containerDeviceRecord?.outletRef,
@@ -1082,11 +1077,11 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                   if (!snapshot.hasData) {
                                                                                     return Center(
                                                                                       child: SizedBox(
-                                                                                        width: 40.0,
-                                                                                        height: 40.0,
+                                                                                        width: 40,
+                                                                                        height: 40,
                                                                                         child: SpinKitFadingCircle(
                                                                                           color: FlutterFlowTheme.of(context).primary,
-                                                                                          size: 40.0,
+                                                                                          size: 40,
                                                                                         ),
                                                                                       ),
                                                                                     );
@@ -1126,7 +1121,7 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                       FFAppState().outletName = containerDeviceRecord!.outletName;
                                                                                       FFAppState().outletIdRef = containerDeviceRecord?.outletRef;
                                                                                       FFAppState().mid = _model.outletDoc!.merchantId;
-                                                                                      setState(() {});
+                                                                                      safeSetState(() {});
                                                                                       _model.shiftlist = await queryShiftRecordOnce(
                                                                                         parent: FFAppState().outletIdRef,
                                                                                       );
@@ -1148,7 +1143,7 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                               );
                                                                                               _shouldSetState = true;
                                                                                               FFAppState().userName = _model.userProfile!.name;
-                                                                                              setState(() {});
+                                                                                              safeSetState(() {});
                                                                                               if (containerDeviceRecord?.billingType == 'KOT') {
                                                                                                 context.pushNamed('KotOrderScreen');
                                                                                               } else if (containerDeviceRecord?.billingType == 'TOKEN') {
@@ -1180,7 +1175,7 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                                 );
                                                                                               }
 
-                                                                                              if (_shouldSetState) setState(() {});
+                                                                                              if (_shouldSetState) safeSetState(() {});
                                                                                               return;
                                                                                             } else {
                                                                                               await showDialog(
@@ -1251,31 +1246,31 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                                         );
                                                                                       }
 
-                                                                                      if (_shouldSetState) setState(() {});
+                                                                                      if (_shouldSetState) safeSetState(() {});
                                                                                     },
                                                                                     text: '',
                                                                                     icon: Icon(
                                                                                       Icons.done,
                                                                                       color: FlutterFlowTheme.of(context).primaryText,
-                                                                                      size: 19.0,
+                                                                                      size: 19,
                                                                                     ),
                                                                                     options: FFButtonOptions(
                                                                                       width: double.infinity,
-                                                                                      height: 33.0,
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      height: 33,
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                                                                       color: FlutterFlowTheme.of(context).customColor2,
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                             letterSpacing: 0.0,
                                                                                             useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                           ),
-                                                                                      elevation: 2.0,
+                                                                                      elevation: 2,
                                                                                       borderSide: BorderSide(
                                                                                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                        width: 2.0,
+                                                                                        width: 2,
                                                                                       ),
-                                                                                      borderRadius: BorderRadius.circular(8.0),
+                                                                                      borderRadius: BorderRadius.circular(8),
                                                                                     ),
                                                                                   );
                                                                                 },
@@ -1293,10 +1288,10 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          0,
+                                                                          5,
+                                                                          0,
+                                                                          0),
                                                               child: Text(
                                                                 'Version:${FFAppState().version}',
                                                                 style: FlutterFlowTheme.of(
@@ -1324,8 +1319,8 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                               ),
                                               if (FFAppState().show)
                                                 Container(
-                                                  width: 285.0,
-                                                  height: 310.0,
+                                                  width: 285,
+                                                  height: 310,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -1408,13 +1403,13 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                           if (!snapshot.hasData) {
                                             return Center(
                                               child: SizedBox(
-                                                width: 40.0,
-                                                height: 40.0,
+                                                width: 40,
+                                                height: 40,
                                                 child: SpinKitFadingCircle(
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
-                                                  size: 40.0,
+                                                  size: 40,
                                                 ),
                                               ),
                                             );
@@ -1448,8 +1443,7 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 0.0, 10.0),
+                                                      .fromSTEB(0, 0, 0, 10),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -1461,10 +1455,7 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    5.0,
-                                                                    0.0),
+                                                                    0, 0, 5, 0),
                                                         child: AutoSizeText(
                                                           FFLocalizations.of(
                                                                   context)
@@ -1524,8 +1515,7 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                 ),
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 0.0, 3.0),
+                                                      .fromSTEB(0, 0, 0, 3),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -1540,7 +1530,7 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                                         context)
                                                                     .width *
                                                                 0.3,
-                                                        lineHeight: 22.0,
+                                                        lineHeight: 22,
                                                         animation: true,
                                                         animateFromLastPercent:
                                                             true,
@@ -1580,8 +1570,7 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                                               ),
                                                         ),
                                                         barRadius:
-                                                            Radius.circular(
-                                                                20.0),
+                                                            Radius.circular(20),
                                                         padding:
                                                             EdgeInsets.zero,
                                                       ),
@@ -1705,14 +1694,14 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Container(
-                            width: 60.0,
-                            height: 60.0,
+                            width: 60,
+                            height: 60,
                             constraints: BoxConstraints(
-                              maxWidth: 85.0,
-                              maxHeight: 85.0,
+                              maxWidth: 85,
+                              maxHeight: 85,
                             ),
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(0.0),
+                              borderRadius: BorderRadius.circular(0),
                               shape: BoxShape.rectangle,
                             ),
                             child: InkWell(
@@ -1726,7 +1715,7 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                                 await actions.deleteAllproduct();
                                 await actions.deleteAllshift();
                                 FFAppState().navigate = '';
-                                setState(() {});
+                                safeSetState(() {});
                                 await showDialog(
                                   context: context,
                                   builder: (alertDialogContext) {
@@ -1746,14 +1735,14 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                               },
                               child: FlutterFlowIconButton(
                                 borderColor: Colors.transparent,
-                                borderRadius: 50.0,
-                                buttonSize: 40.0,
+                                borderRadius: 50,
+                                buttonSize: 40,
                                 fillColor: FlutterFlowTheme.of(context).primary,
                                 icon: Icon(
                                   Icons.settings,
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBtnText,
-                                  size: 27.0,
+                                  size: 27,
                                 ),
                                 onPressed: () async {
                                   context.pushNamed('printSettingkiosk');
@@ -1762,25 +1751,25 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                             ),
                           ),
                           Container(
-                            width: 60.0,
-                            height: 60.0,
+                            width: 60,
+                            height: 60,
                             constraints: BoxConstraints(
-                              maxWidth: 85.0,
-                              maxHeight: 85.0,
+                              maxWidth: 85,
+                              maxHeight: 85,
                             ),
                             decoration: BoxDecoration(
                               shape: BoxShape.rectangle,
                             ),
                             child: FlutterFlowIconButton(
                               borderColor: Colors.transparent,
-                              borderRadius: 50.0,
-                              buttonSize: 40.0,
+                              borderRadius: 50,
+                              buttonSize: 40,
                               fillColor: FlutterFlowTheme.of(context).primary,
                               icon: Icon(
                                 Icons.keyboard_hide_outlined,
                                 color:
                                     FlutterFlowTheme.of(context).primaryBtnText,
-                                size: 27.0,
+                                size: 27,
                               ),
                               onPressed: () async {
                                 FFAppState().show =
@@ -1790,25 +1779,25 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                             ),
                           ),
                           Container(
-                            width: 60.0,
-                            height: 60.0,
+                            width: 60,
+                            height: 60,
                             constraints: BoxConstraints(
-                              maxWidth: 85.0,
-                              maxHeight: 85.0,
+                              maxWidth: 85,
+                              maxHeight: 85,
                             ),
                             decoration: BoxDecoration(
                               shape: BoxShape.rectangle,
                             ),
                             child: FlutterFlowIconButton(
                               borderColor: Colors.transparent,
-                              borderRadius: 50.0,
-                              buttonSize: 40.0,
+                              borderRadius: 50,
+                              buttonSize: 40,
                               fillColor: FlutterFlowTheme.of(context).primary,
                               icon: Icon(
                                 Icons.power_settings_new,
                                 color:
                                     FlutterFlowTheme.of(context).primaryBtnText,
-                                size: 27.0,
+                                size: 27,
                               ),
                               onPressed: () async {
                                 await showModalBottomSheet(
@@ -1835,25 +1824,25 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                             ),
                           ),
                           Container(
-                            width: 60.0,
-                            height: 60.0,
+                            width: 60,
+                            height: 60,
                             constraints: BoxConstraints(
-                              maxWidth: 85.0,
-                              maxHeight: 85.0,
+                              maxWidth: 85,
+                              maxHeight: 85,
                             ),
                             decoration: BoxDecoration(
                               shape: BoxShape.rectangle,
                             ),
                             child: FlutterFlowIconButton(
                               borderColor: Colors.transparent,
-                              borderRadius: 50.0,
-                              buttonSize: 40.0,
+                              borderRadius: 50,
+                              buttonSize: 40,
                               fillColor: FlutterFlowTheme.of(context).primary,
                               icon: Icon(
                                 Icons.info_outline,
                                 color:
                                     FlutterFlowTheme.of(context).primaryBtnText,
-                                size: 27.0,
+                                size: 27,
                               ),
                               onPressed: () async {
                                 context.pushNamed('AboutUs');

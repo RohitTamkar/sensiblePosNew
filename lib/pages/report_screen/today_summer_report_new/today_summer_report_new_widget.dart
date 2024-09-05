@@ -49,7 +49,7 @@ class _TodaySummerReportNewWidgetState
         TextEditingController(text: getCurrentTimestamp.toString());
     _model.textFieldFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -79,7 +79,7 @@ class _TodaySummerReportNewWidgetState
                   Expanded(
                     flex: 1,
                     child: Container(
-                      width: MediaQuery.sizeOf(context).width * 1.0,
+                      width: MediaQuery.sizeOf(context).width,
                       height: MediaQuery.sizeOf(context).height * 0.12,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primary,
@@ -92,22 +92,22 @@ class _TodaySummerReportNewWidgetState
                           Expanded(
                             flex: 2,
                             child: Container(
-                              width: 100.0,
-                              height: 100.0,
+                              width: 100,
+                              height: 100,
                               decoration: BoxDecoration(),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   FlutterFlowIconButton(
                                     borderColor: Colors.transparent,
-                                    borderRadius: 30.0,
-                                    borderWidth: 1.0,
-                                    buttonSize: 60.0,
+                                    borderRadius: 30,
+                                    borderWidth: 1,
+                                    buttonSize: 60,
                                     icon: Icon(
                                       Icons.chevron_left_sharp,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBtnText,
-                                      size: 26.0,
+                                      size: 26,
                                     ),
                                     onPressed: () async {
                                       context.pop();
@@ -140,7 +140,7 @@ class _TodaySummerReportNewWidgetState
                             flex: 2,
                             child: wrapWithModel(
                               model: _model.headerModel,
-                              updateCallback: () => setState(() {}),
+                              updateCallback: () => safeSetState(() {}),
                               child: HeaderWidget(),
                             ),
                           ),
@@ -152,7 +152,7 @@ class _TodaySummerReportNewWidgetState
                     flex: 13,
                     child: Container(
                       width: double.infinity,
-                      height: 100.0,
+                      height: 100,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primaryBackground,
                       ),
@@ -163,16 +163,16 @@ class _TodaySummerReportNewWidgetState
                           Expanded(
                             flex: 1,
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  1.0, 2.0, 1.0, 3.0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(1, 2, 1, 3),
                               child: Container(
                                 width: double.infinity,
-                                height: 100.0,
+                                height: 100,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context).secondary,
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsets.all(7.0),
+                                  padding: EdgeInsets.all(7),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -190,8 +190,7 @@ class _TodaySummerReportNewWidgetState
                                             children: [
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 5.0, 0.0),
+                                                    .fromSTEB(0, 0, 5, 0),
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
@@ -223,8 +222,7 @@ class _TodaySummerReportNewWidgetState
                                               Expanded(
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 0.0, 2.0),
+                                                      .fromSTEB(0, 0, 0, 2),
                                                   child: TextFormField(
                                                     controller:
                                                         _model.textController,
@@ -242,7 +240,7 @@ class _TodaySummerReportNewWidgetState
                                                                     'Lora',
                                                                 color: Color(
                                                                     0xFF000133),
-                                                                fontSize: 14.0,
+                                                                fontSize: 14,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
@@ -398,7 +396,7 @@ class _TodaySummerReportNewWidgetState
                                                 true,
                                               );
                                               if (_shouldSetState)
-                                                setState(() {});
+                                                safeSetState(() {});
                                               return;
                                             } else {
                                               await showDialog(
@@ -421,12 +419,12 @@ class _TodaySummerReportNewWidgetState
                                                 },
                                               );
                                               if (_shouldSetState)
-                                                setState(() {});
+                                                safeSetState(() {});
                                               return;
                                             }
 
                                             if (_shouldSetState)
-                                              setState(() {});
+                                              safeSetState(() {});
                                           },
                                           child: Container(
                                             height: MediaQuery.sizeOf(context)
@@ -443,7 +441,7 @@ class _TodaySummerReportNewWidgetState
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .lineColor,
-                                                  size: 24.0,
+                                                  size: 24,
                                                 ),
                                               ],
                                             ),
@@ -459,10 +457,10 @@ class _TodaySummerReportNewWidgetState
                           Expanded(
                             flex: 10,
                             child: Padding(
-                              padding: EdgeInsets.all(2.0),
+                              padding: EdgeInsets.all(2),
                               child: Container(
                                 width: double.infinity,
-                                height: 100.0,
+                                height: 100,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
@@ -474,7 +472,7 @@ class _TodaySummerReportNewWidgetState
                                       flex: 1,
                                       child: Container(
                                         width: double.infinity,
-                                        height: 100.0,
+                                        height: 100,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryBackground,
@@ -512,7 +510,7 @@ class _TodaySummerReportNewWidgetState
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 4.0, 0.0),
+                                                  .fromSTEB(0, 0, 4, 0),
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -556,7 +554,7 @@ class _TodaySummerReportNewWidgetState
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primary,
-                                                        fontSize: 20.0,
+                                                        fontSize: 20,
                                                         letterSpacing: 0.0,
                                                         useGoogleFonts: GoogleFonts
                                                                 .asMap()
@@ -574,7 +572,7 @@ class _TodaySummerReportNewWidgetState
                                       flex: 10,
                                       child: Container(
                                         width: double.infinity,
-                                        height: 100.0,
+                                        height: 100,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryBackground,
@@ -585,10 +583,9 @@ class _TodaySummerReportNewWidgetState
                                             Expanded(
                                               child: Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        3.0, 0.0, 0.0, 0.0),
+                                                    .fromSTEB(3, 0, 0, 0),
                                                 child: Container(
-                                                  width: 100.0,
+                                                  width: 100,
                                                   height: double.infinity,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
@@ -604,7 +601,7 @@ class _TodaySummerReportNewWidgetState
                                                         child: Container(
                                                           width:
                                                               double.infinity,
-                                                          height: 100.0,
+                                                          height: 100,
                                                           decoration:
                                                               BoxDecoration(
                                                             color: FlutterFlowTheme
@@ -654,15 +651,12 @@ class _TodaySummerReportNewWidgetState
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      3.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      3, 0, 0),
                                                           child: Container(
                                                             width:
                                                                 double.infinity,
-                                                            height: 100.0,
+                                                            height: 100,
                                                             decoration:
                                                                 BoxDecoration(
                                                               color: FlutterFlowTheme
@@ -678,7 +672,7 @@ class _TodaySummerReportNewWidgetState
                                                             child: Padding(
                                                               padding:
                                                                   EdgeInsets
-                                                                      .all(5.0),
+                                                                      .all(5),
                                                               child: Column(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -689,8 +683,8 @@ class _TodaySummerReportNewWidgetState
                                                                 children: [
                                                                   Padding(
                                                                     padding:
-                                                                        EdgeInsets.all(
-                                                                            2.0),
+                                                                        EdgeInsets
+                                                                            .all(2),
                                                                     child: Row(
                                                                       mainAxisSize:
                                                                           MainAxisSize
@@ -703,7 +697,7 @@ class _TodaySummerReportNewWidgetState
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                EdgeInsets.all(7.0),
+                                                                                EdgeInsets.all(7),
                                                                             child:
                                                                                 Container(
                                                                               width: MediaQuery.sizeOf(context).width * 0.235,
@@ -712,18 +706,18 @@ class _TodaySummerReportNewWidgetState
                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                 border: Border.all(
                                                                                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                  width: 0.0,
+                                                                                  width: 0,
                                                                                 ),
                                                                               ),
                                                                               child: Padding(
-                                                                                padding: EdgeInsets.all(5.0),
+                                                                                padding: EdgeInsets.all(5),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   mainAxisAlignment: MainAxisAlignment.start,
                                                                                   children: [
                                                                                     Expanded(
                                                                                       child: Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 7.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 7, 0),
                                                                                         child: Row(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -759,7 +753,7 @@ class _TodaySummerReportNewWidgetState
                                                                                         crossAxisAlignment: CrossAxisAlignment.end,
                                                                                         children: [
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                             child: Text(
                                                                                               FFLocalizations.of(context).getText(
                                                                                                 'tes3uc7k' /* ₹ */,
@@ -797,7 +791,7 @@ class _TodaySummerReportNewWidgetState
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                EdgeInsets.all(7.0),
+                                                                                EdgeInsets.all(7),
                                                                             child:
                                                                                 Container(
                                                                               width: MediaQuery.sizeOf(context).width * 0.235,
@@ -809,13 +803,13 @@ class _TodaySummerReportNewWidgetState
                                                                                 ),
                                                                               ),
                                                                               child: Padding(
-                                                                                padding: EdgeInsets.all(5.0),
+                                                                                padding: EdgeInsets.all(5),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
                                                                                     Expanded(
                                                                                       child: Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 7.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 7, 0),
                                                                                         child: Row(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -850,7 +844,7 @@ class _TodaySummerReportNewWidgetState
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         children: [
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                             child: Text(
                                                                                               FFLocalizations.of(context).getText(
                                                                                                 'vh511zb1' /* ₹ */,
@@ -889,8 +883,8 @@ class _TodaySummerReportNewWidgetState
                                                                   ),
                                                                   Padding(
                                                                     padding:
-                                                                        EdgeInsets.all(
-                                                                            2.0),
+                                                                        EdgeInsets
+                                                                            .all(2),
                                                                     child: Row(
                                                                       mainAxisSize:
                                                                           MainAxisSize
@@ -900,7 +894,7 @@ class _TodaySummerReportNewWidgetState
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                EdgeInsets.all(7.0),
+                                                                                EdgeInsets.all(7),
                                                                             child:
                                                                                 Container(
                                                                               width: MediaQuery.sizeOf(context).width * 0.235,
@@ -909,17 +903,17 @@ class _TodaySummerReportNewWidgetState
                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                 border: Border.all(
                                                                                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                  width: 1.0,
+                                                                                  width: 1,
                                                                                 ),
                                                                               ),
                                                                               child: Padding(
-                                                                                padding: EdgeInsets.all(5.0),
+                                                                                padding: EdgeInsets.all(5),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
                                                                                     Expanded(
                                                                                       child: Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                         child: Row(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -955,7 +949,7 @@ class _TodaySummerReportNewWidgetState
                                                                                         crossAxisAlignment: CrossAxisAlignment.end,
                                                                                         children: [
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                             child: Text(
                                                                                               FFLocalizations.of(context).getText(
                                                                                                 'lf3fht1s' /* ₹ */,
@@ -993,7 +987,7 @@ class _TodaySummerReportNewWidgetState
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                EdgeInsets.all(7.0),
+                                                                                EdgeInsets.all(7),
                                                                             child:
                                                                                 Container(
                                                                               width: MediaQuery.sizeOf(context).width * 0.235,
@@ -1005,13 +999,13 @@ class _TodaySummerReportNewWidgetState
                                                                                 ),
                                                                               ),
                                                                               child: Padding(
-                                                                                padding: EdgeInsets.all(5.0),
+                                                                                padding: EdgeInsets.all(5),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
                                                                                     Expanded(
                                                                                       child: Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                         child: Row(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1047,7 +1041,7 @@ class _TodaySummerReportNewWidgetState
                                                                                         crossAxisAlignment: CrossAxisAlignment.end,
                                                                                         children: [
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 2, 0),
                                                                                             child: Text(
                                                                                               FFLocalizations.of(context).getText(
                                                                                                 'jtywg0o5' /* ₹ */,
@@ -1086,8 +1080,8 @@ class _TodaySummerReportNewWidgetState
                                                                   ),
                                                                   Padding(
                                                                     padding:
-                                                                        EdgeInsets.all(
-                                                                            2.0),
+                                                                        EdgeInsets
+                                                                            .all(2),
                                                                     child: Row(
                                                                       mainAxisSize:
                                                                           MainAxisSize
@@ -1097,7 +1091,7 @@ class _TodaySummerReportNewWidgetState
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                EdgeInsets.all(7.0),
+                                                                                EdgeInsets.all(7),
                                                                             child:
                                                                                 Container(
                                                                               width: MediaQuery.sizeOf(context).width * 0.235,
@@ -1106,17 +1100,17 @@ class _TodaySummerReportNewWidgetState
                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                 border: Border.all(
                                                                                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                  width: 1.0,
+                                                                                  width: 1,
                                                                                 ),
                                                                               ),
                                                                               child: Padding(
-                                                                                padding: EdgeInsets.all(5.0),
+                                                                                padding: EdgeInsets.all(5),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
                                                                                     Expanded(
                                                                                       child: Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                         child: Row(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1152,7 +1146,7 @@ class _TodaySummerReportNewWidgetState
                                                                                         crossAxisAlignment: CrossAxisAlignment.end,
                                                                                         children: [
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                             child: Text(
                                                                                               FFLocalizations.of(context).getText(
                                                                                                 'klch4fl8' /* ₹ */,
@@ -1190,7 +1184,7 @@ class _TodaySummerReportNewWidgetState
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                EdgeInsets.all(7.0),
+                                                                                EdgeInsets.all(7),
                                                                             child:
                                                                                 Container(
                                                                               width: MediaQuery.sizeOf(context).width * 0.235,
@@ -1199,17 +1193,17 @@ class _TodaySummerReportNewWidgetState
                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                 border: Border.all(
                                                                                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                  width: 1.0,
+                                                                                  width: 1,
                                                                                 ),
                                                                               ),
                                                                               child: Padding(
-                                                                                padding: EdgeInsets.all(5.0),
+                                                                                padding: EdgeInsets.all(5),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
                                                                                     Expanded(
                                                                                       child: Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                         child: Row(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1244,7 +1238,7 @@ class _TodaySummerReportNewWidgetState
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         children: [
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                             child: Text(
                                                                                               FFLocalizations.of(context).getText(
                                                                                                 'm4geftb7' /* ₹ */,
@@ -1283,8 +1277,8 @@ class _TodaySummerReportNewWidgetState
                                                                   ),
                                                                   Padding(
                                                                     padding:
-                                                                        EdgeInsets.all(
-                                                                            2.0),
+                                                                        EdgeInsets
+                                                                            .all(2),
                                                                     child: Row(
                                                                       mainAxisSize:
                                                                           MainAxisSize
@@ -1294,7 +1288,7 @@ class _TodaySummerReportNewWidgetState
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                EdgeInsets.all(7.0),
+                                                                                EdgeInsets.all(7),
                                                                             child:
                                                                                 Container(
                                                                               width: MediaQuery.sizeOf(context).width * 0.235,
@@ -1306,13 +1300,13 @@ class _TodaySummerReportNewWidgetState
                                                                                 ),
                                                                               ),
                                                                               child: Padding(
-                                                                                padding: EdgeInsets.all(5.0),
+                                                                                padding: EdgeInsets.all(5),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
                                                                                     Expanded(
                                                                                       child: Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                         child: Row(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1328,7 +1322,7 @@ class _TodaySummerReportNewWidgetState
                                                                                                   ),
                                                                                             ),
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 3, 0),
                                                                                               child: Text(
                                                                                                 FFLocalizations.of(context).getText(
                                                                                                   'nyl5fy2s' /* : */,
@@ -1350,7 +1344,7 @@ class _TodaySummerReportNewWidgetState
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         children: [
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                             child: Text(
                                                                                               FFLocalizations.of(context).getText(
                                                                                                 'etq3utar' /* ₹ */,
@@ -1388,7 +1382,7 @@ class _TodaySummerReportNewWidgetState
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                EdgeInsets.all(7.0),
+                                                                                EdgeInsets.all(7),
                                                                             child:
                                                                                 Container(
                                                                               width: MediaQuery.sizeOf(context).width * 0.235,
@@ -1397,17 +1391,17 @@ class _TodaySummerReportNewWidgetState
                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                 border: Border.all(
                                                                                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                  width: 1.0,
+                                                                                  width: 1,
                                                                                 ),
                                                                               ),
                                                                               child: Padding(
-                                                                                padding: EdgeInsets.all(5.0),
+                                                                                padding: EdgeInsets.all(5),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
                                                                                     Expanded(
                                                                                       child: Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                         child: Row(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1423,7 +1417,7 @@ class _TodaySummerReportNewWidgetState
                                                                                                   ),
                                                                                             ),
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 3, 0),
                                                                                               child: Text(
                                                                                                 FFLocalizations.of(context).getText(
                                                                                                   'thnl6kpc' /* : */,
@@ -1445,7 +1439,7 @@ class _TodaySummerReportNewWidgetState
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         children: [
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                             child: Text(
                                                                                               FFLocalizations.of(context).getText(
                                                                                                 'jj6m7sq7' /* ₹ */,
@@ -1484,8 +1478,8 @@ class _TodaySummerReportNewWidgetState
                                                                   ),
                                                                   Padding(
                                                                     padding:
-                                                                        EdgeInsets.all(
-                                                                            2.0),
+                                                                        EdgeInsets
+                                                                            .all(2),
                                                                     child: Row(
                                                                       mainAxisSize:
                                                                           MainAxisSize
@@ -1495,10 +1489,10 @@ class _TodaySummerReportNewWidgetState
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                2.0,
-                                                                                0.0,
-                                                                                3.0,
-                                                                                2.0),
+                                                                                2,
+                                                                                0,
+                                                                                3,
+                                                                                2),
                                                                             child:
                                                                                 Container(
                                                                               width: MediaQuery.sizeOf(context).width * 0.235,
@@ -1507,16 +1501,16 @@ class _TodaySummerReportNewWidgetState
                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                 border: Border.all(
                                                                                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                  width: 1.0,
+                                                                                  width: 1,
                                                                                 ),
                                                                               ),
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 3),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                       child: Container(
                                                                                         width: MediaQuery.sizeOf(context).width * 0.09,
                                                                                         height: MediaQuery.sizeOf(context).height * 0.04,
@@ -1536,7 +1530,7 @@ class _TodaySummerReportNewWidgetState
                                                                                                   ),
                                                                                             ),
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 3, 0),
                                                                                               child: Text(
                                                                                                 FFLocalizations.of(context).getText(
                                                                                                   'exp9u5jz' /* : */,
@@ -1553,14 +1547,14 @@ class _TodaySummerReportNewWidgetState
                                                                                       ),
                                                                                     ),
                                                                                     Container(
-                                                                                      width: 100.0,
-                                                                                      height: 100.0,
+                                                                                      width: 100,
+                                                                                      height: 100,
                                                                                       decoration: BoxDecoration(),
                                                                                       child: Row(
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         children: [
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                             child: Text(
                                                                                               FFLocalizations.of(context).getText(
                                                                                                 'eyxa3r8q' /* ₹ */,
@@ -1611,10 +1605,9 @@ class _TodaySummerReportNewWidgetState
                                             Expanded(
                                               child: Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        5.0, 0.0, 3.0, 0.0),
+                                                    .fromSTEB(5, 0, 3, 0),
                                                 child: Container(
-                                                  width: 100.0,
+                                                  width: 100,
                                                   height: double.infinity,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
@@ -1630,7 +1623,7 @@ class _TodaySummerReportNewWidgetState
                                                         child: Container(
                                                           width:
                                                               double.infinity,
-                                                          height: 100.0,
+                                                          height: 100,
                                                           decoration:
                                                               BoxDecoration(
                                                             color: FlutterFlowTheme
@@ -1680,15 +1673,12 @@ class _TodaySummerReportNewWidgetState
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      3.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      3, 0, 0),
                                                           child: Container(
                                                             width:
                                                                 double.infinity,
-                                                            height: 100.0,
+                                                            height: 100,
                                                             decoration:
                                                                 BoxDecoration(
                                                               color: FlutterFlowTheme
@@ -1704,7 +1694,7 @@ class _TodaySummerReportNewWidgetState
                                                             child: Padding(
                                                               padding:
                                                                   EdgeInsets
-                                                                      .all(5.0),
+                                                                      .all(5),
                                                               child: Column(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -1715,8 +1705,8 @@ class _TodaySummerReportNewWidgetState
                                                                 children: [
                                                                   Padding(
                                                                     padding:
-                                                                        EdgeInsets.all(
-                                                                            2.0),
+                                                                        EdgeInsets
+                                                                            .all(2),
                                                                     child: Row(
                                                                       mainAxisSize:
                                                                           MainAxisSize
@@ -1726,7 +1716,7 @@ class _TodaySummerReportNewWidgetState
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                EdgeInsets.all(7.0),
+                                                                                EdgeInsets.all(7),
                                                                             child:
                                                                                 Container(
                                                                               width: MediaQuery.sizeOf(context).width * 0.235,
@@ -1735,17 +1725,17 @@ class _TodaySummerReportNewWidgetState
                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                 border: Border.all(
                                                                                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                  width: 1.0,
+                                                                                  width: 1,
                                                                                 ),
                                                                               ),
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 3),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
                                                                                     Expanded(
                                                                                       child: Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                         child: Container(
                                                                                           width: MediaQuery.sizeOf(context).width * 0.09,
                                                                                           decoration: BoxDecoration(),
@@ -1781,13 +1771,13 @@ class _TodaySummerReportNewWidgetState
                                                                                     Expanded(
                                                                                       flex: 2,
                                                                                       child: Container(
-                                                                                        width: 100.0,
+                                                                                        width: 100,
                                                                                         decoration: BoxDecoration(),
                                                                                         child: Row(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           children: [
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                               child: Text(
                                                                                                 FFLocalizations.of(context).getText(
                                                                                                   'ji6y2615' /* ₹ */,
@@ -1824,7 +1814,7 @@ class _TodaySummerReportNewWidgetState
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                EdgeInsets.all(7.0),
+                                                                                EdgeInsets.all(7),
                                                                             child:
                                                                                 Container(
                                                                               width: MediaQuery.sizeOf(context).width * 0.235,
@@ -1833,17 +1823,17 @@ class _TodaySummerReportNewWidgetState
                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                 border: Border.all(
                                                                                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                  width: 1.0,
+                                                                                  width: 1,
                                                                                 ),
                                                                               ),
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 3),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
                                                                                     Expanded(
                                                                                       child: Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                         child: Container(
                                                                                           width: MediaQuery.sizeOf(context).width * 0.09,
                                                                                           decoration: BoxDecoration(),
@@ -1879,13 +1869,13 @@ class _TodaySummerReportNewWidgetState
                                                                                     Expanded(
                                                                                       flex: 2,
                                                                                       child: Container(
-                                                                                        width: 100.0,
+                                                                                        width: 100,
                                                                                         decoration: BoxDecoration(),
                                                                                         child: Row(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           children: [
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 0.0),
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 2, 0),
                                                                                               child: Text(
                                                                                                 FFLocalizations.of(context).getText(
                                                                                                   'kczadamr' /* ₹ */,
@@ -1923,8 +1913,8 @@ class _TodaySummerReportNewWidgetState
                                                                   ),
                                                                   Padding(
                                                                     padding:
-                                                                        EdgeInsets.all(
-                                                                            2.0),
+                                                                        EdgeInsets
+                                                                            .all(2),
                                                                     child: Row(
                                                                       mainAxisSize:
                                                                           MainAxisSize
@@ -1934,7 +1924,7 @@ class _TodaySummerReportNewWidgetState
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                EdgeInsets.all(7.0),
+                                                                                EdgeInsets.all(7),
                                                                             child:
                                                                                 Container(
                                                                               width: MediaQuery.sizeOf(context).width * 0.235,
@@ -1943,17 +1933,17 @@ class _TodaySummerReportNewWidgetState
                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                 border: Border.all(
                                                                                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                  width: 1.0,
+                                                                                  width: 1,
                                                                                 ),
                                                                               ),
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 3),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
                                                                                     Expanded(
                                                                                       child: Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                         child: Container(
                                                                                           width: MediaQuery.sizeOf(context).width * 0.09,
                                                                                           decoration: BoxDecoration(),
@@ -1989,13 +1979,13 @@ class _TodaySummerReportNewWidgetState
                                                                                     Expanded(
                                                                                       flex: 2,
                                                                                       child: Container(
-                                                                                        width: 100.0,
+                                                                                        width: 100,
                                                                                         decoration: BoxDecoration(),
                                                                                         child: Row(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           children: [
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                               child: Text(
                                                                                                 FFLocalizations.of(context).getText(
                                                                                                   '9to516tx' /* ₹ */,
@@ -2032,7 +2022,7 @@ class _TodaySummerReportNewWidgetState
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                EdgeInsets.all(7.0),
+                                                                                EdgeInsets.all(7),
                                                                             child:
                                                                                 Container(
                                                                               width: MediaQuery.sizeOf(context).width * 0.235,
@@ -2041,17 +2031,17 @@ class _TodaySummerReportNewWidgetState
                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                 border: Border.all(
                                                                                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                  width: 1.0,
+                                                                                  width: 1,
                                                                                 ),
                                                                               ),
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 3),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
                                                                                     Expanded(
                                                                                       child: Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                         child: Container(
                                                                                           width: MediaQuery.sizeOf(context).width * 0.09,
                                                                                           decoration: BoxDecoration(),
@@ -2087,13 +2077,13 @@ class _TodaySummerReportNewWidgetState
                                                                                     Expanded(
                                                                                       flex: 2,
                                                                                       child: Container(
-                                                                                        width: 100.0,
+                                                                                        width: 100,
                                                                                         decoration: BoxDecoration(),
                                                                                         child: Row(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           children: [
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 0.0),
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 2, 0),
                                                                                               child: Text(
                                                                                                 FFLocalizations.of(context).getText(
                                                                                                   'l9oq8sa5' /* ₹ */,
@@ -2131,8 +2121,8 @@ class _TodaySummerReportNewWidgetState
                                                                   ),
                                                                   Padding(
                                                                     padding:
-                                                                        EdgeInsets.all(
-                                                                            2.0),
+                                                                        EdgeInsets
+                                                                            .all(2),
                                                                     child: Row(
                                                                       mainAxisSize:
                                                                           MainAxisSize
@@ -2142,7 +2132,7 @@ class _TodaySummerReportNewWidgetState
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                EdgeInsets.all(7.0),
+                                                                                EdgeInsets.all(7),
                                                                             child:
                                                                                 Container(
                                                                               width: MediaQuery.sizeOf(context).width * 0.235,
@@ -2151,17 +2141,17 @@ class _TodaySummerReportNewWidgetState
                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                 border: Border.all(
                                                                                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                  width: 1.0,
+                                                                                  width: 1,
                                                                                 ),
                                                                               ),
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 3),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
                                                                                     Expanded(
                                                                                       child: Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                         child: Container(
                                                                                           width: MediaQuery.sizeOf(context).width * 0.09,
                                                                                           decoration: BoxDecoration(),
@@ -2197,13 +2187,13 @@ class _TodaySummerReportNewWidgetState
                                                                                     Expanded(
                                                                                       flex: 2,
                                                                                       child: Container(
-                                                                                        width: 100.0,
+                                                                                        width: 100,
                                                                                         decoration: BoxDecoration(),
                                                                                         child: Row(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           children: [
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                               child: Text(
                                                                                                 FFLocalizations.of(context).getText(
                                                                                                   'uurlxkiy' /* ₹ */,
@@ -2240,7 +2230,7 @@ class _TodaySummerReportNewWidgetState
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                EdgeInsets.all(7.0),
+                                                                                EdgeInsets.all(7),
                                                                             child:
                                                                                 Container(
                                                                               width: MediaQuery.sizeOf(context).width * 0.235,
@@ -2249,17 +2239,17 @@ class _TodaySummerReportNewWidgetState
                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                 border: Border.all(
                                                                                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                  width: 1.0,
+                                                                                  width: 1,
                                                                                 ),
                                                                               ),
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 3),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
                                                                                     Expanded(
                                                                                       child: Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                         child: Container(
                                                                                           width: MediaQuery.sizeOf(context).width * 0.09,
                                                                                           decoration: BoxDecoration(),
@@ -2295,13 +2285,13 @@ class _TodaySummerReportNewWidgetState
                                                                                     Expanded(
                                                                                       flex: 2,
                                                                                       child: Container(
-                                                                                        width: 100.0,
+                                                                                        width: 100,
                                                                                         decoration: BoxDecoration(),
                                                                                         child: Row(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           children: [
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 0.0),
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 2, 0),
                                                                                               child: Text(
                                                                                                 FFLocalizations.of(context).getText(
                                                                                                   'vl394ohm' /* ₹  */,
@@ -2339,8 +2329,8 @@ class _TodaySummerReportNewWidgetState
                                                                   ),
                                                                   Padding(
                                                                     padding:
-                                                                        EdgeInsets.all(
-                                                                            2.0),
+                                                                        EdgeInsets
+                                                                            .all(2),
                                                                     child: Row(
                                                                       mainAxisSize:
                                                                           MainAxisSize
@@ -2350,7 +2340,7 @@ class _TodaySummerReportNewWidgetState
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                EdgeInsets.all(7.0),
+                                                                                EdgeInsets.all(7),
                                                                             child:
                                                                                 Container(
                                                                               width: MediaQuery.sizeOf(context).width * 0.235,
@@ -2359,17 +2349,17 @@ class _TodaySummerReportNewWidgetState
                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                 border: Border.all(
                                                                                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                  width: 1.0,
+                                                                                  width: 1,
                                                                                 ),
                                                                               ),
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 3),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
                                                                                     Expanded(
                                                                                       child: Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                         child: Container(
                                                                                           width: MediaQuery.sizeOf(context).width * 0.09,
                                                                                           decoration: BoxDecoration(),
@@ -2405,13 +2395,13 @@ class _TodaySummerReportNewWidgetState
                                                                                     Expanded(
                                                                                       flex: 2,
                                                                                       child: Container(
-                                                                                        width: 100.0,
+                                                                                        width: 100,
                                                                                         decoration: BoxDecoration(),
                                                                                         child: Row(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           children: [
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                               child: Text(
                                                                                                 FFLocalizations.of(context).getText(
                                                                                                   'mwhv4i4p' /* ₹ */,
@@ -2448,7 +2438,7 @@ class _TodaySummerReportNewWidgetState
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                EdgeInsets.all(7.0),
+                                                                                EdgeInsets.all(7),
                                                                             child:
                                                                                 Container(
                                                                               width: MediaQuery.sizeOf(context).width * 0.235,
@@ -2457,17 +2447,17 @@ class _TodaySummerReportNewWidgetState
                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                 border: Border.all(
                                                                                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                  width: 1.0,
+                                                                                  width: 1,
                                                                                 ),
                                                                               ),
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 3),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
                                                                                     Expanded(
                                                                                       child: Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                         child: Container(
                                                                                           width: MediaQuery.sizeOf(context).width * 0.09,
                                                                                           decoration: BoxDecoration(),
@@ -2503,13 +2493,13 @@ class _TodaySummerReportNewWidgetState
                                                                                     Expanded(
                                                                                       flex: 2,
                                                                                       child: Container(
-                                                                                        width: 100.0,
+                                                                                        width: 100,
                                                                                         decoration: BoxDecoration(),
                                                                                         child: Row(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           children: [
                                                                                             Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 0.0),
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 2, 0),
                                                                                               child: Text(
                                                                                                 FFLocalizations.of(context).getText(
                                                                                                   '13hanopm' /* ₹  */,
@@ -2547,8 +2537,8 @@ class _TodaySummerReportNewWidgetState
                                                                   ),
                                                                   Padding(
                                                                     padding:
-                                                                        EdgeInsets.all(
-                                                                            2.0),
+                                                                        EdgeInsets
+                                                                            .all(2),
                                                                     child: Row(
                                                                       mainAxisSize:
                                                                           MainAxisSize
@@ -2558,7 +2548,7 @@ class _TodaySummerReportNewWidgetState
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                EdgeInsets.all(7.0),
+                                                                                EdgeInsets.all(7),
                                                                             child:
                                                                                 Container(
                                                                               width: MediaQuery.sizeOf(context).width * 0.235,
@@ -2567,16 +2557,16 @@ class _TodaySummerReportNewWidgetState
                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                 border: Border.all(
                                                                                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                  width: 1.0,
+                                                                                  width: 1,
                                                                                 ),
                                                                               ),
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 3.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 3),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                       child: Container(
                                                                                         width: MediaQuery.sizeOf(context).width * 0.09,
                                                                                         height: MediaQuery.sizeOf(context).height * 0.04,
@@ -2610,14 +2600,14 @@ class _TodaySummerReportNewWidgetState
                                                                                       ),
                                                                                     ),
                                                                                     Container(
-                                                                                      width: 100.0,
-                                                                                      height: 100.0,
+                                                                                      width: 100,
+                                                                                      height: 100,
                                                                                       decoration: BoxDecoration(),
                                                                                       child: Row(
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         children: [
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
                                                                                             child: Text(
                                                                                               FFLocalizations.of(context).getText(
                                                                                                 'vt2qn8xf' /* ₹ */,
@@ -2673,8 +2663,7 @@ class _TodaySummerReportNewWidgetState
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 5.0),
+                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
                             child: Container(
                               width: double.infinity,
                               height: MediaQuery.sizeOf(context).height * 0.09,
@@ -2688,15 +2677,15 @@ class _TodaySummerReportNewWidgetState
                                   Expanded(
                                     flex: 2,
                                     child: Container(
-                                      width: 100.0,
-                                      height: 100.0,
+                                      width: 100,
+                                      height: 100,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
                                         border: Border.all(
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryBackground,
-                                          width: 2.0,
+                                          width: 2,
                                         ),
                                       ),
                                       child: Row(
@@ -2707,7 +2696,7 @@ class _TodaySummerReportNewWidgetState
                                           Expanded(
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(5.0, 0.0, 3.0, 2.0),
+                                                  .fromSTEB(5, 0, 3, 2),
                                               child: Container(
                                                 width:
                                                     MediaQuery.sizeOf(context)
@@ -2722,13 +2711,12 @@ class _TodaySummerReportNewWidgetState
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .secondaryBackground,
-                                                    width: 1.0,
+                                                    width: 1,
                                                   ),
                                                 ),
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          5.0, 0.0, 5.0, 3.0),
+                                                      .fromSTEB(5, 0, 5, 3),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -2739,10 +2727,7 @@ class _TodaySummerReportNewWidgetState
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    5.0,
-                                                                    0.0),
+                                                                    0, 0, 5, 0),
                                                         child: Container(
                                                           width:
                                                               MediaQuery.sizeOf(
@@ -2811,8 +2796,8 @@ class _TodaySummerReportNewWidgetState
                                                         ),
                                                       ),
                                                       Container(
-                                                        width: 100.0,
-                                                        height: 100.0,
+                                                        width: 100,
+                                                        height: 100,
                                                         decoration:
                                                             BoxDecoration(
                                                           color: FlutterFlowTheme
@@ -2827,10 +2812,10 @@ class _TodaySummerReportNewWidgetState
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          5,
+                                                                          0,
+                                                                          0,
+                                                                          0),
                                                               child: Text(
                                                                 getJsonField(
                                                                   _model.json,
@@ -2867,7 +2852,7 @@ class _TodaySummerReportNewWidgetState
                                           Expanded(
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 0.0, 2.0, 2.0),
+                                                  .fromSTEB(3, 0, 2, 2),
                                               child: Container(
                                                 width:
                                                     MediaQuery.sizeOf(context)
@@ -2882,13 +2867,12 @@ class _TodaySummerReportNewWidgetState
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .secondaryBackground,
-                                                    width: 1.0,
+                                                    width: 1,
                                                   ),
                                                 ),
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          5.0, 0.0, 5.0, 3.0),
+                                                      .fromSTEB(5, 0, 5, 3),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -2947,18 +2931,18 @@ class _TodaySummerReportNewWidgetState
                                                       Expanded(
                                                         flex: 2,
                                                         child: Container(
-                                                          width: 100.0,
-                                                          height: 100.0,
+                                                          width: 100,
+                                                          height: 100,
                                                           decoration:
                                                               BoxDecoration(),
                                                           child: Padding(
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        10.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
+                                                                        10,
+                                                                        0,
+                                                                        0,
+                                                                        0),
                                                             child: Row(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -2970,10 +2954,10 @@ class _TodaySummerReportNewWidgetState
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          5.0,
-                                                                          0.0),
+                                                                          0,
+                                                                          0,
+                                                                          5,
+                                                                          0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -3029,7 +3013,7 @@ class _TodaySummerReportNewWidgetState
                                             flex: 1,
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 0.0, 5.0, 2.0),
+                                                  .fromSTEB(3, 0, 5, 2),
                                               child: Container(
                                                 width:
                                                     MediaQuery.sizeOf(context)
@@ -3044,13 +3028,12 @@ class _TodaySummerReportNewWidgetState
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .secondaryBackground,
-                                                    width: 1.0,
+                                                    width: 1,
                                                   ),
                                                 ),
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          5.0, 0.0, 5.0, 3.0),
+                                                      .fromSTEB(5, 0, 5, 3),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -3062,10 +3045,7 @@ class _TodaySummerReportNewWidgetState
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    5.0,
-                                                                    0.0),
+                                                                    0, 0, 5, 0),
                                                         child: Container(
                                                           width:
                                                               MediaQuery.sizeOf(
@@ -3134,8 +3114,8 @@ class _TodaySummerReportNewWidgetState
                                                         ),
                                                       ),
                                                       Container(
-                                                        width: 100.0,
-                                                        height: 100.0,
+                                                        width: 100,
+                                                        height: 100,
                                                         decoration:
                                                             BoxDecoration(
                                                           color: FlutterFlowTheme
@@ -3150,10 +3130,10 @@ class _TodaySummerReportNewWidgetState
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          5.0,
-                                                                          0.0),
+                                                                          0,
+                                                                          0,
+                                                                          5,
+                                                                          0),
                                                               child: Text(
                                                                 FFLocalizations.of(
                                                                         context)
@@ -3171,7 +3151,7 @@ class _TodaySummerReportNewWidgetState
                                                                               context)
                                                                           .primary,
                                                                       fontSize:
-                                                                          22.0,
+                                                                          22,
                                                                       letterSpacing:
                                                                           0.0,
                                                                       useGoogleFonts: GoogleFonts
@@ -3197,7 +3177,7 @@ class _TodaySummerReportNewWidgetState
                                                                             context)
                                                                         .primary,
                                                                     fontSize:
-                                                                        22.0,
+                                                                        22,
                                                                     letterSpacing:
                                                                         0.0,
                                                                     useGoogleFonts: GoogleFonts

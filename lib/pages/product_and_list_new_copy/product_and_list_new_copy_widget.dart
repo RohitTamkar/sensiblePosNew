@@ -77,17 +77,17 @@ class _ProductAndListNewCopyWidgetState
       );
       FFAppState().update(() {});
       FFAppState().shiftDetailsNEw = widget!.shiftDetails!;
-      setState(() {});
+      safeSetState(() {});
       FFAppState().shiftDetailsJson = widget!.shiftDetails!;
-      setState(() {});
+      safeSetState(() {});
       _model.hiveProductList = await actions.getProductlistHive();
       _model.categoryListHive = await actions.getCategorylistHive();
       FFAppState().productHive =
           _model.hiveProductList!.toList().cast<ProductStructStruct>();
-      setState(() {});
+      safeSetState(() {});
       FFAppState().categoryHive =
           _model.categoryListHive!.toList().cast<CategoryStructStruct>();
-      setState(() {});
+      safeSetState(() {});
     });
 
     _model.searchTextController ??= TextEditingController();
@@ -121,8 +121,8 @@ class _ProductAndListNewCopyWidgetState
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: 0.0,
-            end: 1.0,
+            begin: 0,
+            end: 1,
           ),
         ],
       ),
@@ -181,8 +181,8 @@ class _ProductAndListNewCopyWidgetState
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: 0.0,
-            end: 1.0,
+            begin: 0,
+            end: 1,
           ),
         ],
       ),
@@ -201,8 +201,8 @@ class _ProductAndListNewCopyWidgetState
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 120.0.ms,
-            begin: 0.0,
-            end: 1.0,
+            begin: 0,
+            end: 1,
           ),
         ],
       ),
@@ -221,8 +221,8 @@ class _ProductAndListNewCopyWidgetState
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: 0.0,
-            end: 1.0,
+            begin: 0,
+            end: 1,
           ),
         ],
       ),
@@ -241,8 +241,8 @@ class _ProductAndListNewCopyWidgetState
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: 0.0,
-            end: 1.0,
+            begin: 0,
+            end: 1,
           ),
         ],
       ),
@@ -261,8 +261,8 @@ class _ProductAndListNewCopyWidgetState
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: 0.0,
-            end: 1.0,
+            begin: 0,
+            end: 1,
           ),
         ],
       ),
@@ -281,8 +281,8 @@ class _ProductAndListNewCopyWidgetState
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 100.0.ms,
-            begin: 0.0,
-            end: 1.0,
+            begin: 0,
+            end: 1,
           ),
         ],
       ),
@@ -294,7 +294,7 @@ class _ProductAndListNewCopyWidgetState
       this,
     );
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -320,11 +320,11 @@ class _ProductAndListNewCopyWidgetState
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             body: Center(
               child: SizedBox(
-                width: 40.0,
-                height: 40.0,
+                width: 40,
+                height: 40,
                 child: SpinKitFadingCircle(
                   color: FlutterFlowTheme.of(context).primary,
-                  size: 40.0,
+                  size: 40,
                 ),
               ),
             ),
@@ -348,10 +348,10 @@ class _ProductAndListNewCopyWidgetState
                 drawer: Container(
                   width: MediaQuery.sizeOf(context).width * 0.11,
                   child: Drawer(
-                    elevation: 16.0,
+                    elevation: 16,
                     child: wrapWithModel(
                       model: _model.menuDrawerModel,
-                      updateCallback: () => setState(() {}),
+                      updateCallback: () => safeSetState(() {}),
                       child: MenuDrawerWidget(
                         billdetails: widget!.billDetails,
                         doc: widget!.doc,
@@ -363,7 +363,7 @@ class _ProductAndListNewCopyWidgetState
                 endDrawer: Container(
                   width: MediaQuery.sizeOf(context).width * 0.45,
                   child: Drawer(
-                    elevation: 16.0,
+                    elevation: 16,
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.end,
@@ -377,11 +377,11 @@ class _ProductAndListNewCopyWidgetState
                             if (!snapshot.hasData) {
                               return Center(
                                 child: SizedBox(
-                                  width: 40.0,
-                                  height: 40.0,
+                                  width: 40,
+                                  height: 40,
                                   child: SpinKitFadingCircle(
                                     color: FlutterFlowTheme.of(context).primary,
-                                    size: 40.0,
+                                    size: 40,
                                   ),
                                 ),
                               );
@@ -390,14 +390,14 @@ class _ProductAndListNewCopyWidgetState
                                 snapshot.data!;
 
                             return Container(
-                              width: MediaQuery.sizeOf(context).width * 1.0,
-                              height: MediaQuery.sizeOf(context).height * 1.0,
+                              width: MediaQuery.sizeOf(context).width,
+                              height: MediaQuery.sizeOf(context).height * 1,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .primaryBackground,
                               ),
                               child: Padding(
-                                padding: EdgeInsets.all(10.0),
+                                padding: EdgeInsets.all(10),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -419,15 +419,15 @@ class _ProductAndListNewCopyWidgetState
                                         children: [
                                           FlutterFlowIconButton(
                                             borderColor: Colors.transparent,
-                                            borderRadius: 30.0,
-                                            borderWidth: 1.0,
-                                            buttonSize: 40.0,
+                                            borderRadius: 30,
+                                            borderWidth: 1,
+                                            buttonSize: 40,
                                             icon: Icon(
                                               Icons.chevron_left,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
-                                              size: 22.0,
+                                              size: 22,
                                             ),
                                             onPressed: () async {
                                               context.pop();
@@ -441,8 +441,7 @@ class _ProductAndListNewCopyWidgetState
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          20.0, 0.0, 0.0, 0.0),
+                                                      .fromSTEB(20, 0, 0, 0),
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
@@ -471,15 +470,15 @@ class _ProductAndListNewCopyWidgetState
                                           ),
                                           FlutterFlowIconButton(
                                             borderColor: Colors.transparent,
-                                            borderRadius: 30.0,
-                                            borderWidth: 1.0,
-                                            buttonSize: 40.0,
+                                            borderRadius: 30,
+                                            borderWidth: 1,
+                                            buttonSize: 40,
                                             icon: Icon(
                                               Icons.person_add,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
-                                              size: 22.0,
+                                              size: 22,
                                             ),
                                             onPressed: () async {
                                               context.pushNamed('AddCustomer');
@@ -490,10 +489,10 @@ class _ProductAndListNewCopyWidgetState
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 10.0, 0.0, 0.0),
+                                          0, 10, 0, 0),
                                       child: Material(
                                         color: Colors.transparent,
-                                        elevation: 2.0,
+                                        elevation: 2,
                                         child: Container(
                                           width: double.infinity,
                                           height: MediaQuery.sizeOf(context)
@@ -511,8 +510,7 @@ class _ProductAndListNewCopyWidgetState
                                               Expanded(
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          6.0, 0.0, 0.0, 0.0),
+                                                      .fromSTEB(6, 0, 0, 0),
                                                   child: TextFormField(
                                                     controller: _model
                                                         .textFieldsearchTextController,
@@ -692,8 +690,8 @@ class _ProductAndListNewCopyWidgetState
                                                 child: FlutterFlowIconButton(
                                                   borderColor:
                                                       Colors.transparent,
-                                                  borderWidth: 1.0,
-                                                  buttonSize: 50.0,
+                                                  borderWidth: 1,
+                                                  buttonSize: 50,
                                                   fillColor:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -703,7 +701,7 @@ class _ProductAndListNewCopyWidgetState
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryBtnText,
-                                                    size: 22.0,
+                                                    size: 22,
                                                   ),
                                                   onPressed: () {
                                                     print(
@@ -718,7 +716,7 @@ class _ProductAndListNewCopyWidgetState
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 5.0, 0.0, 0.0),
+                                          0, 5, 0, 0),
                                       child: Container(
                                         width: double.infinity,
                                         height:
@@ -729,11 +727,11 @@ class _ProductAndListNewCopyWidgetState
                                               .secondaryBackground,
                                           boxShadow: [
                                             BoxShadow(
-                                              blurRadius: 3.0,
+                                              blurRadius: 3,
                                               color: Color(0x33000000),
                                               offset: Offset(
-                                                0.0,
-                                                1.0,
+                                                0,
+                                                1,
                                               ),
                                             )
                                           ],
@@ -807,7 +805,7 @@ class _ProductAndListNewCopyWidgetState
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          4.0),
+                                                                          4),
                                                             ),
                                                             child: Row(
                                                               mainAxisSize:
@@ -822,18 +820,18 @@ class _ProductAndListNewCopyWidgetState
                                                                       Colors
                                                                           .transparent,
                                                                   borderRadius:
-                                                                      30.0,
+                                                                      30,
                                                                   borderWidth:
-                                                                      1.0,
+                                                                      1,
                                                                   buttonSize:
-                                                                      60.0,
+                                                                      60,
                                                                   icon: Icon(
                                                                     Icons
                                                                         .account_circle,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryText,
-                                                                    size: 30.0,
+                                                                    size: 30,
                                                                   ),
                                                                   onPressed:
                                                                       () {
@@ -844,8 +842,7 @@ class _ProductAndListNewCopyWidgetState
                                                                 Expanded(
                                                                   child:
                                                                       Container(
-                                                                    width:
-                                                                        170.0,
+                                                                    width: 170,
                                                                     height: MediaQuery.sizeOf(context)
                                                                             .height *
                                                                         0.14,
@@ -896,8 +893,7 @@ class _ProductAndListNewCopyWidgetState
                                                                 Expanded(
                                                                   child:
                                                                       Container(
-                                                                    width:
-                                                                        100.0,
+                                                                    width: 100,
                                                                     height: MediaQuery.sizeOf(context)
                                                                             .height *
                                                                         0.14,
@@ -919,10 +915,10 @@ class _ProductAndListNewCopyWidgetState
                                                                             .credit)
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                8.0,
-                                                                                0.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                8,
+                                                                                0,
+                                                                                0),
                                                                             child:
                                                                                 Row(
                                                                               mainAxisSize: MainAxisSize.max,
@@ -981,18 +977,18 @@ class _ProductAndListNewCopyWidgetState
                                                                           borderColor:
                                                                               Colors.transparent,
                                                                           borderRadius:
-                                                                              30.0,
+                                                                              30,
                                                                           borderWidth:
-                                                                              1.0,
+                                                                              1,
                                                                           buttonSize:
-                                                                              60.0,
+                                                                              60,
                                                                           icon:
                                                                               Icon(
                                                                             Icons.chevron_right,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondary,
                                                                             size:
-                                                                                24.0,
+                                                                                24,
                                                                           ),
                                                                           onPressed:
                                                                               () async {
@@ -1080,7 +1076,7 @@ class _ProductAndListNewCopyWidgetState
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          4.0),
+                                                                          4),
                                                             ),
                                                             child: Row(
                                                               mainAxisSize:
@@ -1095,18 +1091,18 @@ class _ProductAndListNewCopyWidgetState
                                                                       Colors
                                                                           .transparent,
                                                                   borderRadius:
-                                                                      30.0,
+                                                                      30,
                                                                   borderWidth:
-                                                                      1.0,
+                                                                      1,
                                                                   buttonSize:
-                                                                      60.0,
+                                                                      60,
                                                                   icon: Icon(
                                                                     Icons
                                                                         .account_circle,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryText,
-                                                                    size: 30.0,
+                                                                    size: 30,
                                                                   ),
                                                                   onPressed:
                                                                       () {
@@ -1117,8 +1113,7 @@ class _ProductAndListNewCopyWidgetState
                                                                 Expanded(
                                                                   child:
                                                                       Container(
-                                                                    width:
-                                                                        170.0,
+                                                                    width: 170,
                                                                     height: MediaQuery.sizeOf(context)
                                                                             .height *
                                                                         0.14,
@@ -1169,8 +1164,7 @@ class _ProductAndListNewCopyWidgetState
                                                                 Expanded(
                                                                   child:
                                                                       Container(
-                                                                    width:
-                                                                        100.0,
+                                                                    width: 100,
                                                                     height: MediaQuery.sizeOf(context)
                                                                             .height *
                                                                         0.14,
@@ -1192,10 +1186,10 @@ class _ProductAndListNewCopyWidgetState
                                                                             .credit)
                                                                           Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                8.0,
-                                                                                0.0,
-                                                                                0.0),
+                                                                                0,
+                                                                                8,
+                                                                                0,
+                                                                                0),
                                                                             child:
                                                                                 Row(
                                                                               mainAxisSize: MainAxisSize.max,
@@ -1254,18 +1248,18 @@ class _ProductAndListNewCopyWidgetState
                                                                           borderColor:
                                                                               Colors.transparent,
                                                                           borderRadius:
-                                                                              30.0,
+                                                                              30,
                                                                           borderWidth:
-                                                                              1.0,
+                                                                              1,
                                                                           buttonSize:
-                                                                              60.0,
+                                                                              60,
                                                                           icon:
                                                                               Icon(
                                                                             Icons.chevron_right,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondary,
                                                                             size:
-                                                                                24.0,
+                                                                                24,
                                                                           ),
                                                                           onPressed:
                                                                               () async {
@@ -1310,7 +1304,7 @@ class _ProductAndListNewCopyWidgetState
                   ),
                 ),
                 body: Padding(
-                  padding: EdgeInsets.all(3.0),
+                  padding: EdgeInsets.all(3),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1351,22 +1345,22 @@ class _ProductAndListNewCopyWidgetState
                               },
                               child: Image.asset(
                                 'assets/images/IMG_20220412_140945.png',
-                                width: 100.0,
-                                height: 100.0,
+                                width: 100,
+                                height: 100,
                                 fit: BoxFit.contain,
                               ),
                             ),
                           ),
                           Expanded(
                             child: Container(
-                              width: 100.0,
+                              width: 100,
                               height: MediaQuery.sizeOf(context).height * 0.06,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context).primary,
                               ),
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 0.0, 10.0, 0.0),
+                                    10, 0, 10, 0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment:
@@ -1374,8 +1368,8 @@ class _ProductAndListNewCopyWidgetState
                                   children: [
                                     Expanded(
                                       child: Container(
-                                        width: 100.0,
-                                        height: 100.0,
+                                        width: 100,
+                                        height: 100,
                                         decoration: BoxDecoration(),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -1384,7 +1378,7 @@ class _ProductAndListNewCopyWidgetState
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 3.0, 0.0),
+                                                  .fromSTEB(0, 0, 3, 0),
                                               child: Text(
                                                 FFAppState().outletName,
                                                 style:
@@ -1412,7 +1406,7 @@ class _ProductAndListNewCopyWidgetState
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 6.0, 0.0),
+                                                  .fromSTEB(0, 0, 6, 0),
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -1442,23 +1436,23 @@ class _ProductAndListNewCopyWidgetState
                                               ),
                                             ),
                                             Container(
-                                              width: 100.0,
-                                              height: 45.0,
+                                              width: 100,
+                                              height: 45,
                                               child: custom_widgets.OnlineSync(
-                                                width: 100.0,
-                                                height: 45.0,
+                                                width: 100,
+                                                height: 45,
                                                 outletRef:
                                                     FFAppState().outletIdRef!,
                                                 userDoc: widget!.doc!,
                                               ),
                                             ),
                                             Container(
-                                              width: 200.0,
-                                              height: 40.0,
+                                              width: 200,
+                                              height: 40,
                                               child: custom_widgets
                                                   .Datetimecountdown(
-                                                width: 200.0,
-                                                height: 40.0,
+                                                width: 200,
+                                                height: 40,
                                                 parameter: 0,
                                               ),
                                             ),
@@ -1500,15 +1494,14 @@ class _ProductAndListNewCopyWidgetState
                         ],
                       ),
                       Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Expanded(
                               flex: 18,
                               child: Container(
-                                width: 100.0,
+                                width: 100,
                                 height:
                                     MediaQuery.sizeOf(context).height * 0.065,
                                 decoration: BoxDecoration(
@@ -1522,7 +1515,7 @@ class _ProductAndListNewCopyWidgetState
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 3.0, 0.0),
+                                          0, 0, 3, 0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -1534,7 +1527,7 @@ class _ProductAndListNewCopyWidgetState
                                           if (animationsMap[
                                                   'containerOnActionTriggerAnimation1'] !=
                                               null) {
-                                            setState(() =>
+                                            safeSetState(() =>
                                                 hasContainerTriggered1 = true);
                                             SchedulerBinding.instance
                                                 .addPostFrameCallback((_) async =>
@@ -1565,7 +1558,7 @@ class _ProductAndListNewCopyWidgetState
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
-                                                size: 18.0,
+                                                size: 18,
                                               ),
                                             ],
                                           ),
@@ -1579,7 +1572,7 @@ class _ProductAndListNewCopyWidgetState
                                     Expanded(
                                       flex: 19,
                                       child: Container(
-                                        width: 100.0,
+                                        width: 100,
                                         height:
                                             MediaQuery.sizeOf(context).height *
                                                 0.08,
@@ -1588,11 +1581,11 @@ class _ProductAndListNewCopyWidgetState
                                               .secondaryBackground,
                                           boxShadow: [
                                             BoxShadow(
-                                              blurRadius: 4.0,
+                                              blurRadius: 4,
                                               color: Color(0x32000000),
                                               offset: Offset(
-                                                0.0,
-                                                2.0,
+                                                0,
+                                                2,
                                               ),
                                             )
                                           ],
@@ -1606,7 +1599,7 @@ class _ProductAndListNewCopyWidgetState
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(8.0, 0.0, 8.0, 0.0),
+                                                  .fromSTEB(8, 0, 8, 0),
                                               child: TextFormField(
                                                 controller:
                                                     _model.searchTextController,
@@ -1635,7 +1628,7 @@ class _ProductAndListNewCopyWidgetState
                                                           .searchTextController
                                                           .text,
                                                     );
-                                                    setState(() {
+                                                    safeSetState(() {
                                                       _model
                                                           .searchTextController
                                                           ?.clear();
@@ -1691,11 +1684,11 @@ class _ProductAndListNewCopyWidgetState
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .alternate,
-                                                      width: 2.0,
+                                                      width: 2,
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            8.0),
+                                                            8),
                                                   ),
                                                   focusedBorder:
                                                       UnderlineInputBorder(
@@ -1704,11 +1697,11 @@ class _ProductAndListNewCopyWidgetState
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primary,
-                                                      width: 2.0,
+                                                      width: 2,
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            8.0),
+                                                            8),
                                                   ),
                                                   errorBorder:
                                                       UnderlineInputBorder(
@@ -1717,11 +1710,11 @@ class _ProductAndListNewCopyWidgetState
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .error,
-                                                      width: 2.0,
+                                                      width: 2,
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            8.0),
+                                                            8),
                                                   ),
                                                   focusedErrorBorder:
                                                       UnderlineInputBorder(
@@ -1730,11 +1723,11 @@ class _ProductAndListNewCopyWidgetState
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .error,
-                                                      width: 2.0,
+                                                      width: 2,
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            8.0),
+                                                            8),
                                                   ),
                                                 ),
                                                 style:
@@ -1766,7 +1759,7 @@ class _ProductAndListNewCopyWidgetState
                                       Expanded(
                                         flex: 19,
                                         child: Container(
-                                          width: 100.0,
+                                          width: 100,
                                           height: MediaQuery.sizeOf(context)
                                                   .height *
                                               0.08,
@@ -1775,11 +1768,11 @@ class _ProductAndListNewCopyWidgetState
                                                 .secondaryBackground,
                                             boxShadow: [
                                               BoxShadow(
-                                                blurRadius: 4.0,
+                                                blurRadius: 4,
                                                 color: Color(0x32000000),
                                                 offset: Offset(
-                                                  0.0,
-                                                  2.0,
+                                                  0,
+                                                  2,
                                                 ),
                                               )
                                             ],
@@ -1792,12 +1785,12 @@ class _ProductAndListNewCopyWidgetState
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Container(
-                                                width: 750.0,
-                                                height: 50.0,
+                                                width: 750,
+                                                height: 50,
                                                 child: custom_widgets
                                                     .SearchHiveprd2(
-                                                  width: 750.0,
-                                                  height: 50.0,
+                                                  width: 750,
+                                                  height: 50,
                                                   billno: FFAppState().selBill,
                                                   billnum: FFAppState()
                                                       .selBill
@@ -1824,10 +1817,10 @@ class _ProductAndListNewCopyWidgetState
                             Expanded(
                               flex: 10,
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    3.0, 0.0, 0.0, 0.0),
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(3, 0, 0, 0),
                                 child: Container(
-                                  width: 100.0,
+                                  width: 100,
                                   height:
                                       MediaQuery.sizeOf(context).height * 0.065,
                                   decoration: BoxDecoration(
@@ -1864,7 +1857,7 @@ class _ProductAndListNewCopyWidgetState
                                           FFAppState().update(() {});
                                         },
                                         child: Container(
-                                          width: 36.0,
+                                          width: 36,
                                           height: double.infinity,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
@@ -1873,10 +1866,10 @@ class _ProductAndListNewCopyWidgetState
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 3.0, 0.0),
+                                                    0, 0, 3, 0),
                                             child: FlutterFlowIconButton(
                                               borderColor: Colors.transparent,
-                                              buttonSize: 35.0,
+                                              buttonSize: 35,
                                               fillColor:
                                                   FlutterFlowTheme.of(context)
                                                       .tertiary,
@@ -1888,7 +1881,7 @@ class _ProductAndListNewCopyWidgetState
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
-                                                size: 16.0,
+                                                size: 16,
                                               ),
                                               onPressed:
                                                   !productAndListNewCopyAppSettingsRecord!
@@ -1923,8 +1916,7 @@ class _ProductAndListNewCopyWidgetState
                                                     holdListPL[holdListPLIndex];
                                                 return Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 3.0, 0.0),
+                                                      .fromSTEB(0, 0, 3, 0),
                                                   child: InkWell(
                                                     splashColor:
                                                         Colors.transparent,
@@ -1974,7 +1966,7 @@ class _ProductAndListNewCopyWidgetState
                                                       FFAppState()
                                                           .update(() {});
 
-                                                      setState(() {});
+                                                      safeSetState(() {});
                                                     },
                                                     onLongPress: () async {
                                                       var confirmDialogResponse =
@@ -2020,7 +2012,7 @@ class _ProductAndListNewCopyWidgetState
                                                       }
                                                     },
                                                     child: Container(
-                                                      width: 40.0,
+                                                      width: 40,
                                                       height: double.infinity,
                                                       decoration: BoxDecoration(
                                                         color: getJsonField(
@@ -2047,10 +2039,10 @@ class _ProductAndListNewCopyWidgetState
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        7.0,
-                                                                        0.0,
-                                                                        7.0,
-                                                                        0.0),
+                                                                        7,
+                                                                        0,
+                                                                        7,
+                                                                        0),
                                                             child: Text(
                                                               getJsonField(
                                                                 holdListPLItem,
@@ -2088,7 +2080,7 @@ class _ProductAndListNewCopyWidgetState
                                         width:
                                             MediaQuery.sizeOf(context).width *
                                                 0.04,
-                                        height: 100.0,
+                                        height: 100,
                                         decoration: BoxDecoration(
                                           border: Border.all(
                                             width: 0.5,
@@ -2099,7 +2091,7 @@ class _ProductAndListNewCopyWidgetState
                                             Icons.auto_delete,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            size: 20.0,
+                                            size: 20,
                                           ),
                                           onPressed: () async {
                                             var confirmDialogResponse =
@@ -2158,15 +2150,14 @@ class _ProductAndListNewCopyWidgetState
                       ),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 3.0, 0.0, 0.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 3, 0, 0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Expanded(
                                 flex: 18,
                                 child: Container(
-                                  width: 100.0,
+                                  width: 100,
                                   height: double.infinity,
                                   decoration: BoxDecoration(),
                                   child: Column(
@@ -2199,10 +2190,10 @@ class _ProductAndListNewCopyWidgetState
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        3.0,
-                                                                        0.0),
+                                                                        0,
+                                                                        0,
+                                                                        3,
+                                                                        0),
                                                             child: Container(
                                                               width: MediaQuery
                                                                           .sizeOf(
@@ -2224,9 +2215,9 @@ class _ProductAndListNewCopyWidgetState
                                                                   Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
+                                                                            0,
+                                                                            0,
+                                                                            0,
                                                                             1.5),
                                                                     child:
                                                                         InkWell(
@@ -2262,13 +2253,13 @@ class _ProductAndListNewCopyWidgetState
                                                                             .update(() {});
                                                                         FFAppState().categoryID =
                                                                             '';
-                                                                        setState(
+                                                                        safeSetState(
                                                                             () {});
                                                                         FFAppState().productHive = _model
                                                                             .hiveProductList!
                                                                             .toList()
                                                                             .cast<ProductStructStruct>();
-                                                                        setState(
+                                                                        safeSetState(
                                                                             () {});
                                                                       },
                                                                       child:
@@ -2296,7 +2287,7 @@ class _ProductAndListNewCopyWidgetState
                                                                               MainAxisAlignment.center,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(3.0, 12.0, 3.0, 12.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(3, 12, 3, 12),
                                                                               child: Text(
                                                                                 FFLocalizations.of(context).getText(
                                                                                   'jo5mcv8s' /* All */,
@@ -2318,17 +2309,18 @@ class _ProductAndListNewCopyWidgetState
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          3.0),
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              0,
+                                                                              0,
+                                                                              0,
+                                                                              3),
                                                                       child:
                                                                           Container(
                                                                         width: double
                                                                             .infinity,
                                                                         height:
-                                                                            100.0,
+                                                                            100,
                                                                         decoration:
                                                                             BoxDecoration(),
                                                                         child:
@@ -2345,7 +2337,7 @@ class _ProductAndListNewCopyWidgetState
                                                                               itemBuilder: (context, categoryListIndex) {
                                                                                 final categoryListItem = categoryList[categoryListIndex];
                                                                                 return Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.5),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 1.5),
                                                                                   child: InkWell(
                                                                                     splashColor: Colors.transparent,
                                                                                     focusColor: Colors.transparent,
@@ -2353,13 +2345,13 @@ class _ProductAndListNewCopyWidgetState
                                                                                     highlightColor: Colors.transparent,
                                                                                     onTap: () async {
                                                                                       FFAppState().catAllColor = Color(4292855973);
-                                                                                      setState(() {});
+                                                                                      safeSetState(() {});
                                                                                       FFAppState().categoryColor = categoryListItem.id;
                                                                                       FFAppState().update(() {});
                                                                                       FFAppState().categoryID = categoryListItem.id;
-                                                                                      setState(() {});
+                                                                                      safeSetState(() {});
                                                                                       FFAppState().productHive = _model.hiveProductList!.where((e) => e.categoryId == categoryListItem.id).toList().cast<ProductStructStruct>();
-                                                                                      setState(() {});
+                                                                                      safeSetState(() {});
                                                                                     },
                                                                                     child: Container(
                                                                                       width: double.infinity,
@@ -2371,7 +2363,7 @@ class _ProductAndListNewCopyWidgetState
                                                                                         mainAxisAlignment: MainAxisAlignment.center,
                                                                                         children: [
                                                                                           Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(3.0, 12.0, 3.0, 12.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(3, 12, 3, 12),
                                                                                             child: Text(
                                                                                               categoryListItem.name.maybeHandleOverflow(
                                                                                                 maxChars: 9,
@@ -2381,7 +2373,7 @@ class _ProductAndListNewCopyWidgetState
                                                                                               style: FlutterFlowTheme.of(context).labelLarge.override(
                                                                                                     fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                                                     color: FlutterFlowTheme.of(context).lineColor,
-                                                                                                    fontSize: 15.0,
+                                                                                                    fontSize: 15,
                                                                                                     letterSpacing: 0.0,
                                                                                                     useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
                                                                                                   ),
@@ -2407,7 +2399,7 @@ class _ProductAndListNewCopyWidgetState
                                                           Expanded(
                                                             flex: 19,
                                                             child: Container(
-                                                              width: 100.0,
+                                                              width: 100,
                                                               height: double
                                                                   .infinity,
                                                               decoration:
@@ -2416,8 +2408,8 @@ class _ProductAndListNewCopyWidgetState
                                                                 children: [
                                                                   Padding(
                                                                     padding:
-                                                                        EdgeInsets.all(
-                                                                            1.0),
+                                                                        EdgeInsets
+                                                                            .all(1),
                                                                     child:
                                                                         Container(
                                                                       decoration:
@@ -2446,8 +2438,8 @@ class _ProductAndListNewCopyWidgetState
                                                                             gridDelegate:
                                                                                 SliverGridDelegateWithFixedCrossAxisCount(
                                                                               crossAxisCount: 4,
-                                                                              crossAxisSpacing: 3.0,
-                                                                              mainAxisSpacing: 4.0,
+                                                                              crossAxisSpacing: 3,
+                                                                              mainAxisSpacing: 4,
                                                                               childAspectRatio: 1.3,
                                                                             ),
                                                                             scrollDirection:
@@ -2458,14 +2450,14 @@ class _ProductAndListNewCopyWidgetState
                                                                                 (context, productListIndex) {
                                                                               final productListItem = productList[productListIndex];
                                                                               return Container(
-                                                                                width: 113.0,
-                                                                                height: 100.0,
+                                                                                width: 113,
+                                                                                height: 100,
                                                                                 decoration: BoxDecoration(
                                                                                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                  borderRadius: BorderRadius.circular(5.0),
+                                                                                  borderRadius: BorderRadius.circular(5),
                                                                                   border: Border.all(
                                                                                     color: FlutterFlowTheme.of(context).customColor2,
-                                                                                    width: 1.0,
+                                                                                    width: 1,
                                                                                   ),
                                                                                 ),
                                                                                 child: Stack(
@@ -2502,7 +2494,7 @@ class _ProductAndListNewCopyWidgetState
                                                                                             curve: Curves.ease,
                                                                                           );
 
-                                                                                          setState(() {});
+                                                                                          safeSetState(() {});
                                                                                         },
                                                                                         onDoubleTap: () async {},
                                                                                         onLongPress: () async {
@@ -2520,23 +2512,23 @@ class _ProductAndListNewCopyWidgetState
                                                                                             productListItem.hivekey,
                                                                                           );
                                                                                           FFAppState().productHiveput = _model.getproductForupdate!;
-                                                                                          setState(() {});
+                                                                                          safeSetState(() {});
 
-                                                                                          setState(() {});
+                                                                                          safeSetState(() {});
                                                                                         },
                                                                                         child: Container(
                                                                                           decoration: BoxDecoration(
                                                                                             color: FFAppState().productColor == productListItem.id ? FlutterFlowTheme.of(context).secondary : FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                            borderRadius: BorderRadius.circular(5.0),
+                                                                                            borderRadius: BorderRadius.circular(5),
                                                                                           ),
                                                                                           child: Padding(
-                                                                                            padding: EdgeInsets.all(2.0),
+                                                                                            padding: EdgeInsets.all(2),
                                                                                             child: Column(
                                                                                               mainAxisSize: MainAxisSize.max,
                                                                                               mainAxisAlignment: MainAxisAlignment.end,
                                                                                               children: [
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 7.0),
+                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 7),
                                                                                                   child: Text(
                                                                                                     productListItem.name.maybeHandleOverflow(maxChars: 25),
                                                                                                     textAlign: TextAlign.center,
@@ -2548,13 +2540,13 @@ class _ProductAndListNewCopyWidgetState
                                                                                                   ),
                                                                                                 ),
                                                                                                 Padding(
-                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
+                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 3),
                                                                                                   child: Row(
                                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                                     mainAxisAlignment: MainAxisAlignment.center,
                                                                                                     children: [
                                                                                                       Align(
-                                                                                                        alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                                        alignment: AlignmentDirectional(0, 0),
                                                                                                         child: Text(
                                                                                                           FFLocalizations.of(context).getText(
                                                                                                             'hv6ny1u6' /* ₹  */,
@@ -2568,7 +2560,7 @@ class _ProductAndListNewCopyWidgetState
                                                                                                         ),
                                                                                                       ),
                                                                                                       Align(
-                                                                                                        alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                                        alignment: AlignmentDirectional(0, 0),
                                                                                                         child: Text(
                                                                                                           productListItem.sellingPrice.toString(),
                                                                                                           textAlign: TextAlign.center,
@@ -2620,9 +2612,9 @@ class _ProductAndListNewCopyWidgetState
                                 flex: 10,
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      3.0, 0.0, 0.0, 0.0),
+                                      3, 0, 0, 0),
                                   child: Container(
-                                    width: 100.0,
+                                    width: 100,
                                     height: double.infinity,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
@@ -2630,7 +2622,7 @@ class _ProductAndListNewCopyWidgetState
                                     ),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 5.0, 0.0, 0.0),
+                                          0, 5, 0, 0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
@@ -2650,7 +2642,7 @@ class _ProductAndListNewCopyWidgetState
                                                   Align(
                                                     alignment:
                                                         AlignmentDirectional(
-                                                            0.0, 0.0),
+                                                            0, 0),
                                                     child: Container(
                                                       width: double.infinity,
                                                       height: MediaQuery.sizeOf(
@@ -2675,7 +2667,7 @@ class _ProductAndListNewCopyWidgetState
                                                       Material(
                                                         color:
                                                             Colors.transparent,
-                                                        elevation: 1.0,
+                                                        elevation: 1,
                                                         child: Container(
                                                           width:
                                                               MediaQuery.sizeOf(
@@ -2705,8 +2697,9 @@ class _ProductAndListNewCopyWidgetState
                                                               Duration(
                                                                   milliseconds:
                                                                       2000),
-                                                              () => setState(
-                                                                  () {}),
+                                                              () =>
+                                                                  safeSetState(
+                                                                      () {}),
                                                             ),
                                                             autofocus: false,
                                                             obscureText: false,
@@ -2835,7 +2828,7 @@ class _ProductAndListNewCopyWidgetState
                                                       Material(
                                                         color:
                                                             Colors.transparent,
-                                                        elevation: 1.0,
+                                                        elevation: 1,
                                                         child: Container(
                                                           width:
                                                               MediaQuery.sizeOf(
@@ -2865,8 +2858,9 @@ class _ProductAndListNewCopyWidgetState
                                                               Duration(
                                                                   milliseconds:
                                                                       2000),
-                                                              () => setState(
-                                                                  () {}),
+                                                              () =>
+                                                                  safeSetState(
+                                                                      () {}),
                                                             ),
                                                             autofocus: false,
                                                             obscureText: false,
@@ -2995,7 +2989,7 @@ class _ProductAndListNewCopyWidgetState
                                                       Material(
                                                         color:
                                                             Colors.transparent,
-                                                        elevation: 1.0,
+                                                        elevation: 1,
                                                         child: Container(
                                                           width:
                                                               MediaQuery.sizeOf(
@@ -3025,8 +3019,9 @@ class _ProductAndListNewCopyWidgetState
                                                               Duration(
                                                                   milliseconds:
                                                                       2000),
-                                                              () => setState(
-                                                                  () {}),
+                                                              () =>
+                                                                  safeSetState(
+                                                                      () {}),
                                                             ),
                                                             autofocus: false,
                                                             obscureText: false,
@@ -3160,13 +3155,13 @@ class _ProductAndListNewCopyWidgetState
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 1.0),
+                                                    0, 0, 0, 1),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Expanded(
                                                   child: Container(
-                                                    width: 100.0,
+                                                    width: 100,
                                                     height: MediaQuery.sizeOf(
                                                                 context)
                                                             .height *
@@ -3188,17 +3183,17 @@ class _ProductAndListNewCopyWidgetState
                                                                             context)
                                                                     .width *
                                                                 0.12,
-                                                            height: 100.0,
+                                                            height: 100,
                                                             decoration:
                                                                 BoxDecoration(),
                                                             child: Padding(
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          5,
+                                                                          0,
+                                                                          0,
+                                                                          0),
                                                               child: Column(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -3241,7 +3236,7 @@ class _ProductAndListNewCopyWidgetState
                                                                             context)
                                                                     .width *
                                                                 0.08,
-                                                            height: 100.0,
+                                                            height: 100,
                                                             decoration:
                                                                 BoxDecoration(),
                                                             child: Column(
@@ -3282,7 +3277,7 @@ class _ProductAndListNewCopyWidgetState
                                                                             context)
                                                                     .width *
                                                                 0.08,
-                                                            height: 100.0,
+                                                            height: 100,
                                                             decoration:
                                                                 BoxDecoration(),
                                                             child: Column(
@@ -3318,8 +3313,8 @@ class _ProductAndListNewCopyWidgetState
                                                         Expanded(
                                                           flex: 5,
                                                           child: Container(
-                                                            width: 100.0,
-                                                            height: 100.0,
+                                                            width: 100,
+                                                            height: 100,
                                                             decoration:
                                                                 BoxDecoration(
                                                               color: FlutterFlowTheme
@@ -3338,10 +3333,10 @@ class _ProductAndListNewCopyWidgetState
                                           Expanded(
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 2.0),
+                                                  .fromSTEB(0, 0, 0, 2),
                                               child: Container(
                                                 width: double.infinity,
-                                                height: 100.0,
+                                                height: 100,
                                                 decoration: BoxDecoration(),
                                                 child: Builder(
                                                   builder: (context) {
@@ -3366,11 +3361,8 @@ class _ProductAndListNewCopyWidgetState
                                                         return Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      4.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 4),
                                                           child: Container(
                                                             width: MediaQuery
                                                                         .sizeOf(
@@ -3392,10 +3384,10 @@ class _ProductAndListNewCopyWidgetState
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          5.0,
-                                                                          0.0,
-                                                                          5.0),
+                                                                          0,
+                                                                          5,
+                                                                          0,
+                                                                          5),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -3408,11 +3400,12 @@ class _ProductAndListNewCopyWidgetState
                                                                     flex: 28,
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          2.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              2,
+                                                                              0,
+                                                                              0,
+                                                                              0),
                                                                       child:
                                                                           Container(
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -3422,10 +3415,10 @@ class _ProductAndListNewCopyWidgetState
                                                                         child:
                                                                             Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              2.0,
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0),
+                                                                              2,
+                                                                              0,
+                                                                              0,
+                                                                              0),
                                                                           child:
                                                                               Column(
                                                                             mainAxisSize:
@@ -3436,7 +3429,7 @@ class _ProductAndListNewCopyWidgetState
                                                                                 CrossAxisAlignment.start,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 2),
                                                                                 child: Text(
                                                                                   getJsonField(
                                                                                     billItem,
@@ -3449,7 +3442,7 @@ class _ProductAndListNewCopyWidgetState
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                         color: FlutterFlowTheme.of(context).primaryText,
-                                                                                        fontSize: 15.0,
+                                                                                        fontSize: 15,
                                                                                         letterSpacing: 0.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                       ),
@@ -3464,7 +3457,7 @@ class _ProductAndListNewCopyWidgetState
                                                                                     ),
                                                                                     style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
-                                                                                          fontSize: 13.0,
+                                                                                          fontSize: 13,
                                                                                           letterSpacing: 0.0,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                         ),
@@ -3476,7 +3469,7 @@ class _ProductAndListNewCopyWidgetState
                                                                                     ).toString(),
                                                                                     style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
-                                                                                          fontSize: 13.0,
+                                                                                          fontSize: 13,
                                                                                           letterSpacing: 0.0,
                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                         ),
@@ -3493,11 +3486,12 @@ class _ProductAndListNewCopyWidgetState
                                                                     flex: 14,
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          1.0,
-                                                                          0.0),
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              0,
+                                                                              0,
+                                                                              1,
+                                                                              0),
                                                                       child:
                                                                           Container(
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -3507,12 +3501,12 @@ class _ProductAndListNewCopyWidgetState
                                                                           color:
                                                                               FlutterFlowTheme.of(context).secondaryBackground,
                                                                           borderRadius:
-                                                                              BorderRadius.circular(5.0),
+                                                                              BorderRadius.circular(5),
                                                                         ),
                                                                         child:
                                                                             Padding(
                                                                           padding:
-                                                                              EdgeInsets.all(1.0),
+                                                                              EdgeInsets.all(1),
                                                                           child:
                                                                               Row(
                                                                             mainAxisSize:
@@ -3546,7 +3540,7 @@ class _ProductAndListNewCopyWidgetState
                                                                                       FFAppState().delCharges,
                                                                                     );
 
-                                                                                    setState(() {});
+                                                                                    safeSetState(() {});
                                                                                   },
                                                                                   child: Container(
                                                                                     width: MediaQuery.sizeOf(context).width * 0.03,
@@ -3555,26 +3549,26 @@ class _ProductAndListNewCopyWidgetState
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                       boxShadow: [
                                                                                         BoxShadow(
-                                                                                          blurRadius: 5.0,
+                                                                                          blurRadius: 5,
                                                                                           color: Color(0x27000000),
                                                                                           offset: Offset(
-                                                                                            -4.0,
-                                                                                            1.0,
+                                                                                            -4,
+                                                                                            1,
                                                                                           ),
-                                                                                          spreadRadius: 1.0,
+                                                                                          spreadRadius: 1,
                                                                                         )
                                                                                       ],
                                                                                       borderRadius: BorderRadius.only(
-                                                                                        bottomLeft: Radius.circular(5.0),
-                                                                                        bottomRight: Radius.circular(0.0),
-                                                                                        topLeft: Radius.circular(5.0),
-                                                                                        topRight: Radius.circular(0.0),
+                                                                                        bottomLeft: Radius.circular(5),
+                                                                                        bottomRight: Radius.circular(0),
+                                                                                        topLeft: Radius.circular(5),
+                                                                                        topRight: Radius.circular(0),
                                                                                       ),
                                                                                     ),
                                                                                     child: Icon(
                                                                                       Icons.remove,
                                                                                       color: FlutterFlowTheme.of(context).primary,
-                                                                                      size: 20.0,
+                                                                                      size: 20,
                                                                                     ),
                                                                                   ),
                                                                                 ),
@@ -3587,7 +3581,7 @@ class _ProductAndListNewCopyWidgetState
                                                                                   decoration: BoxDecoration(
                                                                                     color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                   ),
-                                                                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                  alignment: AlignmentDirectional(0, 0),
                                                                                   child: Column(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -3601,7 +3595,7 @@ class _ProductAndListNewCopyWidgetState
                                                                                         style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                               fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                               color: FlutterFlowTheme.of(context).primaryText,
-                                                                                              fontSize: 13.0,
+                                                                                              fontSize: 13,
                                                                                               letterSpacing: 0.0,
                                                                                               fontWeight: FontWeight.w500,
                                                                                               useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
@@ -3637,7 +3631,7 @@ class _ProductAndListNewCopyWidgetState
                                                                                       FFAppState().delCharges,
                                                                                     );
 
-                                                                                    setState(() {});
+                                                                                    safeSetState(() {});
                                                                                   },
                                                                                   child: Container(
                                                                                     width: MediaQuery.sizeOf(context).width * 0.03,
@@ -3646,26 +3640,26 @@ class _ProductAndListNewCopyWidgetState
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                       boxShadow: [
                                                                                         BoxShadow(
-                                                                                          blurRadius: 5.0,
+                                                                                          blurRadius: 5,
                                                                                           color: Color(0x25000000),
                                                                                           offset: Offset(
-                                                                                            4.0,
-                                                                                            1.0,
+                                                                                            4,
+                                                                                            1,
                                                                                           ),
-                                                                                          spreadRadius: 1.0,
+                                                                                          spreadRadius: 1,
                                                                                         )
                                                                                       ],
                                                                                       borderRadius: BorderRadius.only(
-                                                                                        bottomLeft: Radius.circular(0.0),
-                                                                                        bottomRight: Radius.circular(5.0),
-                                                                                        topLeft: Radius.circular(0.0),
-                                                                                        topRight: Radius.circular(5.0),
+                                                                                        bottomLeft: Radius.circular(0),
+                                                                                        bottomRight: Radius.circular(5),
+                                                                                        topLeft: Radius.circular(0),
+                                                                                        topRight: Radius.circular(5),
                                                                                       ),
                                                                                     ),
                                                                                     child: Icon(
                                                                                       Icons.add,
                                                                                       color: FlutterFlowTheme.of(context).primary,
-                                                                                      size: 20.0,
+                                                                                      size: 20,
                                                                                     ),
                                                                                   ),
                                                                                 ),
@@ -3680,11 +3674,12 @@ class _ProductAndListNewCopyWidgetState
                                                                     flex: 9,
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          1.0,
-                                                                          0.0),
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              0,
+                                                                              0,
+                                                                              1,
+                                                                              0),
                                                                       child:
                                                                           Container(
                                                                         width: MediaQuery.sizeOf(context).width *
@@ -3696,8 +3691,8 @@ class _ProductAndListNewCopyWidgetState
                                                                         child:
                                                                             Align(
                                                                           alignment: AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0),
+                                                                              0,
+                                                                              0),
                                                                           child:
                                                                               Text(
                                                                             functions
@@ -3722,7 +3717,7 @@ class _ProductAndListNewCopyWidgetState
                                                                             style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                   fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
                                                                                   color: FlutterFlowTheme.of(context).primaryText,
-                                                                                  fontSize: 13.0,
+                                                                                  fontSize: 13,
                                                                                   letterSpacing: 0.0,
                                                                                   useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
                                                                                 ),
@@ -3774,7 +3769,7 @@ class _ProductAndListNewCopyWidgetState
                                                                             FFAppState().delCharges,
                                                                           );
 
-                                                                          setState(
+                                                                          safeSetState(
                                                                               () {});
                                                                         },
                                                                         child:
@@ -3784,7 +3779,7 @@ class _ProductAndListNewCopyWidgetState
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primary,
                                                                           size:
-                                                                              30.0,
+                                                                              30,
                                                                         ),
                                                                       ),
                                                                     ),
@@ -3814,19 +3809,18 @@ class _ProductAndListNewCopyWidgetState
                                                       .secondaryBackground,
                                               boxShadow: [
                                                 BoxShadow(
-                                                  blurRadius: 15.0,
+                                                  blurRadius: 15,
                                                   color: Color(0x40000000),
                                                   offset: Offset(
-                                                    2.0,
-                                                    -2.0,
+                                                    2,
+                                                    -2,
                                                   ),
                                                 )
                                               ],
                                             ),
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 0.0, 12.0, 0.0),
+                                                  .fromSTEB(0, 0, 12, 0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -3839,10 +3833,7 @@ class _ProductAndListNewCopyWidgetState
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    2.0,
-                                                                    0.0),
+                                                                    0, 0, 2, 0),
                                                         child: InkWell(
                                                           splashColor: Colors
                                                               .transparent,
@@ -3870,7 +3861,7 @@ class _ProductAndListNewCopyWidgetState
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          0.0),
+                                                                          0),
                                                             ),
                                                             child: Row(
                                                               mainAxisSize:
@@ -3880,10 +3871,10 @@ class _ProductAndListNewCopyWidgetState
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          3.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          3,
+                                                                          0,
+                                                                          0,
+                                                                          0),
                                                                   child:
                                                                       Container(
                                                                     width: MediaQuery.sizeOf(context)
@@ -3936,7 +3927,7 @@ class _ProductAndListNewCopyWidgetState
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         size:
-                                                                            17.0,
+                                                                            17,
                                                                       ),
                                                                     ),
                                                                   ),
@@ -3946,10 +3937,10 @@ class _ProductAndListNewCopyWidgetState
                                                                       Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            3.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                            3,
+                                                                            0,
+                                                                            0,
+                                                                            0),
                                                                     child:
                                                                         Column(
                                                                       mainAxisSize:
@@ -4116,10 +4107,7 @@ class _ProductAndListNewCopyWidgetState
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  3.0,
-                                                                  0.0),
+                                                                  0, 0, 3, 0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -4225,8 +4213,7 @@ class _ProductAndListNewCopyWidgetState
                                             ),
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 0.0, 12.0, 0.0),
+                                                  .fromSTEB(0, 0, 12, 0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -4236,8 +4223,8 @@ class _ProductAndListNewCopyWidgetState
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(5.0, 0.0,
-                                                                2.0, 0.0),
+                                                            .fromSTEB(
+                                                                5, 0, 2, 0),
                                                     child: InkWell(
                                                       splashColor:
                                                           Colors.transparent,
@@ -4269,7 +4256,7 @@ class _ProductAndListNewCopyWidgetState
                                                                         context),
                                                                 child:
                                                                     Container(
-                                                                  height: 360.0,
+                                                                  height: 360,
                                                                   child:
                                                                       DiscountAndDeliveryCopyWidget(
                                                                     appsetting:
@@ -4286,7 +4273,7 @@ class _ProductAndListNewCopyWidgetState
                                                         if (animationsMap[
                                                                 'containerOnActionTriggerAnimation4'] !=
                                                             null) {
-                                                          setState(() =>
+                                                          safeSetState(() =>
                                                               hasContainerTriggered4 =
                                                                   true);
                                                           SchedulerBinding
@@ -4325,14 +4312,14 @@ class _ProductAndListNewCopyWidgetState
                                                         child: Align(
                                                           alignment:
                                                               AlignmentDirectional(
-                                                                  0.0, 0.0),
+                                                                  0, 0),
                                                           child: FaIcon(
                                                             FontAwesomeIcons
                                                                 .receipt,
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .lineColor,
-                                                            size: 16.0,
+                                                            size: 16,
                                                           ),
                                                         ),
                                                       ),
@@ -4348,10 +4335,7 @@ class _ProductAndListNewCopyWidgetState
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  5.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
+                                                                  5, 0, 0, 0),
                                                       child: InkWell(
                                                         splashColor:
                                                             Colors.transparent,
@@ -4365,7 +4349,7 @@ class _ProductAndListNewCopyWidgetState
                                                           if (animationsMap[
                                                                   'containerOnActionTriggerAnimation5'] !=
                                                               null) {
-                                                            setState(() =>
+                                                            safeSetState(() =>
                                                                 hasContainerTriggered5 =
                                                                     true);
                                                             SchedulerBinding
@@ -4379,7 +4363,7 @@ class _ProductAndListNewCopyWidgetState
                                                           }
                                                         },
                                                         child: Container(
-                                                          width: 100.0,
+                                                          width: 100,
                                                           height:
                                                               MediaQuery.sizeOf(
                                                                           context)
@@ -4392,22 +4376,21 @@ class _ProductAndListNewCopyWidgetState
                                                                 .secondary,
                                                             boxShadow: [
                                                               BoxShadow(
-                                                                blurRadius: 3.0,
+                                                                blurRadius: 3,
                                                                 color: Color(
                                                                     0x33000000),
                                                                 offset: Offset(
-                                                                  1.0,
-                                                                  1.0,
+                                                                  1,
+                                                                  1,
                                                                 ),
-                                                                spreadRadius:
-                                                                    2.0,
+                                                                spreadRadius: 2,
                                                               )
                                                             ],
                                                           ),
                                                           child: Padding(
                                                             padding:
                                                                 EdgeInsets.all(
-                                                                    2.0),
+                                                                    2),
                                                             child: Column(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -4508,10 +4491,7 @@ class _ProductAndListNewCopyWidgetState
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  5.0,
-                                                                  0.0,
-                                                                  5.0,
-                                                                  0.0),
+                                                                  5, 0, 5, 0),
                                                       child: Container(
                                                         width:
                                                             MediaQuery.sizeOf(
@@ -4525,14 +4505,14 @@ class _ProductAndListNewCopyWidgetState
                                                               .secondary,
                                                           boxShadow: [
                                                             BoxShadow(
-                                                              blurRadius: 3.0,
+                                                              blurRadius: 3,
                                                               color: Color(
                                                                   0x33000000),
                                                               offset: Offset(
-                                                                1.0,
-                                                                1.0,
+                                                                1,
+                                                                1,
                                                               ),
-                                                              spreadRadius: 2.0,
+                                                              spreadRadius: 2,
                                                             )
                                                           ],
                                                         ),
@@ -4548,8 +4528,8 @@ class _ProductAndListNewCopyWidgetState
                                                                 .hasData) {
                                                               return Center(
                                                                 child: SizedBox(
-                                                                  width: 20.0,
-                                                                  height: 20.0,
+                                                                  width: 20,
+                                                                  height: 20,
                                                                   child:
                                                                       CircularProgressIndicator(
                                                                     valueColor:
@@ -4582,7 +4562,7 @@ class _ProductAndListNewCopyWidgetState
                                                                           e.name)
                                                                       .toList(),
                                                               onChanged: (val) =>
-                                                                  setState(() =>
+                                                                  safeSetState(() =>
                                                                       _model.dropDownValue =
                                                                           val),
                                                               width: double
@@ -4615,20 +4595,20 @@ class _ProductAndListNewCopyWidgetState
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .lineColor,
-                                                                size: 22.0,
+                                                                size: 22,
                                                               ),
-                                                              elevation: 2.0,
+                                                              elevation: 2,
                                                               borderColor: Colors
                                                                   .transparent,
-                                                              borderWidth: 0.0,
-                                                              borderRadius: 0.0,
+                                                              borderWidth: 0,
+                                                              borderRadius: 0,
                                                               margin:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          7.0,
-                                                                          4.0,
-                                                                          5.0,
-                                                                          4.0),
+                                                                          7,
+                                                                          4,
+                                                                          5,
+                                                                          4),
                                                               hidesUnderline:
                                                                   true,
                                                               isSearchable:
@@ -4734,7 +4714,7 @@ class _ProductAndListNewCopyWidgetState
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).lineColor,
                                                                             fontSize:
-                                                                                26.0,
+                                                                                26,
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
@@ -4769,8 +4749,8 @@ class _ProductAndListNewCopyWidgetState
                                                   child: Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                1.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 0, 1, 0),
                                                     child: InkWell(
                                                       splashColor:
                                                           Colors.transparent,
@@ -4784,7 +4764,7 @@ class _ProductAndListNewCopyWidgetState
                                                         if (animationsMap[
                                                                 'containerOnActionTriggerAnimation6'] !=
                                                             null) {
-                                                          setState(() =>
+                                                          safeSetState(() =>
                                                               hasContainerTriggered6 =
                                                                   true);
                                                           SchedulerBinding
@@ -4870,8 +4850,8 @@ class _ProductAndListNewCopyWidgetState
                                                   child: Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                1.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 0, 1, 0),
                                                     child: InkWell(
                                                       splashColor:
                                                           Colors.transparent,
@@ -4885,7 +4865,7 @@ class _ProductAndListNewCopyWidgetState
                                                         if (animationsMap[
                                                                 'containerOnActionTriggerAnimation7'] !=
                                                             null) {
-                                                          setState(() =>
+                                                          safeSetState(() =>
                                                               hasContainerTriggered7 =
                                                                   true);
                                                           SchedulerBinding
@@ -4972,8 +4952,8 @@ class _ProductAndListNewCopyWidgetState
                                                   child: Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                1.0, 0.0),
+                                                            .fromSTEB(
+                                                                0, 0, 1, 0),
                                                     child: Container(
                                                       width: MediaQuery.sizeOf(
                                                                   context)
@@ -5012,7 +4992,8 @@ class _ProductAndListNewCopyWidgetState
                                                                   FFAppState()
                                                                           .count +
                                                                       1;
-                                                              setState(() {});
+                                                              safeSetState(
+                                                                  () {});
                                                             }
                                                             _model.prdlistsavebill =
                                                                 await actions
@@ -5276,7 +5257,8 @@ class _ProductAndListNewCopyWidgetState
                                                                       .shiftDetails
                                                                       .id,
                                                               );
-                                                              setState(() {});
+                                                              safeSetState(
+                                                                  () {});
                                                               _model.updatedShift =
                                                                   await actions
                                                                       .hiveShiftCrud(
@@ -5326,7 +5308,8 @@ class _ProductAndListNewCopyWidgetState
                                                                   .update(
                                                                       () {});
                                                               if (_shouldSetState)
-                                                                setState(() {});
+                                                                safeSetState(
+                                                                    () {});
                                                               return;
                                                             } else {
                                                               ScaffoldMessenger
@@ -5351,17 +5334,19 @@ class _ProductAndListNewCopyWidgetState
                                                                 ),
                                                               );
                                                               if (_shouldSetState)
-                                                                setState(() {});
+                                                                safeSetState(
+                                                                    () {});
                                                               return;
                                                             }
                                                           } else {
                                                             if (_shouldSetState)
-                                                              setState(() {});
+                                                              safeSetState(
+                                                                  () {});
                                                             return;
                                                           }
 
                                                           if (_shouldSetState)
-                                                            setState(() {});
+                                                            safeSetState(() {});
                                                         },
                                                         text:
                                                             FFLocalizations.of(
@@ -5375,18 +5360,12 @@ class _ProductAndListNewCopyWidgetState
                                                               double.infinity,
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           iconPadding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  .fromSTEB(0,
+                                                                      0, 0, 0),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
@@ -5415,12 +5394,11 @@ class _ProductAndListNewCopyWidgetState
                                                               BorderSide(
                                                             color: Colors
                                                                 .transparent,
-                                                            width: 1.0,
+                                                            width: 1,
                                                           ),
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(
-                                                                      8.0),
+                                                                  .circular(8),
                                                         ),
                                                       ),
                                                     ).animateOnActionTrigger(
@@ -5445,7 +5423,7 @@ class _ProductAndListNewCopyWidgetState
                                                     if (animationsMap[
                                                             'containerOnActionTriggerAnimation9'] !=
                                                         null) {
-                                                      setState(() =>
+                                                      safeSetState(() =>
                                                           hasContainerTriggered9 =
                                                               true);
                                                       SchedulerBinding.instance
@@ -5487,14 +5465,14 @@ class _ProductAndListNewCopyWidgetState
                                                               .hasData) {
                                                             return Center(
                                                               child: SizedBox(
-                                                                width: 40.0,
-                                                                height: 40.0,
+                                                                width: 40,
+                                                                height: 40,
                                                                 child:
                                                                     SpinKitFadingCircle(
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primary,
-                                                                  size: 40.0,
+                                                                  size: 40,
                                                                 ),
                                                               ),
                                                             );
@@ -5518,7 +5496,8 @@ class _ProductAndListNewCopyWidgetState
                                                                     FFAppState()
                                                                             .count +
                                                                         1;
-                                                                setState(() {});
+                                                                safeSetState(
+                                                                    () {});
                                                               }
                                                               _model.prdlinstnewtx =
                                                                   await actions
@@ -5766,7 +5745,8 @@ class _ProductAndListNewCopyWidgetState
                                                                         .shiftDetails
                                                                         .id,
                                                                 );
-                                                                setState(() {});
+                                                                safeSetState(
+                                                                    () {});
                                                                 _model.updatedShiftDetails =
                                                                     await actions
                                                                         .hiveShiftCrud(
@@ -5802,7 +5782,7 @@ class _ProductAndListNewCopyWidgetState
                                                                   ),
                                                                 );
                                                                 if (_shouldSetState)
-                                                                  setState(
+                                                                  safeSetState(
                                                                       () {});
                                                                 return;
                                                               }
@@ -5912,7 +5892,7 @@ class _ProductAndListNewCopyWidgetState
                                                                     .update(
                                                                         () {});
                                                                 if (_shouldSetState)
-                                                                  setState(
+                                                                  safeSetState(
                                                                       () {});
                                                                 return;
                                                               } else {
@@ -5938,13 +5918,14 @@ class _ProductAndListNewCopyWidgetState
                                                                   },
                                                                 );
                                                                 if (_shouldSetState)
-                                                                  setState(
+                                                                  safeSetState(
                                                                       () {});
                                                                 return;
                                                               }
 
                                                               if (_shouldSetState)
-                                                                setState(() {});
+                                                                safeSetState(
+                                                                    () {});
                                                             },
                                                             text: FFLocalizations
                                                                     .of(context)
@@ -5953,21 +5934,21 @@ class _ProductAndListNewCopyWidgetState
                                                             ),
                                                             options:
                                                                 FFButtonOptions(
-                                                              width: 130.0,
+                                                              width: 130,
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          0,
+                                                                          0,
+                                                                          0,
+                                                                          0),
                                                               iconPadding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                          0,
+                                                                          0,
+                                                                          0,
+                                                                          0),
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .primary,
@@ -5995,12 +5976,12 @@ class _ProductAndListNewCopyWidgetState
                                                                   BorderSide(
                                                                 color: Colors
                                                                     .transparent,
-                                                                width: 1.0,
+                                                                width: 1,
                                                               ),
                                                               borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                          8.0),
+                                                                          8),
                                                             ),
                                                           );
                                                         },

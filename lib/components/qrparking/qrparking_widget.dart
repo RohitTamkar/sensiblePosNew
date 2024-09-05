@@ -44,7 +44,7 @@ class _QrparkingWidgetState extends State<QrparkingWidget> {
     super.initState();
     _model = createModel(context, () => QrparkingModel());
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -59,18 +59,18 @@ class _QrparkingWidgetState extends State<QrparkingWidget> {
     context.watch<FFAppState>();
 
     return Align(
-      alignment: AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0, 0),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            width: 500.0,
-            height: 250.0,
+            width: 500,
+            height: 250,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).primaryBackground,
-              borderRadius: BorderRadius.circular(4.0),
+              borderRadius: BorderRadius.circular(4),
               border: Border.all(
                 color: FlutterFlowTheme.of(context).customColor2,
               ),
@@ -80,8 +80,8 @@ class _QrparkingWidgetState extends State<QrparkingWidget> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Container(
-                  width: 440.0,
-                  height: 210.0,
+                  width: 440,
+                  height: 210,
                   decoration: BoxDecoration(),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -89,11 +89,10 @@ class _QrparkingWidgetState extends State<QrparkingWidget> {
                     children: [
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              2.0, 5.0, 2.0, 0.0),
+                          padding: EdgeInsetsDirectional.fromSTEB(2, 5, 2, 0),
                           child: Container(
-                            width: 480.0,
-                            height: 200.0,
+                            width: 480,
+                            height: 200,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
@@ -119,7 +118,7 @@ class _QrparkingWidgetState extends State<QrparkingWidget> {
                                         Icons.close,
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryText,
-                                        size: 35.0,
+                                        size: 35,
                                       ),
                                     ),
                                   ],
@@ -130,15 +129,15 @@ class _QrparkingWidgetState extends State<QrparkingWidget> {
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          7.0, 0.0, 0.0, 0.0),
+                                          7, 0, 0, 0),
                                       child: Container(
-                                        width: 250.0,
-                                        height: 40.0,
+                                        width: 250,
+                                        height: 40,
                                         decoration: BoxDecoration(),
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 3.0, 0.0),
+                                                  0, 0, 3, 0),
                                           child: Text(
                                             valueOrDefault<String>(
                                               widget!.invdoc?.vechicleNo,
@@ -152,7 +151,7 @@ class _QrparkingWidgetState extends State<QrparkingWidget> {
                                                       FlutterFlowTheme.of(
                                                               context)
                                                           .headlineSmallFamily,
-                                                  fontSize: 30.0,
+                                                  fontSize: 30,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
                                                   useGoogleFonts: GoogleFonts
@@ -173,15 +172,15 @@ class _QrparkingWidgetState extends State<QrparkingWidget> {
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          7.0, 0.0, 0.0, 0.0),
+                                          7, 0, 0, 0),
                                       child: Container(
-                                        width: 250.0,
-                                        height: 40.0,
+                                        width: 250,
+                                        height: 40,
                                         decoration: BoxDecoration(),
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 3.0, 0.0),
+                                                  0, 0, 3, 0),
                                           child: Text(
                                             '${functions.calculateHour(widget!.invdoc?.checkInTime, getCurrentTimestamp.millisecondsSinceEpoch).toString()}Mins',
                                             textAlign: TextAlign.center,
@@ -192,7 +191,7 @@ class _QrparkingWidgetState extends State<QrparkingWidget> {
                                                       FlutterFlowTheme.of(
                                                               context)
                                                           .headlineSmallFamily,
-                                                  fontSize: 30.0,
+                                                  fontSize: 30,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w500,
                                                   useGoogleFonts: GoogleFonts
@@ -213,15 +212,15 @@ class _QrparkingWidgetState extends State<QrparkingWidget> {
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          7.0, 0.0, 0.0, 0.0),
+                                          7, 0, 0, 0),
                                       child: Container(
-                                        width: 250.0,
-                                        height: 40.0,
+                                        width: 250,
+                                        height: 40,
                                         decoration: BoxDecoration(),
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 3.0, 0.0),
+                                                  0, 0, 3, 0),
                                           child: Text(
                                             '₹ ${valueOrDefault<String>(
                                               widget!.invdoc?.finalBillAmt
@@ -236,7 +235,7 @@ class _QrparkingWidgetState extends State<QrparkingWidget> {
                                                       FlutterFlowTheme.of(
                                                               context)
                                                           .headlineSmallFamily,
-                                                  fontSize: 30.0,
+                                                  fontSize: 30,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w500,
                                                   useGoogleFonts: GoogleFonts
@@ -253,7 +252,7 @@ class _QrparkingWidgetState extends State<QrparkingWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      30.0, 0.0, 0.0, 0.0),
+                                      30, 0, 0, 0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:
@@ -394,7 +393,7 @@ class _QrparkingWidgetState extends State<QrparkingWidget> {
                                             );
 
                                             if (_shouldSetState)
-                                              setState(() {});
+                                              safeSetState(() {});
                                             return;
                                           } else {
                                             await showDialog(
@@ -418,7 +417,8 @@ class _QrparkingWidgetState extends State<QrparkingWidget> {
                                             );
                                           }
 
-                                          if (_shouldSetState) setState(() {});
+                                          if (_shouldSetState)
+                                            safeSetState(() {});
                                         },
                                         text:
                                             FFLocalizations.of(context).getText(
@@ -426,16 +426,16 @@ class _QrparkingWidgetState extends State<QrparkingWidget> {
                                         ),
                                         icon: Icon(
                                           Icons.print_outlined,
-                                          size: 18.0,
+                                          size: 18,
                                         ),
                                         options: FFButtonOptions(
-                                          height: 36.0,
+                                          height: 36,
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  24.0, 0.0, 24.0, 0.0),
+                                                  24, 0, 24, 0),
                                           iconPadding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
+                                                  0, 0, 0, 0),
                                           color: FlutterFlowTheme.of(context)
                                               .parkingPrimary,
                                           textStyle: FlutterFlowTheme.of(
@@ -456,13 +456,13 @@ class _QrparkingWidgetState extends State<QrparkingWidget> {
                                                                 context)
                                                             .titleSmallFamily),
                                               ),
-                                          elevation: 2.0,
+                                          elevation: 2,
                                           borderSide: BorderSide(
                                             color: Colors.transparent,
-                                            width: 1.0,
+                                            width: 1,
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(8.0),
+                                              BorderRadius.circular(8),
                                         ),
                                       ),
                                       FFButtonWidget(
@@ -534,13 +534,13 @@ class _QrparkingWidgetState extends State<QrparkingWidget> {
                                           'euhj94bh' /* CheckOut & Save */,
                                         ),
                                         options: FFButtonOptions(
-                                          height: 36.0,
+                                          height: 36,
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  24.0, 0.0, 24.0, 0.0),
+                                                  24, 0, 24, 0),
                                           iconPadding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
+                                                  0, 0, 0, 0),
                                           color: FlutterFlowTheme.of(context)
                                               .parkingSecondaryBackground,
                                           textStyle: FlutterFlowTheme.of(
@@ -561,13 +561,13 @@ class _QrparkingWidgetState extends State<QrparkingWidget> {
                                                                 context)
                                                             .titleSmallFamily),
                                               ),
-                                          elevation: 2.0,
+                                          elevation: 2,
                                           borderSide: BorderSide(
                                             color: Colors.transparent,
-                                            width: 1.0,
+                                            width: 1,
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(8.0),
+                                              BorderRadius.circular(8),
                                         ),
                                       ),
                                     ],

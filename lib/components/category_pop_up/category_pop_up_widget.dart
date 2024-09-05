@@ -34,7 +34,7 @@ class _CategoryPopUpWidgetState extends State<CategoryPopUpWidget> {
     _model.textFieldsearchTextController ??= TextEditingController();
     _model.textFieldsearchFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -49,7 +49,7 @@ class _CategoryPopUpWidgetState extends State<CategoryPopUpWidget> {
     context.watch<FFAppState>();
 
     return Align(
-      alignment: AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0, 0),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -65,11 +65,11 @@ class _CategoryPopUpWidgetState extends State<CategoryPopUpWidget> {
               if (!snapshot.hasData) {
                 return Center(
                   child: SizedBox(
-                    width: 40.0,
-                    height: 40.0,
+                    width: 40,
+                    height: 40,
                     child: SpinKitFadingCircle(
                       color: FlutterFlowTheme.of(context).primary,
-                      size: 40.0,
+                      size: 40,
                     ),
                   ),
                 );
@@ -78,19 +78,18 @@ class _CategoryPopUpWidgetState extends State<CategoryPopUpWidget> {
                   snapshot.data!;
 
               return Container(
-                width: 300.0,
-                height: 330.0,
+                width: 300,
+                height: 330,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).primaryBackground,
-                  borderRadius: BorderRadius.circular(15.0),
+                  borderRadius: BorderRadius.circular(15),
                 ),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 3.0, 5.0),
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 5, 3, 5),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -114,30 +113,29 @@ class _CategoryPopUpWidgetState extends State<CategoryPopUpWidget> {
                             child: Icon(
                               Icons.close,
                               color: FlutterFlowTheme.of(context).primary,
-                              size: 20.0,
+                              size: 20,
                             ),
                           ),
                         ],
                       ),
                     ),
                     Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Container(
-                            width: 270.0,
-                            height: 30.0,
+                            width: 270,
+                            height: 30,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
-                              borderRadius: BorderRadius.circular(5.0),
+                              borderRadius: BorderRadius.circular(5),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 0.0, 0.0, 0.0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                               child: TextFormField(
                                 controller:
                                     _model.textFieldsearchTextController,
@@ -168,7 +166,8 @@ class _CategoryPopUpWidgetState extends State<CategoryPopUpWidget> {
                                         )
                                         .onError((_, __) =>
                                             _model.simpleSearchResults = [])
-                                        .whenComplete(() => setState(() {}));
+                                        .whenComplete(
+                                            () => safeSetState(() {}));
 
                                     FFAppState().isFullistShown = false;
                                     FFAppState().update(() {});
@@ -257,12 +256,12 @@ class _CategoryPopUpWidgetState extends State<CategoryPopUpWidget> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
-                          width: 270.0,
-                          height: 250.0,
+                          width: 270,
+                          height: 250,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
-                            borderRadius: BorderRadius.circular(5.0),
+                            borderRadius: BorderRadius.circular(5),
                           ),
                           child: Stack(
                             children: [
@@ -309,16 +308,15 @@ class _CategoryPopUpWidgetState extends State<CategoryPopUpWidget> {
                                             );
                                           },
                                           child: Container(
-                                            width: 270.0,
-                                            height: 30.0,
+                                            width: 270,
+                                            height: 30,
                                             decoration: BoxDecoration(
                                               borderRadius:
-                                                  BorderRadius.circular(5.0),
+                                                  BorderRadius.circular(5),
                                             ),
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      10.0, 0.0, 10.0, 0.0),
+                                                  .fromSTEB(10, 0, 10, 0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -346,7 +344,7 @@ class _CategoryPopUpWidgetState extends State<CategoryPopUpWidget> {
                                                         ),
                                                   ),
                                                   Container(
-                                                    width: 270.0,
+                                                    width: 270,
                                                     height: 0.1,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
@@ -400,13 +398,12 @@ class _CategoryPopUpWidgetState extends State<CategoryPopUpWidget> {
                                             );
                                           },
                                           child: Container(
-                                            width: 270.0,
-                                            height: 30.0,
+                                            width: 270,
+                                            height: 30,
                                             decoration: BoxDecoration(),
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      10.0, 0.0, 10.0, 0.0),
+                                                  .fromSTEB(10, 0, 10, 0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
