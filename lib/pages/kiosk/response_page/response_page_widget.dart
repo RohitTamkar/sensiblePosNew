@@ -357,11 +357,16 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
               while (FFAppState().startLoop < _model.prdListkiosk!.length) {
                 _model.stockupdateprd = await queryProductRecordOnce(
                   parent: FFAppState().outletIdRef,
-                  queryBuilder: (productRecord) => productRecord.where(
-                    'id',
-                    isEqualTo:
-                        (_model.prdListkiosk?[FFAppState().startLoop])?.id,
-                  ),
+                  queryBuilder: (productRecord) => productRecord
+                      .where(
+                        'id',
+                        isEqualTo:
+                            (_model.prdListkiosk?[FFAppState().startLoop])?.id,
+                      )
+                      .where(
+                        'stockable',
+                        isEqualTo: true,
+                      ),
                   singleRecord: true,
                 ).then((s) => s.firstOrNull);
 
