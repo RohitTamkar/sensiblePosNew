@@ -369,17 +369,18 @@ class _ResponsePageWidgetState extends State<ResponsePageWidget>
                       ),
                   singleRecord: true,
                 ).then((s) => s.firstOrNull);
-
-                await _model.stockupdateprd!.reference.update({
-                  ...mapToFirestore(
-                    {
-                      'currentStock': FieldValue.increment(
-                          -(functions.doubleToInt(
-                              (_model.prdListkiosk?[FFAppState().startLoop])
-                                  ?.quantity)!)),
-                    },
-                  ),
-                });
+                if (_model.stockupdateprd != null) {
+                  await _model.stockupdateprd!.reference.update({
+                    ...mapToFirestore(
+                      {
+                        'currentStock': FieldValue.increment(
+                            -(functions.doubleToInt(
+                                (_model.prdListkiosk?[FFAppState().startLoop])
+                                    ?.quantity)!)),
+                      },
+                    ),
+                  });
+                }
                 FFAppState().startLoop = FFAppState().startLoop + 1;
                 safeSetState(() {});
               }
