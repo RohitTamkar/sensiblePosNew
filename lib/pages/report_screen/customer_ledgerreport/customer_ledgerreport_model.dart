@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import '/components/customer_details/customer_details_widget.dart';
 import '/components/header/header_widget.dart';
 import '/components/selection_option/selection_option_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';

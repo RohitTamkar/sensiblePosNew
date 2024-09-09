@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import '/components/customer_details/customer_details_widget.dart';
 import '/components/header/header_widget.dart';
 import '/components/selection_option/selection_option_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -39,6 +40,21 @@ class _CustomerLedgerreportWidgetState
       FFAppState().selectStartDate = functions.getCurrentMonth('start');
       FFAppState().selectEndDate = functions.getCurrentMonth('end');
       FFAppState().update(() {});
+      await showModalBottomSheet(
+        isScrollControlled: true,
+        backgroundColor: Colors.transparent,
+        enableDrag: false,
+        context: context,
+        builder: (context) {
+          return GestureDetector(
+            onTap: () => FocusScope.of(context).unfocus(),
+            child: Padding(
+              padding: MediaQuery.viewInsetsOf(context),
+              child: CustomerDetailsWidget(),
+            ),
+          );
+        },
+      ).then((value) => safeSetState(() {}));
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -205,6 +221,7 @@ class _CustomerLedgerreportWidgetState
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBtnText,
                                           letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w600,
                                           useGoogleFonts: GoogleFonts.asMap()
                                               .containsKey(
                                                   FlutterFlowTheme.of(context)
@@ -402,6 +419,10 @@ class _CustomerLedgerreportWidgetState
                               .where(
                                 'createdDate',
                                 isLessThanOrEqualTo: FFAppState().selectEndDate,
+                              )
+                              .where(
+                                'party',
+                                isEqualTo: FFAppState().setCustRef,
                               ),
                         ),
                         builder: (context, snapshot) {
@@ -693,9 +714,6 @@ class _CustomerLedgerreportWidgetState
                                       builder: (context) {
                                         final payment =
                                             containerMainPaymentRecordList
-                                                .sortedList(
-                                                    keyOf: (e) => e.createdDate,
-                                                    desc: true)
                                                 .toList();
                                         if (payment.isEmpty) {
                                           return Center(

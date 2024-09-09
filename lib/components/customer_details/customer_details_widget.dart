@@ -94,26 +94,12 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                       ),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          FlutterFlowIconButton(
-                            borderColor: Colors.transparent,
-                            borderRadius: 30.0,
-                            borderWidth: 1.0,
-                            buttonSize: 40.0,
-                            icon: Icon(
-                              Icons.chevron_left,
-                              color: FlutterFlowTheme.of(context).primaryText,
-                              size: 22.0,
-                            ),
-                            onPressed: () async {
-                              context.pop();
-                            },
-                          ),
                           Expanded(
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
@@ -129,6 +115,7 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .headlineSmallFamily,
                                           letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w600,
                                           useGoogleFonts: GoogleFonts.asMap()
                                               .containsKey(
                                                   FlutterFlowTheme.of(context)
@@ -138,20 +125,6 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                 ),
                               ],
                             ),
-                          ),
-                          FlutterFlowIconButton(
-                            borderColor: Colors.transparent,
-                            borderRadius: 30.0,
-                            borderWidth: 1.0,
-                            buttonSize: 40.0,
-                            icon: Icon(
-                              Icons.person_add,
-                              color: FlutterFlowTheme.of(context).primaryText,
-                              size: 22.0,
-                            ),
-                            onPressed: () async {
-                              context.pushNamed('AddCustomer');
-                            },
                           ),
                         ],
                       ),
@@ -291,11 +264,11 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                 borderColor: Colors.transparent,
                                 borderWidth: 1.0,
                                 buttonSize: 50.0,
-                                fillColor:
-                                    FlutterFlowTheme.of(context).secondary,
+                                fillColor: FlutterFlowTheme.of(context).info,
                                 icon: Icon(
                                   Icons.search,
-                                  color: FlutterFlowTheme.of(context).lineColor,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
                                   size: 20.0,
                                 ),
                                 onPressed: () {
@@ -589,12 +562,8 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            FFAppState().setCustName =
-                                                containerVarItem.name;
                                             FFAppState().setCustRef =
                                                 containerVarItem.reference;
-                                            FFAppState().update(() {});
-                                            FFAppState().isCustListShown = true;
                                             FFAppState().update(() {});
                                             Navigator.pop(context);
                                           },
