@@ -208,10 +208,10 @@ class _GroceryHeaderWidgetState extends State<GroceryHeaderWidget> {
           Expanded(
             child: FFButtonWidget(
               onPressed: () async {
-                context.pushNamed('CreditPaymentPage');
+                context.pushNamed('ReportScreenNew');
               },
               text: FFLocalizations.of(context).getText(
-                'uirfxvxn' /* Payment */,
+                'uirfxvxn' /* Report */,
               ),
               icon: Icon(
                 Icons.bar_chart,
