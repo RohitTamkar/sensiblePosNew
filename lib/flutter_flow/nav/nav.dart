@@ -1514,6 +1514,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'CreditPaymentPage',
               path: 'creditPaymentPage',
               builder: (context, params) => CreditPaymentPageWidget(),
+            ),
+            FFRoute(
+              name: 'customerLedgerreport',
+              path: 'customerLedgerreport',
+              builder: (context, params) => CustomerLedgerreportWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

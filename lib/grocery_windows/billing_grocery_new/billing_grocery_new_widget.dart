@@ -1,6 +1,7 @@
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/components/exit_confirm/exit_confirm_widget.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -9,6 +10,7 @@ import '/grocery_windows/add_customer_grocery/add_customer_grocery_widget.dart';
 import '/grocery_windows/add_product_grocery/add_product_grocery_widget.dart';
 import '/grocery_windows/grocery/grocery_widget.dart';
 import '/grocery_windows/payment_mode_grocery/payment_mode_grocery_widget.dart';
+import 'dart:math';
 import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
@@ -16,6 +18,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -42,10 +45,13 @@ class BillingGroceryNewWidget extends StatefulWidget {
       _BillingGroceryNewWidgetState();
 }
 
-class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
+class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
+    with TickerProviderStateMixin {
   late BillingGroceryNewModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void initState() {
@@ -97,6 +103,21 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
 
     _model.textFieldsearchTextController ??= TextEditingController();
     _model.textFieldsearchFocusNode ??= FocusNode();
+
+    animationsMap.addAll({
+      'containerOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeIn,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {
           _model.textController1?.text = dateTimeFormat(
@@ -4205,7 +4226,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                           ),
                           if (_model.submenureport)
                             Align(
-                              alignment: AlignmentDirectional(0.02, -0.78),
+                              alignment: AlignmentDirectional(-0.15, -0.79),
                               child: Container(
                                 width: 240.0,
                                 height: 160.0,
@@ -4359,7 +4380,8 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget> {
                                     ],
                                   ),
                                 ),
-                              ),
+                              ).animateOnPageLoad(animationsMap[
+                                  'containerOnPageLoadAnimation']!),
                             ),
                         ],
                       ),

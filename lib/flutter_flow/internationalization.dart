@@ -22233,6 +22233,72 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
   },
+  // customerLedgerreport
+  {
+    'pnzkm4ub': {
+      'en': 'Customer Ledger Report',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'nfsnilxk': {
+      'en': 'Custom Date',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'svxmr8n1': {
+      'en': 'DATE',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'erjj7nxx': {
+      'en': 'Bill no',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '8p9hw7el': {
+      'en': 'Debit',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'b6qkc81t': {
+      'en': 'Credit',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'myggk87d': {
+      'en': 'Balance',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '7x5zdzw7': {
+      'en': 'Print',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '94g4gc37': {
+      'en': 'Home',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+  },
   // OutletDetailsHeader
   {
     'dk8fulps': {

@@ -209,3 +209,5 @@ export '/pages/kiosk/cash_response_page/cash_response_page_widget.dart'
     show CashResponsePageWidget;
 export '/credit_payment_page/credit_payment_page_widget.dart'
     show CreditPaymentPageWidget;
+export '/pages/report_screen/customer_ledgerreport/customer_ledgerreport_widget.dart'
+    show CustomerLedgerreportWidget;
