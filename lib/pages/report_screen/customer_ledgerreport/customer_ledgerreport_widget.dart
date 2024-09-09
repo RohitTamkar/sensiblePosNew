@@ -246,7 +246,8 @@ class _CustomerLedgerreportWidgetState
                                 decoration: BoxDecoration(),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
                                   children: [
                                     Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -391,6 +392,12 @@ class _CustomerLedgerreportWidgetState
                                           ],
                                         ),
                                       ],
+                                    ),
+                                    Icon(
+                                      Icons.email_outlined,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      size: 35.0,
                                     ),
                                   ],
                                 ),

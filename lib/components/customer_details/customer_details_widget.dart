@@ -393,6 +393,7 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                                                 fontFamily: FlutterFlowTheme.of(
                                                                         context)
                                                                     .headlineSmallFamily,
+                                                                fontSize: 15.0,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 useGoogleFonts: GoogleFonts
@@ -641,6 +642,8 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                                                   fontFamily: FlutterFlowTheme.of(
                                                                           context)
                                                                       .headlineSmallFamily,
+                                                                  fontSize:
+                                                                      15.0,
                                                                   letterSpacing:
                                                                       0.0,
                                                                   useGoogleFonts: GoogleFonts

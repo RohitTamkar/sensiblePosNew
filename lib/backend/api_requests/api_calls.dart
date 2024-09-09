@@ -355,6 +355,55 @@ class PhonepeStatusCall {
   }
 }
 
+class SendEmailCall {
+  static Future<ApiCallResponse> call({
+    String? outletName = '',
+    String? file = '',
+    String? fileName = '',
+    String? toEmail = '',
+    String? branchName = '',
+    String? username = '',
+    String? mobileNo = '',
+    String? roll = '',
+    String? reportType = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "outletName": "${outletName}",
+  "branchName": "${branchName}",
+  "userName": "${username}",
+  "userMobileNumber": "${mobileNo}",
+  "userRoll": "${roll}",
+  "reportType":"${reportType}",
+  "file": "${file}",
+  "fileName": "${fileName}",
+  "toEmail": "${toEmail}",
+  "ccEmail": "rohit.sensibleconnect@gmail.com"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'sendEmail',
+      apiUrl:
+          'https://asia-south1-sconnect-pos.cloudfunctions.net/msg91Mail/send_mail',
+      callType: ApiCallType.POST,
+      headers: {
+        'Access-Control-Allow-Origin':
+            'https://ff-debug-service-frontend-pro-ygxkweukma-uc.a.run.app',
+        'Access-Control-Allow-Headers': 'Content-Type',
+        'Access-Control-Allow-Methods': 'POST',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
 class ApiPagingParams {
   int nextPageNumber = 0;
   int numItems = 0;

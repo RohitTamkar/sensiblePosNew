@@ -47,6 +47,7 @@ dependencies:
   easy_debounce: 2.0.1
   equatable: 2.0.5
   esc_pos_utils_plus: ^2.0.3
+  excel: ^4.0.2
   expandable: 5.0.1
   firebase_auth: 4.19.5
   firebase_auth_platform_interface: 7.2.6
