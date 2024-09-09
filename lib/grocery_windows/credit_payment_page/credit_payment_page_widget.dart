@@ -1377,7 +1377,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                             party: FFAppState()
                                                                 .setCustRef,
                                                             expenceType:
-                                                                'Customer Credit',
+                                                                ' Credit',
                                                             oldBalance:
                                                                 valueOrDefault<
                                                                     int>(
@@ -1405,7 +1405,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                         party: FFAppState()
                                                                             .setCustRef,
                                                                         expenceType:
-                                                                            'Customer Credit',
+                                                                            ' Credit',
                                                                         oldBalance:
                                                                             valueOrDefault<int>(
                                                                           FFAppState()
@@ -1574,7 +1574,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                             party: FFAppState()
                                                                 .setCustRef,
                                                             expenceType:
-                                                                'Customer Credit',
+                                                                ' Credit',
                                                             oldBalance:
                                                                 valueOrDefault<
                                                                     int>(
@@ -1602,7 +1602,7 @@ class _CreditPaymentPageWidgetState extends State<CreditPaymentPageWidget> {
                                                                         party: FFAppState()
                                                                             .setCustRef,
                                                                         expenceType:
-                                                                            'Customer Credit',
+                                                                            ' Credit',
                                                                         oldBalance:
                                                                             valueOrDefault<int>(
                                                                           FFAppState()

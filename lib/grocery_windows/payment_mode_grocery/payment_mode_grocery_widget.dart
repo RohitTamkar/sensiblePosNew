@@ -3426,7 +3426,13 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                     await actions
                                                         .oldbalanceplusamt(
                                                   FFAppState().oldBalance,
-                                                  FFAppState().finalAmt,
+                                                  valueOrDefault<double>(
+                                                    getJsonField(
+                                                      FFAppState().groceryJson,
+                                                      r'''$.paymentMode.CREDIT''',
+                                                    ),
+                                                    0.0,
+                                                  ),
                                                 );
                                                 _shouldSetState = true;
 
@@ -3441,6 +3447,48 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                           .millisecondsSinceEpoch
                                                           .toString(),
                                                     ));
+
+                                                var paymentRecordReference =
+                                                    PaymentRecord.createDoc(
+                                                        FFAppState()
+                                                            .outletIdRef!);
+                                                await paymentRecordReference
+                                                    .set(
+                                                        createPaymentRecordData(
+                                                  amount: _model.totalcredit
+                                                      ?.toDouble(),
+                                                  paymentType: 'CREDIT',
+                                                  createdBy:
+                                                      FFAppState().userdoc,
+                                                  createdDate: getCurrentTimestamp
+                                                      .millisecondsSinceEpoch,
+                                                  party:
+                                                      FFAppState().setCustRef,
+                                                  expenceType: 'Debit',
+                                                  oldBalance:
+                                                      _model.totalcredit2,
+                                                ));
+                                                _model.paymentDoc2 = PaymentRecord
+                                                    .getDocumentFromData(
+                                                        createPaymentRecordData(
+                                                          amount: _model
+                                                              .totalcredit
+                                                              ?.toDouble(),
+                                                          paymentType: 'CREDIT',
+                                                          createdBy:
+                                                              FFAppState()
+                                                                  .userdoc,
+                                                          createdDate:
+                                                              getCurrentTimestamp
+                                                                  .millisecondsSinceEpoch,
+                                                          party: FFAppState()
+                                                              .setCustRef,
+                                                          expenceType: 'Debit',
+                                                          oldBalance: _model
+                                                              .totalcredit2,
+                                                        ),
+                                                        paymentRecordReference);
+                                                _shouldSetState = true;
                                               } else {
                                                 await showDialog(
                                                   context: context,
@@ -3863,6 +3911,48 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                           .millisecondsSinceEpoch
                                                           .toString(),
                                                     ));
+
+                                                var paymentRecordReference =
+                                                    PaymentRecord.createDoc(
+                                                        FFAppState()
+                                                            .outletIdRef!);
+                                                await paymentRecordReference
+                                                    .set(
+                                                        createPaymentRecordData(
+                                                  amount: _model.totalcredit
+                                                      ?.toDouble(),
+                                                  paymentType: 'CREDIT',
+                                                  createdBy:
+                                                      FFAppState().userdoc,
+                                                  createdDate: getCurrentTimestamp
+                                                      .millisecondsSinceEpoch,
+                                                  party:
+                                                      FFAppState().setCustRef,
+                                                  expenceType: 'Debit',
+                                                  oldBalance:
+                                                      _model.totalcredit,
+                                                ));
+                                                _model.paymentDoc22d = PaymentRecord
+                                                    .getDocumentFromData(
+                                                        createPaymentRecordData(
+                                                          amount: _model
+                                                              .totalcredit
+                                                              ?.toDouble(),
+                                                          paymentType: 'CREDIT',
+                                                          createdBy:
+                                                              FFAppState()
+                                                                  .userdoc,
+                                                          createdDate:
+                                                              getCurrentTimestamp
+                                                                  .millisecondsSinceEpoch,
+                                                          party: FFAppState()
+                                                              .setCustRef,
+                                                          expenceType: 'Debit',
+                                                          oldBalance: _model
+                                                              .totalcredit,
+                                                        ),
+                                                        paymentRecordReference);
+                                                _shouldSetState = true;
                                               } else {
                                                 await showDialog(
                                                   context: context,

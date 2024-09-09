@@ -20,10 +20,6 @@ class CustomerLedgerreportModel
 
   // Model for Header component.
   late HeaderModel headerModel;
-  // Stores action output result for [Custom Action - scanPrinter] action in IconButton widget.
-  bool? resDevice;
-  // Stores action output result for [Custom Action - scanPrinter] action in IconButton widget.
-  bool? rd;
   // Stores action output result for [Custom Action - scanPrinter] action in FloatingActionButton widget.
   bool? resDevice1;
   // Stores action output result for [Custom Action - scanPrinter] action in FloatingActionButton widget.

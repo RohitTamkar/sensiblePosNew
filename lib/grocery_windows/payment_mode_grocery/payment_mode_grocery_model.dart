@@ -67,6 +67,8 @@ class PaymentModeGroceryModel
   List<SelItemListStruct>? prdlistsavebill;
   // Stores action output result for [Custom Action - oldbalanceplusamt] action in Button widget.
   int? totalcredit2;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  PaymentRecord? paymentDoc2;
   // Stores action output result for [Custom Action - addInvoiceBillhive] action in Button widget.
   InvoiceStructStruct? hiveInvoiceDataCopyCopy;
   // Stores action output result for [Custom Action - calShiftSummaryNewgrocery] action in Button widget.
@@ -85,6 +87,8 @@ class PaymentModeGroceryModel
   OutletRecord? outletdoc;
   // Stores action output result for [Custom Action - oldbalanceplusamt] action in Button widget.
   int? totalcredit;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  PaymentRecord? paymentDoc22d;
   // Stores action output result for [Custom Action - addInvoiceBillhive] action in Button widget.
   InvoiceStructStruct? hiveInvoiceData;
   // Stores action output result for [Custom Action - calShiftSummaryNewgrocery] action in Button widget.
