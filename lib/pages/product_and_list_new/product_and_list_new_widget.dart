@@ -1359,39 +1359,11 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                               width: MediaQuery.sizeOf(context).width * 0.05,
                               height: MediaQuery.sizeOf(context).height * 0.05,
                               decoration: BoxDecoration(),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onLongPress: () async {
-                                  await actions.deleteAllcategory();
-                                  await actions.deleteAllinvoice();
-                                  await actions.deleteAllproduct();
-                                  await actions.deleteAllshift();
-                                  await showDialog(
-                                    context: context,
-                                    builder: (alertDialogContext) {
-                                      return AlertDialog(
-                                        title: Text('Alert'),
-                                        content: Text('Deleted'),
-                                        actions: [
-                                          TextButton(
-                                            onPressed: () => Navigator.pop(
-                                                alertDialogContext),
-                                            child: Text('Ok'),
-                                          ),
-                                        ],
-                                      );
-                                    },
-                                  );
-                                },
-                                child: Image.asset(
-                                  'assets/images/IMG_20220412_140945.png',
-                                  width: 100.0,
-                                  height: 100.0,
-                                  fit: BoxFit.contain,
-                                ),
+                              child: Image.asset(
+                                'assets/images/IMG_20220412_140945.png',
+                                width: 100.0,
+                                height: 100.0,
+                                fit: BoxFit.contain,
                               ),
                             ),
                             Expanded(
@@ -1495,54 +1467,14 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                   userDoc: widget!.doc!,
                                                 ),
                                               ),
-                                              InkWell(
-                                                splashColor: Colors.transparent,
-                                                focusColor: Colors.transparent,
-                                                hoverColor: Colors.transparent,
-                                                highlightColor:
-                                                    Colors.transparent,
-                                                onTap: () async {
-                                                  context.pushNamed(
-                                                    'ProductAndListNewCopy',
-                                                    queryParameters: {
-                                                      'billDetails':
-                                                          serializeParam(
-                                                        widget!.billDetails,
-                                                        ParamType
-                                                            .DocumentReference,
-                                                      ),
-                                                      'doc': serializeParam(
-                                                        widget!.doc,
-                                                        ParamType
-                                                            .DocumentReference,
-                                                      ),
-                                                      'shiftDetails':
-                                                          serializeParam(
-                                                        widget!.shiftDetails,
-                                                        ParamType.JSON,
-                                                      ),
-                                                      'taxcollection':
-                                                          serializeParam(
-                                                        widget!.taxcollection,
-                                                        ParamType.Document,
-                                                        isList: true,
-                                                      ),
-                                                    }.withoutNulls,
-                                                    extra: <String, dynamic>{
-                                                      'taxcollection':
-                                                          widget!.taxcollection,
-                                                    },
-                                                  );
-                                                },
-                                                child: Container(
+                                              Container(
+                                                width: 200.0,
+                                                height: 40.0,
+                                                child: custom_widgets
+                                                    .Datetimecountdown(
                                                   width: 200.0,
                                                   height: 40.0,
-                                                  child: custom_widgets
-                                                      .Datetimecountdown(
-                                                    width: 200.0,
-                                                    height: 40.0,
-                                                    parameter: 0,
-                                                  ),
+                                                  parameter: 0,
                                                 ),
                                               ),
                                               if (functions.isPrinterSelected(
@@ -2417,25 +2349,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                             safeSetState(() {});
                                                                                           },
                                                                                           onDoubleTap: () async {},
-                                                                                          onLongPress: () async {
-                                                                                            context.pushNamed(
-                                                                                              'UpdateProductNew',
-                                                                                              queryParameters: {
-                                                                                                'hivekey': serializeParam(
-                                                                                                  productListItem.hivekey,
-                                                                                                  ParamType.int,
-                                                                                                ),
-                                                                                              }.withoutNulls,
-                                                                                            );
-
-                                                                                            _model.getproductForupdate = await actions.hiveGetProduct(
-                                                                                              productListItem.hivekey,
-                                                                                            );
-                                                                                            FFAppState().productHiveput = _model.getproductForupdate!;
-                                                                                            safeSetState(() {});
-
-                                                                                            safeSetState(() {});
-                                                                                          },
+                                                                                          onLongPress: () async {},
                                                                                           child: Container(
                                                                                             decoration: BoxDecoration(
                                                                                               color: FFAppState().productColor == productListItem.id ? FlutterFlowTheme.of(context).secondary : FlutterFlowTheme.of(context).secondaryBackground,
@@ -2534,25 +2448,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                             safeSetState(() {});
                                                                                           },
                                                                                           onDoubleTap: () async {},
-                                                                                          onLongPress: () async {
-                                                                                            context.pushNamed(
-                                                                                              'UpdateProductNew',
-                                                                                              queryParameters: {
-                                                                                                'hivekey': serializeParam(
-                                                                                                  productListItem.hivekey,
-                                                                                                  ParamType.int,
-                                                                                                ),
-                                                                                              }.withoutNulls,
-                                                                                            );
-
-                                                                                            _model.getproductForupdate2 = await actions.hiveGetProduct(
-                                                                                              productListItem.hivekey,
-                                                                                            );
-                                                                                            FFAppState().productHiveput = _model.getproductForupdate2!;
-                                                                                            safeSetState(() {});
-
-                                                                                            safeSetState(() {});
-                                                                                          },
+                                                                                          onLongPress: () async {},
                                                                                           child: Container(
                                                                                             decoration: BoxDecoration(
                                                                                               color: FFAppState().productColor == productListItem.id ? FlutterFlowTheme.of(context).secondary : FlutterFlowTheme.of(context).secondaryBackground,

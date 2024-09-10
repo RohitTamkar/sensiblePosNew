@@ -91,16 +91,12 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
   double? calculateResult;
   // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
   double? calbillAmt;
-  // Stores action output result for [Custom Action - hiveGetProduct] action in ProductName widget.
-  ProductStructStruct? getproductForupdate;
   // Stores action output result for [Custom Action - addToHoldListprdCopy] action in productimage widget.
   List<dynamic>? addtosavebill23;
   // Stores action output result for [Custom Action - calSubTotalForHoldList] action in productimage widget.
   double? calculateResult2;
   // Stores action output result for [Custom Action - calBillAmt] action in productimage widget.
   double? calbillAmt2;
-  // Stores action output result for [Custom Action - hiveGetProduct] action in productimage widget.
-  ProductStructStruct? getproductForupdate2;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
   TextEditingController? textController1;
