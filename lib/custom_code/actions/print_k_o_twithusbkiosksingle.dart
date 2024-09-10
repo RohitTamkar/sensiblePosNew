@@ -22,7 +22,7 @@ Future printKOTwithusbkiosksingle(
   bool status,
   String statusName,
   dynamic outletDetails,
-  InvoiceRecord invoiceDetails,
+  InvoiceStructStruct invoiceDetails,
   String printerSize,
   AppSettingsRecord appSetting,
 ) async {

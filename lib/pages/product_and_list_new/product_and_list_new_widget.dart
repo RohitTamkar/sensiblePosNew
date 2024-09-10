@@ -16,6 +16,7 @@ import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -6122,6 +6123,91 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                         .paperSize,
                                                                     productAndListNewAppSettingsRecord!,
                                                                   );
+                                                                  _model.spoutlet =
+                                                                      await queryServicePointOutletRecordOnce(
+                                                                    parent: FFAppState()
+                                                                        .outletIdRef,
+                                                                  );
+                                                                  _shouldSetState =
+                                                                      true;
+                                                                  if (productAndListNewAppSettingsRecord!
+                                                                      .settingList
+                                                                      .where((e) =>
+                                                                          e.title ==
+                                                                          'printKotWithBill')
+                                                                      .toList()
+                                                                      .first
+                                                                      .value) {
+                                                                    await actions
+                                                                        .printKOTwithusbkioskhive(
+                                                                      _model
+                                                                          .returnedList2!
+                                                                          .toList(),
+                                                                      _model
+                                                                          .device!
+                                                                          .toList(),
+                                                                      FFAppState()
+                                                                          .isPrinterConnected,
+                                                                      FFAppState()
+                                                                          .printerName,
+                                                                      getJsonField(
+                                                                        functions
+                                                                            .outletDocToJson(buttonOutletRecord),
+                                                                        r'''$''',
+                                                                      ),
+                                                                      _model
+                                                                          .hiveInvoiceData!,
+                                                                      FFAppState()
+                                                                          .paperSize,
+                                                                      productAndListNewAppSettingsRecord!,
+                                                                      FFAppState()
+                                                                          .port,
+                                                                      FFAppState()
+                                                                          .ipAddresss,
+                                                                      _model
+                                                                          .spoutlet!
+                                                                          .toList(),
+                                                                    );
+                                                                  }
+                                                                  if (productAndListNewAppSettingsRecord!
+                                                                      .settingList
+                                                                      .where((e) =>
+                                                                          e.title ==
+                                                                          'enableEthernetPrint')
+                                                                      .toList()
+                                                                      .first
+                                                                      .value) {
+                                                                    await actions
+                                                                        .printEthernethive(
+                                                                      _model
+                                                                          .returnedList2!
+                                                                          .toList(),
+                                                                      _model
+                                                                          .device!
+                                                                          .toList(),
+                                                                      FFAppState()
+                                                                          .isPrinterConnected,
+                                                                      FFAppState()
+                                                                          .printerName,
+                                                                      getJsonField(
+                                                                        functions
+                                                                            .outletDocToJson(buttonOutletRecord),
+                                                                        r'''$''',
+                                                                      ),
+                                                                      _model
+                                                                          .hiveInvoiceData!,
+                                                                      FFAppState()
+                                                                          .paperSize,
+                                                                      FFAppState()
+                                                                          .port,
+                                                                      FFAppState()
+                                                                          .ipAddresss,
+                                                                      _model
+                                                                          .spoutlet!
+                                                                          .toList(),
+                                                                      productAndListNewAppSettingsRecord!,
+                                                                    );
+                                                                  }
                                                                   await actions
                                                                       .removeFromAllBillList(
                                                                     FFAppState()
