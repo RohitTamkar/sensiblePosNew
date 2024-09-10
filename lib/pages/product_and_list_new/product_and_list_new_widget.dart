@@ -5102,6 +5102,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                               );
                                                               _shouldSetState =
                                                                   true;
+                                                              await actions
+                                                                  .newCustomAction5();
                                                               if (FFAppState()
                                                                       .setCustRef !=
                                                                   null) {
@@ -5698,6 +5700,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                 );
                                                                 _shouldSetState =
                                                                     true;
+                                                                await actions
+                                                                    .newCustomAction5();
                                                                 if (_model
                                                                         .dropDownValue ==
                                                                     'CREDIT') {
