@@ -25515,6 +25515,30 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
   },
+  // Sendemail
+  {
+    'bmdawgri': {
+      'en': 'Confirm Your Email Id',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'bn9yxiad': {
+      'en': 'Add  Email  Here...',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'y9voc0z5': {
+      'en': 'Confirm',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+  },
   // Miscellaneous
   {
     'c0tsq8sj': {

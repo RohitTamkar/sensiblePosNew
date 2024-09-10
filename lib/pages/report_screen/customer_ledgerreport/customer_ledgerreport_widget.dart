@@ -1,13 +1,18 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/components/customer_details/customer_details_widget.dart';
 import '/components/header/header_widget.dart';
 import '/components/selection_option/selection_option_widget.dart';
+import '/components/sendemail/sendemail_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -77,202 +82,244 @@ class _CustomerLedgerreportWidgetState
     context.watch<FFAppState>();
 
     return Builder(
-      builder: (context) => Title(
-          title: 'customerLedgerreport',
-          color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
-          child: GestureDetector(
-            onTap: () => FocusScope.of(context).unfocus(),
-            child: Scaffold(
-              key: scaffoldKey,
+      builder: (context) => StreamBuilder<List<PaymentRecord>>(
+        stream: queryPaymentRecord(
+          parent: FFAppState().outletIdRef,
+          queryBuilder: (paymentRecord) => paymentRecord
+              .where(
+                'createdDate',
+                isGreaterThanOrEqualTo: FFAppState().selectStartDate,
+              )
+              .where(
+                'createdDate',
+                isLessThanOrEqualTo: FFAppState().selectEndDate,
+              )
+              .where(
+                'party',
+                isEqualTo: FFAppState().setCustRef,
+              ),
+        ),
+        builder: (context, snapshot) {
+          // Customize what your widget looks like when it's loading.
+          if (!snapshot.hasData) {
+            return Scaffold(
               backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-              floatingActionButton: Visibility(
-                visible: FFAppState().fabButtonHide == true,
-                child: FloatingActionButton.extended(
-                  onPressed: () async {
-                    var _shouldSetState = false;
-                    _model.resDevice1 = await actions.scanPrinter(
-                      FFAppState().posMode,
-                    );
-                    _shouldSetState = true;
-                    if (!_model.resDevice1!) {
-                      _model.rd1 = await actions.scanPrinter(
-                        FFAppState().posMode,
-                      );
-                      _shouldSetState = true;
-                    }
-                    await actions.connectDevice(
-                      FFAppState().printerDevice,
-                      '0',
-                    );
-                    if (FFAppState().printerName != null &&
-                        FFAppState().printerName != '') {
-                    } else {
-                      await showDialog(
-                        context: context,
-                        builder: (alertDialogContext) {
-                          return AlertDialog(
-                            title: Text('printer connection'),
-                            content: Text('printer not connected'),
-                            actions: [
-                              TextButton(
-                                onPressed: () =>
-                                    Navigator.pop(alertDialogContext),
-                                child: Text('Ok'),
-                              ),
-                            ],
-                          );
-                        },
-                      );
-                      if (_shouldSetState) safeSetState(() {});
-                      return;
-                    }
-
-                    if (_shouldSetState) safeSetState(() {});
-                  },
-                  backgroundColor:
-                      FlutterFlowTheme.of(context).secondaryBackground,
-                  elevation: 8.0,
-                  label: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          FlutterFlowIconButton(
-                            borderColor: Colors.transparent,
-                            buttonSize: 30.0,
-                            icon: Icon(
-                              Icons.print,
-                              color: FlutterFlowTheme.of(context).primary,
-                              size: 20.0,
-                            ),
-                            onPressed: () {
-                              print('IconButton pressed ...');
-                            },
-                          ),
-                          Text(
-                            FFLocalizations.of(context).getText(
-                              '7x5zdzw7' /* Print */,
-                            ),
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .bodyMediumFamily,
-                                  fontSize: 12.0,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .bodyMediumFamily),
-                                ),
-                          ),
-                        ],
-                      ),
-                    ],
+              body: Center(
+                child: SizedBox(
+                  width: 40.0,
+                  height: 40.0,
+                  child: SpinKitFadingCircle(
+                    color: FlutterFlowTheme.of(context).primary,
+                    size: 40.0,
                   ),
                 ),
               ),
-              body: Padding(
-                padding: EdgeInsets.all(3.0),
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Expanded(
-                      flex: 1,
-                      child: Container(
-                        width: MediaQuery.sizeOf(context).width * 1.0,
-                        height: MediaQuery.sizeOf(context).height * 0.12,
-                        decoration: BoxDecoration(
-                          color: FlutterFlowTheme.of(context).primary,
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Expanded(
-                              flex: 2,
-                              child: Container(
-                                width: 50.0,
-                                height: 100.0,
-                                decoration: BoxDecoration(),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    FlutterFlowIconButton(
-                                      borderColor: Colors.transparent,
-                                      borderRadius: 30.0,
-                                      borderWidth: 1.0,
-                                      buttonSize: 60.0,
-                                      icon: Icon(
-                                        Icons.chevron_left_sharp,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBtnText,
-                                        size: 26.0,
-                                      ),
-                                      onPressed: () async {
-                                        context.pop();
-                                      },
+            );
+          }
+          List<PaymentRecord> customerLedgerreportPaymentRecordList =
+              snapshot.data!;
+
+          return Title(
+              title: 'customerLedgerreport',
+              color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
+              child: GestureDetector(
+                onTap: () => FocusScope.of(context).unfocus(),
+                child: Scaffold(
+                  key: scaffoldKey,
+                  backgroundColor:
+                      FlutterFlowTheme.of(context).primaryBackground,
+                  floatingActionButton: Visibility(
+                    visible: FFAppState().fabButtonHide == true,
+                    child: FloatingActionButton.extended(
+                      onPressed: () async {
+                        var _shouldSetState = false;
+                        _model.resDevice1 = await actions.scanPrinter(
+                          FFAppState().posMode,
+                        );
+                        _shouldSetState = true;
+                        if (!_model.resDevice1!) {
+                          _model.rd1 = await actions.scanPrinter(
+                            FFAppState().posMode,
+                          );
+                          _shouldSetState = true;
+                        }
+                        await actions.connectDevice(
+                          FFAppState().printerDevice,
+                          '0',
+                        );
+                        if (FFAppState().printerName != null &&
+                            FFAppState().printerName != '') {
+                        } else {
+                          await showDialog(
+                            context: context,
+                            builder: (alertDialogContext) {
+                              return AlertDialog(
+                                title: Text('printer connection'),
+                                content: Text('printer not connected'),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () =>
+                                        Navigator.pop(alertDialogContext),
+                                    child: Text('Ok'),
+                                  ),
+                                ],
+                              );
+                            },
+                          );
+                          if (_shouldSetState) safeSetState(() {});
+                          return;
+                        }
+
+                        if (_shouldSetState) safeSetState(() {});
+                      },
+                      backgroundColor:
+                          FlutterFlowTheme.of(context).secondaryBackground,
+                      elevation: 8.0,
+                      label: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              FlutterFlowIconButton(
+                                borderColor: Colors.transparent,
+                                buttonSize: 30.0,
+                                icon: Icon(
+                                  Icons.print,
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  size: 20.0,
+                                ),
+                                onPressed: () {
+                                  print('IconButton pressed ...');
+                                },
+                              ),
+                              Text(
+                                FFLocalizations.of(context).getText(
+                                  '7x5zdzw7' /* Print */,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
+                                      fontSize: 12.0,
+                                      letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily),
                                     ),
-                                    Text(
-                                      FFLocalizations.of(context).getText(
-                                        'pnzkm4ub' /* Customer Ledger Report */,
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .headlineSmall
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineSmallFamily,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  body: Padding(
+                    padding: EdgeInsets.all(3.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Expanded(
+                          flex: 1,
+                          child: Container(
+                            width: MediaQuery.sizeOf(context).width * 1.0,
+                            height: MediaQuery.sizeOf(context).height * 0.12,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context).primary,
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Expanded(
+                                  flex: 2,
+                                  child: Container(
+                                    width: 50.0,
+                                    height: 100.0,
+                                    decoration: BoxDecoration(),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        FlutterFlowIconButton(
+                                          borderColor: Colors.transparent,
+                                          borderRadius: 30.0,
+                                          borderWidth: 1.0,
+                                          buttonSize: 60.0,
+                                          icon: Icon(
+                                            Icons.chevron_left_sharp,
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBtnText,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w600,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .headlineSmallFamily),
+                                            size: 26.0,
                                           ),
+                                          onPressed: () async {
+                                            context.pop();
+                                          },
+                                        ),
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'pnzkm4ub' /* Customer Ledger Report */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineSmall
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineSmallFamily,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryBtnText,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w600,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(FlutterFlowTheme
+                                                            .of(context)
+                                                        .headlineSmallFamily),
+                                              ),
+                                        ),
+                                      ],
                                     ),
-                                  ],
+                                  ),
                                 ),
-                              ),
-                            ),
-                            Expanded(
-                              flex: 2,
-                              child: Container(
-                                width: 100.0,
-                                height: 100.0,
-                                decoration: BoxDecoration(),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: [
-                                    Column(
+                                Expanded(
+                                  flex: 2,
+                                  child: Container(
+                                    width: 100.0,
+                                    height: 100.0,
+                                    decoration: BoxDecoration(),
+                                    child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                          MainAxisAlignment.spaceEvenly,
                                       children: [
-                                        Row(
+                                        Column(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
-                                              MainAxisAlignment.end,
+                                              MainAxisAlignment.center,
                                           children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 0.0, 15.0, 0.0),
-                                              child: Text(
-                                                dateTimeFormat(
-                                                  "yMMMd",
-                                                  getCurrentTimestamp,
-                                                  locale: FFLocalizations.of(
-                                                          context)
-                                                      .languageCode,
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
+                                            Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.end,
+                                              children: [
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 15.0, 0.0),
+                                                  child: Text(
+                                                    dateTimeFormat(
+                                                      "yMMMd",
+                                                      getCurrentTimestamp,
+                                                      locale:
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .languageCode,
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .titleSmall
                                                         .override(
                                                           fontFamily:
@@ -290,177 +337,282 @@ class _CustomerLedgerreportWidgetState
                                                                           context)
                                                                       .titleSmallFamily),
                                                         ),
-                                              ),
-                                            ),
-                                            InkWell(
-                                              splashColor: Colors.transparent,
-                                              focusColor: Colors.transparent,
-                                              hoverColor: Colors.transparent,
-                                              highlightColor:
-                                                  Colors.transparent,
-                                              onTap: () async {
-                                                await showModalBottomSheet(
-                                                  isScrollControlled: true,
-                                                  backgroundColor:
-                                                      Colors.transparent,
-                                                  barrierColor:
-                                                      Color(0x00000000),
-                                                  context: context,
-                                                  builder: (context) {
-                                                    return GestureDetector(
-                                                      onTap: () =>
-                                                          FocusScope.of(context)
-                                                              .unfocus(),
-                                                      child: Padding(
-                                                        padding: MediaQuery
-                                                            .viewInsetsOf(
-                                                                context),
-                                                        child:
-                                                            SelectionOptionWidget(
-                                                          nav: 1,
-                                                        ),
-                                                      ),
-                                                    );
-                                                  },
-                                                ).then((value) =>
-                                                    safeSetState(() {}));
-                                              },
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .info,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          5.0),
+                                                  ),
                                                 ),
-                                                child: Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
-                                                  children: [
-                                                    Row(
+                                                InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    await showModalBottomSheet(
+                                                      isScrollControlled: true,
+                                                      backgroundColor:
+                                                          Colors.transparent,
+                                                      barrierColor:
+                                                          Color(0x00000000),
+                                                      context: context,
+                                                      builder: (context) {
+                                                        return GestureDetector(
+                                                          onTap: () =>
+                                                              FocusScope.of(
+                                                                      context)
+                                                                  .unfocus(),
+                                                          child: Padding(
+                                                            padding: MediaQuery
+                                                                .viewInsetsOf(
+                                                                    context),
+                                                            child:
+                                                                SelectionOptionWidget(
+                                                              nav: 1,
+                                                            ),
+                                                          ),
+                                                        );
+                                                      },
+                                                    ).then((value) =>
+                                                        safeSetState(() {}));
+                                                  },
+                                                  child: Container(
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .info,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              5.0),
+                                                    ),
+                                                    child: Column(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
                                                       mainAxisAlignment:
                                                           MainAxisAlignment
                                                               .center,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
                                                       children: [
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      10.0,
-                                                                      15.0,
-                                                                      10.0,
-                                                                      15.0),
-                                                          child: Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'nfsnilxk' /* Custom Date */,
-                                                            ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .headlineSmall
-                                                                .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .headlineSmallFamily,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .headlineSmallFamily),
+                                                        Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          10.0,
+                                                                          15.0,
+                                                                          10.0,
+                                                                          15.0),
+                                                              child: Text(
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  'nfsnilxk' /* Custom Date */,
                                                                 ),
-                                                          ),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmall
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineSmallFamily,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryBackground,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).headlineSmallFamily),
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                          ],
                                                         ),
                                                       ],
                                                     ),
-                                                  ],
+                                                  ),
                                                 ),
-                                              ),
+                                              ],
                                             ),
                                           ],
                                         ),
+                                        Builder(
+                                          builder: (context) => InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              _model.party =
+                                                  await queryPartyRecordOnce(
+                                                parent:
+                                                    FFAppState().outletIdRef,
+                                                queryBuilder: (partyRecord) =>
+                                                    partyRecord.where(
+                                                  'id',
+                                                  isEqualTo: FFAppState()
+                                                      .setCustRef
+                                                      ?.id,
+                                                ),
+                                                singleRecord: true,
+                                              ).then((s) => s.firstOrNull);
+                                              _model.userdoc =
+                                                  await queryUserProfileRecordOnce(
+                                                queryBuilder:
+                                                    (userProfileRecord) =>
+                                                        userProfileRecord.where(
+                                                  'id',
+                                                  isEqualTo:
+                                                      FFAppState().userdoc?.id,
+                                                ),
+                                                singleRecord: true,
+                                              ).then((s) => s.firstOrNull);
+                                              await showDialog(
+                                                context: context,
+                                                builder: (dialogContext) {
+                                                  return Dialog(
+                                                    elevation: 0,
+                                                    insetPadding:
+                                                        EdgeInsets.zero,
+                                                    backgroundColor:
+                                                        Colors.transparent,
+                                                    alignment:
+                                                        AlignmentDirectional(
+                                                                0.0, 0.0)
+                                                            .resolve(
+                                                                Directionality.of(
+                                                                    context)),
+                                                    child: GestureDetector(
+                                                      onTap: () =>
+                                                          FocusScope.of(
+                                                                  dialogContext)
+                                                              .unfocus(),
+                                                      child: SendemailWidget(),
+                                                    ),
+                                                  );
+                                                },
+                                              );
+
+                                              _model.excelfile = await actions
+                                                  .genrateExcelCustledgerReport(
+                                                customerLedgerreportPaymentRecordList
+                                                    .toList(),
+                                                dateTimeFormat(
+                                                  "yyyy-MM-dd",
+                                                  getCurrentTimestamp,
+                                                  locale: FFLocalizations.of(
+                                                          context)
+                                                      .languageCode,
+                                                ),
+                                                FFAppState().outletName,
+                                                _model.party,
+                                              );
+                                              _model.apiResult550 =
+                                                  await SendEmailCall.call(
+                                                outletName:
+                                                    FFAppState().outletName,
+                                                file: _model.excelfile,
+                                                fileName:
+                                                    'CustomerLedgerReport',
+                                                toEmail: FFAppState().emailId,
+                                                branchName: 'Pune',
+                                                username: _model.userdoc?.name,
+                                                mobileNo:
+                                                    _model.userdoc?.mobile,
+                                                roll: _model.userdoc?.role,
+                                                reportType:
+                                                    'Customer Ledger Report',
+                                              );
+
+                                              if ((_model.apiResult550
+                                                      ?.succeeded ??
+                                                  true)) {
+                                                await showDialog(
+                                                  context: context,
+                                                  builder:
+                                                      (alertDialogContext) {
+                                                    return AlertDialog(
+                                                      content: Text(
+                                                          'Email Sent Successfully !'),
+                                                      actions: [
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext),
+                                                          child: Text('Ok'),
+                                                        ),
+                                                      ],
+                                                    );
+                                                  },
+                                                );
+                                              } else {
+                                                await showDialog(
+                                                  context: context,
+                                                  builder:
+                                                      (alertDialogContext) {
+                                                    return AlertDialog(
+                                                      content: Text(
+                                                          'Email Not Sent !'),
+                                                      actions: [
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext),
+                                                          child: Text('Ok'),
+                                                        ),
+                                                      ],
+                                                    );
+                                                  },
+                                                );
+                                              }
+
+                                              safeSetState(() {});
+                                            },
+                                            child: Icon(
+                                              Icons.email_outlined,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              size: 35.0,
+                                            ),
+                                          ),
+                                        ),
                                       ],
                                     ),
-                                    Icon(
-                                      Icons.email_outlined,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      size: 35.0,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              flex: 2,
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    20.0, 0.0, 0.0, 0.0),
-                                child: wrapWithModel(
-                                  model: _model.headerModel,
-                                  updateCallback: () => safeSetState(() {}),
-                                  child: HeaderWidget(),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      flex: 13,
-                      child: Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
-                        child: StreamBuilder<List<PaymentRecord>>(
-                          stream: queryPaymentRecord(
-                            parent: FFAppState().outletIdRef,
-                            queryBuilder: (paymentRecord) => paymentRecord
-                                .where(
-                                  'createdDate',
-                                  isGreaterThanOrEqualTo:
-                                      FFAppState().selectStartDate,
-                                )
-                                .where(
-                                  'createdDate',
-                                  isLessThanOrEqualTo:
-                                      FFAppState().selectEndDate,
-                                )
-                                .where(
-                                  'party',
-                                  isEqualTo: FFAppState().setCustRef,
-                                ),
-                          ),
-                          builder: (context, snapshot) {
-                            // Customize what your widget looks like when it's loading.
-                            if (!snapshot.hasData) {
-                              return Center(
-                                child: SizedBox(
-                                  width: 40.0,
-                                  height: 40.0,
-                                  child: SpinKitFadingCircle(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    size: 40.0,
                                   ),
                                 ),
-                              );
-                            }
-                            List<PaymentRecord> containerMainPaymentRecordList =
-                                snapshot.data!;
-
-                            return Container(
+                                Expanded(
+                                  flex: 2,
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        20.0, 0.0, 0.0, 0.0),
+                                    child: wrapWithModel(
+                                      model: _model.headerModel,
+                                      updateCallback: () => safeSetState(() {}),
+                                      child: HeaderWidget(),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          flex: 13,
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 3.0, 0.0, 0.0),
+                            child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 100.0,
                               decoration: BoxDecoration(
@@ -734,7 +886,7 @@ class _CustomerLedgerreportWidgetState
                                       child: Builder(
                                         builder: (context) {
                                           final payment =
-                                              containerMainPaymentRecordList
+                                              customerLedgerreportPaymentRecordList
                                                   .toList();
                                           if (payment.isEmpty) {
                                             return Center(
@@ -1021,16 +1173,16 @@ class _CustomerLedgerreportWidgetState
                                   ],
                                 ),
                               ),
-                            );
-                          },
+                            ),
+                          ),
                         ),
-                      ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
-              ),
-            ),
-          )),
+              ));
+        },
+      ),
     );
   }
 }

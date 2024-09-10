@@ -3413,6 +3413,12 @@ class FFAppState extends ChangeNotifier {
   void insertAtIndexInMonths(int index, dynamic value) {
     months.insert(index, value);
   }
+
+  String _emailId = '';
+  String get emailId => _emailId;
+  set emailId(String value) {
+    _emailId = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

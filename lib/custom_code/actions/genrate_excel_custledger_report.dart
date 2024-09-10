@@ -15,6 +15,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:convert';
 
 import 'dart:io';
@@ -23,7 +25,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:excel/excel.dart';
 
 Future<String> genrateExcelCustledgerReport(
-  List<PartyRecord> partdocList,
+  List<PaymentRecord> partdocList,
   String? startdate,
   String? shopName,
   PartyRecord? partydetails,
@@ -52,21 +54,27 @@ Future<String> genrateExcelCustledgerReport(
   ]);
 
   sheet.appendRow([
-    TextCellValue('Total Amount'),
-    TextCellValue(totalAmount.toString() ?? ''),
+    TextCellValue('Customer Name'),
+    TextCellValue(partydetails?.name.toString() ?? ''),
   ]);
   sheet.appendRow([
-    TextCellValue('Total Quantity'),
-    TextCellValue(totalQty.toString() ?? ''),
+    TextCellValue('Mobile No'),
+    TextCellValue(partydetails?.mobile.toString() ?? ''),
   ]);
+  sheet.appendRow([
+    TextCellValue('Balance Amount'),
+    TextCellValue(partydetails?.oldBalance.toString() ?? ''),
+  ]);
+
   sheet.appendRow([TextCellValue('')]); // Add an empty row for spacing
 
   // Add product details to the sheet
   sheet.appendRow([
-    TextCellValue('Product Name'),
-    TextCellValue('Quantity'),
-    TextCellValue('Price'),
-    TextCellValue('Total'),
+    TextCellValue('Date'),
+    TextCellValue('Type'),
+    TextCellValue('Debit'),
+    TextCellValue('Credit'),
+    TextCellValue('Balance'),
   ]);
 
   List<int> boldColumns = [0, 1, 2, 3];
@@ -84,12 +92,26 @@ Future<String> genrateExcelCustledgerReport(
     cell.cellStyle = boldStyle;
   }
 
-  for (var product in jsonproduct) {
+  for (var payment in partdocList) {
+    String debitAmt = "0";
+    String creditAmt = "0";
+
+    if (payment.expenceType == 'Debit') {
+      debitAmt = payment.amount.toString();
+    }
+    if (payment.expenceType == 'Credit') {
+      creditAmt = payment.amount.toString();
+    }
+    var formatter = DateFormat('yyyy-MM-dd');
+    DateTime dateTime =
+        DateTime.fromMillisecondsSinceEpoch(payment.createdDate);
+    String sDate = formatter.format(dateTime);
     sheet.appendRow([
-      TextCellValue(product['name'].toString()),
-      TextCellValue(product['quantity'].toString()),
-      TextCellValue(product['price'].toString()),
-      TextCellValue(product['total'].toString()),
+      TextCellValue(sDate),
+      TextCellValue(payment.expenceType.toString()),
+      TextCellValue(debitAmt),
+      TextCellValue(creditAmt),
+      TextCellValue(payment.oldBalance.toString()),
     ]);
   }
 
