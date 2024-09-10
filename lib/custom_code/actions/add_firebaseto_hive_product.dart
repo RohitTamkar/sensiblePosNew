@@ -54,7 +54,7 @@ Future<int> addFirebasetoHiveProduct(List<ProductRecord> product) async {
       int reorderLevel = data.reorderLevel ?? 00;
       int searchcode = data.searchcode ?? 00;
       double sellingPrice = data.sellingPrice ?? 00.0;
-      String? serviceOutletId = data.serviceOutletRef?.id;
+      String? serviceOutletId = data.serviceRefId?.id;
       String shortName = data.shortName ?? '';
       int stock = data.stock ?? 00;
       bool stockable = data.stockable ?? false;
