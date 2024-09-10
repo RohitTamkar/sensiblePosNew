@@ -4256,6 +4256,14 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
+                                            if (_model.submenureport) {
+                                              _model.submenureport = false;
+                                              safeSetState(() {});
+                                            } else {
+                                              _model.submenureport = true;
+                                              safeSetState(() {});
+                                            }
+
                                             context.pushNamed(
                                                 'customerLedgerreport');
                                           },

@@ -497,7 +497,12 @@ class _CustomerLedgerreportWidgetState
                                                           FocusScope.of(
                                                                   dialogContext)
                                                               .unfocus(),
-                                                      child: SendemailWidget(),
+                                                      child: Container(
+                                                        height: 200.0,
+                                                        width: 300.0,
+                                                        child:
+                                                            SendemailWidget(),
+                                                      ),
                                                     ),
                                                   );
                                                 },
