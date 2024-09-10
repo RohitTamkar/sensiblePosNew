@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom actions
+
 import 'index.dart'; // Imports other custom widgets
 import '/custom_code/actions/index.dart'; // Imports custom actions
 // Begin custom widget code
@@ -54,7 +56,7 @@ Future<int> addFirebasetoHiveProduct(List<ProductRecord> product) async {
       int reorderLevel = data.reorderLevel ?? 00;
       int searchcode = data.searchcode ?? 00;
       double sellingPrice = data.sellingPrice ?? 00.0;
-      String? serviceOutletId = data.serviceRefId?.id;
+      String? serviceOutletId = data.serviceRefId ?? '';
       String shortName = data.shortName ?? '';
       int stock = data.stock ?? 00;
       bool stockable = data.stockable ?? false;
@@ -86,37 +88,37 @@ Future<int> addFirebasetoHiveProduct(List<ProductRecord> product) async {
       if (itemExist) {
         // Update the existing product
         print('update');
-        existingItem!.barcode = barcode;
-        existingItem!.category = category;
-        existingItem!.categoryId = categoryId;
-        existingItem!.code = code;
-        existingItem!.discountAmt = discountAmt;
-        existingItem!.discountPer = discountPer;
-        existingItem!.hsncode = hsncode;
-        existingItem!.id = id;
-        existingItem!.imageUrl = imageUrl;
-        existingItem!.isDeleted = isDeleted;
-        existingItem!.keywords = (keywords as List<String>?)!;
-        existingItem!.mrpPrice = mrpPrice;
-        existingItem!.name = name;
-        existingItem!.price = price;
-        existingItem!.productMasterId = productMasterId;
-        existingItem!.purchasePrice = purchasePrice;
-        existingItem!.recipeId = recipeId;
-        existingItem!.recipeRefId = recipeRefId!;
-        existingItem!.regionalName = regionalName;
-        existingItem!.reorderLevel = reorderLevel;
-        existingItem!.searchcode = searchcode;
-        existingItem!.sellingPrice = sellingPrice;
-        existingItem!.serviceOutletId = serviceOutletId;
-        existingItem!.shortName = shortName;
-        existingItem!.stock = stock;
-        existingItem!.stockable = stockable;
-        existingItem!.taxId = taxId;
-        existingItem!.type = type;
-        existingItem!.unitId = unitId;
-        existingItem!.weightable = weightable;
-        existingItem!.version = version;
+        existingItem?.barcode = barcode;
+        existingItem?.category = category;
+        existingItem?.categoryId = categoryId;
+        existingItem?.code = code;
+        existingItem?.discountAmt = discountAmt;
+        existingItem?.discountPer = discountPer;
+        existingItem?.hsncode = hsncode;
+        existingItem?.id = id;
+        existingItem?.imageUrl = imageUrl;
+        existingItem?.isDeleted = isDeleted;
+        existingItem?.keywords = (keywords as List<String>);
+        existingItem?.mrpPrice = mrpPrice;
+        existingItem?.name = name;
+        existingItem?.price = price;
+        existingItem?.productMasterId = productMasterId;
+        existingItem?.purchasePrice = purchasePrice;
+        existingItem?.recipeId = recipeId;
+        existingItem?.recipeRefId = recipeRefId;
+        existingItem?.regionalName = regionalName;
+        existingItem?.reorderLevel = reorderLevel;
+        existingItem?.searchcode = searchcode;
+        existingItem?.sellingPrice = sellingPrice;
+        existingItem?.serviceOutletId = serviceOutletId;
+        existingItem?.shortName = shortName;
+        existingItem?.stock = stock;
+        existingItem?.stockable = stockable;
+        existingItem?.taxId = taxId;
+        existingItem?.type = type;
+        existingItem?.unitId = unitId;
+        existingItem?.weightable = weightable;
+        existingItem?.version = version;
 
         productBox.putAt(
           index,

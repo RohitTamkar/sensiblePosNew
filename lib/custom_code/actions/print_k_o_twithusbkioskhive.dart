@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
@@ -85,7 +87,7 @@ Future printKOTwithusbkioskhive(
       if (size == 46) {
         String billColumn3 = "ITEM NAME                                  QTY";
 
-        bytes += generator.text(
+        /*  bytes += generator.text(
             "-----------------------------------------------",
             styles: const PosStyles(
                 height: PosTextSize.size1,
@@ -99,14 +101,7 @@ Future printKOTwithusbkioskhive(
                 width: PosTextSize.size2,
                 bold: false,
                 align: PosAlign.center));
-
-        bytes += generator.text(
-            "-----------------------------------------------",
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false,
-                align: PosAlign.center));
+                */
 
         bytes += generator.text("# NEW KOT #",
             styles: PosStyles(
@@ -117,6 +112,13 @@ Future printKOTwithusbkioskhive(
             styles: PosStyles(
                 height: PosTextSize.size1,
                 width: PosTextSize.size1,
+                align: PosAlign.center));
+        bytes += generator.text(
+            "-----------------------------------------------",
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
                 align: PosAlign.center));
 
         String printLine = '';
@@ -374,9 +376,9 @@ List<int> generatePrintBytes(Generator generator, dynamic product) {
           text: nameLines[i],
           width: 8,
           styles: PosStyles(
-            fontType: PosFontType.fontA,
+            //
             height: PosTextSize.size1,
-            width: PosTextSize.size2,
+            width: PosTextSize.size1,
             bold: false,
             align: PosAlign.left,
           ),
@@ -386,7 +388,7 @@ List<int> generatePrintBytes(Generator generator, dynamic product) {
           width: 4,
           styles: PosStyles(
             height: PosTextSize.size1,
-            width: PosTextSize.size2,
+            width: PosTextSize.size1,
             bold: false,
             align: PosAlign.right,
           ),
@@ -399,9 +401,8 @@ List<int> generatePrintBytes(Generator generator, dynamic product) {
           text: nameLines[i],
           width: 8,
           styles: PosStyles(
-            fontType: PosFontType.fontA,
             height: PosTextSize.size1,
-            width: PosTextSize.size2,
+            width: PosTextSize.size1,
             bold: false,
             align: PosAlign.left,
           ),
@@ -411,7 +412,7 @@ List<int> generatePrintBytes(Generator generator, dynamic product) {
           width: 4, // Empty column to maintain the total width of 12
           styles: PosStyles(
             height: PosTextSize.size1,
-            width: PosTextSize.size2,
+            width: PosTextSize.size1,
             bold: false,
             align: PosAlign.right,
           ),
