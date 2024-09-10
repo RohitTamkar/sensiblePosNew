@@ -3455,8 +3455,14 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 await paymentRecordReference
                                                     .set(
                                                         createPaymentRecordData(
-                                                  amount: _model.totalcredit
-                                                      ?.toDouble(),
+                                                  amount:
+                                                      valueOrDefault<double>(
+                                                    getJsonField(
+                                                      FFAppState().groceryJson,
+                                                      r'''$.paymentMode.CREDIT''',
+                                                    ),
+                                                    0.0,
+                                                  ),
                                                   paymentType: 'CREDIT',
                                                   createdBy:
                                                       FFAppState().userdoc,
@@ -3471,9 +3477,16 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 _model.paymentDoc2 = PaymentRecord
                                                     .getDocumentFromData(
                                                         createPaymentRecordData(
-                                                          amount: _model
-                                                              .totalcredit
-                                                              ?.toDouble(),
+                                                          amount:
+                                                              valueOrDefault<
+                                                                  double>(
+                                                            getJsonField(
+                                                              FFAppState()
+                                                                  .groceryJson,
+                                                              r'''$.paymentMode.CREDIT''',
+                                                            ),
+                                                            0.0,
+                                                          ),
                                                           paymentType: 'CREDIT',
                                                           createdBy:
                                                               FFAppState()
@@ -3919,8 +3932,14 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 await paymentRecordReference
                                                     .set(
                                                         createPaymentRecordData(
-                                                  amount: _model.totalcredit
-                                                      ?.toDouble(),
+                                                  amount:
+                                                      valueOrDefault<double>(
+                                                    getJsonField(
+                                                      FFAppState().groceryJson,
+                                                      r'''$.paymentMode.CREDIT''',
+                                                    ),
+                                                    0.0,
+                                                  ),
                                                   paymentType: 'CREDIT',
                                                   createdBy:
                                                       FFAppState().userdoc,
@@ -3935,9 +3954,16 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 _model.paymentDoc22d = PaymentRecord
                                                     .getDocumentFromData(
                                                         createPaymentRecordData(
-                                                          amount: _model
-                                                              .totalcredit
-                                                              ?.toDouble(),
+                                                          amount:
+                                                              valueOrDefault<
+                                                                  double>(
+                                                            getJsonField(
+                                                              FFAppState()
+                                                                  .groceryJson,
+                                                              r'''$.paymentMode.CREDIT''',
+                                                            ),
+                                                            0.0,
+                                                          ),
                                                           paymentType: 'CREDIT',
                                                           createdBy:
                                                               FFAppState()
