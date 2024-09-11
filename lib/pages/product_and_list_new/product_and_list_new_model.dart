@@ -164,6 +164,8 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
   InvoiceStructStruct? hiveInvoiceData;
   // Stores action output result for [Custom Action - calShiftSummaryNew] action in Button widget.
   dynamic? shiftSummarResultsNew;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  ShiftRecord? shiftondataprint;
   // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
   ShiftDetailsStruct? updatedShiftDetails;
   // Stores action output result for [Custom Action - scanPrinter] action in Button widget.

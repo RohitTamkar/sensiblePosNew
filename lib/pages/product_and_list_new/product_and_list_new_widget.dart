@@ -5529,9 +5529,15 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                             shiftRecord.where(
                                                                       'id',
                                                                       isEqualTo:
+                                                                          valueOrDefault<
+                                                                              String>(
+                                                                        getJsonField(
                                                                           FFAppState()
-                                                                              .shiftDetails
-                                                                              .id,
+                                                                              .shiftDetailsJson,
+                                                                          r'''$.ref''',
+                                                                        )?.toString(),
+                                                                        'NA',
+                                                                      ),
                                                                     ),
                                                                     singleRecord:
                                                                         true,
@@ -6460,18 +6466,177 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                   );
                                                                   safeSetState(
                                                                       () {});
-                                                                  _model.updatedShiftDetails =
-                                                                      await actions
-                                                                          .hiveShiftCrud(
-                                                                    FFAppState()
-                                                                        .shiftDetails
-                                                                        .newIDShift,
-                                                                    FFAppState()
-                                                                        .shiftDetails,
-                                                                    'update',
-                                                                  );
-                                                                  _shouldSetState =
-                                                                      true;
+                                                                  if (_model
+                                                                      .interprd!) {
+                                                                    _model.shiftondataprint =
+                                                                        await queryShiftRecordOnce(
+                                                                      parent: FFAppState()
+                                                                          .outletIdRef,
+                                                                      queryBuilder:
+                                                                          (shiftRecord) =>
+                                                                              shiftRecord.where(
+                                                                        'id',
+                                                                        isEqualTo:
+                                                                            valueOrDefault<String>(
+                                                                          getJsonField(
+                                                                            FFAppState().shiftDetailsJson,
+                                                                            r'''$.ref''',
+                                                                          )?.toString(),
+                                                                          'NA',
+                                                                        ),
+                                                                      ),
+                                                                      singleRecord:
+                                                                          true,
+                                                                    ).then((s) =>
+                                                                            s.firstOrNull);
+                                                                    _shouldSetState =
+                                                                        true;
+
+                                                                    await _model
+                                                                        .shiftondataprint!
+                                                                        .reference
+                                                                        .update(
+                                                                            createShiftRecordData(
+                                                                      billCount:
+                                                                          valueOrDefault<
+                                                                              int>(
+                                                                        functions.lastBillCount(FFAppState()
+                                                                            .shiftDetails
+                                                                            .billCount),
+                                                                        0,
+                                                                      ),
+                                                                      dayId:
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.dayId''',
+                                                                      ).toString(),
+                                                                      lastBillNo:
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.lastBillNo''',
+                                                                      ).toString(),
+                                                                      lastBillTime:
+                                                                          functions
+                                                                              .timestampToMili(getCurrentTimestamp),
+                                                                      tax:
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.tax''',
+                                                                      ),
+                                                                      deliveryCharges:
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.deliveryCharges''',
+                                                                      ),
+                                                                      discount:
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.discount''',
+                                                                      ),
+                                                                      totalSale:
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.totalSale''',
+                                                                      ),
+                                                                      cashSale:
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.cashSale''',
+                                                                      ),
+                                                                      paymentJson:
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.paymentJson''',
+                                                                      ).toString(),
+                                                                      code: FFAppState()
+                                                                          .shiftDetails
+                                                                          .code,
+                                                                      endTime: FFAppState()
+                                                                          .shiftDetails
+                                                                          .endTime,
+                                                                      advanceAmtTotal: FFAppState()
+                                                                          .shiftDetails
+                                                                          .advanceAmtTotal,
+                                                                      customerReciveAmtTotal: FFAppState()
+                                                                          .shiftDetails
+                                                                          .customerReciveAmtTotal,
+                                                                      expensesAmtTotal: FFAppState()
+                                                                          .shiftDetails
+                                                                          .expensesAmtTotal,
+                                                                      openingAmt: FFAppState()
+                                                                          .shiftDetails
+                                                                          .openingAmt,
+                                                                      receiveAmtTotal: FFAppState()
+                                                                          .shiftDetails
+                                                                          .receiveAmtTotal,
+                                                                      refoundAmount: FFAppState()
+                                                                          .shiftDetails
+                                                                          .refoundAmount,
+                                                                      roundOff: FFAppState()
+                                                                          .shiftDetails
+                                                                          .roundOff,
+                                                                      cashInHand: FFAppState()
+                                                                          .shiftDetails
+                                                                          .cashInHand,
+                                                                      startTime: FFAppState()
+                                                                          .shiftDetails
+                                                                          .startTime,
+                                                                      inActive: FFAppState()
+                                                                          .shiftDetails
+                                                                          .inActive,
+                                                                      shiftNo: FFAppState()
+                                                                          .shiftDetails
+                                                                          .shiftNo,
+                                                                      shiftId:
+                                                                          getJsonField(
+                                                                        _model
+                                                                            .shiftSummarResultsNew,
+                                                                        r'''$.shiftId''',
+                                                                      ).toString(),
+                                                                    ));
+                                                                    _model.updatedShiftDetails =
+                                                                        await actions
+                                                                            .hiveShiftCrud(
+                                                                      FFAppState()
+                                                                          .shiftDetails
+                                                                          .newIDShift,
+                                                                      FFAppState()
+                                                                          .shiftDetails,
+                                                                      'update',
+                                                                    );
+                                                                    _shouldSetState =
+                                                                        true;
+                                                                  } else {
+                                                                    await showDialog(
+                                                                      context:
+                                                                          context,
+                                                                      builder:
+                                                                          (alertDialogContext) {
+                                                                        return AlertDialog(
+                                                                          content:
+                                                                              Text('Internet Not Available'),
+                                                                          actions: [
+                                                                            TextButton(
+                                                                              onPressed: () => Navigator.pop(alertDialogContext),
+                                                                              child: Text('Ok'),
+                                                                            ),
+                                                                          ],
+                                                                        );
+                                                                      },
+                                                                    );
+                                                                    if (_shouldSetState)
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    return;
+                                                                  }
                                                                 } else {
                                                                   ScaffoldMessenger.of(
                                                                           context)
