@@ -97,8 +97,6 @@ export '/pages/shift_end_new2/shift_end_new2_widget.dart'
 export '/pages/edit_bill_new/edit_bill_new_widget.dart' show EditBillNewWidget;
 export '/pages/screens/print_settingkiosk/print_settingkiosk_widget.dart'
     show PrintSettingkioskWidget;
-export '/pages/product_and_list_new_copy/product_and_list_new_copy_widget.dart'
-    show ProductAndListNewCopyWidget;
 export '/pages/kiosk/kiosk_payment/kiosk_payment_widget.dart'
     show KioskPaymentWidget;
 export '/pages/kiosk/kiosk_cart/kiosk_cart_widget.dart' show KioskCartWidget;
@@ -211,3 +209,5 @@ export '/grocery_windows/credit_payment_page/credit_payment_page_widget.dart'
     show CreditPaymentPageWidget;
 export '/pages/report_screen/customer_ledgerreport/customer_ledgerreport_widget.dart'
     show CustomerLedgerreportWidget;
+export '/pages/product_and_list_new_copy/product_and_list_new_copy_widget.dart'
+    show ProductAndListNewCopyWidget;

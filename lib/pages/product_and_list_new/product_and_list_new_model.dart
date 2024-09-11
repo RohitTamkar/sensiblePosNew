@@ -136,6 +136,10 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
   List<SelItemListStruct>? prdlistsavebill;
   // Stores action output result for [Custom Action - oldbalanceplusamt] action in Button widget.
   int? totalcredit2;
+  // Stores action output result for [Custom Action - checkInternetConnection] action in Button widget.
+  bool? internetcon;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  InvoiceRecord? invonline;
   // Stores action output result for [Custom Action - addInvoiceBillhive] action in Button widget.
   InvoiceStructStruct? hiveInvoiceDataCopyCopy;
   // Stores action output result for [Custom Action - calShiftSummaryNew] action in Button widget.
@@ -144,12 +148,18 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
   int? shiftidhive2;
   // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
   ShiftDetailsStruct? getOfflineShiftdetails;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  ShiftRecord? shiftondata;
   // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
-  ShiftDetailsStruct? updatedShift;
+  ShiftDetailsStruct? updatedShift23;
   // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
   List<SelItemListStruct>? prdlinstnewtx;
   // Stores action output result for [Custom Action - oldbalanceplusamt] action in Button widget.
   int? totalcredit;
+  // Stores action output result for [Custom Action - checkInternetConnection] action in Button widget.
+  bool? interprd;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  InvoiceRecord? invonlineprt;
   // Stores action output result for [Custom Action - addInvoiceBillhive] action in Button widget.
   InvoiceStructStruct? hiveInvoiceData;
   // Stores action output result for [Custom Action - calShiftSummaryNew] action in Button widget.

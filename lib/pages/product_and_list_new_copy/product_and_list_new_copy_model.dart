@@ -15,6 +15,7 @@ import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'product_and_list_new_copy_widget.dart' show ProductAndListNewCopyWidget;
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:easy_debounce/easy_debounce.dart';
@@ -71,12 +72,12 @@ class ProductAndListNewCopyModel
   List<ProductStructStruct>? hiveProductList;
   // Stores action output result for [Custom Action - getCategorylistHive] action in ProductAndListNewCopy widget.
   List<CategoryStructStruct>? categoryListHive;
+  // Stores action output result for [Custom Action - scanPrinter] action in ProductAndListNewCopy widget.
+  bool? resDevice2Copy;
+  // Stores action output result for [Custom Action - connectDevice] action in ProductAndListNewCopy widget.
+  bool? isConnected;
   // Model for MenuDrawer component.
   late MenuDrawerModel menuDrawerModel;
-  // State field(s) for search widget.
-  FocusNode? searchFocusNode;
-  TextEditingController? searchTextController;
-  String? Function(BuildContext, String?)? searchTextControllerValidator;
   // State field(s) for ListView widget.
   ScrollController? listViewController1;
   // Stores action output result for [Custom Action - calSubTotalForHoldList] action in Container widget.
@@ -91,20 +92,24 @@ class ProductAndListNewCopyModel
   double? calculateResult;
   // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
   double? calbillAmt;
-  // Stores action output result for [Custom Action - hiveGetProduct] action in ProductName widget.
-  ProductStructStruct? getproductForupdate;
+  // Stores action output result for [Custom Action - addToHoldListprdCopy] action in productimage widget.
+  List<dynamic>? addtosavebill23;
+  // Stores action output result for [Custom Action - calSubTotalForHoldList] action in productimage widget.
+  double? calculateResult2;
+  // Stores action output result for [Custom Action - calBillAmt] action in productimage widget.
+  double? calbillAmt2;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
+  TextEditingController? textController1;
+  String? Function(BuildContext, String?)? textController1Validator;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode2;
   TextEditingController? textController2;
   String? Function(BuildContext, String?)? textController2Validator;
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
+  FocusNode? textFieldFocusNode3;
   TextEditingController? textController3;
   String? Function(BuildContext, String?)? textController3Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
-  TextEditingController? textController4;
-  String? Function(BuildContext, String?)? textController4Validator;
   // State field(s) for ListViewprd widget.
   ScrollController? listViewprd;
   // Stores action output result for [Custom Action - addToHoldListprdminus] action in Minus widget.
@@ -130,6 +135,8 @@ class ProductAndListNewCopyModel
   FormFieldController<String>? dropDownValueController;
   // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
   List<SelItemListStruct>? prdlistsavebill;
+  // Stores action output result for [Custom Action - oldbalanceplusamt] action in Button widget.
+  int? totalcredit2;
   // Stores action output result for [Custom Action - addInvoiceBillhive] action in Button widget.
   InvoiceStructStruct? hiveInvoiceDataCopyCopy;
   // Stores action output result for [Custom Action - calShiftSummaryNew] action in Button widget.
@@ -142,8 +149,8 @@ class ProductAndListNewCopyModel
   ShiftDetailsStruct? updatedShift;
   // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
   List<SelItemListStruct>? prdlinstnewtx;
-  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
-  AppSettingsRecord? appsettingnew;
+  // Stores action output result for [Custom Action - oldbalanceplusamt] action in Button widget.
+  int? totalcredit;
   // Stores action output result for [Custom Action - addInvoiceBillhive] action in Button widget.
   InvoiceStructStruct? hiveInvoiceData;
   // Stores action output result for [Custom Action - calShiftSummaryNew] action in Button widget.
@@ -152,10 +159,14 @@ class ProductAndListNewCopyModel
   ShiftDetailsStruct? updatedShiftDetails;
   // Stores action output result for [Custom Action - scanPrinter] action in Button widget.
   bool? resDevice2;
+  // Stores action output result for [Custom Action - connectDevice] action in Button widget.
+  bool? isconnected;
   // Stores action output result for [Custom Action - selectBillPrint] action in Button widget.
   List<dynamic>? returnedList2;
   // Stores action output result for [Custom Action - newCustomAction] action in Button widget.
   List<dynamic>? device;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  List<ServicePointOutletRecord>? spoutlet;
   // State field(s) for TextFieldsearch widget.
   FocusNode? textFieldsearchFocusNode;
   TextEditingController? textFieldsearchTextController;
@@ -181,20 +192,17 @@ class ProductAndListNewCopyModel
   @override
   void dispose() {
     menuDrawerModel.dispose();
-    searchFocusNode?.dispose();
-    searchTextController?.dispose();
-
     listViewController1?.dispose();
     listViewController2?.dispose();
     gridViewController?.dispose();
     textFieldFocusNode1?.dispose();
-    textController2?.dispose();
+    textController1?.dispose();
 
     textFieldFocusNode2?.dispose();
-    textController3?.dispose();
+    textController2?.dispose();
 
     textFieldFocusNode3?.dispose();
-    textController4?.dispose();
+    textController3?.dispose();
 
     listViewprd?.dispose();
     textFieldsearchFocusNode?.dispose();

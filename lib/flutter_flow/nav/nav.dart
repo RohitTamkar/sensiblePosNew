@@ -587,37 +587,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => PrintSettingkioskWidget(),
             ),
             FFRoute(
-              name: 'ProductAndListNewCopy',
-              path: 'productAndListNewCopy',
-              asyncParams: {
-                'taxcollection':
-                    getDocList(['TAX_MASTER'], TaxMasterRecord.fromSnapshot),
-              },
-              builder: (context, params) => ProductAndListNewCopyWidget(
-                billDetails: params.getParam(
-                  'billDetails',
-                  ParamType.DocumentReference,
-                  isList: false,
-                  collectionNamePath: ['OUTLET', 'INVOICE'],
-                ),
-                doc: params.getParam(
-                  'doc',
-                  ParamType.DocumentReference,
-                  isList: false,
-                  collectionNamePath: ['USER_PROFILE'],
-                ),
-                shiftDetails: params.getParam(
-                  'shiftDetails',
-                  ParamType.JSON,
-                ),
-                taxcollection: params.getParam<TaxMasterRecord>(
-                  'taxcollection',
-                  ParamType.Document,
-                  isList: true,
-                ),
-              ),
-            ),
-            FFRoute(
               name: 'KioskPayment',
               path: 'kioskPayment',
               asyncParams: {
@@ -1519,6 +1488,37 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'customerLedgerreport',
               path: 'customerLedgerreport',
               builder: (context, params) => CustomerLedgerreportWidget(),
+            ),
+            FFRoute(
+              name: 'ProductAndListNewCopy',
+              path: 'productAndListNewCopy',
+              asyncParams: {
+                'taxcollection':
+                    getDocList(['TAX_MASTER'], TaxMasterRecord.fromSnapshot),
+              },
+              builder: (context, params) => ProductAndListNewCopyWidget(
+                billDetails: params.getParam(
+                  'billDetails',
+                  ParamType.DocumentReference,
+                  isList: false,
+                  collectionNamePath: ['OUTLET', 'INVOICE'],
+                ),
+                doc: params.getParam(
+                  'doc',
+                  ParamType.DocumentReference,
+                  isList: false,
+                  collectionNamePath: ['USER_PROFILE'],
+                ),
+                shiftDetails: params.getParam(
+                  'shiftDetails',
+                  ParamType.JSON,
+                ),
+                taxcollection: params.getParam<TaxMasterRecord>(
+                  'taxcollection',
+                  ParamType.Document,
+                  isList: true,
+                ),
+              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
