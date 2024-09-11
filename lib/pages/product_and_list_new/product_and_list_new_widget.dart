@@ -1455,19 +1455,18 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                       ),
                                                 ),
                                               ),
-                                              if (false)
-                                                Container(
+                                              Container(
+                                                width: 100.0,
+                                                height: 45.0,
+                                                child:
+                                                    custom_widgets.OnlineSync(
                                                   width: 100.0,
                                                   height: 45.0,
-                                                  child:
-                                                      custom_widgets.OnlineSync(
-                                                    width: 100.0,
-                                                    height: 45.0,
-                                                    outletRef: FFAppState()
-                                                        .outletIdRef!,
-                                                    userDoc: widget!.doc!,
-                                                  ),
+                                                  outletRef:
+                                                      FFAppState().outletIdRef!,
+                                                  userDoc: widget!.doc!,
                                                 ),
+                                              ),
                                               Container(
                                                 width: 200.0,
                                                 height: 40.0,
@@ -1498,53 +1497,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                       .secondaryBackground,
                                                   size: 30.0,
                                                 ),
-                                              FFButtonWidget(
-                                                onPressed: () async {
-                                                  await actions.synclocaldata();
-                                                },
-                                                text:
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                  'ine8e85j' /* Sync */,
-                                                ),
-                                                options: FFButtonOptions(
-                                                  height: 40.0,
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          16.0, 0.0, 16.0, 0.0),
-                                                  iconPadding:
-                                                      EdgeInsetsDirectional
-                                                          .fromSTEB(0.0, 0.0,
-                                                              0.0, 0.0),
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondary,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmallFamily,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
-                                                        letterSpacing: 0.0,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmallFamily),
-                                                      ),
-                                                  elevation: 0.0,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                ),
-                                              ),
                                             ],
                                           ),
                                         ),
