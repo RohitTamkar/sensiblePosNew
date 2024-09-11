@@ -5076,7 +5076,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                 await invoiceRecordReference
                                                                     .set({
                                                                   ...createInvoiceRecordData(
-                                                                    id: '',
                                                                     invoice: functions.genInvoiceNum(
                                                                         FFAppState()
                                                                             .count,
@@ -5152,7 +5151,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                     InvoiceRecord
                                                                         .getDocumentFromData({
                                                                   ...createInvoiceRecordData(
-                                                                    id: '',
                                                                     invoice: functions.genInvoiceNum(
                                                                         FFAppState()
                                                                             .count,
@@ -5226,13 +5224,28 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                 }, invoiceRecordReference);
                                                                 _shouldSetState =
                                                                     true;
+
+                                                                await _model
+                                                                    .invonline!
+                                                                    .reference
+                                                                    .update(
+                                                                        createInvoiceRecordData(
+                                                                  id: _model
+                                                                      .invonline
+                                                                      ?.reference
+                                                                      .id,
+                                                                ));
                                                                 _model.hiveInvoiceDataCopyCopy =
                                                                     await actions
                                                                         .addInvoiceBillhive(
-                                                                  _model
-                                                                      .invonline!
-                                                                      .reference
-                                                                      .id,
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                    _model
+                                                                        .invonline
+                                                                        ?.reference
+                                                                        .id,
+                                                                    'NA',
+                                                                  ),
                                                                   functions.genInvoiceNum(
                                                                       FFAppState()
                                                                           .count,
@@ -6034,7 +6047,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                   await invoiceRecordReference
                                                                       .set({
                                                                     ...createInvoiceRecordData(
-                                                                      id: '',
                                                                       invoice: functions.genInvoiceNum(
                                                                           FFAppState()
                                                                               .count,
@@ -6111,7 +6123,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                       InvoiceRecord
                                                                           .getDocumentFromData({
                                                                     ...createInvoiceRecordData(
-                                                                      id: '',
                                                                       invoice: functions.genInvoiceNum(
                                                                           FFAppState()
                                                                               .count,
@@ -6186,13 +6197,28 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                   }, invoiceRecordReference);
                                                                   _shouldSetState =
                                                                       true;
+
+                                                                  await _model
+                                                                      .invonlineprt!
+                                                                      .reference
+                                                                      .update(
+                                                                          createInvoiceRecordData(
+                                                                    id: _model
+                                                                        .invonlineprt
+                                                                        ?.reference
+                                                                        .id,
+                                                                  ));
                                                                   _model.hiveInvoiceData =
                                                                       await actions
                                                                           .addInvoiceBillhive(
-                                                                    _model
-                                                                        .invonline!
-                                                                        .reference
-                                                                        .id,
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      _model
+                                                                          .invonline
+                                                                          ?.reference
+                                                                          .id,
+                                                                      'NA',
+                                                                    ),
                                                                     functions.genInvoiceNum(
                                                                         FFAppState()
                                                                             .count,
