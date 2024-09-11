@@ -5082,9 +5082,13 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                             .count,
                                                                         FFAppState()
                                                                             .shiftCount),
-                                                                    party: FFAppState()
-                                                                        .setCustRef
-                                                                        ?.id,
+                                                                    party: valueOrDefault<
+                                                                        String>(
+                                                                      FFAppState()
+                                                                          .setCustRef
+                                                                          ?.id,
+                                                                      'NA',
+                                                                    ),
                                                                     products:
                                                                         '',
                                                                     invoiceDate:
@@ -5154,9 +5158,13 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                             .count,
                                                                         FFAppState()
                                                                             .shiftCount),
-                                                                    party: FFAppState()
-                                                                        .setCustRef
-                                                                        ?.id,
+                                                                    party: valueOrDefault<
+                                                                        String>(
+                                                                      FFAppState()
+                                                                          .setCustRef
+                                                                          ?.id,
+                                                                      'NA',
+                                                                    ),
                                                                     products:
                                                                         '',
                                                                     invoiceDate:
@@ -5230,9 +5238,13 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                           .count,
                                                                       FFAppState()
                                                                           .shiftCount),
-                                                                  FFAppState()
-                                                                      .setCustRef!
-                                                                      .id,
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                    FFAppState()
+                                                                        .setCustRef
+                                                                        ?.id,
+                                                                    'NA',
+                                                                  ),
                                                                   functions
                                                                       .timestampToMili(
                                                                           getCurrentTimestamp),
@@ -6028,9 +6040,13 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               .count,
                                                                           FFAppState()
                                                                               .shiftCount),
-                                                                      party: FFAppState()
-                                                                          .setCustRef
-                                                                          ?.id,
+                                                                      party: valueOrDefault<
+                                                                          String>(
+                                                                        FFAppState()
+                                                                            .setCustRef
+                                                                            ?.id,
+                                                                        'NA',
+                                                                      ),
                                                                       products:
                                                                           '',
                                                                       invoiceDate:
@@ -6101,9 +6117,13 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               .count,
                                                                           FFAppState()
                                                                               .shiftCount),
-                                                                      party: FFAppState()
-                                                                          .setCustRef
-                                                                          ?.id,
+                                                                      party: valueOrDefault<
+                                                                          String>(
+                                                                        FFAppState()
+                                                                            .setCustRef
+                                                                            ?.id,
+                                                                        'NA',
+                                                                      ),
                                                                       products:
                                                                           '',
                                                                       invoiceDate:
@@ -6183,7 +6203,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                       FFAppState()
                                                                           .setCustRef
                                                                           ?.id,
-                                                                      '0',
+                                                                      'NA',
                                                                     ),
                                                                     functions
                                                                         .timestampToMili(
