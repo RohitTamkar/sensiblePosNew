@@ -2325,7 +2325,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                             var _shouldSetState = false;
                                                                                             if (productListItem.stockable) {
                                                                                               if (productListItem.stock >
-                                                                                                  valueOrDefault<int>(
+                                                                                                  functions.doubleToInt(valueOrDefault<double>(
                                                                                                     getJsonField(
                                                                                                       functions
                                                                                                           .filterBillList(FFAppState().selBill, FFAppState().allBillsList.toList())
@@ -2342,8 +2342,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                           .first,
                                                                                                       r'''$.quantity''',
                                                                                                     ),
-                                                                                                    0,
-                                                                                                  )) {
+                                                                                                    0.0,
+                                                                                                  ))!) {
                                                                                                 if (FFAppState().holdBillCount == 0) {
                                                                                                   FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
                                                                                                   FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));

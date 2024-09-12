@@ -1120,7 +1120,7 @@ DateTime setExpiryTime(DateTime date) {
 int? doubleToInt(double? amt) {
   // convert double to int
   if (amt == null) {
-    return null;
+    return 0;
   } else {
     return amt.toInt();
   }

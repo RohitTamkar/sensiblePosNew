@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 Future<List<dynamic>> addToHoldListprdCopy(
   ProductStructStruct document,
   int billno,
@@ -62,7 +64,7 @@ Future<List<dynamic>> addToHoldListprdCopy(
       "taxId": document!.taxId,
       "taxPer": taxPer,
       "taxAmt": double.parse(taxAmt.toStringAsFixed(2)),
-      "currentStock": document!.currentStock ?? 0,
+      "currentStock": document!.stock ?? 0,
       "stockable": document!.stockable ?? false,
     };
 

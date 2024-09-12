@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'index.dart'; // Imports other custom widgets
 import '/custom_code/actions/index.dart'; // Imports custom actions
 // Begin custom widget code
@@ -58,7 +60,7 @@ Future<int> addFirebasetoHiveProduct(List<ProductRecord> product) async {
       double sellingPrice = data.sellingPrice ?? 00.0;
       String? serviceOutletId = data.serviceRefId ?? '';
       String shortName = data.shortName ?? '';
-      int stock = data.stock ?? 00;
+      int stock = data.currentStock ?? 00;
       bool stockable = data.stockable ?? false;
       String? taxId = data.taxRef?.id;
       int type = data.type ?? 00;
