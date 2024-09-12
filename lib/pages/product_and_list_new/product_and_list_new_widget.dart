@@ -2324,23 +2324,26 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                           onTap: () async {
                                                                                             var _shouldSetState = false;
                                                                                             if (productListItem.stockable) {
-                                                                                              if (getJsonField(
-                                                                                                    functions
-                                                                                                        .filterBillList(FFAppState().selBill, FFAppState().allBillsList.toList())
-                                                                                                        .where((e) =>
-                                                                                                            productListItem.id ==
-                                                                                                            valueOrDefault<String>(
-                                                                                                              getJsonField(
-                                                                                                                e,
-                                                                                                                r'''$.id''',
-                                                                                                              )?.toString(),
-                                                                                                              '0',
-                                                                                                            ))
-                                                                                                        .toList()
-                                                                                                        .first,
-                                                                                                    r'''$.quantity''',
-                                                                                                  ) !=
-                                                                                                  null) {
+                                                                                              if (functions.doubleToInt(valueOrDefault<double>(
+                                                                                                    getJsonField(
+                                                                                                      functions
+                                                                                                          .filterBillList(FFAppState().selBill, FFAppState().allBillsList.toList())
+                                                                                                          .where((e) =>
+                                                                                                              productListItem.id ==
+                                                                                                              valueOrDefault<String>(
+                                                                                                                getJsonField(
+                                                                                                                  e,
+                                                                                                                  r'''$.id''',
+                                                                                                                )?.toString(),
+                                                                                                                '0',
+                                                                                                              ))
+                                                                                                          .toList()
+                                                                                                          .first,
+                                                                                                      r'''$.quantity''',
+                                                                                                    ),
+                                                                                                    0.0,
+                                                                                                  ))! >
+                                                                                                  0) {
                                                                                                 if (productListItem.stock >
                                                                                                     functions.doubleToInt(valueOrDefault<double>(
                                                                                                       getJsonField(
