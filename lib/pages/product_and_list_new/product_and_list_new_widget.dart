@@ -2324,26 +2324,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                           onTap: () async {
                                                                                             var _shouldSetState = false;
                                                                                             if (productListItem.stockable) {
-                                                                                              if (productListItem.stock >
-                                                                                                  functions.doubleToInt(valueOrDefault<double>(
-                                                                                                    getJsonField(
-                                                                                                      functions
-                                                                                                          .filterBillList(FFAppState().selBill, FFAppState().allBillsList.toList())
-                                                                                                          .where((e) =>
-                                                                                                              productListItem.id ==
-                                                                                                              valueOrDefault<String>(
-                                                                                                                getJsonField(
-                                                                                                                  e,
-                                                                                                                  r'''$.id''',
-                                                                                                                )?.toString(),
-                                                                                                                '0',
-                                                                                                              ))
-                                                                                                          .toList()
-                                                                                                          .first,
-                                                                                                      r'''$.quantity''',
-                                                                                                    ),
-                                                                                                    0.0,
-                                                                                                  ))!) {
+                                                                                              if (productListItem.stock > 0) {
                                                                                                 if (FFAppState().holdBillCount == 0) {
                                                                                                   FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
                                                                                                   FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));
@@ -2371,6 +2352,43 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                   duration: Duration(milliseconds: 100),
                                                                                                   curve: Curves.ease,
                                                                                                 );
+                                                                                                if (productListItem.stock <=
+                                                                                                    valueOrDefault<int>(
+                                                                                                      getJsonField(
+                                                                                                        functions
+                                                                                                            .filterBillList(FFAppState().selBill, FFAppState().allBillsList.toList())
+                                                                                                            .where((e) =>
+                                                                                                                productListItem.id ==
+                                                                                                                valueOrDefault<String>(
+                                                                                                                  getJsonField(
+                                                                                                                    e,
+                                                                                                                    r'''$.id''',
+                                                                                                                  )?.toString(),
+                                                                                                                  '0',
+                                                                                                                ))
+                                                                                                            .toList()
+                                                                                                            .first,
+                                                                                                        r'''$.quantity''',
+                                                                                                      ),
+                                                                                                      0,
+                                                                                                    )) {
+                                                                                                  await showDialog(
+                                                                                                    context: context,
+                                                                                                    builder: (alertDialogContext) {
+                                                                                                      return AlertDialog(
+                                                                                                        content: Text('Item Out of Stock !'),
+                                                                                                        actions: [
+                                                                                                          TextButton(
+                                                                                                            onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                                            child: Text('Ok'),
+                                                                                                          ),
+                                                                                                        ],
+                                                                                                      );
+                                                                                                    },
+                                                                                                  );
+                                                                                                }
+                                                                                                if (_shouldSetState) safeSetState(() {});
+                                                                                                return;
                                                                                               } else {
                                                                                                 await showDialog(
                                                                                                   context: context,
@@ -2417,6 +2435,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                 duration: Duration(milliseconds: 100),
                                                                                                 curve: Curves.ease,
                                                                                               );
+                                                                                              if (_shouldSetState) safeSetState(() {});
+                                                                                              return;
                                                                                             }
 
                                                                                             if (_shouldSetState) safeSetState(() {});

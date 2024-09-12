@@ -151,8 +151,8 @@ class _AddProductWidgetState extends State<AddProductWidget> {
                                             .primaryBtnText,
                                         size: 26.0,
                                       ),
-                                      onPressed: () {
-                                        print('IconButton pressed ...');
+                                      onPressed: () async {
+                                        context.safePop();
                                       },
                                     ),
                                     Text(

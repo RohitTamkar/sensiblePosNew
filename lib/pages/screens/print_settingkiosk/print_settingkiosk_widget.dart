@@ -6,7 +6,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
-import '/custom_code/widgets/index.dart' as custom_widgets;
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -225,20 +224,6 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                       print(
                                                           'IconButton pressed ...');
                                                     },
-                                            ),
-                                            Container(
-                                              width: 200.0,
-                                              height: MediaQuery.sizeOf(context)
-                                                      .height *
-                                                  0.1,
-                                              child: custom_widgets
-                                                  .OpenWIFISetting(
-                                                width: 200.0,
-                                                height:
-                                                    MediaQuery.sizeOf(context)
-                                                            .height *
-                                                        0.1,
-                                              ),
                                             ),
                                           ],
                                         ),
