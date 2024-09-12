@@ -22685,7 +22685,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     '4jo8nfli': {
-      'en': 'Full S QR',
+      'en': 'Product Wise Sale',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '971i519l': {
+      'en': 'Biil Wise Report',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -22693,27 +22700,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '7xrb3gdc': {
       'en': 'Full S Bill',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    '1ltlrt2m': {
-      'en': 'Product Wise Report',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    'hvezndwr': {
-      'en': 'Shift Summary Report',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    '42ycuv6y': {
-      'en': 'Bill Wise Report',
       'hi': '',
       'kn': '',
       'mr': '',
