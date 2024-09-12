@@ -316,28 +316,25 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                             size: 20.0,
                                           ),
                                         ),
-                                        Flexible(
-                                          child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              '1ltlrt2m' /* Product Wise Report */,
-                                            ),
-                                            textAlign: TextAlign.center,
-                                            style: FlutterFlowTheme.of(context)
-                                                .titleMedium
-                                                .override(
-                                                  fontFamily:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleMediumFamily,
-                                                  letterSpacing: 0.0,
-                                                  useGoogleFonts: GoogleFonts
-                                                          .asMap()
-                                                      .containsKey(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleMediumFamily),
-                                                ),
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            '1ltlrt2m' /* Product Wise Report */,
                                           ),
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .titleMedium
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMediumFamily,
+                                                letterSpacing: 0.0,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleMediumFamily),
+                                              ),
                                         ),
                                       ],
                                     ),
