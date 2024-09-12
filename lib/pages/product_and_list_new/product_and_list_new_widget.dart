@@ -5668,7 +5668,13 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                   );
                                                                   _shouldSetState =
                                                                       true;
+                                                                } else {
+                                                                  if (_shouldSetState)
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  return;
                                                                 }
+
                                                                 await actions
                                                                     .removeFromAllBillList(
                                                                   FFAppState()
