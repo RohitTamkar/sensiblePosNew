@@ -91,6 +91,12 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
   double? calculateResult;
   // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
   double? calbillAmt;
+  // Stores action output result for [Custom Action - addToHoldListprdCopy] action in ProductName widget.
+  List<dynamic>? addtosavebill2;
+  // Stores action output result for [Custom Action - calSubTotalForHoldList] action in ProductName widget.
+  double? calculateResult23;
+  // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
+  double? calbillAmt3;
   // Stores action output result for [Custom Action - addToHoldListprdCopy] action in productimage widget.
   List<dynamic>? addtosavebill23;
   // Stores action output result for [Custom Action - calSubTotalForHoldList] action in productimage widget.

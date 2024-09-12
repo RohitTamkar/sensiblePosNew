@@ -62,6 +62,8 @@ Future<List<dynamic>> addToHoldListprdCopy(
       "taxId": document!.taxId,
       "taxPer": taxPer,
       "taxAmt": double.parse(taxAmt.toStringAsFixed(2)),
+      "currentStock": document!.currentStock ?? 0,
+      "stockable": document!.stockable ?? false,
     };
 
     var index;
