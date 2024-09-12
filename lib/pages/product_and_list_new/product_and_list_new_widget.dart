@@ -1653,7 +1653,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                   height: 50.0,
                                                   billno: FFAppState().selBill,
                                                   document:
-                                                      _model.hiveProductList!,
+                                                      FFAppState().productHive,
                                                   billnum: FFAppState()
                                                       .selBill
                                                       .toString(),
