@@ -77,7 +77,7 @@ class _CategoryReportWidgetState extends State<CategoryReportWidget> {
 
     return FutureBuilder<ApiCallResponse>(
       future: GetProductWiseSaleCall.call(
-        outletId: FFAppState().outletId,
+        outletId: FFAppState().outletIdRef?.id,
         dayId: FFAppState().filterDate,
       ),
       builder: (context, snapshot) {
