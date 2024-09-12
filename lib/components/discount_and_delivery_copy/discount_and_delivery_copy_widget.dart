@@ -141,8 +141,8 @@ class _DiscountAndDeliveryCopyWidgetState
                                         .primaryText,
                                     size: 21.0,
                                   ),
-                                  onPressed: () {
-                                    print('IconButton pressed ...');
+                                  onPressed: () async {
+                                    Navigator.pop(context);
                                   },
                                 ),
                               ),
@@ -459,6 +459,10 @@ class _DiscountAndDeliveryCopyWidgetState
                                                             .textFieldDisPercentTextController
                                                             .text),
                                                         FFAppState().subTotal);
+                                                FFAppState().disPer =
+                                                    double.parse(_model
+                                                        .textFieldDisPercentTextController
+                                                        .text);
                                                 FFAppState().update(() {});
                                                 _model.result19 =
                                                     await actions.calBillAmt(
