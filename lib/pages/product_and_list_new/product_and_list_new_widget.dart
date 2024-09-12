@@ -2353,7 +2353,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                   curve: Curves.ease,
                                                                                                 );
                                                                                                 if (productListItem.stock <=
-                                                                                                    valueOrDefault<int>(
+                                                                                                    functions.doubleToInt(valueOrDefault<double>(
                                                                                                       getJsonField(
                                                                                                         functions
                                                                                                             .filterBillList(FFAppState().selBill, FFAppState().allBillsList.toList())
@@ -2370,8 +2370,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                             .first,
                                                                                                         r'''$.quantity''',
                                                                                                       ),
-                                                                                                      0,
-                                                                                                    )) {
+                                                                                                      0.0,
+                                                                                                    ))!) {
                                                                                                   await showDialog(
                                                                                                     context: context,
                                                                                                     builder: (alertDialogContext) {
