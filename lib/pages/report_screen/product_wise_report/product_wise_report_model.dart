@@ -17,6 +17,10 @@ import 'package:provider/provider.dart';
 class ProductWiseReportModel extends FlutterFlowModel<ProductWiseReportWidget> {
   ///  State fields for stateful widgets in this page.
 
+  // Stores action output result for [Custom Action - checkInternetConnection] action in ProductWiseReport widget.
+  bool? netConn1;
+  // Stores action output result for [Custom Action - productSaleReport] action in ProductWiseReport widget.
+  List<dynamic>? saleReport2;
   // Model for Header component.
   late HeaderModel headerModel;
   // Stores action output result for [Custom Action - scanPrinter] action in FloatingActionButton widget.
