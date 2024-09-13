@@ -55,6 +55,9 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
           },
         );
       }
+      FFAppState().filtervalue = '';
+      FFAppState().filterDate = functions.getDayId();
+      FFAppState().update(() {});
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
