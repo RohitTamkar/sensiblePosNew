@@ -1636,6 +1636,10 @@ Future printBillnewhive(
 
     switch (bluetoothPrinter["typePrinter"]) {
       case PrinterType.usb:
+        // Command to open the cash drawer
+        List<int> cashDrawerCommand = [0x1B, 0x70, 0x00, 0x19, 0xFA];
+        bytes += cashDrawerCommand; // Append the cash drawer open command
+
         bytes += generator.feed(2);
         bytes += generator.cut();
         FFAppState().printerName = statusName;
@@ -1649,6 +1653,7 @@ Future printBillnewhive(
         pendingTask = null;
         if (Platform.isAndroid) pendingTask = bytes;
         break;
+
       case PrinterType.bluetooth:
         bytes += generator.cut();
         FFAppState().printerName = statusName;
@@ -1663,6 +1668,7 @@ Future printBillnewhive(
         pendingTask = null;
         if (Platform.isIOS || Platform.isAndroid) pendingTask = bytes;
         break;
+
       case PrinterType.network:
         bytes += generator.feed(2);
         bytes += generator.cut();
@@ -1670,8 +1676,10 @@ Future printBillnewhive(
             type: bluetoothPrinter["typePrinter"],
             model: TcpPrinterInput(ipAddress: bluetoothPrinter.address!));
         break;
+
       default:
     }
+
     if (bluetoothPrinter["typePrinter"] == PrinterType.bluetooth) {
       _currentStatus = BTStatus.connected;
 
@@ -1683,7 +1691,7 @@ Future printBillnewhive(
       }
     } else if (bluetoothPrinter["typePrinter"] == PrinterType.usb &&
         Platform.isAndroid) {
-      // _currentUsbStatus is only supports on Android
+      // _currentUsbStatus is only supported on Android
       if (_currentUsbStatus == USBStatus.connected) {
         FFAppState().printerName = "connected usb";
         printerManager.send(

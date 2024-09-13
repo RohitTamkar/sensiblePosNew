@@ -65,6 +65,8 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
           int index, Function(TaxMasterRecord) updateFn) =>
       taxcollection[index] = updateFn(taxcollection[index]);
 
+  bool stockcheck = true;
+
   ///  State fields for stateful widgets in this page.
 
   // Stores action output result for [Custom Action - getProductlistHive] action in ProductAndListNew widget.
@@ -91,6 +93,12 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
   double? calculateResult1;
   // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
   double? calbillAmt2s;
+  // Stores action output result for [Custom Action - addToHoldListprdCopy] action in ProductName widget.
+  List<dynamic>? addtosavebill3d;
+  // Stores action output result for [Custom Action - calSubTotalForHoldList] action in ProductName widget.
+  double? calculateResult1d;
+  // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
+  double? calbillAmt2sd;
   // Stores action output result for [Custom Action - addToHoldListprdCopy] action in ProductName widget.
   List<dynamic>? addtosavebill2;
   // Stores action output result for [Custom Action - calSubTotalForHoldList] action in ProductName widget.

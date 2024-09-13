@@ -2325,33 +2325,107 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                             var _shouldSetState = false;
                                                                                             if (productListItem.stockable) {
                                                                                               if (productListItem.stock > 0) {
-                                                                                                if (FFAppState().holdBillCount == 0) {
-                                                                                                  FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
-                                                                                                  FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));
-                                                                                                  FFAppState().selBill = 1;
+                                                                                                if (_model.stockcheck) {
+                                                                                                  if (FFAppState().holdBillCount == 0) {
+                                                                                                    FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
+                                                                                                    FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));
+                                                                                                    FFAppState().selBill = 1;
+                                                                                                  }
+                                                                                                  _model.addtosavebill3 = await actions.addToHoldListprdCopy(
+                                                                                                    productListItem,
+                                                                                                    FFAppState().selBill,
+                                                                                                    widget!.taxcollection!.toList(),
+                                                                                                    functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
+                                                                                                  );
+                                                                                                  _shouldSetState = true;
+                                                                                                  _model.calculateResult1 = await actions.calSubTotalForHoldList(
+                                                                                                    FFAppState().selBill.toString(),
+                                                                                                    _model.addtosavebill3!.toList(),
+                                                                                                  );
+                                                                                                  _shouldSetState = true;
+                                                                                                  _model.calbillAmt2s = await actions.calBillAmt(
+                                                                                                    FFAppState().disAmt,
+                                                                                                    FFAppState().delCharges,
+                                                                                                  );
+                                                                                                  _shouldSetState = true;
+                                                                                                  _model.stockcheck = false;
+                                                                                                  safeSetState(() {});
+                                                                                                  await _model.listViewprd?.animateTo(
+                                                                                                    _model.listViewprd!.position.maxScrollExtent,
+                                                                                                    duration: Duration(milliseconds: 100),
+                                                                                                    curve: Curves.ease,
+                                                                                                  );
+                                                                                                  if (_shouldSetState) safeSetState(() {});
+                                                                                                  return;
+                                                                                                } else {
+                                                                                                  if (productListItem.stock >
+                                                                                                      valueOrDefault<int>(
+                                                                                                        getJsonField(
+                                                                                                          functions
+                                                                                                              .filterBillList(FFAppState().selBill, FFAppState().allBillsList.toList())
+                                                                                                              .where((e) =>
+                                                                                                                  productListItem.id ==
+                                                                                                                  valueOrDefault<String>(
+                                                                                                                    getJsonField(
+                                                                                                                      e,
+                                                                                                                      r'''$.id''',
+                                                                                                                    )?.toString(),
+                                                                                                                    '0',
+                                                                                                                  ))
+                                                                                                              .toList()
+                                                                                                              .first,
+                                                                                                          r'''$.quantity''',
+                                                                                                        ),
+                                                                                                        0,
+                                                                                                      )) {
+                                                                                                    if (FFAppState().holdBillCount == 0) {
+                                                                                                      FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
+                                                                                                      FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));
+                                                                                                      FFAppState().selBill = 1;
+                                                                                                    }
+                                                                                                    _model.addtosavebill3d = await actions.addToHoldListprdCopy(
+                                                                                                      productListItem,
+                                                                                                      FFAppState().selBill,
+                                                                                                      widget!.taxcollection!.toList(),
+                                                                                                      functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
+                                                                                                    );
+                                                                                                    _shouldSetState = true;
+                                                                                                    _model.calculateResult1d = await actions.calSubTotalForHoldList(
+                                                                                                      FFAppState().selBill.toString(),
+                                                                                                      _model.addtosavebill3d!.toList(),
+                                                                                                    );
+                                                                                                    _shouldSetState = true;
+                                                                                                    _model.calbillAmt2sd = await actions.calBillAmt(
+                                                                                                      FFAppState().disAmt,
+                                                                                                      FFAppState().delCharges,
+                                                                                                    );
+                                                                                                    _shouldSetState = true;
+                                                                                                    await _model.listViewprd?.animateTo(
+                                                                                                      _model.listViewprd!.position.maxScrollExtent,
+                                                                                                      duration: Duration(milliseconds: 100),
+                                                                                                      curve: Curves.ease,
+                                                                                                    );
+                                                                                                    if (_shouldSetState) safeSetState(() {});
+                                                                                                    return;
+                                                                                                  } else {
+                                                                                                    await showDialog(
+                                                                                                      context: context,
+                                                                                                      builder: (alertDialogContext) {
+                                                                                                        return AlertDialog(
+                                                                                                          content: Text('Item Out Of Stock'),
+                                                                                                          actions: [
+                                                                                                            TextButton(
+                                                                                                              onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                                              child: Text('Ok'),
+                                                                                                            ),
+                                                                                                          ],
+                                                                                                        );
+                                                                                                      },
+                                                                                                    );
+                                                                                                    if (_shouldSetState) safeSetState(() {});
+                                                                                                    return;
+                                                                                                  }
                                                                                                 }
-                                                                                                _model.addtosavebill3 = await actions.addToHoldListprdCopy(
-                                                                                                  productListItem,
-                                                                                                  FFAppState().selBill,
-                                                                                                  widget!.taxcollection!.toList(),
-                                                                                                  functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
-                                                                                                );
-                                                                                                _shouldSetState = true;
-                                                                                                _model.calculateResult1 = await actions.calSubTotalForHoldList(
-                                                                                                  FFAppState().selBill.toString(),
-                                                                                                  _model.addtosavebill3!.toList(),
-                                                                                                );
-                                                                                                _shouldSetState = true;
-                                                                                                _model.calbillAmt2s = await actions.calBillAmt(
-                                                                                                  FFAppState().disAmt,
-                                                                                                  FFAppState().delCharges,
-                                                                                                );
-                                                                                                _shouldSetState = true;
-                                                                                                await _model.listViewprd?.animateTo(
-                                                                                                  _model.listViewprd!.position.maxScrollExtent,
-                                                                                                  duration: Duration(milliseconds: 100),
-                                                                                                  curve: Curves.ease,
-                                                                                                );
                                                                                               } else {
                                                                                                 await showDialog(
                                                                                                   context: context,
