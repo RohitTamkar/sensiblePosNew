@@ -5068,7 +5068,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                             .toList())
                                                                     .length >
                                                                 0) {
-                                                              if (!getJsonField(
+                                                              if (getJsonField(
                                                                 FFAppState()
                                                                     .shiftDetailsJson,
                                                                 r'''$.shiftExists''',
@@ -5080,7 +5080,16 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                         1;
                                                                 safeSetState(
                                                                     () {});
+                                                              } else {
+                                                                FFAppState()
+                                                                        .count =
+                                                                    FFAppState()
+                                                                            .count +
+                                                                        1;
+                                                                safeSetState(
+                                                                    () {});
                                                               }
+
                                                               _model.prdlistsavebill =
                                                                   await actions
                                                                       .filterProducts2(
