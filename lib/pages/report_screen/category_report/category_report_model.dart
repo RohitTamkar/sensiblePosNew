@@ -24,8 +24,6 @@ class CategoryReportModel extends FlutterFlowModel<CategoryReportWidget> {
   List<dynamic>? saleReport;
   // Model for Header component.
   late HeaderModel headerModel;
-  // Models for catg dynamic component.
-  late FlutterFlowDynamicModels<CatgModel> catgModels;
   // Stores action output result for [Custom Action - scanPrinter] action in FloatingActionButton widget.
   bool? resDevice;
   // Stores action output result for [Custom Action - scanPrinter] action in FloatingActionButton widget.
@@ -34,12 +32,10 @@ class CategoryReportModel extends FlutterFlowModel<CategoryReportWidget> {
   @override
   void initState(BuildContext context) {
     headerModel = createModel(context, () => HeaderModel());
-    catgModels = FlutterFlowDynamicModels(() => CatgModel());
   }
 
   @override
   void dispose() {
     headerModel.dispose();
-    catgModels.dispose();
   }
 }

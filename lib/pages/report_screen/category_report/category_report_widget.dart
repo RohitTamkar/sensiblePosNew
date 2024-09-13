@@ -57,7 +57,7 @@ class _CategoryReportWidgetState extends State<CategoryReportWidget> {
       FFAppState().update(() {});
       _model.saleReport = await actions.productSaleReport(
         functions.getDayId(),
-        FFAppState().outletId,
+        FFAppState().outletIdRef!.id,
       );
     });
 
@@ -590,11 +590,11 @@ class _CategoryReportWidgetState extends State<CategoryReportWidget> {
                                   decoration: BoxDecoration(),
                                   child: Builder(
                                     builder: (context) {
-                                      final catList = getJsonField(
-                                        categoryReportGetProductWiseSaleResponse
-                                            .jsonBody,
-                                        r'''$.*.details[:]''',
-                                      ).toList();
+                                      final catList = functions
+                                          .getProList(
+                                              FFAppState().resultList.toList(),
+                                              'c')
+                                          .toList();
 
                                       return ListView.builder(
                                         padding: EdgeInsets.zero,
@@ -603,33 +603,24 @@ class _CategoryReportWidgetState extends State<CategoryReportWidget> {
                                         itemBuilder: (context, catListIndex) {
                                           final catListItem =
                                               catList[catListIndex];
-                                          return wrapWithModel(
-                                            model: _model.catgModels.getModel(
-                                              catListItem.toString(),
-                                              catListIndex,
+                                          return CatgWidget(
+                                            key: Key(
+                                                'Keypjk_${catListIndex}_of_${catList.length}'),
+                                            parameter1: getJsonField(
+                                              catListItem,
+                                              r'''$.category.catName''',
                                             ),
-                                            updateCallback: () =>
-                                                safeSetState(() {}),
-                                            child: CatgWidget(
-                                              key: Key(
-                                                'Keypjk_${catListItem.toString()}',
-                                              ),
-                                              parameter1: getJsonField(
-                                                catListItem,
-                                                r'''$.details[:].category.catName''',
-                                              ),
-                                              parameter2: getJsonField(
-                                                catListItem,
-                                                r'''$.category.quantity''',
-                                              ),
-                                              parameter3: getJsonField(
-                                                catListItem,
-                                                r'''$.category.catTotal''',
-                                              ),
-                                              parameter4: getJsonField(
-                                                catListItem,
-                                                r'''$.products''',
-                                              ),
+                                            parameter2: getJsonField(
+                                              catListItem,
+                                              r'''$.category.quantity''',
+                                            ),
+                                            parameter3: getJsonField(
+                                              catListItem,
+                                              r'''$.category.catTotal''',
+                                            ),
+                                            parameter4: getJsonField(
+                                              catListItem,
+                                              r'''$.products''',
                                             ),
                                           );
                                         },
