@@ -211,3 +211,5 @@ export '/pages/report_screen/customer_ledgerreport/customer_ledgerreport_widget.
     show CustomerLedgerreportWidget;
 export '/pages/product_and_list_new_copy/product_and_list_new_copy_widget.dart'
     show ProductAndListNewCopyWidget;
+export '/pages/report_screen/category_reportnew/category_reportnew_widget.dart'
+    show CategoryReportnewWidget;

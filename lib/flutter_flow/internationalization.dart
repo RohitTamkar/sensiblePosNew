@@ -22299,6 +22299,79 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
   },
+  // CategoryReportnew
+  {
+    '8b8z6w9s': {
+      'en': 'Category Report',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'r1hzxowv': {
+      'en': 'CUSTOM DATE',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'b4mteap0': {
+      'en': 'CATEGORY NAME',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'uxr5tigv': {
+      'en': 'TOTAL QTY',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'v72t7pla': {
+      'en': 'TOTAL AMOUNT',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'mspm8t9j': {
+      'en': '₹',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '6cl67s4j': {
+      'en': '₹',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'z5gpqi9n': {
+      'en': '₹',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'pd2lq68a': {
+      'en': 'Print',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'l6ikly5r': {
+      'en': 'Home',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+  },
   // OutletDetailsHeader
   {
     'dk8fulps': {
@@ -22679,20 +22752,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'kctxljxa': {
       'en': 'Bill',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    '4jo8nfli': {
-      'en': 'Product Wise Sale',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    '971i519l': {
-      'en': 'Product Wise Sale',
       'hi': '',
       'kn': '',
       'mr': '',

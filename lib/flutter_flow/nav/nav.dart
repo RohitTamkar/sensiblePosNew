@@ -1519,6 +1519,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   isList: true,
                 ),
               ),
+            ),
+            FFRoute(
+              name: 'CategoryReportnew',
+              path: 'categoryReportnew',
+              builder: (context, params) => CategoryReportnewWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

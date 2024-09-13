@@ -549,7 +549,7 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                        'CategoryReport');
+                                                        'CategoryReportnew');
 
                                                     if (animationsMap[
                                                             'containerOnActionTriggerAnimation2'] !=
