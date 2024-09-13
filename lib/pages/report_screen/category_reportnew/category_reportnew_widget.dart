@@ -107,11 +107,7 @@ class _CategoryReportnewWidgetState extends State<CategoryReportnewWidget> {
                   if (FFAppState().printerName != null &&
                       FFAppState().printerName != '') {
                     await actions.printCategoryWiseSalesReport(
-                      getJsonField(
-                        categoryReportnewResponse.jsonBody,
-                        r'''$.*.details[:]''',
-                        true,
-                      )!,
+                      FFAppState().resultList.toList(),
                       getJsonField(
                         FFAppState().printerDevice,
                         r'''$''',
