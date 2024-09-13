@@ -4630,6 +4630,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                           .defPayMode,
                                                                 ),
                                                                 options: dropDownPaymentModeRecordList
+                                                                    .where((e) =>
+                                                                        e.name !=
+                                                                        'CREDIT')
+                                                                    .toList()
                                                                     .map((e) =>
                                                                         e.name)
                                                                     .toList(),
