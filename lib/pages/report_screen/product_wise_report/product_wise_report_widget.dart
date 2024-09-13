@@ -58,6 +58,12 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
       FFAppState().filtervalue = '';
       FFAppState().filterDate = functions.getDayId();
       FFAppState().update(() {});
+      _model.saleReport2 = await actions.productSaleReport(
+        functions.getDayId(),
+        FFAppState().outletIdRef!.id,
+      );
+      FFAppState().resultList = _model.saleReport2!.toList().cast<dynamic>();
+      safeSetState(() {});
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -803,12 +809,9 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                                       builder: (context) {
                                         final prodlist = functions
                                             .getProList(
-                                                getJsonField(
-                                                  productWiseReportGetProductWiseSaleResponse
-                                                      .jsonBody,
-                                                  r'''$''',
-                                                  true,
-                                                )!,
+                                                FFAppState()
+                                                    .resultList
+                                                    .toList(),
                                                 'p')
                                             .toList();
                                         if (prodlist.isEmpty) {
