@@ -5472,8 +5472,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                     .updateShiftDetailsStruct(
                                                                   (e) => e
                                                                     ..billCount =
-                                                                        functions.lastBillCount(_model
-                                                                            .getOfflineShiftdetails!
+                                                                        functions.lastBillCount(FFAppState()
+                                                                            .shiftDetails
                                                                             .billCount)
                                                                     ..totalSale =
                                                                         getJsonField(
