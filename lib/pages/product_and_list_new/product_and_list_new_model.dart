@@ -67,6 +67,8 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
 
   bool stockcheck = true;
 
+  String prdid = '0';
+
   ///  State fields for stateful widgets in this page.
 
   // Stores action output result for [Custom Action - getProductlistHive] action in ProductAndListNew widget.

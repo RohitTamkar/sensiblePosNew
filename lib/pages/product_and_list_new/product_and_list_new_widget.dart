@@ -2325,7 +2325,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                             var _shouldSetState = false;
                                                                                             if (productListItem.stockable) {
                                                                                               if (productListItem.stock > 0) {
-                                                                                                if (_model.stockcheck) {
+                                                                                                if (_model.prdid != productListItem.id) {
                                                                                                   if (FFAppState().holdBillCount == 0) {
                                                                                                     FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
                                                                                                     FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));
@@ -2349,6 +2349,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                   );
                                                                                                   _shouldSetState = true;
                                                                                                   _model.stockcheck = false;
+                                                                                                  _model.prdid = productListItem.id;
                                                                                                   safeSetState(() {});
                                                                                                   await _model.listViewprd?.animateTo(
                                                                                                     _model.listViewprd!.position.maxScrollExtent,
@@ -2412,7 +2413,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                       context: context,
                                                                                                       builder: (alertDialogContext) {
                                                                                                         return AlertDialog(
-                                                                                                          content: Text('Item Out Of Stock'),
+                                                                                                          content: Text('Item Out Of  Stock'),
                                                                                                           actions: [
                                                                                                             TextButton(
                                                                                                               onPressed: () => Navigator.pop(alertDialogContext),
