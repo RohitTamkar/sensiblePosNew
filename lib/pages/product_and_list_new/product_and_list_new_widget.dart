@@ -2539,6 +2539,19 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                       ],
                                                                                                     ),
                                                                                                   ),
+                                                                                                  if (productListItem.stockable)
+                                                                                                    Flexible(
+                                                                                                      child: Text(
+                                                                                                        productListItem.stock.toString(),
+                                                                                                        textAlign: TextAlign.justify,
+                                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                              color: FlutterFlowTheme.of(context).primary,
+                                                                                                              letterSpacing: 0.0,
+                                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                                            ),
+                                                                                                      ),
+                                                                                                    ),
                                                                                                 ],
                                                                                               ),
                                                                                             ),
