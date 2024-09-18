@@ -168,6 +168,14 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
   ShiftRecord? shiftondata;
   // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
   ShiftDetailsStruct? updatedShift23;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  ProductRecord? stockupdateprd;
+  // Stores action output result for [Custom Action - hivegetproductbyId] action in Button widget.
+  ProductStructStruct? itemprd;
+  // Stores action output result for [Custom Action - hiveProductCrud] action in Button widget.
+  ProductStructStruct? productupdated;
+  // Stores action output result for [Custom Action - getProductlistHive] action in Button widget.
+  List<ProductStructStruct>? newupdatedproductlist2;
   // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
   List<SelItemListStruct>? prdlinstnewtx;
   // Stores action output result for [Custom Action - oldbalanceplusamt] action in Button widget.
@@ -194,6 +202,14 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
   List<dynamic>? device;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   List<ServicePointOutletRecord>? spoutlet;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  ProductRecord? stockupdateprdprt;
+  // Stores action output result for [Custom Action - hivegetproductbyId] action in Button widget.
+  ProductStructStruct? itemprd2;
+  // Stores action output result for [Custom Action - hiveProductCrud] action in Button widget.
+  ProductStructStruct? productupdated2;
+  // Stores action output result for [Custom Action - getProductlistHive] action in Button widget.
+  List<ProductStructStruct>? newupdatedproductlist22;
   // State field(s) for TextFieldsearch widget.
   FocusNode? textFieldsearchFocusNode;
   TextEditingController? textFieldsearchTextController;

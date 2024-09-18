@@ -2280,7 +2280,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                           builder:
                                                                               (context) {
                                                                             final productList =
-                                                                                FFAppState().productHive.toList();
+                                                                                FFAppState().productHive.sortedList(keyOf: (e) => e.code, desc: false).toList();
                                                                             if (productList.isEmpty) {
                                                                               return Center(
                                                                                 child: Image.asset(
@@ -5868,6 +5868,216 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                   return;
                                                                 }
 
+                                                                if (productAndListNewAppSettingsRecord!
+                                                                    .settingList
+                                                                    .where((e) =>
+                                                                        e.title ==
+                                                                        'enableStock')
+                                                                    .toList()
+                                                                    .first
+                                                                    .value) {
+                                                                  FFAppState()
+                                                                      .startLoop = 0;
+                                                                  safeSetState(
+                                                                      () {});
+                                                                  while (FFAppState()
+                                                                          .startLoop <
+                                                                      _model
+                                                                          .prdlistsavebill!
+                                                                          .length) {
+                                                                    _model.stockupdateprd =
+                                                                        await queryProductRecordOnce(
+                                                                      parent: FFAppState()
+                                                                          .outletIdRef,
+                                                                      queryBuilder: (productRecord) => productRecord
+                                                                          .where(
+                                                                            'id',
+                                                                            isEqualTo:
+                                                                                (_model.prdlistsavebill?[FFAppState().startLoop])?.id,
+                                                                          )
+                                                                          .where(
+                                                                            'stockable',
+                                                                            isEqualTo:
+                                                                                true,
+                                                                          ),
+                                                                      singleRecord:
+                                                                          true,
+                                                                    ).then((s) =>
+                                                                            s.firstOrNull);
+                                                                    _shouldSetState =
+                                                                        true;
+                                                                    if (_model
+                                                                            .stockupdateprd !=
+                                                                        null) {
+                                                                      await _model
+                                                                          .stockupdateprd!
+                                                                          .reference
+                                                                          .update({
+                                                                        ...mapToFirestore(
+                                                                          {
+                                                                            'currentStock':
+                                                                                FieldValue.increment(-(functions.doubleToInt((_model.prdlistsavebill?[FFAppState().startLoop])?.quantity)!)),
+                                                                          },
+                                                                        ),
+                                                                      });
+                                                                      _model.itemprd =
+                                                                          await actions
+                                                                              .hivegetproductbyId(
+                                                                        _model
+                                                                            .stockupdateprd
+                                                                            ?.reference
+                                                                            .id,
+                                                                        _model.prdlistsavebill?[
+                                                                            FFAppState().startLoop],
+                                                                        'get',
+                                                                      );
+                                                                      _shouldSetState =
+                                                                          true;
+                                                                      FFAppState()
+                                                                          .updateProductHiveputStruct(
+                                                                        (e) => e
+                                                                          ..id = _model
+                                                                              .itemprd
+                                                                              ?.id
+                                                                          ..price = _model
+                                                                              .itemprd
+                                                                              ?.price
+                                                                          ..category = _model
+                                                                              .itemprd
+                                                                              ?.category
+                                                                          ..code = _model
+                                                                              .itemprd
+                                                                              ?.code
+                                                                          ..name = _model
+                                                                              .itemprd
+                                                                              ?.name
+                                                                          ..sellingPrice = _model
+                                                                              .itemprd
+                                                                              ?.sellingPrice
+                                                                          ..mrpPrice = _model
+                                                                              .itemprd
+                                                                              ?.mrpPrice
+                                                                          ..purchasePrice = _model
+                                                                              .itemprd
+                                                                              ?.purchasePrice
+                                                                          ..categoryId = _model
+                                                                              .itemprd
+                                                                              ?.categoryId
+                                                                          ..taxId = _model
+                                                                              .itemprd
+                                                                              ?.taxId
+                                                                          ..unitId = _model
+                                                                              .itemprd
+                                                                              ?.unitId
+                                                                          ..regionalName = _model
+                                                                              .itemprd
+                                                                              ?.regionalName
+                                                                          ..barcode = _model
+                                                                              .itemprd
+                                                                              ?.barcode
+                                                                          ..hsncode = _model
+                                                                              .itemprd
+                                                                              ?.hsncode
+                                                                          ..reorderLevel = _model
+                                                                              .itemprd
+                                                                              ?.reorderLevel
+                                                                          ..searchcode = _model
+                                                                              .itemprd
+                                                                              ?.searchcode
+                                                                          ..shortName = _model
+                                                                              .itemprd
+                                                                              ?.shortName
+                                                                          ..weightable = _model
+                                                                              .itemprd
+                                                                              ?.weightable
+                                                                          ..stockable = _model
+                                                                              .itemprd
+                                                                              ?.stockable
+                                                                          ..discountPer = _model
+                                                                              .itemprd
+                                                                              ?.discountPer
+                                                                          ..discountAmt = _model
+                                                                              .itemprd
+                                                                              ?.discountAmt
+                                                                          ..productMasterId = _model
+                                                                              .itemprd
+                                                                              ?.productMasterId
+                                                                          ..recipeRefId = _model
+                                                                              .itemprd
+                                                                              ?.recipeRefId
+                                                                          ..imageUrl = _model
+                                                                              .itemprd
+                                                                              ?.imageUrl
+                                                                          ..serviceOutletId = _model
+                                                                              .itemprd
+                                                                              ?.serviceOutletId
+                                                                          ..type = _model
+                                                                              .itemprd
+                                                                              ?.type
+                                                                          ..recipeId = _model
+                                                                              .itemprd
+                                                                              ?.recipeId
+                                                                          ..stock =
+                                                                              functions.doubleToInt((_model.prdlistsavebill?[FFAppState().startLoop])?.quantity)
+                                                                          ..isDeleted = _model
+                                                                              .itemprd
+                                                                              ?.isDeleted
+                                                                          ..keywords = _model
+                                                                              .itemprd!
+                                                                              .keywords
+                                                                              .toList()
+                                                                          ..synC = _model
+                                                                              .itemprd
+                                                                              ?.synC
+                                                                          ..hivekey = _model
+                                                                              .itemprd
+                                                                              ?.hivekey
+                                                                          ..version = _model
+                                                                              .itemprd
+                                                                              ?.version,
+                                                                      );
+                                                                      safeSetState(
+                                                                          () {});
+                                                                      _model.productupdated =
+                                                                          await actions
+                                                                              .hiveProductCrud(
+                                                                        FFAppState()
+                                                                            .productHiveput
+                                                                            .hivekey,
+                                                                        FFAppState()
+                                                                            .productHiveput,
+                                                                        'update',
+                                                                      );
+                                                                      _shouldSetState =
+                                                                          true;
+                                                                      FFAppState()
+                                                                          .productHive = [];
+                                                                      FFAppState()
+                                                                              .productHiveput =
+                                                                          ProductStructStruct();
+                                                                      safeSetState(
+                                                                          () {});
+                                                                      _model.newupdatedproductlist2 =
+                                                                          await actions
+                                                                              .getProductlistHive();
+                                                                      _shouldSetState =
+                                                                          true;
+                                                                      FFAppState().productHive = _model
+                                                                          .newupdatedproductlist2!
+                                                                          .toList()
+                                                                          .cast<
+                                                                              ProductStructStruct>();
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    }
+                                                                    FFAppState()
+                                                                            .startLoop =
+                                                                        FFAppState().startLoop +
+                                                                            1;
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  }
+                                                                }
                                                                 await actions
                                                                     .removeFromAllBillList(
                                                                   FFAppState()
@@ -7024,6 +7234,174 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                           .toList(),
                                                                       productAndListNewAppSettingsRecord!,
                                                                     );
+                                                                  }
+                                                                  if (productAndListNewAppSettingsRecord!
+                                                                      .settingList
+                                                                      .where((e) =>
+                                                                          e.title ==
+                                                                          'enableStock')
+                                                                      .toList()
+                                                                      .first
+                                                                      .value) {
+                                                                    FFAppState()
+                                                                        .startLoop = 0;
+                                                                    safeSetState(
+                                                                        () {});
+                                                                    while (FFAppState()
+                                                                            .startLoop <
+                                                                        _model
+                                                                            .prdlinstnewtx!
+                                                                            .length) {
+                                                                      _model.stockupdateprdprt =
+                                                                          await queryProductRecordOnce(
+                                                                        parent:
+                                                                            FFAppState().outletIdRef,
+                                                                        queryBuilder: (productRecord) => productRecord
+                                                                            .where(
+                                                                              'id',
+                                                                              isEqualTo: (_model.prdlinstnewtx?[FFAppState().startLoop])?.id,
+                                                                            )
+                                                                            .where(
+                                                                              'stockable',
+                                                                              isEqualTo: true,
+                                                                            ),
+                                                                        singleRecord:
+                                                                            true,
+                                                                      ).then((s) =>
+                                                                              s.firstOrNull);
+                                                                      _shouldSetState =
+                                                                          true;
+                                                                      if (_model
+                                                                              .stockupdateprdprt !=
+                                                                          null) {
+                                                                        await _model
+                                                                            .stockupdateprd!
+                                                                            .reference
+                                                                            .update({
+                                                                          ...mapToFirestore(
+                                                                            {
+                                                                              'currentStock': FieldValue.increment(-(functions.doubleToInt((_model.prdlinstnewtx?[FFAppState().startLoop])?.quantity)!)),
+                                                                            },
+                                                                          ),
+                                                                        });
+                                                                        _model.itemprd2 =
+                                                                            await actions.hivegetproductbyId(
+                                                                          _model
+                                                                              .stockupdateprd
+                                                                              ?.reference
+                                                                              .id,
+                                                                          _model
+                                                                              .prdlinstnewtx?[FFAppState().startLoop],
+                                                                          'get',
+                                                                        );
+                                                                        _shouldSetState =
+                                                                            true;
+                                                                        FFAppState()
+                                                                            .updateProductHiveputStruct(
+                                                                          (e) => e
+                                                                            ..id =
+                                                                                _model.itemprd2?.id
+                                                                            ..price =
+                                                                                _model.itemprd2?.price
+                                                                            ..category =
+                                                                                _model.itemprd2?.category
+                                                                            ..code =
+                                                                                _model.itemprd2?.code
+                                                                            ..name =
+                                                                                _model.itemprd2?.name
+                                                                            ..sellingPrice =
+                                                                                _model.itemprd2?.sellingPrice
+                                                                            ..mrpPrice =
+                                                                                _model.itemprd2?.mrpPrice
+                                                                            ..purchasePrice =
+                                                                                _model.itemprd2?.purchasePrice
+                                                                            ..categoryId =
+                                                                                _model.itemprd2?.categoryId
+                                                                            ..taxId =
+                                                                                _model.itemprd2?.taxId
+                                                                            ..unitId =
+                                                                                _model.itemprd2?.unitId
+                                                                            ..regionalName =
+                                                                                _model.itemprd2?.regionalName
+                                                                            ..barcode =
+                                                                                _model.itemprd2?.barcode
+                                                                            ..hsncode =
+                                                                                _model.itemprd2?.hsncode
+                                                                            ..reorderLevel =
+                                                                                _model.itemprd2?.reorderLevel
+                                                                            ..searchcode =
+                                                                                _model.itemprd2?.searchcode
+                                                                            ..shortName =
+                                                                                _model.itemprd2?.shortName
+                                                                            ..weightable =
+                                                                                _model.itemprd2?.weightable
+                                                                            ..stockable =
+                                                                                _model.itemprd2?.stockable
+                                                                            ..discountPer =
+                                                                                _model.itemprd2?.discountPer
+                                                                            ..discountAmt =
+                                                                                _model.itemprd2?.discountAmt
+                                                                            ..productMasterId =
+                                                                                _model.itemprd2?.productMasterId
+                                                                            ..recipeRefId =
+                                                                                _model.itemprd2?.recipeRefId
+                                                                            ..imageUrl =
+                                                                                _model.itemprd2?.imageUrl
+                                                                            ..serviceOutletId =
+                                                                                _model.itemprd2?.serviceOutletId
+                                                                            ..type =
+                                                                                _model.itemprd2?.type
+                                                                            ..recipeId =
+                                                                                _model.itemprd2?.recipeId
+                                                                            ..stock =
+                                                                                functions.doubleToInt((_model.prdlinstnewtx?[FFAppState().startLoop])?.quantity)
+                                                                            ..isDeleted =
+                                                                                _model.itemprd2?.isDeleted
+                                                                            ..keywords =
+                                                                                _model.itemprd2!.keywords.toList()
+                                                                            ..synC =
+                                                                                _model.itemprd2?.synC
+                                                                            ..hivekey =
+                                                                                _model.itemprd2?.hivekey
+                                                                            ..version = _model.itemprd2?.version,
+                                                                        );
+                                                                        safeSetState(
+                                                                            () {});
+                                                                        _model.productupdated2 =
+                                                                            await actions.hiveProductCrud(
+                                                                          FFAppState()
+                                                                              .productHiveput
+                                                                              .hivekey,
+                                                                          FFAppState()
+                                                                              .productHiveput,
+                                                                          'update',
+                                                                        );
+                                                                        _shouldSetState =
+                                                                            true;
+                                                                        FFAppState().productHive =
+                                                                            [];
+                                                                        FFAppState().productHiveput =
+                                                                            ProductStructStruct();
+                                                                        safeSetState(
+                                                                            () {});
+                                                                        _model.newupdatedproductlist22 =
+                                                                            await actions.getProductlistHive();
+                                                                        _shouldSetState =
+                                                                            true;
+                                                                        FFAppState().productHive = _model
+                                                                            .newupdatedproductlist22!
+                                                                            .toList()
+                                                                            .cast<ProductStructStruct>();
+                                                                        safeSetState(
+                                                                            () {});
+                                                                      }
+                                                                      FFAppState()
+                                                                              .startLoop =
+                                                                          FFAppState().startLoop +
+                                                                              1;
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    }
                                                                   }
                                                                   await actions
                                                                       .removeFromAllBillList(
