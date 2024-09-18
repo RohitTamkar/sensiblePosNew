@@ -3944,6 +3944,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               ),
                                                                               FFAppState().delCharges,
                                                                             );
+                                                                            _model.prdid =
+                                                                                '0';
+                                                                            safeSetState(() {});
 
                                                                             safeSetState(() {});
                                                                           },
