@@ -1498,6 +1498,18 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                       .secondaryBackground,
                                                   size: 30.0,
                                                 ),
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        10.0, 0.0, 0.0, 0.0),
+                                                child: Icon(
+                                                  Icons.refresh_sharp,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  size: 30.0,
+                                                ),
+                                              ),
                                             ],
                                           ),
                                         ),
@@ -2008,6 +2020,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                               await actions.clearValue();
                                               FFAppState().noOfItems = 0;
                                               FFAppState().update(() {});
+                                              _model.prdid = '0';
+                                              safeSetState(() {});
                                             },
                                           ),
                                         ),
@@ -7437,6 +7451,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                   FFAppState()
                                                                       .update(
                                                                           () {});
+                                                                  _model.prdid =
+                                                                      '0';
+                                                                  safeSetState(
+                                                                      () {});
                                                                   FFAppState()
                                                                           .finalAmt =
                                                                       0.0;
