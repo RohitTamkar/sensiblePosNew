@@ -6090,6 +6090,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                 FFAppState()
                                                                     .update(
                                                                         () {});
+                                                                _model.prdid =
+                                                                    '0';
+                                                                safeSetState(
+                                                                    () {});
                                                                 await actions
                                                                     .clearValue();
                                                                 FFAppState()

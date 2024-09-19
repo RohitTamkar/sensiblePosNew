@@ -9,6 +9,11 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'package:hive/hive.dart';
+import 'package:sensible_biz_p_o_s/custom_code/actions/setup_item_hive.dart';
+
+import 'index.dart'; // Imports other custom actions
+
 Future<ProductStructStruct?> hivegetproductbyId(
   String? id,
   SelItemListStruct? itemBlob,
@@ -16,7 +21,7 @@ Future<ProductStructStruct?> hivegetproductbyId(
 ) async {
   productBox = await Hive.openBox<ProductStructStruct>('product');
 
-  dayId = dayId ?? '999'; // Make sure dayId is a String
+  id = id ?? '999'; // Make sure dayId is a String
 
   // add the new item into the Hive box
   switch (actionType) {
@@ -35,7 +40,7 @@ Future<ProductStructStruct?> hivegetproductbyId(
 
       // If no item is found, return a default ShiftDetailsStruct
       print('else');
-      print(dayId);
+      print(id);
       return ProductStructStruct(id: id);
       break;
 
