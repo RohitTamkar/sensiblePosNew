@@ -2524,16 +2524,18 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                                 ),
                                                                                                           ),
                                                                                                         ),
-                                                                                                        Align(
-                                                                                                          alignment: AlignmentDirectional(0.0, 0.0),
-                                                                                                          child: Text(
-                                                                                                            productListItem.sellingPrice.toString(),
-                                                                                                            textAlign: TextAlign.center,
-                                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                                                  letterSpacing: 0.0,
-                                                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                                                ),
+                                                                                                        Flexible(
+                                                                                                          child: Align(
+                                                                                                            alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                                            child: Text(
+                                                                                                              productListItem.sellingPrice.toString(),
+                                                                                                              textAlign: TextAlign.center,
+                                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                                    letterSpacing: 0.0,
+                                                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                                                  ),
+                                                                                                            ),
                                                                                                           ),
                                                                                                         ),
                                                                                                       ],
@@ -6017,8 +6019,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                           ..recipeId = _model
                                                                               .itemprd
                                                                               ?.recipeId
-                                                                          ..stock =
-                                                                              functions.doubleToInt((_model.prdlistsavebill?[FFAppState().startLoop])?.quantity)
+                                                                          ..incrementStock(_model.itemprd!.stock -
+                                                                              (functions.doubleToInt((_model.prdlistsavebill?[FFAppState().startLoop])?.quantity)!))
                                                                           ..isDeleted = _model
                                                                               .itemprd
                                                                               ?.isDeleted
@@ -7358,7 +7360,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                             ..recipeId =
                                                                                 _model.itemprd2?.recipeId
                                                                             ..stock =
-                                                                                functions.doubleToInt((_model.prdlinstnewtx?[FFAppState().startLoop])?.quantity)
+                                                                                _model.itemprd2!.stock - (functions.doubleToInt((_model.prdlinstnewtx?[FFAppState().startLoop])?.quantity)!)
                                                                             ..isDeleted =
                                                                                 _model.itemprd2?.isDeleted
                                                                             ..keywords =

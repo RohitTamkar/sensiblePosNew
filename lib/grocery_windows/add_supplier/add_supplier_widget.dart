@@ -12,11 +12,11 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'add_customer_grocery_model.dart';
-export 'add_customer_grocery_model.dart';
+import 'add_supplier_model.dart';
+export 'add_supplier_model.dart';
 
-class AddCustomerGroceryWidget extends StatefulWidget {
-  const AddCustomerGroceryWidget({
+class AddSupplierWidget extends StatefulWidget {
+  const AddSupplierWidget({
     super.key,
     this.custref,
   });
@@ -24,12 +24,11 @@ class AddCustomerGroceryWidget extends StatefulWidget {
   final DocumentReference? custref;
 
   @override
-  State<AddCustomerGroceryWidget> createState() =>
-      _AddCustomerGroceryWidgetState();
+  State<AddSupplierWidget> createState() => _AddSupplierWidgetState();
 }
 
-class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
-  late AddCustomerGroceryModel _model;
+class _AddSupplierWidgetState extends State<AddSupplierWidget> {
+  late AddSupplierModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -40,7 +39,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => AddCustomerGroceryModel());
+    _model = createModel(context, () => AddSupplierModel());
 
     _model.textFieldnameTextController ??= TextEditingController();
     _model.textFieldnameFocusNode ??= FocusNode();
@@ -141,7 +140,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                   children: [
                     Text(
                       FFLocalizations.of(context).getText(
-                        'tjrpsbvr' /* Add Customer */,
+                        'mhoeo4h2' /* Add Supplier */,
                       ),
                       style: FlutterFlowTheme.of(context).titleMedium.override(
                             fontFamily:
@@ -190,7 +189,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                               children: [
                                 Text(
                                   FFLocalizations.of(context).getText(
-                                    'd9b2gv2x' /* Personal Details */,
+                                    'i1dp2g4s' /* Personal Details */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .titleMedium
@@ -227,7 +226,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                         0.0, 0.0, 0.0, 5.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'ai7mkqlj' /* Name */,
+                                        '8mzmxedr' /* Name */,
                                       ),
                                       textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.of(context)
@@ -270,7 +269,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
-                                          'p32m4xv3' /* name */,
+                                          '1co4ffm1' /* name */,
                                         ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
@@ -357,7 +356,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                         0.0, 0.0, 0.0, 5.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'f0ajnwwh' /* Mobile */,
+                                        '7u56caqg' /* Mobile */,
                                       ),
                                       textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.of(context)
@@ -401,7 +400,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
-                                          'pct94fjg' /* mobile */,
+                                          'tzdthkbm' /* mobile */,
                                         ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
@@ -488,7 +487,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                         0.0, 0.0, 0.0, 5.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'yofronpz' /* Alternate Number */,
+                                        'metdkpid' /* Alternate Number */,
                                       ),
                                       textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.of(context)
@@ -533,7 +532,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
-                                          '37v2ugjq' /* alt Mobile */,
+                                          'ok7bx8lr' /* alt Mobile */,
                                         ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
@@ -629,7 +628,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                         0.0, 0.0, 0.0, 5.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        '4l7f6b7g' /* Email */,
+                                        'ltqpy0vd' /* Email */,
                                       ),
                                       textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.of(context)
@@ -672,7 +671,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
-                                          'n8os09rd' /* email */,
+                                          'aaqslmf0' /* email */,
                                         ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
@@ -759,7 +758,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                         0.0, 0.0, 0.0, 5.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'vjq8c8pr' /* Ref Name */,
+                                        'k2xqlqc7' /* Ref Name */,
                                       ),
                                       textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.of(context)
@@ -804,7 +803,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
-                                          'oknjghn3' /* ref name */,
+                                          'dk7vpoi8' /* ref name */,
                                         ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
@@ -891,7 +890,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                         0.0, 0.0, 0.0, 5.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        '6oq1hjtd' /* Vehicle Number */,
+                                        'j70339fb' /* Vehicle Number */,
                                       ),
                                       textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.of(context)
@@ -936,7 +935,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
-                                          '7ir946di' /* Vechicle No */,
+                                          'e426ulph' /* Vechicle No */,
                                         ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
@@ -1030,7 +1029,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                               children: [
                                 Text(
                                   FFLocalizations.of(context).getText(
-                                    'xyxz27q6' /* Identity Proof Details */,
+                                    'yxxckqa4' /* Identity Proof Details */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .titleMedium
@@ -1067,7 +1066,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                         0.0, 0.0, 0.0, 5.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        '3xw9yy68' /* Aadhar Card */,
+                                        '8t2fxp32' /* Aadhar Card */,
                                       ),
                                       textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.of(context)
@@ -1111,7 +1110,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
-                                          '54zxz9tm' /* Adhaar */,
+                                          'gjwnrlea' /* Adhaar */,
                                         ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
@@ -1198,7 +1197,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                         0.0, 0.0, 0.0, 5.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'oojopt82' /* PAN Card */,
+                                        'uzi242rg' /* PAN Card */,
                                       ),
                                       textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.of(context)
@@ -1242,7 +1241,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
-                                          'jb7lpobi' /* Pan */,
+                                          'i04gnjzk' /* Pan */,
                                         ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
@@ -1329,7 +1328,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                         0.0, 0.0, 0.0, 5.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'yl0cic17' /* GST number */,
+                                        'vxjgx9r7' /* GST number */,
                                       ),
                                       textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.of(context)
@@ -1373,7 +1372,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
-                                          'dl67v3op' /* gst no */,
+                                          'n2gf7qvr' /* gst no */,
                                         ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
@@ -1469,7 +1468,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                         0.0, 0.0, 0.0, 5.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'yzk7nusb' /* Proof of Identity */,
+                                        '4gztotmk' /* Proof of Identity */,
                                       ),
                                       textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.of(context)
@@ -1492,13 +1491,13 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                             FormFieldController<String>(null),
                                     options: [
                                       FFLocalizations.of(context).getText(
-                                        'grwd8vg1' /* Adhaar */,
+                                        '9v6cbmio' /* Adhaar */,
                                       ),
                                       FFLocalizations.of(context).getText(
-                                        'v1kwn68k' /* Pan card */,
+                                        'bmx0hox9' /* Pan card */,
                                       ),
                                       FFLocalizations.of(context).getText(
-                                        '8icqh8e5' /* Driving licensc */,
+                                        '3s04gr7a' /* Driving licensc */,
                                       )
                                     ],
                                     onChanged: (val) => safeSetState(
@@ -1519,7 +1518,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                         ),
                                     hintText:
                                         FFLocalizations.of(context).getText(
-                                      '4vatx29i' /* proof */,
+                                      '2ny501c8' /* proof */,
                                     ),
                                     icon: Icon(
                                       Icons.keyboard_arrow_down_rounded,
@@ -1575,7 +1574,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                               children: [
                                 Text(
                                   FFLocalizations.of(context).getText(
-                                    '8y5h9uxd' /* Credit Details */,
+                                    't4qmlofp' /* Credit Details */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .titleMedium
@@ -1612,7 +1611,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                         0.0, 0.0, 0.0, 5.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'p2s533bz' /* Credit Limit */,
+                                        'oingsdbt' /* Credit Limit */,
                                       ),
                                       textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.of(context)
@@ -1656,7 +1655,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
-                                          'sqlc0ubc' /* card limit */,
+                                          'llelx6bk' /* card limit */,
                                         ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
@@ -1743,7 +1742,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                         0.0, 0.0, 0.0, 5.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        '29wz6ki5' /* Old Balance */,
+                                        'yjs939y3' /* Old Balance */,
                                       ),
                                       textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.of(context)
@@ -1788,7 +1787,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
-                                          'uz6a1u3f' /* old balance */,
+                                          'h7nfj8ub' /* old balance */,
                                         ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
@@ -1875,7 +1874,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                         0.0, 0.0, 0.0, 5.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'ftqbycb4' /* Credit */,
+                                        'd183q580' /* Credit */,
                                       ),
                                       textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.of(context)
@@ -1932,7 +1931,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                               children: [
                                 Text(
                                   FFLocalizations.of(context).getText(
-                                    'k70p9aea' /* Other Details */,
+                                    'a065ym8p' /* Other Details */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .titleMedium
@@ -1969,7 +1968,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                         0.0, 0.0, 0.0, 5.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'g7ogqy7h' /* Birthday */,
+                                        '4mx3w2st' /* Birthday */,
                                       ),
                                       textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.of(context)
@@ -2012,7 +2011,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
-                                          'xj8ngzcl' /* birthdate */,
+                                          'e65e819m' /* birthdate */,
                                         ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
@@ -2099,7 +2098,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                         0.0, 0.0, 0.0, 5.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'u3u1wc2h' /* Anniversary */,
+                                        'nkcbecr0' /* Anniversary */,
                                       ),
                                       textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.of(context)
@@ -2144,7 +2143,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
-                                          'jxrpbyl6' /* anniversery */,
+                                          '5ktkahut' /* anniversery */,
                                         ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
@@ -2231,7 +2230,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                         0.0, 0.0, 0.0, 5.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        '7bzbboa8' /* Firm Name */,
+                                        'ylsri0zp' /* Firm Name */,
                                       ),
                                       textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.of(context)
@@ -2276,7 +2275,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
-                                          'pdacm8dn' /* firmname */,
+                                          '7kybly7s' /* firmname */,
                                         ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
@@ -2372,7 +2371,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                         0.0, 0.0, 0.0, 5.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'hvk9m21r' /* Extra Detail */,
+                                        '91mns3e8' /* Extra Detail */,
                                       ),
                                       textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.of(context)
@@ -2416,7 +2415,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
-                                          '1y4bi91g' /* extra details */,
+                                          'z6k1h3xx' /* extra details */,
                                         ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
@@ -2503,7 +2502,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                         0.0, 0.0, 0.0, 5.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'g7rc52ly' /* Gender */,
+                                        'is2nyst0' /* Gender */,
                                       ),
                                       textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.of(context)
@@ -2530,13 +2529,13 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                             FormFieldController<String>(null),
                                     options: [
                                       FFLocalizations.of(context).getText(
-                                        '6r6i1avs' /* Male */,
+                                        'wyx8a8h0' /* Male */,
                                       ),
                                       FFLocalizations.of(context).getText(
-                                        'okb6k1kf' /* Female */,
+                                        '2qbhpfoj' /* Female */,
                                       ),
                                       FFLocalizations.of(context).getText(
-                                        'injbzbys' /* Other */,
+                                        '8hy5upqe' /* Other */,
                                       )
                                     ],
                                     onChanged: (val) => safeSetState(
@@ -2557,7 +2556,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                         ),
                                     hintText:
                                         FFLocalizations.of(context).getText(
-                                      'ikkk99lv' /* Gender */,
+                                      'ubxtlv0f' /* Gender */,
                                     ),
                                     icon: Icon(
                                       Icons.keyboard_arrow_down_rounded,
@@ -2592,7 +2591,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                         0.0, 0.0, 0.0, 5.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'gtt1fuva' /* Family Size */,
+                                        'jnh8wwg8' /* Family Size */,
                                       ),
                                       textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.of(context)
@@ -2637,7 +2636,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
-                                          'peepo14n' /* family size */,
+                                          '9iaopd6f' /* family size */,
                                         ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
@@ -2733,7 +2732,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                         0.0, 0.0, 0.0, 5.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'gne0c9xi' /* Address */,
+                                        'dqzgxuc0' /* Address */,
                                       ),
                                       textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.of(context)
@@ -2777,7 +2776,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
-                                          '10gf827p' /* address */,
+                                          '1i97s24u' /* address */,
                                         ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
@@ -2864,7 +2863,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                         0.0, 0.0, 0.0, 5.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'e503fgj6' /* City */,
+                                        'ed494tgz' /* City */,
                                       ),
                                       textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.of(context)
@@ -2908,7 +2907,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
-                                          'wslijmld' /* city */,
+                                          'e5r44n9e' /* city */,
                                         ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
@@ -2995,7 +2994,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                         0.0, 0.0, 0.0, 5.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'd4ehcq9i' /* Postal Code */,
+                                        'awy2vy7j' /* Postal Code */,
                                       ),
                                       textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.of(context)
@@ -3040,7 +3039,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
-                                          'v9i2ng8h' /* postalcode */,
+                                          'he7qgbev' /* postalcode */,
                                         ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
@@ -3136,7 +3135,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                         0.0, 0.0, 0.0, 5.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        '79fqnr1v' /* First Visit */,
+                                        'aacclmkc' /* First Visit */,
                                       ),
                                       textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.of(context)
@@ -3180,7 +3179,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
-                                          'uhg4dtiw' /* first visit */,
+                                          '2acnj2dg' /* first visit */,
                                         ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
@@ -3267,7 +3266,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                         0.0, 0.0, 0.0, 5.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'l2fu23bp' /* Last Visit */,
+                                        '7sbz75cn' /* Last Visit */,
                                       ),
                                       textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.of(context)
@@ -3312,7 +3311,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
-                                          'psz3biu6' /* last visit */,
+                                          'vs6kcvg0' /* last visit */,
                                         ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
@@ -3399,7 +3398,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                         0.0, 0.0, 0.0, 5.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        '4t2dq6ac' /* Type */,
+                                        'ftuwlfiz' /* Type */,
                                       ),
                                       textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.of(context)
@@ -3426,10 +3425,10 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                             FormFieldController<String>(null),
                                     options: [
                                       FFLocalizations.of(context).getText(
-                                        'mgduhv5a' /* CUSTOMER */,
+                                        '08ggm79m' /* CUSTOMER */,
                                       ),
                                       FFLocalizations.of(context).getText(
-                                        'htap3iaj' /* SUPPLIER */,
+                                        '15qyiwjx' /* SUPPLIER */,
                                       )
                                     ],
                                     onChanged: (val) => safeSetState(
@@ -3450,7 +3449,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                                         ),
                                     hintText:
                                         FFLocalizations.of(context).getText(
-                                      'v84rwzkf' /* type */,
+                                      'a68jtpj9' /* type */,
                                     ),
                                     icon: Icon(
                                       Icons.keyboard_arrow_down_rounded,
@@ -3662,7 +3661,7 @@ class _AddCustomerGroceryWidgetState extends State<AddCustomerGroceryWidget> {
                             if (_shouldSetState) safeSetState(() {});
                           },
                           text: FFLocalizations.of(context).getText(
-                            '1rpgsm22' /* Submit */,
+                            'mvnprst4' /* Submit */,
                           ),
                           options: FFButtonOptions(
                             height: 40.0,
