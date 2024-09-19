@@ -1498,16 +1498,89 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                       .secondaryBackground,
                                                   size: 30.0,
                                                 ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        10.0, 0.0, 0.0, 0.0),
-                                                child: Icon(
+                                              FFButtonWidget(
+                                                onPressed: () async {
+                                                  _model.allprdrefresh =
+                                                      await queryProductRecordOnce(
+                                                    parent: FFAppState()
+                                                        .outletIdRef,
+                                                  );
+                                                  _model.prdlist = await actions
+                                                      .addFirebasetoHiveProduct(
+                                                    _model.allprdrefresh!
+                                                        .toList(),
+                                                  );
+                                                  _model.listcategory =
+                                                      await queryCategoryRecordOnce(
+                                                    parent: FFAppState()
+                                                        .outletIdRef,
+                                                  );
+                                                  _model.cat = await actions
+                                                      .addFirebasetoHiveCategory(
+                                                    _model.listcategory!
+                                                        .toList(),
+                                                  );
+                                                  _model.prdhive2refresh =
+                                                      await actions
+                                                          .getProductlistHive();
+                                                  _model.catlistrefresh =
+                                                      await actions
+                                                          .getCategorylistHive();
+                                                  FFAppState().productHive = _model
+                                                      .prdhive2refresh!
+                                                      .toList()
+                                                      .cast<
+                                                          ProductStructStruct>();
+                                                  FFAppState().categoryHive = _model
+                                                      .catlistrefresh!
+                                                      .toList()
+                                                      .cast<
+                                                          CategoryStructStruct>();
+                                                  safeSetState(() {});
+
+                                                  safeSetState(() {});
+                                                },
+                                                text:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  '944bnyn3' /*  */,
+                                                ),
+                                                icon: Icon(
                                                   Icons.refresh_sharp,
+                                                  size: 20.0,
+                                                ),
+                                                options: FFButtonOptions(
+                                                  height: 40.0,
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          16.0, 0.0, 16.0, 0.0),
+                                                  iconPadding:
+                                                      EdgeInsets.all(2.0),
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .secondaryBackground,
-                                                  size: 30.0,
+                                                      .alternate,
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmallFamily,
+                                                            color: Colors.white,
+                                                            letterSpacing: 0.0,
+                                                            useGoogleFonts: GoogleFonts
+                                                                    .asMap()
+                                                                .containsKey(
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleSmallFamily),
+                                                          ),
+                                                  elevation: 0.0,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
                                                 ),
                                               ),
                                             ],

@@ -81,6 +81,18 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
   bool? isConnected;
   // Model for MenuDrawer component.
   late MenuDrawerModel menuDrawerModel;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  List<ProductRecord>? allprdrefresh;
+  // Stores action output result for [Custom Action - addFirebasetoHiveProduct] action in Button widget.
+  int? prdlist;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  List<CategoryRecord>? listcategory;
+  // Stores action output result for [Custom Action - addFirebasetoHiveCategory] action in Button widget.
+  int? cat;
+  // Stores action output result for [Custom Action - getProductlistHive] action in Button widget.
+  List<ProductStructStruct>? prdhive2refresh;
+  // Stores action output result for [Custom Action - getCategorylistHive] action in Button widget.
+  List<CategoryStructStruct>? catlistrefresh;
   // State field(s) for ListView widget.
   ScrollController? listViewController1;
   // Stores action output result for [Custom Action - calSubTotalForHoldList] action in Container widget.
