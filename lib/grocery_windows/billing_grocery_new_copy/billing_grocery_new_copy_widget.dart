@@ -6,8 +6,8 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/grocery_windows/add_customer_grocery/add_customer_grocery_widget.dart';
 import '/grocery_windows/add_product_grocery/add_product_grocery_widget.dart';
+import '/grocery_windows/add_supplier/add_supplier_widget.dart';
 import '/grocery_windows/grocery/grocery_widget.dart';
 import '/grocery_windows/payment_mode_grocery/payment_mode_grocery_widget.dart';
 import 'dart:math';
@@ -254,7 +254,7 @@ class _BillingGroceryNewCopyWidgetState
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'f3o4jfx2' /* CUSTOMER DETAILS */,
+                                                      'f3o4jfx2' /* SUPPLIER DETAILS */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -309,7 +309,7 @@ class _BillingGroceryNewCopyWidgetState
                                                           .viewInsetsOf(
                                                               context),
                                                       child:
-                                                          AddCustomerGroceryWidget(),
+                                                          AddSupplierWidget(),
                                                     ),
                                                   );
                                                 },
@@ -394,7 +394,7 @@ class _BillingGroceryNewCopyWidgetState
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        's2n4mkrv' /* Search Customer */,
+                                                        's2n4mkrv' /* Search Supplier */,
                                                       ),
                                                       hintStyle:
                                                           FlutterFlowTheme.of(

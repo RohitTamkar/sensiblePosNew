@@ -22669,14 +22669,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     'f3o4jfx2': {
-      'en': 'CUSTOMER DETAILS',
+      'en': 'SUPPLIER DETAILS',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
     's2n4mkrv': {
-      'en': 'Search Customer',
+      'en': 'Search Supplier',
       'hi': '',
       'kn': '',
       'mr': '',
