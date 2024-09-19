@@ -2504,15 +2504,14 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                           ),
                                                                                                     ),
                                                                                                   ),
-                                                                                                  Padding(
-                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
-                                                                                                    child: Row(
-                                                                                                      mainAxisSize: MainAxisSize.max,
-                                                                                                      mainAxisAlignment: MainAxisAlignment.center,
-                                                                                                      children: [
-                                                                                                        Align(
-                                                                                                          alignment: AlignmentDirectional(0.0, 0.0),
-                                                                                                          child: Text(
+                                                                                                  Flexible(
+                                                                                                    child: Padding(
+                                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 3.0),
+                                                                                                      child: Row(
+                                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                                        mainAxisAlignment: MainAxisAlignment.center,
+                                                                                                        children: [
+                                                                                                          Text(
                                                                                                             FFLocalizations.of(context).getText(
                                                                                                               '0ppacddr' /* ₹  */,
                                                                                                             ),
@@ -2523,10 +2522,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                                   useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                                 ),
                                                                                                           ),
-                                                                                                        ),
-                                                                                                        Flexible(
-                                                                                                          child: Align(
-                                                                                                            alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                                          Flexible(
                                                                                                             child: Text(
                                                                                                               productListItem.sellingPrice.toString(),
                                                                                                               textAlign: TextAlign.center,
@@ -2537,8 +2533,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                                   ),
                                                                                                             ),
                                                                                                           ),
-                                                                                                        ),
-                                                                                                      ],
+                                                                                                        ],
+                                                                                                      ),
                                                                                                     ),
                                                                                                   ),
                                                                                                   if (productListItem.stockable)
