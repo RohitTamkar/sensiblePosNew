@@ -76,83 +76,84 @@ class _SearchHiveprdState extends State<SearchHiveprd> {
           child: Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
             child: TypeAheadField<ProductStructStruct>(
-              textFieldConfiguration: TextFieldConfiguration(
-                controller: _productNameController,
-                focusNode: _focusNode,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Search for a product...',
-                ),
-                onSubmitted: (value) async {
-                  print('Submitted value: $value');
-                  List<ProductStructStruct> matchingProducts = widget.document
-                      .where((product) => product.barcode == value)
-                      .toList();
+                textFieldConfiguration: TextFieldConfiguration(
+                  controller: _productNameController,
+                  focusNode: _focusNode,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'Search for a product...',
+                  ),
+                  onSubmitted: (value) async {
+                    print('Submitted value: $value');
+                    List<ProductStructStruct> matchingProducts = widget.document
+                        .where((product) => product.barcode == value)
+                        .toList();
 
-                  if (matchingProducts.isNotEmpty) {
-                    ProductStructStruct selectedProduct =
-                        matchingProducts.first;
-                    FFAppState().productHiveput = selectedProduct;
-                    if (FFAppState().holdBillCount == 0) {
-                      FFAppState().holdBillCount =
-                          FFAppState().holdBillCount + 1;
-                      FFAppState().addToAllBillsList(
-                          functions.generateBillDetailsJson(
-                              0.0,
-                              0.0,
-                              0.0,
-                              'CASH',
-                              0.0,
-                              0.0,
-                              FFAppState().billAmt,
-                              0.0,
-                              FFAppState().finalAmt,
-                              '0',
-                              FFAppState().itemCartList.toList(),
-                              FFAppState().holdBillCount));
-                      FFAppState().selBill = 1;
+                    if (matchingProducts.isNotEmpty) {
+                      ProductStructStruct selectedProduct =
+                          matchingProducts.first;
+                      FFAppState().productHiveput = selectedProduct;
+                      if (FFAppState().holdBillCount == 0) {
+                        FFAppState().holdBillCount =
+                            FFAppState().holdBillCount + 1;
+                        FFAppState().addToAllBillsList(
+                            functions.generateBillDetailsJson(
+                                0.0,
+                                0.0,
+                                0.0,
+                                'CASH',
+                                0.0,
+                                0.0,
+                                FFAppState().billAmt,
+                                0.0,
+                                FFAppState().finalAmt,
+                                '0',
+                                FFAppState().itemCartList.toList(),
+                                FFAppState().holdBillCount));
+                        FFAppState().selBill = 1;
+                      }
+                      _model.addtosavebill = await actions.addToHoldListprdCopy(
+                        FFAppState().productHiveput,
+                        FFAppState().selBill,
+                        widget.taxcollection,
+                        functions.enabletaxinclusive(
+                            widget.appSettingsRecord.inclusiveTax),
+                      );
+                      _model.calculateResult =
+                          await actions.calSubTotalForHoldList(
+                        FFAppState().selBill.toString(),
+                        _model.addtosavebill!,
+                      );
+                      _model.calbillAmt = await actions.calBillAmt(
+                        FFAppState().disAmt,
+                        FFAppState().delCharges,
+                      );
+                      await _model.listViewprd?.animateTo(
+                        _model.listViewprd!.position.maxScrollExtent,
+                        duration: Duration(milliseconds: 100),
+                        curve: Curves.ease,
+                      );
+
+                      _model.submitForm();
+                      _productNameController.clear();
+                      await Future.delayed(Duration(milliseconds: 100));
+                      FocusScope.of(context).requestFocus(_focusNode);
                     }
-                    _model.addtosavebill = await actions.addToHoldListprdCopy(
-                      FFAppState().productHiveput,
-                      FFAppState().selBill,
-                      widget.taxcollection,
-                      functions.enabletaxinclusive(
-                          widget.appSettingsRecord.inclusiveTax),
-                    );
-                    _model.calculateResult =
-                        await actions.calSubTotalForHoldList(
-                      FFAppState().selBill.toString(),
-                      _model.addtosavebill!,
-                    );
-                    _model.calbillAmt = await actions.calBillAmt(
-                      FFAppState().disAmt,
-                      FFAppState().delCharges,
-                    );
-                    await _model.listViewprd?.animateTo(
-                      _model.listViewprd!.position.maxScrollExtent,
-                      duration: Duration(milliseconds: 100),
-                      curve: Curves.ease,
-                    );
-
-                    _model.submitForm();
-                    _productNameController.clear();
-                    await Future.delayed(Duration(milliseconds: 100));
-                    FocusScope.of(context).requestFocus(_focusNode);
-                  }
+                  },
+                ),
+                suggestionsCallback: (pattern) {
+                  return widget.document.where((product) => product.name
+                      .toLowerCase()
+                      .contains(pattern.toLowerCase()));
                 },
-              ),
-              suggestionsCallback: (pattern) {
-                return widget.document.where((product) =>
-                    product.name.toLowerCase().contains(pattern.toLowerCase()));
-              },
-              itemBuilder: (context, ProductStructStruct product) {
-                return ListTile(
-                  title: Text(product.name),
-                  subtitle:
-                      Text('\₹${product.sellingPrice.toStringAsFixed(2)}'),
-                );
-              },
-              onSuggestionSelected: (ProductStructStruct document) async {
+                itemBuilder: (context, ProductStructStruct product) {
+                  return ListTile(
+                    title: Text(product.name),
+                    subtitle:
+                        Text('\₹${product.sellingPrice.toStringAsFixed(2)}'),
+                  );
+                },
+                /* onSuggestionSelected: (ProductStructStruct document) async {
                 _productNameController.clear();
                 if (FFAppState().holdBillCount == 0) {
                   FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
@@ -192,8 +193,230 @@ class _SearchHiveprdState extends State<SearchHiveprd> {
                   duration: Duration(milliseconds: 100),
                   curve: Curves.ease,
                 );
-              },
-            ),
+              },*/
+                onSuggestionSelected: (ProductStructStruct document) async {
+                  var _shouldSetState = false;
+                  if (document.stockable) {
+                    if (document.stock > 0) {
+                      if (widget.prdid != document.id) {
+                        if (FFAppState().holdBillCount == 0) {
+                          FFAppState().holdBillCount =
+                              FFAppState().holdBillCount + 1;
+                          FFAppState().addToAllBillsList(
+                              functions.generateBillDetailsJson(
+                                  0.0,
+                                  0.0,
+                                  0.0,
+                                  'CASH',
+                                  0.0,
+                                  0.0,
+                                  FFAppState().billAmt,
+                                  0.0,
+                                  FFAppState().finalAmt,
+                                  '0',
+                                  FFAppState().itemCartList.toList(),
+                                  FFAppState().holdBillCount));
+                          FFAppState().selBill = 1;
+                        }
+                        _model.addtosavebill3 =
+                            await actions.addToHoldListprdCopy(
+                          document,
+                          FFAppState().selBill,
+                          widget!.taxcollection!.toList(),
+                          functions.enabletaxinclusive(widget
+                              .appSettingsRecord.settingList
+                              .where((e) => e.title == 'enableInclusiveTax')
+                              .toList()
+                              .first
+                              .value),
+                        );
+                        _shouldSetState = true;
+                        _model.calculateResult1 =
+                            await actions.calSubTotalForHoldList(
+                          FFAppState().selBill.toString(),
+                          _model.addtosavebill3!.toList(),
+                        );
+                        _shouldSetState = true;
+                        _model.calbillAmt2s = await actions.calBillAmt(
+                          FFAppState().disAmt,
+                          FFAppState().delCharges,
+                        );
+                        _shouldSetState = true;
+                        // _model.stockcheck = false;
+                        // widget.prdid = document.id;
+                        safeSetState(() {});
+                        await _model.listViewprd?.animateTo(
+                          _model.listViewprd!.position.maxScrollExtent,
+                          duration: Duration(milliseconds: 100),
+                          curve: Curves.ease,
+                        );
+                        if (_shouldSetState) safeSetState(() {});
+                        return;
+                      } else {
+                        if (document.stock >
+                            functions.doubleToInt(valueOrDefault<double>(
+                              getJsonField(
+                                functions
+                                    .filterBillList(FFAppState().selBill,
+                                        FFAppState().allBillsList.toList())
+                                    .where((e) =>
+                                        document.id ==
+                                        valueOrDefault<String>(
+                                          getJsonField(
+                                            e,
+                                            r'''$.id''',
+                                          )?.toString(),
+                                          '0',
+                                        ))
+                                    .toList()
+                                    .first,
+                                r'''$.quantity''',
+                              ),
+                              0.0,
+                            ))!) {
+                          if (FFAppState().holdBillCount == 0) {
+                            FFAppState().holdBillCount =
+                                FFAppState().holdBillCount + 1;
+                            FFAppState().addToAllBillsList(
+                                functions.generateBillDetailsJson(
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    'CASH',
+                                    0.0,
+                                    0.0,
+                                    FFAppState().billAmt,
+                                    0.0,
+                                    FFAppState().finalAmt,
+                                    '0',
+                                    FFAppState().itemCartList.toList(),
+                                    FFAppState().holdBillCount));
+                            FFAppState().selBill = 1;
+                          }
+                          _model.addtosavebill3d =
+                              await actions.addToHoldListprdCopy(
+                            document,
+                            FFAppState().selBill,
+                            widget!.taxcollection!.toList(),
+                            functions.enabletaxinclusive(widget
+                                .appSettingsRecord.settingList
+                                .where((e) => e.title == 'enableInclusiveTax')
+                                .toList()
+                                .first
+                                .value),
+                          );
+                          _shouldSetState = true;
+                          _model.calculateResult1d =
+                              await actions.calSubTotalForHoldList(
+                            FFAppState().selBill.toString(),
+                            _model.addtosavebill3d!.toList(),
+                          );
+                          _shouldSetState = true;
+                          _model.calbillAmt2sd = await actions.calBillAmt(
+                            FFAppState().disAmt,
+                            FFAppState().delCharges,
+                          );
+                          _shouldSetState = true;
+                          await _model.listViewprd?.animateTo(
+                            _model.listViewprd!.position.maxScrollExtent,
+                            duration: Duration(milliseconds: 100),
+                            curve: Curves.ease,
+                          );
+                          if (_shouldSetState) safeSetState(() {});
+                          return;
+                        } else {
+                          await showDialog(
+                            context: context,
+                            builder: (alertDialogContext) {
+                              return AlertDialog(
+                                content: Text('Item Out Of Stock'),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () =>
+                                        Navigator.pop(alertDialogContext),
+                                    child: Text('Ok'),
+                                  ),
+                                ],
+                              );
+                            },
+                          );
+                          if (_shouldSetState) safeSetState(() {});
+                          return;
+                        }
+                      }
+                    } else {
+                      await showDialog(
+                        context: context,
+                        builder: (alertDialogContext) {
+                          return AlertDialog(
+                            content: Text('Item Out Of Stock'),
+                            actions: [
+                              TextButton(
+                                onPressed: () =>
+                                    Navigator.pop(alertDialogContext),
+                                child: Text('Ok'),
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                      if (_shouldSetState) safeSetState(() {});
+                      return;
+                    }
+                  } else {
+                    if (FFAppState().holdBillCount == 0) {
+                      FFAppState().holdBillCount =
+                          FFAppState().holdBillCount + 1;
+                      FFAppState().addToAllBillsList(
+                          functions.generateBillDetailsJson(
+                              0.0,
+                              0.0,
+                              0.0,
+                              'CASH',
+                              0.0,
+                              0.0,
+                              FFAppState().billAmt,
+                              0.0,
+                              FFAppState().finalAmt,
+                              '0',
+                              FFAppState().itemCartList.toList(),
+                              FFAppState().holdBillCount));
+                      FFAppState().selBill = 1;
+                    }
+                    _model.addtosavebill2 = await actions.addToHoldListprdCopy(
+                      document,
+                      FFAppState().selBill,
+                      widget!.taxcollection!.toList(),
+                      functions.enabletaxinclusive(widget
+                          .appSettingsRecord.settingList
+                          .where((e) => e.title == 'enableInclusiveTax')
+                          .toList()
+                          .first
+                          .value),
+                    );
+                    _shouldSetState = true;
+                    _model.calculateResult23 =
+                        await actions.calSubTotalForHoldList(
+                      FFAppState().selBill.toString(),
+                      _model.addtosavebill2!.toList(),
+                    );
+                    _shouldSetState = true;
+                    _model.calbillAmt3 = await actions.calBillAmt(
+                      FFAppState().disAmt,
+                      FFAppState().delCharges,
+                    );
+                    _shouldSetState = true;
+                    await _model.listViewprd?.animateTo(
+                      _model.listViewprd!.position.maxScrollExtent,
+                      duration: Duration(milliseconds: 100),
+                      curve: Curves.ease,
+                    );
+                    if (_shouldSetState) safeSetState(() {});
+                    return;
+                  }
+
+                  if (_shouldSetState) safeSetState(() {});
+                }),
           ),
         ),
       ],
@@ -227,7 +450,29 @@ class LoadingScreenNewModel {
   FocusNode? textFieldFocusNode3;
   TextEditingController? textController3;
   String? Function(BuildContext, String?)? textController3Validator;
-
+  List<dynamic>? addtosavebill3;
+  // Stores action output result for [Custom Action - calSubTotalForHoldList] action in ProductName widget.
+  double? calculateResult1;
+  // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
+  double? calbillAmt2s;
+  // Stores action output result for [Custom Action - addToHoldListprdCopy] action in ProductName widget.
+  List<dynamic>? addtosavebill3d;
+  // Stores action output result for [Custom Action - calSubTotalForHoldList] action in ProductName widget.
+  double? calculateResult1d;
+  // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
+  double? calbillAmt2sd;
+  // Stores action output result for [Custom Action - addToHoldListprdCopy] action in ProductName widget.
+  List<dynamic>? addtosavebill2;
+  // Stores action output result for [Custom Action - calSubTotalForHoldList] action in ProductName widget.
+  double? calculateResult23;
+  // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
+  double? calbillAmt3;
+  // Stores action output result for [Custom Action - addToHoldListprdCopy] action in productimage widget.
+  List<dynamic>? addtosavebill23;
+  // Stores action output result for [Custom Action - calSubTotalForHoldList] action in productimage widget.
+  double? calculateResult2;
+  // Stores action output result for [Custom Action - calBillAmt] action in productimage widget.
+  double? calbillAmt2;
   ScrollController? listViewprd;
   void submitForm() async {
     print('Form submitted!');

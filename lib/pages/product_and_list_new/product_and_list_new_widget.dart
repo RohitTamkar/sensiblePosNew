@@ -2093,7 +2093,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                               await actions.clearValue();
                                               FFAppState().noOfItems = 0;
                                               FFAppState().update(() {});
-                                              _model.prdid = '0';
+                                              FFAppState().prdid = '';
                                               safeSetState(() {});
                                             },
                                           ),
@@ -2420,7 +2420,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                             var _shouldSetState = false;
                                                                                             if (productListItem.stockable) {
                                                                                               if (productListItem.stock > 0) {
-                                                                                                if (_model.prdid != productListItem.id) {
+                                                                                                if (FFAppState().prdid != productListItem.id) {
                                                                                                   if (FFAppState().holdBillCount == 0) {
                                                                                                     FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
                                                                                                     FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));
@@ -2443,8 +2443,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                     FFAppState().delCharges,
                                                                                                   );
                                                                                                   _shouldSetState = true;
-                                                                                                  _model.stockcheck = false;
-                                                                                                  _model.prdid = productListItem.id;
+                                                                                                  FFAppState().prdid = productListItem.id;
                                                                                                   safeSetState(() {});
                                                                                                   await _model.listViewprd?.animateTo(
                                                                                                     _model.listViewprd!.position.maxScrollExtent,
@@ -4037,8 +4036,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               ),
                                                                               FFAppState().delCharges,
                                                                             );
-                                                                            _model.prdid =
-                                                                                '0';
+                                                                            FFAppState().prdid =
+                                                                                '';
                                                                             safeSetState(() {});
 
                                                                             safeSetState(() {});
@@ -6220,6 +6219,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                 FFAppState()
                                                                     .setCustMobNo = '';
                                                                 FFAppState()
+                                                                    .prdid = '';
+                                                                FFAppState()
                                                                     .update(
                                                                         () {});
                                                                 FFAppState()
@@ -7530,12 +7531,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                   FFAppState()
                                                                       .noOfItems = 0;
                                                                   FFAppState()
+                                                                      .prdid = '';
+                                                                  FFAppState()
                                                                       .update(
                                                                           () {});
-                                                                  _model.prdid =
-                                                                      '0';
-                                                                  safeSetState(
-                                                                      () {});
                                                                   FFAppState()
                                                                           .finalAmt =
                                                                       0.0;

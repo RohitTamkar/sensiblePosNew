@@ -3419,6 +3419,12 @@ class FFAppState extends ChangeNotifier {
   set emailId(String value) {
     _emailId = value;
   }
+
+  String _prdid = '';
+  String get prdid => _prdid;
+  set prdid(String value) {
+    _prdid = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {
