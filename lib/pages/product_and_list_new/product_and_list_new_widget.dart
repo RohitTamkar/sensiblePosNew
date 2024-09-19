@@ -2133,10 +2133,15 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               '';
                                                                           safeSetState(
                                                                               () {});
+                                                                          _model.prdhiveall =
+                                                                              await actions.getProductlistHive();
                                                                           FFAppState().productHive = _model
-                                                                              .hiveProductList!
+                                                                              .prdhiveall!
                                                                               .toList()
                                                                               .cast<ProductStructStruct>();
+                                                                          safeSetState(
+                                                                              () {});
+
                                                                           safeSetState(
                                                                               () {});
                                                                         },
@@ -2223,9 +2228,12 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                         safeSetState(() {});
                                                                                         FFAppState().categoryColor = categoryListItem.id;
                                                                                         FFAppState().update(() {});
+                                                                                        _model.prdhive = await actions.getProductlistHive();
                                                                                         FFAppState().categoryID = categoryListItem.id;
                                                                                         safeSetState(() {});
-                                                                                        FFAppState().productHive = _model.hiveProductList!.where((e) => e.categoryId == categoryListItem.id).toList().cast<ProductStructStruct>();
+                                                                                        FFAppState().productHive = _model.prdhive!.where((e) => e.categoryId == categoryListItem.id).toList().cast<ProductStructStruct>();
+                                                                                        safeSetState(() {});
+
                                                                                         safeSetState(() {});
                                                                                       },
                                                                                       child: Container(

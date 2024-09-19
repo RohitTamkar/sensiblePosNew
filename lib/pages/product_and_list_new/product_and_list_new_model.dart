@@ -85,8 +85,12 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
   ScrollController? listViewController1;
   // Stores action output result for [Custom Action - calSubTotalForHoldList] action in Container widget.
   double? res11;
+  // Stores action output result for [Custom Action - getProductlistHive] action in Container widget.
+  List<ProductStructStruct>? prdhiveall;
   // State field(s) for ListView widget.
   ScrollController? listViewController2;
+  // Stores action output result for [Custom Action - getProductlistHive] action in Container widget.
+  List<ProductStructStruct>? prdhive;
   // State field(s) for GridView widget.
   ScrollController? gridViewController;
   // Stores action output result for [Custom Action - addToHoldListprdCopy] action in ProductName widget.
