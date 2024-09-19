@@ -7277,7 +7277,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               .stockupdateprdprt !=
                                                                           null) {
                                                                         await _model
-                                                                            .stockupdateprd!
+                                                                            .stockupdateprdprt!
                                                                             .reference
                                                                             .update({
                                                                           ...mapToFirestore(
@@ -7289,7 +7289,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                         _model.itemprd2 =
                                                                             await actions.hivegetproductbyId(
                                                                           _model
-                                                                              .stockupdateprd
+                                                                              .stockupdateprdprt
                                                                               ?.reference
                                                                               .id,
                                                                           _model
