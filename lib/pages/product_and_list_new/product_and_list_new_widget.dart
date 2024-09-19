@@ -1558,7 +1558,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                       EdgeInsets.all(2.0),
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .alternate,
+                                                      .primary,
                                                   textStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
