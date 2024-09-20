@@ -91,18 +91,6 @@ class PaymentModePurchesModel
   PaymentRecord? paymentDoc22d;
   // Stores action output result for [Custom Action - addInvoiceBillhive] action in Button widget.
   InvoiceStructStruct? hiveInvoiceData;
-  // Stores action output result for [Custom Action - calShiftSummaryNewgrocery] action in Button widget.
-  dynamic? shiftSummarResultsNew;
-  // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
-  ShiftDetailsStruct? updatedShiftDetails;
-  // Stores action output result for [Custom Action - scanPrinter] action in Button widget.
-  bool? resDevice2;
-  // Stores action output result for [Custom Action - connectDevice] action in Button widget.
-  bool? isconnected;
-  // Stores action output result for [Custom Action - selectBillPrint] action in Button widget.
-  List<dynamic>? returnedList2;
-  // Stores action output result for [Custom Action - newCustomAction] action in Button widget.
-  List<dynamic>? device;
 
   @override
   void initState(BuildContext context) {}
