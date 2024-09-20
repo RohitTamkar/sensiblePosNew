@@ -15,6 +15,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
@@ -709,7 +711,7 @@ Future printBillnewhive(
         ////////////////////////////////////////////////////////////////////
       }
 
-      if (invoiceDetails.paymentMode.toString() == 'CREDIT') {
+      if (FFAppState().setCustName.isNotEmpty) {
         QuerySnapshot querySnapshotparty;
         querySnapshotparty = await FirebaseFirestore.instance
             .collection('OUTLET')

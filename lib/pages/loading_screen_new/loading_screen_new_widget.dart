@@ -50,7 +50,7 @@ class _LoadingScreenNewWidgetState extends State<LoadingScreenNewWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       _model.internetconnection = await actions.checkInternetConnection();
-      if (_model.internetconnection!) {
+      if (true) {
         _model.productListCopy = await queryProductRecordOnce(
           parent: FFAppState().outletIdRef,
         );

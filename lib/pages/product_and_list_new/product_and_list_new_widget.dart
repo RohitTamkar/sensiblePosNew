@@ -6109,8 +6109,8 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                           ..recipeId = _model
                                                                               .itemprd
                                                                               ?.recipeId
-                                                                          ..incrementStock(_model.itemprd!.stock -
-                                                                              (functions.doubleToInt((_model.prdlistsavebill?[FFAppState().startLoop])?.quantity)!))
+                                                                          ..stock =
+                                                                              _model.itemprd!.stock - (functions.doubleToInt((_model.prdlistsavebill?[FFAppState().startLoop])?.quantity)!)
                                                                           ..isDeleted = _model
                                                                               .itemprd
                                                                               ?.isDeleted

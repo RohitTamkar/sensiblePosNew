@@ -1469,8 +1469,35 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                     ),
                                     Expanded(
                                       child: FFButtonWidget(
-                                        onPressed: () {
-                                          print('Button pressed ...');
+                                        onPressed: () async {
+                                          context.pushNamed(
+                                            'BillingGroceryNewCopy',
+                                            queryParameters: {
+                                              'shiftdetail': serializeParam(
+                                                widget!.shiftdetail,
+                                                ParamType.JSON,
+                                              ),
+                                              'taxDetails': serializeParam(
+                                                widget!.taxDetails,
+                                                ParamType.Document,
+                                                isList: true,
+                                              ),
+                                              'userref': serializeParam(
+                                                widget!.userref,
+                                                ParamType.DocumentReference,
+                                              ),
+                                              'paymentMode': serializeParam(
+                                                widget!.paymentMode,
+                                                ParamType.Document,
+                                                isList: true,
+                                              ),
+                                            }.withoutNulls,
+                                            extra: <String, dynamic>{
+                                              'taxDetails': widget!.taxDetails,
+                                              'paymentMode':
+                                                  widget!.paymentMode,
+                                            },
+                                          );
                                         },
                                         text:
                                             FFLocalizations.of(context).getText(

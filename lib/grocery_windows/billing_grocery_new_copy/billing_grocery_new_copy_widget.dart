@@ -1246,9 +1246,8 @@ class _BillingGroceryNewCopyWidgetState
                                                       .primaryBtnText,
                                                   size: 18.0,
                                                 ),
-                                                onPressed: () {
-                                                  print(
-                                                      'IconButton pressed ...');
+                                                onPressed: () async {
+                                                  context.safePop();
                                                 },
                                               ),
                                             ),
@@ -1256,7 +1255,7 @@ class _BillingGroceryNewCopyWidgetState
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  '86p0ne9t' /* Sale */,
+                                                  '86p0ne9t' /* Purchase */,
                                                 ),
                                                 textAlign: TextAlign.start,
                                                 style:
@@ -1524,7 +1523,7 @@ class _BillingGroceryNewCopyWidgetState
                                       child: FFButtonWidget(
                                         onPressed: () async {
                                           context.pushNamed(
-                                            'BillingGroceryNewCopy',
+                                            'BillingGroceryNew',
                                             queryParameters: {
                                               'shiftdetail': serializeParam(
                                                 widget!.shiftdetail,
@@ -1991,7 +1990,7 @@ class _BillingGroceryNewCopyWidgetState
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                'cj73tgo7' /* Invoice No. */,
+                                                                'cj73tgo7' /* Po No. */,
                                                               ),
                                                               textAlign:
                                                                   TextAlign
@@ -3767,7 +3766,7 @@ class _BillingGroceryNewCopyWidgetState
                                                   .showSnackBar(
                                                 SnackBar(
                                                   content: Text(
-                                                    'Prosuct List Is Empty!',
+                                                    'Product List Is Empty!',
                                                     style: TextStyle(
                                                       color:
                                                           FlutterFlowTheme.of(
