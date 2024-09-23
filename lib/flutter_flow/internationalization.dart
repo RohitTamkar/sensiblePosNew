@@ -26828,28 +26828,28 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // mixPaymentMode
   {
     'u5vt3cak': {
-      'en': '0',
+      'en': '',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
     '0nkg1bkn': {
-      'en': '',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    '7oxje9yy': {
       'en': '0',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'iid9a3zg': {
+    '7oxje9yy': {
       'en': '',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'iid9a3zg': {
+      'en': '0',
       'hi': '',
       'kn': '',
       'mr': '',

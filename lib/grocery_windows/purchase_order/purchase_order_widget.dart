@@ -3511,21 +3511,23 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                         mainAxisSize:
                                                             MainAxisSize.max,
                                                         children: [
-                                                          Expanded(
-                                                            child: Container(
-                                                              width: 100.0,
-                                                              height: 100.0,
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryBackground,
-                                                              ),
-                                                              child:
-                                                                  PurchaseWidget(
-                                                                key: Key(
-                                                                    'Keysxw_${prdlistIndex}_of_${prdlist.length}'),
-                                                              ),
+                                                          Container(
+                                                            width: MediaQuery
+                                                                        .sizeOf(
+                                                                            context)
+                                                                    .width *
+                                                                0.97,
+                                                            height: 100.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .secondaryBackground,
+                                                            ),
+                                                            child:
+                                                                PurchaseWidget(
+                                                              key: Key(
+                                                                  'Keysxw_${prdlistIndex}_of_${prdlist.length}'),
                                                             ),
                                                           ),
                                                           FlutterFlowIconButton(

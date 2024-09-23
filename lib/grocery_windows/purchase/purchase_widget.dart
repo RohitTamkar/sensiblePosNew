@@ -266,7 +266,7 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                     ),
                   ),
                   Expanded(
-                    flex: 3,
+                    flex: 4,
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
