@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -205,6 +206,29 @@ class _MixPaymentModeWidgetState extends State<MixPaymentModeWidget> {
                                             controller:
                                                 _model.paymode1TextController,
                                             focusNode: _model.paymode1FocusNode,
+                                            onChanged: (_) =>
+                                                EasyDebounce.debounce(
+                                              '_model.paymode1TextController',
+                                              Duration(milliseconds: 2000),
+                                              () async {
+                                                safeSetState(() {
+                                                  _model.paymode2TextController
+                                                      ?.text = (FFAppState()
+                                                              .finalAmt -
+                                                          double.parse(_model
+                                                              .paymode1TextController
+                                                              .text))
+                                                      .toString();
+                                                  _model.paymode2TextController
+                                                          ?.selection =
+                                                      TextSelection.collapsed(
+                                                          offset: _model
+                                                              .paymode2TextController!
+                                                              .text
+                                                              .length);
+                                                });
+                                              },
+                                            ),
                                             autofocus: false,
                                             obscureText: false,
                                             decoration: InputDecoration(
@@ -380,6 +404,29 @@ class _MixPaymentModeWidgetState extends State<MixPaymentModeWidget> {
                                             controller:
                                                 _model.paymode2TextController,
                                             focusNode: _model.paymode2FocusNode,
+                                            onChanged: (_) =>
+                                                EasyDebounce.debounce(
+                                              '_model.paymode2TextController',
+                                              Duration(milliseconds: 2000),
+                                              () async {
+                                                safeSetState(() {
+                                                  _model.paymode1TextController
+                                                      ?.text = (FFAppState()
+                                                              .finalAmt -
+                                                          double.parse(_model
+                                                              .paymode2TextController
+                                                              .text))
+                                                      .toString();
+                                                  _model.paymode1TextController
+                                                          ?.selection =
+                                                      TextSelection.collapsed(
+                                                          offset: _model
+                                                              .paymode1TextController!
+                                                              .text
+                                                              .length);
+                                                });
+                                              },
+                                            ),
                                             autofocus: false,
                                             obscureText: false,
                                             decoration: InputDecoration(
@@ -527,26 +574,30 @@ class _MixPaymentModeWidgetState extends State<MixPaymentModeWidget> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text(
-                                      FFLocalizations.of(context).getText(
-                                        'n4pow71x' /* Payment Mode: */,
+                                    Expanded(
+                                      child: Text(
+                                        FFLocalizations.of(context).getText(
+                                          'n4pow71x' /* Payment Mode: */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily,
+                                              fontSize: 20.0,
+                                              letterSpacing: 0.0,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily),
+                                            ),
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMediumFamily,
-                                            fontSize: 20.0,
-                                            letterSpacing: 0.0,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMediumFamily),
-                                          ),
                                     ),
                                     Expanded(
-                                      flex: 3,
+                                      flex: 1,
                                       child: Text(
                                         FFAppState().PayMode,
                                         style: FlutterFlowTheme.of(context)
@@ -557,7 +608,7 @@ class _MixPaymentModeWidgetState extends State<MixPaymentModeWidget> {
                                                       .bodyMediumFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .primaryText,
+                                                      .info,
                                               fontSize: 20.0,
                                               letterSpacing: 0.0,
                                               useGoogleFonts: GoogleFonts
@@ -604,7 +655,7 @@ class _MixPaymentModeWidgetState extends State<MixPaymentModeWidget> {
                                       ),
                                     ),
                                     Expanded(
-                                      flex: 3,
+                                      flex: 1,
                                       child: Text(
                                         valueOrDefault<String>(
                                           FFAppState().finalAmt.toString(),
@@ -618,7 +669,7 @@ class _MixPaymentModeWidgetState extends State<MixPaymentModeWidget> {
                                                       .bodyMediumFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .primaryText,
+                                                      .success,
                                               fontSize: 15.0,
                                               letterSpacing: 0.0,
                                               useGoogleFonts: GoogleFonts

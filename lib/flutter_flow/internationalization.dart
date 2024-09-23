@@ -26877,16 +26877,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
   },
-  // Purchase
-  {
-    'c400dobg': {
-      'en': 'TextField',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-  },
   // Miscellaneous
   {
     'c0tsq8sj': {
