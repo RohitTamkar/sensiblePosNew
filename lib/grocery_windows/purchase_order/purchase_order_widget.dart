@@ -8,7 +8,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/grocery_windows/add_product_grocery/add_product_grocery_widget.dart';
 import '/grocery_windows/add_supplier/add_supplier_widget.dart';
-import '/grocery_windows/grocery/grocery_widget.dart';
 import '/grocery_windows/payment_mode_grocery/payment_mode_grocery_widget.dart';
 import 'dart:math';
 import '/custom_code/actions/index.dart' as actions;
@@ -3145,7 +3144,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                'kezsb2m0' /* MRP */,
+                                                                'kezsb2m0' /* AcceptedQty */,
                                                               ),
                                                               textAlign:
                                                                   TextAlign
@@ -3197,7 +3196,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                'm943bqfa' /* Discount % */,
+                                                                'm943bqfa' /* RejectedQty */,
                                                               ),
                                                               textAlign:
                                                                   TextAlign
@@ -3249,7 +3248,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                'j2ue1omv' /* Discount Amt */,
+                                                                'j2ue1omv' /* Note */,
                                                               ),
                                                               textAlign:
                                                                   TextAlign
@@ -3464,140 +3463,78 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                       'IconButton pressed ...');
                                                 },
                                               ),
+                                              FlutterFlowIconButton(
+                                                borderRadius: 10.0,
+                                                borderWidth: 0.0,
+                                                buttonSize: 35.0,
+                                                icon: Icon(
+                                                  Icons.delete_outline,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  size: 20.0,
+                                                ),
+                                                onPressed: () async {
+                                                  _model.ret = await actions
+                                                      .calSubTotalForGrocery(
+                                                    FFAppState()
+                                                        .selBill
+                                                        .toString(),
+                                                    FFAppState()
+                                                        .allBillsList
+                                                        .toList(),
+                                                  );
+                                                  _model.ads = await actions
+                                                      .calBillAmtGrocery(
+                                                    valueOrDefault<double>(
+                                                      FFAppState().disAmt,
+                                                      0.0,
+                                                    ),
+                                                    FFAppState().delCharges,
+                                                  );
+
+                                                  safeSetState(() {});
+                                                },
+                                              ),
                                             ],
                                           ),
                                         ),
                                       ),
-                                      Expanded(
-                                        child: Builder(
-                                          builder: (context) {
-                                            final prdlist = functions
-                                                .filterBillList(
-                                                    FFAppState().selBill,
-                                                    FFAppState()
-                                                        .allBillsList
-                                                        .toList())
-                                                .toList();
+                                      Builder(
+                                        builder: (context) {
+                                          final prdlist1 = functions
+                                              .filterBillList(
+                                                  FFAppState().selBill,
+                                                  FFAppState()
+                                                      .allBillsList
+                                                      .toList())
+                                              .toList();
 
-                                            return ListView.builder(
-                                              padding: EdgeInsets.zero,
-                                              shrinkWrap: true,
-                                              scrollDirection: Axis.vertical,
-                                              itemCount: prdlist.length,
-                                              itemBuilder:
-                                                  (context, prdlistIndex) {
-                                                final prdlistItem =
-                                                    prdlist[prdlistIndex];
-                                                return Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 0.0, 5.0),
-                                                  child: Container(
-                                                    height: 45.0,
-                                                    decoration: BoxDecoration(
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryBackground,
-                                                    ),
-                                                    child: Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  15.0,
-                                                                  0.0),
-                                                      child: Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        children: [
-                                                          Expanded(
-                                                            child:
-                                                                GroceryWidget(
-                                                              key: Key(
-                                                                  'Keyy2c_${prdlistIndex}_of_${prdlist.length}'),
-                                                              parameter2: ProductStructStruct
-                                                                  .maybeFromMap(
-                                                                      prdlistItem),
-                                                              parameter3: widget!
-                                                                  .taxDetails,
-                                                              parameter4: containerAppSettingsRecord
-                                                                  ?.settingList
-                                                                  ?.where((e) =>
-                                                                      e.title ==
-                                                                      'enableInclusiveTax')
-                                                                  .toList()
-                                                                  ?.first
-                                                                  ?.value,
-                                                              unitList:
-                                                                  purchaseOrderUnitTypeRecordList,
-                                                              jsonitem:
-                                                                  getJsonField(
-                                                                prdlistItem,
-                                                                r'''$''',
-                                                              ),
-                                                            ),
-                                                          ),
-                                                          FlutterFlowIconButton(
-                                                            borderRadius: 10.0,
-                                                            borderWidth: 0.0,
-                                                            buttonSize: 35.0,
-                                                            icon: Icon(
-                                                              Icons
-                                                                  .delete_outline,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primary,
-                                                              size: 20.0,
-                                                            ),
-                                                            onPressed:
-                                                                () async {
-                                                              _model.res20 =
-                                                                  await actions
-                                                                      .removeHoldListItem(
-                                                                getJsonField(
-                                                                  prdlistItem,
-                                                                  r'''$''',
-                                                                ),
-                                                                FFAppState()
-                                                                    .selBill,
-                                                              );
-                                                              _model.ret =
-                                                                  await actions
-                                                                      .calSubTotalForGrocery(
-                                                                FFAppState()
-                                                                    .selBill
-                                                                    .toString(),
-                                                                FFAppState()
-                                                                    .allBillsList
-                                                                    .toList(),
-                                                              );
-                                                              _model.ads =
-                                                                  await actions
-                                                                      .calBillAmtGrocery(
-                                                                valueOrDefault<
-                                                                    double>(
-                                                                  FFAppState()
-                                                                      .disAmt,
-                                                                  0.0,
-                                                                ),
-                                                                FFAppState()
-                                                                    .delCharges,
-                                                              );
-
-                                                              safeSetState(
-                                                                  () {});
-                                                            },
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ),
+                                          return ListView.builder(
+                                            padding: EdgeInsets.zero,
+                                            shrinkWrap: true,
+                                            scrollDirection: Axis.vertical,
+                                            itemCount: prdlist1.length,
+                                            itemBuilder:
+                                                (context, prdlist1Index) {
+                                              final prdlist1Item =
+                                                  prdlist1[prdlist1Index];
+                                              return Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 5.0),
+                                                child: Container(
+                                                  height: 45.0,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryBackground,
                                                   ),
-                                                );
-                                              },
-                                            );
-                                          },
-                                        ),
+                                                ),
+                                              );
+                                            },
+                                          );
+                                        },
                                       ),
                                     ],
                                   ),

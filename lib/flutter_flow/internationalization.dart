@@ -22550,21 +22550,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     'kezsb2m0': {
-      'en': 'MRP',
+      'en': 'AcceptedQty',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
     'm943bqfa': {
-      'en': 'Discount %',
+      'en': 'RejectedQty',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
     'j2ue1omv': {
-      'en': 'Discount Amt',
+      'en': 'Note',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -26871,6 +26871,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '7jkr2owr': {
       'en': 'Done',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+  },
+  // Purchase
+  {
+    'c400dobg': {
+      'en': 'TextField',
       'hi': '',
       'kn': '',
       'mr': '',

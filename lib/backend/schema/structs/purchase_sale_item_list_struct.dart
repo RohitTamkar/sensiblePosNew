@@ -20,6 +20,7 @@ class PurchaseSaleItemListStruct extends FFFirebaseStruct {
     int? total,
     int? acceptedQty,
     int? rejectedQty,
+    String? note,
     FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _name = name,
         _quantity = quantity,
@@ -31,6 +32,7 @@ class PurchaseSaleItemListStruct extends FFFirebaseStruct {
         _total = total,
         _acceptedQty = acceptedQty,
         _rejectedQty = rejectedQty,
+        _note = note,
         super(firestoreUtilData);
 
   // "name" field.
@@ -118,6 +120,13 @@ class PurchaseSaleItemListStruct extends FFFirebaseStruct {
 
   bool hasRejectedQty() => _rejectedQty != null;
 
+  // "note" field.
+  String? _note;
+  String get note => _note ?? '';
+  set note(String? val) => _note = val;
+
+  bool hasNote() => _note != null;
+
   static PurchaseSaleItemListStruct fromMap(Map<String, dynamic> data) =>
       PurchaseSaleItemListStruct(
         name: data['name'] as String?,
@@ -130,6 +139,7 @@ class PurchaseSaleItemListStruct extends FFFirebaseStruct {
         total: castToType<int>(data['total']),
         acceptedQty: castToType<int>(data['acceptedQty']),
         rejectedQty: castToType<int>(data['rejectedQty']),
+        note: data['note'] as String?,
       );
 
   static PurchaseSaleItemListStruct? maybeFromMap(dynamic data) => data is Map
@@ -147,6 +157,7 @@ class PurchaseSaleItemListStruct extends FFFirebaseStruct {
         'total': _total,
         'acceptedQty': _acceptedQty,
         'rejectedQty': _rejectedQty,
+        'note': _note,
       }.withoutNulls;
 
   @override
@@ -190,6 +201,10 @@ class PurchaseSaleItemListStruct extends FFFirebaseStruct {
         'rejectedQty': serializeParam(
           _rejectedQty,
           ParamType.int,
+        ),
+        'note': serializeParam(
+          _note,
+          ParamType.String,
         ),
       }.withoutNulls;
 
@@ -246,6 +261,11 @@ class PurchaseSaleItemListStruct extends FFFirebaseStruct {
           ParamType.int,
           false,
         ),
+        note: deserializeParam(
+          data['note'],
+          ParamType.String,
+          false,
+        ),
       );
 
   @override
@@ -263,7 +283,8 @@ class PurchaseSaleItemListStruct extends FFFirebaseStruct {
         delliveryChrg == other.delliveryChrg &&
         total == other.total &&
         acceptedQty == other.acceptedQty &&
-        rejectedQty == other.rejectedQty;
+        rejectedQty == other.rejectedQty &&
+        note == other.note;
   }
 
   @override
@@ -277,7 +298,8 @@ class PurchaseSaleItemListStruct extends FFFirebaseStruct {
         delliveryChrg,
         total,
         acceptedQty,
-        rejectedQty
+        rejectedQty,
+        note
       ]);
 }
 
@@ -292,6 +314,7 @@ PurchaseSaleItemListStruct createPurchaseSaleItemListStruct({
   int? total,
   int? acceptedQty,
   int? rejectedQty,
+  String? note,
   Map<String, dynamic> fieldValues = const {},
   bool clearUnsetFields = true,
   bool create = false,
@@ -308,6 +331,7 @@ PurchaseSaleItemListStruct createPurchaseSaleItemListStruct({
       total: total,
       acceptedQty: acceptedQty,
       rejectedQty: rejectedQty,
+      note: note,
       firestoreUtilData: FirestoreUtilData(
         clearUnsetFields: clearUnsetFields,
         create: create,

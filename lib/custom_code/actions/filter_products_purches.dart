@@ -33,10 +33,10 @@ Future<List<PurchaseSaleItemListStruct>> filterProductsPurches(
               total: itemList[j]["total"],
               id: itemList[j]["id"],
               catId: itemList[j]["catId"],
-              taxId: itemList[j][""],
-              taxPer: itemList[j][""],
-              taxAmt: itemList[j][""],
-              isDeletedItem: false,
+              // taxId: itemList[j][""],
+              // taxPer: itemList[j][""],
+              // taxAmt: itemList[j][""],
+              // isDeletedItem: false,
             );
 
             returnList.add(struct);
@@ -46,5 +46,6 @@ Future<List<PurchaseSaleItemListStruct>> filterProductsPurches(
         }
       }
     }
+    return returnList;
   }
 }

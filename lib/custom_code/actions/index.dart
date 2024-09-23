@@ -1,4 +1,5 @@
 export 'check_platform.dart' show checkPlatform;
+export 'calculate_mixpaymentamt.dart' show calculateMixpaymentamt;
 export 'print_billnewhive.dart' show printBillnewhive;
 export 'cal_bill_amt_grocery_pay.dart' show calBillAmtGroceryPay;
 export 'print_bill_format_two.dart' show printBillFormatTwo;
@@ -148,3 +149,4 @@ export 'synclocaldata.dart' show synclocaldata;
 export 'hivegetproductby_id.dart' show hivegetproductbyId;
 export 'filter_products_purches.dart' show filterProductsPurches;
 export 'add_invoice_billhive_purches.dart' show addInvoiceBillhivePurches;
+export 'paymentmodemix.dart' show paymentmodemix;

@@ -8,7 +8,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/grocery_windows/add_product_grocery/add_product_grocery_widget.dart';
 import '/grocery_windows/add_supplier/add_supplier_widget.dart';
-import '/grocery_windows/grocery/grocery_widget.dart';
 import '/grocery_windows/payment_mode_grocery/payment_mode_grocery_widget.dart';
 import 'dart:math';
 import '/custom_code/actions/index.dart' as actions;
@@ -65,8 +64,6 @@ class PurchaseOrderModel extends FlutterFlowModel<PurchaseOrderWidget> {
   FocusNode? custmobFocusNode;
   TextEditingController? custmobTextController;
   String? Function(BuildContext, String?)? custmobTextControllerValidator;
-  // Stores action output result for [Custom Action - removeHoldListItem] action in IconButton widget.
-  List<dynamic>? res20;
   // Stores action output result for [Custom Action - calSubTotalForGrocery] action in IconButton widget.
   double? ret;
   // Stores action output result for [Custom Action - calBillAmtGrocery] action in IconButton widget.

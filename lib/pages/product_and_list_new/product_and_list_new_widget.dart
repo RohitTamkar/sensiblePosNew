@@ -3,6 +3,7 @@ import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/components/discount_and_delivery_copy/discount_and_delivery_copy_widget.dart';
 import '/components/menu_drawer/menu_drawer_widget.dart';
+import '/components/mix_payment_mode/mix_payment_mode_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -4831,17 +4832,47 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                           .dropDownValue!;
                                                                   safeSetState(
                                                                       () {});
-                                                                  if (!functions
-                                                                      .paymentmodemix(
-                                                                          FFAppState()
-                                                                              .PayMode)) {
+                                                                  _model.returntrue =
+                                                                      await actions
+                                                                          .paymentmodemix(
                                                                     FFAppState()
-                                                                            .PayMode =
-                                                                        _model
-                                                                            .dropDownValue!;
-                                                                    safeSetState(
-                                                                        () {});
+                                                                        .PayMode,
+                                                                  );
+                                                                  if (_model
+                                                                      .returntrue!) {
+                                                                    await showModalBottomSheet(
+                                                                      isScrollControlled:
+                                                                          true,
+                                                                      backgroundColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      enableDrag:
+                                                                          false,
+                                                                      context:
+                                                                          context,
+                                                                      builder:
+                                                                          (context) {
+                                                                        return GestureDetector(
+                                                                          onTap: () =>
+                                                                              FocusScope.of(context).unfocus(),
+                                                                          child:
+                                                                              Padding(
+                                                                            padding:
+                                                                                MediaQuery.viewInsetsOf(context),
+                                                                            child:
+                                                                                MixPaymentModeWidget(
+                                                                              appsetting: productAndListNewAppSettingsRecord,
+                                                                            ),
+                                                                          ),
+                                                                        );
+                                                                      },
+                                                                    ).then((value) =>
+                                                                        safeSetState(
+                                                                            () {}));
                                                                   }
+
+                                                                  safeSetState(
+                                                                      () {});
                                                                 },
                                                                 width: double
                                                                     .infinity,
