@@ -2979,7 +2979,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                       ),
                                                     ),
                                                     Expanded(
-                                                      flex: 5,
+                                                      flex: 3,
                                                       child: Row(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -3031,7 +3031,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                       ),
                                                     ),
                                                     Expanded(
-                                                      flex: 3,
+                                                      flex: 4,
                                                       child: Row(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -3083,7 +3083,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                       ),
                                                     ),
                                                     Expanded(
-                                                      flex: 4,
+                                                      flex: 3,
                                                       child: Row(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -3187,7 +3187,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                       ),
                                                     ),
                                                     Expanded(
-                                                      flex: 3,
+                                                      flex: 4,
                                                       child: Row(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -3239,7 +3239,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                       ),
                                                     ),
                                                     Expanded(
-                                                      flex: 4,
+                                                      flex: 3,
                                                       child: Row(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -3291,7 +3291,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                       ),
                                                     ),
                                                     Expanded(
-                                                      flex: 3,
+                                                      flex: 4,
                                                       child: Row(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -3343,7 +3343,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                       ),
                                                     ),
                                                     Expanded(
-                                                      flex: 4,
+                                                      flex: 3,
                                                       child: Row(
                                                         mainAxisSize:
                                                             MainAxisSize.max,

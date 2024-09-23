@@ -199,7 +199,7 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                     ),
                   ),
                   Expanded(
-                    flex: 5,
+                    flex: 3,
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -231,7 +231,7 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                     ),
                   ),
                   Expanded(
-                    flex: 3,
+                    flex: 4,
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -402,7 +402,7 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                     ),
                   ),
                   Expanded(
-                    flex: 3,
+                    flex: 4,
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -658,7 +658,7 @@ class _PurchaseWidgetState extends State<PurchaseWidget> {
                     ),
                   ),
                   Expanded(
-                    flex: 4,
+                    flex: 3,
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [

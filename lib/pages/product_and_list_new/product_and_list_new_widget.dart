@@ -6226,6 +6226,12 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                   FFAppState()
                                                                       .selBill,
                                                                 );
+                                                                safeSetState(
+                                                                    () {
+                                                                  _model.dropDownValueController
+                                                                          ?.value =
+                                                                      'CASH';
+                                                                });
                                                                 FFAppState()
                                                                         .lastBill =
                                                                     FFAppState()
@@ -7557,6 +7563,12 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                     FFAppState()
                                                                         .selBill,
                                                                   );
+                                                                  safeSetState(
+                                                                      () {
+                                                                    _model.dropDownValueController
+                                                                            ?.value =
+                                                                        'CASH';
+                                                                  });
                                                                   await actions
                                                                       .clearValue();
                                                                   FFAppState()
