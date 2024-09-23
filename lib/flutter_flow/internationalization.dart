@@ -22379,7 +22379,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
   },
-  // BillingGroceryNewCopy
+  // purchaseOrder
   {
     '86p0ne9t': {
       'en': 'Purchase',
@@ -26811,14 +26811,66 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     '63rh4uxa': {
-      'en': 'Save',
+      'en': 'Cancel',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
     '5tk9oj87': {
-      'en': 'Print',
+      'en': 'Submit',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+  },
+  // mixPaymentMode
+  {
+    'u5vt3cak': {
+      'en': '0',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '0nkg1bkn': {
+      'en': '',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '7oxje9yy': {
+      'en': '0',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'iid9a3zg': {
+      'en': '',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'n4pow71x': {
+      'en': 'Payment Mode:',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '30p2qwo3': {
+      'en': 'Bill Amt :',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '7jkr2owr': {
+      'en': 'Done',
       'hi': '',
       'kn': '',
       'mr': '',

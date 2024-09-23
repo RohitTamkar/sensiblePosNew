@@ -23,11 +23,11 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:text_search/text_search.dart';
-import 'billing_grocery_new_copy_model.dart';
-export 'billing_grocery_new_copy_model.dart';
+import 'purchase_order_model.dart';
+export 'purchase_order_model.dart';
 
-class BillingGroceryNewCopyWidget extends StatefulWidget {
-  const BillingGroceryNewCopyWidget({
+class PurchaseOrderWidget extends StatefulWidget {
+  const PurchaseOrderWidget({
     super.key,
     this.shiftdetail,
     this.taxDetails,
@@ -41,13 +41,12 @@ class BillingGroceryNewCopyWidget extends StatefulWidget {
   final List<PaymentModeRecord>? paymentMode;
 
   @override
-  State<BillingGroceryNewCopyWidget> createState() =>
-      _BillingGroceryNewCopyWidgetState();
+  State<PurchaseOrderWidget> createState() => _PurchaseOrderWidgetState();
 }
 
-class _BillingGroceryNewCopyWidgetState
-    extends State<BillingGroceryNewCopyWidget> with TickerProviderStateMixin {
-  late BillingGroceryNewCopyModel _model;
+class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
+    with TickerProviderStateMixin {
+  late PurchaseOrderModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -56,7 +55,7 @@ class _BillingGroceryNewCopyWidgetState
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => BillingGroceryNewCopyModel());
+    _model = createModel(context, () => PurchaseOrderModel());
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
@@ -158,11 +157,10 @@ class _BillingGroceryNewCopyWidgetState
             ),
           );
         }
-        List<UnitTypeRecord> billingGroceryNewCopyUnitTypeRecordList =
-            snapshot.data!;
+        List<UnitTypeRecord> purchaseOrderUnitTypeRecordList = snapshot.data!;
 
         return Title(
-            title: 'BillingGroceryNewCopy',
+            title: 'purchaseOrder',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
               onTap: () => FocusScope.of(context).unfocus(),
@@ -2316,7 +2314,7 @@ class _BillingGroceryNewCopyWidgetState
                                                                   appSettingsRecord:
                                                                       containerAppSettingsRecord!,
                                                                   unitcollection:
-                                                                      billingGroceryNewCopyUnitTypeRecordList,
+                                                                      purchaseOrderUnitTypeRecordList,
                                                                 ),
                                                               ),
                                                             ),
@@ -3532,7 +3530,7 @@ class _BillingGroceryNewCopyWidgetState
                                                                   ?.first
                                                                   ?.value,
                                                               unitList:
-                                                                  billingGroceryNewCopyUnitTypeRecordList,
+                                                                  purchaseOrderUnitTypeRecordList,
                                                               jsonitem:
                                                                   getJsonField(
                                                                 prdlistItem,

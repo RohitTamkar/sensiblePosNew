@@ -213,5 +213,5 @@ export '/pages/product_and_list_new_copy/product_and_list_new_copy_widget.dart'
     show ProductAndListNewCopyWidget;
 export '/pages/report_screen/category_reportnew/category_reportnew_widget.dart'
     show CategoryReportnewWidget;
-export '/grocery_windows/billing_grocery_new_copy/billing_grocery_new_copy_widget.dart'
-    show BillingGroceryNewCopyWidget;
+export '/grocery_windows/purchase_order/purchase_order_widget.dart'
+    show PurchaseOrderWidget;

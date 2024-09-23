@@ -1526,15 +1526,15 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => CategoryReportnewWidget(),
             ),
             FFRoute(
-              name: 'BillingGroceryNewCopy',
-              path: 'billingGroceryNewCopy',
+              name: 'purchaseOrder',
+              path: 'purchaseOrder',
               asyncParams: {
                 'taxDetails':
                     getDocList(['TAX_MASTER'], TaxMasterRecord.fromSnapshot),
                 'paymentMode': getDocList(
                     ['PAYMENT_MODE'], PaymentModeRecord.fromSnapshot),
               },
-              builder: (context, params) => BillingGroceryNewCopyWidget(
+              builder: (context, params) => PurchaseOrderWidget(
                 shiftdetail: params.getParam(
                   'shiftdetail',
                   ParamType.JSON,

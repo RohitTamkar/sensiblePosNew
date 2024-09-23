@@ -1471,7 +1471,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                       child: FFButtonWidget(
                                         onPressed: () async {
                                           context.pushNamed(
-                                            'BillingGroceryNewCopy',
+                                            'purchaseOrder',
                                             queryParameters: {
                                               'shiftdetail': serializeParam(
                                                 widget!.shiftdetail,

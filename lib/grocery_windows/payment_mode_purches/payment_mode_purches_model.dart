@@ -79,8 +79,8 @@ class PaymentModePurchesModel
   ShiftDetailsStruct? getOfflineShiftdetails;
   // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
   ShiftDetailsStruct? updatedShift;
-  // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
-  List<SelItemListStruct>? prdlinstnewtx;
+  // Stores action output result for [Custom Action - filterProductsPurches] action in Button widget.
+  List<PurchaseSaleItemListStruct>? prdlinstnewtx;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   AppSettingsRecord? appsettingnew;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
@@ -89,8 +89,8 @@ class PaymentModePurchesModel
   int? totalcredit;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   PaymentRecord? paymentDoc22d;
-  // Stores action output result for [Custom Action - addInvoiceBillhive] action in Button widget.
-  InvoiceStructStruct? hiveInvoiceData;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  PurchaseRecord? purchaseordnew;
 
   @override
   void initState(BuildContext context) {}

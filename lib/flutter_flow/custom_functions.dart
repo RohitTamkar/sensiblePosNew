@@ -1197,3 +1197,23 @@ double? returnpaymentjson(String jsonString) {
       : null;
   return amt ?? 0.00;
 }
+
+bool paymentmodemix(String paymentMode) {
+  bool mode = false;
+  if (paymentMode == "CASH&CARD") {
+    mode = true;
+    return mode;
+  } else if (paymentMode == "CASH&GPAY") {
+    mode = true;
+    return mode;
+  } else if (paymentMode == "CASH&PHONEPE") {
+    mode = true;
+    return mode;
+  } else if (paymentMode == "CASH&PAYTM") {
+    mode = true;
+    return mode;
+  } else {
+    return mode;
+  }
+  return mode;
+}

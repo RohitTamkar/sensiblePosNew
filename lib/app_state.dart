@@ -3425,6 +3425,18 @@ class FFAppState extends ChangeNotifier {
   set prdid(String value) {
     _prdid = value;
   }
+
+  String _paymode1 = '';
+  String get paymode1 => _paymode1;
+  set paymode1(String value) {
+    _paymode1 = value;
+  }
+
+  String _paymode2 = '';
+  String get paymode2 => _paymode2;
+  set paymode2(String value) {
+    _paymode2 = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

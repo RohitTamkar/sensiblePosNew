@@ -3804,7 +3804,7 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                           safeSetState(() {});
                                       },
                                       text: FFLocalizations.of(context).getText(
-                                        '63rh4uxa' /* Save */,
+                                        '63rh4uxa' /* Cancel */,
                                       ),
                                       options: FFButtonOptions(
                                         width: 90.0,
@@ -3861,8 +3861,8 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                             safeSetState(() {});
                                           }
 
-                                          _model.prdlinstnewtx =
-                                              await actions.filterProducts2(
+                                          _model.prdlinstnewtx = await actions
+                                              .filterProductsPurches(
                                             FFAppState().selBill,
                                             FFAppState().allBillsList.toList(),
                                           );
@@ -4025,54 +4025,112 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                               return;
                                             }
                                           }
-                                          _model.hiveInvoiceData =
-                                              await actions.addInvoiceBillhive(
-                                            '',
-                                            functions.genInvoiceNum(
-                                                FFAppState().count,
-                                                FFAppState().shiftCount),
-                                            valueOrDefault<String>(
-                                              FFAppState().setCustRef?.id,
-                                              '0',
+
+                                          var purchaseRecordReference =
+                                              PurchaseRecord.createDoc(
+                                                  FFAppState().outletIdRef!);
+                                          await purchaseRecordReference.set({
+                                            ...createPurchaseRecordData(
+                                              delliveryChrg:
+                                                  FFAppState().delCharges,
+                                              taxAmt: FFAppState().taxamt,
+                                              billAmt: FFAppState().billAmt,
+                                              discountAmt: FFAppState().disAmt,
+                                              dayId: functions.getDayId(),
+                                              discountPer: FFAppState().disPer,
+                                              finalBillAmt:
+                                                  FFAppState().finalAmt,
+                                              orderDate:
+                                                  functions.timestampToMili(
+                                                      getCurrentTimestamp),
+                                              paymentMode: getJsonField(
+                                                FFAppState().groceryJson,
+                                                r'''$.paymentMode''',
+                                              ).toString(),
+                                              roundOff: 0.0,
+                                              party: valueOrDefault<String>(
+                                                FFAppState().setCustRef?.id,
+                                                '0',
+                                              ),
+                                              id: '',
+                                              invoiceNo:
+                                                  functions.genInvoiceNum(
+                                                      FFAppState().count,
+                                                      FFAppState().shiftCount),
+                                              invoiceDate:
+                                                  functions.timestampToMili(
+                                                      getCurrentTimestamp),
+                                              mobile: valueOrDefault(
+                                                  currentUserDocument?.mobile,
+                                                  ''),
+                                              orderTime: getCurrentTimestamp,
+                                              createdBy:
+                                                  FFAppState().userdoc?.id,
                                             ),
-                                            functions.timestampToMili(
-                                                getCurrentTimestamp),
-                                            functions.getDayId(),
-                                            getJsonField(
-                                              FFAppState().groceryJson,
-                                              r'''$.paymentMode''',
-                                            ).toString(),
-                                            valueOrDefault<double>(
-                                              FFAppState().disAmt,
-                                              0.0,
+                                            ...mapToFirestore(
+                                              {
+                                                'productList':
+                                                    getPurchaseSaleItemListListFirestoreData(
+                                                  _model.prdlinstnewtx,
+                                                ),
+                                              },
                                             ),
-                                            valueOrDefault<double>(
-                                              FFAppState().disPer,
-                                              0.0,
+                                          });
+                                          _model.purchaseordnew = PurchaseRecord
+                                              .getDocumentFromData({
+                                            ...createPurchaseRecordData(
+                                              delliveryChrg:
+                                                  FFAppState().delCharges,
+                                              taxAmt: FFAppState().taxamt,
+                                              billAmt: FFAppState().billAmt,
+                                              discountAmt: FFAppState().disAmt,
+                                              dayId: functions.getDayId(),
+                                              discountPer: FFAppState().disPer,
+                                              finalBillAmt:
+                                                  FFAppState().finalAmt,
+                                              orderDate:
+                                                  functions.timestampToMili(
+                                                      getCurrentTimestamp),
+                                              paymentMode: getJsonField(
+                                                FFAppState().groceryJson,
+                                                r'''$.paymentMode''',
+                                              ).toString(),
+                                              roundOff: 0.0,
+                                              party: valueOrDefault<String>(
+                                                FFAppState().setCustRef?.id,
+                                                '0',
+                                              ),
+                                              id: '',
+                                              invoiceNo:
+                                                  functions.genInvoiceNum(
+                                                      FFAppState().count,
+                                                      FFAppState().shiftCount),
+                                              invoiceDate:
+                                                  functions.timestampToMili(
+                                                      getCurrentTimestamp),
+                                              mobile: valueOrDefault(
+                                                  currentUserDocument?.mobile,
+                                                  ''),
+                                              orderTime: getCurrentTimestamp,
+                                              createdBy:
+                                                  FFAppState().userdoc?.id,
                                             ),
-                                            valueOrDefault<double>(
-                                              FFAppState().delCharges,
-                                              0.0,
+                                            ...mapToFirestore(
+                                              {
+                                                'productList':
+                                                    getPurchaseSaleItemListListFirestoreData(
+                                                  _model.prdlinstnewtx,
+                                                ),
+                                              },
                                             ),
-                                            FFAppState().taxamt,
-                                            valueOrDefault<double>(
-                                              FFAppState().billAmt,
-                                              0.0,
-                                            ),
-                                            valueOrDefault<double>(
-                                              FFAppState().finalAmt,
-                                              0.0,
-                                            ),
-                                            0.0,
-                                            _model.prdlinstnewtx?.toList(),
-                                            getJsonField(
-                                              FFAppState().shiftDetailsJson,
-                                              r'''$.shiftId''',
-                                            ).toString(),
-                                            false,
-                                            FFAppState().invoiceStructVersion,
-                                          );
+                                          }, purchaseRecordReference);
                                           _shouldSetState = true;
+
+                                          await _model.purchaseordnew!.reference
+                                              .update(createPurchaseRecordData(
+                                            id: _model
+                                                .purchaseordnew?.reference.id,
+                                          ));
                                         } else {
                                           ScaffoldMessenger.of(context)
                                               .showSnackBar(
@@ -4098,7 +4156,7 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                           safeSetState(() {});
                                       },
                                       text: FFLocalizations.of(context).getText(
-                                        '5tk9oj87' /* Print */,
+                                        '5tk9oj87' /* Submit */,
                                       ),
                                       options: FFButtonOptions(
                                         width: 90.0,

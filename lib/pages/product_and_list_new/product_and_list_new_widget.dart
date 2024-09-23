@@ -4820,10 +4820,29 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                     .map((e) =>
                                                                         e.name)
                                                                     .toList(),
-                                                                onChanged: (val) =>
-                                                                    safeSetState(() =>
-                                                                        _model.dropDownValue =
-                                                                            val),
+                                                                onChanged:
+                                                                    (val) async {
+                                                                  safeSetState(() =>
+                                                                      _model.dropDownValue =
+                                                                          val);
+                                                                  FFAppState()
+                                                                          .PayMode =
+                                                                      _model
+                                                                          .dropDownValue!;
+                                                                  safeSetState(
+                                                                      () {});
+                                                                  if (!functions
+                                                                      .paymentmodemix(
+                                                                          FFAppState()
+                                                                              .PayMode)) {
+                                                                    FFAppState()
+                                                                            .PayMode =
+                                                                        _model
+                                                                            .dropDownValue!;
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  }
+                                                                },
                                                                 width: double
                                                                     .infinity,
                                                                 height: double
