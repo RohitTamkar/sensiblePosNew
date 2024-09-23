@@ -33,6 +33,11 @@ bool paymentmodemix(String paymentMode) {
     FFAppState().paymode2 = "PAYTM";
     mode = true;
     return mode;
+  } else if (paymentMode == "CASH&OTHER") {
+    FFAppState().paymode1 = "CASH";
+    FFAppState().paymode2 = "OTHER";
+    mode = true;
+    return mode;
   } else {
     return mode;
   }

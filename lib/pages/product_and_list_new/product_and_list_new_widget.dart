@@ -4846,8 +4846,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                       backgroundColor:
                                                                           Colors
                                                                               .transparent,
-                                                                      enableDrag:
-                                                                          false,
                                                                       context:
                                                                           context,
                                                                       builder:
@@ -4860,8 +4858,11 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                             padding:
                                                                                 MediaQuery.viewInsetsOf(context),
                                                                             child:
-                                                                                MixPaymentModeWidget(
-                                                                              appsetting: productAndListNewAppSettingsRecord,
+                                                                                Container(
+                                                                              height: 360.0,
+                                                                              child: MixPaymentModeWidget(
+                                                                                appsetting: productAndListNewAppSettingsRecord,
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         );

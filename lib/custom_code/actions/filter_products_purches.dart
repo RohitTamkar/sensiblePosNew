@@ -46,6 +46,7 @@ Future<List<PurchaseSaleItemListStruct>> filterProductsPurches(
         }
       }
     }
-    return returnList;
+    //
   }
+  return returnList;
 }

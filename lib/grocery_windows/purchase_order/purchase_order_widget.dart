@@ -9,6 +9,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/grocery_windows/add_product_grocery/add_product_grocery_widget.dart';
 import '/grocery_windows/add_supplier/add_supplier_widget.dart';
 import '/grocery_windows/payment_mode_grocery/payment_mode_grocery_widget.dart';
+import '/grocery_windows/purchase/purchase_widget.dart';
 import 'dart:math';
 import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
@@ -3510,14 +3511,21 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                         mainAxisSize:
                                                             MainAxisSize.max,
                                                         children: [
-                                                          Container(
-                                                            width: 100.0,
-                                                            height: 100.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .secondaryBackground,
+                                                          Expanded(
+                                                            child: Container(
+                                                              width: 100.0,
+                                                              height: 100.0,
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryBackground,
+                                                              ),
+                                                              child:
+                                                                  PurchaseWidget(
+                                                                key: Key(
+                                                                    'Keysxw_${prdlistIndex}_of_${prdlist.length}'),
+                                                              ),
                                                             ),
                                                           ),
                                                           FlutterFlowIconButton(
