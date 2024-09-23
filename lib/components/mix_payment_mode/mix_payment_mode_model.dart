@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'mix_payment_mode_widget.dart' show MixPaymentModeWidget;
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -20,6 +21,8 @@ class MixPaymentModeModel extends FlutterFlowModel<MixPaymentModeWidget> {
   FocusNode? paymode2FocusNode;
   TextEditingController? paymode2TextController;
   String? Function(BuildContext, String?)? paymode2TextControllerValidator;
+  // Stores action output result for [Custom Action - calculateMixpaymentamt] action in Button widget.
+  dynamic? listjson23;
 
   @override
   void initState(BuildContext context) {}

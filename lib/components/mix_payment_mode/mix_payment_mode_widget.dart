@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -630,10 +631,18 @@ class _MixPaymentModeWidgetState extends State<MixPaymentModeWidget> {
                       Expanded(
                         child: FFButtonWidget(
                           onPressed: () async {
+                            _model.listjson23 =
+                                await actions.calculateMixpaymentamt(
+                              FFAppState().PayMode,
+                              double.parse(_model.paymode1TextController.text),
+                              double.parse(_model.paymode2TextController.text),
+                            );
                             Navigator.pop(context);
+
+                            safeSetState(() {});
                           },
                           text: FFLocalizations.of(context).getText(
-                            '7jkr2owr' /* Done */,
+                            '7jkr2owr' /* Submit */,
                           ),
                           options: FFButtonOptions(
                             width: 100.0,

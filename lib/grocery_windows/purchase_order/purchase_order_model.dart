@@ -64,6 +64,8 @@ class PurchaseOrderModel extends FlutterFlowModel<PurchaseOrderWidget> {
   FocusNode? custmobFocusNode;
   TextEditingController? custmobTextController;
   String? Function(BuildContext, String?)? custmobTextControllerValidator;
+  // Stores action output result for [Custom Action - removeHoldListItem] action in IconButton widget.
+  List<dynamic>? res20;
   // Stores action output result for [Custom Action - calSubTotalForGrocery] action in IconButton widget.
   double? ret;
   // Stores action output result for [Custom Action - calBillAmtGrocery] action in IconButton widget.

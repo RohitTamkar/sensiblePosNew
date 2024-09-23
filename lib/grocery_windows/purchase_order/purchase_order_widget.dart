@@ -3463,78 +3463,123 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                       'IconButton pressed ...');
                                                 },
                                               ),
-                                              FlutterFlowIconButton(
-                                                borderRadius: 10.0,
-                                                borderWidth: 0.0,
-                                                buttonSize: 35.0,
-                                                icon: Icon(
-                                                  Icons.delete_outline,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                  size: 20.0,
-                                                ),
-                                                onPressed: () async {
-                                                  _model.ret = await actions
-                                                      .calSubTotalForGrocery(
-                                                    FFAppState()
-                                                        .selBill
-                                                        .toString(),
-                                                    FFAppState()
-                                                        .allBillsList
-                                                        .toList(),
-                                                  );
-                                                  _model.ads = await actions
-                                                      .calBillAmtGrocery(
-                                                    valueOrDefault<double>(
-                                                      FFAppState().disAmt,
-                                                      0.0,
-                                                    ),
-                                                    FFAppState().delCharges,
-                                                  );
-
-                                                  safeSetState(() {});
-                                                },
-                                              ),
                                             ],
                                           ),
                                         ),
                                       ),
-                                      Builder(
-                                        builder: (context) {
-                                          final prdlist1 = functions
-                                              .filterBillList(
-                                                  FFAppState().selBill,
-                                                  FFAppState()
-                                                      .allBillsList
-                                                      .toList())
-                                              .toList();
+                                      Expanded(
+                                        child: Builder(
+                                          builder: (context) {
+                                            final prdlist = functions
+                                                .filterBillList(
+                                                    FFAppState().selBill,
+                                                    FFAppState()
+                                                        .allBillsList
+                                                        .toList())
+                                                .toList();
 
-                                          return ListView.builder(
-                                            padding: EdgeInsets.zero,
-                                            shrinkWrap: true,
-                                            scrollDirection: Axis.vertical,
-                                            itemCount: prdlist1.length,
-                                            itemBuilder:
-                                                (context, prdlist1Index) {
-                                              final prdlist1Item =
-                                                  prdlist1[prdlist1Index];
-                                              return Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 0.0, 5.0),
-                                                child: Container(
-                                                  height: 45.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryBackground,
+                                            return ListView.builder(
+                                              padding: EdgeInsets.zero,
+                                              shrinkWrap: true,
+                                              scrollDirection: Axis.vertical,
+                                              itemCount: prdlist.length,
+                                              itemBuilder:
+                                                  (context, prdlistIndex) {
+                                                final prdlistItem =
+                                                    prdlist[prdlistIndex];
+                                                return Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 5.0),
+                                                  child: Container(
+                                                    height: 45.0,
+                                                    decoration: BoxDecoration(
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
+                                                    ),
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  15.0,
+                                                                  0.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Container(
+                                                            width: 100.0,
+                                                            height: 100.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .secondaryBackground,
+                                                            ),
+                                                          ),
+                                                          FlutterFlowIconButton(
+                                                            borderRadius: 10.0,
+                                                            borderWidth: 0.0,
+                                                            buttonSize: 35.0,
+                                                            icon: Icon(
+                                                              Icons
+                                                                  .delete_outline,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primary,
+                                                              size: 20.0,
+                                                            ),
+                                                            onPressed:
+                                                                () async {
+                                                              _model.res20 =
+                                                                  await actions
+                                                                      .removeHoldListItem(
+                                                                getJsonField(
+                                                                  prdlistItem,
+                                                                  r'''$''',
+                                                                ),
+                                                                FFAppState()
+                                                                    .selBill,
+                                                              );
+                                                              _model.ret =
+                                                                  await actions
+                                                                      .calSubTotalForGrocery(
+                                                                FFAppState()
+                                                                    .selBill
+                                                                    .toString(),
+                                                                FFAppState()
+                                                                    .allBillsList
+                                                                    .toList(),
+                                                              );
+                                                              _model.ads =
+                                                                  await actions
+                                                                      .calBillAmtGrocery(
+                                                                valueOrDefault<
+                                                                    double>(
+                                                                  FFAppState()
+                                                                      .disAmt,
+                                                                  0.0,
+                                                                ),
+                                                                FFAppState()
+                                                                    .delCharges,
+                                                              );
+
+                                                              safeSetState(
+                                                                  () {});
+                                                            },
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
                                                   ),
-                                                ),
-                                              );
-                                            },
-                                          );
-                                        },
+                                                );
+                                              },
+                                            );
+                                          },
+                                        ),
                                       ),
                                     ],
                                   ),
