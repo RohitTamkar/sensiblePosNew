@@ -4440,7 +4440,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     'setz4ftv': {
-      'en': 'Type',
+      'en': 'Type *',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -4454,14 +4454,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     'uv2dntv8': {
-      'en': 'Customer',
+      'en': 'CUSTOMER',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
     'usrj7det': {
-      'en': 'InHouse',
+      'en': 'SUPPLIER',
       'hi': '',
       'kn': '',
       'mr': '',

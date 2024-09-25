@@ -412,6 +412,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                           StreamBuilder<List<PartyRecord>>(
                             stream: queryPartyRecord(
                               parent: FFAppState().outletIdRef,
+                              queryBuilder: (partyRecord) => partyRecord.where(
+                                'type',
+                                isNotEqualTo: 'SUPPLIER',
+                              ),
                             ),
                             builder: (context, snapshot) {
                               // Customize what your widget looks like when it's loading.

@@ -5338,7 +5338,7 @@ class _AddCustomerWidgetState extends State<AddCustomerWidget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                            'setz4ftv' /* Type */,
+                                                            'setz4ftv' /* Type * */,
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
@@ -5396,12 +5396,12 @@ class _AddCustomerWidgetState extends State<AddCustomerWidget> {
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                'uv2dntv8' /* Customer */,
+                                                                'uv2dntv8' /* CUSTOMER */,
                                                               ),
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                'usrj7det' /* InHouse */,
+                                                                'usrj7det' /* SUPPLIER */,
                                                               )
                                                             ],
                                                             onChanged: (val) =>
