@@ -9,27 +9,12 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-import 'package:flutter/services.dart';
-
-import 'dart:io';
-import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
-
-import 'package:path_provider/path_provider.dart';
-import 'dart:convert';
-
-import 'package:pdf/pdf.dart';
-import 'dart:typed_data';
-import 'package:pdf/pdf.dart' as pw;
-import 'package:pdf/widgets.dart' as pw;
-import 'package:intl/intl.dart';
-import 'package:http/http.dart' as http;
-import 'dart:html' as html; // Import for web specific functionality
-
 Future<String> generateInvoice(
   String? orderId,
   List<PurchaseSaleItemListStruct>? orderList,
   String? totalAmt,
   PurchaseRecord? customerDetails,
+  PartyRecord? userDetails,
 ) async {
   final pdf = pw.Document();
 
@@ -73,7 +58,7 @@ Future<String> generateInvoice(
                     'To Address: ',
                     style: pw.TextStyle(fontWeight: pw.FontWeight.bold),
                   ),
-                  pw.Text('${customerDetails?.address ?? ''}'),
+                  pw.Text('${userDetails?.address ?? ''}'),
                   pw.SizedBox(height: 10),
                   // Bold labels for customer details
                   pw.Text(
@@ -81,19 +66,19 @@ Future<String> generateInvoice(
                     style: pw.TextStyle(fontWeight: pw.FontWeight.bold),
                   ),
                   pw.Text(
-                    '${customerDetails?.firstname ?? ''} ${customerDetails?.lastname ?? ''}',
+                    '${userDetails?.name ?? ''}',
                   ),
 
                   pw.Text(
                     'Mobile No: ',
                     style: pw.TextStyle(fontWeight: pw.FontWeight.bold),
                   ),
-                  pw.Text('+91${customerDetails?.mobileNo ?? ''}'),
+                  pw.Text('+91${userDetails?.mobile ?? ''}'),
                   pw.Text(
                     'Email: ',
                     style: pw.TextStyle(fontWeight: pw.FontWeight.bold),
                   ),
-                  pw.Text('${customerDetails?.email ?? ''}'),
+                  pw.Text('${userDetails?.email ?? ''}'),
                   pw.SizedBox(height: 10),
 
                   pw.Table.fromTextArray(

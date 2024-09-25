@@ -122,12 +122,10 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
       child: StreamBuilder<List<PurchaseRecord>>(
         stream: queryPurchaseRecord(
           parent: FFAppState().outletIdRef,
-          queryBuilder: (purchaseRecord) => purchaseRecord
-              .where(
-                'orderDate',
-                isEqualTo: functions.getTodayint(FFAppState().selectedDate!),
-              )
-              .orderBy('order', descending: true),
+          queryBuilder: (purchaseRecord) => purchaseRecord.where(
+            'orderDate',
+            isEqualTo: functions.getTodayint(FFAppState().selectedDate!),
+          ),
         ),
         builder: (context, snapshot) {
           // Customize what your widget looks like when it's loading.
@@ -4124,21 +4122,37 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                         FFAppState().startLoop +
                                                             1;
                                                     safeSetState(() {});
-                                                    _model.returnurl2 =
-                                                        await actions
-                                                            .generateInvoice(
-                                                      _model.purchaseordnew
-                                                          ?.invoiceNo,
-                                                      _model.purchaseordnew
-                                                          ?.productList
-                                                          ?.toList(),
-                                                      _model.purchaseordnew
-                                                          ?.finalBillAmt
-                                                          ?.toString(),
-                                                      _model.purchaseordnew,
-                                                    );
-                                                    _shouldSetState = true;
                                                   }
+                                                  _model.partydetails =
+                                                      await queryPartyRecordOnce(
+                                                    parent: FFAppState()
+                                                        .outletIdRef,
+                                                    queryBuilder:
+                                                        (partyRecord) =>
+                                                            partyRecord.where(
+                                                      'id',
+                                                      isEqualTo: _model
+                                                          .purchaseordnew
+                                                          ?.party,
+                                                    ),
+                                                    singleRecord: true,
+                                                  ).then((s) => s.firstOrNull);
+                                                  _shouldSetState = true;
+                                                  _model.returnurl2 =
+                                                      await actions
+                                                          .generateInvoice(
+                                                    _model.purchaseordnew
+                                                        ?.invoiceNo,
+                                                    _model.purchaseordnew
+                                                        ?.productList
+                                                        ?.toList(),
+                                                    _model.purchaseordnew
+                                                        ?.finalBillAmt
+                                                        ?.toString(),
+                                                    _model.purchaseordnew,
+                                                    _model.partydetails,
+                                                  );
+                                                  _shouldSetState = true;
                                                   await actions
                                                       .removeFromAllBillList(
                                                     FFAppState().selBill,

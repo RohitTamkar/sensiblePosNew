@@ -59,20 +59,6 @@
           "order": "ASCENDING"
         }
       ]
-    },
-    {
-      "collectionGroup": "PURCHASE",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "orderDate",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "order",
-          "order": "DESCENDING"
-        }
-      ]
     }
   ],
   "fieldOverrides": [
