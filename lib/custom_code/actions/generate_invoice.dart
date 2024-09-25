@@ -9,6 +9,22 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'package:flutter/services.dart';
+
+import 'dart:io';
+//import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
+
+import 'package:path_provider/path_provider.dart';
+import 'dart:convert';
+
+import 'package:pdf/pdf.dart';
+import 'dart:typed_data';
+import 'package:pdf/pdf.dart' as pw;
+import 'package:pdf/widgets.dart' as pw;
+import 'package:intl/intl.dart';
+import 'package:http/http.dart' as http;
+import 'dart:html' as html; // Import for web specific functionality
+
 Future<String> generateInvoice(
   String? orderId,
   List<PurchaseSaleItemListStruct>? orderList,
