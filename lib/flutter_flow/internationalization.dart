@@ -5354,15 +5354,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'evf3j8bt': {
-      'en': 'P/L',
+    '05auzt6n': {
+      'en': 'COST TOTAL',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'wj24zzvp': {
-      'en': '- -',
+    'evf3j8bt': {
+      'en': 'P/L',
       'hi': '',
       'kn': '',
       'mr': '',

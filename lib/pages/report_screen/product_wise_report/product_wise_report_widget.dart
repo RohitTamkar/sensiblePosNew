@@ -696,6 +696,53 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                                       ),
                                     ),
                                     Expanded(
+                                      child: Container(
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
+                                                0.06,
+                                        height:
+                                            MediaQuery.sizeOf(context).height *
+                                                0.08,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(0.0),
+                                        ),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '05auzt6n' /* COST TOTAL */,
+                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmallFamily,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .lineColor,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmallFamily),
+                                                      ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    Expanded(
                                       flex: 1,
                                       child: Container(
                                         width:
@@ -991,7 +1038,7 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                                                         Text(
                                                           getJsonField(
                                                             prodlistItem,
-                                                            r'''$.price''',
+                                                            r'''$.purchasePrice''',
                                                           ).toString(),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
@@ -1110,6 +1157,54 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                                                   ),
                                                 ),
                                                 Expanded(
+                                                  flex: 1,
+                                                  child: Container(
+                                                    width: MediaQuery.sizeOf(
+                                                                context)
+                                                            .width *
+                                                        0.06,
+                                                    height: MediaQuery.sizeOf(
+                                                                context)
+                                                            .height *
+                                                        0.08,
+                                                    decoration: BoxDecoration(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              0.0),
+                                                    ),
+                                                    child: Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
+                                                      children: [
+                                                        Text(
+                                                          getJsonField(
+                                                            prodlistItem,
+                                                            r'''$.costTotal''',
+                                                          ).toString(),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelSmall
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmallFamily,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelSmallFamily),
+                                                              ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ),
+                                                Expanded(
                                                   child: Container(
                                                     width: MediaQuery.sizeOf(
                                                                 context)
@@ -1144,11 +1239,10 @@ class _ProductWiseReportWidgetState extends State<ProductWiseReportWidget> {
                                                               .center,
                                                       children: [
                                                         Text(
-                                                          FFLocalizations.of(
-                                                                  context)
-                                                              .getText(
-                                                            'wj24zzvp' /* - - */,
-                                                          ),
+                                                          getJsonField(
+                                                            prodlistItem,
+                                                            r'''$.prls''',
+                                                          ).toString(),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .labelSmall

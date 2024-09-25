@@ -106,8 +106,8 @@ Future<String> generateInvoice(
                       ['Product Name', 'Quantity', 'Price'],
                       // Order items
                       ...orderList!.map((order) => [
-                            '${order.categoryName} , (${order.size}) ,${order.thickness} ,${order.shapes}',
-                            order.qty.toString(),
+                            '${order.name} , (${order.quantity}) ,${order.price} ',
+                            order.quantity.toString(),
                             order.price.toString()
                           ]),
                       // GST and Total row
