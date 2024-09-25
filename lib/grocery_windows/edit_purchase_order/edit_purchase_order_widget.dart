@@ -23,11 +23,11 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:text_search/text_search.dart';
-import 'purchase_order_model.dart';
-export 'purchase_order_model.dart';
+import 'edit_purchase_order_model.dart';
+export 'edit_purchase_order_model.dart';
 
-class PurchaseOrderWidget extends StatefulWidget {
-  const PurchaseOrderWidget({
+class EditPurchaseOrderWidget extends StatefulWidget {
+  const EditPurchaseOrderWidget({
     super.key,
     this.shiftdetail,
     this.taxDetails,
@@ -41,12 +41,13 @@ class PurchaseOrderWidget extends StatefulWidget {
   final List<PaymentModeRecord>? paymentMode;
 
   @override
-  State<PurchaseOrderWidget> createState() => _PurchaseOrderWidgetState();
+  State<EditPurchaseOrderWidget> createState() =>
+      _EditPurchaseOrderWidgetState();
 }
 
-class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
+class _EditPurchaseOrderWidgetState extends State<EditPurchaseOrderWidget>
     with TickerProviderStateMixin {
-  late PurchaseOrderModel _model;
+  late EditPurchaseOrderModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -55,7 +56,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => PurchaseOrderModel());
+    _model = createModel(context, () => EditPurchaseOrderModel());
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
@@ -157,10 +158,11 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
             ),
           );
         }
-        List<UnitTypeRecord> purchaseOrderUnitTypeRecordList = snapshot.data!;
+        List<UnitTypeRecord> editPurchaseOrderUnitTypeRecordList =
+            snapshot.data!;
 
         return Title(
-            title: 'purchaseOrder',
+            title: 'EditPurchaseOrder',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
               onTap: () => FocusScope.of(context).unfocus(),
@@ -252,7 +254,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'f3o4jfx2' /* SUPPLIER DETAILS */,
+                                                      'l9e4wu0y' /* SUPPLIER DETAILS */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -392,7 +394,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        's2n4mkrv' /* Search Supplier */,
+                                                        'm55ku73k' /* Search Supplier */,
                                                       ),
                                                       hintStyle:
                                                           FlutterFlowTheme.of(
@@ -1253,7 +1255,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'mciul6pk' /* Purchase */,
+                                                  'e8wsgqyn' /* Purchase */,
                                                 ),
                                                 textAlign: TextAlign.start,
                                                 style:
@@ -1309,6 +1311,17 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                           crossAxisAlignment:
                                               CrossAxisAlignment.center,
                                           children: [
+                                            Container(
+                                              width: 100.0,
+                                              height: 45.0,
+                                              child: custom_widgets.OnlineSync(
+                                                width: 100.0,
+                                                height: 45.0,
+                                                outletRef:
+                                                    FFAppState().outletIdRef!,
+                                                userDoc: widget!.userref!,
+                                              ),
+                                            ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
@@ -1407,7 +1420,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                         },
                                         text:
                                             FFLocalizations.of(context).getText(
-                                          'f7vkiwx2' /* Masters */,
+                                          'q8dc2s3d' /* Masters */,
                                         ),
                                         icon: Icon(
                                           Icons.content_paste,
@@ -1460,7 +1473,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                         },
                                         text:
                                             FFLocalizations.of(context).getText(
-                                          'tfpywwxc' /* Purchase */,
+                                          '4x9s95ms' /* Purchase */,
                                         ),
                                         icon: Icon(
                                           Icons.shopping_cart,
@@ -1540,7 +1553,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                         },
                                         text:
                                             FFLocalizations.of(context).getText(
-                                          '8o7b824i' /* Sales */,
+                                          '9k2kitbq' /* Sales */,
                                         ),
                                         icon: Icon(
                                           Icons.receipt_long_sharp,
@@ -1599,7 +1612,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                         },
                                         text:
                                             FFLocalizations.of(context).getText(
-                                          'dmhi5ktm' /* Report */,
+                                          'qtyph8a6' /* Report */,
                                         ),
                                         icon: Icon(
                                           Icons.bar_chart,
@@ -1651,7 +1664,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                         },
                                         text:
                                             FFLocalizations.of(context).getText(
-                                          '8hj0z56a' /* Shift */,
+                                          'b5vkzz4f' /* Shift */,
                                         ),
                                         icon: Icon(
                                           Icons.lock_clock,
@@ -1704,7 +1717,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                         },
                                         text:
                                             FFLocalizations.of(context).getText(
-                                          'k875b0xd' /* Print Settings */,
+                                          'fjo6n8t5' /* Print Settings */,
                                         ),
                                         icon: Icon(
                                           Icons.print_rounded,
@@ -1756,7 +1769,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                         },
                                         text:
                                             FFLocalizations.of(context).getText(
-                                          'bh7uyhuv' /* Settings */,
+                                          '8zs21yoh' /* Settings */,
                                         ),
                                         icon: Icon(
                                           Icons.settings_sharp,
@@ -1803,13 +1816,12 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                     ),
                                     Expanded(
                                       child: FFButtonWidget(
-                                        onPressed: () async {
-                                          context
-                                              .pushNamed('PurchaseOrderList');
+                                        onPressed: () {
+                                          print('Button pressed ...');
                                         },
                                         text:
                                             FFLocalizations.of(context).getText(
-                                          'kqfxnch9' /* Edit Bill */,
+                                          'lmed9oq2' /* Edit Bill */,
                                         ),
                                         icon: Icon(
                                           Icons.edit_square,
@@ -1883,7 +1895,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                         },
                                         text:
                                             FFLocalizations.of(context).getText(
-                                          '8e74nmny' /* Logout */,
+                                          'mc8cpwu1' /* Logout */,
                                         ),
                                         icon: Icon(
                                           Icons.power_settings_new,
@@ -1978,7 +1990,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                'myqm6hlx' /* Po No. */,
+                                                                '8aj8n94k' /* Po No. */,
                                                               ),
                                                               textAlign:
                                                                   TextAlign
@@ -2049,7 +2061,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                'ncltah3m' /* Date  */,
+                                                                'b0nelfgm' /* Date  */,
                                                               ),
                                                               textAlign:
                                                                   TextAlign
@@ -2220,7 +2232,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                            '8qo5eczf' /* Product ID */,
+                                                            '9q8vqcnx' /* Product ID */,
                                                           ),
                                                           textAlign:
                                                               TextAlign.end,
@@ -2304,7 +2316,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                                   appSettingsRecord:
                                                                       containerAppSettingsRecord!,
                                                                   unitcollection:
-                                                                      purchaseOrderUnitTypeRecordList,
+                                                                      editPurchaseOrderUnitTypeRecordList,
                                                                 ),
                                                               ),
                                                             ),
@@ -2401,9 +2413,31 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                       mainAxisAlignment:
                                                           MainAxisAlignment
                                                               .start,
-                                                      children: <Widget>[]
-                                                          .divide(SizedBox(
-                                                              width: 10.0)),
+                                                      children: [
+                                                        Text(
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'lml541pb' /* Hello World */,
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
+                                                              ),
+                                                        ),
+                                                      ].divide(SizedBox(
+                                                          width: 10.0)),
                                                     ),
                                                   ),
                                                 ],
@@ -2452,7 +2486,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                                       FFLocalizations.of(
                                                                               context)
                                                                           .getText(
-                                                                        'gw5612pi' /* Suppliers's Name */,
+                                                                        'wfdcoeg0' /* Suppliers's Name */,
                                                                       ),
                                                                       textAlign:
                                                                           TextAlign
@@ -2626,7 +2660,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                                       FFLocalizations.of(
                                                                               context)
                                                                           .getText(
-                                                                        'w70s4l7u' /* Supplier Mob No. */,
+                                                                        '4r98a1a5' /* Supplier Mob No. */,
                                                                       ),
                                                                       textAlign:
                                                                           TextAlign
@@ -2826,7 +2860,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                'w08q2b6a' /* Sr. No. */,
+                                                                '3qrt3vi1' /* Sr. No. */,
                                                               ),
                                                               textAlign:
                                                                   TextAlign
@@ -2878,7 +2912,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                '2xemeepo' /* Barcode */,
+                                                                'bfvmvz3y' /* Barcode */,
                                                               ),
                                                               textAlign:
                                                                   TextAlign
@@ -2930,7 +2964,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                'bc3y4r80' /* Product Name */,
+                                                                'oepruose' /* Product Name */,
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -2979,7 +3013,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                '75m8a796' /* Qty */,
+                                                                'moy1u35k' /* Qty */,
                                                               ),
                                                               textAlign:
                                                                   TextAlign
@@ -3031,7 +3065,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                'n3yx8h3q' /* Unit */,
+                                                                'atekeh1z' /* Unit */,
                                                               ),
                                                               textAlign:
                                                                   TextAlign
@@ -3083,7 +3117,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                'luevxhuq' /* Rate */,
+                                                                'skr29v08' /* Rate */,
                                                               ),
                                                               textAlign:
                                                                   TextAlign
@@ -3135,7 +3169,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                'zqn9k4s9' /* MRP */,
+                                                                'iopjdobp' /* MRP */,
                                                               ),
                                                               textAlign:
                                                                   TextAlign
@@ -3187,7 +3221,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                '9ynldssc' /* Discount % */,
+                                                                's5pkgbjw' /* Discount % */,
                                                               ),
                                                               textAlign:
                                                                   TextAlign
@@ -3239,7 +3273,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                '5v60pzgt' /* Discount Amt */,
+                                                                '54humncp' /* Discount Amt */,
                                                               ),
                                                               textAlign:
                                                                   TextAlign
@@ -3291,7 +3325,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                '9r6il6p1' /* Tax % */,
+                                                                'hif2kcd1' /* Tax % */,
                                                               ),
                                                               textAlign:
                                                                   TextAlign
@@ -3343,7 +3377,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                '4lmc1540' /* Tax Amt */,
+                                                                '64hjip6y' /* Tax Amt */,
                                                               ),
                                                               textAlign:
                                                                   TextAlign
@@ -3395,7 +3429,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                'tt35t4ow' /* Total Amount */,
+                                                                'xwj0oblq' /* Total Amount */,
                                                               ),
                                                               textAlign:
                                                                   TextAlign
@@ -3506,7 +3540,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                             child:
                                                                 GroceryWidget(
                                                               key: Key(
-                                                                  'Key0zd_${prdlistIndex}_of_${prdlist.length}'),
+                                                                  'Keyx5b_${prdlistIndex}_of_${prdlist.length}'),
                                                               parameter2: ProductStructStruct
                                                                   .maybeFromMap(
                                                                       prdlistItem),
@@ -3521,7 +3555,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                                   ?.first
                                                                   ?.value,
                                                               unitList:
-                                                                  purchaseOrderUnitTypeRecordList,
+                                                                  editPurchaseOrderUnitTypeRecordList,
                                                               jsonitem:
                                                                   getJsonField(
                                                                 prdlistItem,
@@ -3614,7 +3648,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                           },
                                           text: FFLocalizations.of(context)
                                               .getText(
-                                            '986u9mqu' /* Add */,
+                                            '3xx2jebq' /* Add */,
                                           ),
                                           icon: Icon(
                                             Icons.add,
@@ -3669,7 +3703,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                           },
                                           text: FFLocalizations.of(context)
                                               .getText(
-                                            'i40raqem' /* Modify */,
+                                            '3qlbswrh' /* Modify */,
                                           ),
                                           icon: Icon(
                                             Icons.mode,
@@ -3774,7 +3808,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                           },
                                           text: FFLocalizations.of(context)
                                               .getText(
-                                            'lam4mtdr' /* Payment Mode */,
+                                            '5j1k390i' /* Payment Mode */,
                                           ),
                                           icon: Icon(
                                             Icons.payment,
@@ -3829,7 +3863,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                           },
                                           text: FFLocalizations.of(context)
                                               .getText(
-                                            'sgg1fh6t' /* Attachment */,
+                                            'r0rc0y3f' /* Attachment */,
                                           ),
                                           icon: Icon(
                                             Icons.print_rounded,
@@ -3895,7 +3929,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'kkadv16n' /* Grand Total */,
+                                                      'l2hb1fyg' /* Grand Total */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -3965,7 +3999,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'sazhl4cs' /* Total Items */,
+                                                      'fh7j3yyi' /* Total Items */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -4029,7 +4063,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'gy7aur5d' /* Total Discount */,
+                                                      'ow5100nq' /* Total Discount */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -4093,7 +4127,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'jbqof2x9' /* Total Charges */,
+                                                      'wc7lm0yh' /* Total Charges */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -4157,7 +4191,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'rmlxh0rg' /* Total Tax */,
+                                                      'ybyn80l7' /* Total Tax */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -4270,7 +4304,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                               Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'u7bqx9bq' /* Customer Ledger Report */,
+                                                  '7zpit99o' /* Customer Ledger Report */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -4316,7 +4350,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                             Text(
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'xllktytl' /* Shift Summary */,
+                                                'oaemmify' /* Shift Summary */,
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -4361,7 +4395,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                             Text(
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'hxc3iwr9' /* Product Sale Report */,
+                                                'rdcojx07' /* Product Sale Report */,
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)

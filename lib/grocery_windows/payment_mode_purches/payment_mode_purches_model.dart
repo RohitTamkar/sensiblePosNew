@@ -33,6 +33,8 @@ class PaymentModePurchesModel
 
   ///  State fields for stateful widgets in this component.
 
+  // Stores action output result for [Firestore Query - Query a collection] action in PaymentModePurches widget.
+  List<PurchaseRecord>? listOfOrdersAdmin;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
   TextEditingController? textController1;
@@ -63,22 +65,6 @@ class PaymentModePurchesModel
   TextEditingController? textFieldextraTextController;
   String? Function(BuildContext, String?)?
       textFieldextraTextControllerValidator;
-  // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
-  List<SelItemListStruct>? prdlistsavebill;
-  // Stores action output result for [Custom Action - oldbalanceplusamt] action in Button widget.
-  int? totalcredit2;
-  // Stores action output result for [Backend Call - Create Document] action in Button widget.
-  PaymentRecord? paymentDoc2;
-  // Stores action output result for [Custom Action - addInvoiceBillhive] action in Button widget.
-  InvoiceStructStruct? hiveInvoiceDataCopyCopy;
-  // Stores action output result for [Custom Action - calShiftSummaryNewgrocery] action in Button widget.
-  dynamic? shiftSummarResultsNew2;
-  // Stores action output result for [Custom Action - shiftIdtoInt] action in Button widget.
-  int? shiftidhive2;
-  // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
-  ShiftDetailsStruct? getOfflineShiftdetails;
-  // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
-  ShiftDetailsStruct? updatedShift;
   // Stores action output result for [Custom Action - filterProductsPurches] action in Button widget.
   List<PurchaseSaleItemListStruct>? prdlinstnewtx;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
@@ -91,6 +77,16 @@ class PaymentModePurchesModel
   PaymentRecord? paymentDoc22d;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   PurchaseRecord? purchaseordnew;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  ProductRecord? stockupdateprdprt;
+  // Stores action output result for [Custom Action - hivegetproductbyId2] action in Button widget.
+  ProductStructStruct? itemprd2;
+  // Stores action output result for [Custom Action - hiveProductCrud] action in Button widget.
+  ProductStructStruct? productupdated2;
+  // Stores action output result for [Custom Action - getProductlistHive] action in Button widget.
+  List<ProductStructStruct>? newupdatedproductlist22;
+  // Stores action output result for [Custom Action - generateInvoice] action in Button widget.
+  String? returnurl2;
 
   @override
   void initState(BuildContext context) {}

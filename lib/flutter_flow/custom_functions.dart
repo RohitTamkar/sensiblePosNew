@@ -1197,3 +1197,16 @@ double? returnpaymentjson(String jsonString) {
       : null;
   return amt ?? 0.00;
 }
+
+int getTodayint(DateTime dateTime) {
+  var day, month;
+  day = dateTime.day.toString();
+  month = dateTime.month.toString();
+
+  var invNum = dateTime.year.toString() +
+      "-" +
+      (month.length < 2 ? "0" + month : month).toString() +
+      "-" +
+      (day.length < 2 ? "0" + day : day).toString();
+  return invNum.hashCode;
+}

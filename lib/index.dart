@@ -215,3 +215,7 @@ export '/pages/report_screen/category_reportnew/category_reportnew_widget.dart'
     show CategoryReportnewWidget;
 export '/grocery_windows/purchase_order/purchase_order_widget.dart'
     show PurchaseOrderWidget;
+export '/grocery_windows/purchase_order_list/purchase_order_list_widget.dart'
+    show PurchaseOrderListWidget;
+export '/grocery_windows/edit_purchase_order/edit_purchase_order_widget.dart'
+    show EditPurchaseOrderWidget;

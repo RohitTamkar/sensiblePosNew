@@ -1556,6 +1556,43 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   isList: true,
                 ),
               ),
+            ),
+            FFRoute(
+              name: 'PurchaseOrderList',
+              path: 'purchaseOrderList',
+              builder: (context, params) => PurchaseOrderListWidget(),
+            ),
+            FFRoute(
+              name: 'EditPurchaseOrder',
+              path: 'editPurchaseOrder',
+              asyncParams: {
+                'taxDetails':
+                    getDocList(['TAX_MASTER'], TaxMasterRecord.fromSnapshot),
+                'paymentMode': getDocList(
+                    ['PAYMENT_MODE'], PaymentModeRecord.fromSnapshot),
+              },
+              builder: (context, params) => EditPurchaseOrderWidget(
+                shiftdetail: params.getParam(
+                  'shiftdetail',
+                  ParamType.JSON,
+                ),
+                taxDetails: params.getParam<TaxMasterRecord>(
+                  'taxDetails',
+                  ParamType.Document,
+                  isList: true,
+                ),
+                userref: params.getParam(
+                  'userref',
+                  ParamType.DocumentReference,
+                  isList: false,
+                  collectionNamePath: ['USER_PROFILE'],
+                ),
+                paymentMode: params.getParam<PaymentModeRecord>(
+                  'paymentMode',
+                  ParamType.Document,
+                  isList: true,
+                ),
+              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

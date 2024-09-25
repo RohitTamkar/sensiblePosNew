@@ -3437,6 +3437,42 @@ class FFAppState extends ChangeNotifier {
   set paymode2(String value) {
     _paymode2 = value;
   }
+
+  List<PurchaseSaleItemListStruct> _orderDetails = [];
+  List<PurchaseSaleItemListStruct> get orderDetails => _orderDetails;
+  set orderDetails(List<PurchaseSaleItemListStruct> value) {
+    _orderDetails = value;
+  }
+
+  void addToOrderDetails(PurchaseSaleItemListStruct value) {
+    orderDetails.add(value);
+  }
+
+  void removeFromOrderDetails(PurchaseSaleItemListStruct value) {
+    orderDetails.remove(value);
+  }
+
+  void removeAtIndexFromOrderDetails(int index) {
+    orderDetails.removeAt(index);
+  }
+
+  void updateOrderDetailsAtIndex(
+    int index,
+    PurchaseSaleItemListStruct Function(PurchaseSaleItemListStruct) updateFn,
+  ) {
+    orderDetails[index] = updateFn(_orderDetails[index]);
+  }
+
+  void insertAtIndexInOrderDetails(
+      int index, PurchaseSaleItemListStruct value) {
+    orderDetails.insert(index, value);
+  }
+
+  DateTime? _selectedDate;
+  DateTime? get selectedDate => _selectedDate;
+  set selectedDate(DateTime? value) {
+    _selectedDate = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {
