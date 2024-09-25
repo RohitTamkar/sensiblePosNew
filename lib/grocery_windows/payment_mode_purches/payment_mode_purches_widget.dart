@@ -3988,6 +3988,8 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                               FFAppState().billAmt = 0.0;
                                               FFAppState().groceryJson = null;
                                               FFAppState().update(() {});
+                                              await launchURL(
+                                                  _model.returnurl2!);
                                               Navigator.pop(context);
                                               ScaffoldMessenger.of(context)
                                                   .showSnackBar(
