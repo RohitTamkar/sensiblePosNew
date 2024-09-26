@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom actions
+
 import 'package:flutter/services.dart';
 
 import 'dart:io';
@@ -43,6 +45,11 @@ Future<String> generateInvoice(
   //     'https://firebasestorage.googleapis.com/v0/b/uvpixcel.appspot.com/o/importantImages%2Faddd.jpg?alt=media&token=6a7b48ba-ecb3-4b43-817f-3386f5783546'!));
   // final Uint8List logoImageBytes1 = response1.bodyBytes;
   // final logoImageProvider1 = pw.MemoryImage(logoImageBytes1);
+
+  double totalAmountSale = 0;
+  for (var order in orderList!) {
+    totalAmountSale = totalAmountSale + order.total.toDouble();
+  }
 
   pdf.addPage(
     pw.Page(
@@ -103,24 +110,46 @@ Future<String> generateInvoice(
                     headerAlignment: pw.Alignment.centerLeft,
                     data: [
                       // Header row
-                      ['Product Name', 'Quantity', 'Price'],
+                      ['Product Name', 'Quantity', 'Price', 'Total'],
                       // Order items
                       ...orderList!.map((order) => [
-                            '${order.name} , (${order.quantity}) ,${order.price} ',
+                            '${order.name}',
                             order.quantity.toString(),
-                            order.price.toString()
+                            order.price.toString(),
+                            order.total.toString()
                           ]),
-                      // GST and Total row
-                      ['', 'GST (18% included):', calculateGST(totalAmt)],
-                      ['', 'Grand Total:', totalAmt],
+                      // ['', 'Grand Total:', totalAmt.toString()],
                     ],
                   ),
+                  pw.Row(
+                    mainAxisAlignment: pw.MainAxisAlignment.end,
+                    children: [
+                      pw.SizedBox(width: 10),
+                      pw.Text(
+                        'Grand Total: ${totalAmountSale.toStringAsFixed(2)}',
+                        style: pw.TextStyle(fontWeight: pw.FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                  // pw.Text('${order?.totalAmt ?? ''}'),
                   pw.SizedBox(height: 10),
                   pw.Row(
                     mainAxisAlignment: pw.MainAxisAlignment.center,
                     children: [
                       pw.SizedBox(width: 10),
                       //  pw.Image(logoImageProvider1, width: 300), // Logo image
+                    ],
+                  ),
+                  pw.SizedBox(height: 50),
+                  //pw.Spacer(),
+                  pw.Row(
+                    mainAxisAlignment: pw.MainAxisAlignment.end,
+                    children: [
+                      pw.SizedBox(width: 10),
+                      pw.Text(
+                        'Authorised Signatory',
+                        style: pw.TextStyle(fontWeight: pw.FontWeight.bold),
+                      ),
                     ],
                   ),
                 ],
