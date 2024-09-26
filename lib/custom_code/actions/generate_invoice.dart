@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'package:flutter/services.dart';
 
 import 'dart:io';
@@ -24,8 +26,8 @@ import 'dart:typed_data';
 import 'package:pdf/pdf.dart' as pw;
 import 'package:pdf/widgets.dart' as pw;
 import 'package:intl/intl.dart';
-import 'package:http/http.dart' as http;
-import 'dart:html' as html; // Import for web specific functionality
+//import 'package:http/http.dart' as http;
+//import 'dart:html' as html; // Import for web specific functionality
 
 Future<String> generateInvoice(
   String? orderId,
@@ -167,7 +169,7 @@ Future<String> generateInvoice(
   final pdfDataUri = 'data:application/pdf;base64,$base64String';
 
   // Print the PDF in web environment
-  if (html.window.navigator.userAgent.contains('Chrome')) {
+/*  if (html.window.navigator.userAgent.contains('Chrome')) {
     // For Chrome browser
     html.AnchorElement(href: pdfDataUri)
       ..setAttribute('download', 'ORD-$orderId.pdf')
@@ -175,6 +177,26 @@ Future<String> generateInvoice(
   } else {
     // For other browsers
     html.window.open(pdfDataUri, '_blank');
+
+  }*/
+
+  final directory = await getApplicationDocumentsDirectory();
+  final filePath = '${directory.path}/invoice_$orderId.pdf';
+  final file = File(filePath);
+
+  // Write the PDF file
+  await file.writeAsBytes(bytes);
+
+  // On Windows, open the PDF with the default viewer
+  try {
+    if (Platform.isWindows) {
+      // Open the file using the default system application
+      await Process.start('explorer.exe', [file.path]);
+    } else {
+      throw 'Unsupported platform';
+    }
+  } catch (e) {
+    throw 'Could not launch the PDF file: $e';
   }
 
   return pdfDataUri;

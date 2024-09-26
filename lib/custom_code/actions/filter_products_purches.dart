@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom actions
+
 Future<List<PurchaseSaleItemListStruct>> filterProductsPurches(
   int billno,
   List<dynamic> allBillList,
@@ -30,7 +32,7 @@ Future<List<PurchaseSaleItemListStruct>> filterProductsPurches(
               name: itemList[j]["name"],
               price: itemList[j]["price"],
               quantity: itemList[j]["quantity"],
-              total: itemList[j]["total"],
+              total: itemList[j]["total"].toInt(),
               id: itemList[j]["id"],
               catId: itemList[j]["catId"],
               // taxId: itemList[j][""],

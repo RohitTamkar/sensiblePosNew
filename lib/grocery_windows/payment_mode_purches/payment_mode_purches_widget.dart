@@ -3799,15 +3799,16 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                       .update({
                                                     ...mapToFirestore(
                                                       {
-                                                        'currentStock':
-                                                            FieldValue.increment(
-                                                                getJsonField(
-                                                          (_model.prdlinstnewtx![
+                                                        'currentStock': FieldValue
+                                                            .increment(functions
+                                                                .doubleToInt(
+                                                                    getJsonField(
+                                                          (_model.prdlinstnewtx?[
                                                                   FFAppState()
                                                                       .startLoop])
-                                                              .toMap(),
+                                                              ?.toMap(),
                                                           r'''$.quantity''',
-                                                        )),
+                                                        ))!),
                                                       },
                                                     ),
                                                   });
