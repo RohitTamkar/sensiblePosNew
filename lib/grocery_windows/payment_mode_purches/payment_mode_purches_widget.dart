@@ -3815,8 +3815,8 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                   _model.itemprd2 =
                                                       await actions
                                                           .hivegetproductbyId2(
-                                                    _model.stockupdateprdprt
-                                                        ?.reference.id,
+                                                    _model
+                                                        .stockupdateprdprt?.id,
                                                     _model.prdlinstnewtx?[
                                                         FFAppState().startLoop],
                                                     'get',
