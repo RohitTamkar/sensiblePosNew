@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/components/exit_confirm/exit_confirm_widget.dart';
@@ -16,6 +17,7 @@ import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'purchase_order_widget.dart' show PurchaseOrderWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -59,6 +61,18 @@ class PurchaseOrderModel extends FlutterFlowModel<PurchaseOrderWidget> {
   String? Function(BuildContext, String?)?
       textFieldsearchTextControllerValidator;
   List<PartyRecord> simpleSearchResults = [];
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  List<ProductRecord>? allprdrefresh;
+  // Stores action output result for [Custom Action - addFirebasetoHiveProduct] action in Button widget.
+  int? prdlist;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  List<CategoryRecord>? listcategory;
+  // Stores action output result for [Custom Action - addFirebasetoHiveCategory] action in Button widget.
+  int? cat;
+  // Stores action output result for [Custom Action - getProductlistHive] action in Button widget.
+  List<ProductStructStruct>? prdhive2refresh;
+  // Stores action output result for [Custom Action - getCategorylistHive] action in Button widget.
+  List<CategoryStructStruct>? catlistrefresh;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
   TextEditingController? textController2;
@@ -71,6 +85,10 @@ class PurchaseOrderModel extends FlutterFlowModel<PurchaseOrderWidget> {
   FocusNode? custmobFocusNode;
   TextEditingController? custmobTextController;
   String? Function(BuildContext, String?)? custmobTextControllerValidator;
+  // State field(s) for address widget.
+  FocusNode? addressFocusNode;
+  TextEditingController? addressTextController;
+  String? Function(BuildContext, String?)? addressTextControllerValidator;
   // Stores action output result for [Custom Action - removeHoldListItem] action in IconButton widget.
   List<dynamic>? res20;
   // Stores action output result for [Custom Action - calSubTotalForGrocery] action in IconButton widget.
@@ -94,5 +112,8 @@ class PurchaseOrderModel extends FlutterFlowModel<PurchaseOrderWidget> {
 
     custmobFocusNode?.dispose();
     custmobTextController?.dispose();
+
+    addressFocusNode?.dispose();
+    addressTextController?.dispose();
   }
 }

@@ -809,6 +809,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                     builder: (context) {
                                                       final containerVar =
                                                           containerPartyRecordList
+                                                              .where((e) =>
+                                                                  e.role ==
+                                                                  'CUSTOMER')
                                                               .toList();
 
                                                       return ListView.builder(
@@ -1078,6 +1081,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                     builder: (context) {
                                                       final list = _model
                                                           .simpleSearchResults
+                                                          .where((e) =>
+                                                              e.role ==
+                                                              'CUSTOMER')
                                                           .toList();
 
                                                       return ListView.builder(

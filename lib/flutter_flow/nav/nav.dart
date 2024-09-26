@@ -1251,12 +1251,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => AppSettingNewPosWidget(),
             ),
             FFRoute(
-              name: 'PurchaseGrocery',
-              path: 'purchaseGrocery',
-              requireAuth: true,
-              builder: (context, params) => PurchaseGroceryWidget(),
-            ),
-            FFRoute(
               name: 'MiniKioskDineParcel',
               path: 'miniKioskDineParcel',
               asyncParams: {

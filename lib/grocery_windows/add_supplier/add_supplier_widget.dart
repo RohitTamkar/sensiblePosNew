@@ -3534,7 +3534,7 @@ class _AddSupplierWidgetState extends State<AddSupplierWidget> {
                                   extraDetails:
                                       _model.textFieldextdetTextController.text,
                                   gender: _model.dropDowngenderValue,
-                                  role: 'CUSTOMER',
+                                  role: 'SUPPLIER',
                                   type: _model.dropDowntypeValue,
                                   firstVisit: _model
                                       .textFieldfrmvisitTextController.text,
@@ -3602,7 +3602,7 @@ class _AddSupplierWidgetState extends State<AddSupplierWidget> {
                                               .textFieldextdetTextController
                                               .text,
                                           gender: _model.dropDowngenderValue,
-                                          role: 'CUSTOMER',
+                                          role: 'SUPPLIER',
                                           type: _model.dropDowntypeValue,
                                           firstVisit: _model
                                               .textFieldfrmvisitTextController

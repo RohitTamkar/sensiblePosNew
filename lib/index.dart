@@ -184,8 +184,6 @@ export '/pages/kiosk/token_display/token_display_widget.dart'
     show TokenDisplayWidget;
 export '/pages/app_setting_new_pos/app_setting_new_pos_widget.dart'
     show AppSettingNewPosWidget;
-export '/grocery_windows/purchase_grocery/purchase_grocery_widget.dart'
-    show PurchaseGroceryWidget;
 export '/pages/kiosk/mini_kiosk/mini_kiosk_dine_parcel/mini_kiosk_dine_parcel_widget.dart'
     show MiniKioskDineParcelWidget;
 export '/pages/kiosk/mini_kiosk/kiosk_dine_parcel_copy/kiosk_dine_parcel_copy_widget.dart'

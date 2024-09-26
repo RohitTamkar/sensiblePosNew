@@ -385,7 +385,23 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                               onTap: () async {
                                 context.pushNamed(
                                   'purchaseOrder',
+                                  queryParameters: {
+                                    'shiftdetail': serializeParam(
+                                      widget!.shiftDetails,
+                                      ParamType.JSON,
+                                    ),
+                                    'taxDetails': serializeParam(
+                                      widget!.tax,
+                                      ParamType.Document,
+                                      isList: true,
+                                    ),
+                                    'userref': serializeParam(
+                                      widget!.doc,
+                                      ParamType.DocumentReference,
+                                    ),
+                                  }.withoutNulls,
                                   extra: <String, dynamic>{
+                                    'taxDetails': widget!.tax,
                                     kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,

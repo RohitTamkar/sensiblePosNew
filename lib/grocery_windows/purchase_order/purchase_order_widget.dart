@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/components/exit_confirm/exit_confirm_widget.dart';
@@ -15,6 +16,7 @@ import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -102,6 +104,9 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
 
     _model.custmobTextController ??= TextEditingController();
     _model.custmobFocusNode ??= FocusNode();
+
+    _model.addressTextController ??= TextEditingController();
+    _model.addressFocusNode ??= FocusNode();
 
     animationsMap.addAll({
       'containerOnPageLoadAnimation': AnimationInfo(
@@ -574,6 +579,9 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                   builder: (context) {
                                                     final containerVar =
                                                         containerPartyRecordList
+                                                            .where((e) =>
+                                                                e.role ==
+                                                                'SUPPLIER')
                                                             .toList();
 
                                                     return ListView.builder(
@@ -641,6 +649,19 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                                     TextSelection.collapsed(
                                                                         offset: _model
                                                                             .custnameTextController!
+                                                                            .text
+                                                                            .length);
+                                                              });
+                                                              safeSetState(() {
+                                                                _model.addressTextController
+                                                                        ?.text =
+                                                                    containerVarItem
+                                                                        .address;
+                                                                _model.addressTextController
+                                                                        ?.selection =
+                                                                    TextSelection.collapsed(
+                                                                        offset: _model
+                                                                            .addressTextController!
                                                                             .text
                                                                             .length);
                                                               });
@@ -944,6 +965,20 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                                       TextSelection.collapsed(
                                                                           offset: _model
                                                                               .custnameTextController!
+                                                                              .text
+                                                                              .length);
+                                                                });
+                                                                safeSetState(
+                                                                    () {
+                                                                  _model.addressTextController
+                                                                          ?.text =
+                                                                      listItem
+                                                                          .address;
+                                                                  _model.addressTextController
+                                                                          ?.selection =
+                                                                      TextSelection.collapsed(
+                                                                          offset: _model
+                                                                              .addressTextController!
                                                                               .text
                                                                               .length);
                                                                 });
@@ -1278,6 +1313,87 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                                           context)
                                                                       .headlineMediumFamily),
                                                         ),
+                                              ),
+                                            ),
+                                            FFButtonWidget(
+                                              onPressed: () async {
+                                                _model.allprdrefresh =
+                                                    await queryProductRecordOnce(
+                                                  parent:
+                                                      FFAppState().outletIdRef,
+                                                );
+                                                _model.prdlist = await actions
+                                                    .addFirebasetoHiveProduct(
+                                                  _model.allprdrefresh!
+                                                      .toList(),
+                                                );
+                                                _model.listcategory =
+                                                    await queryCategoryRecordOnce(
+                                                  parent:
+                                                      FFAppState().outletIdRef,
+                                                );
+                                                _model.cat = await actions
+                                                    .addFirebasetoHiveCategory(
+                                                  _model.listcategory!.toList(),
+                                                );
+                                                _model.prdhive2refresh =
+                                                    await actions
+                                                        .getProductlistHive();
+                                                _model.catlistrefresh =
+                                                    await actions
+                                                        .getCategorylistHive();
+                                                FFAppState().productHive = _model
+                                                    .prdhive2refresh!
+                                                    .toList()
+                                                    .cast<
+                                                        ProductStructStruct>();
+                                                FFAppState().categoryHive = _model
+                                                    .catlistrefresh!
+                                                    .toList()
+                                                    .cast<
+                                                        CategoryStructStruct>();
+                                                safeSetState(() {});
+
+                                                safeSetState(() {});
+                                              },
+                                              text: FFLocalizations.of(context)
+                                                  .getText(
+                                                'yekrc1g5' /* Refresh */,
+                                              ),
+                                              icon: Icon(
+                                                Icons.refresh_sharp,
+                                                size: 20.0,
+                                              ),
+                                              options: FFButtonOptions(
+                                                height: 40.0,
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        16.0, 0.0, 16.0, 0.0),
+                                                iconPadding:
+                                                    EdgeInsets.all(2.0),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
+                                                          color: Colors.white,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily),
+                                                        ),
+                                                elevation: 0.0,
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
                                               ),
                                             ),
                                           ],
@@ -1978,77 +2094,6 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                'myqm6hlx' /* Po No. */,
-                                                              ),
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .start,
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .labelSmall
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .labelSmallFamily,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).labelSmallFamily),
-                                                                  ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                        Flexible(
-                                                          flex: 2,
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        15.0,
-                                                                        0.0),
-                                                            child: Text(
-                                                              functions.genInvoiceNum(
-                                                                  FFAppState()
-                                                                      .count,
-                                                                  FFAppState()
-                                                                      .shiftCount),
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .start,
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .labelLarge
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .labelLargeFamily,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).labelLargeFamily),
-                                                                  ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                        Flexible(
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        10.0,
-                                                                        0.0),
-                                                            child: Text(
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .getText(
                                                                 'ncltah3m' /* Date  */,
                                                               ),
                                                               textAlign:
@@ -2295,9 +2340,11 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                                   delChargs:
                                                                       FFAppState()
                                                                           .delCharges,
-                                                                  document:
-                                                                      FFAppState()
-                                                                          .productHive,
+                                                                  document: FFAppState()
+                                                                      .productHive
+                                                                      .where((e) =>
+                                                                          e.stockable)
+                                                                      .toList(),
                                                                   taxcollection:
                                                                       widget!
                                                                           .taxDetails!,
@@ -2387,28 +2434,6 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 0.0, 0.0, 10.0),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: [
-                                                  Flexible(
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .start,
-                                                      children: <Widget>[]
-                                                          .divide(SizedBox(
-                                                              width: 10.0)),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
@@ -2769,6 +2794,165 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                   ),
                                                 ],
                                               ),
+                                            ),
+                                            Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              children: [
+                                                Flexible(
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                10.0, 0.0),
+                                                    child: Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'ilyro11k' /* Suppliers's Address */,
+                                                      ),
+                                                      textAlign:
+                                                          TextAlign.start,
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelSmall
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelSmallFamily,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelSmallFamily),
+                                                              ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                Expanded(
+                                                  flex: 2,
+                                                  child: TextFormField(
+                                                    controller: _model
+                                                        .addressTextController,
+                                                    focusNode:
+                                                        _model.addressFocusNode,
+                                                    autofocus: false,
+                                                    obscureText: false,
+                                                    decoration: InputDecoration(
+                                                      isDense: true,
+                                                      labelStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMediumFamily,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelMediumFamily),
+                                                              ),
+                                                      hintStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMediumFamily,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelMediumFamily),
+                                                              ),
+                                                      enabledBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .customColor1,
+                                                          width: 1.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                      ),
+                                                      focusedBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .info,
+                                                          width: 1.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                      ),
+                                                      errorBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .error,
+                                                          width: 1.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                      ),
+                                                      focusedErrorBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .error,
+                                                          width: 1.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                      ),
+                                                      filled: true,
+                                                      fillColor: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
+                                                      contentPadding:
+                                                          EdgeInsets.all(12.0),
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelLarge
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLargeFamily,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLargeFamily),
+                                                        ),
+                                                    validator: _model
+                                                        .addressTextControllerValidator
+                                                        .asValidator(context),
+                                                  ),
+                                                ),
+                                              ].divide(SizedBox(width: 10.0)),
                                             ),
                                           ],
                                         ),
@@ -3743,7 +3927,16 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                           .viewInsetsOf(
                                                               context),
                                                       child:
-                                                          PaymentModePurchesWidget(),
+                                                          PaymentModePurchesWidget(
+                                                        shiftdetail:
+                                                            widget!.shiftdetail,
+                                                        taxDetails:
+                                                            widget!.taxDetails,
+                                                        userref:
+                                                            widget!.userref,
+                                                        paymentMode:
+                                                            widget!.paymentMode,
+                                                      ),
                                                     ),
                                                   );
                                                 },
