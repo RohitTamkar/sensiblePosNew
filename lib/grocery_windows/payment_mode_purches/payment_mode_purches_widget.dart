@@ -3885,7 +3885,7 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                       ..recipeId = _model
                                                           .itemprd2?.recipeId
                                                       ..stock = _model
-                                                              .itemprd2!.stock -
+                                                              .itemprd2!.stock +
                                                           (functions.doubleToInt(
                                                               (_model.prdlinstnewtx?[
                                                                       FFAppState()
