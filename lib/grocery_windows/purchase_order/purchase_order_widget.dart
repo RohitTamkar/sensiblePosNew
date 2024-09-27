@@ -863,7 +863,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                                               FFAppState().isCustListShown = true;
                                                                               FFAppState().update(() {});
 
-                                                                              context.pushNamed('CreditPaymentPage');
+                                                                              context.pushNamed('CreditPaymentpurchase');
                                                                             },
                                                                           ),
                                                                         ),
@@ -1161,15 +1161,16 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                                             ),
                                                                             onPressed:
                                                                                 () async {
-                                                                              context.pushNamed(
-                                                                                'EditCustomer',
-                                                                                queryParameters: {
-                                                                                  'custRef': serializeParam(
-                                                                                    listItem.reference,
-                                                                                    ParamType.DocumentReference,
-                                                                                  ),
-                                                                                }.withoutNulls,
-                                                                              );
+                                                                              FFAppState().setCustName = listItem.name;
+                                                                              FFAppState().setCustMobNo = listItem.mobile;
+                                                                              FFAppState().oldBalance = listItem.oldBalance;
+                                                                              FFAppState().custCredit = listItem.creditLimit;
+                                                                              FFAppState().update(() {});
+                                                                              FFAppState().setCustRef = listItem.reference;
+                                                                              FFAppState().isCustListShown = true;
+                                                                              FFAppState().update(() {});
+
+                                                                              context.pushNamed('CreditPaymentpurchase');
                                                                             },
                                                                           ),
                                                                         ),

@@ -217,3 +217,5 @@ export '/grocery_windows/purchase_order_list/purchase_order_list_widget.dart'
     show PurchaseOrderListWidget;
 export '/grocery_windows/edit_purchase_order/edit_purchase_order_widget.dart'
     show EditPurchaseOrderWidget;
+export '/grocery_windows/credit_paymentpurchase/credit_paymentpurchase_widget.dart'
+    show CreditPaymentpurchaseWidget;
