@@ -417,8 +417,6 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                               },
                               child: Container(
                                 width: double.infinity,
-                                height:
-                                    MediaQuery.sizeOf(context).height * 0.12,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBackground,
@@ -434,7 +432,7 @@ class _MenuDrawerWidgetState extends State<MenuDrawerWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 6.0),
                                         child: Icon(
-                                          Icons.price_check_rounded,
+                                          Icons.add_shopping_cart_sharp,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
                                           size: 24.0,
