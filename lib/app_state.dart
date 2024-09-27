@@ -3473,6 +3473,12 @@ class FFAppState extends ChangeNotifier {
   set selectedDate(DateTime? value) {
     _selectedDate = value;
   }
+
+  bool _customer = false;
+  bool get customer => _customer;
+  set customer(bool value) {
+    _customer = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

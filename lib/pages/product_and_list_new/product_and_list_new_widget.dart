@@ -1049,15 +1049,17 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                             ),
                                                                             onPressed:
                                                                                 () async {
-                                                                              context.pushNamed(
-                                                                                'EditCustomer',
-                                                                                queryParameters: {
-                                                                                  'custRef': serializeParam(
-                                                                                    containerVarItem.reference,
-                                                                                    ParamType.DocumentReference,
-                                                                                  ),
-                                                                                }.withoutNulls,
-                                                                              );
+                                                                              FFAppState().setCustName = containerVarItem.name;
+                                                                              FFAppState().setCustMobNo = containerVarItem.mobile;
+                                                                              FFAppState().oldBalance = containerVarItem.oldBalance;
+                                                                              FFAppState().custCredit = containerVarItem.creditLimit;
+                                                                              FFAppState().update(() {});
+                                                                              FFAppState().setCustRef = containerVarItem.reference;
+                                                                              FFAppState().isCustListShown = true;
+                                                                              FFAppState().customer = true;
+                                                                              FFAppState().update(() {});
+
+                                                                              context.pushNamed('CreditPaymentPage');
                                                                             },
                                                                           ),
                                                                         ),
@@ -1317,15 +1319,17 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                             ),
                                                                             onPressed:
                                                                                 () async {
-                                                                              context.pushNamed(
-                                                                                'EditCustomer',
-                                                                                queryParameters: {
-                                                                                  'custRef': serializeParam(
-                                                                                    listItem.reference,
-                                                                                    ParamType.DocumentReference,
-                                                                                  ),
-                                                                                }.withoutNulls,
-                                                                              );
+                                                                              FFAppState().setCustName = listItem.name;
+                                                                              FFAppState().setCustMobNo = listItem.mobile;
+                                                                              FFAppState().oldBalance = listItem.oldBalance;
+                                                                              FFAppState().custCredit = listItem.creditLimit;
+                                                                              FFAppState().update(() {});
+                                                                              FFAppState().setCustRef = listItem.reference;
+                                                                              FFAppState().isCustListShown = true;
+                                                                              FFAppState().customer = true;
+                                                                              FFAppState().update(() {});
+
+                                                                              context.pushNamed('CreditPaymentPage');
                                                                             },
                                                                           ),
                                                                         ),
@@ -1370,11 +1374,20 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                               width: MediaQuery.sizeOf(context).width * 0.05,
                               height: MediaQuery.sizeOf(context).height * 0.05,
                               decoration: BoxDecoration(),
-                              child: Image.asset(
-                                'assets/images/IMG_20220412_140945.png',
-                                width: 100.0,
-                                height: 100.0,
-                                fit: BoxFit.contain,
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onLongPress: () async {
+                                  context.pushNamed('labeltest');
+                                },
+                                child: Image.asset(
+                                  'assets/images/IMG_20220412_140945.png',
+                                  width: 100.0,
+                                  height: 100.0,
+                                  fit: BoxFit.contain,
+                                ),
                               ),
                             ),
                             Expanded(
@@ -4824,10 +4837,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                           .defPayMode,
                                                                 ),
                                                                 options: dropDownPaymentModeRecordList
-                                                                    .where((e) =>
-                                                                        e.name !=
-                                                                        'CREDIT')
-                                                                    .toList()
                                                                     .map((e) =>
                                                                         e.name)
                                                                     .toList(),
