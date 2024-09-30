@@ -1,7 +1,10 @@
+import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -111,26 +114,74 @@ class _LabeltestWidgetState extends State<LabeltestWidget> {
                             ],
                           ),
                         ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              24.0, 0.0, 0.0, 0.0),
-                          child: Text(
-                            FFLocalizations.of(context).getText(
-                              '3yvumpgd' /* Page Title */,
-                            ),
-                            style: FlutterFlowTheme.of(context)
-                                .headlineMedium
-                                .override(
-                                  fontFamily: FlutterFlowTheme.of(context)
-                                      .headlineMediumFamily,
-                                  color: Colors.white,
-                                  fontSize: 22.0,
-                                  letterSpacing: 0.0,
-                                  useGoogleFonts: GoogleFonts.asMap()
-                                      .containsKey(FlutterFlowTheme.of(context)
-                                          .headlineMediumFamily),
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  24.0, 0.0, 0.0, 0.0),
+                              child: Text(
+                                FFLocalizations.of(context).getText(
+                                  '3yvumpgd' /* Page Title */,
                                 ),
-                          ),
+                                style: FlutterFlowTheme.of(context)
+                                    .headlineMedium
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .headlineMediumFamily,
+                                      color: Colors.white,
+                                      fontSize: 22.0,
+                                      letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineMediumFamily),
+                                    ),
+                              ),
+                            ),
+                            FFButtonWidget(
+                              onPressed: () async {
+                                _model.updatePurchasesellStruct(
+                                  (e) => e
+                                    ..name = 'BURGER'
+                                    ..quantity = 2.0
+                                    ..price = 200.0,
+                                );
+                                safeSetState(() {});
+                                _model.addToProductlist(_model.purchasesell!);
+                                safeSetState(() {});
+                                await actions.labelPrint(
+                                  _model.productlist.toList(),
+                                  '35mm*15mm',
+                                );
+                              },
+                              text: FFLocalizations.of(context).getText(
+                                '0676wcr3' /* Button */,
+                              ),
+                              options: FFButtonOptions(
+                                height: 40.0,
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    16.0, 0.0, 16.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: FlutterFlowTheme.of(context).primary,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .titleSmallFamily,
+                                      color: Colors.white,
+                                      letterSpacing: 0.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmallFamily),
+                                    ),
+                                elevation: 0.0,
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),

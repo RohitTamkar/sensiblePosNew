@@ -152,3 +152,4 @@ export 'add_invoice_billhive_purches.dart' show addInvoiceBillhivePurches;
 export 'paymentmodemix.dart' show paymentmodemix;
 export 'hivegetproductby_id2.dart' show hivegetproductbyId2;
 export 'generate_invoice.dart' show generateInvoice;
+export 'label_print.dart' show labelPrint;

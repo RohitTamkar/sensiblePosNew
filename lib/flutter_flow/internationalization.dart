@@ -20358,6 +20358,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
+    '0676wcr3': {
+      'en': 'Button',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
     'gtvqfg2d': {
       'en': 'Home',
       'hi': '',
