@@ -4032,21 +4032,23 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                     FFAppState().laelsize,
                                                   );
                                                 }
-                                                _model.returnurl2 =
-                                                    await actions
-                                                        .generateInvoice(
-                                                  _model.purchaseordnew
-                                                      ?.invoiceNo,
-                                                  _model.purchaseordnew
-                                                      ?.productList
-                                                      ?.toList(),
-                                                  _model.purchaseordnew
-                                                      ?.finalBillAmt
-                                                      ?.toString(),
-                                                  _model.purchaseordnew,
-                                                  _model.partydetails,
-                                                );
-                                                _shouldSetState = true;
+                                                if (!isAndroid) {
+                                                  _model.returnurl2 =
+                                                      await actions
+                                                          .generateInvoice(
+                                                    _model.purchaseordnew
+                                                        ?.invoiceNo,
+                                                    _model.purchaseordnew
+                                                        ?.productList
+                                                        ?.toList(),
+                                                    _model.purchaseordnew
+                                                        ?.finalBillAmt
+                                                        ?.toString(),
+                                                    _model.purchaseordnew,
+                                                    _model.partydetails,
+                                                  );
+                                                  _shouldSetState = true;
+                                                }
                                                 await actions
                                                     .removeFromAllBillList(
                                                   FFAppState().selBill,
