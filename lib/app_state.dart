@@ -3485,6 +3485,12 @@ class FFAppState extends ChangeNotifier {
   set customerMobileNoKiosk(String value) {
     _customerMobileNoKiosk = value;
   }
+
+  String _laelsize = '';
+  String get laelsize => _laelsize;
+  set laelsize(String value) {
+    _laelsize = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

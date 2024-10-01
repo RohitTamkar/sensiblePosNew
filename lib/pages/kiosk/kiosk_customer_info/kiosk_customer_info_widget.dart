@@ -44,11 +44,7 @@ class _KioskCustomerInfoWidgetState extends State<KioskCustomerInfoWidget> {
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {
-          _model.textController?.text = FFLocalizations.of(context).getText(
-            't3lif8v7' /* +91 */,
-          );
-        }));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -96,34 +92,37 @@ class _KioskCustomerInfoWidgetState extends State<KioskCustomerInfoWidget> {
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
-                            0.0, 250.0, 0.0, 0.0),
+                            0.0, 200.0, 0.0, 0.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 80.0),
-                              child: Text(
-                                FFLocalizations.of(context).getText(
-                                  '1f81hy76' /* Provide Mobile No & 
-   Get Fr... */
-                                  ,
+                            Align(
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 80.0),
+                                child: Text(
+                                  FFLocalizations.of(context).getText(
+                                    '1f81hy76' /* Celebrate Our New Shop Launch!... */,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                  style: FlutterFlowTheme.of(context)
+                                      .displayLarge
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .displayLargeFamily,
+                                        color:
+                                            FlutterFlowTheme.of(context).info,
+                                        fontSize: 40.0,
+                                        letterSpacing: 5.0,
+                                        fontWeight: FontWeight.w600,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .displayLargeFamily),
+                                      ),
                                 ),
-                                style: FlutterFlowTheme.of(context)
-                                    .displayLarge
-                                    .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .displayLargeFamily,
-                                      color: FlutterFlowTheme.of(context).info,
-                                      fontSize: 40.0,
-                                      letterSpacing: 5.0,
-                                      fontWeight: FontWeight.w600,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .displayLargeFamily),
-                                    ),
                               ),
                             ),
                             Row(
@@ -131,128 +130,19 @@ class _KioskCustomerInfoWidgetState extends State<KioskCustomerInfoWidget> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Expanded(
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 25.0, 0.0, 25.0),
-                                        child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            'or522779' /* Mobile Number */,
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMediumFamily,
-                                                fontSize: 24.0,
-                                                letterSpacing: 0.0,
-                                                useGoogleFonts: GoogleFonts
-                                                        .asMap()
-                                                    .containsKey(
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMediumFamily),
-                                              ),
-                                        ),
-                                      ),
-                                      Container(
-                                        width: 500.0,
-                                        height: 100.0,
-                                        child: Container(
-                                          width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  1.0,
-                                          child: TextFormField(
-                                            controller: _model.textController,
-                                            focusNode:
-                                                _model.textFieldFocusNode,
-                                            autofocus: false,
-                                            obscureText: false,
-                                            decoration: InputDecoration(
-                                              isDense: true,
-                                              labelStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelMediumFamily,
-                                                        fontSize: 24.0,
-                                                        letterSpacing: 0.0,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMediumFamily),
-                                                      ),
-                                              hintText:
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                'hs82d2e1' /* Mobile No */,
-                                              ),
-                                              hintStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelMediumFamily,
-                                                        fontSize: 24.0,
-                                                        letterSpacing: 0.0,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMediumFamily),
-                                                      ),
-                                              enabledBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: Color(0x00000000),
-                                                  width: 1.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                              focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: Color(0x00000000),
-                                                  width: 1.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                              errorBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .error,
-                                                  width: 1.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                              focusedErrorBorder:
-                                                  OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .error,
-                                                  width: 1.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                              filled: true,
-                                              fillColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
+                                  child: Form(
+                                    key: _model.formKey,
+                                    autovalidateMode: AutovalidateMode.disabled,
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 25.0, 0.0, 25.0),
+                                          child: Text(
+                                            FFLocalizations.of(context).getText(
+                                              'or522779' /* Mobile Number */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -270,18 +160,181 @@ class _KioskCustomerInfoWidgetState extends State<KioskCustomerInfoWidget> {
                                                                   context)
                                                               .bodyMediumFamily),
                                                 ),
-                                            textAlign: TextAlign.start,
-                                            keyboardType: TextInputType.number,
-                                            cursorColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .primaryText,
-                                            validator: _model
-                                                .textControllerValidator
-                                                .asValidator(context),
                                           ),
                                         ),
-                                      ),
-                                    ],
+                                        Container(
+                                          width: 500.0,
+                                          height: 100.0,
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '0j16qwmj' /* +91  */,
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
+                                                          fontSize: 24.0,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily),
+                                                        ),
+                                              ),
+                                              Container(
+                                                width: 500.0,
+                                                child: TextFormField(
+                                                  controller:
+                                                      _model.textController,
+                                                  focusNode:
+                                                      _model.textFieldFocusNode,
+                                                  autofocus: false,
+                                                  obscureText: false,
+                                                  decoration: InputDecoration(
+                                                    isDense: true,
+                                                    labelStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMediumFamily,
+                                                          fontSize: 24.0,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumFamily),
+                                                        ),
+                                                    hintText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      'hs82d2e1' /* Mobile No */,
+                                                    ),
+                                                    hintStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMediumFamily,
+                                                          fontSize: 24.0,
+                                                          letterSpacing: 0.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumFamily),
+                                                        ),
+                                                    enabledBorder:
+                                                        OutlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            Color(0x00000000),
+                                                        width: 1.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                    ),
+                                                    focusedBorder:
+                                                        OutlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            Color(0x00000000),
+                                                        width: 1.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                    ),
+                                                    errorBorder:
+                                                        OutlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .error,
+                                                        width: 1.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                    ),
+                                                    focusedErrorBorder:
+                                                        OutlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .error,
+                                                        width: 1.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                    ),
+                                                    filled: true,
+                                                    fillColor: FlutterFlowTheme
+                                                            .of(context)
+                                                        .secondaryBackground,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
+                                                        fontSize: 24.0,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily),
+                                                      ),
+                                                  textAlign: TextAlign.start,
+                                                  maxLength: 10,
+                                                  buildCounter: (context,
+                                                          {required currentLength,
+                                                          required isFocused,
+                                                          maxLength}) =>
+                                                      null,
+                                                  keyboardType:
+                                                      TextInputType.number,
+                                                  cursorColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primaryText,
+                                                  validator: _model
+                                                      .textControllerValidator
+                                                      .asValidator(context),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ],
@@ -333,7 +386,7 @@ class _KioskCustomerInfoWidgetState extends State<KioskCustomerInfoWidget> {
                                       );
                                     },
                                     text: FFLocalizations.of(context).getText(
-                                      'qo13s9uw' /* Skip */,
+                                      'qo13s9uw' /* Skip for Now */,
                                     ),
                                     options: FFButtonOptions(
                                       width: 200.0,
@@ -343,15 +396,16 @@ class _KioskCustomerInfoWidgetState extends State<KioskCustomerInfoWidget> {
                                       iconPadding:
                                           EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
+                                      color: FlutterFlowTheme.of(context)
+                                          .parkingPrimary,
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
                                             fontFamily:
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmallFamily,
-                                            color: Colors.white,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
                                             letterSpacing: 0.0,
                                             useGoogleFonts: GoogleFonts.asMap()
                                                 .containsKey(
@@ -359,66 +413,95 @@ class _KioskCustomerInfoWidgetState extends State<KioskCustomerInfoWidget> {
                                                         .titleSmallFamily),
                                           ),
                                       elevation: 0.0,
-                                      borderRadius: BorderRadius.circular(8.0),
+                                      borderRadius: BorderRadius.circular(12.0),
                                     ),
                                   ),
                                 FFButtonWidget(
                                   onPressed: () async {
-                                    FFAppState().customerMobileNoKiosk =
-                                        _model.textController.text;
-                                    safeSetState(() {});
+                                    _model.formValidate = true;
+                                    if (_model.formKey.currentState == null ||
+                                        !_model.formKey.currentState!
+                                            .validate()) {
+                                      safeSetState(
+                                          () => _model.formValidate = false);
+                                      return;
+                                    }
+                                    if (_model.formValidate == true) {
+                                      FFAppState().customerMobileNoKiosk =
+                                          _model.textController.text;
+                                      safeSetState(() {});
 
-                                    var partyRecordReference =
-                                        PartyRecord.createDoc(
-                                            FFAppState().outletIdRef!);
-                                    await partyRecordReference
-                                        .set(createPartyRecordData(
-                                      mobile: _model.textController.text,
-                                    ));
-                                    _model.partyDoc =
-                                        PartyRecord.getDocumentFromData(
-                                            createPartyRecordData(
-                                              mobile:
-                                                  _model.textController.text,
-                                            ),
-                                            partyRecordReference);
+                                      var partyRecordReference =
+                                          PartyRecord.createDoc(
+                                              FFAppState().outletIdRef!);
+                                      await partyRecordReference
+                                          .set(createPartyRecordData(
+                                        mobile: _model.textController.text,
+                                      ));
+                                      _model.partyDoc =
+                                          PartyRecord.getDocumentFromData(
+                                              createPartyRecordData(
+                                                mobile:
+                                                    _model.textController.text,
+                                              ),
+                                              partyRecordReference);
 
-                                    await _model.partyDoc!.reference
-                                        .update(createPartyRecordData(
-                                      id: _model.partyDoc?.reference.id,
-                                    ));
+                                      await _model.partyDoc!.reference
+                                          .update(createPartyRecordData(
+                                        id: _model.partyDoc?.reference.id,
+                                      ));
 
-                                    context.pushNamed(
-                                      'KioskBillScreen',
-                                      queryParameters: {
-                                        'shiftdoc': serializeParam(
-                                          widget!.shiftdoc,
-                                          ParamType.JSON,
-                                        ),
-                                        'doc': serializeParam(
-                                          widget!.userdoc,
-                                          ParamType.DocumentReference,
-                                        ),
-                                        'appsetting': serializeParam(
-                                          widget!.appSetting,
-                                          ParamType.Document,
-                                        ),
-                                        'taxcollection': serializeParam(
-                                          widget!.taxcollection,
-                                          ParamType.Document,
-                                          isList: true,
-                                        ),
-                                      }.withoutNulls,
-                                      extra: <String, dynamic>{
-                                        'appsetting': widget!.appSetting,
-                                        'taxcollection': widget!.taxcollection,
-                                      },
-                                    );
+                                      context.pushNamed(
+                                        'KioskBillScreen',
+                                        queryParameters: {
+                                          'shiftdoc': serializeParam(
+                                            widget!.shiftdoc,
+                                            ParamType.JSON,
+                                          ),
+                                          'doc': serializeParam(
+                                            widget!.userdoc,
+                                            ParamType.DocumentReference,
+                                          ),
+                                          'appsetting': serializeParam(
+                                            widget!.appSetting,
+                                            ParamType.Document,
+                                          ),
+                                          'taxcollection': serializeParam(
+                                            widget!.taxcollection,
+                                            ParamType.Document,
+                                            isList: true,
+                                          ),
+                                        }.withoutNulls,
+                                        extra: <String, dynamic>{
+                                          'appsetting': widget!.appSetting,
+                                          'taxcollection':
+                                              widget!.taxcollection,
+                                        },
+                                      );
+                                    } else {
+                                      await showDialog(
+                                        context: context,
+                                        builder: (alertDialogContext) {
+                                          return AlertDialog(
+                                            title: Text('ERROR'),
+                                            content:
+                                                Text('Fill Required Field...'),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext),
+                                                child: Text('Ok'),
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      );
+                                    }
 
                                     safeSetState(() {});
                                   },
                                   text: FFLocalizations.of(context).getText(
-                                    'e80b6s8u' /* Choose Products */,
+                                    'e80b6s8u' /* Pick Your Products */,
                                   ),
                                   options: FFButtonOptions(
                                     height: 60.0,
@@ -426,7 +509,7 @@ class _KioskCustomerInfoWidgetState extends State<KioskCustomerInfoWidget> {
                                         16.0, 0.0, 16.0, 0.0),
                                     iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    color: Color(0xFF73DB7C),
+                                    color: FlutterFlowTheme.of(context).success,
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(

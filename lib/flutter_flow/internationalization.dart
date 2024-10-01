@@ -22944,7 +22944,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // kioskCustomerInfo
   {
     '1f81hy76': {
-      'en': 'Provide Mobile No & \n   Get Free Coffee \n',
+      'en':
+          'Celebrate Our New Shop Launch! \nGet a Free Coffee Today \nSimply Enter Your Mobile Number.',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -22957,6 +22958,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
+    '0j16qwmj': {
+      'en': '+91 ',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
     'hs82d2e1': {
       'en': 'Mobile No',
       'hi': '',
@@ -22964,22 +22972,36 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    't3lif8v7': {
-      'en': '+91',
+    '164d8t1d': {
+      'en': 'Enter Mobile Number',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'sh145ohz': {
+      'en': 'Atleast 10 digit requird ',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'wq8dq12b': {
+      'en': 'Please choose an option from the dropdown',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
     'qo13s9uw': {
-      'en': 'Skip',
+      'en': 'Skip for Now',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
     'e80b6s8u': {
-      'en': 'Choose Products',
+      'en': 'Pick Your Products',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -27208,6 +27230,44 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'up6zlty8': {
       'en': 'Done',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+  },
+  // selectlabel
+  {
+    'w2ecx6kr': {
+      'en': 'SELECT  LABEL  SIZE ',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'akv7u0em': {
+      'en': 'SIZE 50mm,25mm',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'srhv7n3i': {
+      'en': 'SIZE 35mm,15mm',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'rnsb4zme': {
+      'en': 'SIZE 25mm,15mm',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '2gg5i5om': {
+      'en': 'Submit',
       'hi': '',
       'kn': '',
       'mr': '',

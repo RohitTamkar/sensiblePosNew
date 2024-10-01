@@ -659,6 +659,10 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                               e.isDeleted ==
                                                               false)
                                                           .toList()
+                                                          ?.sortedList(
+                                                              keyOf: (e) =>
+                                                                  e.name,
+                                                              desc: false)
                                                           ?.toList() ??
                                                       [];
 
@@ -846,6 +850,10 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                           final kioskBillScreenVar = _model
                                               .productDoc
                                               .where((e) => e.isEnable)
+                                              .toList()
+                                              .sortedList(
+                                                  keyOf: (e) => e.name,
+                                                  desc: false)
                                               .toList();
 
                                           return GridView.builder(

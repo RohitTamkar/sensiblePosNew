@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:typed_data';
 import 'dart:convert';
 import 'dart:async';
@@ -18,7 +20,7 @@ import 'package:permission_handler/permission_handler.dart';
 
 Future<void> labelPrint(
   List<PurchaseSaleItemListStruct> prdList,
-  String labelSize,
+  String labelSize, // size is 50mm, 25mm
 ) async {
   // Initialize the printer
   Printer _printer = Printer();
@@ -34,35 +36,15 @@ Future<void> labelPrint(
         'MfgDate': '2023-10-18',
         'ExpDate': '2024-12-18',
         'barcode': '123456789',
-        'copies': item.quantity, // assuming quantity is a number
-
-// // set the number of copies you want to print
-        //  'name': item.name, // assuming name is a String
-        //address': item.address, // assuming address is a String
-        //  'fssai': item.fssai, // assuming fssai is a String
-        //   'phone': item.phone, // assuming phone is a String
-        // 'bestBefore': item.bestBefore // assuming bestBefore is a String
+        'copies': 1, // assuming quantity is a number
       };
 
       // Print the label for the current item
-      await _printer.printLabel(data);
+      await _printer.printLabel(data, labelSize);
     }
   } else {
     print("Printer not initialized or no USB devices found.");
   }
-}
-
-class Company {
-  final String name;
-  final String address;
-  final String fssai;
-  final String phone;
-
-  Company(
-      {required this.name,
-      required this.address,
-      required this.fssai,
-      required this.phone});
 }
 
 class Printer {
@@ -118,56 +100,96 @@ class Printer {
     }
   }
 
-  // Print a label with the provided data
-  Future<void> printLabel(Map<String, dynamic> data) async {
-    await sendCommand('SIZE 25 mm,50 mm\r\n');
-    await sendCommand('GAP 2.5 mm,0 mm\r\n');
-    await sendCommand('CLS\r\n');
-    await sendCommand('REFERENCE 0,0\r\n');
-    await sendCommand('TEXT 30,30,"B.FNT",0,2,3,"${data['name']}"\r\n');
-    await sendCommand('TEXT 430,30,"B.FNT",0,2,3,"${data['name']}"\r\n');
-    await sendCommand('TEXT 30,80,"3.EFT",0,1,1,"${data['dateType']}:"\r\n');
-    await sendCommand('TEXT 430,80,"3.EFT",0,1,1,"${data['dateType']}:"\r\n');
-    await sendCommand('TEXT 110,82,"D.FNT",0,1,1,"${data['date']}"\r\n');
-    await sendCommand('TEXT 510,82,"D.FNT",0,1,1,"${data['date']}"\r\n');
-    await sendCommand(
-        'TEXT 30,110,"3.EFT",0,1,1,"${data['quantityType']}:"\r\n');
-    await sendCommand(
-        'TEXT 430,110,"3.EFT",0,1,1,"${data['quantityType']}:"\r\n');
-    await sendCommand('TEXT 130,112,"D.FNT",0,1,1,"${data['quantity']}"\r\n');
-    await sendCommand('TEXT 530,112,"D.FNT",0,1,1,"${data['quantity']}"\r\n');
-    await sendCommand('TEXT 30,140,"3.EFT",0,1,1,"MRP:"\r\n');
-    await sendCommand('TEXT 430,140,"3.EFT",0,1,1,"MRP:"\r\n');
-    await sendCommand('TEXT 90,142,"D.FNT",0,1,1,"${data['mrp']}"\r\n');
-    await sendCommand('TEXT 490,142,"D.FNT",0,1,1,"${data['mrp']}"\r\n');
+  Future<void> printLabel(Map<String, dynamic> data, String labelSize) async {
+    if (labelSize == 'SIZE 50mm,25mm') {
+      // Set the label size to 50 mm x 25 mm
+      await sendCommand('SIZE 50 mm,25 mm\r\n');
+      await sendCommand('GAP 2.5 mm,0 mm\r\n');
 
-    if (data['bestBefore'] != null) {
+      // Clear the printer buffer before starting a new label
+      await sendCommand('CLS\r\n'); // Only clear once before adding content
+
+      await sendCommand('REFERENCE 0,0\r\n');
+
+      // 1. Print Item name
+      await sendCommand('TEXT 20,10,"B.FNT",0,2,2,"${data['Name']}"\r\n');
+
+      // 2. Print MRP and Rate on the same line
       await sendCommand(
-          'TEXT 30,170,"D.FNT",0,1,1,"Best before ${data['bestBefore']}"\r\n');
+          'TEXT 20,40,"3.EFT",0,1,1,"MRP: ${data['Price']}    Rate: ${data['Price']}"\r\n');
+
+      // 3. Print Manufacture Date and Expiry Date
       await sendCommand(
-          'TEXT 430,170,"D.FNT",0,1,1,"Best before ${data['bestBefore']}"\r\n');
+          'TEXT 20,70,"3.EFT",0,1,1,"Mfg Date: ${data['MfgDate']}"\r\n');
+      await sendCommand(
+          'TEXT 20,90,"3.EFT",0,1,1,"Exp Date: ${data['ExpDate']}"\r\n');
+
+      // 4. Print the Barcode at the bottom
+      await sendCommand(
+          'BARCODE 20,120,"128",60,1,0,2,2,"${data['barcode']}"\r\n');
+
+      // Ensure the number of copies is properly initialized
+      int copies = data['copies'] ?? 1; // Default to 1 copy if not provided
+
+      // Debugging line to check the copies value before sending to the printer
+      print("Number of copies to print: $copies");
+
+      // Do not clear before printing; instead, send the print command now
+      await sendCommand(
+          'PRINT $copies\r\n'); // Send the correct number of copies to print
+    } else if (labelSize == 'SIZE 35mm,15mm') {
+      // Set the label size to 35mm x 15mm
+
+      await sendCommand('SIZE 35 mm,15 mm\r\n');
+      await sendCommand('GAP 2.5 mm,0 mm\r\n');
+      await sendCommand('CLS\r\n');
+      await sendCommand('REFERENCE 0,0\r\n');
+
+      // 1. Print Item name (adjusted position and font size for the smaller label)
+      await sendCommand('TEXT 10,10,"B.FNT",0,1,1,"${data['Name']}"\r\n');
+
+      // 2. Print MRP on a new line
+      await sendCommand('TEXT 10,30,"3.EFT",0,1,1,"MRP: ${data['Price']}"\r\n');
+
+      // 3. Print Rate on a new line (adjusted to a lower position to avoid overlap)
+      await sendCommand(
+          'TEXT 10,50,"3.EFT",0,1,1,"Rate: ${data['Price']}"\r\n');
+
+      // 4. Print the Barcode at the bottom (adjusted barcode height to fit the label)
+      await sendCommand(
+          'BARCODE 10,70,"128",50,1,0,2,2,"${data['barcode']}"\r\n');
+
+      // Ensure the number of copies is properly initialized
+      int copies = data['copies'] ?? 1; // Default to 1 copy if not provided
+
+      // Send the print command
+      await sendCommand('PRINT $copies\r\n');
+    } else if (labelSize == 'SIZE 25mm,15mm') {
+      // Set the label size to 25mm x 15mm
+      await sendCommand('SIZE 25 mm,15 mm\r\n');
+      await sendCommand('GAP 2.5 mm,0 mm\r\n');
+      await sendCommand('CLS\r\n');
+      await sendCommand('REFERENCE 0,0\r\n');
+
+      // 1. Print Item name (reduce font size and position to avoid clipping)
+      await sendCommand('TEXT 5,25,"B.FNT",0,1,1,"${data['Name']}"\r\n');
+
+      // 2. Print MRP (further adjust Y-position to avoid overlap with Name)
+      await sendCommand('TEXT 6,45,"3.EFT",0,1,1,"MRP:${data['Price']}"\r\n');
+
+      // 3. Print Rate (adjust position to ensure it doesn't overlap with MRP)
+      await sendCommand('TEXT 5,65,"3.EFT",0,1,1,"Rate:${data['Price']}"\r\n');
+
+      // 4. Print the Barcode (move barcode further down, very close to bottom)
+      await sendCommand(
+          'BARCODE 2,82,"128",40,1,0,2,2,"${data['barcode']}"\r\n');
+
+      // Ensure the number of copies is properly initialized
+      int copies = data['copies'] ?? 1; // Default to 1 copy if not provided
+
+      // Send the print command
+      await sendCommand('PRINT $copies\r\n');
     }
-
-    if (data['phone'] != null && data['phone'] != '') {
-      await sendCommand(
-          'TEXT 30,200,"0",0,6,5,"Customer Care: ${data['phone']}"\r\n');
-      await sendCommand(
-          'TEXT 430,200,"0",0,6,5,"Customer Care: ${data['phone']}"\r\n');
-    }
-
-    if (data['fssai'] != null && data['fssai'] != '') {
-      await sendCommand('TEXT 30,220,"0",0,6,5,"fssai: ${data['fssai']}"\r\n');
-      await sendCommand('TEXT 430,220,"0",0,6,5,"fssai: ${data['fssai']}"\r\n');
-    }
-
-    /*  if (data['address'] != null && data['address'] != '') {
-      await sendCommand('BLOCK 240,190,160,50,"0",0,6,5,"MFD BY: ${data['address']}"\r\n');
-      await sendCommand('BLOCK 640,190,160,50,"0",0,6,5,"MFD BY: ${data['address']}"\r\n');
-    }*/
-
-    int copies = 1;
-    copies = (copies / 2).ceil();
-    await sendCommand('PRINT $copies\r\n');
   }
 }
 

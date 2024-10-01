@@ -191,33 +191,70 @@ class _KioskDineParcelWidgetState extends State<KioskDineParcelWidget>
                                   FFAppState().orderType = 'DINE IN';
                                   FFAppState().delCharges = 0.0;
                                   safeSetState(() {});
-
-                                  context.pushNamed(
-                                    'kioskCustomerInfo',
-                                    queryParameters: {
-                                      'userdoc': serializeParam(
-                                        widget!.userdoc,
-                                        ParamType.DocumentReference,
-                                      ),
-                                      'shiftdoc': serializeParam(
-                                        widget!.shiftdoc,
-                                        ParamType.JSON,
-                                      ),
-                                      'appSetting': serializeParam(
-                                        widget!.appSetting,
-                                        ParamType.Document,
-                                      ),
-                                      'taxcollection': serializeParam(
-                                        widget!.taxcollection,
-                                        ParamType.Document,
-                                        isList: true,
-                                      ),
-                                    }.withoutNulls,
-                                    extra: <String, dynamic>{
-                                      'appSetting': widget!.appSetting,
-                                      'taxcollection': widget!.taxcollection,
-                                    },
-                                  );
+                                  if (valueOrDefault<bool>(
+                                        widget!.appSetting?.settingList
+                                            ?.where((e) =>
+                                                e.title == 'hideCustInfoPage')
+                                            .toList()
+                                            ?.first
+                                            ?.value,
+                                        false,
+                                      ) ==
+                                      true) {
+                                    context.pushNamed(
+                                      'kioskCustomerInfo',
+                                      queryParameters: {
+                                        'userdoc': serializeParam(
+                                          widget!.userdoc,
+                                          ParamType.DocumentReference,
+                                        ),
+                                        'shiftdoc': serializeParam(
+                                          widget!.shiftdoc,
+                                          ParamType.JSON,
+                                        ),
+                                        'appSetting': serializeParam(
+                                          widget!.appSetting,
+                                          ParamType.Document,
+                                        ),
+                                        'taxcollection': serializeParam(
+                                          widget!.taxcollection,
+                                          ParamType.Document,
+                                          isList: true,
+                                        ),
+                                      }.withoutNulls,
+                                      extra: <String, dynamic>{
+                                        'appSetting': widget!.appSetting,
+                                        'taxcollection': widget!.taxcollection,
+                                      },
+                                    );
+                                  } else {
+                                    context.pushNamed(
+                                      'KioskBillScreen',
+                                      queryParameters: {
+                                        'doc': serializeParam(
+                                          widget!.userdoc,
+                                          ParamType.DocumentReference,
+                                        ),
+                                        'shiftdoc': serializeParam(
+                                          widget!.shiftdoc,
+                                          ParamType.JSON,
+                                        ),
+                                        'appsetting': serializeParam(
+                                          widget!.appSetting,
+                                          ParamType.Document,
+                                        ),
+                                        'taxcollection': serializeParam(
+                                          widget!.taxcollection,
+                                          ParamType.Document,
+                                          isList: true,
+                                        ),
+                                      }.withoutNulls,
+                                      extra: <String, dynamic>{
+                                        'appsetting': widget!.appSetting,
+                                        'taxcollection': widget!.taxcollection,
+                                      },
+                                    );
+                                  }
                                 },
                                 child: Container(
                                   width: MediaQuery.sizeOf(context).width * 0.6,
@@ -309,33 +346,72 @@ class _KioskDineParcelWidgetState extends State<KioskDineParcelWidget>
                                       0.0,
                                     );
                                     safeSetState(() {});
-
-                                    context.pushNamed(
-                                      'kioskCustomerInfo',
-                                      queryParameters: {
-                                        'userdoc': serializeParam(
-                                          widget!.userdoc,
-                                          ParamType.DocumentReference,
-                                        ),
-                                        'shiftdoc': serializeParam(
-                                          widget!.shiftdoc,
-                                          ParamType.JSON,
-                                        ),
-                                        'appSetting': serializeParam(
-                                          widget!.appSetting,
-                                          ParamType.Document,
-                                        ),
-                                        'taxcollection': serializeParam(
-                                          widget!.taxcollection,
-                                          ParamType.Document,
-                                          isList: true,
-                                        ),
-                                      }.withoutNulls,
-                                      extra: <String, dynamic>{
-                                        'appSetting': widget!.appSetting,
-                                        'taxcollection': widget!.taxcollection,
-                                      },
-                                    );
+                                    if (valueOrDefault<bool>(
+                                          widget!.appSetting?.settingList
+                                              ?.where((e) =>
+                                                  e.title == 'hideCustInfoPage')
+                                              .toList()
+                                              ?.first
+                                              ?.value,
+                                          false,
+                                        ) ==
+                                        true) {
+                                      context.pushNamed(
+                                        'kioskCustomerInfo',
+                                        queryParameters: {
+                                          'userdoc': serializeParam(
+                                            widget!.userdoc,
+                                            ParamType.DocumentReference,
+                                          ),
+                                          'shiftdoc': serializeParam(
+                                            widget!.shiftdoc,
+                                            ParamType.JSON,
+                                          ),
+                                          'appSetting': serializeParam(
+                                            widget!.appSetting,
+                                            ParamType.Document,
+                                          ),
+                                          'taxcollection': serializeParam(
+                                            widget!.taxcollection,
+                                            ParamType.Document,
+                                            isList: true,
+                                          ),
+                                        }.withoutNulls,
+                                        extra: <String, dynamic>{
+                                          'appSetting': widget!.appSetting,
+                                          'taxcollection':
+                                              widget!.taxcollection,
+                                        },
+                                      );
+                                    } else {
+                                      context.pushNamed(
+                                        'KioskBillScreen',
+                                        queryParameters: {
+                                          'doc': serializeParam(
+                                            widget!.userdoc,
+                                            ParamType.DocumentReference,
+                                          ),
+                                          'shiftdoc': serializeParam(
+                                            widget!.shiftdoc,
+                                            ParamType.JSON,
+                                          ),
+                                          'appsetting': serializeParam(
+                                            widget!.appSetting,
+                                            ParamType.Document,
+                                          ),
+                                          'taxcollection': serializeParam(
+                                            widget!.taxcollection,
+                                            ParamType.Document,
+                                            isList: true,
+                                          ),
+                                        }.withoutNulls,
+                                        extra: <String, dynamic>{
+                                          'appsetting': widget!.appSetting,
+                                          'taxcollection':
+                                              widget!.taxcollection,
+                                        },
+                                      );
+                                    }
                                   },
                                   child: Container(
                                     width:
