@@ -655,6 +655,10 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                 builder: (context) {
                                                   final listcat = _model
                                                           .categorydoc
+                                                          ?.where((e) =>
+                                                              e.isDeleted ==
+                                                              false)
+                                                          .toList()
                                                           ?.toList() ??
                                                       [];
 

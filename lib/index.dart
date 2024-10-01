@@ -219,3 +219,5 @@ export '/grocery_windows/edit_purchase_order/edit_purchase_order_widget.dart'
     show EditPurchaseOrderWidget;
 export '/grocery_windows/credit_paymentpurchase/credit_paymentpurchase_widget.dart'
     show CreditPaymentpurchaseWidget;
+export '/pages/kiosk/kiosk_customer_info/kiosk_customer_info_widget.dart'
+    show KioskCustomerInfoWidget;

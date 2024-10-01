@@ -136,6 +136,11 @@ class OutletRecord extends FirestoreRecord {
   bool get isDemo => _isDemo ?? false;
   bool hasIsDemo() => _isDemo != null;
 
+  // "dealerCode" field.
+  String? _dealerCode;
+  String get dealerCode => _dealerCode ?? '';
+  bool hasDealerCode() => _dealerCode != null;
+
   void _initializeFields() {
     _branch = snapshotData['branch'] as String?;
     _createdDate = castToType<int>(snapshotData['createdDate']);
@@ -161,6 +166,7 @@ class OutletRecord extends FirestoreRecord {
     _isProd = snapshotData['isProd'] as bool?;
     _billingType = snapshotData['billingType'] as String?;
     _isDemo = snapshotData['isDemo'] as bool?;
+    _dealerCode = snapshotData['dealerCode'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -221,6 +227,7 @@ Map<String, dynamic> createOutletRecordData({
   bool? isProd,
   String? billingType,
   bool? isDemo,
+  String? dealerCode,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -248,6 +255,7 @@ Map<String, dynamic> createOutletRecordData({
       'isProd': isProd,
       'billingType': billingType,
       'isDemo': isDemo,
+      'dealerCode': dealerCode,
     }.withoutNulls,
   );
 
@@ -282,7 +290,8 @@ class OutletRecordDocumentEquality implements Equality<OutletRecord> {
         e1?.merchantKey == e2?.merchantKey &&
         e1?.isProd == e2?.isProd &&
         e1?.billingType == e2?.billingType &&
-        e1?.isDemo == e2?.isDemo;
+        e1?.isDemo == e2?.isDemo &&
+        e1?.dealerCode == e2?.dealerCode;
   }
 
   @override
@@ -310,7 +319,8 @@ class OutletRecordDocumentEquality implements Equality<OutletRecord> {
         e?.merchantKey,
         e?.isProd,
         e?.billingType,
-        e?.isDemo
+        e?.isDemo,
+        e?.dealerCode
       ]);
 
   @override

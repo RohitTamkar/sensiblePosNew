@@ -150,6 +150,21 @@ class _LabeltestWidgetState extends State<LabeltestWidget> {
                                 safeSetState(() {});
                                 _model.addToProductlist(_model.purchasesell!);
                                 safeSetState(() {});
+                                await showDialog(
+                                  context: context,
+                                  builder: (alertDialogContext) {
+                                    return AlertDialog(
+                                      content: Text('alert'),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () =>
+                                              Navigator.pop(alertDialogContext),
+                                          child: Text('Ok'),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
                                 await actions.labelPrint(
                                   _model.productlist.toList(),
                                   '35mm*15mm',

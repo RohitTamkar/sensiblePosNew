@@ -22941,6 +22941,58 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
   },
+  // kioskCustomerInfo
+  {
+    '1f81hy76': {
+      'en': 'Provide Mobile No & \n   Get Free Coffee \n',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'or522779': {
+      'en': 'Mobile Number',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'hs82d2e1': {
+      'en': 'Mobile No',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    't3lif8v7': {
+      'en': '+91',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'qo13s9uw': {
+      'en': 'Skip',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'e80b6s8u': {
+      'en': 'Choose Products',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '90zv2vkg': {
+      'en': 'Home',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+  },
   // OutletDetailsHeader
   {
     'dk8fulps': {

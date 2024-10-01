@@ -193,9 +193,9 @@ class _KioskDineParcelWidgetState extends State<KioskDineParcelWidget>
                                   safeSetState(() {});
 
                                   context.pushNamed(
-                                    'KioskBillScreen',
+                                    'kioskCustomerInfo',
                                     queryParameters: {
-                                      'doc': serializeParam(
+                                      'userdoc': serializeParam(
                                         widget!.userdoc,
                                         ParamType.DocumentReference,
                                       ),
@@ -203,7 +203,7 @@ class _KioskDineParcelWidgetState extends State<KioskDineParcelWidget>
                                         widget!.shiftdoc,
                                         ParamType.JSON,
                                       ),
-                                      'appsetting': serializeParam(
+                                      'appSetting': serializeParam(
                                         widget!.appSetting,
                                         ParamType.Document,
                                       ),
@@ -214,7 +214,7 @@ class _KioskDineParcelWidgetState extends State<KioskDineParcelWidget>
                                       ),
                                     }.withoutNulls,
                                     extra: <String, dynamic>{
-                                      'appsetting': widget!.appSetting,
+                                      'appSetting': widget!.appSetting,
                                       'taxcollection': widget!.taxcollection,
                                     },
                                   );
@@ -311,9 +311,9 @@ class _KioskDineParcelWidgetState extends State<KioskDineParcelWidget>
                                     safeSetState(() {});
 
                                     context.pushNamed(
-                                      'KioskBillScreen',
+                                      'kioskCustomerInfo',
                                       queryParameters: {
-                                        'doc': serializeParam(
+                                        'userdoc': serializeParam(
                                           widget!.userdoc,
                                           ParamType.DocumentReference,
                                         ),
@@ -321,7 +321,7 @@ class _KioskDineParcelWidgetState extends State<KioskDineParcelWidget>
                                           widget!.shiftdoc,
                                           ParamType.JSON,
                                         ),
-                                        'appsetting': serializeParam(
+                                        'appSetting': serializeParam(
                                           widget!.appSetting,
                                           ParamType.Document,
                                         ),
@@ -332,7 +332,7 @@ class _KioskDineParcelWidgetState extends State<KioskDineParcelWidget>
                                         ),
                                       }.withoutNulls,
                                       extra: <String, dynamic>{
-                                        'appsetting': widget!.appSetting,
+                                        'appSetting': widget!.appSetting,
                                         'taxcollection': widget!.taxcollection,
                                       },
                                     );

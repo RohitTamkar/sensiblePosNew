@@ -1592,6 +1592,37 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'CreditPaymentpurchase',
               path: 'creditPaymentpurchase',
               builder: (context, params) => CreditPaymentpurchaseWidget(),
+            ),
+            FFRoute(
+              name: 'kioskCustomerInfo',
+              path: 'kioskCustomerInfo',
+              asyncParams: {
+                'appSetting': getDoc(
+                    ['OUTLET', 'APP_SETTINGS'], AppSettingsRecord.fromSnapshot),
+                'taxcollection':
+                    getDocList(['TAX_MASTER'], TaxMasterRecord.fromSnapshot),
+              },
+              builder: (context, params) => KioskCustomerInfoWidget(
+                userdoc: params.getParam(
+                  'userdoc',
+                  ParamType.DocumentReference,
+                  isList: false,
+                  collectionNamePath: ['USER_PROFILE'],
+                ),
+                shiftdoc: params.getParam(
+                  'shiftdoc',
+                  ParamType.JSON,
+                ),
+                appSetting: params.getParam(
+                  'appSetting',
+                  ParamType.Document,
+                ),
+                taxcollection: params.getParam<TaxMasterRecord>(
+                  'taxcollection',
+                  ParamType.Document,
+                  isList: true,
+                ),
+              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
