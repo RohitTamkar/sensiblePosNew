@@ -373,1421 +373,1415 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                             decoration: BoxDecoration(),
                                             child: Padding(
                                               padding: EdgeInsets.all(10.0),
-                                              child: Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .spaceBetween,
-                                                    children: [
-                                                      Flexible(
-                                                        child: Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            FFAppState()
-                                                                .PayMode,
-                                                            'Cash',
-                                                          ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .headlineSmall
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .headlineSmallFamily,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w600,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .headlineSmallFamily),
-                                                              ),
-                                                        ),
-                                                      ),
-                                                      Flexible(
-                                                        child: Text(
-                                                          'Grand Total:${FFAppState().finalAmt.toString()}',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .headlineSmall
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .headlineSmallFamily,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w600,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .headlineSmallFamily),
-                                                              ),
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                  TextFormField(
-                                                    controller:
-                                                        _model.textController1,
-                                                    focusNode: _model
-                                                        .textFieldFocusNode,
-                                                    autofocus: false,
-                                                    obscureText: false,
-                                                    decoration: InputDecoration(
-                                                      labelText:
-                                                          FFLocalizations.of(
-                                                                  context)
-                                                              .getText(
-                                                        'a2dqnhhk' /* Amount */,
-                                                      ),
-                                                      labelStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelMedium
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMediumFamily,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .labelMediumFamily),
-                                                              ),
-                                                      hintStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelMedium
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMediumFamily,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .labelMediumFamily),
-                                                              ),
-                                                      enabledBorder:
-                                                          OutlineInputBorder(
-                                                        borderSide: BorderSide(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .alternate,
-                                                          width: 1.0,
-                                                        ),
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(15.0),
-                                                      ),
-                                                      focusedBorder:
-                                                          OutlineInputBorder(
-                                                        borderSide: BorderSide(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .info,
-                                                          width: 1.0,
-                                                        ),
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(15.0),
-                                                      ),
-                                                      errorBorder:
-                                                          OutlineInputBorder(
-                                                        borderSide: BorderSide(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .error,
-                                                          width: 1.0,
-                                                        ),
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(15.0),
-                                                      ),
-                                                      focusedErrorBorder:
-                                                          OutlineInputBorder(
-                                                        borderSide: BorderSide(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .error,
-                                                          width: 1.0,
-                                                        ),
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(15.0),
-                                                      ),
-                                                      filled: true,
-                                                      fillColor: FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryBackground,
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .titleMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .titleMediumFamily,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          fontSize: 22.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleMediumFamily),
-                                                        ),
-                                                    validator: _model
-                                                        .textController1Validator
-                                                        .asValidator(context),
-                                                  ),
-                                                  Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    children: [
-                                                      Expanded(
-                                                        child: FFButtonWidget(
-                                                          onPressed: () async {
-                                                            _model.amount =
-                                                                '${_model.textController1.text}1';
-                                                            safeSetState(() {});
-                                                            safeSetState(() {
-                                                              _model.textController1
-                                                                      ?.text =
-                                                                  _model
-                                                                      .amount!;
-                                                              _model.textController1
-                                                                      ?.selection =
-                                                                  TextSelection.collapsed(
-                                                                      offset: _model
-                                                                          .textController1!
-                                                                          .text
-                                                                          .length);
-                                                            });
-                                                          },
-                                                          text: FFLocalizations
-                                                                  .of(context)
-                                                              .getText(
-                                                            'mwgsgdaq' /* 1 */,
-                                                          ),
-                                                          options:
-                                                              FFButtonOptions(
-                                                            height: 50.0,
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            iconPadding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .customColor2,
-                                                            textStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .titleSmallFamily,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryText,
-                                                                      fontSize:
-                                                                          19.0,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                    ),
-                                                            elevation: 3.0,
-                                                            borderSide:
-                                                                BorderSide(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              width: 1.0,
-                                                            ),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8.0),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      Expanded(
-                                                        child: FFButtonWidget(
-                                                          onPressed: () async {
-                                                            _model.amount =
-                                                                '${_model.textController1.text}2';
-                                                            safeSetState(() {});
-                                                            safeSetState(() {
-                                                              _model.textController1
-                                                                      ?.text =
-                                                                  _model
-                                                                      .amount!;
-                                                              _model.textController1
-                                                                      ?.selection =
-                                                                  TextSelection.collapsed(
-                                                                      offset: _model
-                                                                          .textController1!
-                                                                          .text
-                                                                          .length);
-                                                            });
-                                                          },
-                                                          text: FFLocalizations
-                                                                  .of(context)
-                                                              .getText(
-                                                            '3wcdhcyp' /* 2 */,
-                                                          ),
-                                                          options:
-                                                              FFButtonOptions(
-                                                            height: 50.0,
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            iconPadding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .customColor2,
-                                                            textStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .titleSmallFamily,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryText,
-                                                                      fontSize:
-                                                                          19.0,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                    ),
-                                                            elevation: 3.0,
-                                                            borderSide:
-                                                                BorderSide(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              width: 1.0,
-                                                            ),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8.0),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      Expanded(
-                                                        child: FFButtonWidget(
-                                                          onPressed: () async {
-                                                            _model.amount =
-                                                                '${_model.textController1.text}3';
-                                                            safeSetState(() {});
-                                                            safeSetState(() {
-                                                              _model.textController1
-                                                                      ?.text =
-                                                                  _model
-                                                                      .amount!;
-                                                              _model.textController1
-                                                                      ?.selection =
-                                                                  TextSelection.collapsed(
-                                                                      offset: _model
-                                                                          .textController1!
-                                                                          .text
-                                                                          .length);
-                                                            });
-                                                          },
-                                                          text: FFLocalizations
-                                                                  .of(context)
-                                                              .getText(
-                                                            'a06a5ifm' /* 3 */,
-                                                          ),
-                                                          options:
-                                                              FFButtonOptions(
-                                                            height: 50.0,
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            iconPadding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .customColor2,
-                                                            textStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .titleSmallFamily,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryText,
-                                                                      fontSize:
-                                                                          19.0,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                    ),
-                                                            elevation: 3.0,
-                                                            borderSide:
-                                                                BorderSide(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              width: 1.0,
-                                                            ),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8.0),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ].divide(
-                                                        SizedBox(width: 15.0)),
-                                                  ),
-                                                  Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    children: [
-                                                      Expanded(
-                                                        child: FFButtonWidget(
-                                                          onPressed: () async {
-                                                            _model.amount =
-                                                                '${_model.textController1.text}4';
-                                                            safeSetState(() {});
-                                                            safeSetState(() {
-                                                              _model.textController1
-                                                                      ?.text =
-                                                                  _model
-                                                                      .amount!;
-                                                              _model.textController1
-                                                                      ?.selection =
-                                                                  TextSelection.collapsed(
-                                                                      offset: _model
-                                                                          .textController1!
-                                                                          .text
-                                                                          .length);
-                                                            });
-                                                          },
-                                                          text: FFLocalizations
-                                                                  .of(context)
-                                                              .getText(
-                                                            'r3bqw8p9' /* 4 */,
-                                                          ),
-                                                          options:
-                                                              FFButtonOptions(
-                                                            height: 50.0,
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            iconPadding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .customColor2,
-                                                            textStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .titleSmallFamily,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryText,
-                                                                      fontSize:
-                                                                          19.0,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                    ),
-                                                            elevation: 3.0,
-                                                            borderSide:
-                                                                BorderSide(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              width: 1.0,
-                                                            ),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8.0),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      Expanded(
-                                                        child: FFButtonWidget(
-                                                          onPressed: () async {
-                                                            _model.amount =
-                                                                '${_model.textController1.text}5';
-                                                            safeSetState(() {});
-                                                            safeSetState(() {
-                                                              _model.textController1
-                                                                      ?.text =
-                                                                  _model
-                                                                      .amount!;
-                                                              _model.textController1
-                                                                      ?.selection =
-                                                                  TextSelection.collapsed(
-                                                                      offset: _model
-                                                                          .textController1!
-                                                                          .text
-                                                                          .length);
-                                                            });
-                                                          },
-                                                          text: FFLocalizations
-                                                                  .of(context)
-                                                              .getText(
-                                                            'shtxseea' /* 5 */,
-                                                          ),
-                                                          options:
-                                                              FFButtonOptions(
-                                                            height: 50.0,
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            iconPadding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .customColor2,
-                                                            textStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .titleSmallFamily,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryText,
-                                                                      fontSize:
-                                                                          19.0,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                    ),
-                                                            elevation: 3.0,
-                                                            borderSide:
-                                                                BorderSide(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              width: 1.0,
-                                                            ),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8.0),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      Expanded(
-                                                        child: FFButtonWidget(
-                                                          onPressed: () async {
-                                                            _model.amount =
-                                                                '${_model.textController1.text}6';
-                                                            safeSetState(() {});
-                                                            safeSetState(() {
-                                                              _model.textController1
-                                                                      ?.text =
-                                                                  _model
-                                                                      .amount!;
-                                                              _model.textController1
-                                                                      ?.selection =
-                                                                  TextSelection.collapsed(
-                                                                      offset: _model
-                                                                          .textController1!
-                                                                          .text
-                                                                          .length);
-                                                            });
-                                                          },
-                                                          text: FFLocalizations
-                                                                  .of(context)
-                                                              .getText(
-                                                            'odvpkbyt' /* 6 */,
-                                                          ),
-                                                          options:
-                                                              FFButtonOptions(
-                                                            height: 50.0,
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            iconPadding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .customColor2,
-                                                            textStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .titleSmallFamily,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryText,
-                                                                      fontSize:
-                                                                          19.0,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                    ),
-                                                            elevation: 3.0,
-                                                            borderSide:
-                                                                BorderSide(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              width: 1.0,
-                                                            ),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8.0),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ].divide(
-                                                        SizedBox(width: 15.0)),
-                                                  ),
-                                                  Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    children: [
-                                                      Expanded(
-                                                        child: FFButtonWidget(
-                                                          onPressed: () async {
-                                                            _model.amount =
-                                                                '${_model.textController1.text}7';
-                                                            safeSetState(() {});
-                                                            safeSetState(() {
-                                                              _model.textController1
-                                                                      ?.text =
-                                                                  _model
-                                                                      .amount!;
-                                                              _model.textController1
-                                                                      ?.selection =
-                                                                  TextSelection.collapsed(
-                                                                      offset: _model
-                                                                          .textController1!
-                                                                          .text
-                                                                          .length);
-                                                            });
-                                                          },
-                                                          text: FFLocalizations
-                                                                  .of(context)
-                                                              .getText(
-                                                            '9qt239oq' /* 7 */,
-                                                          ),
-                                                          options:
-                                                              FFButtonOptions(
-                                                            height: 50.0,
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            iconPadding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .customColor2,
-                                                            textStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .titleSmallFamily,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryText,
-                                                                      fontSize:
-                                                                          19.0,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                    ),
-                                                            elevation: 3.0,
-                                                            borderSide:
-                                                                BorderSide(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              width: 1.0,
-                                                            ),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8.0),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      Expanded(
-                                                        child: FFButtonWidget(
-                                                          onPressed: () async {
-                                                            _model.amount =
-                                                                '${_model.textController1.text}8';
-                                                            safeSetState(() {});
-                                                            safeSetState(() {
-                                                              _model.textController1
-                                                                      ?.text =
-                                                                  _model
-                                                                      .amount!;
-                                                              _model.textController1
-                                                                      ?.selection =
-                                                                  TextSelection.collapsed(
-                                                                      offset: _model
-                                                                          .textController1!
-                                                                          .text
-                                                                          .length);
-                                                            });
-                                                          },
-                                                          text: FFLocalizations
-                                                                  .of(context)
-                                                              .getText(
-                                                            'h9s07hk1' /* 8 */,
-                                                          ),
-                                                          options:
-                                                              FFButtonOptions(
-                                                            height: 50.0,
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            iconPadding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .customColor2,
-                                                            textStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .titleSmallFamily,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryText,
-                                                                      fontSize:
-                                                                          19.0,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                    ),
-                                                            elevation: 3.0,
-                                                            borderSide:
-                                                                BorderSide(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              width: 1.0,
-                                                            ),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8.0),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      Expanded(
-                                                        child: FFButtonWidget(
-                                                          onPressed: () async {
-                                                            _model.amount =
-                                                                '${_model.textController1.text}9';
-                                                            safeSetState(() {});
-                                                            safeSetState(() {
-                                                              _model.textController1
-                                                                      ?.text =
-                                                                  _model
-                                                                      .amount!;
-                                                              _model.textController1
-                                                                      ?.selection =
-                                                                  TextSelection.collapsed(
-                                                                      offset: _model
-                                                                          .textController1!
-                                                                          .text
-                                                                          .length);
-                                                            });
-                                                          },
-                                                          text: FFLocalizations
-                                                                  .of(context)
-                                                              .getText(
-                                                            'slc3d0nw' /* 9 */,
-                                                          ),
-                                                          options:
-                                                              FFButtonOptions(
-                                                            height: 50.0,
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            iconPadding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .customColor2,
-                                                            textStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .titleSmallFamily,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryText,
-                                                                      fontSize:
-                                                                          19.0,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                    ),
-                                                            elevation: 3.0,
-                                                            borderSide:
-                                                                BorderSide(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              width: 1.0,
-                                                            ),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8.0),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ].divide(
-                                                        SizedBox(width: 15.0)),
-                                                  ),
-                                                  Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    children: [
-                                                      Expanded(
-                                                        child: FFButtonWidget(
-                                                          onPressed: () async {
-                                                            _model.amount =
-                                                                '${_model.textController1.text}.';
-                                                            safeSetState(() {});
-                                                            safeSetState(() {
-                                                              _model.textController1
-                                                                      ?.text =
-                                                                  _model
-                                                                      .amount!;
-                                                              _model.textController1
-                                                                      ?.selection =
-                                                                  TextSelection.collapsed(
-                                                                      offset: _model
-                                                                          .textController1!
-                                                                          .text
-                                                                          .length);
-                                                            });
-                                                          },
-                                                          text: FFLocalizations
-                                                                  .of(context)
-                                                              .getText(
-                                                            'qsv40s33' /* . */,
-                                                          ),
-                                                          options:
-                                                              FFButtonOptions(
-                                                            height: 50.0,
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            iconPadding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .customColor2,
-                                                            textStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .titleSmallFamily,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryText,
-                                                                      fontSize:
-                                                                          28.0,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w600,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                    ),
-                                                            elevation: 3.0,
-                                                            borderSide:
-                                                                BorderSide(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              width: 1.0,
-                                                            ),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8.0),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      Expanded(
-                                                        child: FFButtonWidget(
-                                                          onPressed: () async {
-                                                            _model.amount =
-                                                                '${_model.textController1.text}0';
-                                                            safeSetState(() {});
-                                                            safeSetState(() {
-                                                              _model.textController1
-                                                                      ?.text =
-                                                                  _model
-                                                                      .amount!;
-                                                              _model.textController1
-                                                                      ?.selection =
-                                                                  TextSelection.collapsed(
-                                                                      offset: _model
-                                                                          .textController1!
-                                                                          .text
-                                                                          .length);
-                                                            });
-                                                          },
-                                                          text: FFLocalizations
-                                                                  .of(context)
-                                                              .getText(
-                                                            'xd0zp830' /* 0 */,
-                                                          ),
-                                                          options:
-                                                              FFButtonOptions(
-                                                            height: 50.0,
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            iconPadding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .customColor2,
-                                                            textStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .titleSmallFamily,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryText,
-                                                                      fontSize:
-                                                                          19.0,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                    ),
-                                                            elevation: 3.0,
-                                                            borderSide:
-                                                                BorderSide(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              width: 1.0,
-                                                            ),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8.0),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      Expanded(
-                                                        child: FFButtonWidget(
-                                                          onPressed: () async {
-                                                            FFAppState()
-                                                                    .groceryJson =
-                                                                null;
-                                                            FFAppState()
-                                                                    .disAmtPay =
-                                                                0.0;
-                                                            FFAppState()
-                                                                    .taxAmtPay =
-                                                                0.0;
-                                                            FFAppState()
-                                                                    .delCharges =
-                                                                0.0;
-                                                            safeSetState(() {});
-                                                            safeSetState(() {
-                                                              _model
-                                                                  .textFielddisamtTextController
-                                                                  ?.clear();
-                                                              _model
-                                                                  .textFieldgstperTextController
-                                                                  ?.clear();
-                                                              _model
-                                                                  .textFieldextraTextController
-                                                                  ?.clear();
-                                                              _model
-                                                                  .textFielddisperTextController
-                                                                  ?.clear();
-                                                            });
-                                                            _model.ret =
-                                                                await actions
-                                                                    .calSubTotalForGrocery(
-                                                              FFAppState()
-                                                                  .selBill
-                                                                  .toString(),
-                                                              FFAppState()
-                                                                  .allBillsList
-                                                                  .toList(),
-                                                            );
-                                                            _model.add =
-                                                                await actions
-                                                                    .calBillAmtGroceryPay(
-                                                              FFAppState()
-                                                                  .disAmtPay,
-                                                              valueOrDefault<
-                                                                  double>(
-                                                                FFAppState()
-                                                                    .delCharges,
-                                                                0.0,
-                                                              ),
-                                                              0.0,
-                                                              containerAppSettingsRecord!
-                                                                  .settingList
-                                                                  .where((e) =>
-                                                                      e.title ==
-                                                                      'enableInclusiveTax')
-                                                                  .toList()
-                                                                  .first
-                                                                  .value
-                                                                  .toString(),
-                                                            );
-
-                                                            FFAppState()
-                                                                .update(() {});
-
-                                                            safeSetState(() {});
-                                                          },
-                                                          text: FFLocalizations
-                                                                  .of(context)
-                                                              .getText(
-                                                            'bk6t0nbp' /* Reset */,
-                                                          ),
-                                                          options:
-                                                              FFButtonOptions(
-                                                            height: 50.0,
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            iconPadding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .customColor2,
-                                                            textStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .titleSmallFamily,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryText,
-                                                                      fontSize:
-                                                                          10.0,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                    ),
-                                                            elevation: 3.0,
-                                                            borderSide:
-                                                                BorderSide(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              width: 1.0,
-                                                            ),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8.0),
-                                                          ),
-                                                          showLoadingIndicator:
-                                                              false,
-                                                        ),
-                                                      ),
-                                                      Expanded(
-                                                        child: FFButtonWidget(
-                                                          onPressed: () async {
-                                                            _model.amount = '';
-                                                            safeSetState(() {});
-                                                            safeSetState(() {
-                                                              _model.textController1
-                                                                      ?.text =
-                                                                  _model
-                                                                      .amount!;
-                                                              _model.textController1
-                                                                      ?.selection =
-                                                                  TextSelection.collapsed(
-                                                                      offset: _model
-                                                                          .textController1!
-                                                                          .text
-                                                                          .length);
-                                                            });
-                                                          },
-                                                          text: '',
-                                                          icon: Icon(
-                                                            Icons
-                                                                .backspace_rounded,
-                                                            size: 15.0,
-                                                          ),
-                                                          options:
-                                                              FFButtonOptions(
-                                                            height: 50.0,
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            iconPadding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .customColor2,
-                                                            textStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .titleSmallFamily,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryText,
-                                                                      fontSize:
-                                                                          19.0,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                    ),
-                                                            elevation: 3.0,
-                                                            borderSide:
-                                                                BorderSide(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              width: 1.0,
-                                                            ),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8.0),
-                                                          ),
-                                                          showLoadingIndicator:
-                                                              false,
-                                                        ),
-                                                      ),
-                                                      Expanded(
-                                                        child: FFButtonWidget(
-                                                          onPressed: () async {
-                                                            _model.result233 =
-                                                                await actions
-                                                                    .calculateGroceryAmtaction(
+                                              child: SingleChildScrollView(
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceBetween,
+                                                      children: [
+                                                        Flexible(
+                                                          child: Text(
+                                                            valueOrDefault<
+                                                                String>(
                                                               FFAppState()
                                                                   .PayMode,
-                                                              valueOrDefault<
-                                                                  double>(
-                                                                FFAppState()
-                                                                    .finalAmt,
-                                                                0.0,
-                                                              ),
-                                                              double.parse(_model
-                                                                  .textController1
-                                                                  .text),
-                                                            );
-                                                            FFAppState()
-                                                                    .groceryJson =
-                                                                _model
-                                                                    .result233!;
-                                                            safeSetState(() {});
-                                                            _model.amount = '';
-                                                            safeSetState(() {});
-                                                            safeSetState(() {
-                                                              _model.textController1
-                                                                      ?.text =
-                                                                  _model
-                                                                      .amount!;
-                                                              _model.textController1
-                                                                      ?.selection =
-                                                                  TextSelection.collapsed(
-                                                                      offset: _model
-                                                                          .textController1!
-                                                                          .text
-                                                                          .length);
-                                                            });
-
-                                                            safeSetState(() {});
-                                                          },
-                                                          text: '',
-                                                          icon: Icon(
-                                                            Icons.done_sharp,
-                                                            size: 25.0,
+                                                              'Cash',
+                                                            ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .headlineSmall
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineSmallFamily,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineSmallFamily),
+                                                                ),
                                                           ),
-                                                          options:
-                                                              FFButtonOptions(
-                                                            height: 50.0,
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            iconPadding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
+                                                        ),
+                                                        Flexible(
+                                                          child: Text(
+                                                            'Grand Total:${FFAppState().finalAmt.toString()}',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .headlineSmall
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .headlineSmallFamily,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .headlineSmallFamily),
+                                                                ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    TextFormField(
+                                                      controller: _model
+                                                          .textController1,
+                                                      focusNode: _model
+                                                          .textFieldFocusNode,
+                                                      autofocus: false,
+                                                      obscureText: false,
+                                                      decoration:
+                                                          InputDecoration(
+                                                        labelText:
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                          'a2dqnhhk' /* Amount */,
+                                                        ),
+                                                        labelStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumFamily,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .labelMediumFamily),
+                                                                ),
+                                                        hintStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMediumFamily,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .labelMediumFamily),
+                                                                ),
+                                                        enabledBorder:
+                                                            OutlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
                                                             color: FlutterFlowTheme
                                                                     .of(context)
-                                                                .customColor2,
-                                                            textStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .titleSmallFamily,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryText,
-                                                                      fontSize:
-                                                                          19.0,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                    ),
-                                                            elevation: 3.0,
-                                                            borderSide:
-                                                                BorderSide(
-                                                              color: Colors
-                                                                  .transparent,
-                                                              width: 1.0,
-                                                            ),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8.0),
+                                                                .alternate,
+                                                            width: 1.0,
                                                           ),
-                                                          showLoadingIndicator:
-                                                              false,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      15.0),
                                                         ),
+                                                        focusedBorder:
+                                                            OutlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .info,
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      15.0),
+                                                        ),
+                                                        errorBorder:
+                                                            OutlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .error,
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      15.0),
+                                                        ),
+                                                        focusedErrorBorder:
+                                                            OutlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .error,
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      15.0),
+                                                        ),
+                                                        filled: true,
+                                                        fillColor: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
                                                       ),
-                                                    ].divide(
-                                                        SizedBox(width: 15.0)),
-                                                  ),
-                                                ].divide(
-                                                    SizedBox(height: 15.0)),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleMediumFamily,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                                fontSize: 22.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .titleMediumFamily),
+                                                              ),
+                                                      validator: _model
+                                                          .textController1Validator
+                                                          .asValidator(context),
+                                                    ),
+                                                    Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .start,
+                                                      children: [
+                                                        Expanded(
+                                                          child: FFButtonWidget(
+                                                            onPressed:
+                                                                () async {
+                                                              _model.amount =
+                                                                  '${_model.textController1.text}1';
+                                                              safeSetState(
+                                                                  () {});
+                                                              safeSetState(() {
+                                                                _model.textController1
+                                                                        ?.text =
+                                                                    _model
+                                                                        .amount!;
+                                                                _model.textController1
+                                                                        ?.selection =
+                                                                    TextSelection.collapsed(
+                                                                        offset: _model
+                                                                            .textController1!
+                                                                            .text
+                                                                            .length);
+                                                              });
+                                                            },
+                                                            text: FFLocalizations
+                                                                    .of(context)
+                                                                .getText(
+                                                              'mwgsgdaq' /* 1 */,
+                                                            ),
+                                                            options:
+                                                                FFButtonOptions(
+                                                              height: 50.0,
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              iconPadding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .customColor2,
+                                                              textStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                        fontSize:
+                                                                            19.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                      ),
+                                                              elevation: 3.0,
+                                                              borderSide:
+                                                                  BorderSide(
+                                                                color: Colors
+                                                                    .transparent,
+                                                                width: 1.0,
+                                                              ),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          8.0),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Expanded(
+                                                          child: FFButtonWidget(
+                                                            onPressed:
+                                                                () async {
+                                                              _model.amount =
+                                                                  '${_model.textController1.text}2';
+                                                              safeSetState(
+                                                                  () {});
+                                                              safeSetState(() {
+                                                                _model.textController1
+                                                                        ?.text =
+                                                                    _model
+                                                                        .amount!;
+                                                                _model.textController1
+                                                                        ?.selection =
+                                                                    TextSelection.collapsed(
+                                                                        offset: _model
+                                                                            .textController1!
+                                                                            .text
+                                                                            .length);
+                                                              });
+                                                            },
+                                                            text: FFLocalizations
+                                                                    .of(context)
+                                                                .getText(
+                                                              '3wcdhcyp' /* 2 */,
+                                                            ),
+                                                            options:
+                                                                FFButtonOptions(
+                                                              height: 50.0,
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              iconPadding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .customColor2,
+                                                              textStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                        fontSize:
+                                                                            19.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                      ),
+                                                              elevation: 3.0,
+                                                              borderSide:
+                                                                  BorderSide(
+                                                                color: Colors
+                                                                    .transparent,
+                                                                width: 1.0,
+                                                              ),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          8.0),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Expanded(
+                                                          child: FFButtonWidget(
+                                                            onPressed:
+                                                                () async {
+                                                              _model.amount =
+                                                                  '${_model.textController1.text}3';
+                                                              safeSetState(
+                                                                  () {});
+                                                              safeSetState(() {
+                                                                _model.textController1
+                                                                        ?.text =
+                                                                    _model
+                                                                        .amount!;
+                                                                _model.textController1
+                                                                        ?.selection =
+                                                                    TextSelection.collapsed(
+                                                                        offset: _model
+                                                                            .textController1!
+                                                                            .text
+                                                                            .length);
+                                                              });
+                                                            },
+                                                            text: FFLocalizations
+                                                                    .of(context)
+                                                                .getText(
+                                                              'a06a5ifm' /* 3 */,
+                                                            ),
+                                                            options:
+                                                                FFButtonOptions(
+                                                              height: 50.0,
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              iconPadding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .customColor2,
+                                                              textStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                        fontSize:
+                                                                            19.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                      ),
+                                                              elevation: 3.0,
+                                                              borderSide:
+                                                                  BorderSide(
+                                                                color: Colors
+                                                                    .transparent,
+                                                                width: 1.0,
+                                                              ),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          8.0),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ].divide(SizedBox(
+                                                          width: 15.0)),
+                                                    ),
+                                                    Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .start,
+                                                      children: [
+                                                        Expanded(
+                                                          child: FFButtonWidget(
+                                                            onPressed:
+                                                                () async {
+                                                              _model.amount =
+                                                                  '${_model.textController1.text}4';
+                                                              safeSetState(
+                                                                  () {});
+                                                              safeSetState(() {
+                                                                _model.textController1
+                                                                        ?.text =
+                                                                    _model
+                                                                        .amount!;
+                                                                _model.textController1
+                                                                        ?.selection =
+                                                                    TextSelection.collapsed(
+                                                                        offset: _model
+                                                                            .textController1!
+                                                                            .text
+                                                                            .length);
+                                                              });
+                                                            },
+                                                            text: FFLocalizations
+                                                                    .of(context)
+                                                                .getText(
+                                                              'r3bqw8p9' /* 4 */,
+                                                            ),
+                                                            options:
+                                                                FFButtonOptions(
+                                                              height: 50.0,
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              iconPadding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .customColor2,
+                                                              textStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                        fontSize:
+                                                                            19.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                      ),
+                                                              elevation: 3.0,
+                                                              borderSide:
+                                                                  BorderSide(
+                                                                color: Colors
+                                                                    .transparent,
+                                                                width: 1.0,
+                                                              ),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          8.0),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Expanded(
+                                                          child: FFButtonWidget(
+                                                            onPressed:
+                                                                () async {
+                                                              _model.amount =
+                                                                  '${_model.textController1.text}5';
+                                                              safeSetState(
+                                                                  () {});
+                                                              safeSetState(() {
+                                                                _model.textController1
+                                                                        ?.text =
+                                                                    _model
+                                                                        .amount!;
+                                                                _model.textController1
+                                                                        ?.selection =
+                                                                    TextSelection.collapsed(
+                                                                        offset: _model
+                                                                            .textController1!
+                                                                            .text
+                                                                            .length);
+                                                              });
+                                                            },
+                                                            text: FFLocalizations
+                                                                    .of(context)
+                                                                .getText(
+                                                              'shtxseea' /* 5 */,
+                                                            ),
+                                                            options:
+                                                                FFButtonOptions(
+                                                              height: 50.0,
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              iconPadding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .customColor2,
+                                                              textStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                        fontSize:
+                                                                            19.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                      ),
+                                                              elevation: 3.0,
+                                                              borderSide:
+                                                                  BorderSide(
+                                                                color: Colors
+                                                                    .transparent,
+                                                                width: 1.0,
+                                                              ),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          8.0),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Expanded(
+                                                          child: FFButtonWidget(
+                                                            onPressed:
+                                                                () async {
+                                                              _model.amount =
+                                                                  '${_model.textController1.text}6';
+                                                              safeSetState(
+                                                                  () {});
+                                                              safeSetState(() {
+                                                                _model.textController1
+                                                                        ?.text =
+                                                                    _model
+                                                                        .amount!;
+                                                                _model.textController1
+                                                                        ?.selection =
+                                                                    TextSelection.collapsed(
+                                                                        offset: _model
+                                                                            .textController1!
+                                                                            .text
+                                                                            .length);
+                                                              });
+                                                            },
+                                                            text: FFLocalizations
+                                                                    .of(context)
+                                                                .getText(
+                                                              'odvpkbyt' /* 6 */,
+                                                            ),
+                                                            options:
+                                                                FFButtonOptions(
+                                                              height: 50.0,
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              iconPadding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .customColor2,
+                                                              textStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                        fontSize:
+                                                                            19.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                      ),
+                                                              elevation: 3.0,
+                                                              borderSide:
+                                                                  BorderSide(
+                                                                color: Colors
+                                                                    .transparent,
+                                                                width: 1.0,
+                                                              ),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          8.0),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ].divide(SizedBox(
+                                                          width: 15.0)),
+                                                    ),
+                                                    Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .start,
+                                                      children: [
+                                                        Expanded(
+                                                          child: FFButtonWidget(
+                                                            onPressed:
+                                                                () async {
+                                                              _model.amount =
+                                                                  '${_model.textController1.text}7';
+                                                              safeSetState(
+                                                                  () {});
+                                                              safeSetState(() {
+                                                                _model.textController1
+                                                                        ?.text =
+                                                                    _model
+                                                                        .amount!;
+                                                                _model.textController1
+                                                                        ?.selection =
+                                                                    TextSelection.collapsed(
+                                                                        offset: _model
+                                                                            .textController1!
+                                                                            .text
+                                                                            .length);
+                                                              });
+                                                            },
+                                                            text: FFLocalizations
+                                                                    .of(context)
+                                                                .getText(
+                                                              '9qt239oq' /* 7 */,
+                                                            ),
+                                                            options:
+                                                                FFButtonOptions(
+                                                              height: 50.0,
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              iconPadding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .customColor2,
+                                                              textStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                        fontSize:
+                                                                            19.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                      ),
+                                                              elevation: 3.0,
+                                                              borderSide:
+                                                                  BorderSide(
+                                                                color: Colors
+                                                                    .transparent,
+                                                                width: 1.0,
+                                                              ),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          8.0),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Expanded(
+                                                          child: FFButtonWidget(
+                                                            onPressed:
+                                                                () async {
+                                                              _model.amount =
+                                                                  '${_model.textController1.text}8';
+                                                              safeSetState(
+                                                                  () {});
+                                                              safeSetState(() {
+                                                                _model.textController1
+                                                                        ?.text =
+                                                                    _model
+                                                                        .amount!;
+                                                                _model.textController1
+                                                                        ?.selection =
+                                                                    TextSelection.collapsed(
+                                                                        offset: _model
+                                                                            .textController1!
+                                                                            .text
+                                                                            .length);
+                                                              });
+                                                            },
+                                                            text: FFLocalizations
+                                                                    .of(context)
+                                                                .getText(
+                                                              'h9s07hk1' /* 8 */,
+                                                            ),
+                                                            options:
+                                                                FFButtonOptions(
+                                                              height: 50.0,
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              iconPadding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .customColor2,
+                                                              textStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                        fontSize:
+                                                                            19.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                      ),
+                                                              elevation: 3.0,
+                                                              borderSide:
+                                                                  BorderSide(
+                                                                color: Colors
+                                                                    .transparent,
+                                                                width: 1.0,
+                                                              ),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          8.0),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Expanded(
+                                                          child: FFButtonWidget(
+                                                            onPressed:
+                                                                () async {
+                                                              _model.amount =
+                                                                  '${_model.textController1.text}9';
+                                                              safeSetState(
+                                                                  () {});
+                                                              safeSetState(() {
+                                                                _model.textController1
+                                                                        ?.text =
+                                                                    _model
+                                                                        .amount!;
+                                                                _model.textController1
+                                                                        ?.selection =
+                                                                    TextSelection.collapsed(
+                                                                        offset: _model
+                                                                            .textController1!
+                                                                            .text
+                                                                            .length);
+                                                              });
+                                                            },
+                                                            text: FFLocalizations
+                                                                    .of(context)
+                                                                .getText(
+                                                              'slc3d0nw' /* 9 */,
+                                                            ),
+                                                            options:
+                                                                FFButtonOptions(
+                                                              height: 50.0,
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              iconPadding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .customColor2,
+                                                              textStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                        fontSize:
+                                                                            19.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                      ),
+                                                              elevation: 3.0,
+                                                              borderSide:
+                                                                  BorderSide(
+                                                                color: Colors
+                                                                    .transparent,
+                                                                width: 1.0,
+                                                              ),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          8.0),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ].divide(SizedBox(
+                                                          width: 15.0)),
+                                                    ),
+                                                    Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .start,
+                                                      children: [
+                                                        Expanded(
+                                                          child: FFButtonWidget(
+                                                            onPressed:
+                                                                () async {
+                                                              _model.amount =
+                                                                  '${_model.textController1.text}.';
+                                                              safeSetState(
+                                                                  () {});
+                                                              safeSetState(() {
+                                                                _model.textController1
+                                                                        ?.text =
+                                                                    _model
+                                                                        .amount!;
+                                                                _model.textController1
+                                                                        ?.selection =
+                                                                    TextSelection.collapsed(
+                                                                        offset: _model
+                                                                            .textController1!
+                                                                            .text
+                                                                            .length);
+                                                              });
+                                                            },
+                                                            text: FFLocalizations
+                                                                    .of(context)
+                                                                .getText(
+                                                              'qsv40s33' /* . */,
+                                                            ),
+                                                            options:
+                                                                FFButtonOptions(
+                                                              height: 50.0,
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              iconPadding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .customColor2,
+                                                              textStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                        fontSize:
+                                                                            28.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight:
+                                                                            FontWeight.w600,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                      ),
+                                                              elevation: 3.0,
+                                                              borderSide:
+                                                                  BorderSide(
+                                                                color: Colors
+                                                                    .transparent,
+                                                                width: 1.0,
+                                                              ),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          8.0),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Expanded(
+                                                          child: FFButtonWidget(
+                                                            onPressed:
+                                                                () async {
+                                                              _model.amount =
+                                                                  '${_model.textController1.text}0';
+                                                              safeSetState(
+                                                                  () {});
+                                                              safeSetState(() {
+                                                                _model.textController1
+                                                                        ?.text =
+                                                                    _model
+                                                                        .amount!;
+                                                                _model.textController1
+                                                                        ?.selection =
+                                                                    TextSelection.collapsed(
+                                                                        offset: _model
+                                                                            .textController1!
+                                                                            .text
+                                                                            .length);
+                                                              });
+                                                            },
+                                                            text: FFLocalizations
+                                                                    .of(context)
+                                                                .getText(
+                                                              'xd0zp830' /* 0 */,
+                                                            ),
+                                                            options:
+                                                                FFButtonOptions(
+                                                              height: 50.0,
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              iconPadding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .customColor2,
+                                                              textStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                        fontSize:
+                                                                            19.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                      ),
+                                                              elevation: 3.0,
+                                                              borderSide:
+                                                                  BorderSide(
+                                                                color: Colors
+                                                                    .transparent,
+                                                                width: 1.0,
+                                                              ),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          8.0),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Expanded(
+                                                          child: FFButtonWidget(
+                                                            onPressed:
+                                                                () async {
+                                                              FFAppState()
+                                                                      .groceryJson =
+                                                                  null;
+                                                              FFAppState()
+                                                                      .disAmtPay =
+                                                                  0.0;
+                                                              FFAppState()
+                                                                      .taxAmtPay =
+                                                                  0.0;
+                                                              FFAppState()
+                                                                      .delCharges =
+                                                                  0.0;
+                                                              safeSetState(
+                                                                  () {});
+                                                              safeSetState(() {
+                                                                _model
+                                                                    .textFielddisamtTextController
+                                                                    ?.clear();
+                                                                _model
+                                                                    .textFieldgstperTextController
+                                                                    ?.clear();
+                                                                _model
+                                                                    .textFieldextraTextController
+                                                                    ?.clear();
+                                                                _model
+                                                                    .textFielddisperTextController
+                                                                    ?.clear();
+                                                              });
+                                                              _model.ret =
+                                                                  await actions
+                                                                      .calSubTotalForGrocery(
+                                                                FFAppState()
+                                                                    .selBill
+                                                                    .toString(),
+                                                                FFAppState()
+                                                                    .allBillsList
+                                                                    .toList(),
+                                                              );
+                                                              _model.add =
+                                                                  await actions
+                                                                      .calBillAmtGroceryPay(
+                                                                FFAppState()
+                                                                    .disAmtPay,
+                                                                valueOrDefault<
+                                                                    double>(
+                                                                  FFAppState()
+                                                                      .delCharges,
+                                                                  0.0,
+                                                                ),
+                                                                0.0,
+                                                                containerAppSettingsRecord!
+                                                                    .settingList
+                                                                    .where((e) =>
+                                                                        e.title ==
+                                                                        'enableInclusiveTax')
+                                                                    .toList()
+                                                                    .first
+                                                                    .value
+                                                                    .toString(),
+                                                              );
+
+                                                              FFAppState()
+                                                                  .update(
+                                                                      () {});
+
+                                                              safeSetState(
+                                                                  () {});
+                                                            },
+                                                            text: FFLocalizations
+                                                                    .of(context)
+                                                                .getText(
+                                                              'bk6t0nbp' /* Reset */,
+                                                            ),
+                                                            options:
+                                                                FFButtonOptions(
+                                                              height: 50.0,
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              iconPadding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .customColor2,
+                                                              textStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                        fontSize:
+                                                                            10.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                      ),
+                                                              elevation: 3.0,
+                                                              borderSide:
+                                                                  BorderSide(
+                                                                color: Colors
+                                                                    .transparent,
+                                                                width: 1.0,
+                                                              ),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          8.0),
+                                                            ),
+                                                            showLoadingIndicator:
+                                                                false,
+                                                          ),
+                                                        ),
+                                                        Expanded(
+                                                          child: FFButtonWidget(
+                                                            onPressed:
+                                                                () async {
+                                                              _model.amount =
+                                                                  '';
+                                                              safeSetState(
+                                                                  () {});
+                                                              safeSetState(() {
+                                                                _model.textController1
+                                                                        ?.text =
+                                                                    _model
+                                                                        .amount!;
+                                                                _model.textController1
+                                                                        ?.selection =
+                                                                    TextSelection.collapsed(
+                                                                        offset: _model
+                                                                            .textController1!
+                                                                            .text
+                                                                            .length);
+                                                              });
+                                                            },
+                                                            text: '',
+                                                            icon: Icon(
+                                                              Icons
+                                                                  .backspace_rounded,
+                                                              size: 15.0,
+                                                            ),
+                                                            options:
+                                                                FFButtonOptions(
+                                                              height: 50.0,
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              iconPadding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .customColor2,
+                                                              textStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                        fontSize:
+                                                                            19.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                      ),
+                                                              elevation: 3.0,
+                                                              borderSide:
+                                                                  BorderSide(
+                                                                color: Colors
+                                                                    .transparent,
+                                                                width: 1.0,
+                                                              ),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          8.0),
+                                                            ),
+                                                            showLoadingIndicator:
+                                                                false,
+                                                          ),
+                                                        ),
+                                                        Expanded(
+                                                          child: FFButtonWidget(
+                                                            onPressed:
+                                                                () async {
+                                                              _model.result233 =
+                                                                  await actions
+                                                                      .calculateGroceryAmtaction(
+                                                                FFAppState()
+                                                                    .PayMode,
+                                                                valueOrDefault<
+                                                                    double>(
+                                                                  FFAppState()
+                                                                      .finalAmt,
+                                                                  0.0,
+                                                                ),
+                                                                double.parse(_model
+                                                                    .textController1
+                                                                    .text),
+                                                              );
+                                                              FFAppState()
+                                                                      .groceryJson =
+                                                                  _model
+                                                                      .result233!;
+                                                              safeSetState(
+                                                                  () {});
+                                                              _model.amount =
+                                                                  '';
+                                                              safeSetState(
+                                                                  () {});
+                                                              safeSetState(() {
+                                                                _model.textController1
+                                                                        ?.text =
+                                                                    _model
+                                                                        .amount!;
+                                                                _model.textController1
+                                                                        ?.selection =
+                                                                    TextSelection.collapsed(
+                                                                        offset: _model
+                                                                            .textController1!
+                                                                            .text
+                                                                            .length);
+                                                              });
+
+                                                              safeSetState(
+                                                                  () {});
+                                                            },
+                                                            text: '',
+                                                            icon: Icon(
+                                                              Icons.done_sharp,
+                                                              size: 25.0,
+                                                            ),
+                                                            options:
+                                                                FFButtonOptions(
+                                                              height: 50.0,
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              iconPadding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .customColor2,
+                                                              textStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                        fontSize:
+                                                                            19.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                      ),
+                                                              elevation: 3.0,
+                                                              borderSide:
+                                                                  BorderSide(
+                                                                color: Colors
+                                                                    .transparent,
+                                                                width: 1.0,
+                                                              ),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          8.0),
+                                                            ),
+                                                            showLoadingIndicator:
+                                                                false,
+                                                          ),
+                                                        ),
+                                                      ].divide(SizedBox(
+                                                          width: 15.0)),
+                                                    ),
+                                                  ].divide(
+                                                      SizedBox(height: 15.0)),
+                                                ),
                                               ),
                                             ),
                                           ),
