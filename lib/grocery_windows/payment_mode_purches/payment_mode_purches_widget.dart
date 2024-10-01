@@ -3449,184 +3449,153 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                       ),
                                     ),
                                     Expanded(
-                                      child: Builder(
-                                        builder: (context) => FFButtonWidget(
-                                          onPressed: () async {
-                                            var _shouldSetState = false;
-                                            if (FFAppState().finalAmt ==
-                                                getJsonField(
-                                                  FFAppState().groceryJson,
-                                                  r'''$.paidAmt''',
-                                                )) {
-                                              if (getJsonField(
-                                                FFAppState().shiftDetailsJson,
-                                                r'''$.shiftExists''',
+                                      child: FFButtonWidget(
+                                        onPressed: () async {
+                                          var _shouldSetState = false;
+                                          if (FFAppState().finalAmt ==
+                                              getJsonField(
+                                                FFAppState().groceryJson,
+                                                r'''$.paidAmt''',
                                               )) {
-                                                FFAppState().count =
-                                                    FFAppState().count + 1;
-                                                safeSetState(() {});
-                                              } else {
-                                                FFAppState().count =
-                                                    FFAppState().count + 1;
-                                                safeSetState(() {});
-                                              }
+                                            if (getJsonField(
+                                              FFAppState().shiftDetailsJson,
+                                              r'''$.shiftExists''',
+                                            )) {
+                                              FFAppState().count =
+                                                  FFAppState().count + 1;
+                                              safeSetState(() {});
+                                            } else {
+                                              FFAppState().count =
+                                                  FFAppState().count + 1;
+                                              safeSetState(() {});
+                                            }
 
-                                              _model.prdlinstnewtx =
-                                                  await actions
-                                                      .filterProductsPurches(
-                                                FFAppState().selBill,
-                                                FFAppState()
-                                                    .allBillsList
-                                                    .toList(),
-                                              );
-                                              _shouldSetState = true;
-                                              _model.appsettingnew =
-                                                  await queryAppSettingsRecordOnce(
-                                                parent:
-                                                    FFAppState().outletIdRef,
-                                                singleRecord: true,
-                                              ).then((s) => s.firstOrNull);
-                                              _shouldSetState = true;
-                                              _model.outletdoc =
-                                                  await queryOutletRecordOnce(
-                                                queryBuilder: (outletRecord) =>
-                                                    outletRecord.where(
-                                                  'id',
-                                                  isEqualTo: FFAppState()
-                                                      .outletIdRef
-                                                      ?.id,
-                                                ),
-                                                singleRecord: true,
-                                              ).then((s) => s.firstOrNull);
-                                              _shouldSetState = true;
-                                              if ((double.parse(
-                                                      valueOrDefault<String>(
-                                                    getJsonField(
-                                                      FFAppState().groceryJson,
-                                                      r'''$.paymentMode.CREDIT''',
-                                                    )?.toString(),
-                                                    '0',
-                                                  ))) >
-                                                  0.0) {
-                                                if (FFAppState()
-                                                            .setCustRef
-                                                            ?.id !=
-                                                        null &&
-                                                    FFAppState()
-                                                            .setCustRef
-                                                            ?.id !=
-                                                        '') {
-                                                  if (FFAppState().oldBalance <
-                                                      FFAppState().custCredit) {
-                                                    _model.totalcredit =
-                                                        await actions
-                                                            .oldbalanceplusamt(
-                                                      FFAppState().oldBalance,
-                                                      valueOrDefault<double>(
-                                                        getJsonField(
-                                                          FFAppState()
-                                                              .groceryJson,
-                                                          r'''$.paymentMode.CREDIT''',
-                                                        ),
-                                                        0.0,
+                                            _model.prdlinstnewtx = await actions
+                                                .filterProductsPurches(
+                                              FFAppState().selBill,
+                                              FFAppState()
+                                                  .allBillsList
+                                                  .toList(),
+                                            );
+                                            _shouldSetState = true;
+                                            _model.appsettingnew =
+                                                await queryAppSettingsRecordOnce(
+                                              parent: FFAppState().outletIdRef,
+                                              singleRecord: true,
+                                            ).then((s) => s.firstOrNull);
+                                            _shouldSetState = true;
+                                            _model.outletdoc =
+                                                await queryOutletRecordOnce(
+                                              queryBuilder: (outletRecord) =>
+                                                  outletRecord.where(
+                                                'id',
+                                                isEqualTo: FFAppState()
+                                                    .outletIdRef
+                                                    ?.id,
+                                              ),
+                                              singleRecord: true,
+                                            ).then((s) => s.firstOrNull);
+                                            _shouldSetState = true;
+                                            if ((double.parse(
+                                                    valueOrDefault<String>(
+                                                  getJsonField(
+                                                    FFAppState().groceryJson,
+                                                    r'''$.paymentMode.CREDIT''',
+                                                  )?.toString(),
+                                                  '0',
+                                                ))) >
+                                                0.0) {
+                                              if (FFAppState().setCustRef?.id !=
+                                                      null &&
+                                                  FFAppState().setCustRef?.id !=
+                                                      '') {
+                                                if (FFAppState().oldBalance <
+                                                    FFAppState().custCredit) {
+                                                  _model.totalcredit =
+                                                      await actions
+                                                          .oldbalanceplusamt(
+                                                    FFAppState().oldBalance,
+                                                    valueOrDefault<double>(
+                                                      getJsonField(
+                                                        FFAppState()
+                                                            .groceryJson,
+                                                        r'''$.paymentMode.CREDIT''',
                                                       ),
-                                                    );
-                                                    _shouldSetState = true;
+                                                      0.0,
+                                                    ),
+                                                  );
+                                                  _shouldSetState = true;
 
-                                                    await FFAppState()
-                                                        .setCustRef!
-                                                        .update(
-                                                            createPartyRecordData(
-                                                          credit: true,
-                                                          oldBalance: _model
-                                                              .totalcredit,
-                                                          lastVisit:
-                                                              getCurrentTimestamp
-                                                                  .millisecondsSinceEpoch
-                                                                  .toString(),
-                                                        ));
+                                                  await FFAppState()
+                                                      .setCustRef!
+                                                      .update(
+                                                          createPartyRecordData(
+                                                        credit: true,
+                                                        oldBalance:
+                                                            _model.totalcredit,
+                                                        lastVisit:
+                                                            getCurrentTimestamp
+                                                                .millisecondsSinceEpoch
+                                                                .toString(),
+                                                      ));
 
-                                                    var paymentRecordReference =
-                                                        PaymentRecord.createDoc(
-                                                            FFAppState()
-                                                                .outletIdRef!);
-                                                    await paymentRecordReference
-                                                        .set(
-                                                            createPaymentRecordData(
-                                                      amount: valueOrDefault<
-                                                          double>(
-                                                        getJsonField(
+                                                  var paymentRecordReference =
+                                                      PaymentRecord.createDoc(
                                                           FFAppState()
-                                                              .groceryJson,
-                                                          r'''$.paymentMode.CREDIT''',
-                                                        ),
-                                                        0.0,
+                                                              .outletIdRef!);
+                                                  await paymentRecordReference
+                                                      .set(
+                                                          createPaymentRecordData(
+                                                    amount:
+                                                        valueOrDefault<double>(
+                                                      getJsonField(
+                                                        FFAppState()
+                                                            .groceryJson,
+                                                        r'''$.paymentMode.CREDIT''',
                                                       ),
-                                                      paymentType: 'CREDIT',
-                                                      createdBy:
-                                                          FFAppState().userdoc,
-                                                      createdDate:
-                                                          getCurrentTimestamp
-                                                              .millisecondsSinceEpoch,
-                                                      party: FFAppState()
-                                                          .setCustRef,
-                                                      expenceType: 'Debit',
-                                                      oldBalance:
-                                                          _model.totalcredit,
-                                                    ));
-                                                    _model.paymentDoc22d = PaymentRecord
-                                                        .getDocumentFromData(
-                                                            createPaymentRecordData(
-                                                              amount:
-                                                                  valueOrDefault<
-                                                                      double>(
-                                                                getJsonField(
-                                                                  FFAppState()
-                                                                      .groceryJson,
-                                                                  r'''$.paymentMode.CREDIT''',
-                                                                ),
-                                                                0.0,
+                                                      0.0,
+                                                    ),
+                                                    paymentType: 'CREDIT',
+                                                    createdBy:
+                                                        FFAppState().userdoc,
+                                                    createdDate: getCurrentTimestamp
+                                                        .millisecondsSinceEpoch,
+                                                    party:
+                                                        FFAppState().setCustRef,
+                                                    expenceType: 'Debit',
+                                                    oldBalance:
+                                                        _model.totalcredit,
+                                                  ));
+                                                  _model.paymentDoc22d = PaymentRecord
+                                                      .getDocumentFromData(
+                                                          createPaymentRecordData(
+                                                            amount:
+                                                                valueOrDefault<
+                                                                    double>(
+                                                              getJsonField(
+                                                                FFAppState()
+                                                                    .groceryJson,
+                                                                r'''$.paymentMode.CREDIT''',
                                                               ),
-                                                              paymentType:
-                                                                  'CREDIT',
-                                                              createdBy:
-                                                                  FFAppState()
-                                                                      .userdoc,
-                                                              createdDate:
-                                                                  getCurrentTimestamp
-                                                                      .millisecondsSinceEpoch,
-                                                              party: FFAppState()
-                                                                  .setCustRef,
-                                                              expenceType:
-                                                                  'Debit',
-                                                              oldBalance: _model
-                                                                  .totalcredit,
+                                                              0.0,
                                                             ),
-                                                            paymentRecordReference);
-                                                    _shouldSetState = true;
-                                                  } else {
-                                                    await showDialog(
-                                                      context: context,
-                                                      builder:
-                                                          (alertDialogContext) {
-                                                        return AlertDialog(
-                                                          content: Text(
-                                                              'Credit Limit Exceeded !'),
-                                                          actions: [
-                                                            TextButton(
-                                                              onPressed: () =>
-                                                                  Navigator.pop(
-                                                                      alertDialogContext),
-                                                              child: Text('Ok'),
-                                                            ),
-                                                          ],
-                                                        );
-                                                      },
-                                                    );
-                                                    if (_shouldSetState)
-                                                      safeSetState(() {});
-                                                    return;
-                                                  }
+                                                            paymentType:
+                                                                'CREDIT',
+                                                            createdBy:
+                                                                FFAppState()
+                                                                    .userdoc,
+                                                            createdDate:
+                                                                getCurrentTimestamp
+                                                                    .millisecondsSinceEpoch,
+                                                            party: FFAppState()
+                                                                .setCustRef,
+                                                            expenceType:
+                                                                'Debit',
+                                                            oldBalance: _model
+                                                                .totalcredit,
+                                                          ),
+                                                          paymentRecordReference);
+                                                  _shouldSetState = true;
                                                 } else {
                                                   await showDialog(
                                                     context: context,
@@ -3634,7 +3603,7 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                         (alertDialogContext) {
                                                       return AlertDialog(
                                                         content: Text(
-                                                            'Select Customer '),
+                                                            'Credit Limit Exceeded !'),
                                                         actions: [
                                                           TextButton(
                                                             onPressed: () =>
@@ -3650,458 +3619,433 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                     safeSetState(() {});
                                                   return;
                                                 }
-                                              }
-
-                                              var purchaseRecordReference =
-                                                  PurchaseRecord.createDoc(
-                                                      FFAppState()
-                                                          .outletIdRef!);
-                                              await purchaseRecordReference
-                                                  .set({
-                                                ...createPurchaseRecordData(
-                                                  delliveryChrg:
-                                                      FFAppState().delCharges,
-                                                  taxAmt: FFAppState().taxamt,
-                                                  billAmt: FFAppState().billAmt,
-                                                  discountAmt:
-                                                      FFAppState().disAmt,
-                                                  dayId: functions.getDayId(),
-                                                  discountPer:
-                                                      FFAppState().disPer,
-                                                  finalBillAmt:
-                                                      FFAppState().finalAmt,
-                                                  orderDate:
-                                                      functions.timestampToMili(
-                                                          getCurrentTimestamp),
-                                                  paymentMode: getJsonField(
-                                                    FFAppState().groceryJson,
-                                                    r'''$.paymentMode''',
-                                                  ).toString(),
-                                                  roundOff: 0.0,
-                                                  party: valueOrDefault<String>(
-                                                    FFAppState().setCustRef?.id,
-                                                    '0',
-                                                  ),
-                                                  id: '',
-                                                  invoiceNo:
-                                                      'PO-${random_data.randomInteger(1, 10000000).toString()}',
-                                                  invoiceDate:
-                                                      functions.timestampToMili(
-                                                          getCurrentTimestamp),
-                                                  mobile: valueOrDefault(
-                                                      currentUserDocument
-                                                          ?.mobile,
-                                                      ''),
-                                                  orderTime:
-                                                      getCurrentTimestamp,
-                                                  createdBy:
-                                                      FFAppState().userdoc?.id,
-                                                ),
-                                                ...mapToFirestore(
-                                                  {
-                                                    'productList':
-                                                        getPurchaseSaleItemListListFirestoreData(
-                                                      _model.prdlinstnewtx,
-                                                    ),
-                                                  },
-                                                ),
-                                              });
-                                              _model.purchaseordnew =
-                                                  PurchaseRecord
-                                                      .getDocumentFromData({
-                                                ...createPurchaseRecordData(
-                                                  delliveryChrg:
-                                                      FFAppState().delCharges,
-                                                  taxAmt: FFAppState().taxamt,
-                                                  billAmt: FFAppState().billAmt,
-                                                  discountAmt:
-                                                      FFAppState().disAmt,
-                                                  dayId: functions.getDayId(),
-                                                  discountPer:
-                                                      FFAppState().disPer,
-                                                  finalBillAmt:
-                                                      FFAppState().finalAmt,
-                                                  orderDate:
-                                                      functions.timestampToMili(
-                                                          getCurrentTimestamp),
-                                                  paymentMode: getJsonField(
-                                                    FFAppState().groceryJson,
-                                                    r'''$.paymentMode''',
-                                                  ).toString(),
-                                                  roundOff: 0.0,
-                                                  party: valueOrDefault<String>(
-                                                    FFAppState().setCustRef?.id,
-                                                    '0',
-                                                  ),
-                                                  id: '',
-                                                  invoiceNo:
-                                                      'PO-${random_data.randomInteger(1, 10000000).toString()}',
-                                                  invoiceDate:
-                                                      functions.timestampToMili(
-                                                          getCurrentTimestamp),
-                                                  mobile: valueOrDefault(
-                                                      currentUserDocument
-                                                          ?.mobile,
-                                                      ''),
-                                                  orderTime:
-                                                      getCurrentTimestamp,
-                                                  createdBy:
-                                                      FFAppState().userdoc?.id,
-                                                ),
-                                                ...mapToFirestore(
-                                                  {
-                                                    'productList':
-                                                        getPurchaseSaleItemListListFirestoreData(
-                                                      _model.prdlinstnewtx,
-                                                    ),
-                                                  },
-                                                ),
-                                              }, purchaseRecordReference);
-                                              _shouldSetState = true;
-
-                                              await _model
-                                                  .purchaseordnew!.reference
-                                                  .update(
-                                                      createPurchaseRecordData(
-                                                id: _model.purchaseordnew
-                                                    ?.reference.id,
-                                              ));
-                                              if (containerAppSettingsRecord!
-                                                  .settingList
-                                                  .where((e) =>
-                                                      e.title == 'enableStock')
-                                                  .toList()
-                                                  .first
-                                                  .value) {
-                                                FFAppState().startLoop = 0;
-                                                safeSetState(() {});
-                                                while (FFAppState().startLoop <
-                                                    _model.prdlinstnewtx!
-                                                        .length) {
-                                                  _model.stockupdateprdprt =
-                                                      await queryProductRecordOnce(
-                                                    parent: FFAppState()
-                                                        .outletIdRef,
-                                                    queryBuilder:
-                                                        (productRecord) =>
-                                                            productRecord
-                                                                .where(
-                                                                  'id',
-                                                                  isEqualTo: (_model
-                                                                              .prdlinstnewtx?[
-                                                                          FFAppState()
-                                                                              .startLoop])
-                                                                      ?.id,
-                                                                )
-                                                                .where(
-                                                                  'stockable',
-                                                                  isEqualTo:
-                                                                      true,
-                                                                ),
-                                                    singleRecord: true,
-                                                  ).then((s) => s.firstOrNull);
-                                                  _shouldSetState = true;
-                                                  if (_model
-                                                          .stockupdateprdprt !=
-                                                      null) {
-                                                    await _model
-                                                        .stockupdateprdprt!
-                                                        .reference
-                                                        .update({
-                                                      ...mapToFirestore(
-                                                        {
-                                                          'currentStock': FieldValue
-                                                              .increment(functions
-                                                                  .doubleToInt(
-                                                                      getJsonField(
-                                                            (_model.prdlinstnewtx?[
-                                                                    FFAppState()
-                                                                        .startLoop])
-                                                                ?.toMap(),
-                                                            r'''$.quantity''',
-                                                          ))!),
-                                                        },
-                                                      ),
-                                                    });
-                                                    _model.itemprd2 =
-                                                        await actions
-                                                            .hivegetproductbyId2(
-                                                      _model.stockupdateprdprt
-                                                          ?.id,
-                                                      _model.prdlinstnewtx?[
-                                                          FFAppState()
-                                                              .startLoop],
-                                                      'get',
-                                                    );
-                                                    _shouldSetState = true;
-                                                    FFAppState()
-                                                        .updateProductHiveputStruct(
-                                                      (e) => e
-                                                        ..id =
-                                                            _model.itemprd2?.id
-                                                        ..price = _model
-                                                            .itemprd2?.price
-                                                        ..category = _model
-                                                            .itemprd2?.category
-                                                        ..code = _model
-                                                            .itemprd2?.code
-                                                        ..name = _model
-                                                            .itemprd2?.name
-                                                        ..sellingPrice = _model
-                                                            .itemprd2
-                                                            ?.sellingPrice
-                                                        ..mrpPrice = _model
-                                                            .itemprd2?.mrpPrice
-                                                        ..purchasePrice = _model
-                                                            .itemprd2
-                                                            ?.purchasePrice
-                                                        ..categoryId = _model
-                                                            .itemprd2
-                                                            ?.categoryId
-                                                        ..taxId = _model
-                                                            .itemprd2?.taxId
-                                                        ..unitId = _model
-                                                            .itemprd2?.unitId
-                                                        ..regionalName = _model
-                                                            .itemprd2
-                                                            ?.regionalName
-                                                        ..barcode = _model
-                                                            .itemprd2?.barcode
-                                                        ..hsncode = _model
-                                                            .itemprd2?.hsncode
-                                                        ..reorderLevel = _model
-                                                            .itemprd2
-                                                            ?.reorderLevel
-                                                        ..searchcode = _model
-                                                            .itemprd2
-                                                            ?.searchcode
-                                                        ..shortName = _model
-                                                            .itemprd2?.shortName
-                                                        ..weightable = _model
-                                                            .itemprd2
-                                                            ?.weightable
-                                                        ..stockable = _model
-                                                            .itemprd2?.stockable
-                                                        ..discountPer = _model
-                                                            .itemprd2
-                                                            ?.discountPer
-                                                        ..discountAmt = _model
-                                                            .itemprd2
-                                                            ?.discountAmt
-                                                        ..productMasterId =
-                                                            _model.itemprd2
-                                                                ?.productMasterId
-                                                        ..recipeRefId = _model
-                                                            .itemprd2
-                                                            ?.recipeRefId
-                                                        ..imageUrl = _model
-                                                            .itemprd2?.imageUrl
-                                                        ..serviceOutletId =
-                                                            _model.itemprd2
-                                                                ?.serviceOutletId
-                                                        ..type = _model
-                                                            .itemprd2?.type
-                                                        ..recipeId = _model
-                                                            .itemprd2?.recipeId
-                                                        ..stock = _model
-                                                                .itemprd2!
-                                                                .stock +
-                                                            (functions.doubleToInt((_model
-                                                                        .prdlinstnewtx?[
-                                                                    FFAppState()
-                                                                        .startLoop])
-                                                                ?.quantity)!)
-                                                        ..isDeleted = _model
-                                                            .itemprd2?.isDeleted
-                                                        ..keywords = _model
-                                                            .itemprd2!.keywords
-                                                            .toList()
-                                                        ..synC = _model
-                                                            .itemprd2?.synC
-                                                        ..hivekey = _model
-                                                            .itemprd2?.hivekey
-                                                        ..version = _model
-                                                            .itemprd2?.version,
-                                                    );
-                                                    safeSetState(() {});
-                                                    _model.productupdated2 =
-                                                        await actions
-                                                            .hiveProductCrud(
-                                                      FFAppState()
-                                                          .productHiveput
-                                                          .hivekey,
-                                                      FFAppState()
-                                                          .productHiveput,
-                                                      'update',
-                                                    );
-                                                    _shouldSetState = true;
-                                                    FFAppState().productHive =
-                                                        [];
-                                                    FFAppState()
-                                                            .productHiveput =
-                                                        ProductStructStruct();
-                                                    safeSetState(() {});
-                                                    _model.newupdatedproductlist22 =
-                                                        await actions
-                                                            .getProductlistHive();
-                                                    _shouldSetState = true;
-                                                    FFAppState().productHive = _model
-                                                        .newupdatedproductlist22!
-                                                        .toList()
-                                                        .cast<
-                                                            ProductStructStruct>();
-                                                    safeSetState(() {});
-                                                  }
-                                                  FFAppState().startLoop =
-                                                      FFAppState().startLoop +
-                                                          1;
-                                                  safeSetState(() {});
-                                                }
-                                                _model.partydetails =
-                                                    await queryPartyRecordOnce(
-                                                  parent:
-                                                      FFAppState().outletIdRef,
-                                                  queryBuilder: (partyRecord) =>
-                                                      partyRecord.where(
-                                                    'id',
-                                                    isEqualTo: _model
-                                                        .purchaseordnew?.party,
-                                                  ),
-                                                  singleRecord: true,
-                                                ).then((s) => s.firstOrNull);
-                                                _shouldSetState = true;
-                                                var confirmDialogResponse =
-                                                    await showDialog<bool>(
-                                                          context: context,
-                                                          builder:
-                                                              (alertDialogContext) {
-                                                            return AlertDialog(
-                                                              content: Text(
-                                                                  'Do You Want To Print Label ?'),
-                                                              actions: [
-                                                                TextButton(
-                                                                  onPressed: () =>
-                                                                      Navigator.pop(
-                                                                          alertDialogContext,
-                                                                          false),
-                                                                  child: Text(
-                                                                      'Cancel'),
-                                                                ),
-                                                                TextButton(
-                                                                  onPressed: () =>
-                                                                      Navigator.pop(
-                                                                          alertDialogContext,
-                                                                          true),
-                                                                  child: Text(
-                                                                      'Confirm'),
-                                                                ),
-                                                              ],
-                                                            );
-                                                          },
-                                                        ) ??
-                                                        false;
-                                                if (confirmDialogResponse) {
-                                                  await showDialog(
-                                                    context: context,
-                                                    builder: (dialogContext) {
-                                                      return Dialog(
-                                                        elevation: 0,
-                                                        insetPadding:
-                                                            EdgeInsets.zero,
-                                                        backgroundColor:
-                                                            Colors.transparent,
-                                                        alignment:
-                                                            AlignmentDirectional(
-                                                                    0.0, 0.0)
-                                                                .resolve(
-                                                                    Directionality.of(
-                                                                        context)),
-                                                        child: Container(
-                                                          height: 300.0,
-                                                          width: 300.0,
-                                                          child:
-                                                              SelectlabelWidget(),
+                                              } else {
+                                                await showDialog(
+                                                  context: context,
+                                                  builder:
+                                                      (alertDialogContext) {
+                                                    return AlertDialog(
+                                                      content: Text(
+                                                          'Select Customer '),
+                                                      actions: [
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext),
+                                                          child: Text('Ok'),
                                                         ),
-                                                      );
-                                                    },
-                                                  );
-
-                                                  await actions.labelPrint(
-                                                    _model.prdlinstnewtx!
-                                                        .toList(),
-                                                    FFAppState().laelsize,
-                                                  );
-                                                }
-                                                if (!isAndroid) {
-                                                  _model.returnurl2 =
-                                                      await actions
-                                                          .generateInvoice(
-                                                    _model.purchaseordnew
-                                                        ?.invoiceNo,
-                                                    _model.purchaseordnew
-                                                        ?.productList
-                                                        ?.toList(),
-                                                    _model.purchaseordnew
-                                                        ?.finalBillAmt
-                                                        ?.toString(),
-                                                    _model.purchaseordnew,
-                                                    _model.partydetails,
-                                                  );
-                                                  _shouldSetState = true;
-                                                }
-                                                await actions
-                                                    .removeFromAllBillList(
-                                                  FFAppState().selBill,
-                                                );
-                                                await actions.clearValue();
-                                                FFAppState().subTotal = 0.0;
-                                                FFAppState().delCharges = 0.0;
-                                                FFAppState().oldBalance = 0;
-                                                FFAppState().custCredit = 0;
-                                                FFAppState().custNameRef = null;
-                                                FFAppState().setCustRef = null;
-                                                FFAppState().setCustName = '';
-                                                FFAppState().setCustMobNo = '';
-                                                FFAppState().noOfItems = 0;
-                                                FFAppState().taxAmtPay = 0.0;
-                                                FFAppState().taxamt = 0.0;
-                                                FFAppState().disAmtPay = 0.0;
-                                                FFAppState().disPer = 0.0;
-                                                FFAppState().disAmt = 0.0;
-                                                FFAppState().update(() {});
-                                                FFAppState().finalAmt = 0.0;
-                                                FFAppState().billAmt = 0.0;
-                                                FFAppState().groceryJson = null;
-                                                FFAppState().update(() {});
-                                                Navigator.pop(context);
-                                                ScaffoldMessenger.of(context)
-                                                    .showSnackBar(
-                                                  SnackBar(
-                                                    content: Text(
-                                                      'Bill Saved',
-                                                      style: TextStyle(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
-                                                      ),
-                                                    ),
-                                                    duration: Duration(
-                                                        milliseconds: 4000),
-                                                    backgroundColor:
-                                                        Color(0x00000000),
-                                                  ),
+                                                      ],
+                                                    );
+                                                  },
                                                 );
                                                 if (_shouldSetState)
                                                   safeSetState(() {});
                                                 return;
                                               }
-                                            } else {
+                                            }
+
+                                            var purchaseRecordReference =
+                                                PurchaseRecord.createDoc(
+                                                    FFAppState().outletIdRef!);
+                                            await purchaseRecordReference.set({
+                                              ...createPurchaseRecordData(
+                                                delliveryChrg:
+                                                    FFAppState().delCharges,
+                                                taxAmt: FFAppState().taxamt,
+                                                billAmt: FFAppState().billAmt,
+                                                discountAmt:
+                                                    FFAppState().disAmt,
+                                                dayId: functions.getDayId(),
+                                                discountPer:
+                                                    FFAppState().disPer,
+                                                finalBillAmt:
+                                                    FFAppState().finalAmt,
+                                                orderDate:
+                                                    functions.timestampToMili(
+                                                        getCurrentTimestamp),
+                                                paymentMode: getJsonField(
+                                                  FFAppState().groceryJson,
+                                                  r'''$.paymentMode''',
+                                                ).toString(),
+                                                roundOff: 0.0,
+                                                party: valueOrDefault<String>(
+                                                  FFAppState().setCustRef?.id,
+                                                  '0',
+                                                ),
+                                                id: '',
+                                                invoiceNo:
+                                                    'PO-${random_data.randomInteger(1, 10000000).toString()}',
+                                                invoiceDate:
+                                                    functions.timestampToMili(
+                                                        getCurrentTimestamp),
+                                                mobile: valueOrDefault(
+                                                    currentUserDocument?.mobile,
+                                                    ''),
+                                                orderTime: getCurrentTimestamp,
+                                                createdBy:
+                                                    FFAppState().userdoc?.id,
+                                              ),
+                                              ...mapToFirestore(
+                                                {
+                                                  'productList':
+                                                      getPurchaseSaleItemListListFirestoreData(
+                                                    _model.prdlinstnewtx,
+                                                  ),
+                                                },
+                                              ),
+                                            });
+                                            _model.purchaseordnew =
+                                                PurchaseRecord
+                                                    .getDocumentFromData({
+                                              ...createPurchaseRecordData(
+                                                delliveryChrg:
+                                                    FFAppState().delCharges,
+                                                taxAmt: FFAppState().taxamt,
+                                                billAmt: FFAppState().billAmt,
+                                                discountAmt:
+                                                    FFAppState().disAmt,
+                                                dayId: functions.getDayId(),
+                                                discountPer:
+                                                    FFAppState().disPer,
+                                                finalBillAmt:
+                                                    FFAppState().finalAmt,
+                                                orderDate:
+                                                    functions.timestampToMili(
+                                                        getCurrentTimestamp),
+                                                paymentMode: getJsonField(
+                                                  FFAppState().groceryJson,
+                                                  r'''$.paymentMode''',
+                                                ).toString(),
+                                                roundOff: 0.0,
+                                                party: valueOrDefault<String>(
+                                                  FFAppState().setCustRef?.id,
+                                                  '0',
+                                                ),
+                                                id: '',
+                                                invoiceNo:
+                                                    'PO-${random_data.randomInteger(1, 10000000).toString()}',
+                                                invoiceDate:
+                                                    functions.timestampToMili(
+                                                        getCurrentTimestamp),
+                                                mobile: valueOrDefault(
+                                                    currentUserDocument?.mobile,
+                                                    ''),
+                                                orderTime: getCurrentTimestamp,
+                                                createdBy:
+                                                    FFAppState().userdoc?.id,
+                                              ),
+                                              ...mapToFirestore(
+                                                {
+                                                  'productList':
+                                                      getPurchaseSaleItemListListFirestoreData(
+                                                    _model.prdlinstnewtx,
+                                                  ),
+                                                },
+                                              ),
+                                            }, purchaseRecordReference);
+                                            _shouldSetState = true;
+
+                                            await _model
+                                                .purchaseordnew!.reference
+                                                .update(
+                                                    createPurchaseRecordData(
+                                              id: _model
+                                                  .purchaseordnew?.reference.id,
+                                            ));
+                                            if (containerAppSettingsRecord!
+                                                .settingList
+                                                .where((e) =>
+                                                    e.title == 'enableStock')
+                                                .toList()
+                                                .first
+                                                .value) {
+                                              FFAppState().startLoop = 0;
+                                              safeSetState(() {});
+                                              while (FFAppState().startLoop <
+                                                  _model
+                                                      .prdlinstnewtx!.length) {
+                                                _model.stockupdateprdprt =
+                                                    await queryProductRecordOnce(
+                                                  parent:
+                                                      FFAppState().outletIdRef,
+                                                  queryBuilder:
+                                                      (productRecord) =>
+                                                          productRecord
+                                                              .where(
+                                                                'id',
+                                                                isEqualTo: (_model
+                                                                            .prdlinstnewtx?[
+                                                                        FFAppState()
+                                                                            .startLoop])
+                                                                    ?.id,
+                                                              )
+                                                              .where(
+                                                                'stockable',
+                                                                isEqualTo: true,
+                                                              ),
+                                                  singleRecord: true,
+                                                ).then((s) => s.firstOrNull);
+                                                _shouldSetState = true;
+                                                if (_model.stockupdateprdprt !=
+                                                    null) {
+                                                  await _model
+                                                      .stockupdateprdprt!
+                                                      .reference
+                                                      .update({
+                                                    ...mapToFirestore(
+                                                      {
+                                                        'currentStock': FieldValue
+                                                            .increment(functions
+                                                                .doubleToInt(
+                                                                    getJsonField(
+                                                          (_model.prdlinstnewtx?[
+                                                                  FFAppState()
+                                                                      .startLoop])
+                                                              ?.toMap(),
+                                                          r'''$.quantity''',
+                                                        ))!),
+                                                      },
+                                                    ),
+                                                  });
+                                                  _model.itemprd2 =
+                                                      await actions
+                                                          .hivegetproductbyId2(
+                                                    _model
+                                                        .stockupdateprdprt?.id,
+                                                    _model.prdlinstnewtx?[
+                                                        FFAppState().startLoop],
+                                                    'get',
+                                                  );
+                                                  _shouldSetState = true;
+                                                  FFAppState()
+                                                      .updateProductHiveputStruct(
+                                                    (e) => e
+                                                      ..id = _model.itemprd2?.id
+                                                      ..price =
+                                                          _model.itemprd2?.price
+                                                      ..category = _model
+                                                          .itemprd2?.category
+                                                      ..code =
+                                                          _model.itemprd2?.code
+                                                      ..name =
+                                                          _model.itemprd2?.name
+                                                      ..sellingPrice = _model
+                                                          .itemprd2
+                                                          ?.sellingPrice
+                                                      ..mrpPrice = _model
+                                                          .itemprd2?.mrpPrice
+                                                      ..purchasePrice = _model
+                                                          .itemprd2
+                                                          ?.purchasePrice
+                                                      ..categoryId = _model
+                                                          .itemprd2?.categoryId
+                                                      ..taxId =
+                                                          _model.itemprd2?.taxId
+                                                      ..unitId = _model
+                                                          .itemprd2?.unitId
+                                                      ..regionalName = _model
+                                                          .itemprd2
+                                                          ?.regionalName
+                                                      ..barcode = _model
+                                                          .itemprd2?.barcode
+                                                      ..hsncode = _model
+                                                          .itemprd2?.hsncode
+                                                      ..reorderLevel = _model
+                                                          .itemprd2
+                                                          ?.reorderLevel
+                                                      ..searchcode = _model
+                                                          .itemprd2?.searchcode
+                                                      ..shortName = _model
+                                                          .itemprd2?.shortName
+                                                      ..weightable = _model
+                                                          .itemprd2?.weightable
+                                                      ..stockable = _model
+                                                          .itemprd2?.stockable
+                                                      ..discountPer = _model
+                                                          .itemprd2?.discountPer
+                                                      ..discountAmt = _model
+                                                          .itemprd2?.discountAmt
+                                                      ..productMasterId = _model
+                                                          .itemprd2
+                                                          ?.productMasterId
+                                                      ..recipeRefId = _model
+                                                          .itemprd2?.recipeRefId
+                                                      ..imageUrl = _model
+                                                          .itemprd2?.imageUrl
+                                                      ..serviceOutletId = _model
+                                                          .itemprd2
+                                                          ?.serviceOutletId
+                                                      ..type =
+                                                          _model.itemprd2?.type
+                                                      ..recipeId = _model
+                                                          .itemprd2?.recipeId
+                                                      ..stock = _model
+                                                              .itemprd2!.stock +
+                                                          (functions.doubleToInt(
+                                                              (_model.prdlinstnewtx?[
+                                                                      FFAppState()
+                                                                          .startLoop])
+                                                                  ?.quantity)!)
+                                                      ..isDeleted = _model
+                                                          .itemprd2?.isDeleted
+                                                      ..keywords = _model
+                                                          .itemprd2!.keywords
+                                                          .toList()
+                                                      ..synC =
+                                                          _model.itemprd2?.synC
+                                                      ..hivekey = _model
+                                                          .itemprd2?.hivekey
+                                                      ..version = _model
+                                                          .itemprd2?.version,
+                                                  );
+                                                  safeSetState(() {});
+                                                  _model.productupdated2 =
+                                                      await actions
+                                                          .hiveProductCrud(
+                                                    FFAppState()
+                                                        .productHiveput
+                                                        .hivekey,
+                                                    FFAppState().productHiveput,
+                                                    'update',
+                                                  );
+                                                  _shouldSetState = true;
+                                                  FFAppState().productHive = [];
+                                                  FFAppState().productHiveput =
+                                                      ProductStructStruct();
+                                                  safeSetState(() {});
+                                                  _model.newupdatedproductlist22 =
+                                                      await actions
+                                                          .getProductlistHive();
+                                                  _shouldSetState = true;
+                                                  FFAppState().productHive = _model
+                                                      .newupdatedproductlist22!
+                                                      .toList()
+                                                      .cast<
+                                                          ProductStructStruct>();
+                                                  safeSetState(() {});
+                                                }
+                                                FFAppState().startLoop =
+                                                    FFAppState().startLoop + 1;
+                                                safeSetState(() {});
+                                              }
+                                              _model.partydetails =
+                                                  await queryPartyRecordOnce(
+                                                parent:
+                                                    FFAppState().outletIdRef,
+                                                queryBuilder: (partyRecord) =>
+                                                    partyRecord.where(
+                                                  'id',
+                                                  isEqualTo: _model
+                                                      .purchaseordnew?.party,
+                                                ),
+                                                singleRecord: true,
+                                              ).then((s) => s.firstOrNull);
+                                              _shouldSetState = true;
+                                              var confirmDialogResponse =
+                                                  await showDialog<bool>(
+                                                        context: context,
+                                                        builder:
+                                                            (alertDialogContext) {
+                                                          return AlertDialog(
+                                                            content: Text(
+                                                                'Do You Want To Print Label ?'),
+                                                            actions: [
+                                                              TextButton(
+                                                                onPressed: () =>
+                                                                    Navigator.pop(
+                                                                        alertDialogContext,
+                                                                        false),
+                                                                child: Text(
+                                                                    'Cancel'),
+                                                              ),
+                                                              TextButton(
+                                                                onPressed: () =>
+                                                                    Navigator.pop(
+                                                                        alertDialogContext,
+                                                                        true),
+                                                                child: Text(
+                                                                    'Confirm'),
+                                                              ),
+                                                            ],
+                                                          );
+                                                        },
+                                                      ) ??
+                                                      false;
+                                              if (confirmDialogResponse) {
+                                                await showModalBottomSheet(
+                                                  isScrollControlled: true,
+                                                  backgroundColor:
+                                                      Colors.transparent,
+                                                  enableDrag: false,
+                                                  context: context,
+                                                  builder: (context) {
+                                                    return Padding(
+                                                      padding: MediaQuery
+                                                          .viewInsetsOf(
+                                                              context),
+                                                      child: Container(
+                                                        height: 300.0,
+                                                        child:
+                                                            SelectlabelWidget(),
+                                                      ),
+                                                    );
+                                                  },
+                                                ).then((value) =>
+                                                    safeSetState(() {}));
+
+                                                await actions.labelPrint(
+                                                  _model.prdlinstnewtx!
+                                                      .toList(),
+                                                  FFAppState().laelsize,
+                                                );
+                                              }
+                                              if (!isAndroid) {
+                                                _model.returnurl2 =
+                                                    await actions
+                                                        .generateInvoice(
+                                                  _model.purchaseordnew
+                                                      ?.invoiceNo,
+                                                  _model.purchaseordnew
+                                                      ?.productList
+                                                      ?.toList(),
+                                                  _model.purchaseordnew
+                                                      ?.finalBillAmt
+                                                      ?.toString(),
+                                                  _model.purchaseordnew,
+                                                  _model.partydetails,
+                                                );
+                                                _shouldSetState = true;
+                                              }
+                                              await actions
+                                                  .removeFromAllBillList(
+                                                FFAppState().selBill,
+                                              );
+                                              await actions.clearValue();
+                                              FFAppState().subTotal = 0.0;
+                                              FFAppState().delCharges = 0.0;
+                                              FFAppState().oldBalance = 0;
+                                              FFAppState().custCredit = 0;
+                                              FFAppState().custNameRef = null;
+                                              FFAppState().setCustRef = null;
+                                              FFAppState().setCustName = '';
+                                              FFAppState().setCustMobNo = '';
+                                              FFAppState().noOfItems = 0;
+                                              FFAppState().taxAmtPay = 0.0;
+                                              FFAppState().taxamt = 0.0;
+                                              FFAppState().disAmtPay = 0.0;
+                                              FFAppState().disPer = 0.0;
+                                              FFAppState().disAmt = 0.0;
+                                              FFAppState().update(() {});
+                                              FFAppState().finalAmt = 0.0;
+                                              FFAppState().billAmt = 0.0;
+                                              FFAppState().groceryJson = null;
+                                              FFAppState().update(() {});
+                                              Navigator.pop(context);
                                               ScaffoldMessenger.of(context)
                                                   .showSnackBar(
                                                 SnackBar(
                                                   content: Text(
-                                                    'Pay All Amount  !',
+                                                    'Bill Saved',
                                                     style: TextStyle(
                                                       color:
                                                           FlutterFlowTheme.of(
@@ -4110,60 +4054,79 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                     ),
                                                   ),
                                                   duration: Duration(
-                                                      milliseconds: 1900),
+                                                      milliseconds: 4000),
                                                   backgroundColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .alternate,
+                                                      Color(0x00000000),
                                                 ),
                                               );
+                                              if (_shouldSetState)
+                                                safeSetState(() {});
+                                              return;
                                             }
-
-                                            if (_shouldSetState)
-                                              safeSetState(() {});
-                                          },
-                                          text: FFLocalizations.of(context)
-                                              .getText(
-                                            '5tk9oj87' /* Submit */,
-                                          ),
-                                          options: FFButtonOptions(
-                                            width: 90.0,
-                                            height: 50.0,
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    24.0, 0.0, 24.0, 0.0),
-                                            iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            textStyle: FlutterFlowTheme.of(
-                                                    context)
-                                                .headlineLarge
-                                                .override(
-                                                  fontFamily:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineLargeFamily,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryBtnText,
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.w600,
-                                                  useGoogleFonts: GoogleFonts
-                                                          .asMap()
-                                                      .containsKey(FlutterFlowTheme
-                                                              .of(context)
-                                                          .headlineLargeFamily),
+                                          } else {
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(
+                                              SnackBar(
+                                                content: Text(
+                                                  'Pay All Amount  !',
+                                                  style: TextStyle(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                  ),
                                                 ),
-                                            elevation: 3.0,
-                                            borderSide: BorderSide(
-                                              color: Colors.transparent,
-                                              width: 1.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                duration: Duration(
+                                                    milliseconds: 1900),
+                                                backgroundColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .alternate,
+                                              ),
+                                            );
+                                          }
+
+                                          if (_shouldSetState)
+                                            safeSetState(() {});
+                                        },
+                                        text:
+                                            FFLocalizations.of(context).getText(
+                                          '5tk9oj87' /* Submit */,
+                                        ),
+                                        options: FFButtonOptions(
+                                          width: 90.0,
+                                          height: 50.0,
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  24.0, 0.0, 24.0, 0.0),
+                                          iconPadding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .headlineLarge
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineLargeFamily,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryBtnText,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w600,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(FlutterFlowTheme
+                                                            .of(context)
+                                                        .headlineLargeFamily),
+                                              ),
+                                          elevation: 3.0,
+                                          borderSide: BorderSide(
+                                            color: Colors.transparent,
+                                            width: 1.0,
                                           ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
                                         ),
                                       ),
                                     ),
