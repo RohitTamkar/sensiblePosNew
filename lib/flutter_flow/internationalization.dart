@@ -22162,14 +22162,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     '9ynldssc': {
-      'en': 'Discount %',
+      'en': 'Mfg Date',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
     '5v60pzgt': {
-      'en': 'Discount Amt',
+      'en': 'Exp Date',
       'hi': '',
       'kn': '',
       'mr': '',

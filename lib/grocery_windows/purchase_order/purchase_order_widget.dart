@@ -3372,7 +3372,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                '9ynldssc' /* Discount % */,
+                                                                '9ynldssc' /* Mfg Date */,
                                                               ),
                                                               textAlign:
                                                                   TextAlign
@@ -3424,7 +3424,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                '5v60pzgt' /* Discount Amt */,
+                                                                '5v60pzgt' /* Exp Date */,
                                                               ),
                                                               textAlign:
                                                                   TextAlign

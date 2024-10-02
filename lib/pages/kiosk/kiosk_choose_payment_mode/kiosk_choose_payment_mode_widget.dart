@@ -208,174 +208,60 @@ class _KioskChoosePaymentModeWidgetState
                                     ),
                               ),
                             ),
-                            InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                FFAppState().PayMode = 'UPI QR';
-                                safeSetState(() {});
-
-                                context.pushNamed(
-                                  'KioskPayment',
-                                  queryParameters: {
-                                    'doc': serializeParam(
-                                      widget!.doc,
-                                      ParamType.DocumentReference,
-                                    ),
-                                    'shiftdetails': serializeParam(
-                                      widget!.shiftdetails,
-                                      ParamType.JSON,
-                                    ),
-                                    'qrJson': serializeParam(
-                                      widget!.qrJson,
-                                      ParamType.JSON,
-                                    ),
-                                    'paytmOrderId': serializeParam(
-                                      widget!.paytmOrderId,
-                                      ParamType.String,
-                                    ),
-                                    'isPaytm': serializeParam(
-                                      widget!.isPaytm,
-                                      ParamType.bool,
-                                    ),
-                                    'appsettings': serializeParam(
-                                      widget!.appSettings,
-                                      ParamType.Document,
-                                    ),
-                                    'taxcollection': serializeParam(
-                                      widget!.taxcollection,
-                                      ParamType.Document,
-                                      isList: true,
-                                    ),
-                                  }.withoutNulls,
-                                  extra: <String, dynamic>{
-                                    'appsettings': widget!.appSettings,
-                                    'taxcollection': widget!.taxcollection,
-                                  },
-                                );
-                              },
-                              child: Container(
-                                width: MediaQuery.sizeOf(context).width * 0.6,
-                                height:
-                                    MediaQuery.sizeOf(context).height * 0.15,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context).info,
-                                  boxShadow: [
-                                    BoxShadow(
-                                      blurRadius: 12.0,
-                                      color: Color(0x26000000),
-                                      offset: Offset(
-                                        9.0,
-                                        9.0,
-                                      ),
-                                    )
-                                  ],
-                                  borderRadius: BorderRadius.circular(30.0),
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsets.all(30.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Expanded(
-                                        child: Icon(
-                                          Icons.qr_code_scanner,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryBtnText,
-                                          size: 50.0,
-                                        ).animateOnPageLoad(animationsMap[
-                                            'iconOnPageLoadAnimation1']!),
-                                      ),
-                                      Expanded(
-                                        flex: 3,
-                                        child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            'el435bod' /* UPI Payment */,
-                                          ),
-                                          textAlign: TextAlign.center,
-                                          style: FlutterFlowTheme.of(context)
-                                              .displayLarge
-                                              .override(
-                                                fontFamily:
-                                                    FlutterFlowTheme.of(context)
-                                                        .displayLargeFamily,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryBtnText,
-                                                fontSize: 36.0,
-                                                letterSpacing: 0.0,
-                                                useGoogleFonts: GoogleFonts
-                                                        .asMap()
-                                                    .containsKey(
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .displayLargeFamily),
-                                              ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 25.0, 0.0, 25.0),
-                              child: Text(
-                                FFLocalizations.of(context).getText(
-                                  'bi488f0w' /* OR */,
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .displayLarge
-                                    .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .displayLargeFamily,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      fontSize: 30.0,
-                                      letterSpacing: 5.0,
-                                      fontWeight: FontWeight.normal,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .displayLargeFamily),
-                                    ),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 50.0),
-                              child: InkWell(
+                            if (!valueOrDefault<bool>(
+                              widget!.appSettings?.settingList
+                                  ?.where(
+                                      (e) => e.title == 'hideUPIPaymentMode')
+                                  .toList()
+                                  ?.first
+                                  ?.value,
+                              false,
+                            ))
+                              InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
-                                  FFAppState().PayMode = 'CASH';
+                                  FFAppState().PayMode = 'UPI QR';
                                   safeSetState(() {});
 
                                   context.pushNamed(
-                                    'cashResponsePage',
+                                    'KioskPayment',
                                     queryParameters: {
+                                      'doc': serializeParam(
+                                        widget!.doc,
+                                        ParamType.DocumentReference,
+                                      ),
                                       'shiftdetails': serializeParam(
                                         widget!.shiftdetails,
                                         ParamType.JSON,
                                       ),
-                                      'appsetting': serializeParam(
+                                      'qrJson': serializeParam(
+                                        widget!.qrJson,
+                                        ParamType.JSON,
+                                      ),
+                                      'paytmOrderId': serializeParam(
+                                        widget!.paytmOrderId,
+                                        ParamType.String,
+                                      ),
+                                      'isPaytm': serializeParam(
+                                        widget!.isPaytm,
+                                        ParamType.bool,
+                                      ),
+                                      'appsettings': serializeParam(
                                         widget!.appSettings,
                                         ParamType.Document,
                                       ),
-                                      'taxcoollectipon': serializeParam(
+                                      'taxcollection': serializeParam(
                                         widget!.taxcollection,
                                         ParamType.Document,
                                         isList: true,
                                       ),
                                     }.withoutNulls,
                                     extra: <String, dynamic>{
-                                      'appsetting': widget!.appSettings,
-                                      'taxcoollectipon': widget!.taxcollection,
+                                      'appsettings': widget!.appSettings,
+                                      'taxcollection': widget!.taxcollection,
                                     },
                                   );
                                 },
@@ -388,7 +274,7 @@ class _KioskChoosePaymentModeWidgetState
                                     boxShadow: [
                                       BoxShadow(
                                         blurRadius: 12.0,
-                                        color: Color(0x27000000),
+                                        color: Color(0x26000000),
                                         offset: Offset(
                                           9.0,
                                           9.0,
@@ -403,24 +289,19 @@ class _KioskChoosePaymentModeWidgetState
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Expanded(
-                                          child: Align(
-                                            alignment:
-                                                AlignmentDirectional(0.0, 0.0),
-                                            child: FaIcon(
-                                              FontAwesomeIcons.moneyBillWaveAlt,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBtnText,
-                                              size: 45.0,
-                                            ).animateOnPageLoad(animationsMap[
-                                                'iconOnPageLoadAnimation2']!),
-                                          ),
+                                          child: Icon(
+                                            Icons.qr_code_scanner,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBtnText,
+                                            size: 50.0,
+                                          ).animateOnPageLoad(animationsMap[
+                                              'iconOnPageLoadAnimation1']!),
                                         ),
                                         Expanded(
                                           flex: 3,
                                           child: Text(
                                             FFLocalizations.of(context).getText(
-                                              'ppahxy75' /* Pay at Counter */,
+                                              'el435bod' /* UPI Payment */,
                                             ),
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
@@ -449,7 +330,160 @@ class _KioskChoosePaymentModeWidgetState
                                   ),
                                 ),
                               ),
-                            ),
+                            if (!valueOrDefault<bool>(
+                              widget!.appSettings?.settingList
+                                  ?.where(
+                                      (e) => e.title == 'hideUPIPaymentMode')
+                                  .toList()
+                                  ?.first
+                                  ?.value,
+                              false,
+                            ))
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 25.0, 0.0, 25.0),
+                                child: Text(
+                                  FFLocalizations.of(context).getText(
+                                    'bi488f0w' /* OR */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .displayLarge
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .displayLargeFamily,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        fontSize: 30.0,
+                                        letterSpacing: 5.0,
+                                        fontWeight: FontWeight.normal,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .displayLargeFamily),
+                                      ),
+                                ),
+                              ),
+                            if (!valueOrDefault<bool>(
+                              widget!.appSettings?.settingList
+                                  ?.where(
+                                      (e) => e.title == 'hideCashPaymentMode')
+                                  .toList()
+                                  ?.first
+                                  ?.value,
+                              false,
+                            ))
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 50.0),
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    FFAppState().PayMode = 'CASH';
+                                    safeSetState(() {});
+
+                                    context.pushNamed(
+                                      'cashResponsePage',
+                                      queryParameters: {
+                                        'shiftdetails': serializeParam(
+                                          widget!.shiftdetails,
+                                          ParamType.JSON,
+                                        ),
+                                        'appsetting': serializeParam(
+                                          widget!.appSettings,
+                                          ParamType.Document,
+                                        ),
+                                        'taxcoollectipon': serializeParam(
+                                          widget!.taxcollection,
+                                          ParamType.Document,
+                                          isList: true,
+                                        ),
+                                      }.withoutNulls,
+                                      extra: <String, dynamic>{
+                                        'appsetting': widget!.appSettings,
+                                        'taxcoollectipon':
+                                            widget!.taxcollection,
+                                      },
+                                    );
+                                  },
+                                  child: Container(
+                                    width:
+                                        MediaQuery.sizeOf(context).width * 0.6,
+                                    height: MediaQuery.sizeOf(context).height *
+                                        0.15,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context).info,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          blurRadius: 12.0,
+                                          color: Color(0x27000000),
+                                          offset: Offset(
+                                            9.0,
+                                            9.0,
+                                          ),
+                                        )
+                                      ],
+                                      borderRadius: BorderRadius.circular(30.0),
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsets.all(30.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Expanded(
+                                            child: Align(
+                                              alignment: AlignmentDirectional(
+                                                  0.0, 0.0),
+                                              child: FaIcon(
+                                                FontAwesomeIcons
+                                                    .moneyBillWaveAlt,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryBtnText,
+                                                size: 45.0,
+                                              ).animateOnPageLoad(animationsMap[
+                                                  'iconOnPageLoadAnimation2']!),
+                                            ),
+                                          ),
+                                          Expanded(
+                                            flex: 3,
+                                            child: Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'ppahxy75' /* Pay at Counter */,
+                                              ),
+                                              textAlign: TextAlign.center,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .displayLarge
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .displayLargeFamily,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryBtnText,
+                                                        fontSize: 36.0,
+                                                        letterSpacing: 0.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .displayLargeFamily),
+                                                      ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
                           ],
                         ),
                       ),
