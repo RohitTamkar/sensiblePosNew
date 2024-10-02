@@ -51,23 +51,11 @@ class GroceryPurchaseModel extends FlutterFlowModel<GroceryPurchaseWidget> {
   TextEditingController? textFielddisPerTextController;
   String? Function(BuildContext, String?)?
       textFielddisPerTextControllerValidator;
-  // Stores action output result for [Custom Action - addToHoldListGrCalculationdisPer] action in TextFielddisPer widget.
-  List<dynamic>? itemlist;
-  // Stores action output result for [Custom Action - calSubTotalForGrocery] action in TextFielddisPer widget.
-  double? outputdisper;
-  // Stores action output result for [Custom Action - calBillAmtGrocery] action in TextFielddisPer widget.
-  double? reuslt12ss;
   // State field(s) for TextFielddisAmt widget.
   FocusNode? textFielddisAmtFocusNode;
   TextEditingController? textFielddisAmtTextController;
   String? Function(BuildContext, String?)?
       textFielddisAmtTextControllerValidator;
-  // Stores action output result for [Custom Action - disAmtChangedFunctiongrocery] action in TextFielddisAmt widget.
-  List<dynamic>? allbillistdiscper;
-  // Stores action output result for [Custom Action - calSubTotalForGrocery] action in TextFielddisAmt widget.
-  double? output5;
-  // Stores action output result for [Custom Action - calBillAmtGrocery] action in TextFielddisAmt widget.
-  double? reuslt1245;
   // State field(s) for TextFieldtaxPer widget.
   FocusNode? textFieldtaxPerFocusNode;
   TextEditingController? textFieldtaxPerTextController;

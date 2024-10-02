@@ -911,69 +911,7 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                           child: TextFormField(
                             controller: _model.textFielddisPerTextController,
                             focusNode: _model.textFielddisPerFocusNode,
-                            onFieldSubmitted: (_) async {
-                              _model.itemlist = await actions
-                                  .addToHoldListGrCalculationdisPer(
-                                widget!.parameter2!,
-                                FFAppState().selBill,
-                                widget!.parameter3!.toList(),
-                                functions
-                                    .enabletaxinclusive(widget!.parameter4!),
-                                widget!.unitList!.toList(),
-                                double.parse(
-                                    _model.textFielddisPerTextController.text),
-                                double.parse(
-                                    _model.textFielddisAmtTextController.text),
-                                double.parse(
-                                    _model.textFieldrateTextController.text),
-                                double.parse(
-                                    _model.textFieldqtTextController.text),
-                                double.parse(
-                                    _model.textFieldtaxPerTextController.text),
-                                double.parse(
-                                    _model.textFieldTaxAmtTextController.text),
-                              );
-                              safeSetState(() {
-                                _model.textFielddisAmtTextController?.text =
-                                    getJsonField(
-                                  _model.itemlist!
-                                      .where((e) =>
-                                          getJsonField(
-                                            e,
-                                            r'''$.id''',
-                                          ) ==
-                                          getJsonField(
-                                            widget!.jsonitem,
-                                            r'''$.id''',
-                                          ))
-                                      .toList()
-                                      .first,
-                                  r'''$.disAmt''',
-                                ).toString();
-                                _model.textFielddisAmtTextController
-                                        ?.selection =
-                                    TextSelection.collapsed(
-                                        offset: _model
-                                            .textFielddisAmtTextController!
-                                            .text
-                                            .length);
-                              });
-                              _model.outputdisper =
-                                  await actions.calSubTotalForGrocery(
-                                FFAppState().selBill.toString(),
-                                FFAppState().allBillsList.toList(),
-                              );
-                              _model.reuslt12ss =
-                                  await actions.calBillAmtGrocery(
-                                valueOrDefault<double>(
-                                  FFAppState().disAmt,
-                                  0.0,
-                                ),
-                                FFAppState().delCharges,
-                              );
-
-                              safeSetState(() {});
-                            },
+                            onFieldSubmitted: (_) async {},
                             autofocus: false,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -1070,69 +1008,7 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                           child: TextFormField(
                             controller: _model.textFielddisAmtTextController,
                             focusNode: _model.textFielddisAmtFocusNode,
-                            onFieldSubmitted: (_) async {
-                              _model.allbillistdiscper =
-                                  await actions.disAmtChangedFunctiongrocery(
-                                widget!.parameter2!,
-                                FFAppState().selBill,
-                                widget!.parameter3!.toList(),
-                                functions
-                                    .enabletaxinclusive(widget!.parameter4!),
-                                widget!.unitList!.toList(),
-                                double.parse(
-                                    _model.textFielddisPerTextController.text),
-                                double.parse(
-                                    _model.textFielddisAmtTextController.text),
-                                double.parse(
-                                    _model.textFieldrateTextController.text),
-                                double.parse(
-                                    _model.textFieldqtTextController.text),
-                                double.parse(
-                                    _model.textFieldtaxPerTextController.text),
-                                double.parse(
-                                    _model.textFieldTaxAmtTextController.text),
-                              );
-                              safeSetState(() {
-                                _model.textFielddisPerTextController?.text =
-                                    getJsonField(
-                                  _model.allbillistdiscper!
-                                      .where((e) =>
-                                          getJsonField(
-                                            widget!.jsonitem,
-                                            r'''$.id''',
-                                          ) ==
-                                          getJsonField(
-                                            e,
-                                            r'''$.id''',
-                                          ))
-                                      .toList()
-                                      .first,
-                                  r'''$.disPer''',
-                                ).toString();
-                                _model.textFielddisPerTextController
-                                        ?.selection =
-                                    TextSelection.collapsed(
-                                        offset: _model
-                                            .textFielddisPerTextController!
-                                            .text
-                                            .length);
-                              });
-                              _model.output5 =
-                                  await actions.calSubTotalForGrocery(
-                                FFAppState().selBill.toString(),
-                                FFAppState().allBillsList.toList(),
-                              );
-                              _model.reuslt1245 =
-                                  await actions.calBillAmtGrocery(
-                                valueOrDefault<double>(
-                                  FFAppState().disAmt,
-                                  0.0,
-                                ),
-                                FFAppState().delCharges,
-                              );
-
-                              safeSetState(() {});
-                            },
+                            onFieldSubmitted: (_) async {},
                             autofocus: false,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -1754,7 +1630,7 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                       ),
                     ),
                     Expanded(
-                      flex: 15,
+                      flex: 14,
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -1938,7 +1814,7 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                       ),
                     ),
                     Expanded(
-                      flex: 3,
+                      flex: 5,
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -1946,7 +1822,7 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                             child: Text(
                               getJsonField(
                                 widget!.jsonitem,
-                                r'''$.disPer''',
+                                r'''$.mfgDate''',
                               ).toString(),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
@@ -1974,7 +1850,7 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                       ),
                     ),
                     Expanded(
-                      flex: 4,
+                      flex: 5,
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -1982,7 +1858,7 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                             child: Text(
                               getJsonField(
                                 widget!.jsonitem,
-                                r'''$.disAmt''',
+                                r'''$.expDate''',
                               ).toString(),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
