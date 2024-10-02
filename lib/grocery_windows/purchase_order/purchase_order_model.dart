@@ -9,7 +9,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/grocery_windows/add_product_grocery/add_product_grocery_widget.dart';
 import '/grocery_windows/add_supplier/add_supplier_widget.dart';
-import '/grocery_windows/grocery/grocery_widget.dart';
+import '/grocery_windows/grocery_purchase/grocery_purchase_widget.dart';
 import '/grocery_windows/payment_mode_purches/payment_mode_purches_widget.dart';
 import 'dart:math';
 import '/custom_code/actions/index.dart' as actions;

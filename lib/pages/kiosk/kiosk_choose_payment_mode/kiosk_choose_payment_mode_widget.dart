@@ -211,7 +211,7 @@ class _KioskChoosePaymentModeWidgetState
                             if (!valueOrDefault<bool>(
                               widget!.appSettings?.settingList
                                   ?.where(
-                                      (e) => e.title == 'hideUPIPaymentMode')
+                                      (e) => e.title == 'hideUpiPaymentMode')
                                   .toList()
                                   ?.first
                                   ?.value,
@@ -333,7 +333,7 @@ class _KioskChoosePaymentModeWidgetState
                             if (!valueOrDefault<bool>(
                               widget!.appSettings?.settingList
                                   ?.where(
-                                      (e) => e.title == 'hideUPIPaymentMode')
+                                      (e) => e.title == 'hideUpiPaymentMode')
                                   .toList()
                                   ?.first
                                   ?.value,

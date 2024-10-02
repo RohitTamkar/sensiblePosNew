@@ -9,7 +9,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/grocery_windows/add_product_grocery/add_product_grocery_widget.dart';
 import '/grocery_windows/add_supplier/add_supplier_widget.dart';
-import '/grocery_windows/grocery/grocery_widget.dart';
+import '/grocery_windows/grocery_purchase/grocery_purchase_widget.dart';
 import '/grocery_windows/payment_mode_purches/payment_mode_purches_widget.dart';
 import 'dart:math';
 import '/custom_code/actions/index.dart' as actions;
@@ -3105,7 +3105,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                       ),
                                                     ),
                                                     Expanded(
-                                                      flex: 15,
+                                                      flex: 14,
                                                       child: Row(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -3362,7 +3362,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                       ),
                                                     ),
                                                     Expanded(
-                                                      flex: 3,
+                                                      flex: 5,
                                                       child: Row(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -3414,7 +3414,7 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                       ),
                                                     ),
                                                     Expanded(
-                                                      flex: 4,
+                                                      flex: 5,
                                                       child: Row(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -3689,14 +3689,9 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                         children: [
                                                           Expanded(
                                                             child:
-                                                                GroceryWidget(
+                                                                GroceryPurchaseWidget(
                                                               key: Key(
-                                                                  'Key0zd_${prdlistIndex}_of_${prdlist.length}'),
-                                                              parameter2: ProductStructStruct
-                                                                  .maybeFromMap(
-                                                                      prdlistItem),
-                                                              parameter3: widget!
-                                                                  .taxDetails,
+                                                                  'Keyl8b_${prdlistIndex}_of_${prdlist.length}'),
                                                               parameter4: containerAppSettingsRecord
                                                                   ?.settingList
                                                                   ?.where((e) =>
@@ -3705,6 +3700,11 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                                   .toList()
                                                                   ?.first
                                                                   ?.value,
+                                                              parameter2: ProductStructStruct
+                                                                  .maybeFromMap(
+                                                                      prdlistItem),
+                                                              parameter3: widget!
+                                                                  .taxDetails,
                                                               unitList:
                                                                   purchaseOrderUnitTypeRecordList,
                                                               jsonitem:
