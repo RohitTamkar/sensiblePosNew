@@ -23,6 +23,7 @@ class PurchaseSaleItemListStruct extends FFFirebaseStruct {
     String? note,
     String? mfgDate,
     String? expDate,
+    String? barcode,
     FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _name = name,
         _quantity = quantity,
@@ -37,6 +38,7 @@ class PurchaseSaleItemListStruct extends FFFirebaseStruct {
         _note = note,
         _mfgDate = mfgDate,
         _expDate = expDate,
+        _barcode = barcode,
         super(firestoreUtilData);
 
   // "name" field.
@@ -145,6 +147,13 @@ class PurchaseSaleItemListStruct extends FFFirebaseStruct {
 
   bool hasExpDate() => _expDate != null;
 
+  // "barcode" field.
+  String? _barcode;
+  String get barcode => _barcode ?? '';
+  set barcode(String? val) => _barcode = val;
+
+  bool hasBarcode() => _barcode != null;
+
   static PurchaseSaleItemListStruct fromMap(Map<String, dynamic> data) =>
       PurchaseSaleItemListStruct(
         name: data['name'] as String?,
@@ -160,6 +169,7 @@ class PurchaseSaleItemListStruct extends FFFirebaseStruct {
         note: data['note'] as String?,
         mfgDate: data['mfgDate'] as String?,
         expDate: data['expDate'] as String?,
+        barcode: data['barcode'] as String?,
       );
 
   static PurchaseSaleItemListStruct? maybeFromMap(dynamic data) => data is Map
@@ -180,6 +190,7 @@ class PurchaseSaleItemListStruct extends FFFirebaseStruct {
         'note': _note,
         'mfgDate': _mfgDate,
         'expDate': _expDate,
+        'barcode': _barcode,
       }.withoutNulls;
 
   @override
@@ -234,6 +245,10 @@ class PurchaseSaleItemListStruct extends FFFirebaseStruct {
         ),
         'expDate': serializeParam(
           _expDate,
+          ParamType.String,
+        ),
+        'barcode': serializeParam(
+          _barcode,
           ParamType.String,
         ),
       }.withoutNulls;
@@ -306,6 +321,11 @@ class PurchaseSaleItemListStruct extends FFFirebaseStruct {
           ParamType.String,
           false,
         ),
+        barcode: deserializeParam(
+          data['barcode'],
+          ParamType.String,
+          false,
+        ),
       );
 
   @override
@@ -326,7 +346,8 @@ class PurchaseSaleItemListStruct extends FFFirebaseStruct {
         rejectedQty == other.rejectedQty &&
         note == other.note &&
         mfgDate == other.mfgDate &&
-        expDate == other.expDate;
+        expDate == other.expDate &&
+        barcode == other.barcode;
   }
 
   @override
@@ -343,7 +364,8 @@ class PurchaseSaleItemListStruct extends FFFirebaseStruct {
         rejectedQty,
         note,
         mfgDate,
-        expDate
+        expDate,
+        barcode
       ]);
 }
 
@@ -361,6 +383,7 @@ PurchaseSaleItemListStruct createPurchaseSaleItemListStruct({
   String? note,
   String? mfgDate,
   String? expDate,
+  String? barcode,
   Map<String, dynamic> fieldValues = const {},
   bool clearUnsetFields = true,
   bool create = false,
@@ -380,6 +403,7 @@ PurchaseSaleItemListStruct createPurchaseSaleItemListStruct({
       note: note,
       mfgDate: mfgDate,
       expDate: expDate,
+      barcode: barcode,
       firestoreUtilData: FirestoreUtilData(
         clearUnsetFields: clearUnsetFields,
         create: create,
