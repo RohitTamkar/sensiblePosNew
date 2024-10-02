@@ -283,7 +283,6 @@ class _CashResponsePageWidgetState extends State<CashResponsePageWidget>
           FFAppState().printerDevice,
           FFAppState().printerIndex,
         );
-        await Future.delayed(const Duration(milliseconds: 2000));
         if (_model.isConnected!) {
           FFAppState().lastBill = FFAppState().finalAmt;
           FFAppState().update(() {});

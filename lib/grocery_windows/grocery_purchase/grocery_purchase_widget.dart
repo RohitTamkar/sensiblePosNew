@@ -911,7 +911,21 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                           child: TextFormField(
                             controller: _model.textFielddisPerTextController,
                             focusNode: _model.textFielddisPerFocusNode,
-                            onFieldSubmitted: (_) async {},
+                            onFieldSubmitted: (_) async {
+                              _model.list =
+                                  await actions.addToHoldListGrmfgdate(
+                                widget!.parameter2!,
+                                FFAppState().selBill,
+                                widget!.parameter3!.toList(),
+                                functions
+                                    .enabletaxinclusive(widget!.parameter4!),
+                                widget!.unitList!.toList(),
+                                _model.textFielddisPerTextController.text,
+                                _model.textFielddisAmtTextController.text,
+                              );
+
+                              safeSetState(() {});
+                            },
                             autofocus: false,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -1008,7 +1022,21 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                           child: TextFormField(
                             controller: _model.textFielddisAmtTextController,
                             focusNode: _model.textFielddisAmtFocusNode,
-                            onFieldSubmitted: (_) async {},
+                            onFieldSubmitted: (_) async {
+                              _model.list645 =
+                                  await actions.addToHoldListGrmfgdate(
+                                widget!.parameter2!,
+                                FFAppState().selBill,
+                                widget!.parameter3!.toList(),
+                                functions
+                                    .enabletaxinclusive(widget!.parameter4!),
+                                widget!.unitList!.toList(),
+                                _model.textFielddisPerTextController.text,
+                                _model.textFielddisAmtTextController.text,
+                              );
+
+                              safeSetState(() {});
+                            },
                             autofocus: false,
                             obscureText: false,
                             decoration: InputDecoration(

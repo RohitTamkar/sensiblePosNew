@@ -22944,8 +22944,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // kioskCustomerInfo
   {
     '1f81hy76': {
-      'en':
-          'Celebrate Our New Shop Launch! \nGet a Free Coffee Today \nSimply Enter Your Mobile Number.',
+      'en': 'Celebrate Our New Shop Launch! ',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '99ha3xvk': {
+      'en': 'Get a Free Coffee Today ',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'kozhgkn3': {
+      'en': 'Simply Enter Your Mobile Number.',
       'hi': '',
       'kn': '',
       'mr': '',

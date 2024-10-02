@@ -9,6 +9,7 @@ export 'delete_allinvoice.dart' show deleteAllinvoice;
 export 'shift_detail_new.dart' show shiftDetailNew;
 export 'reduce_quantity_hold_list2.dart' show reduceQuantityHoldList2;
 export 'print_bill_copy2.dart' show printBillCopy2;
+export 'add_to_hold_list_grmfgdate.dart' show addToHoldListGrmfgdate;
 export 'print_billnewhivegrocery.dart' show printBillnewhivegrocery;
 export 'm_k_print_token.dart' show mKPrintToken;
 export 'cal_sub_total_for_hold_list2.dart' show calSubTotalForHoldList2;

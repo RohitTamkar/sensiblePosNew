@@ -99,12 +99,59 @@ class _KioskCustomerInfoWidgetState extends State<KioskCustomerInfoWidget> {
                           children: [
                             Align(
                               alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Text(
+                                FFLocalizations.of(context).getText(
+                                  '1f81hy76' /* Celebrate Our New Shop Launch!... */,
+                                ),
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context)
+                                    .displayLarge
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .displayLargeFamily,
+                                      color: FlutterFlowTheme.of(context).info,
+                                      fontSize: 40.0,
+                                      letterSpacing: 5.0,
+                                      fontWeight: FontWeight.w600,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .displayLargeFamily),
+                                    ),
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Text(
+                                FFLocalizations.of(context).getText(
+                                  '99ha3xvk' /* Get a Free Coffee Today  */,
+                                ),
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context)
+                                    .displayLarge
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .displayLargeFamily,
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      fontSize: 40.0,
+                                      letterSpacing: 5.0,
+                                      fontWeight: FontWeight.w600,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .displayLargeFamily),
+                                    ),
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 80.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    '1f81hy76' /* Celebrate Our New Shop Launch!... */,
+                                    'kozhgkn3' /* Simply Enter Your Mobile Numbe... */,
                                   ),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
