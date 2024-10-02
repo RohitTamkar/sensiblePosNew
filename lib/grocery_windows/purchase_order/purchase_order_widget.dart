@@ -3635,9 +3635,55 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                       .primaryBtnText,
                                                   size: 16.0,
                                                 ),
-                                                onPressed: () {
-                                                  print(
-                                                      'IconButton pressed ...');
+                                                onPressed: () async {
+                                                  var confirmDialogResponse =
+                                                      await showDialog<bool>(
+                                                            context: context,
+                                                            builder:
+                                                                (alertDialogContext) {
+                                                              return AlertDialog(
+                                                                title: Text(
+                                                                    'Delete All Bills..?'),
+                                                                content: Text(
+                                                                    'Are you sure you want to delete all Bills..'),
+                                                                actions: [
+                                                                  TextButton(
+                                                                    onPressed: () =>
+                                                                        Navigator.pop(
+                                                                            alertDialogContext,
+                                                                            false),
+                                                                    child: Text(
+                                                                        'cancle'),
+                                                                  ),
+                                                                  TextButton(
+                                                                    onPressed: () =>
+                                                                        Navigator.pop(
+                                                                            alertDialogContext,
+                                                                            true),
+                                                                    child: Text(
+                                                                        'confirm'),
+                                                                  ),
+                                                                ],
+                                                              );
+                                                            },
+                                                          ) ??
+                                                          false;
+                                                  if (!confirmDialogResponse) {
+                                                    return;
+                                                  }
+                                                  FFAppState().holdBillCount =
+                                                      0;
+                                                  FFAppState().allBillsList =
+                                                      [];
+                                                  FFAppState().update(() {});
+                                                  FFAppState().itemCartList =
+                                                      [];
+                                                  FFAppState().update(() {});
+                                                  await actions.clearValue();
+                                                  FFAppState().noOfItems = 0;
+                                                  FFAppState().update(() {});
+                                                  FFAppState().prdid = '';
+                                                  safeSetState(() {});
                                                 },
                                               ),
                                             ],
