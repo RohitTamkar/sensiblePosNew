@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:typed_data';
 import 'dart:convert';
 import 'dart:async';
@@ -30,13 +32,15 @@ Future<void> labelPrint(
   if (_printer.device != null) {
     for (var item in prdList) {
       // Prepare data for each item
+
       Map<String, dynamic> data = {
         'Name': item.name, // assuming these properties exist in your struct
         'Price': item.price.toString(),
-        'MfgDate': '2023-10-18',
-        'ExpDate': '2024-12-18',
-        'barcode': '123456789',
-        'copies': 1, // assuming quantity is a number
+        'mrpPrice': item.mrpPrice.toString(),
+        'MfgDate': item.mfgDate,
+        'ExpDate': item.expDate,
+        'barcode': item.barcode,
+        'copies': item.quantity.toInt(), // assuming quantity is a number
       };
 
       // Print the label for the current item
@@ -116,7 +120,7 @@ class Printer {
 
       // 2. Print MRP and Rate on the same line
       await sendCommand(
-          'TEXT 20,40,"3.EFT",0,1,1,"MRP: ${data['Price']}    Rate: ${data['Price']}"\r\n');
+          'TEXT 20,40,"3.EFT",0,1,1,"MRP:${data['mrpPrice']}    Rate:${data['Price']}"\r\n');
 
       // 3. Print Manufacture Date and Expiry Date
       await sendCommand(
@@ -149,7 +153,8 @@ class Printer {
       await sendCommand('TEXT 10,10,"B.FNT",0,1,1,"${data['Name']}"\r\n');
 
       // 2. Print MRP on a new line
-      await sendCommand('TEXT 10,30,"3.EFT",0,1,1,"MRP: ${data['Price']}"\r\n');
+      await sendCommand(
+          'TEXT 10,30,"3.EFT",0,1,1,"MRP: ${data['mrpPrice']}"\r\n');
 
       // 3. Print Rate on a new line (adjusted to a lower position to avoid overlap)
       await sendCommand(
@@ -175,7 +180,8 @@ class Printer {
       await sendCommand('TEXT 5,25,"B.FNT",0,1,1,"${data['Name']}"\r\n');
 
       // 2. Print MRP (further adjust Y-position to avoid overlap with Name)
-      await sendCommand('TEXT 6,45,"3.EFT",0,1,1,"MRP:${data['Price']}"\r\n');
+      await sendCommand(
+          'TEXT 6,45,"3.EFT",0,1,1,"MRP:${data['mrpPrice']}"\r\n');
 
       // 3. Print Rate (adjust position to ensure it doesn't overlap with MRP)
       await sendCommand('TEXT 5,65,"3.EFT",0,1,1,"Rate:${data['Price']}"\r\n');
@@ -193,6 +199,7 @@ class Printer {
   }
 }
 
+//2024/06
 class UsbDevice {
   final int vid;
   final int pid;
