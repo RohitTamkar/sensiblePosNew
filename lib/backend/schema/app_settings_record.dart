@@ -16,16 +16,6 @@ class AppSettingsRecord extends FirestoreRecord {
     _initializeFields();
   }
 
-  // "allowSaleWithoutTax" field.
-  bool? _allowSaleWithoutTax;
-  bool get allowSaleWithoutTax => _allowSaleWithoutTax ?? false;
-  bool hasAllowSaleWithoutTax() => _allowSaleWithoutTax != null;
-
-  // "askCustomerInBillCreation" field.
-  bool? _askCustomerInBillCreation;
-  bool get askCustomerInBillCreation => _askCustomerInBillCreation ?? false;
-  bool hasAskCustomerInBillCreation() => _askCustomerInBillCreation != null;
-
   // "billFormatSendToEmail" field.
   bool? _billFormatSendToEmail;
   bool get billFormatSendToEmail => _billFormatSendToEmail ?? false;
@@ -580,12 +570,19 @@ class AppSettingsRecord extends FirestoreRecord {
   List<AppSettingsStruct> get settingList => _settingList ?? const [];
   bool hasSettingList() => _settingList != null;
 
+  // "allowSaleWithoutTax" field.
+  bool? _allowSaleWithoutTax;
+  bool get allowSaleWithoutTax => _allowSaleWithoutTax ?? false;
+  bool hasAllowSaleWithoutTax() => _allowSaleWithoutTax != null;
+
+  // "askCustomerInBillCreation" field.
+  bool? _askCustomerInBillCreation;
+  bool get askCustomerInBillCreation => _askCustomerInBillCreation ?? false;
+  bool hasAskCustomerInBillCreation() => _askCustomerInBillCreation != null;
+
   DocumentReference get parentReference => reference.parent.parent!;
 
   void _initializeFields() {
-    _allowSaleWithoutTax = snapshotData['allowSaleWithoutTax'] as bool?;
-    _askCustomerInBillCreation =
-        snapshotData['askCustomerInBillCreation'] as bool?;
     _billFormatSendToEmail = snapshotData['billFormatSendToEmail'] as bool?;
     _billSettlement = snapshotData['billSettlement'] as bool?;
     _calculateReverseQuantity =
@@ -704,6 +701,9 @@ class AppSettingsRecord extends FirestoreRecord {
       snapshotData['settingList'],
       AppSettingsStruct.fromMap,
     );
+    _allowSaleWithoutTax = snapshotData['allowSaleWithoutTax'] as bool?;
+    _askCustomerInBillCreation =
+        snapshotData['askCustomerInBillCreation'] as bool?;
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -746,8 +746,6 @@ class AppSettingsRecord extends FirestoreRecord {
 }
 
 Map<String, dynamic> createAppSettingsRecordData({
-  bool? allowSaleWithoutTax,
-  bool? askCustomerInBillCreation,
   bool? billFormatSendToEmail,
   bool? billSettlement,
   bool? calculateReverseQuantity,
@@ -857,11 +855,11 @@ Map<String, dynamic> createAppSettingsRecordData({
   bool? ethernetPrint,
   bool? printKOTWithBill,
   bool? hideParcelButton,
+  bool? allowSaleWithoutTax,
+  bool? askCustomerInBillCreation,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
-      'allowSaleWithoutTax': allowSaleWithoutTax,
-      'askCustomerInBillCreation': askCustomerInBillCreation,
       'billFormatSendToEmail': billFormatSendToEmail,
       'billSettlement': billSettlement,
       'calculateReverseQuantity': calculateReverseQuantity,
@@ -971,6 +969,8 @@ Map<String, dynamic> createAppSettingsRecordData({
       'ethernetPrint': ethernetPrint,
       'printKOTWithBill': printKOTWithBill,
       'hideParcelButton': hideParcelButton,
+      'allowSaleWithoutTax': allowSaleWithoutTax,
+      'askCustomerInBillCreation': askCustomerInBillCreation,
     }.withoutNulls,
   );
 
@@ -983,9 +983,7 @@ class AppSettingsRecordDocumentEquality implements Equality<AppSettingsRecord> {
   @override
   bool equals(AppSettingsRecord? e1, AppSettingsRecord? e2) {
     const listEquality = ListEquality();
-    return e1?.allowSaleWithoutTax == e2?.allowSaleWithoutTax &&
-        e1?.askCustomerInBillCreation == e2?.askCustomerInBillCreation &&
-        e1?.billFormatSendToEmail == e2?.billFormatSendToEmail &&
+    return e1?.billFormatSendToEmail == e2?.billFormatSendToEmail &&
         e1?.billSettlement == e2?.billSettlement &&
         e1?.calculateReverseQuantity == e2?.calculateReverseQuantity &&
         e1?.captainDetails == e2?.captainDetails &&
@@ -1095,13 +1093,13 @@ class AppSettingsRecordDocumentEquality implements Equality<AppSettingsRecord> {
         e1?.ethernetPrint == e2?.ethernetPrint &&
         e1?.printKOTWithBill == e2?.printKOTWithBill &&
         e1?.hideParcelButton == e2?.hideParcelButton &&
-        listEquality.equals(e1?.settingList, e2?.settingList);
+        listEquality.equals(e1?.settingList, e2?.settingList) &&
+        e1?.allowSaleWithoutTax == e2?.allowSaleWithoutTax &&
+        e1?.askCustomerInBillCreation == e2?.askCustomerInBillCreation;
   }
 
   @override
   int hash(AppSettingsRecord? e) => const ListEquality().hash([
-        e?.allowSaleWithoutTax,
-        e?.askCustomerInBillCreation,
         e?.billFormatSendToEmail,
         e?.billSettlement,
         e?.calculateReverseQuantity,
@@ -1211,7 +1209,9 @@ class AppSettingsRecordDocumentEquality implements Equality<AppSettingsRecord> {
         e?.ethernetPrint,
         e?.printKOTWithBill,
         e?.hideParcelButton,
-        e?.settingList
+        e?.settingList,
+        e?.allowSaleWithoutTax,
+        e?.askCustomerInBillCreation
       ]);
 
   @override
