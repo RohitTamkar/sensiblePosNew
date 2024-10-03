@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'grocery_purchase_widget.dart' show GroceryPurchaseWidget;
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -53,6 +54,8 @@ class GroceryPurchaseModel extends FlutterFlowModel<GroceryPurchaseWidget> {
       textFielddisPerTextControllerValidator;
   // Stores action output result for [Custom Action - addToHoldListGrmfgdate] action in TextFielddisPer widget.
   List<dynamic>? list;
+  // Stores action output result for [Custom Action - addToHoldListGrmfgdate] action in TextFielddisPer widget.
+  List<dynamic>? list23;
   // State field(s) for TextFielddisAmt widget.
   FocusNode? textFielddisAmtFocusNode;
   TextEditingController? textFielddisAmtTextController;
@@ -60,6 +63,8 @@ class GroceryPurchaseModel extends FlutterFlowModel<GroceryPurchaseWidget> {
       textFielddisAmtTextControllerValidator;
   // Stores action output result for [Custom Action - addToHoldListGrmfgdate] action in TextFielddisAmt widget.
   List<dynamic>? list645;
+  // Stores action output result for [Custom Action - addToHoldListGrmfgdate] action in TextFielddisAmt widget.
+  List<dynamic>? listCopy36;
   // State field(s) for TextFieldtaxPer widget.
   FocusNode? textFieldtaxPerFocusNode;
   TextEditingController? textFieldtaxPerTextController;

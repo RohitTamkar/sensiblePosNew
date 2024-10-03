@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -223,7 +224,7 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                     ),
                   ),
                   Expanded(
-                    flex: 5,
+                    flex: 6,
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -911,6 +912,25 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                           child: TextFormField(
                             controller: _model.textFielddisPerTextController,
                             focusNode: _model.textFielddisPerFocusNode,
+                            onChanged: (_) => EasyDebounce.debounce(
+                              '_model.textFielddisPerTextController',
+                              Duration(milliseconds: 2000),
+                              () async {
+                                _model.list23 =
+                                    await actions.addToHoldListGrmfgdate(
+                                  widget!.parameter2!,
+                                  FFAppState().selBill,
+                                  widget!.parameter3!.toList(),
+                                  functions
+                                      .enabletaxinclusive(widget!.parameter4!),
+                                  widget!.unitList!.toList(),
+                                  _model.textFielddisPerTextController.text,
+                                  _model.textFielddisAmtTextController.text,
+                                );
+
+                                safeSetState(() {});
+                              },
+                            ),
                             onFieldSubmitted: (_) async {
                               _model.list =
                                   await actions.addToHoldListGrmfgdate(
@@ -1022,6 +1042,25 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                           child: TextFormField(
                             controller: _model.textFielddisAmtTextController,
                             focusNode: _model.textFielddisAmtFocusNode,
+                            onChanged: (_) => EasyDebounce.debounce(
+                              '_model.textFielddisAmtTextController',
+                              Duration(milliseconds: 2000),
+                              () async {
+                                _model.listCopy36 =
+                                    await actions.addToHoldListGrmfgdate(
+                                  widget!.parameter2!,
+                                  FFAppState().selBill,
+                                  widget!.parameter3!.toList(),
+                                  functions
+                                      .enabletaxinclusive(widget!.parameter4!),
+                                  widget!.unitList!.toList(),
+                                  _model.textFielddisPerTextController.text,
+                                  _model.textFielddisAmtTextController.text,
+                                );
+
+                                safeSetState(() {});
+                              },
+                            ),
                             onFieldSubmitted: (_) async {
                               _model.list645 =
                                   await actions.addToHoldListGrmfgdate(
@@ -1695,7 +1734,7 @@ class _GroceryPurchaseWidgetState extends State<GroceryPurchaseWidget> {
                       ),
                     ),
                     Expanded(
-                      flex: 5,
+                      flex: 6,
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [

@@ -201,14 +201,15 @@ class _SelectlabelWidgetState extends State<SelectlabelWidget> {
                                                         .bodyMediumFamily),
                                           ),
                                   buttonPosition: RadioButtonPosition.left,
-                                  direction: Axis.vertical,
+                                  direction: Axis.horizontal,
                                   radioButtonColor:
                                       FlutterFlowTheme.of(context).primary,
                                   inactiveRadioButtonColor:
                                       FlutterFlowTheme.of(context)
                                           .secondaryText,
                                   toggleable: false,
-                                  horizontalAlignment: WrapAlignment.start,
+                                  horizontalAlignment:
+                                      WrapAlignment.spaceAround,
                                   verticalAlignment: WrapCrossAlignment.start,
                                 ),
                               ),
