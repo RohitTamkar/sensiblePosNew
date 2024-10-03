@@ -11,10 +11,6 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
-import 'index.dart'; // Imports other custom actions
-
-import 'index.dart'; // Imports other custom actions
-
 Future<List<PurchaseSaleItemListStruct>> filterProductsPurches(
   int billno,
   List<dynamic> allBillList,
@@ -42,6 +38,7 @@ Future<List<PurchaseSaleItemListStruct>> filterProductsPurches(
               mfgDate: itemList[j]["mfgDate"],
               expDate: itemList[j]["expDate"],
               barcode: itemList[j]["barcode"],
+              mrpPrice: itemList[j]["mrpPrice"],
               // taxId: itemList[j][""],
               // taxPer: itemList[j][""],
               // taxAmt: itemList[j][""],

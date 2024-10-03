@@ -24,6 +24,7 @@ class PurchaseSaleItemListStruct extends FFFirebaseStruct {
     String? mfgDate,
     String? expDate,
     String? barcode,
+    double? mrpPrice,
     FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _name = name,
         _quantity = quantity,
@@ -39,6 +40,7 @@ class PurchaseSaleItemListStruct extends FFFirebaseStruct {
         _mfgDate = mfgDate,
         _expDate = expDate,
         _barcode = barcode,
+        _mrpPrice = mrpPrice,
         super(firestoreUtilData);
 
   // "name" field.
@@ -154,6 +156,15 @@ class PurchaseSaleItemListStruct extends FFFirebaseStruct {
 
   bool hasBarcode() => _barcode != null;
 
+  // "mrpPrice" field.
+  double? _mrpPrice;
+  double get mrpPrice => _mrpPrice ?? 0.0;
+  set mrpPrice(double? val) => _mrpPrice = val;
+
+  void incrementMrpPrice(double amount) => mrpPrice = mrpPrice + amount;
+
+  bool hasMrpPrice() => _mrpPrice != null;
+
   static PurchaseSaleItemListStruct fromMap(Map<String, dynamic> data) =>
       PurchaseSaleItemListStruct(
         name: data['name'] as String?,
@@ -170,6 +181,7 @@ class PurchaseSaleItemListStruct extends FFFirebaseStruct {
         mfgDate: data['mfgDate'] as String?,
         expDate: data['expDate'] as String?,
         barcode: data['barcode'] as String?,
+        mrpPrice: castToType<double>(data['mrpPrice']),
       );
 
   static PurchaseSaleItemListStruct? maybeFromMap(dynamic data) => data is Map
@@ -191,6 +203,7 @@ class PurchaseSaleItemListStruct extends FFFirebaseStruct {
         'mfgDate': _mfgDate,
         'expDate': _expDate,
         'barcode': _barcode,
+        'mrpPrice': _mrpPrice,
       }.withoutNulls;
 
   @override
@@ -250,6 +263,10 @@ class PurchaseSaleItemListStruct extends FFFirebaseStruct {
         'barcode': serializeParam(
           _barcode,
           ParamType.String,
+        ),
+        'mrpPrice': serializeParam(
+          _mrpPrice,
+          ParamType.double,
         ),
       }.withoutNulls;
 
@@ -326,6 +343,11 @@ class PurchaseSaleItemListStruct extends FFFirebaseStruct {
           ParamType.String,
           false,
         ),
+        mrpPrice: deserializeParam(
+          data['mrpPrice'],
+          ParamType.double,
+          false,
+        ),
       );
 
   @override
@@ -347,7 +369,8 @@ class PurchaseSaleItemListStruct extends FFFirebaseStruct {
         note == other.note &&
         mfgDate == other.mfgDate &&
         expDate == other.expDate &&
-        barcode == other.barcode;
+        barcode == other.barcode &&
+        mrpPrice == other.mrpPrice;
   }
 
   @override
@@ -365,7 +388,8 @@ class PurchaseSaleItemListStruct extends FFFirebaseStruct {
         note,
         mfgDate,
         expDate,
-        barcode
+        barcode,
+        mrpPrice
       ]);
 }
 
@@ -384,6 +408,7 @@ PurchaseSaleItemListStruct createPurchaseSaleItemListStruct({
   String? mfgDate,
   String? expDate,
   String? barcode,
+  double? mrpPrice,
   Map<String, dynamic> fieldValues = const {},
   bool clearUnsetFields = true,
   bool create = false,
@@ -404,6 +429,7 @@ PurchaseSaleItemListStruct createPurchaseSaleItemListStruct({
       mfgDate: mfgDate,
       expDate: expDate,
       barcode: barcode,
+      mrpPrice: mrpPrice,
       firestoreUtilData: FirestoreUtilData(
         clearUnsetFields: clearUnsetFields,
         create: create,

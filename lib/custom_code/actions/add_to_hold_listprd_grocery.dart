@@ -109,6 +109,8 @@ Future<List<dynamic>> addToHoldListprdGrocery(
       "taxAmt": double.parse(taxAmt.toStringAsFixed(2)),
       "disPer": disPer,
       "disAmt": disAmt,
+      "mfgDate": " ",
+      "expDate": " ",
     };
 
     var index;
