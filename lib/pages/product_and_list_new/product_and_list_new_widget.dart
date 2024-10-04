@@ -6530,8 +6530,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                 );
                                                                 _shouldSetState =
                                                                     true;
-                                                                await actions
-                                                                    .newCustomAction5();
+                                                                if (!isAndroid) {
+                                                                  await actions
+                                                                      .newCustomAction5();
+                                                                }
                                                                 if (_model
                                                                         .dropDownValue ==
                                                                     'CREDIT') {

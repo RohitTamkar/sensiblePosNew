@@ -10,6 +10,8 @@ import 'package:flutter/material.dart';
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
 import 'index.dart'; // Imports other custom actions
+
+import 'index.dart'; // Imports other custom actions
 import 'index.dart'; // Imports other custom actions
 
 // Imports other custom actions
@@ -44,7 +46,7 @@ Future<List<dynamic>> addToHoldListGrmfgdate(
 
     // Iterate over existing items in the bill
     for (int j = 0; j < itemList.length; j++) {
-      if (itemList[j]["name"] == data["name"]) {
+      if (itemList[j]["id"] == document.id) {
         itemExists = true;
         itemList[j]["mfgDate"] = mfgDate;
         itemList[j]["expDate"] = expdate;
@@ -54,20 +56,20 @@ Future<List<dynamic>> addToHoldListGrmfgdate(
       }
     }
 
-    if (!itemExists) {
+    /*  if (!itemExists) {
       itemList.add(data);
       list[billIndex]["details"]["itemList"] = itemList;
-    }
+    }*/
   } else {
     // Create a new bill if it doesn't exist
-    list.add({
+    /*   list.add({
       "billno": billno,
       "details": {
         "itemList": [data],
       },
-    });
+    });*/
   }
-
+//
   FFAppState().allBillsList = list;
   print(FFAppState().allBillsList);
   return itemList;

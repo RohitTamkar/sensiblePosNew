@@ -99,59 +99,12 @@ class _KioskCustomerInfoWidgetState extends State<KioskCustomerInfoWidget> {
                           children: [
                             Align(
                               alignment: AlignmentDirectional(0.0, 0.0),
-                              child: Text(
-                                FFLocalizations.of(context).getText(
-                                  '1f81hy76' /* Celebrate Our New Shop Launch!... */,
-                                ),
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context)
-                                    .displayLarge
-                                    .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .displayLargeFamily,
-                                      color: FlutterFlowTheme.of(context).info,
-                                      fontSize: 40.0,
-                                      letterSpacing: 5.0,
-                                      fontWeight: FontWeight.w600,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .displayLargeFamily),
-                                    ),
-                              ),
-                            ),
-                            Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
-                              child: Text(
-                                FFLocalizations.of(context).getText(
-                                  '99ha3xvk' /* Get a Free Coffee Today  */,
-                                ),
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context)
-                                    .displayLarge
-                                    .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .displayLargeFamily,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      fontSize: 40.0,
-                                      letterSpacing: 5.0,
-                                      fontWeight: FontWeight.w600,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .displayLargeFamily),
-                                    ),
-                              ),
-                            ),
-                            Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 80.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'kozhgkn3' /* Simply Enter Your Mobile Numbe... */,
+                                    'kozhgkn3' /* Enter Your Mobile Number */,
                                   ),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
@@ -386,73 +339,196 @@ class _KioskCustomerInfoWidgetState extends State<KioskCustomerInfoWidget> {
                                 ),
                               ],
                             ),
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                if (!valueOrDefault<bool>(
-                                  widget!.appSetting?.settingList
-                                      ?.where(
-                                          (e) => e.title == 'hideSkipButton')
-                                      .toList()
-                                      ?.first
-                                      ?.value,
-                                  false,
-                                ))
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 50.0, 0.0, 0.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  if (!valueOrDefault<bool>(
+                                    widget!.appSetting?.settingList
+                                        ?.where(
+                                            (e) => e.title == 'hideSkipButton')
+                                        .toList()
+                                        ?.first
+                                        ?.value,
+                                    false,
+                                  ))
+                                    FFButtonWidget(
+                                      onPressed: () async {
+                                        FFAppState().customerMobileNoKiosk =
+                                            '0';
+                                        safeSetState(() {});
+
+                                        context.pushNamed(
+                                          'KioskBillScreen',
+                                          queryParameters: {
+                                            'shiftdoc': serializeParam(
+                                              widget!.shiftdoc,
+                                              ParamType.JSON,
+                                            ),
+                                            'doc': serializeParam(
+                                              widget!.userdoc,
+                                              ParamType.DocumentReference,
+                                            ),
+                                            'appsetting': serializeParam(
+                                              widget!.appSetting,
+                                              ParamType.Document,
+                                            ),
+                                            'taxcollection': serializeParam(
+                                              widget!.taxcollection,
+                                              ParamType.Document,
+                                              isList: true,
+                                            ),
+                                          }.withoutNulls,
+                                          extra: <String, dynamic>{
+                                            'appsetting': widget!.appSetting,
+                                            'taxcollection':
+                                                widget!.taxcollection,
+                                          },
+                                        );
+                                      },
+                                      text: FFLocalizations.of(context).getText(
+                                        'qo13s9uw' /* Skip for Now */,
+                                      ),
+                                      options: FFButtonOptions(
+                                        width: 200.0,
+                                        height: 50.0,
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            16.0, 0.0, 16.0, 0.0),
+                                        iconPadding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 0.0, 0.0, 0.0),
+                                        color: FlutterFlowTheme.of(context)
+                                            .parkingPrimary,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              letterSpacing: 0.0,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmallFamily),
+                                            ),
+                                        elevation: 0.0,
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
+                                      ),
+                                    ),
                                   FFButtonWidget(
                                     onPressed: () async {
-                                      FFAppState().customerMobileNoKiosk = '0';
-                                      safeSetState(() {});
+                                      _model.formValidate = true;
+                                      if (_model.formKey.currentState == null ||
+                                          !_model.formKey.currentState!
+                                              .validate()) {
+                                        safeSetState(
+                                            () => _model.formValidate = false);
+                                        return;
+                                      }
+                                      if (_model.formValidate == true) {
+                                        FFAppState().customerMobileNoKiosk =
+                                            _model.textController.text;
+                                        safeSetState(() {});
 
-                                      context.pushNamed(
-                                        'KioskBillScreen',
-                                        queryParameters: {
-                                          'shiftdoc': serializeParam(
-                                            widget!.shiftdoc,
-                                            ParamType.JSON,
-                                          ),
-                                          'doc': serializeParam(
-                                            widget!.userdoc,
-                                            ParamType.DocumentReference,
-                                          ),
-                                          'appsetting': serializeParam(
-                                            widget!.appSetting,
-                                            ParamType.Document,
-                                          ),
-                                          'taxcollection': serializeParam(
-                                            widget!.taxcollection,
-                                            ParamType.Document,
-                                            isList: true,
-                                          ),
-                                        }.withoutNulls,
-                                        extra: <String, dynamic>{
-                                          'appsetting': widget!.appSetting,
-                                          'taxcollection':
+                                        var partyRecordReference =
+                                            PartyRecord.createDoc(
+                                                FFAppState().outletIdRef!);
+                                        await partyRecordReference
+                                            .set(createPartyRecordData(
+                                          mobile: _model.textController.text,
+                                        ));
+                                        _model.partyDoc =
+                                            PartyRecord.getDocumentFromData(
+                                                createPartyRecordData(
+                                                  mobile: _model
+                                                      .textController.text,
+                                                ),
+                                                partyRecordReference);
+
+                                        await _model.partyDoc!.reference
+                                            .update(createPartyRecordData(
+                                          id: _model.partyDoc?.reference.id,
+                                        ));
+
+                                        context.pushNamed(
+                                          'KioskBillScreen',
+                                          queryParameters: {
+                                            'shiftdoc': serializeParam(
+                                              widget!.shiftdoc,
+                                              ParamType.JSON,
+                                            ),
+                                            'doc': serializeParam(
+                                              widget!.userdoc,
+                                              ParamType.DocumentReference,
+                                            ),
+                                            'appsetting': serializeParam(
+                                              widget!.appSetting,
+                                              ParamType.Document,
+                                            ),
+                                            'taxcollection': serializeParam(
                                               widget!.taxcollection,
-                                        },
-                                      );
+                                              ParamType.Document,
+                                              isList: true,
+                                            ),
+                                          }.withoutNulls,
+                                          extra: <String, dynamic>{
+                                            'appsetting': widget!.appSetting,
+                                            'taxcollection':
+                                                widget!.taxcollection,
+                                          },
+                                        );
+                                      } else {
+                                        await showDialog(
+                                          context: context,
+                                          builder: (alertDialogContext) {
+                                            return AlertDialog(
+                                              title: Text('ERROR'),
+                                              content: Text(
+                                                  'Fill Required Field...'),
+                                              actions: [
+                                                TextButton(
+                                                  onPressed: () =>
+                                                      Navigator.pop(
+                                                          alertDialogContext),
+                                                  child: Text('Ok'),
+                                                ),
+                                              ],
+                                            );
+                                          },
+                                        );
+                                      }
+
+                                      safeSetState(() {});
                                     },
                                     text: FFLocalizations.of(context).getText(
-                                      'qo13s9uw' /* Skip for Now */,
+                                      'e80b6s8u' /* Pick Your Products */,
                                     ),
                                     options: FFButtonOptions(
-                                      width: 200.0,
-                                      height: 50.0,
+                                      height: 80.0,
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       iconPadding:
                                           EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
-                                      color: FlutterFlowTheme.of(context)
-                                          .parkingPrimary,
+                                      color:
+                                          FlutterFlowTheme.of(context).success,
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
                                             fontFamily:
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmallFamily,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
+                                            color: Colors.white,
                                             letterSpacing: 0.0,
                                             useGoogleFonts: GoogleFonts.asMap()
                                                 .containsKey(
@@ -460,121 +536,11 @@ class _KioskCustomerInfoWidgetState extends State<KioskCustomerInfoWidget> {
                                                         .titleSmallFamily),
                                           ),
                                       elevation: 0.0,
-                                      borderRadius: BorderRadius.circular(12.0),
+                                      borderRadius: BorderRadius.circular(14.0),
                                     ),
                                   ),
-                                FFButtonWidget(
-                                  onPressed: () async {
-                                    _model.formValidate = true;
-                                    if (_model.formKey.currentState == null ||
-                                        !_model.formKey.currentState!
-                                            .validate()) {
-                                      safeSetState(
-                                          () => _model.formValidate = false);
-                                      return;
-                                    }
-                                    if (_model.formValidate == true) {
-                                      FFAppState().customerMobileNoKiosk =
-                                          _model.textController.text;
-                                      safeSetState(() {});
-
-                                      var partyRecordReference =
-                                          PartyRecord.createDoc(
-                                              FFAppState().outletIdRef!);
-                                      await partyRecordReference
-                                          .set(createPartyRecordData(
-                                        mobile: _model.textController.text,
-                                      ));
-                                      _model.partyDoc =
-                                          PartyRecord.getDocumentFromData(
-                                              createPartyRecordData(
-                                                mobile:
-                                                    _model.textController.text,
-                                              ),
-                                              partyRecordReference);
-
-                                      await _model.partyDoc!.reference
-                                          .update(createPartyRecordData(
-                                        id: _model.partyDoc?.reference.id,
-                                      ));
-
-                                      context.pushNamed(
-                                        'KioskBillScreen',
-                                        queryParameters: {
-                                          'shiftdoc': serializeParam(
-                                            widget!.shiftdoc,
-                                            ParamType.JSON,
-                                          ),
-                                          'doc': serializeParam(
-                                            widget!.userdoc,
-                                            ParamType.DocumentReference,
-                                          ),
-                                          'appsetting': serializeParam(
-                                            widget!.appSetting,
-                                            ParamType.Document,
-                                          ),
-                                          'taxcollection': serializeParam(
-                                            widget!.taxcollection,
-                                            ParamType.Document,
-                                            isList: true,
-                                          ),
-                                        }.withoutNulls,
-                                        extra: <String, dynamic>{
-                                          'appsetting': widget!.appSetting,
-                                          'taxcollection':
-                                              widget!.taxcollection,
-                                        },
-                                      );
-                                    } else {
-                                      await showDialog(
-                                        context: context,
-                                        builder: (alertDialogContext) {
-                                          return AlertDialog(
-                                            title: Text('ERROR'),
-                                            content:
-                                                Text('Fill Required Field...'),
-                                            actions: [
-                                              TextButton(
-                                                onPressed: () => Navigator.pop(
-                                                    alertDialogContext),
-                                                child: Text('Ok'),
-                                              ),
-                                            ],
-                                          );
-                                        },
-                                      );
-                                    }
-
-                                    safeSetState(() {});
-                                  },
-                                  text: FFLocalizations.of(context).getText(
-                                    'e80b6s8u' /* Pick Your Products */,
-                                  ),
-                                  options: FFButtonOptions(
-                                    height: 60.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 0.0, 16.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color: FlutterFlowTheme.of(context).success,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmallFamily,
-                                          color: Colors.white,
-                                          letterSpacing: 0.0,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmallFamily),
-                                        ),
-                                    elevation: 0.0,
-                                    borderRadius: BorderRadius.circular(14.0),
-                                  ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ],
                         ),
