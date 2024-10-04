@@ -27244,21 +27244,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'akv7u0em': {
+    'xpzd4iqs': {
       'en': 'SIZE 50mm,25mm',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'srhv7n3i': {
+    'ay4fly8h': {
       'en': 'SIZE 35mm,15mm',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'rnsb4zme': {
+    'dp8dx1n5': {
       'en': 'SIZE 25mm,15mm',
       'hi': '',
       'kn': '',
