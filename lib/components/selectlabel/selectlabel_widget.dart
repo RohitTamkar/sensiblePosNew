@@ -153,46 +153,41 @@ class _SelectlabelWidgetState extends State<SelectlabelWidget> {
                               0.0, 20.0, 0.0, 0.0),
                           child: ListView(
                             padding: EdgeInsets.zero,
-                            scrollDirection: Axis.vertical,
+                            scrollDirection: Axis.horizontal,
                             children: [
                               Container(
-                                width: 100.0,
-                                height: 30.0,
+                                width: 300.0,
                                 decoration: BoxDecoration(),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    FlutterFlowRadioButton(
-                                      options: [
-                                        FFLocalizations.of(context).getText(
-                                          'xpzd4iqs' /* SIZE 50mm,25mm */,
-                                        ),
-                                        FFLocalizations.of(context).getText(
-                                          'ay4fly8h' /* SIZE 35mm,15mm */,
-                                        ),
-                                        FFLocalizations.of(context).getText(
-                                          'dp8dx1n5' /* SIZE 25mm,15mm */,
-                                        )
-                                      ].toList(),
-                                      onChanged: (val) => safeSetState(() {}),
-                                      controller:
-                                          _model.radioButtonValueController ??=
-                                              FormFieldController<String>(null),
-                                      optionHeight: 32.0,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .override(
-                                            fontFamily:
+                                child: FlutterFlowRadioButton(
+                                  options: [
+                                    FFLocalizations.of(context).getText(
+                                      'xpzd4iqs' /* SIZE 50mm,25mm */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      'ay4fly8h' /* SIZE 35mm,15mm */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      'dp8dx1n5' /* SIZE 25mm,15mm */,
+                                    )
+                                  ].toList(),
+                                  onChanged: (val) => safeSetState(() {}),
+                                  controller:
+                                      _model.radioButtonValueController ??=
+                                          FormFieldController<String>(null),
+                                  optionHeight: 32.0,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .labelMediumFamily,
+                                        letterSpacing: 0.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
                                                 FlutterFlowTheme.of(context)
-                                                    .labelMediumFamily,
-                                            letterSpacing: 0.0,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMediumFamily),
-                                          ),
-                                      selectedTextStyle: FlutterFlowTheme.of(
-                                              context)
+                                                    .labelMediumFamily),
+                                      ),
+                                  selectedTextStyle:
+                                      FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
                                             fontFamily:
@@ -204,20 +199,20 @@ class _SelectlabelWidgetState extends State<SelectlabelWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMediumFamily),
                                           ),
-                                      buttonPosition: RadioButtonPosition.left,
-                                      direction: Axis.vertical,
-                                      radioButtonColor:
-                                          FlutterFlowTheme.of(context).primary,
-                                      inactiveRadioButtonColor:
-                                          FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                      toggleable: false,
-                                      horizontalAlignment: WrapAlignment.start,
-                                      verticalAlignment:
-                                          WrapCrossAlignment.start,
-                                    ),
-                                  ],
+                                  buttonPosition: RadioButtonPosition.right,
+                                  direction: Axis.horizontal,
+                                  radioButtonColor:
+                                      FlutterFlowTheme.of(context).primary,
+                                  inactiveRadioButtonColor:
+                                      FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                  toggleable: false,
+                                  horizontalAlignment: WrapAlignment.start,
+                                  verticalAlignment: WrapCrossAlignment.start,
                                 ),
+                              ),
+                              Container(
+                                decoration: BoxDecoration(),
                               ),
                             ],
                           ),
