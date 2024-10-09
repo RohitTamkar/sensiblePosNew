@@ -176,6 +176,11 @@ class InvoiceRecord extends FirestoreRecord {
   String get kotStatus => _kotStatus ?? '';
   bool hasKotStatus() => _kotStatus != null;
 
+  // "weight" field.
+  String? _weight;
+  String get weight => _weight ?? '';
+  bool hasWeight() => _weight != null;
+
   DocumentReference get parentReference => reference.parent.parent!;
 
   void _initializeFields() {
@@ -214,6 +219,7 @@ class InvoiceRecord extends FirestoreRecord {
     _duration = castToType<double>(snapshotData['duration']);
     _orderType = snapshotData['orderType'] as String?;
     _kotStatus = snapshotData['kotStatus'] as String?;
+    _weight = snapshotData['weight'] as String?;
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -287,6 +293,7 @@ Map<String, dynamic> createInvoiceRecordData({
   double? duration,
   String? orderType,
   String? kotStatus,
+  String? weight,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -321,6 +328,7 @@ Map<String, dynamic> createInvoiceRecordData({
       'duration': duration,
       'orderType': orderType,
       'kotStatus': kotStatus,
+      'weight': weight,
     }.withoutNulls,
   );
 
@@ -364,7 +372,8 @@ class InvoiceRecordDocumentEquality implements Equality<InvoiceRecord> {
         e1?.count == e2?.count &&
         e1?.duration == e2?.duration &&
         e1?.orderType == e2?.orderType &&
-        e1?.kotStatus == e2?.kotStatus;
+        e1?.kotStatus == e2?.kotStatus &&
+        e1?.weight == e2?.weight;
   }
 
   @override
@@ -400,7 +409,8 @@ class InvoiceRecordDocumentEquality implements Equality<InvoiceRecord> {
         e?.count,
         e?.duration,
         e?.orderType,
-        e?.kotStatus
+        e?.kotStatus,
+        e?.weight
       ]);
 
   @override
