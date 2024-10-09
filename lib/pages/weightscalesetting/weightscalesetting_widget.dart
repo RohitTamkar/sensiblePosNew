@@ -135,8 +135,6 @@ class _WeightscalesettingWidgetState extends State<WeightscalesettingWidget> {
                                             .cast<String>();
                                         safeSetState(() {});
 
-                                        context.pushNamed('weightscalesetting');
-
                                         safeSetState(() {});
                                       },
                                       child: Icon(
@@ -251,6 +249,25 @@ class _WeightscalesettingWidgetState extends State<WeightscalesettingWidget> {
                                                           FFAppState().port =
                                                               portlistItem;
                                                           safeSetState(() {});
+                                                          await showDialog(
+                                                            context: context,
+                                                            builder:
+                                                                (alertDialogContext) {
+                                                              return AlertDialog(
+                                                                content: Text(
+                                                                    'Port Connected  SuccessFully !'),
+                                                                actions: [
+                                                                  TextButton(
+                                                                    onPressed: () =>
+                                                                        Navigator.pop(
+                                                                            alertDialogContext),
+                                                                    child: Text(
+                                                                        'Ok'),
+                                                                  ),
+                                                                ],
+                                                              );
+                                                            },
+                                                          );
                                                         },
                                                         child: Row(
                                                           mainAxisSize:
