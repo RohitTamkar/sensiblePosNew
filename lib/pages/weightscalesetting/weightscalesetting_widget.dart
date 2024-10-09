@@ -124,6 +124,10 @@ class _WeightscalesettingWidgetState extends State<WeightscalesettingWidget> {
                                       onTap: () async {
                                         _model.list12 =
                                             await actions.listofSerialPorts();
+                                        _model.list = _model.list12!
+                                            .toList()
+                                            .cast<String>();
+                                        safeSetState(() {});
 
                                         safeSetState(() {});
                                       },
@@ -245,6 +249,9 @@ class _WeightscalesettingWidgetState extends State<WeightscalesettingWidget> {
                                                               .transparent,
                                                           onTap: () async {
                                                             _model.port =
+                                                                portlistItem;
+                                                            safeSetState(() {});
+                                                            FFAppState().port =
                                                                 portlistItem;
                                                             safeSetState(() {});
                                                           },
