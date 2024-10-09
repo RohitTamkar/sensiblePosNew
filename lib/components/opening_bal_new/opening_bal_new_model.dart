@@ -35,6 +35,8 @@ class OpeningBalNewModel extends FlutterFlowModel<OpeningBalNewWidget> {
   List<AppSettingsStruct>? returnAppsettiing2;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   AppSettingsRecord? doc;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  AppSettingsRecord? devicew;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   ShiftRecord? shiftDoc1;
   // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.

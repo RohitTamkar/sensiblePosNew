@@ -716,6 +716,21 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                     );
                                                   }
 
+                                                  _model.devicew =
+                                                      await queryAppSettingsRecordOnce(
+                                                    parent: FFAppState()
+                                                        .outletIdRef,
+                                                    queryBuilder:
+                                                        (appSettingsRecord) =>
+                                                            appSettingsRecord
+                                                                .where(
+                                                      'deviceId',
+                                                      isEqualTo:
+                                                          FFAppState().dId,
+                                                    ),
+                                                    singleRecord: true,
+                                                  ).then((s) => s.firstOrNull);
+                                                  _shouldSetState = true;
                                                   if (!getJsonField(
                                                     widget!.shiftDetails,
                                                     r'''$.shiftExists''',
@@ -910,7 +925,14 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                           .toList(),
                                                     );
                                                     _shouldSetState = true;
-                                                    if (true) {
+                                                    if (_model
+                                                        .devicew!.settingList
+                                                        .where((e) =>
+                                                            e.title ==
+                                                            'enableweightScale')
+                                                        .toList()
+                                                        .first
+                                                        .value) {
                                                       context.pushNamed(
                                                         'ProductAndListlaundrybilling',
                                                         queryParameters: {
@@ -1227,7 +1249,14 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                                 .secondary,
                                                       ),
                                                     );
-                                                    if (true) {
+                                                    if (_model
+                                                        .devicew!.settingList
+                                                        .where((e) =>
+                                                            e.title ==
+                                                            'enableweightScale')
+                                                        .toList()
+                                                        .first
+                                                        .value) {
                                                       context.pushNamed(
                                                         'ProductAndListlaundrybilling',
                                                         queryParameters: {
