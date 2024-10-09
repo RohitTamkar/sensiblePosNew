@@ -42,6 +42,8 @@ class _WeightscalesettingWidgetState extends State<WeightscalesettingWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Title(
         title: 'weightscalesetting',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
@@ -253,11 +255,7 @@ class _WeightscalesettingWidgetState extends State<WeightscalesettingWidget> {
                                                             children: [
                                                               Flexible(
                                                                 child: Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'ifpkj7jb' /* Hello World */,
-                                                                  ),
+                                                                  portlistItem,
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium
@@ -340,7 +338,7 @@ class _WeightscalesettingWidgetState extends State<WeightscalesettingWidget> {
                                                   .Weightscalewidget(
                                                 width: double.infinity,
                                                 height: double.infinity,
-                                                port: _model.port,
+                                                port: FFAppState().port,
                                               ),
                                             ),
                                           ),

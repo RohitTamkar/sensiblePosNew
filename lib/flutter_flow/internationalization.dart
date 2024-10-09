@@ -278,6 +278,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
+    'k8o79od6': {
+      'en': 'Weight Scale Setting',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
     '3pv4h0q3': {
       'en': 'System Update',
       'hi': '',
@@ -23018,13 +23025,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     '9djjzwbn': {
       'en': 'Weight Scale Settings',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    'ifpkj7jb': {
-      'en': 'Hello World',
       'hi': '',
       'kn': '',
       'mr': '',

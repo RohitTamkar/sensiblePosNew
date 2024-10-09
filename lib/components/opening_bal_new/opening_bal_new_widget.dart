@@ -910,48 +910,9 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                           .toList(),
                                                     );
                                                     _shouldSetState = true;
-                                                    if (FFAppState().navigate ==
-                                                        'GROCERY') {
+                                                    if (true) {
                                                       context.pushNamed(
-                                                        'BillingGroceryNew',
-                                                        queryParameters: {
-                                                          'shiftdetail':
-                                                              serializeParam(
-                                                            _model
-                                                                .shiftDetailsNew2,
-                                                            ParamType.JSON,
-                                                          ),
-                                                          'taxDetails':
-                                                              serializeParam(
-                                                            _model
-                                                                .taxcollection,
-                                                            ParamType.Document,
-                                                            isList: true,
-                                                          ),
-                                                          'userref':
-                                                              serializeParam(
-                                                            widget!.doc,
-                                                            ParamType
-                                                                .DocumentReference,
-                                                          ),
-                                                          'paymentMode':
-                                                              serializeParam(
-                                                            _model.paymentmode,
-                                                            ParamType.Document,
-                                                            isList: true,
-                                                          ),
-                                                        }.withoutNulls,
-                                                        extra: <String,
-                                                            dynamic>{
-                                                          'taxDetails': _model
-                                                              .taxcollection,
-                                                          'paymentMode': _model
-                                                              .paymentmode,
-                                                        },
-                                                      );
-                                                    } else {
-                                                      context.pushNamed(
-                                                        'ProductAndListNew',
+                                                        'ProductAndListlaundrybilling',
                                                         queryParameters: {
                                                           'doc': serializeParam(
                                                             widget!.doc,
@@ -978,6 +939,82 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                               .taxcollection,
                                                         },
                                                       );
+                                                    } else {
+                                                      if (FFAppState()
+                                                              .navigate ==
+                                                          'GROCERY') {
+                                                        context.pushNamed(
+                                                          'BillingGroceryNew',
+                                                          queryParameters: {
+                                                            'shiftdetail':
+                                                                serializeParam(
+                                                              _model
+                                                                  .shiftDetailsNew2,
+                                                              ParamType.JSON,
+                                                            ),
+                                                            'taxDetails':
+                                                                serializeParam(
+                                                              _model
+                                                                  .taxcollection,
+                                                              ParamType
+                                                                  .Document,
+                                                              isList: true,
+                                                            ),
+                                                            'userref':
+                                                                serializeParam(
+                                                              widget!.doc,
+                                                              ParamType
+                                                                  .DocumentReference,
+                                                            ),
+                                                            'paymentMode':
+                                                                serializeParam(
+                                                              _model
+                                                                  .paymentmode,
+                                                              ParamType
+                                                                  .Document,
+                                                              isList: true,
+                                                            ),
+                                                          }.withoutNulls,
+                                                          extra: <String,
+                                                              dynamic>{
+                                                            'taxDetails': _model
+                                                                .taxcollection,
+                                                            'paymentMode': _model
+                                                                .paymentmode,
+                                                          },
+                                                        );
+                                                      } else {
+                                                        context.pushNamed(
+                                                          'ProductAndListNew',
+                                                          queryParameters: {
+                                                            'doc':
+                                                                serializeParam(
+                                                              widget!.doc,
+                                                              ParamType
+                                                                  .DocumentReference,
+                                                            ),
+                                                            'shiftDetails':
+                                                                serializeParam(
+                                                              _model
+                                                                  .shiftDetailsNew2,
+                                                              ParamType.JSON,
+                                                            ),
+                                                            'taxcollection':
+                                                                serializeParam(
+                                                              _model
+                                                                  .taxcollection,
+                                                              ParamType
+                                                                  .Document,
+                                                              isList: true,
+                                                            ),
+                                                          }.withoutNulls,
+                                                          extra: <String,
+                                                              dynamic>{
+                                                            'taxcollection': _model
+                                                                .taxcollection,
+                                                          },
+                                                        );
+                                                      }
                                                     }
 
                                                     if (_shouldSetState)
@@ -1190,48 +1227,9 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                                 .secondary,
                                                       ),
                                                     );
-                                                    if (FFAppState().navigate ==
-                                                        'GROCERY') {
+                                                    if (true) {
                                                       context.pushNamed(
-                                                        'BillingGroceryNew',
-                                                        queryParameters: {
-                                                          'shiftdetail':
-                                                              serializeParam(
-                                                            widget!
-                                                                .shiftDetails,
-                                                            ParamType.JSON,
-                                                          ),
-                                                          'taxDetails':
-                                                              serializeParam(
-                                                            _model
-                                                                .taxcollection,
-                                                            ParamType.Document,
-                                                            isList: true,
-                                                          ),
-                                                          'userref':
-                                                              serializeParam(
-                                                            widget!.doc,
-                                                            ParamType
-                                                                .DocumentReference,
-                                                          ),
-                                                          'paymentMode':
-                                                              serializeParam(
-                                                            _model.paymentmode,
-                                                            ParamType.Document,
-                                                            isList: true,
-                                                          ),
-                                                        }.withoutNulls,
-                                                        extra: <String,
-                                                            dynamic>{
-                                                          'taxDetails': _model
-                                                              .taxcollection,
-                                                          'paymentMode': _model
-                                                              .paymentmode,
-                                                        },
-                                                      );
-                                                    } else {
-                                                      context.pushNamed(
-                                                        'ProductAndListNew',
+                                                        'ProductAndListlaundrybilling',
                                                         queryParameters: {
                                                           'doc': serializeParam(
                                                             widget!.doc,
@@ -1258,6 +1256,82 @@ class _OpeningBalNewWidgetState extends State<OpeningBalNewWidget> {
                                                               .taxcollection,
                                                         },
                                                       );
+                                                    } else {
+                                                      if (FFAppState()
+                                                              .navigate ==
+                                                          'GROCERY') {
+                                                        context.pushNamed(
+                                                          'BillingGroceryNew',
+                                                          queryParameters: {
+                                                            'shiftdetail':
+                                                                serializeParam(
+                                                              widget!
+                                                                  .shiftDetails,
+                                                              ParamType.JSON,
+                                                            ),
+                                                            'taxDetails':
+                                                                serializeParam(
+                                                              _model
+                                                                  .taxcollection,
+                                                              ParamType
+                                                                  .Document,
+                                                              isList: true,
+                                                            ),
+                                                            'userref':
+                                                                serializeParam(
+                                                              widget!.doc,
+                                                              ParamType
+                                                                  .DocumentReference,
+                                                            ),
+                                                            'paymentMode':
+                                                                serializeParam(
+                                                              _model
+                                                                  .paymentmode,
+                                                              ParamType
+                                                                  .Document,
+                                                              isList: true,
+                                                            ),
+                                                          }.withoutNulls,
+                                                          extra: <String,
+                                                              dynamic>{
+                                                            'taxDetails': _model
+                                                                .taxcollection,
+                                                            'paymentMode': _model
+                                                                .paymentmode,
+                                                          },
+                                                        );
+                                                      } else {
+                                                        context.pushNamed(
+                                                          'ProductAndListNew',
+                                                          queryParameters: {
+                                                            'doc':
+                                                                serializeParam(
+                                                              widget!.doc,
+                                                              ParamType
+                                                                  .DocumentReference,
+                                                            ),
+                                                            'shiftDetails':
+                                                                serializeParam(
+                                                              widget!
+                                                                  .shiftDetails,
+                                                              ParamType.JSON,
+                                                            ),
+                                                            'taxcollection':
+                                                                serializeParam(
+                                                              _model
+                                                                  .taxcollection,
+                                                              ParamType
+                                                                  .Document,
+                                                              isList: true,
+                                                            ),
+                                                          }.withoutNulls,
+                                                          extra: <String,
+                                                              dynamic>{
+                                                            'taxcollection': _model
+                                                                .taxcollection,
+                                                          },
+                                                        );
+                                                      }
                                                     }
 
                                                     if (_shouldSetState)

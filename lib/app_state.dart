@@ -3491,6 +3491,12 @@ class FFAppState extends ChangeNotifier {
   set laelsize(String value) {
     _laelsize = value;
   }
+
+  String _weight = '';
+  String get weight => _weight;
+  set weight(String value) {
+    _weight = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {
