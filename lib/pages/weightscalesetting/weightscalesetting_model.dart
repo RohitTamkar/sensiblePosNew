@@ -7,6 +7,7 @@ import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import 'weightscalesetting_widget.dart' show WeightscalesettingWidget;
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -27,6 +28,8 @@ class WeightscalesettingModel
 
   ///  State fields for stateful widgets in this page.
 
+  // Stores action output result for [Custom Action - listofSerialPorts] action in weightscalesetting widget.
+  List<String>? list12Copy;
   // Stores action output result for [Custom Action - listofSerialPorts] action in Icon widget.
   List<String>? list12;
   // Model for Header component.
