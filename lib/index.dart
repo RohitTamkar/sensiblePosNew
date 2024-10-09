@@ -221,3 +221,7 @@ export '/grocery_windows/credit_paymentpurchase/credit_paymentpurchase_widget.da
     show CreditPaymentpurchaseWidget;
 export '/pages/kiosk/kiosk_customer_info/kiosk_customer_info_widget.dart'
     show KioskCustomerInfoWidget;
+export '/pages/weightscalesetting/weightscalesetting_widget.dart'
+    show WeightscalesettingWidget;
+export '/pages/product_and_listlaundrybilling/product_and_listlaundrybilling_widget.dart'
+    show ProductAndListlaundrybillingWidget;

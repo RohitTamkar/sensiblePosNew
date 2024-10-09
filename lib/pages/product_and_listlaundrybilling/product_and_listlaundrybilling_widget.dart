@@ -27,11 +27,11 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:text_search/text_search.dart';
-import 'product_and_list_new_model.dart';
-export 'product_and_list_new_model.dart';
+import 'product_and_listlaundrybilling_model.dart';
+export 'product_and_listlaundrybilling_model.dart';
 
-class ProductAndListNewWidget extends StatefulWidget {
-  const ProductAndListNewWidget({
+class ProductAndListlaundrybillingWidget extends StatefulWidget {
+  const ProductAndListlaundrybillingWidget({
     super.key,
     this.billDetails,
     this.doc,
@@ -45,13 +45,14 @@ class ProductAndListNewWidget extends StatefulWidget {
   final List<TaxMasterRecord>? taxcollection;
 
   @override
-  State<ProductAndListNewWidget> createState() =>
-      _ProductAndListNewWidgetState();
+  State<ProductAndListlaundrybillingWidget> createState() =>
+      _ProductAndListlaundrybillingWidgetState();
 }
 
-class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
+class _ProductAndListlaundrybillingWidgetState
+    extends State<ProductAndListlaundrybillingWidget>
     with TickerProviderStateMixin {
-  late ProductAndListNewModel _model;
+  late ProductAndListlaundrybillingModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   var hasContainerTriggered1 = false;
@@ -69,7 +70,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ProductAndListNewModel());
+    _model = createModel(context, () => ProductAndListlaundrybillingModel());
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
@@ -101,15 +102,6 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
         FFAppState().printerIndex,
       );
     });
-
-    _model.textController1 ??= TextEditingController();
-    _model.textFieldFocusNode1 ??= FocusNode();
-
-    _model.textController2 ??= TextEditingController();
-    _model.textFieldFocusNode2 ??= FocusNode();
-
-    _model.textController3 ??= TextEditingController();
-    _model.textFieldFocusNode3 ??= FocusNode();
 
     _model.textFieldsearchTextController ??= TextEditingController();
     _model.textFieldsearchFocusNode ??= FocusNode();
@@ -363,19 +355,19 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
             ),
           );
         }
-        List<AppSettingsRecord> productAndListNewAppSettingsRecordList =
-            snapshot.data!;
+        List<AppSettingsRecord>
+            productAndListlaundrybillingAppSettingsRecordList = snapshot.data!;
         // Return an empty Container when the item does not exist.
         if (snapshot.data!.isEmpty) {
           return Container();
         }
-        final productAndListNewAppSettingsRecord =
-            productAndListNewAppSettingsRecordList.isNotEmpty
-                ? productAndListNewAppSettingsRecordList.first
+        final productAndListlaundrybillingAppSettingsRecord =
+            productAndListlaundrybillingAppSettingsRecordList.isNotEmpty
+                ? productAndListlaundrybillingAppSettingsRecordList.first
                 : null;
 
         return Title(
-            title: 'ProductAndListNew',
+            title: 'ProductAndListlaundrybilling',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
               onTap: () => FocusScope.of(context).unfocus(),
@@ -494,7 +486,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'xm8tfbyd' /* CUSTOMER DETAILS */,
+                                                        '417w28gw' /* CUSTOMER DETAILS */,
                                                       ),
                                                       style:
                                                           FlutterFlowTheme.of(
@@ -615,7 +607,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                          'lah90j47' /* Search Customer */,
+                                                          'kf1ltym6' /* Search Customer */,
                                                         ),
                                                         hintStyle:
                                                             FlutterFlowTheme.of(
@@ -986,7 +978,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                 children: [
                                                                                   Text(
                                                                                     FFLocalizations.of(context).getText(
-                                                                                      '2gtcz6if' /* Balance:  */,
+                                                                                      '4u0jrqoe' /* Balance:  */,
                                                                                     ),
                                                                                     style: FlutterFlowTheme.of(context).titleMedium.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
@@ -1256,7 +1248,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                 children: [
                                                                                   Text(
                                                                                     FFLocalizations.of(context).getText(
-                                                                                      'vyk7t2w8' /* Balance:  */,
+                                                                                      'f5wxvb0t' /* Balance:  */,
                                                                                     ),
                                                                                     style: FlutterFlowTheme.of(context).titleMedium.override(
                                                                                           fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
@@ -1451,7 +1443,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'atwglpea' /* Admin */,
+                                                    'zqpog9sd' /* Admin */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -1565,7 +1557,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                 text:
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                  '944bnyn3' /*  */,
+                                                  'bdhlrrr3' /*  */,
                                                 ),
                                                 icon: Icon(
                                                   Icons.refresh_sharp,
@@ -1770,7 +1762,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                   taxcollection:
                                                       widget!.taxcollection!,
                                                   appSettingsRecord:
-                                                      productAndListNewAppSettingsRecord!,
+                                                      productAndListlaundrybillingAppSettingsRecord!,
                                                 ),
                                               ),
                                             ],
@@ -1853,7 +1845,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                   size: 16.0,
                                                 ),
                                                 onPressed:
-                                                    !productAndListNewAppSettingsRecord!
+                                                    !productAndListlaundrybillingAppSettingsRecord!
                                                             .showHoldListButton
                                                         ? null
                                                         : () {
@@ -2267,7 +2259,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                 padding: EdgeInsetsDirectional.fromSTEB(3.0, 12.0, 3.0, 12.0),
                                                                                 child: Text(
                                                                                   FFLocalizations.of(context).getText(
-                                                                                    'rwabb586' /* All */,
+                                                                                    'z8vrv24p' /* All */,
                                                                                   ),
                                                                                   textAlign: TextAlign.center,
                                                                                   style: FlutterFlowTheme.of(context).titleSmall.override(
@@ -2432,7 +2424,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                   ),
                                                                                   child: Stack(
                                                                                     children: [
-                                                                                      if (!productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'showProductImage').toList().first.value)
+                                                                                      if (!productAndListlaundrybillingAppSettingsRecord!.settingList.where((e) => e.title == 'showProductImage').toList().first.value)
                                                                                         InkWell(
                                                                                           splashColor: Colors.transparent,
                                                                                           focusColor: Colors.transparent,
@@ -2452,7 +2444,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                     productListItem,
                                                                                                     FFAppState().selBill,
                                                                                                     widget!.taxcollection!.toList(),
-                                                                                                    functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
+                                                                                                    functions.enabletaxinclusive(productAndListlaundrybillingAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
                                                                                                   );
                                                                                                   _shouldSetState = true;
                                                                                                   _model.calculateResult1 = await actions.calSubTotalForHoldList(
@@ -2504,7 +2496,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                       productListItem,
                                                                                                       FFAppState().selBill,
                                                                                                       widget!.taxcollection!.toList(),
-                                                                                                      functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
+                                                                                                      functions.enabletaxinclusive(productAndListlaundrybillingAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
                                                                                                     );
                                                                                                     _shouldSetState = true;
                                                                                                     _model.calculateResult1d = await actions.calSubTotalForHoldList(
@@ -2571,7 +2563,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                 productListItem,
                                                                                                 FFAppState().selBill,
                                                                                                 widget!.taxcollection!.toList(),
-                                                                                                functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
+                                                                                                functions.enabletaxinclusive(productAndListlaundrybillingAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
                                                                                               );
                                                                                               _shouldSetState = true;
                                                                                               _model.calculateResult23 = await actions.calSubTotalForHoldList(
@@ -2629,7 +2621,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                         children: [
                                                                                                           Text(
                                                                                                             FFLocalizations.of(context).getText(
-                                                                                                              '0ppacddr' /* ₹  */,
+                                                                                                              'oqei5da5' /* ₹  */,
                                                                                                             ),
                                                                                                             textAlign: TextAlign.center,
                                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -2671,7 +2663,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                             ),
                                                                                           ),
                                                                                         ).animateOnActionTrigger(animationsMap['containerOnActionTriggerAnimation3']!, hasBeenTriggered: hasContainerTriggered3),
-                                                                                      if (productAndListNewAppSettingsRecord?.settingList?.where((e) => e.title == 'showProductImage').toList()?.first?.value ?? true)
+                                                                                      if (productAndListlaundrybillingAppSettingsRecord?.settingList?.where((e) => e.title == 'showProductImage').toList()?.first?.value ?? true)
                                                                                         InkWell(
                                                                                           splashColor: Colors.transparent,
                                                                                           focusColor: Colors.transparent,
@@ -2687,7 +2679,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                               productListItem,
                                                                                               FFAppState().selBill,
                                                                                               widget!.taxcollection!.toList(),
-                                                                                              functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
+                                                                                              functions.enabletaxinclusive(productAndListlaundrybillingAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
                                                                                             );
                                                                                             _model.calculateResult2 = await actions.calSubTotalForHoldList(
                                                                                               FFAppState().selBill.toString(),
@@ -2792,7 +2784,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                                               padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
                                                                                                                               child: Text(
                                                                                                                                 FFLocalizations.of(context).getText(
-                                                                                                                                  'br0aspwl' /* ₹ */,
+                                                                                                                                  'lrjkzc1x' /* ₹ */,
                                                                                                                                 ),
                                                                                                                                 style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                                                                       fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
@@ -2915,498 +2907,40 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                           MainAxisAlignment
                                                               .spaceEvenly,
                                                       children: [
-                                                        Material(
-                                                          color: Colors
-                                                              .transparent,
-                                                          elevation: 1.0,
-                                                          child: Container(
-                                                            width: MediaQuery
-                                                                        .sizeOf(
-                                                                            context)
-                                                                    .width *
-                                                                0.09,
-                                                            height: MediaQuery
-                                                                        .sizeOf(
-                                                                            context)
-                                                                    .height *
-                                                                0.045,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryBackground,
-                                                            ),
-                                                            child:
-                                                                TextFormField(
-                                                              controller: _model
-                                                                  .textController1,
-                                                              focusNode: _model
-                                                                  .textFieldFocusNode1,
-                                                              onChanged: (_) =>
-                                                                  EasyDebounce
-                                                                      .debounce(
-                                                                '_model.textController1',
-                                                                Duration(
-                                                                    milliseconds:
-                                                                        2000),
-                                                                () =>
-                                                                    safeSetState(
-                                                                        () {}),
-                                                              ),
-                                                              autofocus: false,
-                                                              obscureText:
-                                                                  false,
+                                                        Flexible(
+                                                          child: Material(
+                                                            color: Colors
+                                                                .transparent,
+                                                            elevation: 1.0,
+                                                            child: Container(
+                                                              width: MediaQuery
+                                                                          .sizeOf(
+                                                                              context)
+                                                                      .width *
+                                                                  0.09,
+                                                              height: MediaQuery
+                                                                          .sizeOf(
+                                                                              context)
+                                                                      .height *
+                                                                  0.045,
                                                               decoration:
-                                                                  InputDecoration(
-                                                                isDense: true,
-                                                                hintText:
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                  'uh5njzqo' /* Amt. */,
-                                                                ),
-                                                                hintStyle: FlutterFlowTheme.of(
+                                                                  BoxDecoration(
+                                                                color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodyMediumFamily,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                    ),
-                                                                enabledBorder:
-                                                                    OutlineInputBorder(
-                                                                  borderSide:
-                                                                      BorderSide(
-                                                                    color: Color(
-                                                                        0x00000000),
-                                                                    width: 1.0,
-                                                                  ),
-                                                                  borderRadius:
-                                                                      const BorderRadius
-                                                                          .only(
-                                                                    topLeft: Radius
-                                                                        .circular(
-                                                                            4.0),
-                                                                    topRight: Radius
-                                                                        .circular(
-                                                                            4.0),
-                                                                  ),
-                                                                ),
-                                                                focusedBorder:
-                                                                    OutlineInputBorder(
-                                                                  borderSide:
-                                                                      BorderSide(
-                                                                    color: Color(
-                                                                        0x00000000),
-                                                                    width: 1.0,
-                                                                  ),
-                                                                  borderRadius:
-                                                                      const BorderRadius
-                                                                          .only(
-                                                                    topLeft: Radius
-                                                                        .circular(
-                                                                            4.0),
-                                                                    topRight: Radius
-                                                                        .circular(
-                                                                            4.0),
-                                                                  ),
-                                                                ),
-                                                                errorBorder:
-                                                                    OutlineInputBorder(
-                                                                  borderSide:
-                                                                      BorderSide(
-                                                                    color: Color(
-                                                                        0x00000000),
-                                                                    width: 1.0,
-                                                                  ),
-                                                                  borderRadius:
-                                                                      const BorderRadius
-                                                                          .only(
-                                                                    topLeft: Radius
-                                                                        .circular(
-                                                                            4.0),
-                                                                    topRight: Radius
-                                                                        .circular(
-                                                                            4.0),
-                                                                  ),
-                                                                ),
-                                                                focusedErrorBorder:
-                                                                    OutlineInputBorder(
-                                                                  borderSide:
-                                                                      BorderSide(
-                                                                    color: Color(
-                                                                        0x00000000),
-                                                                    width: 1.0,
-                                                                  ),
-                                                                  borderRadius:
-                                                                      const BorderRadius
-                                                                          .only(
-                                                                    topLeft: Radius
-                                                                        .circular(
-                                                                            4.0),
-                                                                    topRight: Radius
-                                                                        .circular(
-                                                                            4.0),
-                                                                  ),
+                                                                    .primaryBackground,
+                                                              ),
+                                                              child: Container(
+                                                                width: 300.0,
+                                                                height: 300.0,
+                                                                child: custom_widgets
+                                                                    .Weightscalewidget(
+                                                                  width: 300.0,
+                                                                  height: 300.0,
+                                                                  port:
+                                                                      FFAppState()
+                                                                          .port,
                                                                 ),
                                                               ),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .headlineSmall
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .headlineSmallFamily,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).headlineSmallFamily),
-                                                                  ),
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .center,
-                                                              validator: _model
-                                                                  .textController1Validator
-                                                                  .asValidator(
-                                                                      context),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                        Material(
-                                                          color: Colors
-                                                              .transparent,
-                                                          elevation: 1.0,
-                                                          child: Container(
-                                                            width: MediaQuery
-                                                                        .sizeOf(
-                                                                            context)
-                                                                    .width *
-                                                                0.09,
-                                                            height: MediaQuery
-                                                                        .sizeOf(
-                                                                            context)
-                                                                    .height *
-                                                                0.045,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryBackground,
-                                                            ),
-                                                            child:
-                                                                TextFormField(
-                                                              controller: _model
-                                                                  .textController2,
-                                                              focusNode: _model
-                                                                  .textFieldFocusNode2,
-                                                              onChanged: (_) =>
-                                                                  EasyDebounce
-                                                                      .debounce(
-                                                                '_model.textController2',
-                                                                Duration(
-                                                                    milliseconds:
-                                                                        2000),
-                                                                () =>
-                                                                    safeSetState(
-                                                                        () {}),
-                                                              ),
-                                                              autofocus: false,
-                                                              obscureText:
-                                                                  false,
-                                                              decoration:
-                                                                  InputDecoration(
-                                                                isDense: true,
-                                                                hintText:
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                  'c1cqo6ap' /* Qty */,
-                                                                ),
-                                                                hintStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodyMediumFamily,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                    ),
-                                                                enabledBorder:
-                                                                    OutlineInputBorder(
-                                                                  borderSide:
-                                                                      BorderSide(
-                                                                    color: Color(
-                                                                        0x00000000),
-                                                                    width: 1.0,
-                                                                  ),
-                                                                  borderRadius:
-                                                                      const BorderRadius
-                                                                          .only(
-                                                                    topLeft: Radius
-                                                                        .circular(
-                                                                            4.0),
-                                                                    topRight: Radius
-                                                                        .circular(
-                                                                            4.0),
-                                                                  ),
-                                                                ),
-                                                                focusedBorder:
-                                                                    OutlineInputBorder(
-                                                                  borderSide:
-                                                                      BorderSide(
-                                                                    color: Color(
-                                                                        0x00000000),
-                                                                    width: 1.0,
-                                                                  ),
-                                                                  borderRadius:
-                                                                      const BorderRadius
-                                                                          .only(
-                                                                    topLeft: Radius
-                                                                        .circular(
-                                                                            4.0),
-                                                                    topRight: Radius
-                                                                        .circular(
-                                                                            4.0),
-                                                                  ),
-                                                                ),
-                                                                errorBorder:
-                                                                    OutlineInputBorder(
-                                                                  borderSide:
-                                                                      BorderSide(
-                                                                    color: Color(
-                                                                        0x00000000),
-                                                                    width: 1.0,
-                                                                  ),
-                                                                  borderRadius:
-                                                                      const BorderRadius
-                                                                          .only(
-                                                                    topLeft: Radius
-                                                                        .circular(
-                                                                            4.0),
-                                                                    topRight: Radius
-                                                                        .circular(
-                                                                            4.0),
-                                                                  ),
-                                                                ),
-                                                                focusedErrorBorder:
-                                                                    OutlineInputBorder(
-                                                                  borderSide:
-                                                                      BorderSide(
-                                                                    color: Color(
-                                                                        0x00000000),
-                                                                    width: 1.0,
-                                                                  ),
-                                                                  borderRadius:
-                                                                      const BorderRadius
-                                                                          .only(
-                                                                    topLeft: Radius
-                                                                        .circular(
-                                                                            4.0),
-                                                                    topRight: Radius
-                                                                        .circular(
-                                                                            4.0),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .titleSmall
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .titleSmallFamily,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                  ),
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .center,
-                                                              validator: _model
-                                                                  .textController2Validator
-                                                                  .asValidator(
-                                                                      context),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                        Material(
-                                                          color: Colors
-                                                              .transparent,
-                                                          elevation: 1.0,
-                                                          child: Container(
-                                                            width: MediaQuery
-                                                                        .sizeOf(
-                                                                            context)
-                                                                    .width *
-                                                                0.09,
-                                                            height: MediaQuery
-                                                                        .sizeOf(
-                                                                            context)
-                                                                    .height *
-                                                                0.045,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryBackground,
-                                                            ),
-                                                            child:
-                                                                TextFormField(
-                                                              controller: _model
-                                                                  .textController3,
-                                                              focusNode: _model
-                                                                  .textFieldFocusNode3,
-                                                              onChanged: (_) =>
-                                                                  EasyDebounce
-                                                                      .debounce(
-                                                                '_model.textController3',
-                                                                Duration(
-                                                                    milliseconds:
-                                                                        2000),
-                                                                () =>
-                                                                    safeSetState(
-                                                                        () {}),
-                                                              ),
-                                                              autofocus: false,
-                                                              obscureText:
-                                                                  false,
-                                                              decoration:
-                                                                  InputDecoration(
-                                                                isDense: true,
-                                                                hintText:
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                  'avti8mvm' /* Price */,
-                                                                ),
-                                                                hintStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodyMediumFamily,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                    ),
-                                                                enabledBorder:
-                                                                    OutlineInputBorder(
-                                                                  borderSide:
-                                                                      BorderSide(
-                                                                    color: Color(
-                                                                        0x00000000),
-                                                                    width: 1.0,
-                                                                  ),
-                                                                  borderRadius:
-                                                                      const BorderRadius
-                                                                          .only(
-                                                                    topLeft: Radius
-                                                                        .circular(
-                                                                            4.0),
-                                                                    topRight: Radius
-                                                                        .circular(
-                                                                            4.0),
-                                                                  ),
-                                                                ),
-                                                                focusedBorder:
-                                                                    OutlineInputBorder(
-                                                                  borderSide:
-                                                                      BorderSide(
-                                                                    color: Color(
-                                                                        0x00000000),
-                                                                    width: 1.0,
-                                                                  ),
-                                                                  borderRadius:
-                                                                      const BorderRadius
-                                                                          .only(
-                                                                    topLeft: Radius
-                                                                        .circular(
-                                                                            4.0),
-                                                                    topRight: Radius
-                                                                        .circular(
-                                                                            4.0),
-                                                                  ),
-                                                                ),
-                                                                errorBorder:
-                                                                    OutlineInputBorder(
-                                                                  borderSide:
-                                                                      BorderSide(
-                                                                    color: Color(
-                                                                        0x00000000),
-                                                                    width: 1.0,
-                                                                  ),
-                                                                  borderRadius:
-                                                                      const BorderRadius
-                                                                          .only(
-                                                                    topLeft: Radius
-                                                                        .circular(
-                                                                            4.0),
-                                                                    topRight: Radius
-                                                                        .circular(
-                                                                            4.0),
-                                                                  ),
-                                                                ),
-                                                                focusedErrorBorder:
-                                                                    OutlineInputBorder(
-                                                                  borderSide:
-                                                                      BorderSide(
-                                                                    color: Color(
-                                                                        0x00000000),
-                                                                    width: 1.0,
-                                                                  ),
-                                                                  borderRadius:
-                                                                      const BorderRadius
-                                                                          .only(
-                                                                    topLeft: Radius
-                                                                        .circular(
-                                                                            4.0),
-                                                                    topRight: Radius
-                                                                        .circular(
-                                                                            4.0),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .titleSmall
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .titleSmallFamily,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                  ),
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .center,
-                                                              validator: _model
-                                                                  .textController3Validator
-                                                                  .asValidator(
-                                                                      context),
                                                             ),
                                                           ),
                                                         ),
@@ -3471,7 +3005,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                       FFLocalizations.of(
                                                                               context)
                                                                           .getText(
-                                                                        'wc8s1ov8' /* Item Name */,
+                                                                        'pqejdefy' /* Item Name */,
                                                                       ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
@@ -3513,7 +3047,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'lfek99x5' /* Qty */,
+                                                                      'xm0usks3' /* Qty */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -3554,7 +3088,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'p24kejs9' /* Amt */,
+                                                                      'joccsput' /* Amt */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -3716,7 +3250,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                   children: [
                                                                                     Text(
                                                                                       FFLocalizations.of(context).getText(
-                                                                                        'k0v73mzx' /* ₹  */,
+                                                                                        'hen52gqa' /* ₹  */,
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                             fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
@@ -3786,7 +3320,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                         ProductStructStruct.maybeFromMap(billItem)!,
                                                                                         FFAppState().selBill,
                                                                                         widget!.taxcollection!.toList(),
-                                                                                        functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
+                                                                                        functions.enabletaxinclusive(productAndListlaundrybillingAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
                                                                                       );
                                                                                       _model.resultmi = await actions.calSubTotalForHoldListminus(
                                                                                         FFAppState().selBill.toString(),
@@ -3909,7 +3443,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                         ProductStructStruct.maybeFromMap(billItem)!,
                                                                                         FFAppState().selBill,
                                                                                         widget!.taxcollection!.toList(),
-                                                                                        functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
+                                                                                        functions.enabletaxinclusive(productAndListlaundrybillingAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
                                                                                       );
                                                                                       _shouldSetState = true;
                                                                                       _model.res13 = await actions.calSubTotalForHoldList(
@@ -4117,7 +3651,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    if (productAndListNewAppSettingsRecord
+                                                    if (productAndListlaundrybillingAppSettingsRecord
                                                             ?.settingList
                                                             ?.where((e) =>
                                                                 e.title ==
@@ -4277,7 +3811,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                              'apho6xjr' /* Item */,
+                                                              'q22gjk6z' /* Item */,
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -4331,7 +3865,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                              'l7nwsdxy' /* Qty */,
+                                                              '06yif9zt' /* Qty */,
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -4400,7 +3934,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                '8r5uo6ol' /* Sub Total */,
+                                                                '5t8kab4i' /* Sub Total */,
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -4429,7 +3963,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                   FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                    'aujg9rjp' /* ₹  */,
+                                                                    'srge3jbe' /* ₹  */,
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
@@ -4537,7 +4071,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                     child:
                                                                         DiscountAndDeliveryCopyWidget(
                                                                       appsetting:
-                                                                          productAndListNewAppSettingsRecord,
+                                                                          productAndListlaundrybillingAppSettingsRecord,
                                                                     ),
                                                                   ),
                                                                 ),
@@ -4688,7 +4222,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'xvdwf8js' /* Last Bill */,
+                                                                      '1e4vc3ol' /* Last Bill */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -4715,7 +4249,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                       Text(
                                                                         FFLocalizations.of(context)
                                                                             .getText(
-                                                                          '9ucfdjmf' /* ₹ */,
+                                                                          'bkiqija9' /* ₹ */,
                                                                         ),
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleSmall
@@ -4878,7 +4412,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                 Container(
                                                                               height: 360.0,
                                                                               child: MixPaymentModeWidget(
-                                                                                appsetting: productAndListNewAppSettingsRecord,
+                                                                                appsetting: productAndListlaundrybillingAppSettingsRecord,
                                                                               ),
                                                                             ),
                                                                           ),
@@ -4917,7 +4451,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                  'diniwpb5' /* Pay Mode */,
+                                                                  'zxx78gp0' /* Pay Mode */,
                                                                 ),
                                                                 icon: Icon(
                                                                   Icons
@@ -4991,7 +4525,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'acwjmxun' /* Final Amt */,
+                                                                      'smam3abu' /* Final Amt */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -5018,7 +4552,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                       Text(
                                                                         FFLocalizations.of(context)
                                                                             .getText(
-                                                                          'jhgmg2qk' /* ₹  */,
+                                                                          '2slkm7ma' /* ₹  */,
                                                                         ),
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .titleSmall
@@ -5062,7 +4596,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
                                               children: [
-                                                if (productAndListNewAppSettingsRecord
+                                                if (productAndListlaundrybillingAppSettingsRecord
                                                         ?.couponSaveBill ??
                                                     true)
                                                   Expanded(
@@ -5130,7 +4664,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                 FFLocalizations.of(
                                                                         context)
                                                                     .getText(
-                                                                  '2gu6bd6e' /* Coupon */,
+                                                                  'wv9ah4zz' /* Coupon */,
                                                                 ),
                                                                 textAlign:
                                                                     TextAlign
@@ -5166,7 +4700,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                               hasContainerTriggered7),
                                                     ),
                                                   ),
-                                                if (productAndListNewAppSettingsRecord
+                                                if (productAndListlaundrybillingAppSettingsRecord
                                                         ?.upiButton ??
                                                     true)
                                                   Expanded(
@@ -5234,7 +4768,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                 FFLocalizations.of(
                                                                         context)
                                                                     .getText(
-                                                                  'rv8n2nbf' /* UPI */,
+                                                                  'zo8zrb9s' /* UPI */,
                                                                 ),
                                                                 textAlign:
                                                                     TextAlign
@@ -5270,7 +4804,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                               hasContainerTriggered8),
                                                     ),
                                                   ),
-                                                if (productAndListNewAppSettingsRecord
+                                                if (productAndListlaundrybillingAppSettingsRecord
                                                         ?.settingList
                                                         ?.where((e) =>
                                                             e.title ==
@@ -6028,7 +5562,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                   return;
                                                                 }
 
-                                                                if (productAndListNewAppSettingsRecord!
+                                                                if (productAndListlaundrybillingAppSettingsRecord!
                                                                     .settingList
                                                                     .where((e) =>
                                                                         e.title ==
@@ -6351,7 +5885,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                           text: FFLocalizations
                                                                   .of(context)
                                                               .getText(
-                                                            'qw0ppkov' /* Save Bill */,
+                                                            'z97kt69q' /* Save Bill */,
                                                           ),
                                                           options:
                                                               FFButtonOptions(
@@ -7322,7 +6856,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                         .hiveInvoiceData!,
                                                                     FFAppState()
                                                                         .paperSize,
-                                                                    productAndListNewAppSettingsRecord!,
+                                                                    productAndListlaundrybillingAppSettingsRecord!,
                                                                   );
                                                                   _model.spoutlet =
                                                                       await queryServicePointOutletRecordOnce(
@@ -7331,7 +6865,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                   );
                                                                   _shouldSetState =
                                                                       true;
-                                                                  if (productAndListNewAppSettingsRecord!
+                                                                  if (productAndListlaundrybillingAppSettingsRecord!
                                                                       .settingList
                                                                       .where((e) =>
                                                                           e.title ==
@@ -7360,7 +6894,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                           .hiveInvoiceData!,
                                                                       FFAppState()
                                                                           .paperSize,
-                                                                      productAndListNewAppSettingsRecord!,
+                                                                      productAndListlaundrybillingAppSettingsRecord!,
                                                                       FFAppState()
                                                                           .port,
                                                                       FFAppState()
@@ -7370,7 +6904,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                           .toList(),
                                                                     );
                                                                   }
-                                                                  if (productAndListNewAppSettingsRecord!
+                                                                  if (productAndListlaundrybillingAppSettingsRecord!
                                                                       .settingList
                                                                       .where((e) =>
                                                                           e.title ==
@@ -7406,10 +6940,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                       _model
                                                                           .spoutlet!
                                                                           .toList(),
-                                                                      productAndListNewAppSettingsRecord!,
+                                                                      productAndListlaundrybillingAppSettingsRecord!,
                                                                     );
                                                                   }
-                                                                  if (productAndListNewAppSettingsRecord!
+                                                                  if (productAndListlaundrybillingAppSettingsRecord!
                                                                       .settingList
                                                                       .where((e) =>
                                                                           e.title ==
@@ -7670,7 +7204,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                               text: FFLocalizations
                                                                       .of(context)
                                                                   .getText(
-                                                                '39e6p8e1' /* Print Bill */,
+                                                                'ibm1gs50' /* Print Bill */,
                                                               ),
                                                               options:
                                                                   FFButtonOptions(
