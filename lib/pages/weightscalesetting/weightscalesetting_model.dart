@@ -1,4 +1,3 @@
-import '/components/header/header_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -32,16 +31,10 @@ class WeightscalesettingModel
   List<String>? list12Copy;
   // Stores action output result for [Custom Action - listofSerialPorts] action in Icon widget.
   List<String>? list12;
-  // Model for Header component.
-  late HeaderModel headerModel;
 
   @override
-  void initState(BuildContext context) {
-    headerModel = createModel(context, () => HeaderModel());
-  }
+  void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    headerModel.dispose();
-  }
+  void dispose() {}
 }

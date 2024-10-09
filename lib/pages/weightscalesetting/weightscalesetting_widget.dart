@@ -1,4 +1,3 @@
-import '/components/header/header_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -79,7 +78,6 @@ class _WeightscalesettingWidgetState extends State<WeightscalesettingWidget> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Expanded(
-                            flex: 1,
                             child: Container(
                               width: 100.0,
                               height: 100.0,
@@ -99,7 +97,7 @@ class _WeightscalesettingWidgetState extends State<WeightscalesettingWidget> {
                                       size: 26.0,
                                     ),
                                     onPressed: () async {
-                                      context.safePop();
+                                      context.pop();
                                     },
                                   ),
                                   Text(
@@ -137,6 +135,8 @@ class _WeightscalesettingWidgetState extends State<WeightscalesettingWidget> {
                                             .cast<String>();
                                         safeSetState(() {});
 
+                                        context.pushNamed('weightscalesetting');
+
                                         safeSetState(() {});
                                       },
                                       child: Icon(
@@ -149,14 +149,6 @@ class _WeightscalesettingWidgetState extends State<WeightscalesettingWidget> {
                                   ),
                                 ],
                               ),
-                            ),
-                          ),
-                          Expanded(
-                            flex: 2,
-                            child: wrapWithModel(
-                              model: _model.headerModel,
-                              updateCallback: () => safeSetState(() {}),
-                              child: HeaderWidget(),
                             ),
                           ),
                         ],
@@ -196,107 +188,107 @@ class _WeightscalesettingWidgetState extends State<WeightscalesettingWidget> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,
                                       children: [
-                                        Flexible(
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    3.0, 5.0, 3.0, 3.0),
-                                            child: Container(
-                                              width: MediaQuery.sizeOf(context)
-                                                      .width *
-                                                  1.0,
-                                              height: 600.0,
-                                              decoration: BoxDecoration(
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  3.0, 5.0, 3.0, 3.0),
+                                          child: Container(
+                                            width: MediaQuery.sizeOf(context)
+                                                    .width *
+                                                1.0,
+                                            height: 600.0,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              border: Border.all(
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
-                                                border: Border.all(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryBackground,
-                                                ),
                                               ),
-                                              child: Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, -1.0),
-                                                child: Builder(
-                                                  builder: (context) {
-                                                    final portlist =
-                                                        _model.list.toList();
-                                                    if (portlist.isEmpty) {
-                                                      return Center(
-                                                        child: Image.asset(
-                                                          'assets/images/Sensible_Connect_Logo_1.png',
+                                            ),
+                                            child: Align(
+                                              alignment: AlignmentDirectional(
+                                                  0.0, -1.0),
+                                              child: Builder(
+                                                builder: (context) {
+                                                  final portlist =
+                                                      _model.list.toList();
+                                                  if (portlist.isEmpty) {
+                                                    return Center(
+                                                      child: Image.asset(
+                                                        'assets/images/Sensible_Connect_Logo_1.png',
+                                                      ),
+                                                    );
+                                                  }
+
+                                                  return ListView.separated(
+                                                    padding: EdgeInsets.zero,
+                                                    shrinkWrap: true,
+                                                    scrollDirection:
+                                                        Axis.vertical,
+                                                    itemCount: portlist.length,
+                                                    separatorBuilder: (_, __) =>
+                                                        SizedBox(height: 20.0),
+                                                    itemBuilder: (context,
+                                                        portlistIndex) {
+                                                      final portlistItem =
+                                                          portlist[
+                                                              portlistIndex];
+                                                      return InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          _model.port =
+                                                              portlistItem;
+                                                          safeSetState(() {});
+                                                          FFAppState().port =
+                                                              portlistItem;
+                                                          safeSetState(() {});
+                                                        },
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            Flexible(
+                                                              child: Text(
+                                                                portlistItem,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .success,
+                                                                      fontSize:
+                                                                          25.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w600,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                          ],
                                                         ),
                                                       );
-                                                    }
-
-                                                    return ListView.separated(
-                                                      padding: EdgeInsets.zero,
-                                                      shrinkWrap: true,
-                                                      scrollDirection:
-                                                          Axis.vertical,
-                                                      itemCount:
-                                                          portlist.length,
-                                                      separatorBuilder:
-                                                          (_, __) => SizedBox(
-                                                              height: 20.0),
-                                                      itemBuilder: (context,
-                                                          portlistIndex) {
-                                                        final portlistItem =
-                                                            portlist[
-                                                                portlistIndex];
-                                                        return InkWell(
-                                                          splashColor: Colors
-                                                              .transparent,
-                                                          focusColor: Colors
-                                                              .transparent,
-                                                          hoverColor: Colors
-                                                              .transparent,
-                                                          highlightColor: Colors
-                                                              .transparent,
-                                                          onTap: () async {
-                                                            _model.port =
-                                                                portlistItem;
-                                                            safeSetState(() {});
-                                                            FFAppState().port =
-                                                                portlistItem;
-                                                            safeSetState(() {});
-                                                          },
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            children: [
-                                                              Flexible(
-                                                                child: Text(
-                                                                  portlistItem,
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .success,
-                                                                        fontSize:
-                                                                            25.0,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                        fontWeight:
-                                                                            FontWeight.w600,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                        );
-                                                      },
-                                                    );
-                                                  },
-                                                ),
+                                                    },
+                                                  );
+                                                },
                                               ),
                                             ),
                                           ),
@@ -326,35 +318,29 @@ class _WeightscalesettingWidgetState extends State<WeightscalesettingWidget> {
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      Expanded(
-                                        child: Padding(
-                                          padding: EdgeInsets.all(3.0),
-                                          child: Container(
-                                            width: MediaQuery.sizeOf(context)
-                                                    .width *
-                                                1.0,
-                                            height: MediaQuery.sizeOf(context)
-                                                    .height *
-                                                0.1,
-                                            decoration: BoxDecoration(
+                                      Padding(
+                                        padding: EdgeInsets.all(3.0),
+                                        child: Container(
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  1.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            border: Border.all(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
-                                              border: Border.all(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .customColor2,
-                                              ),
+                                                      .customColor2,
                                             ),
-                                            child: Container(
-                                              width: double.infinity,
-                                              height: double.infinity,
-                                              child: custom_widgets
-                                                  .Weightscalewidget(
-                                                width: double.infinity,
-                                                height: double.infinity,
-                                                port: FFAppState().port,
-                                              ),
+                                          ),
+                                          child: Container(
+                                            width: 500.0,
+                                            height: 200.0,
+                                            child: custom_widgets
+                                                .Weightscalewidget(
+                                              width: 500.0,
+                                              height: 200.0,
+                                              port: FFAppState().port,
                                             ),
                                           ),
                                         ),
