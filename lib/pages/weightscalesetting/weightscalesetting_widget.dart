@@ -90,8 +90,8 @@ class _WeightscalesettingWidgetState extends State<WeightscalesettingWidget> {
                                           .primaryBtnText,
                                       size: 26.0,
                                     ),
-                                    onPressed: () {
-                                      print('IconButton pressed ...');
+                                    onPressed: () async {
+                                      context.safePop();
                                     },
                                   ),
                                   Text(
