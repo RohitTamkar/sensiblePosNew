@@ -661,7 +661,22 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                                           .toList()
                                                           ?.sortedList(
                                                               keyOf: (e) =>
-                                                                  e.name,
+                                                                  valueOrDefault<
+                                                                          bool>(
+                                                                    widget!
+                                                                        .appsetting
+                                                                        ?.settingList
+                                                                        ?.where((e) =>
+                                                                            e.title ==
+                                                                            'sortCategoryByCode')
+                                                                        .toList()
+                                                                        ?.first
+                                                                        ?.value,
+                                                                    false,
+                                                                  )
+                                                                      ? e.code
+                                                                          .toString()
+                                                                      : e.name,
                                                               desc: false)
                                                           ?.toList() ??
                                                       [];
@@ -852,7 +867,20 @@ class _KioskBillScreenWidgetState extends State<KioskBillScreenWidget>
                                               .where((e) => e.isEnable)
                                               .toList()
                                               .sortedList(
-                                                  keyOf: (e) => e.name,
+                                                  keyOf: (e) =>
+                                                      valueOrDefault<bool>(
+                                                        widget!.appsetting
+                                                            ?.settingList
+                                                            ?.where((e) =>
+                                                                e.title ==
+                                                                'sortProductByCode')
+                                                            .toList()
+                                                            ?.first
+                                                            ?.value,
+                                                        false,
+                                                      )
+                                                          ? e.code.toString()
+                                                          : e.name,
                                                   desc: false)
                                               .toList();
 

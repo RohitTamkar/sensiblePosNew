@@ -2305,7 +2305,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               Builder(
                                                                             builder:
                                                                                 (context) {
-                                                                              final categoryList = FFAppState().categoryHive.toList();
+                                                                              final categoryList = FFAppState().categoryHive.sortedList(keyOf: (e) => e.name, desc: false).toList();
 
                                                                               return ListView.builder(
                                                                                 padding: EdgeInsets.zero,
