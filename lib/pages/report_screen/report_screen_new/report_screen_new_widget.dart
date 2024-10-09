@@ -299,6 +299,9 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                       size: 26.0,
                                     ),
                                     onPressed: () async {
+                                      FFAppState().port = FFAppState().port;
+                                      safeSetState(() {});
+
                                       context.pushNamed(
                                         'ProductAndListlaundrybilling',
                                         queryParameters: {
