@@ -300,7 +300,7 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                     ),
                                     onPressed: () async {
                                       context.pushNamed(
-                                        'ProductAndListNew',
+                                        'ProductAndListlaundrybilling',
                                         queryParameters: {
                                           'billDetails': serializeParam(
                                             _model.bilinvref,

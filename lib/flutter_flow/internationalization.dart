@@ -5651,6 +5651,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
+    'cxynpgeb': {
+      'en': 'Net Weight',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '9i17i869': {
+      'en': ':',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
     'vales4cm': {
       'en': 'Home',
       'hi': '',
