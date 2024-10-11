@@ -3409,6 +3409,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                           )) {
                                             FFAppState().count =
                                                 FFAppState().count + 1;
+                                            FFAppState().newcount =
+                                                FFAppState().newcount + 1;
                                             safeSetState(() {});
                                           }
                                           _model.prdlistsavebill =
@@ -3530,9 +3532,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                           _model.hiveInvoiceDataCopyCopy =
                                               await actions.addInvoiceBillhive(
                                             '',
-                                            functions.genInvoiceNum(
-                                                FFAppState().count,
-                                                FFAppState().shiftCount),
+                                            functions.genInvoiceNumyear(
+                                                FFAppState().newcount),
                                             FFAppState().setCustName,
                                             functions.timestampToMili(
                                                 getCurrentTimestamp),
@@ -3854,10 +3855,14 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                           )) {
                                             FFAppState().count =
                                                 FFAppState().count + 1;
+                                            FFAppState().newcount =
+                                                FFAppState().newcount + 1;
                                             safeSetState(() {});
                                           } else {
                                             FFAppState().count =
                                                 FFAppState().count + 1;
+                                            FFAppState().newcount =
+                                                FFAppState().newcount + 1;
                                             safeSetState(() {});
                                           }
 
@@ -4028,9 +4033,8 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                           _model.hiveInvoiceData =
                                               await actions.addInvoiceBillhive(
                                             '',
-                                            functions.genInvoiceNum(
-                                                FFAppState().count,
-                                                FFAppState().shiftCount),
+                                            functions.genInvoiceNumyear(
+                                                FFAppState().newcount),
                                             valueOrDefault<String>(
                                               FFAppState().setCustRef?.id,
                                               '0',
