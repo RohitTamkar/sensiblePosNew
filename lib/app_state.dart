@@ -621,6 +621,9 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _taxAmtPay = prefs.getDouble('ff_taxAmtPay') ?? _taxAmtPay;
     });
+    _safeInit(() {
+      _newcount = prefs.getInt('ff_newcount') ?? _newcount;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -3496,6 +3499,13 @@ class FFAppState extends ChangeNotifier {
   String get weight => _weight;
   set weight(String value) {
     _weight = value;
+  }
+
+  int _newcount = 0;
+  int get newcount => _newcount;
+  set newcount(int value) {
+    _newcount = value;
+    prefs.setInt('ff_newcount', value);
   }
 }
 

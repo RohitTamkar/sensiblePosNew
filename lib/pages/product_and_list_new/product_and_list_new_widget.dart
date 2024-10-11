@@ -5329,6 +5329,11 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                     FFAppState()
                                                                             .count +
                                                                         1;
+                                                                FFAppState()
+                                                                        .newcount =
+                                                                    FFAppState()
+                                                                            .newcount +
+                                                                        1;
                                                                 safeSetState(
                                                                     () {});
                                                               } else {
@@ -5336,6 +5341,11 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                         .count =
                                                                     FFAppState()
                                                                             .count +
+                                                                        1;
+                                                                FFAppState()
+                                                                        .newcount =
+                                                                    FFAppState()
+                                                                            .newcount +
                                                                         1;
                                                                 safeSetState(
                                                                     () {});
@@ -5429,11 +5439,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                 await invoiceRecordReference
                                                                     .set({
                                                                   ...createInvoiceRecordData(
-                                                                    invoice: functions.genInvoiceNum(
-                                                                        FFAppState()
-                                                                            .count,
-                                                                        FFAppState()
-                                                                            .shiftCount),
+                                                                    invoice: functions
+                                                                        .genInvoiceNumyear(
+                                                                            FFAppState().newcount),
                                                                     party: valueOrDefault<
                                                                         String>(
                                                                       FFAppState()
@@ -5504,11 +5512,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                     InvoiceRecord
                                                                         .getDocumentFromData({
                                                                   ...createInvoiceRecordData(
-                                                                    invoice: functions.genInvoiceNum(
-                                                                        FFAppState()
-                                                                            .count,
-                                                                        FFAppState()
-                                                                            .shiftCount),
+                                                                    invoice: functions
+                                                                        .genInvoiceNumyear(
+                                                                            FFAppState().newcount),
                                                                     party: valueOrDefault<
                                                                         String>(
                                                                       FFAppState()
@@ -5599,11 +5605,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                         .id,
                                                                     'NA',
                                                                   ),
-                                                                  functions.genInvoiceNum(
+                                                                  functions.genInvoiceNumyear(
                                                                       FFAppState()
-                                                                          .count,
-                                                                      FFAppState()
-                                                                          .shiftCount),
+                                                                          .newcount),
                                                                   valueOrDefault<
                                                                       String>(
                                                                     FFAppState()
@@ -6505,6 +6509,11 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                       FFAppState()
                                                                               .count +
                                                                           1;
+                                                                  FFAppState()
+                                                                          .newcount =
+                                                                      FFAppState()
+                                                                              .newcount +
+                                                                          1;
                                                                   safeSetState(
                                                                       () {});
                                                                 } else {
@@ -6512,6 +6521,11 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                           .count =
                                                                       FFAppState()
                                                                               .count +
+                                                                          1;
+                                                                  FFAppState()
+                                                                          .newcount =
+                                                                      FFAppState()
+                                                                              .newcount +
                                                                           1;
                                                                   safeSetState(
                                                                       () {});
@@ -6638,7 +6652,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                     ...createInvoiceRecordData(
                                                                       invoice: functions
                                                                           .genInvoiceNumyear(
-                                                                              FFAppState().count),
+                                                                              FFAppState().newcount),
                                                                       party: valueOrDefault<
                                                                           String>(
                                                                         FFAppState()
@@ -6712,7 +6726,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                     ...createInvoiceRecordData(
                                                                       invoice: functions
                                                                           .genInvoiceNumyear(
-                                                                              FFAppState().count),
+                                                                              FFAppState().newcount),
                                                                       party: valueOrDefault<
                                                                           String>(
                                                                         FFAppState()
@@ -6804,11 +6818,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                           .id,
                                                                       'NA',
                                                                     ),
-                                                                    functions.genInvoiceNum(
+                                                                    functions.genInvoiceNumyear(
                                                                         FFAppState()
-                                                                            .count,
-                                                                        FFAppState()
-                                                                            .shiftCount),
+                                                                            .newcount),
                                                                     valueOrDefault<
                                                                         String>(
                                                                       FFAppState()
