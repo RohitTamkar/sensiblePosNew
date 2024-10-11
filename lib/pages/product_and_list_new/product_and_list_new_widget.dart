@@ -2455,9 +2455,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                     functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
                                                                                                   );
                                                                                                   _shouldSetState = true;
-                                                                                                  _model.calculateResult1 = await actions.calSubTotalForHoldList(
+                                                                                                  _model.calculateResult23dfsdf = await actions.calSubTotalForHoldListkiosk(
                                                                                                     FFAppState().selBill.toString(),
                                                                                                     _model.addtosavebill3!.toList(),
+                                                                                                    functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
                                                                                                   );
                                                                                                   _shouldSetState = true;
                                                                                                   _model.calbillAmt2s = await actions.calBillAmt(
@@ -2507,9 +2508,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                       functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
                                                                                                     );
                                                                                                     _shouldSetState = true;
-                                                                                                    _model.calculateResult1d = await actions.calSubTotalForHoldList(
+                                                                                                    _model.calculateResult23df = await actions.calSubTotalForHoldListkiosk(
                                                                                                       FFAppState().selBill.toString(),
                                                                                                       _model.addtosavebill3d!.toList(),
+                                                                                                      functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
                                                                                                     );
                                                                                                     _shouldSetState = true;
                                                                                                     _model.calbillAmt2sd = await actions.calBillAmt(
@@ -2574,9 +2576,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                 functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
                                                                                               );
                                                                                               _shouldSetState = true;
-                                                                                              _model.calculateResult23 = await actions.calSubTotalForHoldList(
+                                                                                              _model.calculateResult23 = await actions.calSubTotalForHoldListkiosk(
                                                                                                 FFAppState().selBill.toString(),
                                                                                                 _model.addtosavebill2!.toList(),
+                                                                                                functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
                                                                                               );
                                                                                               _shouldSetState = true;
                                                                                               _model.calbillAmt3 = await actions.calBillAmt(
@@ -5441,7 +5444,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                   ...createInvoiceRecordData(
                                                                     invoice: functions
                                                                         .genInvoiceNumyear(
-                                                                            FFAppState().newcount),
+                                                                            FFAppState().count),
                                                                     party: valueOrDefault<
                                                                         String>(
                                                                       FFAppState()
@@ -5514,7 +5517,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                   ...createInvoiceRecordData(
                                                                     invoice: functions
                                                                         .genInvoiceNumyear(
-                                                                            FFAppState().newcount),
+                                                                            FFAppState().count),
                                                                     party: valueOrDefault<
                                                                         String>(
                                                                       FFAppState()
@@ -5607,7 +5610,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                   ),
                                                                   functions.genInvoiceNumyear(
                                                                       FFAppState()
-                                                                          .newcount),
+                                                                          .count),
                                                                   valueOrDefault<
                                                                       String>(
                                                                     FFAppState()
@@ -6820,7 +6823,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                     ),
                                                                     functions.genInvoiceNumyear(
                                                                         FFAppState()
-                                                                            .newcount),
+                                                                            .count),
                                                                     valueOrDefault<
                                                                         String>(
                                                                       FFAppState()
