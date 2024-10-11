@@ -5446,7 +5446,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                   ...createInvoiceRecordData(
                                                                     invoice: functions
                                                                         .genInvoiceNumyear(
-                                                                            FFAppState().count),
+                                                                            FFAppState().newcount),
                                                                     party: valueOrDefault<
                                                                         String>(
                                                                       FFAppState()
@@ -5519,7 +5519,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                   ...createInvoiceRecordData(
                                                                     invoice: functions
                                                                         .genInvoiceNumyear(
-                                                                            FFAppState().count),
+                                                                            FFAppState().newcount),
                                                                     party: valueOrDefault<
                                                                         String>(
                                                                       FFAppState()
@@ -5612,7 +5612,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                   ),
                                                                   functions.genInvoiceNumyear(
                                                                       FFAppState()
-                                                                          .count),
+                                                                          .newcount),
                                                                   valueOrDefault<
                                                                       String>(
                                                                     FFAppState()
@@ -6825,7 +6825,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                     ),
                                                                     functions.genInvoiceNumyear(
                                                                         FFAppState()
-                                                                            .count),
+                                                                            .newcount),
                                                                     valueOrDefault<
                                                                         String>(
                                                                       FFAppState()
