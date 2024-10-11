@@ -146,20 +146,16 @@ class ProductAndListNewModel extends FlutterFlowModel<ProductAndListNewWidget> {
   ScrollController? listViewprd;
   // Stores action output result for [Custom Action - addToHoldListprdminus] action in Minus widget.
   List<dynamic>? resultminus;
-  // Stores action output result for [Custom Action - calSubTotalForHoldListminus] action in Minus widget.
-  double? resultmi;
   // Stores action output result for [Custom Action - calBillAmt] action in Minus widget.
   double? reu34;
   // Stores action output result for [Custom Action - addToHoldListprdplus] action in Plus widget.
   List<dynamic>? resultplus;
-  // Stores action output result for [Custom Action - calSubTotalForHoldList] action in Plus widget.
-  double? res13;
   // Stores action output result for [Custom Action - calBillAmt] action in Plus widget.
   double? reuslt12;
   // Stores action output result for [Custom Action - removeHoldListItem] action in Icon widget.
   List<dynamic>? res20;
-  // Stores action output result for [Custom Action - calSubTotalForHoldList] action in Icon widget.
-  double? res21;
+  // Stores action output result for [Custom Action - calSubTotalForHoldListkiosk] action in Icon widget.
+  double? ddddd;
   // Stores action output result for [Custom Action - calBillAmt] action in Icon widget.
   double? reuslt22;
   // State field(s) for DropDown widget.

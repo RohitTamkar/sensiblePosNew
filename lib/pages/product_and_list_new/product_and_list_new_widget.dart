@@ -3791,9 +3791,10 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                         widget!.taxcollection!.toList(),
                                                                                         functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
                                                                                       );
-                                                                                      _model.resultmi = await actions.calSubTotalForHoldListminus(
+                                                                                      await actions.calSubTotalForHoldListkiosk(
                                                                                         FFAppState().selBill.toString(),
                                                                                         _model.resultminus!.toList(),
+                                                                                        functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
                                                                                       );
                                                                                       _model.reu34 = await actions.calBillAmt(
                                                                                         valueOrDefault<double>(
@@ -3915,11 +3916,11 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                         functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
                                                                                       );
                                                                                       _shouldSetState = true;
-                                                                                      _model.res13 = await actions.calSubTotalForHoldList(
+                                                                                      await actions.calSubTotalForHoldListkiosk(
                                                                                         FFAppState().selBill.toString(),
                                                                                         _model.resultplus!.toList(),
+                                                                                        functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
                                                                                       );
-                                                                                      _shouldSetState = true;
                                                                                       _model.reuslt12 = await actions.calBillAmt(
                                                                                         valueOrDefault<double>(
                                                                                           FFAppState().disAmt,
@@ -4048,10 +4049,11 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                               ),
                                                                               FFAppState().selBill,
                                                                             );
-                                                                            _model.res21 =
-                                                                                await actions.calSubTotalForHoldList(
+                                                                            _model.ddddd =
+                                                                                await actions.calSubTotalForHoldListkiosk(
                                                                               FFAppState().selBill.toString(),
                                                                               FFAppState().allBillsList.toList(),
+                                                                              functions.enabletaxinclusive(productAndListNewAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
                                                                             );
                                                                             _model.reuslt22 =
                                                                                 await actions.calBillAmt(
