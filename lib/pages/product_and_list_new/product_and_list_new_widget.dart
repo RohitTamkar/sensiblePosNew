@@ -6636,11 +6636,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                   await invoiceRecordReference
                                                                       .set({
                                                                     ...createInvoiceRecordData(
-                                                                      invoice: functions.genInvoiceNum(
-                                                                          FFAppState()
-                                                                              .count,
-                                                                          FFAppState()
-                                                                              .shiftCount),
+                                                                      invoice: functions
+                                                                          .genInvoiceNumyear(
+                                                                              FFAppState().count),
                                                                       party: valueOrDefault<
                                                                           String>(
                                                                         FFAppState()
@@ -6712,11 +6710,9 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                       InvoiceRecord
                                                                           .getDocumentFromData({
                                                                     ...createInvoiceRecordData(
-                                                                      invoice: functions.genInvoiceNum(
-                                                                          FFAppState()
-                                                                              .count,
-                                                                          FFAppState()
-                                                                              .shiftCount),
+                                                                      invoice: functions
+                                                                          .genInvoiceNumyear(
+                                                                              FFAppState().count),
                                                                       party: valueOrDefault<
                                                                           String>(
                                                                         FFAppState()
