@@ -1289,18 +1289,28 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             20.0, 0.0, 20.0, 0.0),
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          child: Image.asset(
-                                            'assets/images/Sensible_Connect_Logo_White.png',
-                                            width: MediaQuery.sizeOf(context)
-                                                    .width *
-                                                0.035,
-                                            height: MediaQuery.sizeOf(context)
-                                                    .height *
-                                                0.035,
-                                            fit: BoxFit.contain,
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onLongPress: () async {
+                                            FFAppState().newcount = 0;
+                                            safeSetState(() {});
+                                          },
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                            child: Image.asset(
+                                              'assets/images/Sensible_Connect_Logo_White.png',
+                                              width: MediaQuery.sizeOf(context)
+                                                      .width *
+                                                  0.035,
+                                              height: MediaQuery.sizeOf(context)
+                                                      .height *
+                                                  0.035,
+                                              fit: BoxFit.contain,
+                                            ),
                                           ),
                                         ),
                                       ),

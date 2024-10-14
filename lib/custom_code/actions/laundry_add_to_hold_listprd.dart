@@ -13,6 +13,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 Future<List<dynamic>> laundryAddToHoldListprd(
   ProductStructStruct document,
   int billno,
@@ -23,6 +25,16 @@ Future<List<dynamic>> laundryAddToHoldListprd(
   print(document);
   List<dynamic> itemList = [];
   var y = 1.0;
+  String weightString = '';
+  if (FFAppState().weight != null) {
+    weightString = FFAppState().weight;
+  } else {
+    weightString = "0.0 kg";
+  }
+
+  RegExp regex = RegExp(r'([\d.]+)');
+  String? weightMatch = regex.firstMatch(weightString)?.group(0);
+  double weight = double.parse(weightMatch!);
 
   String? taxId = '';
 
@@ -39,7 +51,7 @@ Future<List<dynamic>> laundryAddToHoldListprd(
   if (taxRecord != null) {
     double taxPer = taxRecord.percentage ?? 0.0;
     double price = document!.sellingPrice;
-    double quantity = y.toDouble();
+    double quantity = weight;
 
     // Calculate taxAmt for each item separately
     double taxAmtPerItem = (inclusiveorexclusive.toLowerCase() == 'inclusive')

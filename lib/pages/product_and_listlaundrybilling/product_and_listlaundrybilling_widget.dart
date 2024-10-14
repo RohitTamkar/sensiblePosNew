@@ -3139,16 +3139,8 @@ class _ProductAndListlaundrybillingWidgetState
                                                                                           ),
                                                                                     ),
                                                                                     Text(
-                                                                                      getJsonField(
-                                                                                        billItem,
-                                                                                        r'''$.price''',
-                                                                                      ).toString(),
-                                                                                      style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                            fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
-                                                                                            fontSize: 13.0,
-                                                                                            letterSpacing: 0.0,
-                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
-                                                                                          ),
+                                                                                      '',
+                                                                                      style: TextStyle(),
                                                                                     ),
                                                                                   ],
                                                                                 ),
@@ -6724,7 +6716,7 @@ class _ProductAndListlaundrybillingWidgetState
                                                                   _shouldSetState =
                                                                       true;
                                                                   await actions
-                                                                      .printBillnewhive(
+                                                                      .laundryPrintBillnewhive(
                                                                     _model
                                                                         .returnedList2!
                                                                         .toList(),

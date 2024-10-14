@@ -4035,6 +4035,112 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                       ),
                                                                     ),
                                                                     Expanded(
+                                                                      flex: 9,
+                                                                      child:
+                                                                          Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            1.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Container(
+                                                                          width:
+                                                                              MediaQuery.sizeOf(context).width * 0.042,
+                                                                          height:
+                                                                              MediaQuery.sizeOf(context).height * 0.08,
+                                                                          decoration:
+                                                                              BoxDecoration(),
+                                                                          child:
+                                                                              Align(
+                                                                            alignment:
+                                                                                AlignmentDirectional(0.0, 0.0),
+                                                                            child:
+                                                                                Text(
+                                                                              functions
+                                                                                  .getTotal(
+                                                                                      valueOrDefault<double>(
+                                                                                        getJsonField(
+                                                                                          billItem,
+                                                                                          r'''$.quantity''',
+                                                                                        ),
+                                                                                        0.0,
+                                                                                      ),
+                                                                                      valueOrDefault<double>(
+                                                                                        getJsonField(
+                                                                                          billItem,
+                                                                                          r'''$.price''',
+                                                                                        ),
+                                                                                        0.0,
+                                                                                      ))
+                                                                                  .toString(),
+                                                                              textAlign: TextAlign.center,
+                                                                              style: FlutterFlowTheme.of(context).bodySmall.override(
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    color: FlutterFlowTheme.of(context).primaryText,
+                                                                                    fontSize: 13.0,
+                                                                                    letterSpacing: 0.0,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
+                                                                                  ),
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                    Expanded(
+                                                                      flex: 9,
+                                                                      child:
+                                                                          Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            1.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Container(
+                                                                          width:
+                                                                              MediaQuery.sizeOf(context).width * 0.042,
+                                                                          height:
+                                                                              MediaQuery.sizeOf(context).height * 0.08,
+                                                                          decoration:
+                                                                              BoxDecoration(),
+                                                                          child:
+                                                                              Align(
+                                                                            alignment:
+                                                                                AlignmentDirectional(0.0, 0.0),
+                                                                            child:
+                                                                                Text(
+                                                                              functions
+                                                                                  .getTotal(
+                                                                                      valueOrDefault<double>(
+                                                                                        getJsonField(
+                                                                                          billItem,
+                                                                                          r'''$.quantity''',
+                                                                                        ),
+                                                                                        0.0,
+                                                                                      ),
+                                                                                      valueOrDefault<double>(
+                                                                                        getJsonField(
+                                                                                          billItem,
+                                                                                          r'''$.price''',
+                                                                                        ),
+                                                                                        0.0,
+                                                                                      ))
+                                                                                  .toString(),
+                                                                              textAlign: TextAlign.center,
+                                                                              style: FlutterFlowTheme.of(context).bodySmall.override(
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    color: FlutterFlowTheme.of(context).primaryText,
+                                                                                    fontSize: 13.0,
+                                                                                    letterSpacing: 0.0,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
+                                                                                  ),
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                    Expanded(
                                                                       flex: 5,
                                                                       child:
                                                                           Container(
