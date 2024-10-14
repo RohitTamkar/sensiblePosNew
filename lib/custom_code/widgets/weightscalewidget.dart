@@ -10,6 +10,8 @@ import 'package:flutter/material.dart';
 // Begin custom widget code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom widgets
+
 import 'package:flutter_libserialport/flutter_libserialport.dart';
 
 class Weightscalewidget extends StatefulWidget {
@@ -41,7 +43,7 @@ class _WeightscalewidgetState extends State<Weightscalewidget> {
 
   void _openSerialPort() {
     try {
-      _port = SerialPort('$widget.port');
+      _port = SerialPort(widget.port!);
       if (_port!.openReadWrite()) {
         SerialPortReader reader = SerialPortReader(_port!);
         reader.stream.listen((data) {
@@ -51,7 +53,8 @@ class _WeightscalewidgetState extends State<Weightscalewidget> {
           String? weight = _extractWeightFromBuffer(_buffer);
           if (weight != null) {
             setState(() {
-              _weightData = '$weight kg'; // Update the displayed weight
+              _weightData = '$weight kg';
+              FFAppState().weight = _weightData; // Update the displayed weight
             });
             _buffer = ""; // Clear buffer after processing
           }
@@ -73,14 +76,22 @@ class _WeightscalewidgetState extends State<Weightscalewidget> {
 
   // Extract weight value from the buffer
   String? _extractWeightFromBuffer(String buffer) {
-    final RegExp regex =
-        RegExp(r'([-+]?\d*\.?\d+)\s*kg'); // Adjust based on the expected format
-    final match = regex.firstMatch(buffer);
+    // Adjust regex to capture positive/negative decimal values (e.g., -0.003, 0.004, etc.)
+    final RegExp regex = RegExp(r'([-+]?\d*\.\d+)');
+    final match = regex.allMatches(buffer).map((m) => m.group(0)).toList();
 
-    if (match != null) {
-      return match.group(0)?.split(' ')[0]; // Return the extracted weight
+    // Process matches to find a reasonable weight value
+    for (String? value in match) {
+      if (value != null) {
+        double weight = double.tryParse(value) ?? 0.0;
+        // Apply a threshold: ignore values close to zero (e.g., < 0.01 kg)
+        if (weight.abs() > 0.01) {
+          return weight
+              .toStringAsFixed(3); // Return the weight with 3 decimal places
+        }
+      }
     }
-    return null; // No valid weight found yet
+    return null; // No valid weight found
   }
 
   @override

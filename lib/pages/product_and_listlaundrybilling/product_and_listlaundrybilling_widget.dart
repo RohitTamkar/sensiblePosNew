@@ -2431,161 +2431,32 @@ class _ProductAndListlaundrybillingWidgetState
                                                                                           hoverColor: Colors.transparent,
                                                                                           highlightColor: Colors.transparent,
                                                                                           onTap: () async {
-                                                                                            var _shouldSetState = false;
-                                                                                            if (productListItem.stockable) {
-                                                                                              if (productListItem.stock > 0) {
-                                                                                                if (FFAppState().prdid != productListItem.id) {
-                                                                                                  if (FFAppState().holdBillCount == 0) {
-                                                                                                    FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
-                                                                                                    FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));
-                                                                                                    FFAppState().selBill = 1;
-                                                                                                  }
-                                                                                                  _model.addtosavebill3 = await actions.addToHoldListprdCopy(
-                                                                                                    productListItem,
-                                                                                                    FFAppState().selBill,
-                                                                                                    widget!.taxcollection!.toList(),
-                                                                                                    functions.enabletaxinclusive(productAndListlaundrybillingAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
-                                                                                                  );
-                                                                                                  _shouldSetState = true;
-                                                                                                  _model.calculateResult1 = await actions.calSubTotalForHoldList(
-                                                                                                    FFAppState().selBill.toString(),
-                                                                                                    _model.addtosavebill3!.toList(),
-                                                                                                  );
-                                                                                                  _shouldSetState = true;
-                                                                                                  _model.calbillAmt2s = await actions.calBillAmt(
-                                                                                                    FFAppState().disAmt,
-                                                                                                    FFAppState().delCharges,
-                                                                                                  );
-                                                                                                  _shouldSetState = true;
-                                                                                                  FFAppState().prdid = productListItem.id;
-                                                                                                  safeSetState(() {});
-                                                                                                  await _model.listViewprd?.animateTo(
-                                                                                                    _model.listViewprd!.position.maxScrollExtent,
-                                                                                                    duration: Duration(milliseconds: 100),
-                                                                                                    curve: Curves.ease,
-                                                                                                  );
-                                                                                                  if (_shouldSetState) safeSetState(() {});
-                                                                                                  return;
-                                                                                                } else {
-                                                                                                  if (productListItem.stock >
-                                                                                                      functions.doubleToInt(valueOrDefault<double>(
-                                                                                                        getJsonField(
-                                                                                                          functions
-                                                                                                              .filterBillList(FFAppState().selBill, FFAppState().allBillsList.toList())
-                                                                                                              .where((e) =>
-                                                                                                                  productListItem.id ==
-                                                                                                                  valueOrDefault<String>(
-                                                                                                                    getJsonField(
-                                                                                                                      e,
-                                                                                                                      r'''$.id''',
-                                                                                                                    )?.toString(),
-                                                                                                                    '0',
-                                                                                                                  ))
-                                                                                                              .toList()
-                                                                                                              .first,
-                                                                                                          r'''$.quantity''',
-                                                                                                        ),
-                                                                                                        0.0,
-                                                                                                      ))!) {
-                                                                                                    if (FFAppState().holdBillCount == 0) {
-                                                                                                      FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
-                                                                                                      FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));
-                                                                                                      FFAppState().selBill = 1;
-                                                                                                    }
-                                                                                                    _model.addtosavebill3d = await actions.addToHoldListprdCopy(
-                                                                                                      productListItem,
-                                                                                                      FFAppState().selBill,
-                                                                                                      widget!.taxcollection!.toList(),
-                                                                                                      functions.enabletaxinclusive(productAndListlaundrybillingAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
-                                                                                                    );
-                                                                                                    _shouldSetState = true;
-                                                                                                    _model.calculateResult1d = await actions.calSubTotalForHoldList(
-                                                                                                      FFAppState().selBill.toString(),
-                                                                                                      _model.addtosavebill3d!.toList(),
-                                                                                                    );
-                                                                                                    _shouldSetState = true;
-                                                                                                    _model.calbillAmt2sd = await actions.calBillAmt(
-                                                                                                      FFAppState().disAmt,
-                                                                                                      FFAppState().delCharges,
-                                                                                                    );
-                                                                                                    _shouldSetState = true;
-                                                                                                    await _model.listViewprd?.animateTo(
-                                                                                                      _model.listViewprd!.position.maxScrollExtent,
-                                                                                                      duration: Duration(milliseconds: 100),
-                                                                                                      curve: Curves.ease,
-                                                                                                    );
-                                                                                                    if (_shouldSetState) safeSetState(() {});
-                                                                                                    return;
-                                                                                                  } else {
-                                                                                                    await showDialog(
-                                                                                                      context: context,
-                                                                                                      builder: (alertDialogContext) {
-                                                                                                        return AlertDialog(
-                                                                                                          content: Text('Item Out Of  Stock'),
-                                                                                                          actions: [
-                                                                                                            TextButton(
-                                                                                                              onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                              child: Text('Ok'),
-                                                                                                            ),
-                                                                                                          ],
-                                                                                                        );
-                                                                                                      },
-                                                                                                    );
-                                                                                                    if (_shouldSetState) safeSetState(() {});
-                                                                                                    return;
-                                                                                                  }
-                                                                                                }
-                                                                                              } else {
-                                                                                                await showDialog(
-                                                                                                  context: context,
-                                                                                                  builder: (alertDialogContext) {
-                                                                                                    return AlertDialog(
-                                                                                                      content: Text('Item Out Of Stock'),
-                                                                                                      actions: [
-                                                                                                        TextButton(
-                                                                                                          onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                          child: Text('Ok'),
-                                                                                                        ),
-                                                                                                      ],
-                                                                                                    );
-                                                                                                  },
-                                                                                                );
-                                                                                                if (_shouldSetState) safeSetState(() {});
-                                                                                                return;
-                                                                                              }
-                                                                                            } else {
-                                                                                              if (FFAppState().holdBillCount == 0) {
-                                                                                                FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
-                                                                                                FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));
-                                                                                                FFAppState().selBill = 1;
-                                                                                              }
-                                                                                              _model.addtosavebill2 = await actions.addToHoldListprdCopy(
-                                                                                                productListItem,
-                                                                                                FFAppState().selBill,
-                                                                                                widget!.taxcollection!.toList(),
-                                                                                                functions.enabletaxinclusive(productAndListlaundrybillingAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
-                                                                                              );
-                                                                                              _shouldSetState = true;
-                                                                                              _model.calculateResult23 = await actions.calSubTotalForHoldList(
-                                                                                                FFAppState().selBill.toString(),
-                                                                                                _model.addtosavebill2!.toList(),
-                                                                                              );
-                                                                                              _shouldSetState = true;
-                                                                                              _model.calbillAmt3 = await actions.calBillAmt(
-                                                                                                FFAppState().disAmt,
-                                                                                                FFAppState().delCharges,
-                                                                                              );
-                                                                                              _shouldSetState = true;
-                                                                                              await _model.listViewprd?.animateTo(
-                                                                                                _model.listViewprd!.position.maxScrollExtent,
-                                                                                                duration: Duration(milliseconds: 100),
-                                                                                                curve: Curves.ease,
-                                                                                              );
-                                                                                              if (_shouldSetState) safeSetState(() {});
-                                                                                              return;
+                                                                                            if (FFAppState().holdBillCount == 0) {
+                                                                                              FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
+                                                                                              FFAppState().addToAllBillsList(functions.generateBillDetailsJson(0.0, 0.0, 0.0, 'CASH', 0.0, 0.0, FFAppState().billAmt, 0.0, FFAppState().finalAmt, '0', FFAppState().itemCartList.toList(), FFAppState().holdBillCount));
+                                                                                              FFAppState().selBill = 1;
                                                                                             }
+                                                                                            _model.addtosavebill22 = await actions.laundryAddToHoldListprd(
+                                                                                              productListItem,
+                                                                                              FFAppState().selBill,
+                                                                                              widget!.taxcollection!.toList(),
+                                                                                              functions.enabletaxinclusive(productAndListlaundrybillingAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
+                                                                                            );
+                                                                                            _model.calculateResult233 = await actions.laundrycalSubTotalForHoldList(
+                                                                                              FFAppState().selBill.toString(),
+                                                                                              _model.addtosavebill22!.toList(),
+                                                                                            );
+                                                                                            _model.calbillAmt3 = await actions.calBillAmt(
+                                                                                              FFAppState().disAmt,
+                                                                                              FFAppState().delCharges,
+                                                                                            );
+                                                                                            await _model.listViewprd?.animateTo(
+                                                                                              _model.listViewprd!.position.maxScrollExtent,
+                                                                                              duration: Duration(milliseconds: 100),
+                                                                                              curve: Curves.ease,
+                                                                                            );
 
-                                                                                            if (_shouldSetState) safeSetState(() {});
+                                                                                            safeSetState(() {});
                                                                                           },
                                                                                           onDoubleTap: () async {},
                                                                                           onLongPress: () async {},
@@ -3316,65 +3187,66 @@ class _ProductAndListlaundrybillingWidgetState
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               mainAxisAlignment: MainAxisAlignment.center,
                                                                               children: [
-                                                                                Expanded(
-                                                                                  flex: 7,
-                                                                                  child: InkWell(
-                                                                                    splashColor: Colors.transparent,
-                                                                                    focusColor: Colors.transparent,
-                                                                                    hoverColor: Colors.transparent,
-                                                                                    highlightColor: Colors.transparent,
-                                                                                    onTap: () async {
-                                                                                      _model.resultminus = await actions.addToHoldListprdminus(
-                                                                                        ProductStructStruct.maybeFromMap(billItem)!,
-                                                                                        FFAppState().selBill,
-                                                                                        widget!.taxcollection!.toList(),
-                                                                                        functions.enabletaxinclusive(productAndListlaundrybillingAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
-                                                                                      );
-                                                                                      _model.resultmi = await actions.calSubTotalForHoldListminus(
-                                                                                        FFAppState().selBill.toString(),
-                                                                                        _model.resultminus!.toList(),
-                                                                                      );
-                                                                                      _model.reu34 = await actions.calBillAmt(
-                                                                                        valueOrDefault<double>(
-                                                                                          FFAppState().disAmt,
-                                                                                          0.0,
-                                                                                        ),
-                                                                                        FFAppState().delCharges,
-                                                                                      );
+                                                                                if (false)
+                                                                                  Expanded(
+                                                                                    flex: 7,
+                                                                                    child: InkWell(
+                                                                                      splashColor: Colors.transparent,
+                                                                                      focusColor: Colors.transparent,
+                                                                                      hoverColor: Colors.transparent,
+                                                                                      highlightColor: Colors.transparent,
+                                                                                      onTap: () async {
+                                                                                        _model.resultminus = await actions.addToHoldListprdminus(
+                                                                                          ProductStructStruct.maybeFromMap(billItem)!,
+                                                                                          FFAppState().selBill,
+                                                                                          widget!.taxcollection!.toList(),
+                                                                                          functions.enabletaxinclusive(productAndListlaundrybillingAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
+                                                                                        );
+                                                                                        _model.resultmi = await actions.calSubTotalForHoldListminus(
+                                                                                          FFAppState().selBill.toString(),
+                                                                                          _model.resultminus!.toList(),
+                                                                                        );
+                                                                                        _model.reu34 = await actions.calBillAmt(
+                                                                                          valueOrDefault<double>(
+                                                                                            FFAppState().disAmt,
+                                                                                            0.0,
+                                                                                          ),
+                                                                                          FFAppState().delCharges,
+                                                                                        );
 
-                                                                                      safeSetState(() {});
-                                                                                    },
-                                                                                    child: Container(
-                                                                                      width: MediaQuery.sizeOf(context).width * 0.03,
-                                                                                      height: double.infinity,
-                                                                                      decoration: BoxDecoration(
-                                                                                        color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                        boxShadow: [
-                                                                                          BoxShadow(
-                                                                                            blurRadius: 5.0,
-                                                                                            color: Color(0x27000000),
-                                                                                            offset: Offset(
-                                                                                              -4.0,
-                                                                                              1.0,
-                                                                                            ),
-                                                                                            spreadRadius: 1.0,
-                                                                                          )
-                                                                                        ],
-                                                                                        borderRadius: BorderRadius.only(
-                                                                                          bottomLeft: Radius.circular(5.0),
-                                                                                          bottomRight: Radius.circular(0.0),
-                                                                                          topLeft: Radius.circular(5.0),
-                                                                                          topRight: Radius.circular(0.0),
+                                                                                        safeSetState(() {});
+                                                                                      },
+                                                                                      child: Container(
+                                                                                        width: MediaQuery.sizeOf(context).width * 0.03,
+                                                                                        height: double.infinity,
+                                                                                        decoration: BoxDecoration(
+                                                                                          color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                          boxShadow: [
+                                                                                            BoxShadow(
+                                                                                              blurRadius: 5.0,
+                                                                                              color: Color(0x27000000),
+                                                                                              offset: Offset(
+                                                                                                -4.0,
+                                                                                                1.0,
+                                                                                              ),
+                                                                                              spreadRadius: 1.0,
+                                                                                            )
+                                                                                          ],
+                                                                                          borderRadius: BorderRadius.only(
+                                                                                            bottomLeft: Radius.circular(5.0),
+                                                                                            bottomRight: Radius.circular(0.0),
+                                                                                            topLeft: Radius.circular(5.0),
+                                                                                            topRight: Radius.circular(0.0),
+                                                                                          ),
                                                                                         ),
-                                                                                      ),
-                                                                                      child: Icon(
-                                                                                        Icons.remove,
-                                                                                        color: FlutterFlowTheme.of(context).primary,
-                                                                                        size: 20.0,
+                                                                                        child: Icon(
+                                                                                          Icons.remove,
+                                                                                          color: FlutterFlowTheme.of(context).primary,
+                                                                                          size: 20.0,
+                                                                                        ),
                                                                                       ),
                                                                                     ),
                                                                                   ),
-                                                                                ),
                                                                                 Expanded(
                                                                                   flex: 10,
                                                                                   child: Container(
@@ -3407,99 +3279,100 @@ class _ProductAndListlaundrybillingWidgetState
                                                                                     ),
                                                                                   ),
                                                                                 ),
-                                                                                Expanded(
-                                                                                  flex: 7,
-                                                                                  child: InkWell(
-                                                                                    splashColor: Colors.transparent,
-                                                                                    focusColor: Colors.transparent,
-                                                                                    hoverColor: Colors.transparent,
-                                                                                    highlightColor: Colors.transparent,
-                                                                                    onTap: () async {
-                                                                                      var _shouldSetState = false;
-                                                                                      if (getJsonField(
-                                                                                        billItem,
-                                                                                        r'''$.stockable''',
-                                                                                      )) {
-                                                                                        if (!functions.greatethanlesskiosk(
-                                                                                            functions.jsontoint(getJsonField(
-                                                                                              billItem,
-                                                                                              r'''$.currentStock''',
-                                                                                            )),
-                                                                                            functions.jsontoint(getJsonField(
-                                                                                              billItem,
-                                                                                              r'''$.quantity''',
-                                                                                            )))) {
-                                                                                          await showDialog(
-                                                                                            context: context,
-                                                                                            builder: (alertDialogContext) {
-                                                                                              return AlertDialog(
-                                                                                                content: Text('Item Out Of Stock !'),
-                                                                                                actions: [
-                                                                                                  TextButton(
-                                                                                                    onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                    child: Text('Ok'),
-                                                                                                  ),
-                                                                                                ],
-                                                                                              );
-                                                                                            },
-                                                                                          );
-                                                                                          if (_shouldSetState) safeSetState(() {});
-                                                                                          return;
+                                                                                if (false)
+                                                                                  Expanded(
+                                                                                    flex: 7,
+                                                                                    child: InkWell(
+                                                                                      splashColor: Colors.transparent,
+                                                                                      focusColor: Colors.transparent,
+                                                                                      hoverColor: Colors.transparent,
+                                                                                      highlightColor: Colors.transparent,
+                                                                                      onTap: () async {
+                                                                                        var _shouldSetState = false;
+                                                                                        if (getJsonField(
+                                                                                          billItem,
+                                                                                          r'''$.stockable''',
+                                                                                        )) {
+                                                                                          if (!functions.greatethanlesskiosk(
+                                                                                              functions.jsontoint(getJsonField(
+                                                                                                billItem,
+                                                                                                r'''$.currentStock''',
+                                                                                              )),
+                                                                                              functions.jsontoint(getJsonField(
+                                                                                                billItem,
+                                                                                                r'''$.quantity''',
+                                                                                              )))) {
+                                                                                            await showDialog(
+                                                                                              context: context,
+                                                                                              builder: (alertDialogContext) {
+                                                                                                return AlertDialog(
+                                                                                                  content: Text('Item Out Of Stock !'),
+                                                                                                  actions: [
+                                                                                                    TextButton(
+                                                                                                      onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                                      child: Text('Ok'),
+                                                                                                    ),
+                                                                                                  ],
+                                                                                                );
+                                                                                              },
+                                                                                            );
+                                                                                            if (_shouldSetState) safeSetState(() {});
+                                                                                            return;
+                                                                                          }
                                                                                         }
-                                                                                      }
-                                                                                      _model.resultplus = await actions.addToHoldListprdplus(
-                                                                                        ProductStructStruct.maybeFromMap(billItem)!,
-                                                                                        FFAppState().selBill,
-                                                                                        widget!.taxcollection!.toList(),
-                                                                                        functions.enabletaxinclusive(productAndListlaundrybillingAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
-                                                                                      );
-                                                                                      _shouldSetState = true;
-                                                                                      _model.res13 = await actions.calSubTotalForHoldList(
-                                                                                        FFAppState().selBill.toString(),
-                                                                                        _model.resultplus!.toList(),
-                                                                                      );
-                                                                                      _shouldSetState = true;
-                                                                                      _model.reuslt12 = await actions.calBillAmt(
-                                                                                        valueOrDefault<double>(
-                                                                                          FFAppState().disAmt,
-                                                                                          0.0,
+                                                                                        _model.resultplus = await actions.addToHoldListprdplus(
+                                                                                          ProductStructStruct.maybeFromMap(billItem)!,
+                                                                                          FFAppState().selBill,
+                                                                                          widget!.taxcollection!.toList(),
+                                                                                          functions.enabletaxinclusive(productAndListlaundrybillingAppSettingsRecord!.settingList.where((e) => e.title == 'enableInclusiveTax').toList().first.value),
+                                                                                        );
+                                                                                        _shouldSetState = true;
+                                                                                        _model.res13 = await actions.calSubTotalForHoldList(
+                                                                                          FFAppState().selBill.toString(),
+                                                                                          _model.resultplus!.toList(),
+                                                                                        );
+                                                                                        _shouldSetState = true;
+                                                                                        _model.reuslt12 = await actions.calBillAmt(
+                                                                                          valueOrDefault<double>(
+                                                                                            FFAppState().disAmt,
+                                                                                            0.0,
+                                                                                          ),
+                                                                                          FFAppState().delCharges,
+                                                                                        );
+                                                                                        _shouldSetState = true;
+                                                                                        if (_shouldSetState) safeSetState(() {});
+                                                                                      },
+                                                                                      child: Container(
+                                                                                        width: MediaQuery.sizeOf(context).width * 0.03,
+                                                                                        height: double.infinity,
+                                                                                        decoration: BoxDecoration(
+                                                                                          color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                          boxShadow: [
+                                                                                            BoxShadow(
+                                                                                              blurRadius: 5.0,
+                                                                                              color: Color(0x25000000),
+                                                                                              offset: Offset(
+                                                                                                4.0,
+                                                                                                1.0,
+                                                                                              ),
+                                                                                              spreadRadius: 1.0,
+                                                                                            )
+                                                                                          ],
+                                                                                          borderRadius: BorderRadius.only(
+                                                                                            bottomLeft: Radius.circular(0.0),
+                                                                                            bottomRight: Radius.circular(5.0),
+                                                                                            topLeft: Radius.circular(0.0),
+                                                                                            topRight: Radius.circular(5.0),
+                                                                                          ),
                                                                                         ),
-                                                                                        FFAppState().delCharges,
-                                                                                      );
-                                                                                      _shouldSetState = true;
-                                                                                      if (_shouldSetState) safeSetState(() {});
-                                                                                    },
-                                                                                    child: Container(
-                                                                                      width: MediaQuery.sizeOf(context).width * 0.03,
-                                                                                      height: double.infinity,
-                                                                                      decoration: BoxDecoration(
-                                                                                        color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                        boxShadow: [
-                                                                                          BoxShadow(
-                                                                                            blurRadius: 5.0,
-                                                                                            color: Color(0x25000000),
-                                                                                            offset: Offset(
-                                                                                              4.0,
-                                                                                              1.0,
-                                                                                            ),
-                                                                                            spreadRadius: 1.0,
-                                                                                          )
-                                                                                        ],
-                                                                                        borderRadius: BorderRadius.only(
-                                                                                          bottomLeft: Radius.circular(0.0),
-                                                                                          bottomRight: Radius.circular(5.0),
-                                                                                          topLeft: Radius.circular(0.0),
-                                                                                          topRight: Radius.circular(5.0),
+                                                                                        child: Icon(
+                                                                                          Icons.add,
+                                                                                          color: FlutterFlowTheme.of(context).primary,
+                                                                                          size: 20.0,
                                                                                         ),
-                                                                                      ),
-                                                                                      child: Icon(
-                                                                                        Icons.add,
-                                                                                        color: FlutterFlowTheme.of(context).primary,
-                                                                                        size: 20.0,
                                                                                       ),
                                                                                     ),
                                                                                   ),
-                                                                                ),
                                                                               ],
                                                                             ),
                                                                           ),

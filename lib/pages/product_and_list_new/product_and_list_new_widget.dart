@@ -2363,7 +2363,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                 style: FlutterFlowTheme.of(context).labelLarge.override(
                                                                                                       fontFamily: FlutterFlowTheme.of(context).labelLargeFamily,
                                                                                                       color: FlutterFlowTheme.of(context).lineColor,
-                                                                                                      fontSize: 15.0,
+                                                                                                      fontSize: 14.0,
                                                                                                       letterSpacing: 0.0,
                                                                                                       useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).labelLargeFamily),
                                                                                                     ),
@@ -2630,6 +2630,7 @@ class _ProductAndListNewWidgetState extends State<ProductAndListNewWidget>
                                                                                                       textAlign: TextAlign.center,
                                                                                                       style: FlutterFlowTheme.of(context).titleMedium.override(
                                                                                                             fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
+                                                                                                            fontSize: 14.0,
                                                                                                             letterSpacing: 0.0,
                                                                                                             useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleMediumFamily),
                                                                                                           ),

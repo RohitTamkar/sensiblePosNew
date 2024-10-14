@@ -108,22 +108,10 @@ class ProductAndListlaundrybillingModel
   List<ProductStructStruct>? prdhive;
   // State field(s) for GridView widget.
   ScrollController? gridViewController;
-  // Stores action output result for [Custom Action - addToHoldListprdCopy] action in ProductName widget.
-  List<dynamic>? addtosavebill3;
-  // Stores action output result for [Custom Action - calSubTotalForHoldList] action in ProductName widget.
-  double? calculateResult1;
-  // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
-  double? calbillAmt2s;
-  // Stores action output result for [Custom Action - addToHoldListprdCopy] action in ProductName widget.
-  List<dynamic>? addtosavebill3d;
-  // Stores action output result for [Custom Action - calSubTotalForHoldList] action in ProductName widget.
-  double? calculateResult1d;
-  // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
-  double? calbillAmt2sd;
-  // Stores action output result for [Custom Action - addToHoldListprdCopy] action in ProductName widget.
-  List<dynamic>? addtosavebill2;
-  // Stores action output result for [Custom Action - calSubTotalForHoldList] action in ProductName widget.
-  double? calculateResult23;
+  // Stores action output result for [Custom Action - laundryAddToHoldListprd] action in ProductName widget.
+  List<dynamic>? addtosavebill22;
+  // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in ProductName widget.
+  double? calculateResult233;
   // Stores action output result for [Custom Action - calBillAmt] action in ProductName widget.
   double? calbillAmt3;
   // Stores action output result for [Custom Action - addToHoldListprdCopy] action in productimage widget.
