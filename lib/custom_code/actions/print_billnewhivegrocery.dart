@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 // Imports other custom actions
 
 import 'dart:async';
@@ -56,6 +58,7 @@ Future printBillnewhivegrocery(
   FFAppState().printerName = "";
   List<int> bytes = [];
   String billColumn3;
+  String billColumn4;
   String taxColumn3;
   dynamic obj;
 
@@ -63,6 +66,7 @@ Future printBillnewhivegrocery(
   if (size == 46) {
     billColumn3 =
         "ITEM_NAME              QTY     RATE     TOTAL "; // 20, 8, 9, 9 (46)
+    billColumn4 = "ITEM_NAME           QTY   RATE  DIS%   TOTAL  ";
     taxColumn3 = "TAX%      TAXABLE     CGST     SGST     TAXAMT";
 
     if (data.length > 0) {
@@ -253,14 +257,25 @@ Future printBillnewhivegrocery(
               width: PosTextSize.size1,
               bold: false,
               align: PosAlign.center));
-
-      bytes += generator.text(billColumn3,
-          styles: const PosStyles(
-            height: PosTextSize.size1,
-            width: PosTextSize.size1,
-            bold: false,
-            //align: PosAlign.center
-          ));
+      if (appSetting.settingList.any((setting) =>
+          setting.title == 'enableproductwisediscount' &&
+          setting.value == true)) {
+        bytes += generator.text(billColumn4,
+            styles: const PosStyles(
+              height: PosTextSize.size1,
+              width: PosTextSize.size1,
+              bold: false,
+              //align: PosAlign.center
+            ));
+      } else {
+        bytes += generator.text(billColumn3,
+            styles: const PosStyles(
+              height: PosTextSize.size1,
+              width: PosTextSize.size1,
+              bold: false,
+              //align: PosAlign.center
+            ));
+      }
 
       bytes += generator.text("-----------------------------------------------",
           styles: const PosStyles(
@@ -270,10 +285,21 @@ Future printBillnewhivegrocery(
               align: PosAlign.center));
 
       for (int i = 0; i < obj["itemList"].length; i++) {
+        int s = i + 1;
         bytes += generator.row([
           PosColumn(
+            text: '$s.',
+            width: 1,
+            styles: PosStyles(
+              height: PosTextSize.size1,
+              width: PosTextSize.size1,
+              bold: false,
+              // align: PosAlign.center
+            ),
+          ),
+          PosColumn(
             text: obj["itemList"][i]["name"].toString(),
-            width: 6,
+            width: 4,
             styles: PosStyles(
               fontType: PosFontType.fontA,
               height: PosTextSize.size1,
@@ -283,10 +309,8 @@ Future printBillnewhivegrocery(
             ),
           ),
           PosColumn(
-            text: obj["itemList"][i]["quantity"].toString() +
-                ' ' +
-                obj["itemList"][i]["unit"].toString(),
-            width: 2,
+            text: obj["itemList"][i]["quantity"].toString(),
+            width: 1,
             styles: PosStyles(
               height: PosTextSize.size1,
               width: PosTextSize.size1,
@@ -296,6 +320,16 @@ Future printBillnewhivegrocery(
           ),
           PosColumn(
             text: obj["itemList"][i]["price"].toString(),
+            width: 2,
+            styles: PosStyles(
+              height: PosTextSize.size1,
+              width: PosTextSize.size1,
+              bold: false,
+              // align: PosAlign.center
+            ),
+          ),
+          PosColumn(
+            text: obj["itemList"][i]["disPer"].toString(),
             width: 2,
             styles: PosStyles(
               height: PosTextSize.size1,
@@ -381,7 +415,7 @@ Future printBillnewhivegrocery(
       if (invoiceDetails.taxAmt != 0) {
         bytes += generator.row([
           PosColumn(
-            text: "Tax : ",
+            text: "Total Tax : ",
             width: 6,
             styles: PosStyles(
                 fontType: PosFontType.fontA,
@@ -401,6 +435,39 @@ Future printBillnewhivegrocery(
                 align: PosAlign.right),
           )
         ]);
+        bytes += generator.text(
+            "-----------------------------------------------",
+            styles: const PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.center));
+      }
+      int disPer = invoiceDetails.discountPer!.round();
+      if (invoiceDetails.discountAmt != 0) {
+        bytes += generator.row([
+          PosColumn(
+            text: "Total Discount Amt",
+            width: 8,
+            styles: PosStyles(
+                fontType: PosFontType.fontA,
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.left),
+          ),
+          PosColumn(
+            text: invoiceDetails.discountAmt.toString(),
+            width: 4,
+            styles: PosStyles(
+                fontType: PosFontType.fontA,
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                align: PosAlign.right),
+          )
+        ]);
+
         bytes += generator.text(
             "-----------------------------------------------",
             styles: const PosStyles(
@@ -440,41 +507,8 @@ Future printBillnewhivegrocery(
                 bold: false,
                 align: PosAlign.center));
       }
-      int disPer = invoiceDetails.discountPer!.round();
-      if (invoiceDetails.discountAmt != 0) {
-        bytes += generator.row([
-          PosColumn(
-            text: "Discount (" + disPer.toString() + "%): ",
-            width: 8,
-            styles: PosStyles(
-                fontType: PosFontType.fontA,
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false,
-                align: PosAlign.left),
-          ),
-          PosColumn(
-            text: invoiceDetails.discountAmt.toString(),
-            width: 4,
-            styles: PosStyles(
-                fontType: PosFontType.fontA,
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false,
-                align: PosAlign.right),
-          )
-        ]);
 
-        bytes += generator.text(
-            "-----------------------------------------------",
-            styles: const PosStyles(
-                height: PosTextSize.size1,
-                width: PosTextSize.size1,
-                bold: false,
-                align: PosAlign.center));
-      }
-
-      bytes += generator.text("NET :" + FFAppState().finalAmt.toString(),
+      bytes += generator.text("Grand Total:" + FFAppState().finalAmt.toString(),
           styles: PosStyles(
               height: PosTextSize.size2,
               width: PosTextSize.size2,
@@ -606,7 +640,7 @@ Future printBillnewhivegrocery(
               ),
             ),
             PosColumn(
-              text: values["taxable"]!.toString(),
+              text: values["taxable"]!.toStringAsFixed(2),
               width: 3,
               styles: PosStyles(
                 height: PosTextSize.size1,
@@ -988,7 +1022,7 @@ Future printBillnewhivegrocery(
 
       String printLine = '';
       String dateString = '';
-      String serialTemp = 'Serial no: ' + FFAppState().count.toString();
+      String serialTemp = 'Serial no: ' + FFAppState().newcount.toString();
 
       final DateTime now = DateTime.now();
       final DateFormat formatter = DateFormat('dd-MM-yyyy');
@@ -1641,69 +1675,83 @@ Future printBillnewhivegrocery(
   }
 
   if (bytes.length > 0) {
-    //_printEscPos(bytes, generator);
-
     if (selectedPrinter == null) return;
     var bluetoothPrinter = selectedPrinter[0]!;
 
-    switch (bluetoothPrinter["typePrinter"]) {
-      case PrinterType.usb:
-        bytes += generator.feed(2);
-        bytes += generator.cut();
-        FFAppState().printerName = statusName;
-        FFAppState().isPrinterConnected = status;
-        await printerManager.connect(
-            type: bluetoothPrinter["typePrinter"],
-            model: UsbPrinterInput(
-                name: bluetoothPrinter["deviceName"],
-                productId: bluetoothPrinter["productId"],
-                vendorId: bluetoothPrinter["vendorId"]));
-        pendingTask = null;
-        if (Platform.isAndroid) pendingTask = bytes;
-        break;
-      case PrinterType.bluetooth:
-        bytes += generator.cut();
-        FFAppState().printerName = statusName;
-        FFAppState().isPrinterConnected = status;
-        await printerManager.connect(
-            type: bluetoothPrinter["typePrinter"],
-            model: BluetoothPrinterInput(
-              name: bluetoothPrinter["deviceName"],
-              address: bluetoothPrinter["address"],
-              isBle: bluetoothPrinter["isBle"] ?? false,
-            ));
-        pendingTask = null;
-        if (Platform.isIOS || Platform.isAndroid) pendingTask = bytes;
-        break;
-      case PrinterType.network:
-        bytes += generator.feed(2);
-        bytes += generator.cut();
-        await printerManager.connect(
-            type: bluetoothPrinter["typePrinter"],
-            model: TcpPrinterInput(ipAddress: bluetoothPrinter.address!));
-        break;
-      default:
-    }
-    if (bluetoothPrinter["typePrinter"] == PrinterType.bluetooth) {
-      _currentStatus = BTStatus.connected;
+    // Function to print a single bill
+    Future<void> printBill(List<int> billBytes) async {
+      switch (bluetoothPrinter["typePrinter"]) {
+        case PrinterType.usb:
+          billBytes += generator.feed(2);
+          billBytes += generator.cut();
+          FFAppState().printerName = statusName;
+          FFAppState().isPrinterConnected = status;
+          await printerManager.connect(
+              type: bluetoothPrinter["typePrinter"],
+              model: UsbPrinterInput(
+                  name: bluetoothPrinter["deviceName"],
+                  productId: bluetoothPrinter["productId"],
+                  vendorId: bluetoothPrinter["vendorId"]));
+          pendingTask = null;
+          if (Platform.isAndroid) pendingTask = billBytes;
+          break;
 
-      if (_currentStatus == BTStatus.connected) {
-        FFAppState().printerName = "connected bt";
-        printerManager.send(
-            type: bluetoothPrinter["typePrinter"], bytes: bytes);
-        pendingTask = null;
+        case PrinterType.bluetooth:
+          billBytes += generator.cut();
+          FFAppState().printerName = statusName;
+          FFAppState().isPrinterConnected = status;
+          await printerManager.connect(
+              type: bluetoothPrinter["typePrinter"],
+              model: BluetoothPrinterInput(
+                name: bluetoothPrinter["deviceName"],
+                address: bluetoothPrinter["address"],
+                isBle: bluetoothPrinter["isBle"] ?? false,
+              ));
+          pendingTask = null;
+          if (Platform.isIOS || Platform.isAndroid) pendingTask = billBytes;
+          break;
+
+        case PrinterType.network:
+          billBytes += generator.feed(2);
+          billBytes += generator.cut();
+          await printerManager.connect(
+              type: bluetoothPrinter["typePrinter"],
+              model: TcpPrinterInput(ipAddress: bluetoothPrinter.address!));
+          break;
+
+        default:
       }
-    } else if (bluetoothPrinter["typePrinter"] == PrinterType.usb &&
-        Platform.isAndroid) {
-      // _currentUsbStatus is only supports on Android
-      if (_currentUsbStatus == USBStatus.connected) {
-        FFAppState().printerName = "connected usb";
+
+      if (bluetoothPrinter["typePrinter"] == PrinterType.bluetooth) {
+        _currentStatus = BTStatus.connected;
+
+        if (_currentStatus == BTStatus.connected) {
+          FFAppState().printerName = "connected bt";
+          printerManager.send(
+              type: bluetoothPrinter["typePrinter"], bytes: billBytes);
+          pendingTask = null;
+        }
+      } else if (bluetoothPrinter["typePrinter"] == PrinterType.usb &&
+          Platform.isAndroid) {
+        if (_currentUsbStatus == USBStatus.connected) {
+          FFAppState().printerName = "connected usb";
+          printerManager.send(
+              type: bluetoothPrinter["typePrinter"], bytes: billBytes);
+          pendingTask = null;
+        }
+      } else {
         printerManager.send(
-            type: bluetoothPrinter["typePrinter"], bytes: bytes);
-        pendingTask = null;
+            type: bluetoothPrinter["typePrinter"], bytes: billBytes);
       }
-    } else {
-      printerManager.send(type: bluetoothPrinter["typePrinter"], bytes: bytes);
     }
+
+    // Generate and print the first bill
+    await printBill(bytes);
+
+    // Optionally, if you want a slight delay between prints
+    await Future.delayed(Duration(seconds: 1));
+
+    // Generate and print the second bill (reuse bytes or regenerate)
+    await printBill(bytes);
   }
 }

@@ -3529,9 +3529,123 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                               }
                                             }
                                           }
+
+                                          var invoiceRecordReference =
+                                              InvoiceRecord.createDoc(
+                                                  FFAppState().outletIdRef!);
+                                          await invoiceRecordReference.set({
+                                            ...createInvoiceRecordData(
+                                              invoice:
+                                                  functions.genInvoiceNumyear(
+                                                      FFAppState().newcount),
+                                              party: valueOrDefault<String>(
+                                                FFAppState().setCustRef?.id,
+                                                'NA',
+                                              ),
+                                              products: '',
+                                              invoiceDate:
+                                                  functions.timestampToMili(
+                                                      getCurrentTimestamp),
+                                              paymentMode: getJsonField(
+                                                FFAppState().groceryJson,
+                                                r'''$.paymentMode''',
+                                              ).toString(),
+                                              dayId: functions.getDayId(),
+                                              discountAmt:
+                                                  valueOrDefault<double>(
+                                                FFAppState().disAmt,
+                                                0.0,
+                                              ),
+                                              discountPer:
+                                                  valueOrDefault<double>(
+                                                FFAppState().disPer,
+                                                0.0,
+                                              ),
+                                              delliveryChrg:
+                                                  valueOrDefault<double>(
+                                                FFAppState().delCharges,
+                                                0.0,
+                                              ),
+                                              taxAmt: FFAppState().taxamt,
+                                              billAmt: valueOrDefault<double>(
+                                                FFAppState().billAmt,
+                                                0.0,
+                                              ),
+                                              finalBillAmt:
+                                                  valueOrDefault<double>(
+                                                FFAppState().finalAmt,
+                                                0.0,
+                                              ),
+                                              shiftId: '',
+                                            ),
+                                            ...mapToFirestore(
+                                              {
+                                                'productList':
+                                                    getSelItemListListFirestoreData(
+                                                  _model.prdlistsavebill,
+                                                ),
+                                              },
+                                            ),
+                                          });
+                                          _model.invonline = InvoiceRecord
+                                              .getDocumentFromData({
+                                            ...createInvoiceRecordData(
+                                              invoice:
+                                                  functions.genInvoiceNumyear(
+                                                      FFAppState().newcount),
+                                              party: valueOrDefault<String>(
+                                                FFAppState().setCustRef?.id,
+                                                'NA',
+                                              ),
+                                              products: '',
+                                              invoiceDate:
+                                                  functions.timestampToMili(
+                                                      getCurrentTimestamp),
+                                              paymentMode: getJsonField(
+                                                FFAppState().groceryJson,
+                                                r'''$.paymentMode''',
+                                              ).toString(),
+                                              dayId: functions.getDayId(),
+                                              discountAmt:
+                                                  valueOrDefault<double>(
+                                                FFAppState().disAmt,
+                                                0.0,
+                                              ),
+                                              discountPer:
+                                                  valueOrDefault<double>(
+                                                FFAppState().disPer,
+                                                0.0,
+                                              ),
+                                              delliveryChrg:
+                                                  valueOrDefault<double>(
+                                                FFAppState().delCharges,
+                                                0.0,
+                                              ),
+                                              taxAmt: FFAppState().taxamt,
+                                              billAmt: valueOrDefault<double>(
+                                                FFAppState().billAmt,
+                                                0.0,
+                                              ),
+                                              finalBillAmt:
+                                                  valueOrDefault<double>(
+                                                FFAppState().finalAmt,
+                                                0.0,
+                                              ),
+                                              shiftId: '',
+                                            ),
+                                            ...mapToFirestore(
+                                              {
+                                                'productList':
+                                                    getSelItemListListFirestoreData(
+                                                  _model.prdlistsavebill,
+                                                ),
+                                              },
+                                            ),
+                                          }, invoiceRecordReference);
+                                          _shouldSetState = true;
                                           _model.hiveInvoiceDataCopyCopy =
                                               await actions.addInvoiceBillhive(
-                                            '',
+                                            _model.invonline!.reference.id,
                                             functions.genInvoiceNumyear(
                                                 FFAppState().newcount),
                                             FFAppState().setCustName,
@@ -3713,6 +3827,112 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                     .id,
                                             );
                                             safeSetState(() {});
+                                            _model.shiftondata =
+                                                await queryShiftRecordOnce(
+                                              parent: FFAppState().outletIdRef,
+                                              queryBuilder: (shiftRecord) =>
+                                                  shiftRecord.where(
+                                                'id',
+                                                isEqualTo:
+                                                    valueOrDefault<String>(
+                                                  getJsonField(
+                                                    FFAppState()
+                                                        .shiftDetailsJson,
+                                                    r'''$.ref''',
+                                                  )?.toString(),
+                                                  'NA',
+                                                ),
+                                              ),
+                                              singleRecord: true,
+                                            ).then((s) => s.firstOrNull);
+                                            _shouldSetState = true;
+
+                                            await _model.shiftondata!.reference
+                                                .update(createShiftRecordData(
+                                              billCount:
+                                                  functions.lastBillCount(_model
+                                                      .getOfflineShiftdetails!
+                                                      .billCount),
+                                              dayId: getJsonField(
+                                                _model.shiftSummarResultsNew2,
+                                                r'''$.dayId''',
+                                              ).toString(),
+                                              lastBillNo: getJsonField(
+                                                _model.shiftSummarResultsNew2,
+                                                r'''$.lastBillNo''',
+                                              ).toString(),
+                                              lastBillTime:
+                                                  functions.timestampToMili(
+                                                      getCurrentTimestamp),
+                                              tax: getJsonField(
+                                                _model.shiftSummarResultsNew2,
+                                                r'''$.tax''',
+                                              ),
+                                              deliveryCharges: getJsonField(
+                                                _model.shiftSummarResultsNew2,
+                                                r'''$.deliveryCharges''',
+                                              ),
+                                              discount: getJsonField(
+                                                _model.shiftSummarResultsNew2,
+                                                r'''$.discount''',
+                                              ),
+                                              totalSale: getJsonField(
+                                                _model.shiftSummarResultsNew2,
+                                                r'''$.totalSale''',
+                                              ),
+                                              cashSale: getJsonField(
+                                                _model.shiftSummarResultsNew2,
+                                                r'''$.cashSale''',
+                                              ),
+                                              paymentJson: getJsonField(
+                                                _model.shiftSummarResultsNew2,
+                                                r'''$.paymentJson''',
+                                              ).toString(),
+                                              code: FFAppState()
+                                                  .shiftDetails
+                                                  .code,
+                                              endTime: FFAppState()
+                                                  .shiftDetails
+                                                  .endTime,
+                                              advanceAmtTotal: FFAppState()
+                                                  .shiftDetails
+                                                  .advanceAmtTotal,
+                                              customerReciveAmtTotal:
+                                                  FFAppState()
+                                                      .shiftDetails
+                                                      .customerReciveAmtTotal,
+                                              expensesAmtTotal: FFAppState()
+                                                  .shiftDetails
+                                                  .expensesAmtTotal,
+                                              openingAmt: FFAppState()
+                                                  .shiftDetails
+                                                  .openingAmt,
+                                              receiveAmtTotal: FFAppState()
+                                                  .shiftDetails
+                                                  .receiveAmtTotal,
+                                              refoundAmount: FFAppState()
+                                                  .shiftDetails
+                                                  .refoundAmount,
+                                              roundOff: FFAppState()
+                                                  .shiftDetails
+                                                  .roundOff,
+                                              cashInHand: FFAppState()
+                                                  .shiftDetails
+                                                  .cashInHand,
+                                              startTime: FFAppState()
+                                                  .shiftDetails
+                                                  .startTime,
+                                              inActive: FFAppState()
+                                                  .shiftDetails
+                                                  .inActive,
+                                              shiftNo: FFAppState()
+                                                  .shiftDetails
+                                                  .shiftNo,
+                                              shiftId: getJsonField(
+                                                _model.shiftSummarResultsNew2,
+                                                r'''$.shiftId''',
+                                              ).toString(),
+                                            ));
                                             _model.updatedShift =
                                                 await actions.hiveShiftCrud(
                                               _model.shiftidhive2,
@@ -4030,6 +4250,126 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                               return;
                                             }
                                           }
+
+                                          var invoiceRecordReference =
+                                              InvoiceRecord.createDoc(
+                                                  FFAppState().outletIdRef!);
+                                          await invoiceRecordReference.set({
+                                            ...createInvoiceRecordData(
+                                              invoice:
+                                                  functions.genInvoiceNumyear(
+                                                      FFAppState().newcount),
+                                              party: valueOrDefault<String>(
+                                                FFAppState().setCustRef?.id,
+                                                'NA',
+                                              ),
+                                              products: '',
+                                              invoiceDate:
+                                                  functions.timestampToMili(
+                                                      getCurrentTimestamp),
+                                              paymentMode: getJsonField(
+                                                FFAppState().groceryJson,
+                                                r'''$.paymentMode''',
+                                              ).toString(),
+                                              dayId: functions.getDayId(),
+                                              discountAmt:
+                                                  valueOrDefault<double>(
+                                                FFAppState().disAmt,
+                                                0.0,
+                                              ),
+                                              discountPer:
+                                                  valueOrDefault<double>(
+                                                FFAppState().disPer,
+                                                0.0,
+                                              ),
+                                              delliveryChrg:
+                                                  valueOrDefault<double>(
+                                                FFAppState().delCharges,
+                                                0.0,
+                                              ),
+                                              taxAmt: FFAppState().taxamt,
+                                              billAmt: valueOrDefault<double>(
+                                                FFAppState().billAmt,
+                                                0.0,
+                                              ),
+                                              finalBillAmt:
+                                                  valueOrDefault<double>(
+                                                FFAppState().finalAmt,
+                                                0.0,
+                                              ),
+                                              shiftId: getJsonField(
+                                                FFAppState().shiftDetailsJson,
+                                                r'''$.shiftId''',
+                                              ).toString(),
+                                            ),
+                                            ...mapToFirestore(
+                                              {
+                                                'productList':
+                                                    getSelItemListListFirestoreData(
+                                                  _model.prdlinstnewtx,
+                                                ),
+                                              },
+                                            ),
+                                          });
+                                          _model.invonlineprt = InvoiceRecord
+                                              .getDocumentFromData({
+                                            ...createInvoiceRecordData(
+                                              invoice:
+                                                  functions.genInvoiceNumyear(
+                                                      FFAppState().newcount),
+                                              party: valueOrDefault<String>(
+                                                FFAppState().setCustRef?.id,
+                                                'NA',
+                                              ),
+                                              products: '',
+                                              invoiceDate:
+                                                  functions.timestampToMili(
+                                                      getCurrentTimestamp),
+                                              paymentMode: getJsonField(
+                                                FFAppState().groceryJson,
+                                                r'''$.paymentMode''',
+                                              ).toString(),
+                                              dayId: functions.getDayId(),
+                                              discountAmt:
+                                                  valueOrDefault<double>(
+                                                FFAppState().disAmt,
+                                                0.0,
+                                              ),
+                                              discountPer:
+                                                  valueOrDefault<double>(
+                                                FFAppState().disPer,
+                                                0.0,
+                                              ),
+                                              delliveryChrg:
+                                                  valueOrDefault<double>(
+                                                FFAppState().delCharges,
+                                                0.0,
+                                              ),
+                                              taxAmt: FFAppState().taxamt,
+                                              billAmt: valueOrDefault<double>(
+                                                FFAppState().billAmt,
+                                                0.0,
+                                              ),
+                                              finalBillAmt:
+                                                  valueOrDefault<double>(
+                                                FFAppState().finalAmt,
+                                                0.0,
+                                              ),
+                                              shiftId: getJsonField(
+                                                FFAppState().shiftDetailsJson,
+                                                r'''$.shiftId''',
+                                              ).toString(),
+                                            ),
+                                            ...mapToFirestore(
+                                              {
+                                                'productList':
+                                                    getSelItemListListFirestoreData(
+                                                  _model.prdlinstnewtx,
+                                                ),
+                                              },
+                                            ),
+                                          }, invoiceRecordReference);
+                                          _shouldSetState = true;
                                           _model.hiveInvoiceData =
                                               await actions.addInvoiceBillhive(
                                             '',
@@ -4206,6 +4546,116 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                     .id,
                                             );
                                             safeSetState(() {});
+                                            _model.shiftondataprint =
+                                                await queryShiftRecordOnce(
+                                              parent: FFAppState().outletIdRef,
+                                              queryBuilder: (shiftRecord) =>
+                                                  shiftRecord.where(
+                                                'id',
+                                                isEqualTo:
+                                                    valueOrDefault<String>(
+                                                  getJsonField(
+                                                    FFAppState()
+                                                        .shiftDetailsJson,
+                                                    r'''$.ref''',
+                                                  )?.toString(),
+                                                  'NA',
+                                                ),
+                                              ),
+                                              singleRecord: true,
+                                            ).then((s) => s.firstOrNull);
+                                            _shouldSetState = true;
+
+                                            await _model
+                                                .shiftondataprint!.reference
+                                                .update(createShiftRecordData(
+                                              billCount: valueOrDefault<int>(
+                                                functions.lastBillCount(
+                                                    FFAppState()
+                                                        .shiftDetails
+                                                        .billCount),
+                                                0,
+                                              ),
+                                              dayId: getJsonField(
+                                                _model.shiftSummarResultsNew,
+                                                r'''$.dayId''',
+                                              ).toString(),
+                                              lastBillNo: getJsonField(
+                                                _model.shiftSummarResultsNew,
+                                                r'''$.lastBillNo''',
+                                              ).toString(),
+                                              lastBillTime:
+                                                  functions.timestampToMili(
+                                                      getCurrentTimestamp),
+                                              tax: getJsonField(
+                                                _model.shiftSummarResultsNew,
+                                                r'''$.tax''',
+                                              ),
+                                              deliveryCharges: getJsonField(
+                                                _model.shiftSummarResultsNew,
+                                                r'''$.deliveryCharges''',
+                                              ),
+                                              discount: getJsonField(
+                                                _model.shiftSummarResultsNew,
+                                                r'''$.discount''',
+                                              ),
+                                              totalSale: getJsonField(
+                                                _model.shiftSummarResultsNew,
+                                                r'''$.totalSale''',
+                                              ),
+                                              cashSale: getJsonField(
+                                                _model.shiftSummarResultsNew,
+                                                r'''$.cashSale''',
+                                              ),
+                                              paymentJson: getJsonField(
+                                                _model.shiftSummarResultsNew,
+                                                r'''$.paymentJson''',
+                                              ).toString(),
+                                              code: FFAppState()
+                                                  .shiftDetails
+                                                  .code,
+                                              endTime: FFAppState()
+                                                  .shiftDetails
+                                                  .endTime,
+                                              advanceAmtTotal: FFAppState()
+                                                  .shiftDetails
+                                                  .advanceAmtTotal,
+                                              customerReciveAmtTotal:
+                                                  FFAppState()
+                                                      .shiftDetails
+                                                      .customerReciveAmtTotal,
+                                              expensesAmtTotal: FFAppState()
+                                                  .shiftDetails
+                                                  .expensesAmtTotal,
+                                              openingAmt: FFAppState()
+                                                  .shiftDetails
+                                                  .openingAmt,
+                                              receiveAmtTotal: FFAppState()
+                                                  .shiftDetails
+                                                  .receiveAmtTotal,
+                                              refoundAmount: FFAppState()
+                                                  .shiftDetails
+                                                  .refoundAmount,
+                                              roundOff: FFAppState()
+                                                  .shiftDetails
+                                                  .roundOff,
+                                              cashInHand: FFAppState()
+                                                  .shiftDetails
+                                                  .cashInHand,
+                                              startTime: FFAppState()
+                                                  .shiftDetails
+                                                  .startTime,
+                                              inActive: FFAppState()
+                                                  .shiftDetails
+                                                  .inActive,
+                                              shiftNo: FFAppState()
+                                                  .shiftDetails
+                                                  .shiftNo,
+                                              shiftId: getJsonField(
+                                                _model.shiftSummarResultsNew,
+                                                r'''$.shiftId''',
+                                              ).toString(),
+                                            ));
                                             _model.updatedShiftDetails =
                                                 await actions.hiveShiftCrud(
                                               FFAppState()

@@ -578,6 +578,8 @@ class _ProductAndListlaundrybillingWidgetState
                                                                             record,
                                                                             [
                                                                           record
+                                                                              .mobile!,
+                                                                          record
                                                                               .name!
                                                                         ]),
                                                                   )

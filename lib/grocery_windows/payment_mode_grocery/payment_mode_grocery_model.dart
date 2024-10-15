@@ -69,6 +69,8 @@ class PaymentModeGroceryModel
   int? totalcredit2;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   PaymentRecord? paymentDoc2;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  InvoiceRecord? invonline;
   // Stores action output result for [Custom Action - addInvoiceBillhive] action in Button widget.
   InvoiceStructStruct? hiveInvoiceDataCopyCopy;
   // Stores action output result for [Custom Action - calShiftSummaryNewgrocery] action in Button widget.
@@ -77,6 +79,8 @@ class PaymentModeGroceryModel
   int? shiftidhive2;
   // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
   ShiftDetailsStruct? getOfflineShiftdetails;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  ShiftRecord? shiftondata;
   // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
   ShiftDetailsStruct? updatedShift;
   // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
@@ -89,10 +93,14 @@ class PaymentModeGroceryModel
   int? totalcredit;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   PaymentRecord? paymentDoc22d;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  InvoiceRecord? invonlineprt;
   // Stores action output result for [Custom Action - addInvoiceBillhive] action in Button widget.
   InvoiceStructStruct? hiveInvoiceData;
   // Stores action output result for [Custom Action - calShiftSummaryNewgrocery] action in Button widget.
   dynamic? shiftSummarResultsNew;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  ShiftRecord? shiftondataprint;
   // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
   ShiftDetailsStruct? updatedShiftDetails;
   // Stores action output result for [Custom Action - scanPrinter] action in Button widget.

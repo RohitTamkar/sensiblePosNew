@@ -1322,17 +1322,19 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                           crossAxisAlignment:
                                               CrossAxisAlignment.center,
                                           children: [
-                                            Container(
-                                              width: 100.0,
-                                              height: 45.0,
-                                              child: custom_widgets.OnlineSync(
+                                            if (false)
+                                              Container(
                                                 width: 100.0,
                                                 height: 45.0,
-                                                outletRef:
-                                                    FFAppState().outletIdRef!,
-                                                userDoc: widget!.userref!,
+                                                child:
+                                                    custom_widgets.OnlineSync(
+                                                  width: 100.0,
+                                                  height: 45.0,
+                                                  outletRef:
+                                                      FFAppState().outletIdRef!,
+                                                  userDoc: widget!.userref!,
+                                                ),
                                               ),
-                                            ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
@@ -1424,59 +1426,6 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
-                                    Expanded(
-                                      child: FFButtonWidget(
-                                        onPressed: () {
-                                          print('Button pressed ...');
-                                        },
-                                        text:
-                                            FFLocalizations.of(context).getText(
-                                          'm2xzgk29' /* Masters */,
-                                        ),
-                                        icon: Icon(
-                                          Icons.content_paste,
-                                          size: 18.0,
-                                        ),
-                                        options: FFButtonOptions(
-                                          height: 35.0,
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  18.0, 0.0, 18.0, 0.0),
-                                          iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                          textStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .labelLarge
-                                              .override(
-                                                fontFamily:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLargeFamily,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w500,
-                                                useGoogleFonts: GoogleFonts
-                                                        .asMap()
-                                                    .containsKey(
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .labelLargeFamily),
-                                              ),
-                                          elevation: 0.0,
-                                          borderSide: BorderSide(
-                                            color: Colors.transparent,
-                                            width: 1.0,
-                                          ),
-                                          borderRadius: BorderRadius.only(
-                                            bottomLeft: Radius.circular(0.0),
-                                            bottomRight: Radius.circular(0.0),
-                                            topLeft: Radius.circular(0.0),
-                                            topRight: Radius.circular(0.0),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
                                     Expanded(
                                       child: FFButtonWidget(
                                         onPressed: () async {
@@ -1811,58 +1760,6 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                         ),
                                         icon: Icon(
                                           Icons.settings_sharp,
-                                          size: 18.0,
-                                        ),
-                                        options: FFButtonOptions(
-                                          height: 35.0,
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  18.0, 0.0, 18.0, 0.0),
-                                          iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                          textStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .labelLarge
-                                              .override(
-                                                fontFamily:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLargeFamily,
-                                                letterSpacing: 0.0,
-                                                useGoogleFonts: GoogleFonts
-                                                        .asMap()
-                                                    .containsKey(
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .labelLargeFamily),
-                                              ),
-                                          elevation: 0.0,
-                                          borderSide: BorderSide(
-                                            color: Colors.transparent,
-                                            width: 1.0,
-                                          ),
-                                          borderRadius: BorderRadius.only(
-                                            bottomLeft: Radius.circular(0.0),
-                                            bottomRight: Radius.circular(0.0),
-                                            topLeft: Radius.circular(0.0),
-                                            topRight: Radius.circular(0.0),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Expanded(
-                                      child: FFButtonWidget(
-                                        onPressed: () {
-                                          print('Button pressed ...');
-                                        },
-                                        text:
-                                            FFLocalizations.of(context).getText(
-                                          'm2w23z7l' /* Edit Bill */,
-                                        ),
-                                        icon: Icon(
-                                          Icons.edit_square,
                                           size: 18.0,
                                         ),
                                         options: FFButtonOptions(

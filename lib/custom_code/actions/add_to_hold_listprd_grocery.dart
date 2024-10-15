@@ -9,10 +9,6 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-import 'index.dart'; // Imports other custom actions
-
-import 'index.dart'; // Imports other custom actions
-
 Future<List<dynamic>> addToHoldListprdGrocery(
   ProductStructStruct document,
   int billno,
@@ -105,9 +101,9 @@ Future<List<dynamic>> addToHoldListprdGrocery(
       "id": document!.id,
       "catId": document!.categoryId,
       "taxId": document!.taxId,
-      "taxPer": taxPer,
+      "taxPer": double.parse(taxPer.toStringAsFixed(2)),
       "taxAmt": double.parse(taxAmt.toStringAsFixed(2)),
-      "disPer": disPer,
+      "disPer": double.parse(disPer.toStringAsFixed(2)),
       "disAmt": disAmt,
       "mfgDate": " ",
       "expDate": " ",
@@ -139,15 +135,22 @@ Future<List<dynamic>> addToHoldListprdGrocery(
         for (int j = 0; j < itemList.length; j++) {
           if (itemList[j]["name"] == data["name"]) {
             itemList[j]["quantity"]++;
-            itemList[j]["disAmt"] = disAmt * itemList[j]["quantity"];
+            itemList[j]["disAmt"] = double.parse(
+                (disAmt * itemList[j]["quantity"]).toStringAsFixed(2));
             itemList[j]["taxAmt"] +=
-                taxAmtPerItem; // Update taxAmt for each item
+                double.parse(taxAmtPerItem.toStringAsFixed(2));
+            // Update taxAmt for each item
             if (inclusiveorexclusive.toLowerCase() == 'inclusive') {
-              itemList[j]["total"] = itemList[j]["quantity"] *
-                  itemList[j]["price"]; // Update total for each item
+              itemList[j]["total"] =
+                  itemList[j]["quantity"] * itemList[j]["price"];
+              // Update total for each item
+              double tt = itemList[j]["total"];
+              itemList[j]["total"] = double.parse(tt.toStringAsFixed(2));
             } else {
               itemList[j]["total"] =
                   itemList[j]["quantity"] * itemList[j]["price"];
+              double tt = itemList[j]["total"];
+              itemList[j]["total"] = double.parse(tt.toStringAsFixed(2));
             }
             list[index]["details"]["itemList"] = itemList;
             FFAppState().allBillsList = list;

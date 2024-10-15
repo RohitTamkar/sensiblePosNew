@@ -168,7 +168,7 @@ class _CustomerDetailsWidgetState extends State<CustomerDetailsWidget> {
                                                   .map(
                                                     (record) => TextSearchItem
                                                         .fromTerms(record,
-                                                            [record.mobile!]),
+                                                            [record.name!]),
                                                   )
                                                   .toList(),
                                             )
