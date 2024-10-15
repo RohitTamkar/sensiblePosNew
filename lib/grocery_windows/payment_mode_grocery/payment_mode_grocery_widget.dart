@@ -4095,6 +4095,11 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                           _model.appsettingnew =
                                               await queryAppSettingsRecordOnce(
                                             parent: FFAppState().outletIdRef,
+                                            queryBuilder: (appSettingsRecord) =>
+                                                appSettingsRecord.where(
+                                              'deviceId',
+                                              isEqualTo: FFAppState().dId,
+                                            ),
                                             singleRecord: true,
                                           ).then((s) => s.firstOrNull);
                                           _shouldSetState = true;
