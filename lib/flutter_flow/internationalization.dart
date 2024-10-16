@@ -27415,7 +27415,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
     '2t007dp7': {
-      'en': 'TextField',
+      'en': 'price',
       'hi': '',
       'kn': '',
       'mr': '',

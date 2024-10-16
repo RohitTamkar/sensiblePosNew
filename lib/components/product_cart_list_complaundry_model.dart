@@ -22,8 +22,8 @@ class ProductCartListComplaundryModel
   String? Function(BuildContext, String?)? textControllerValidator;
   // Stores action output result for [Custom Action - laundryaddToHoldListprdplus] action in TextField widget.
   List<dynamic>? resultplusCopy2;
-  // Stores action output result for [Custom Action - laundryaddToHoldListprdplus] action in TextField widget.
-  List<dynamic>? resultplusCopy22;
+  // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in TextField widget.
+  double? resultofSubCal;
   // Stores action output result for [Custom Action - calBillAmt] action in TextField widget.
   double? reuslt12Copy;
   // Stores action output result for [Custom Action - addToHoldListprdminus] action in Minus widget.

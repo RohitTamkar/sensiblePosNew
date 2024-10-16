@@ -65,7 +65,7 @@ class _ProductCartListComplaundryWidgetState
     _model.textController ??=
         TextEditingController(text: widget!.parameter2?.toString());
     _model.textFieldFocusNode ??= FocusNode();
-
+    _model.textFieldFocusNode!.addListener(() => safeSetState(() {}));
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -175,15 +175,10 @@ class _ProductCartListComplaundryWidgetState
                                         double.tryParse(
                                             _model.textController.text),
                                       );
-                                      _model.resultplusCopy22 = await actions
-                                          .laundryaddToHoldListprdplus(
-                                        widget!.parameter4!,
-                                        FFAppState().selBill,
-                                        widget!.parameter5!.toList(),
-                                        functions.enabletaxinclusive(
-                                            widget!.parameter7!),
-                                        double.tryParse(
-                                            _model.textController.text),
+                                      _model.resultofSubCal = await actions
+                                          .laundrycalSubTotalForHoldList(
+                                        FFAppState().selBill.toString(),
+                                        _model.resultplusCopy2!.toList(),
                                       );
                                       _model.reuslt12Copy =
                                           await actions.calBillAmt(
@@ -203,7 +198,7 @@ class _ProductCartListComplaundryWidgetState
                                     isDense: true,
                                     hintText:
                                         FFLocalizations.of(context).getText(
-                                      '2t007dp7' /* TextField */,
+                                      '2t007dp7' /* price */,
                                     ),
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
@@ -262,6 +257,9 @@ class _ProductCartListComplaundryWidgetState
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMediumFamily),
                                       ),
+                                  keyboardType:
+                                      const TextInputType.numberWithOptions(
+                                          decimal: true),
                                   cursorColor:
                                       FlutterFlowTheme.of(context).primaryText,
                                   validator: _model.textControllerValidator
