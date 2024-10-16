@@ -4,8 +4,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -62,8 +62,18 @@ class _ProductCartListComplaundryWidgetState
     super.initState();
     _model = createModel(context, () => ProductCartListComplaundryModel());
 
-    _model.textController ??=
-        TextEditingController(text: widget!.parameter2?.toString());
+    // On component load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      safeSetState(() {
+        _model.textController?.text = widget!.parameter2!.toString();
+        _model.textController?.selection =
+            TextSelection.collapsed(offset: _model.textController!.text.length);
+      });
+
+      _model.updatePage(() {});
+    });
+
+    _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
     _model.textFieldFocusNode!.addListener(() => safeSetState(() {}));
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -161,37 +171,33 @@ class _ProductCartListComplaundryWidgetState
                                 child: TextFormField(
                                   controller: _model.textController,
                                   focusNode: _model.textFieldFocusNode,
-                                  onChanged: (_) => EasyDebounce.debounce(
-                                    '_model.textController',
-                                    Duration(milliseconds: 2000),
-                                    () async {
-                                      _model.resultplusCopy2 = await actions
-                                          .laundryaddToHoldListprdplus(
-                                        widget!.parameter4!,
-                                        FFAppState().selBill,
-                                        widget!.parameter5!.toList(),
-                                        functions.enabletaxinclusive(
-                                            widget!.parameter7!),
-                                        double.tryParse(
-                                            _model.textController.text),
-                                      );
-                                      _model.resultofSubCal = await actions
-                                          .laundrycalSubTotalForHoldList(
-                                        FFAppState().selBill.toString(),
-                                        _model.resultplusCopy2!.toList(),
-                                      );
-                                      _model.reuslt12Copy =
-                                          await actions.calBillAmt(
-                                        valueOrDefault<double>(
-                                          FFAppState().disAmt,
-                                          0.0,
-                                        ),
-                                        FFAppState().delCharges,
-                                      );
+                                  onFieldSubmitted: (_) async {
+                                    _model.resultplusCopy2Copy = await actions
+                                        .laundryaddToHoldListprdplus(
+                                      widget!.parameter4!,
+                                      FFAppState().selBill,
+                                      widget!.parameter5!.toList(),
+                                      functions.enabletaxinclusive(
+                                          widget!.parameter7!),
+                                      double.tryParse(
+                                          _model.textController.text),
+                                    );
+                                    _model.resultofSubCalCopy = await actions
+                                        .laundrycalSubTotalForHoldList(
+                                      FFAppState().selBill.toString(),
+                                      _model.resultplusCopy2Copy!.toList(),
+                                    );
+                                    _model.reuslt12CopyCopy =
+                                        await actions.calBillAmt(
+                                      valueOrDefault<double>(
+                                        FFAppState().disAmt,
+                                        0.0,
+                                      ),
+                                      FFAppState().delCharges,
+                                    );
 
-                                      safeSetState(() {});
-                                    },
-                                  ),
+                                    safeSetState(() {});
+                                  },
                                   autofocus: false,
                                   obscureText: false,
                                   decoration: InputDecoration(

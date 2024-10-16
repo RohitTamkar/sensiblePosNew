@@ -21,6 +21,8 @@ class SelItemListStruct extends FFFirebaseStruct {
     double? taxAmt,
     String? taxId,
     String? categoryP,
+    double? disAmt,
+    double? disPer,
     FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _name = name,
         _price = price,
@@ -33,6 +35,8 @@ class SelItemListStruct extends FFFirebaseStruct {
         _taxAmt = taxAmt,
         _taxId = taxId,
         _categoryP = categoryP,
+        _disAmt = disAmt,
+        _disPer = disPer,
         super(firestoreUtilData);
 
   // "name" field.
@@ -122,6 +126,24 @@ class SelItemListStruct extends FFFirebaseStruct {
 
   bool hasCategoryP() => _categoryP != null;
 
+  // "disAmt" field.
+  double? _disAmt;
+  double get disAmt => _disAmt ?? 0.0;
+  set disAmt(double? val) => _disAmt = val;
+
+  void incrementDisAmt(double amount) => disAmt = disAmt + amount;
+
+  bool hasDisAmt() => _disAmt != null;
+
+  // "disPer" field.
+  double? _disPer;
+  double get disPer => _disPer ?? 0.0;
+  set disPer(double? val) => _disPer = val;
+
+  void incrementDisPer(double amount) => disPer = disPer + amount;
+
+  bool hasDisPer() => _disPer != null;
+
   static SelItemListStruct fromMap(Map<String, dynamic> data) =>
       SelItemListStruct(
         name: data['name'] as String?,
@@ -135,6 +157,8 @@ class SelItemListStruct extends FFFirebaseStruct {
         taxAmt: castToType<double>(data['taxAmt']),
         taxId: data['taxId'] as String?,
         categoryP: data['categoryP'] as String?,
+        disAmt: castToType<double>(data['disAmt']),
+        disPer: castToType<double>(data['disPer']),
       );
 
   static SelItemListStruct? maybeFromMap(dynamic data) => data is Map
@@ -153,6 +177,8 @@ class SelItemListStruct extends FFFirebaseStruct {
         'taxAmt': _taxAmt,
         'taxId': _taxId,
         'categoryP': _categoryP,
+        'disAmt': _disAmt,
+        'disPer': _disPer,
       }.withoutNulls;
 
   @override
@@ -200,6 +226,14 @@ class SelItemListStruct extends FFFirebaseStruct {
         'categoryP': serializeParam(
           _categoryP,
           ParamType.String,
+        ),
+        'disAmt': serializeParam(
+          _disAmt,
+          ParamType.double,
+        ),
+        'disPer': serializeParam(
+          _disPer,
+          ParamType.double,
         ),
       }.withoutNulls;
 
@@ -260,6 +294,16 @@ class SelItemListStruct extends FFFirebaseStruct {
           ParamType.String,
           false,
         ),
+        disAmt: deserializeParam(
+          data['disAmt'],
+          ParamType.double,
+          false,
+        ),
+        disPer: deserializeParam(
+          data['disPer'],
+          ParamType.double,
+          false,
+        ),
       );
 
   @override
@@ -278,7 +322,9 @@ class SelItemListStruct extends FFFirebaseStruct {
         taxPer == other.taxPer &&
         taxAmt == other.taxAmt &&
         taxId == other.taxId &&
-        categoryP == other.categoryP;
+        categoryP == other.categoryP &&
+        disAmt == other.disAmt &&
+        disPer == other.disPer;
   }
 
   @override
@@ -293,7 +339,9 @@ class SelItemListStruct extends FFFirebaseStruct {
         taxPer,
         taxAmt,
         taxId,
-        categoryP
+        categoryP,
+        disAmt,
+        disPer
       ]);
 }
 
@@ -309,6 +357,8 @@ SelItemListStruct createSelItemListStruct({
   double? taxAmt,
   String? taxId,
   String? categoryP,
+  double? disAmt,
+  double? disPer,
   Map<String, dynamic> fieldValues = const {},
   bool clearUnsetFields = true,
   bool create = false,
@@ -326,6 +376,8 @@ SelItemListStruct createSelItemListStruct({
       taxAmt: taxAmt,
       taxId: taxId,
       categoryP: categoryP,
+      disAmt: disAmt,
+      disPer: disPer,
       firestoreUtilData: FirestoreUtilData(
         clearUnsetFields: clearUnsetFields,
         create: create,

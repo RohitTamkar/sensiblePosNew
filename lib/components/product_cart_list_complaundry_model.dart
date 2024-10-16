@@ -6,8 +6,8 @@ import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'product_cart_list_complaundry_widget.dart'
     show ProductCartListComplaundryWidget;
-import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -21,11 +21,11 @@ class ProductCartListComplaundryModel
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
   // Stores action output result for [Custom Action - laundryaddToHoldListprdplus] action in TextField widget.
-  List<dynamic>? resultplusCopy2;
+  List<dynamic>? resultplusCopy2Copy;
   // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in TextField widget.
-  double? resultofSubCal;
+  double? resultofSubCalCopy;
   // Stores action output result for [Custom Action - calBillAmt] action in TextField widget.
-  double? reuslt12Copy;
+  double? reuslt12CopyCopy;
   // Stores action output result for [Custom Action - addToHoldListprdminus] action in Minus widget.
   List<dynamic>? resultminus;
   // Stores action output result for [Custom Action - calSubTotalForHoldListminus] action in Minus widget.

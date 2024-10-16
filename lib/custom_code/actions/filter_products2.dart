@@ -35,6 +35,8 @@ Future<List<SelItemListStruct>> filterProducts2(
               taxId: itemList[j]["taxId"],
               taxPer: itemList[j]["taxPer"],
               taxAmt: itemList[j]["taxAmt"],
+              disPer: itemList[j]["disPer"],
+              disAmt: itemList[j]["disAmt"],
               isDeletedItem: false,
             );
 

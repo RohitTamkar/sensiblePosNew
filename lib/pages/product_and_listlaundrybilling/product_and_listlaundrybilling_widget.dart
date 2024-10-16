@@ -3126,61 +3126,71 @@ class _ProductAndListlaundrybillingWidgetState
                                                                   ),
                                                                 ),
                                                               ),
-                                                              InkWell(
-                                                                splashColor: Colors
-                                                                    .transparent,
-                                                                focusColor: Colors
-                                                                    .transparent,
-                                                                hoverColor: Colors
-                                                                    .transparent,
-                                                                highlightColor:
-                                                                    Colors
-                                                                        .transparent,
-                                                                onTap:
-                                                                    () async {
-                                                                  _model.res20 =
-                                                                      await actions
-                                                                          .removeHoldListItem(
-                                                                    billItem,
-                                                                    FFAppState()
-                                                                        .selBill,
-                                                                  );
-                                                                  _model.res21 =
-                                                                      await actions
-                                                                          .calSubTotalForHoldList(
-                                                                    FFAppState()
-                                                                        .selBill
-                                                                        .toString(),
-                                                                    FFAppState()
-                                                                        .allBillsList
-                                                                        .toList(),
-                                                                  );
-                                                                  _model.reuslt22 =
-                                                                      await actions
-                                                                          .calBillAmt(
-                                                                    valueOrDefault<
-                                                                        double>(
+                                                              Padding(
+                                                                padding: EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        10.0,
+                                                                        0.0,
+                                                                        10.0,
+                                                                        0.0),
+                                                                child: InkWell(
+                                                                  splashColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  focusColor: Colors
+                                                                      .transparent,
+                                                                  hoverColor: Colors
+                                                                      .transparent,
+                                                                  highlightColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  onTap:
+                                                                      () async {
+                                                                    _model.res20 =
+                                                                        await actions
+                                                                            .removeHoldListItem(
+                                                                      billItem,
                                                                       FFAppState()
-                                                                          .disAmt,
-                                                                      0.0,
-                                                                    ),
+                                                                          .selBill,
+                                                                    );
+                                                                    _model.res21 =
+                                                                        await actions
+                                                                            .calSubTotalForHoldList(
+                                                                      FFAppState()
+                                                                          .selBill
+                                                                          .toString(),
+                                                                      FFAppState()
+                                                                          .allBillsList
+                                                                          .toList(),
+                                                                    );
+                                                                    _model.reuslt22 =
+                                                                        await actions
+                                                                            .calBillAmt(
+                                                                      valueOrDefault<
+                                                                          double>(
+                                                                        FFAppState()
+                                                                            .disAmt,
+                                                                        0.0,
+                                                                      ),
+                                                                      FFAppState()
+                                                                          .delCharges,
+                                                                    );
                                                                     FFAppState()
-                                                                        .delCharges,
-                                                                  );
-                                                                  FFAppState()
-                                                                      .prdid = '';
-                                                                  safeSetState(
-                                                                      () {});
+                                                                        .prdid = '';
+                                                                    safeSetState(
+                                                                        () {});
 
-                                                                  safeSetState(
-                                                                      () {});
-                                                                },
-                                                                child: Icon(
-                                                                  Icons.delete,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primary,
-                                                                  size: 30.0,
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  },
+                                                                  child: Icon(
+                                                                    Icons
+                                                                        .delete,
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primary,
+                                                                    size: 30.0,
+                                                                  ),
                                                                 ),
                                                               ),
                                                             ],
