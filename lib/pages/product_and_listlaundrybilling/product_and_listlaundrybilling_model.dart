@@ -126,6 +126,12 @@ class ProductAndListlaundrybillingModel
   // Models for productCartListComplaundry dynamic component.
   late FlutterFlowDynamicModels<ProductCartListComplaundryModel>
       productCartListComplaundryModels;
+  // Stores action output result for [Custom Action - removeHoldListItem] action in Icon widget.
+  List<dynamic>? res20;
+  // Stores action output result for [Custom Action - calSubTotalForHoldList] action in Icon widget.
+  double? res21;
+  // Stores action output result for [Custom Action - calBillAmt] action in Icon widget.
+  double? reuslt22;
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;

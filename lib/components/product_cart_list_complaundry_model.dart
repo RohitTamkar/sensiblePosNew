@@ -38,12 +38,6 @@ class ProductCartListComplaundryModel
   double? res13;
   // Stores action output result for [Custom Action - calBillAmt] action in Plus widget.
   double? reuslt12;
-  // Stores action output result for [Custom Action - removeHoldListItem] action in Icon widget.
-  List<dynamic>? res20;
-  // Stores action output result for [Custom Action - calSubTotalForHoldList] action in Icon widget.
-  double? res21;
-  // Stores action output result for [Custom Action - calBillAmt] action in Icon widget.
-  double? reuslt22;
 
   @override
   void initState(BuildContext context) {}

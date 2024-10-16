@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom actions
+
 Future<List<dynamic>> laundryaddToHoldListprdplus(
   ProductStructStruct document,
   int billno,
@@ -22,7 +24,7 @@ Future<List<dynamic>> laundryaddToHoldListprdplus(
   var y = 1.0;
 
   String? taxId = '';
-  if (document?.taxId == null) {
+  if (document?.taxId == null || document!.taxId.isEmpty) {
     taxId = 'QPIz6c63YKBYVKT80oPv';
   } else {
     taxId = document?.taxId;

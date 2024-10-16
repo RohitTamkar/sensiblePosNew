@@ -3038,79 +3038,152 @@ class _ProductAndListlaundrybillingWidgetState
                                                             billIndex) {
                                                           final billItem =
                                                               bill[billIndex];
-                                                          return wrapWithModel(
-                                                            model: _model
-                                                                .productCartListComplaundryModels
-                                                                .getModel(
-                                                              billIndex
-                                                                  .toString(),
-                                                              billIndex,
-                                                            ),
-                                                            updateCallback: () =>
-                                                                safeSetState(
-                                                                    () {}),
-                                                            child:
-                                                                ProductCartListComplaundryWidget(
-                                                              key: Key(
-                                                                'Key33v_${billIndex.toString()}',
+                                                          return Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              Expanded(
+                                                                child:
+                                                                    Container(
+                                                                  decoration:
+                                                                      BoxDecoration(),
+                                                                  child:
+                                                                      wrapWithModel(
+                                                                    model: _model
+                                                                        .productCartListComplaundryModels
+                                                                        .getModel(
+                                                                      billIndex
+                                                                          .toString(),
+                                                                      billIndex,
+                                                                    ),
+                                                                    updateCallback: () =>
+                                                                        safeSetState(
+                                                                            () {}),
+                                                                    child:
+                                                                        ProductCartListComplaundryWidget(
+                                                                      key: Key(
+                                                                        'Key33v_${billIndex.toString()}',
+                                                                      ),
+                                                                      parameter1:
+                                                                          getJsonField(
+                                                                        billItem,
+                                                                        r'''$.name''',
+                                                                      ),
+                                                                      parameter2:
+                                                                          getJsonField(
+                                                                        billItem,
+                                                                        r'''$.price''',
+                                                                      ),
+                                                                      parameter3:
+                                                                          getJsonField(
+                                                                        billItem,
+                                                                        r'''$''',
+                                                                      ),
+                                                                      parameter4:
+                                                                          ProductStructStruct.maybeFromMap(
+                                                                              billItem),
+                                                                      parameter5:
+                                                                          widget!
+                                                                              .taxcollection!,
+                                                                      parameter6:
+                                                                          productAndListlaundrybillingAppSettingsRecord
+                                                                              ?.inclusiveTax,
+                                                                      parameter7: productAndListlaundrybillingAppSettingsRecord
+                                                                          ?.settingList
+                                                                          ?.where((e) =>
+                                                                              e.title ==
+                                                                              'enableInclusiveTax')
+                                                                          .toList()
+                                                                          ?.first
+                                                                          ?.value,
+                                                                      parameter8:
+                                                                          getJsonField(
+                                                                        billItem,
+                                                                        r'''$.quantity''',
+                                                                      ),
+                                                                      parameter9:
+                                                                          getJsonField(
+                                                                        billItem,
+                                                                        r'''$.stockable''',
+                                                                      ),
+                                                                      parameter10:
+                                                                          getJsonField(
+                                                                        billItem,
+                                                                        r'''$.currentStock''',
+                                                                      ),
+                                                                      parameter11:
+                                                                          getJsonField(
+                                                                        billItem,
+                                                                        r'''$.quantity''',
+                                                                      ),
+                                                                      parameter12:
+                                                                          getJsonField(
+                                                                        billItem,
+                                                                        r'''$.price''',
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ),
                                                               ),
-                                                              parameter1:
-                                                                  getJsonField(
-                                                                billItem,
-                                                                r'''$.name''',
+                                                              InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  _model.res20 =
+                                                                      await actions
+                                                                          .removeHoldListItem(
+                                                                    billItem,
+                                                                    FFAppState()
+                                                                        .selBill,
+                                                                  );
+                                                                  _model.res21 =
+                                                                      await actions
+                                                                          .calSubTotalForHoldList(
+                                                                    FFAppState()
+                                                                        .selBill
+                                                                        .toString(),
+                                                                    FFAppState()
+                                                                        .allBillsList
+                                                                        .toList(),
+                                                                  );
+                                                                  _model.reuslt22 =
+                                                                      await actions
+                                                                          .calBillAmt(
+                                                                    valueOrDefault<
+                                                                        double>(
+                                                                      FFAppState()
+                                                                          .disAmt,
+                                                                      0.0,
+                                                                    ),
+                                                                    FFAppState()
+                                                                        .delCharges,
+                                                                  );
+                                                                  FFAppState()
+                                                                      .prdid = '';
+                                                                  safeSetState(
+                                                                      () {});
+
+                                                                  safeSetState(
+                                                                      () {});
+                                                                },
+                                                                child: Icon(
+                                                                  Icons.delete,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                  size: 30.0,
+                                                                ),
                                                               ),
-                                                              parameter2:
-                                                                  getJsonField(
-                                                                billItem,
-                                                                r'''$.price''',
-                                                              ),
-                                                              parameter3:
-                                                                  getJsonField(
-                                                                billItem,
-                                                                r'''$''',
-                                                              ),
-                                                              parameter4: ProductStructStruct
-                                                                  .maybeFromMap(
-                                                                      billItem),
-                                                              parameter5: widget!
-                                                                  .taxcollection!,
-                                                              parameter6:
-                                                                  productAndListlaundrybillingAppSettingsRecord
-                                                                      ?.inclusiveTax,
-                                                              parameter7: productAndListlaundrybillingAppSettingsRecord
-                                                                  ?.settingList
-                                                                  ?.where((e) =>
-                                                                      e.title ==
-                                                                      'enableInclusiveTax')
-                                                                  .toList()
-                                                                  ?.first
-                                                                  ?.value,
-                                                              parameter8:
-                                                                  getJsonField(
-                                                                billItem,
-                                                                r'''$.quantity''',
-                                                              ),
-                                                              parameter9:
-                                                                  getJsonField(
-                                                                billItem,
-                                                                r'''$.stockable''',
-                                                              ),
-                                                              parameter10:
-                                                                  getJsonField(
-                                                                billItem,
-                                                                r'''$.currentStock''',
-                                                              ),
-                                                              parameter11:
-                                                                  getJsonField(
-                                                                billItem,
-                                                                r'''$.quantity''',
-                                                              ),
-                                                              parameter12:
-                                                                  getJsonField(
-                                                                billItem,
-                                                                r'''$.price''',
-                                                              ),
-                                                            ),
+                                                            ],
                                                           );
                                                         },
                                                         controller:
