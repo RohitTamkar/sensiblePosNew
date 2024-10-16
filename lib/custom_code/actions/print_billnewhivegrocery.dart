@@ -11,8 +11,6 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
-import 'index.dart'; // Imports other custom actions
-
 // Imports other custom actions
 
 import 'dart:async';
@@ -60,6 +58,7 @@ Future printBillnewhivegrocery(
   String billColumn3;
   String billColumn4;
   String taxColumn3;
+  bool disc = false;
   dynamic obj;
 
   // changes according to size
@@ -106,6 +105,15 @@ Future printBillnewhivegrocery(
         }
         if (doc["address"] != null && doc["address"].isNotEmpty) {
           bytes += generator.text(doc["address"],
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: true,
+                  align: PosAlign.center));
+        }
+        if (doc["subtitleAddress"] != null &&
+            doc["subtitleAddress"].isNotEmpty) {
+          bytes += generator.text(doc["subtitleAddress"],
               styles: const PosStyles(
                   height: PosTextSize.size1,
                   width: PosTextSize.size1,
@@ -185,15 +193,6 @@ Future printBillnewhivegrocery(
                   bold: true,
                   align: PosAlign.center));
         }
-        if (doc["subtitleAddress"] != null &&
-            doc["subtitleAddress"].isNotEmpty) {
-          bytes += generator.text(doc["subtitleAddress"],
-              styles: const PosStyles(
-                  height: PosTextSize.size1,
-                  width: PosTextSize.size1,
-                  bold: true,
-                  align: PosAlign.center));
-        }
       }
       bytes += generator.text(FFAppState().orderType,
           styles: const PosStyles(
@@ -260,6 +259,7 @@ Future printBillnewhivegrocery(
       if (appSetting.settingList.any((setting) =>
           setting.title == 'enableproductwisediscount' &&
           setting.value == true)) {
+        disc = true;
         bytes += generator.text(billColumn4,
             styles: const PosStyles(
               height: PosTextSize.size1,
@@ -283,72 +283,131 @@ Future printBillnewhivegrocery(
               width: PosTextSize.size1,
               bold: false,
               align: PosAlign.center));
-
-      for (int i = 0; i < obj["itemList"].length; i++) {
-        int s = i + 1;
-        bytes += generator.row([
-          PosColumn(
-            text: '$s.',
-            width: 1,
-            styles: PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: false,
-              // align: PosAlign.center
+      if (disc) {
+        for (int i = 0; i < obj["itemList"].length; i++) {
+          int s = i + 1;
+          bytes += generator.row([
+            PosColumn(
+              text: '$s.',
+              width: 1,
+              styles: PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                // align: PosAlign.center
+              ),
             ),
-          ),
-          PosColumn(
-            text: obj["itemList"][i]["name"].toString(),
-            width: 4,
-            styles: PosStyles(
-              fontType: PosFontType.fontA,
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: false,
-              // align: PosAlign.left
+            PosColumn(
+              text: obj["itemList"][i]["name"].toString(),
+              width: 4,
+              styles: PosStyles(
+                fontType: PosFontType.fontA,
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                // align: PosAlign.left
+              ),
             ),
-          ),
-          PosColumn(
-            text: obj["itemList"][i]["quantity"].toString(),
-            width: 1,
-            styles: PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: false,
-              // align: PosAlign.center
+            PosColumn(
+              text: obj["itemList"][i]["quantity"].toString(),
+              width: 1,
+              styles: PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                // align: PosAlign.center
+              ),
             ),
-          ),
-          PosColumn(
-            text: obj["itemList"][i]["price"].toString(),
-            width: 2,
-            styles: PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: false,
-              // align: PosAlign.center
+            PosColumn(
+              text: obj["itemList"][i]["price"].toString(),
+              width: 2,
+              styles: PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                // align: PosAlign.center
+              ),
             ),
-          ),
-          PosColumn(
-            text: obj["itemList"][i]["disPer"].toString(),
-            width: 2,
-            styles: PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: false,
-              // align: PosAlign.center
+            PosColumn(
+              text: obj["itemList"][i]["disPer"].toString(),
+              width: 2,
+              styles: PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                // align: PosAlign.center
+              ),
             ),
-          ),
-          PosColumn(
-            text: obj["itemList"][i]["total"].toString(),
-            width: 2,
-            styles: PosStyles(
-              height: PosTextSize.size1,
-              width: PosTextSize.size1,
-              bold: false,
-              //align: PosAlign.center
+            PosColumn(
+              text: obj["itemList"][i]["total"].toString(),
+              width: 2,
+              styles: PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                //align: PosAlign.center
+              ),
+            )
+          ]);
+        }
+      } else {
+        for (int i = 0; i < obj["itemList"].length; i++) {
+          int s = i + 1;
+          bytes += generator.row([
+            PosColumn(
+              text: '$s.',
+              width: 1,
+              styles: PosStyles(
+                fontType: PosFontType.fontA,
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                // align: PosAlign.left
+              ),
             ),
-          )
-        ]);
+            PosColumn(
+              text: obj["itemList"][i]["name"].toString(),
+              width: 5,
+              styles: PosStyles(
+                //fontType: PosFontType.fontA,
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                // align: PosAlign.left
+              ),
+            ),
+            PosColumn(
+              text: obj["itemList"][i]["quantity"].toString(),
+              width: 2,
+              styles: PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                // align: PosAlign.center
+              ),
+            ),
+            PosColumn(
+              text: obj["itemList"][i]["price"].toString(),
+              width: 2,
+              styles: PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                // align: PosAlign.center
+              ),
+            ),
+            PosColumn(
+              text: obj["itemList"][i]["total"].toString(),
+              width: 2,
+              styles: PosStyles(
+                height: PosTextSize.size1,
+                width: PosTextSize.size1,
+                bold: false,
+                //align: PosAlign.center
+              ),
+            )
+          ]);
+        }
       }
 
       bytes += generator.text("-----------------------------------------------",
@@ -924,6 +983,15 @@ Future printBillnewhivegrocery(
                   bold: true,
                   align: PosAlign.center));
         }
+        if (doc["subtitleAddress"] != null &&
+            doc["subtitleAddress"].isNotEmpty) {
+          bytes += generator.text(doc["subtitleAddress"],
+              styles: const PosStyles(
+                  height: PosTextSize.size1,
+                  width: PosTextSize.size1,
+                  bold: true,
+                  align: PosAlign.center));
+        }
         if (doc["gstNo"] != null && doc["gstNo"].isNotEmpty) {
           bytes += generator.text(doc["gstNo"],
               styles: const PosStyles(
@@ -991,15 +1059,6 @@ Future printBillnewhivegrocery(
         }
         if (doc["ifscCode"] != null && doc["ifscCode"].isNotEmpty) {
           bytes += generator.text(doc["ifscCode"],
-              styles: const PosStyles(
-                  height: PosTextSize.size1,
-                  width: PosTextSize.size1,
-                  bold: true,
-                  align: PosAlign.center));
-        }
-        if (doc["subtitleAddress"] != null &&
-            doc["subtitleAddress"].isNotEmpty) {
-          bytes += generator.text(doc["subtitleAddress"],
               styles: const PosStyles(
                   height: PosTextSize.size1,
                   width: PosTextSize.size1,
@@ -1673,85 +1732,162 @@ Future printBillnewhivegrocery(
               align: PosAlign.center));
     }
   }
+  if (appSetting.settingList.any(
+      (setting) => setting.title == 'printtwobills' && setting.value == true)) {
+    if (bytes.length > 0) {
+      if (selectedPrinter == null) return;
+      var bluetoothPrinter = selectedPrinter[0]!;
 
-  if (bytes.length > 0) {
-    if (selectedPrinter == null) return;
-    var bluetoothPrinter = selectedPrinter[0]!;
+      // Function to print a single bill
+      Future<void> printBill(List<int> billBytes) async {
+        switch (bluetoothPrinter["typePrinter"]) {
+          case PrinterType.usb:
+            billBytes += generator.feed(2);
+            billBytes += generator.cut();
+            FFAppState().printerName = statusName;
+            FFAppState().isPrinterConnected = status;
+            await printerManager.connect(
+                type: bluetoothPrinter["typePrinter"],
+                model: UsbPrinterInput(
+                    name: bluetoothPrinter["deviceName"],
+                    productId: bluetoothPrinter["productId"],
+                    vendorId: bluetoothPrinter["vendorId"]));
+            pendingTask = null;
+            if (Platform.isAndroid) pendingTask = billBytes;
+            break;
 
-    // Function to print a single bill
-    Future<void> printBill(List<int> billBytes) async {
-      switch (bluetoothPrinter["typePrinter"]) {
-        case PrinterType.usb:
-          billBytes += generator.feed(2);
-          billBytes += generator.cut();
-          FFAppState().printerName = statusName;
-          FFAppState().isPrinterConnected = status;
-          await printerManager.connect(
-              type: bluetoothPrinter["typePrinter"],
-              model: UsbPrinterInput(
+          case PrinterType.bluetooth:
+            billBytes += generator.cut();
+            FFAppState().printerName = statusName;
+            FFAppState().isPrinterConnected = status;
+            await printerManager.connect(
+                type: bluetoothPrinter["typePrinter"],
+                model: BluetoothPrinterInput(
                   name: bluetoothPrinter["deviceName"],
-                  productId: bluetoothPrinter["productId"],
-                  vendorId: bluetoothPrinter["vendorId"]));
-          pendingTask = null;
-          if (Platform.isAndroid) pendingTask = billBytes;
-          break;
+                  address: bluetoothPrinter["address"],
+                  isBle: bluetoothPrinter["isBle"] ?? false,
+                ));
+            pendingTask = null;
+            if (Platform.isIOS || Platform.isAndroid) pendingTask = billBytes;
+            break;
 
-        case PrinterType.bluetooth:
-          billBytes += generator.cut();
-          FFAppState().printerName = statusName;
-          FFAppState().isPrinterConnected = status;
-          await printerManager.connect(
-              type: bluetoothPrinter["typePrinter"],
-              model: BluetoothPrinterInput(
-                name: bluetoothPrinter["deviceName"],
-                address: bluetoothPrinter["address"],
-                isBle: bluetoothPrinter["isBle"] ?? false,
-              ));
-          pendingTask = null;
-          if (Platform.isIOS || Platform.isAndroid) pendingTask = billBytes;
-          break;
+          case PrinterType.network:
+            billBytes += generator.feed(2);
+            billBytes += generator.cut();
+            await printerManager.connect(
+                type: bluetoothPrinter["typePrinter"],
+                model: TcpPrinterInput(ipAddress: bluetoothPrinter.address!));
+            break;
 
-        case PrinterType.network:
-          billBytes += generator.feed(2);
-          billBytes += generator.cut();
-          await printerManager.connect(
-              type: bluetoothPrinter["typePrinter"],
-              model: TcpPrinterInput(ipAddress: bluetoothPrinter.address!));
-          break;
+          default:
+        }
 
-        default:
-      }
+        if (bluetoothPrinter["typePrinter"] == PrinterType.bluetooth) {
+          _currentStatus = BTStatus.connected;
 
-      if (bluetoothPrinter["typePrinter"] == PrinterType.bluetooth) {
-        _currentStatus = BTStatus.connected;
-
-        if (_currentStatus == BTStatus.connected) {
-          FFAppState().printerName = "connected bt";
+          if (_currentStatus == BTStatus.connected) {
+            FFAppState().printerName = "connected bt";
+            printerManager.send(
+                type: bluetoothPrinter["typePrinter"], bytes: billBytes);
+            pendingTask = null;
+          }
+        } else if (bluetoothPrinter["typePrinter"] == PrinterType.usb &&
+            Platform.isAndroid) {
+          if (_currentUsbStatus == USBStatus.connected) {
+            FFAppState().printerName = "connected usb";
+            printerManager.send(
+                type: bluetoothPrinter["typePrinter"], bytes: billBytes);
+            pendingTask = null;
+          }
+        } else {
           printerManager.send(
               type: bluetoothPrinter["typePrinter"], bytes: billBytes);
-          pendingTask = null;
         }
-      } else if (bluetoothPrinter["typePrinter"] == PrinterType.usb &&
-          Platform.isAndroid) {
-        if (_currentUsbStatus == USBStatus.connected) {
-          FFAppState().printerName = "connected usb";
-          printerManager.send(
-              type: bluetoothPrinter["typePrinter"], bytes: billBytes);
-          pendingTask = null;
-        }
-      } else {
-        printerManager.send(
-            type: bluetoothPrinter["typePrinter"], bytes: billBytes);
       }
+
+      // Generate and print the first bill
+      await printBill(bytes);
+
+      // Optionally, if you want a slight delay between prints
+      await Future.delayed(Duration(seconds: 1));
+
+      // Generate and print the second bill (reuse bytes or regenerate)
+      await printBill(bytes);
     }
+  } else {
+    if (bytes.length > 0) {
+      if (selectedPrinter == null) return;
+      var bluetoothPrinter = selectedPrinter[0]!;
 
-    // Generate and print the first bill
-    await printBill(bytes);
+      // Function to print a single bill
+      Future<void> printBill(List<int> billBytes) async {
+        switch (bluetoothPrinter["typePrinter"]) {
+          case PrinterType.usb:
+            billBytes += generator.feed(2);
+            billBytes += generator.cut();
+            FFAppState().printerName = statusName;
+            FFAppState().isPrinterConnected = status;
+            await printerManager.connect(
+                type: bluetoothPrinter["typePrinter"],
+                model: UsbPrinterInput(
+                    name: bluetoothPrinter["deviceName"],
+                    productId: bluetoothPrinter["productId"],
+                    vendorId: bluetoothPrinter["vendorId"]));
+            pendingTask = null;
+            if (Platform.isAndroid) pendingTask = billBytes;
+            break;
 
-    // Optionally, if you want a slight delay between prints
-    await Future.delayed(Duration(seconds: 1));
+          case PrinterType.bluetooth:
+            billBytes += generator.cut();
+            FFAppState().printerName = statusName;
+            FFAppState().isPrinterConnected = status;
+            await printerManager.connect(
+                type: bluetoothPrinter["typePrinter"],
+                model: BluetoothPrinterInput(
+                  name: bluetoothPrinter["deviceName"],
+                  address: bluetoothPrinter["address"],
+                  isBle: bluetoothPrinter["isBle"] ?? false,
+                ));
+            pendingTask = null;
+            if (Platform.isIOS || Platform.isAndroid) pendingTask = billBytes;
+            break;
 
-    // Generate and print the second bill (reuse bytes or regenerate)
-    await printBill(bytes);
+          case PrinterType.network:
+            billBytes += generator.feed(2);
+            billBytes += generator.cut();
+            await printerManager.connect(
+                type: bluetoothPrinter["typePrinter"],
+                model: TcpPrinterInput(ipAddress: bluetoothPrinter.address!));
+            break;
+
+          default:
+        }
+
+        if (bluetoothPrinter["typePrinter"] == PrinterType.bluetooth) {
+          _currentStatus = BTStatus.connected;
+
+          if (_currentStatus == BTStatus.connected) {
+            FFAppState().printerName = "connected bt";
+            printerManager.send(
+                type: bluetoothPrinter["typePrinter"], bytes: billBytes);
+            pendingTask = null;
+          }
+        } else if (bluetoothPrinter["typePrinter"] == PrinterType.usb &&
+            Platform.isAndroid) {
+          if (_currentUsbStatus == USBStatus.connected) {
+            FFAppState().printerName = "connected usb";
+            printerManager.send(
+                type: bluetoothPrinter["typePrinter"], bytes: billBytes);
+            pendingTask = null;
+          }
+        } else {
+          printerManager.send(
+              type: bluetoothPrinter["typePrinter"], bytes: billBytes);
+        }
+      }
+
+      // Generate and print the first bill
+      await printBill(bytes);
+    }
   }
 }
