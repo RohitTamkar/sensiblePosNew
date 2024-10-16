@@ -9,58 +9,23 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-import 'index.dart'; // Imports other custom actions
-
-import 'index.dart'; // Imports other custom actions
-
-import 'index.dart'; // Imports other custom actions
-
-import 'index.dart'; // Imports other custom actions
-
-Future<List<dynamic>> laundryAddToHoldListprd(
+Future<List<dynamic>> laundryaddToHoldListprdplus(
   ProductStructStruct document,
   int billno,
   List<TaxMasterRecord> taxcollection,
   String inclusiveorexclusive,
+  double? newQty,
 ) async {
   List<dynamic> list = FFAppState().allBillsList;
   print(document);
   List<dynamic> itemList = [];
-
-  String weightString = '';
-  // if (weightString == '') {
-  //   weightString = FFAppState().weight;
-  // } else {
-  //   weightString = "0.0 kg";
-  // }
-  double weight = 1.0;
-  bool isWeightable = document.weightable;
-
-  if (isWeightable) {
-    // If FFAppState().weight is not empty, extract the numeric value
-    if (FFAppState().weight.isNotEmpty) {
-      weightString = FFAppState().weight;
-      RegExp regex = RegExp(r'([\d.]+)');
-      String? weightMatch = regex.firstMatch(weightString)?.group(0);
-      if (weightMatch != null) {
-        weight = double.parse(weightMatch);
-      }
-    }
-  }
-
-  // if(FFAppState().weight.isNotEmpty){
-  //   weightString = FFAppState().weight;
-  //   RegExp regex = RegExp(r'([\d.]+)');
-  //   String? weightMatch = regex.firstMatch(weightString)?.group(0);
-  //   weight = double.parse(weightMatch!);
-  // }
+  var y = 1.0;
 
   String? taxId = '';
-
-  if (document!.taxId.isNotEmpty) {
-    taxId = document.taxId;
-  } else {
+  if (document?.taxId == null) {
     taxId = 'QPIz6c63YKBYVKT80oPv';
+  } else {
+    taxId = document?.taxId;
   }
   TaxMasterRecord? taxRecord = taxcollection.firstWhere(
     (element) => element.id == taxId,
@@ -69,8 +34,8 @@ Future<List<dynamic>> laundryAddToHoldListprd(
 
   if (taxRecord != null) {
     double taxPer = taxRecord.percentage ?? 0.0;
-    double price = document!.sellingPrice;
-    double quantity = weight;
+    double price = document!.price;
+    double quantity = y.toDouble();
 
     // Calculate taxAmt for each item separately
     double taxAmtPerItem = (inclusiveorexclusive.toLowerCase() == 'inclusive')
@@ -79,29 +44,20 @@ Future<List<dynamic>> laundryAddToHoldListprd(
 
     double taxAmt = taxAmtPerItem * quantity;
 
-    /* double total = (inclusiveorexclusive.toLowerCase() == 'inclusive')
-        ? (price * quantity)
-        : (price * quantity) + double.parse(taxAmt.toStringAsFixed(2));*/
-    // double total = (inclusiveorexclusive.toLowerCase() == 'inclusive')
-    //     ? (price * quantity)
-    //     : (price * quantity);
     double total = (inclusiveorexclusive.toLowerCase() == 'inclusive')
         ? (price * quantity)
         : (price * quantity);
 
     final data = {
       "name": document!.name,
-      "price": (document.sellingPrice)!.toDouble(),
-      "quantity": double.parse(quantity.toStringAsFixed(2)),
-      "total": double.parse(
-          total.toStringAsFixed(2)), // Include taxAmt for exclusive tax
+      "price": (document.price)!.toDouble(),
+      "quantity": quantity,
+      "total": total, // Include taxAmt for exclusive tax
       "id": document!.id,
       "catId": document!.categoryId,
       "taxId": document!.taxId,
       "taxPer": taxPer,
       "taxAmt": double.parse(taxAmt.toStringAsFixed(2)),
-      "currentStock": document!.stock ?? 0,
-      "stockable": document!.stockable ?? false,
       "weightable": document!.weightable ?? false,
     };
 
@@ -130,13 +86,7 @@ Future<List<dynamic>> laundryAddToHoldListprd(
       if (flag1) {
         for (int j = 0; j < itemList.length; j++) {
           if (itemList[j]["name"] == data["name"]) {
-            if (isWeightable) {
-              itemList[j]["quantity"] =
-                  double.parse(itemList[j]["quantity"].toString()) + weight;
-            } else {
-              itemList[j]["quantity"]++;
-            }
-
+            itemList[j]["price"] = newQty;
             itemList[j]["taxAmt"] +=
                 taxAmtPerItem; // Update taxAmt for each item
             if (inclusiveorexclusive.toLowerCase() == 'inclusive') {
@@ -145,7 +95,7 @@ Future<List<dynamic>> laundryAddToHoldListprd(
             } else {
               itemList[j]["total"] =
                   itemList[j]["quantity"] * itemList[j]["price"];
-            }
+            } // Update total for each item
             list[index]["details"]["itemList"] = itemList;
             FFAppState().allBillsList = list;
             flag = true;

@@ -17,6 +17,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
@@ -274,6 +276,7 @@ Future laundryPrintBillnewhive(
               align: PosAlign.center));
 
       for (int i = 0; i < obj["itemList"].length; i++) {
+        bool isWeightable = obj["itemList"][i]["weightable"];
         bytes += generator.row([
           PosColumn(
             text: obj["itemList"][i]["name"].toString(),
@@ -287,7 +290,8 @@ Future laundryPrintBillnewhive(
             ),
           ),
           PosColumn(
-            text: obj["itemList"][i]["quantity"].toString(),
+            text: obj["itemList"][i]["quantity"].toString() +
+                (isWeightable ? "KG" : ""),
             width: 2,
             styles: PosStyles(
               height: PosTextSize.size1,
@@ -307,7 +311,7 @@ Future laundryPrintBillnewhive(
             ),
           ),
           PosColumn(
-            text: obj["itemList"][i]["total"].toString(),
+            text: obj["itemList"][i]["total"].toStringAsFixed(2),
             width: 2,
             styles: PosStyles(
               height: PosTextSize.size1,

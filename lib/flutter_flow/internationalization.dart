@@ -23005,13 +23005,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'hen52gqa': {
-      'en': '₹ ',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
     'q22gjk6z': {
       'en': 'Item',
       'hi': '',
@@ -27406,6 +27399,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '2gg5i5om': {
       'en': 'Submit',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+  },
+  // productCartListComplaundry
+  {
+    'a9s27k64': {
+      'en': '₹ ',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '2t007dp7': {
+      'en': 'TextField',
       'hi': '',
       'kn': '',
       'mr': '',

@@ -15,6 +15,8 @@ import 'index.dart'; // Imports other custom actions
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 Future<double> laundrycalSubTotalForHoldList(
   String billNo,
   List<dynamic> allBillList,
@@ -37,9 +39,12 @@ Future<double> laundrycalSubTotalForHoldList(
               //tax = 0;
               double tax2 = itemList[i]["taxAmt"];
               if (itemList[i]["taxPer"] > 0.0) {
-                total += itemList[i]["quantity"] * itemList[i]["price"] + tax2;
+                total += itemList[i]["quantity"].toDouble() *
+                        itemList[i]["price"].toDouble() +
+                    tax2;
               } else {
-                total += itemList[i]["quantity"] * itemList[i]["price"];
+                total += itemList[i]["quantity"].toDouble() *
+                    itemList[i]["price"].toDouble();
               }
               // total += itemList[i]["total"];
               qty += itemList[i]["quantity"];
@@ -47,10 +52,13 @@ Future<double> laundrycalSubTotalForHoldList(
               print(total);
             }
           }
-          FFAppState().subTotal = total.toDouble();
+          // FFAppState().subTotal = total.toDouble();
+          FFAppState().subTotal = double.parse(total.toStringAsFixed(2));
           FFAppState().taxamt = tax.toDouble();
-          FFAppState().billAmt = total.toDouble();
-          FFAppState().totalQuantity = qty.toDouble();
+          // FFAppState().billAmt = total.toDouble();
+          FFAppState().billAmt = double.parse(total.toStringAsFixed(2));
+          // FFAppState().totalQuantity = qty.toDouble();
+          FFAppState().totalQuantity = double.parse(qty.toStringAsFixed(2));
           FFAppState().noOfItems = itemList.length;
           break;
         }

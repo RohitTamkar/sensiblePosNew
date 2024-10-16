@@ -183,7 +183,7 @@ double getTotal(
   // double sub = FFAppState().subTotal;
   // FFAppState().subTotal = sub + total;
   // Add your function code here!
-  return (qty * price).toDouble();
+  return double.parse(total.toStringAsFixed(2));
 }
 
 String genInvoiceNum(
