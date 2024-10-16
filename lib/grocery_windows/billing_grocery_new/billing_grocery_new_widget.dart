@@ -1589,13 +1589,27 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                     Expanded(
                                       child: FFButtonWidget(
                                         onPressed: () async {
-                                          if (_model.submenureport) {
-                                            _model.submenureport = false;
-                                            safeSetState(() {});
-                                          } else {
-                                            _model.submenureport = true;
-                                            safeSetState(() {});
-                                          }
+                                          context.pushNamed(
+                                            'ReportScreenNew',
+                                            queryParameters: {
+                                              'doc': serializeParam(
+                                                widget!.userref,
+                                                ParamType.DocumentReference,
+                                              ),
+                                              'shiftDetail': serializeParam(
+                                                widget!.shiftdetail,
+                                                ParamType.JSON,
+                                              ),
+                                              'tax': serializeParam(
+                                                widget!.taxDetails,
+                                                ParamType.Document,
+                                                isList: true,
+                                              ),
+                                            }.withoutNulls,
+                                            extra: <String, dynamic>{
+                                              'tax': widget!.taxDetails,
+                                            },
+                                          );
                                         },
                                         text:
                                             FFLocalizations.of(context).getText(
@@ -1958,11 +1972,9 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                         15.0,
                                                                         0.0),
                                                             child: Text(
-                                                              functions.genInvoiceNum(
+                                                              functions.genInvoiceNumyear(
                                                                   FFAppState()
-                                                                      .count,
-                                                                  FFAppState()
-                                                                      .shiftCount),
+                                                                      .newcount),
                                                               textAlign:
                                                                   TextAlign
                                                                       .start,
