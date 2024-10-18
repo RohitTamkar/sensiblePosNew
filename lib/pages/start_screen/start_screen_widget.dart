@@ -40,6 +40,21 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
         context.pushNamed('phoneAuthPage');
       } else if (FFAppState().navigate == 'KIOSK') {
         context.pushNamed('KioskSplashScreen');
+      } else {
+        await showDialog(
+          context: context,
+          builder: (alertDialogContext) {
+            return AlertDialog(
+              content: Text('done'),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(alertDialogContext),
+                  child: Text('Ok'),
+                ),
+              ],
+            );
+          },
+        );
       }
     });
 

@@ -77,6 +77,16 @@ class PurchaseOrderModel extends FlutterFlowModel<PurchaseOrderWidget> {
   FocusNode? textFieldFocusNode;
   TextEditingController? textController2;
   String? Function(BuildContext, String?)? textController2Validator;
+  // State field(s) for supplierbillno widget.
+  FocusNode? supplierbillnoFocusNode;
+  TextEditingController? supplierbillnoTextController;
+  String? Function(BuildContext, String?)?
+      supplierbillnoTextControllerValidator;
+  // State field(s) for supplierbilldate widget.
+  FocusNode? supplierbilldateFocusNode;
+  TextEditingController? supplierbilldateTextController;
+  String? Function(BuildContext, String?)?
+      supplierbilldateTextControllerValidator;
   // State field(s) for custname widget.
   FocusNode? custnameFocusNode;
   TextEditingController? custnameTextController;
@@ -106,6 +116,12 @@ class PurchaseOrderModel extends FlutterFlowModel<PurchaseOrderWidget> {
 
     textFieldFocusNode?.dispose();
     textController2?.dispose();
+
+    supplierbillnoFocusNode?.dispose();
+    supplierbillnoTextController?.dispose();
+
+    supplierbilldateFocusNode?.dispose();
+    supplierbilldateTextController?.dispose();
 
     custnameFocusNode?.dispose();
     custnameTextController?.dispose();

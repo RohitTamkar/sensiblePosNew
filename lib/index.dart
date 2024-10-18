@@ -174,7 +174,7 @@ export '/pages/kiosk/kiosk_splash_screen/kiosk_splash_screen_widget.dart'
 export '/pages/kiosk/loading_screenkiosknew/loading_screenkiosknew_widget.dart'
     show LoadingScreenkiosknewWidget;
 export '/labeltest/labeltest_widget.dart' show LabeltestWidget;
-export '/pages/kot_order_screen/kot_order_screen_widget.dart'
+export '/pages/kiosk/kot_order_screen/kot_order_screen_widget.dart'
     show KotOrderScreenWidget;
 export '/grocery_windows/splash_screen_windows/splash_screen_windows_widget.dart'
     show SplashScreenWindowsWidget;
