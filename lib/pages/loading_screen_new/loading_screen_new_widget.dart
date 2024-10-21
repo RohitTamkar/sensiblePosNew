@@ -69,9 +69,14 @@ class _LoadingScreenNewWidgetState extends State<LoadingScreenNewWidget> {
               invoiceRecord.orderBy('invoiceDate', descending: true),
           singleRecord: true,
         ).then((s) => s.firstOrNull);
-        FFAppState().newcount =
-            functions.returncountnew(_model.invcode?.invoice)!;
-        safeSetState(() {});
+        if (_model.invcode != null) {
+          FFAppState().newcount =
+              functions.returncountnew(_model.invcode?.invoice)!;
+          safeSetState(() {});
+        } else {
+          FFAppState().newcount = 0;
+          safeSetState(() {});
+        }
       } else {
         await showDialog(
           context: context,

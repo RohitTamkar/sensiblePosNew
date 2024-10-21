@@ -38,10 +38,14 @@ class ReportScreenNewModel extends FlutterFlowModel<ReportScreenNewWidget> {
   void updateTaxAtIndex(int index, Function(TaxMasterRecord) updateFn) =>
       tax[index] = updateFn(tax[index]);
 
+  AppSettingsRecord? apsett;
+
   ///  State fields for stateful widgets in this page.
 
   // Stores action output result for [Firestore Query - Query a collection] action in ReportScreenNew widget.
   List<TaxMasterRecord>? taxcollection;
+  // Stores action output result for [Firestore Query - Query a collection] action in ReportScreenNew widget.
+  AppSettingsRecord? aappsetting;
   // Model for Header component.
   late HeaderModel headerModel;
 

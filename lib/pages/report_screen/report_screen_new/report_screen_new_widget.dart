@@ -63,10 +63,19 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       await actions.hideStatusBar();
       _model.taxcollection = await queryTaxMasterRecordOnce();
+      _model.aappsetting = await queryAppSettingsRecordOnce(
+        parent: FFAppState().outletIdRef,
+        queryBuilder: (appSettingsRecord) => appSettingsRecord.where(
+          'deviceId',
+          isEqualTo: FFAppState().dId,
+        ),
+        singleRecord: true,
+      ).then((s) => s.firstOrNull);
       _model.bilinvref = FFAppState().billRef;
       _model.userdoc = FFAppState().userdoc;
       _model.shiftdetail = FFAppState().shiftdetails;
       _model.tax = _model.taxcollection!.toList().cast<TaxMasterRecord>();
+      _model.apsett = _model.aappsetting;
       safeSetState(() {});
     });
 
@@ -301,32 +310,66 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                     onPressed: () async {
                                       FFAppState().port = FFAppState().port;
                                       safeSetState(() {});
-
-                                      context.pushNamed(
-                                        'ProductAndListlaundrybilling',
-                                        queryParameters: {
-                                          'billDetails': serializeParam(
-                                            _model.bilinvref,
-                                            ParamType.DocumentReference,
-                                          ),
-                                          'doc': serializeParam(
-                                            _model.userdoc,
-                                            ParamType.DocumentReference,
-                                          ),
-                                          'shiftDetails': serializeParam(
-                                            _model.shiftdetail,
-                                            ParamType.JSON,
-                                          ),
-                                          'taxcollection': serializeParam(
-                                            _model.tax,
-                                            ParamType.Document,
-                                            isList: true,
-                                          ),
-                                        }.withoutNulls,
-                                        extra: <String, dynamic>{
-                                          'taxcollection': _model.tax,
-                                        },
-                                      );
+                                      if (FFAppState().navigate == 'GROCERY') {
+                                        context.goNamed('BillingGroceryNew');
+                                      } else if (_model.apsett!.settingList
+                                          .where((e) =>
+                                              e.title == 'enableweightScale')
+                                          .toList()
+                                          .first
+                                          .value) {
+                                        context.pushNamed(
+                                          'ProductAndListlaundrybilling',
+                                          queryParameters: {
+                                            'billDetails': serializeParam(
+                                              _model.bilinvref,
+                                              ParamType.DocumentReference,
+                                            ),
+                                            'doc': serializeParam(
+                                              _model.userdoc,
+                                              ParamType.DocumentReference,
+                                            ),
+                                            'shiftDetails': serializeParam(
+                                              _model.shiftdetail,
+                                              ParamType.JSON,
+                                            ),
+                                            'taxcollection': serializeParam(
+                                              _model.tax,
+                                              ParamType.Document,
+                                              isList: true,
+                                            ),
+                                          }.withoutNulls,
+                                          extra: <String, dynamic>{
+                                            'taxcollection': _model.tax,
+                                          },
+                                        );
+                                      } else {
+                                        context.pushNamed(
+                                          'ProductAndListNew',
+                                          queryParameters: {
+                                            'billDetails': serializeParam(
+                                              _model.bilinvref,
+                                              ParamType.DocumentReference,
+                                            ),
+                                            'doc': serializeParam(
+                                              _model.userdoc,
+                                              ParamType.DocumentReference,
+                                            ),
+                                            'shiftDetails': serializeParam(
+                                              _model.shiftdetail,
+                                              ParamType.JSON,
+                                            ),
+                                            'taxcollection': serializeParam(
+                                              _model.tax,
+                                              ParamType.Document,
+                                              isList: true,
+                                            ),
+                                          }.withoutNulls,
+                                          extra: <String, dynamic>{
+                                            'taxcollection': _model.tax,
+                                          },
+                                        );
+                                      }
                                     },
                                   ),
                                   Text(

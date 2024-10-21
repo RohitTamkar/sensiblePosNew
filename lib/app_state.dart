@@ -3507,6 +3507,13 @@ class FFAppState extends ChangeNotifier {
     _newcount = value;
     prefs.setInt('ff_newcount', value);
   }
+
+  int _countLaundryForContinuesIncrement = 0;
+  int get countLaundryForContinuesIncrement =>
+      _countLaundryForContinuesIncrement;
+  set countLaundryForContinuesIncrement(int value) {
+    _countLaundryForContinuesIncrement = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {
