@@ -4728,9 +4728,9 @@ class _ProductAndListlaundrybillingWidgetState
                                                                         .id,
                                                                     'NA',
                                                                   ),
-                                                                  functions.genInvoiceNum(
+                                                                  functions.genInvoiceNumLaundry(
                                                                       FFAppState()
-                                                                          .count,
+                                                                          .countLaundryForContinuesIncrement,
                                                                       FFAppState()
                                                                           .shiftCount),
                                                                   valueOrDefault<
@@ -5951,9 +5951,9 @@ class _ProductAndListlaundrybillingWidgetState
                                                                           .id,
                                                                       'NA',
                                                                     ),
-                                                                    functions.genInvoiceNum(
+                                                                    functions.genInvoiceNumLaundry(
                                                                         FFAppState()
-                                                                            .count,
+                                                                            .countLaundryForContinuesIncrement,
                                                                         FFAppState()
                                                                             .shiftCount),
                                                                     valueOrDefault<
