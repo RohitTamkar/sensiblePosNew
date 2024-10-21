@@ -310,8 +310,36 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                     onPressed: () async {
                                       FFAppState().port = FFAppState().port;
                                       safeSetState(() {});
+                                      _model.paymentmode =
+                                          await queryPaymentModeRecordOnce();
                                       if (FFAppState().navigate == 'GROCERY') {
-                                        context.goNamed('BillingGroceryNew');
+                                        context.goNamed(
+                                          'BillingGroceryNew',
+                                          queryParameters: {
+                                            'shiftdetail': serializeParam(
+                                              _model.shiftdetail,
+                                              ParamType.JSON,
+                                            ),
+                                            'taxDetails': serializeParam(
+                                              _model.tax,
+                                              ParamType.Document,
+                                              isList: true,
+                                            ),
+                                            'userref': serializeParam(
+                                              _model.userdoc,
+                                              ParamType.DocumentReference,
+                                            ),
+                                            'paymentMode': serializeParam(
+                                              _model.paymentmode,
+                                              ParamType.Document,
+                                              isList: true,
+                                            ),
+                                          }.withoutNulls,
+                                          extra: <String, dynamic>{
+                                            'taxDetails': _model.tax,
+                                            'paymentMode': _model.paymentmode,
+                                          },
+                                        );
                                       } else if (_model.apsett!.settingList
                                           .where((e) =>
                                               e.title == 'enableweightScale')
@@ -370,6 +398,8 @@ class _ReportScreenNewWidgetState extends State<ReportScreenNewWidget>
                                           },
                                         );
                                       }
+
+                                      safeSetState(() {});
                                     },
                                   ),
                                   Text(

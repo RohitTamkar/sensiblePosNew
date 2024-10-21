@@ -46,6 +46,8 @@ class ReportScreenNewModel extends FlutterFlowModel<ReportScreenNewWidget> {
   List<TaxMasterRecord>? taxcollection;
   // Stores action output result for [Firestore Query - Query a collection] action in ReportScreenNew widget.
   AppSettingsRecord? aappsetting;
+  // Stores action output result for [Firestore Query - Query a collection] action in IconButton widget.
+  List<PaymentModeRecord>? paymentmode;
   // Model for Header component.
   late HeaderModel headerModel;
 
