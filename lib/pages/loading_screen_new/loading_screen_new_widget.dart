@@ -63,6 +63,15 @@ class _LoadingScreenNewWidgetState extends State<LoadingScreenNewWidget> {
         _model.pindex = await actions.addFirebasetoHiveProduct(
           _model.productListCopy!.toList(),
         );
+        _model.invcode = await queryInvoiceRecordOnce(
+          parent: FFAppState().outletIdRef,
+          queryBuilder: (invoiceRecord) =>
+              invoiceRecord.orderBy('invoiceDate', descending: true),
+          singleRecord: true,
+        ).then((s) => s.firstOrNull);
+        FFAppState().newcount =
+            functions.returncountnew(_model.invcode?.invoice)!;
+        safeSetState(() {});
       } else {
         await showDialog(
           context: context,

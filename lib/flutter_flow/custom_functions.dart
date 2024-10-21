@@ -1230,3 +1230,17 @@ String genInvoiceNumyear(int? count) {
 
   return invNum;
 }
+
+int? returncountnew(String? invoicestring) {
+  if (invoicestring == null) return null;
+
+  // Split the string by "/" and get the last part
+  List<String> parts = invoicestring.split('/');
+
+  if (parts.isNotEmpty) {
+    // Try to parse the last part as an integer
+    return int.tryParse(parts.last);
+  }
+
+  return null;
+}
