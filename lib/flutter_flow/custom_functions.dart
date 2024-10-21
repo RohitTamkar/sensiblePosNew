@@ -75,6 +75,22 @@ List<dynamic> shiftDocToJsonList2(ShiftDetailsStruct item) {
   return list;
 }
 
+String genInvoiceNumLaundry(
+  int? count,
+  int? shiftCount,
+) {
+  DateTime date = DateTime.now();
+
+  var day, month;
+  day = date.day.toString();
+  month = date.month.toString();
+
+  var invNum = date.year.toString() + "-" + count.toString();
+
+  print(invNum);
+  return invNum.toString();
+}
+
 List<dynamic> loadDefaultList(
   int billno,
   List<dynamic> allBillList,
@@ -127,7 +143,7 @@ int? returncountnewLaundry(String? invoicestring) {
   if (invoicestring == null) return null;
 
   // Split the string by "/" and get the last part
-  List<String> parts = invoicestring.split('/');
+  List<String> parts = invoicestring.split('-');
 
   if (parts.isNotEmpty) {
     // Try to parse the last part as an integer

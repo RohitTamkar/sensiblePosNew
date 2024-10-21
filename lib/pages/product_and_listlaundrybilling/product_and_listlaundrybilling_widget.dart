@@ -4444,6 +4444,11 @@ class _ProductAndListlaundrybillingWidgetState
                                                                     FFAppState()
                                                                             .count +
                                                                         1;
+                                                                FFAppState()
+                                                                        .countLaundryForContinuesIncrement =
+                                                                    FFAppState()
+                                                                            .countLaundryForContinuesIncrement +
+                                                                        1;
                                                                 safeSetState(
                                                                     () {});
                                                               } else {
@@ -4451,6 +4456,11 @@ class _ProductAndListlaundrybillingWidgetState
                                                                         .count =
                                                                     FFAppState()
                                                                             .count +
+                                                                        1;
+                                                                FFAppState()
+                                                                        .countLaundryForContinuesIncrement =
+                                                                    FFAppState()
+                                                                            .countLaundryForContinuesIncrement +
                                                                         1;
                                                                 safeSetState(
                                                                     () {});
@@ -4544,9 +4554,9 @@ class _ProductAndListlaundrybillingWidgetState
                                                                 await invoiceRecordReference
                                                                     .set({
                                                                   ...createInvoiceRecordData(
-                                                                    invoice: functions.genInvoiceNum(
+                                                                    invoice: functions.genInvoiceNumLaundry(
                                                                         FFAppState()
-                                                                            .count,
+                                                                            .countLaundryForContinuesIncrement,
                                                                         FFAppState()
                                                                             .shiftCount),
                                                                     party: valueOrDefault<
@@ -4621,9 +4631,9 @@ class _ProductAndListlaundrybillingWidgetState
                                                                     InvoiceRecord
                                                                         .getDocumentFromData({
                                                                   ...createInvoiceRecordData(
-                                                                    invoice: functions.genInvoiceNum(
+                                                                    invoice: functions.genInvoiceNumLaundry(
                                                                         FFAppState()
-                                                                            .count,
+                                                                            .countLaundryForContinuesIncrement,
                                                                         FFAppState()
                                                                             .shiftCount),
                                                                     party: valueOrDefault<
@@ -5624,6 +5634,11 @@ class _ProductAndListlaundrybillingWidgetState
                                                                       FFAppState()
                                                                               .count +
                                                                           1;
+                                                                  FFAppState()
+                                                                          .countLaundryForContinuesIncrement =
+                                                                      FFAppState()
+                                                                              .countLaundryForContinuesIncrement +
+                                                                          1;
                                                                   safeSetState(
                                                                       () {});
                                                                 } else {
@@ -5631,6 +5646,11 @@ class _ProductAndListlaundrybillingWidgetState
                                                                           .count =
                                                                       FFAppState()
                                                                               .count +
+                                                                          1;
+                                                                  FFAppState()
+                                                                          .countLaundryForContinuesIncrement =
+                                                                      FFAppState()
+                                                                              .countLaundryForContinuesIncrement +
                                                                           1;
                                                                   safeSetState(
                                                                       () {});
@@ -5755,9 +5775,9 @@ class _ProductAndListlaundrybillingWidgetState
                                                                   await invoiceRecordReference
                                                                       .set({
                                                                     ...createInvoiceRecordData(
-                                                                      invoice: functions.genInvoiceNum(
+                                                                      invoice: functions.genInvoiceNumLaundry(
                                                                           FFAppState()
-                                                                              .count,
+                                                                              .countLaundryForContinuesIncrement,
                                                                           FFAppState()
                                                                               .shiftCount),
                                                                       party: valueOrDefault<
@@ -5833,9 +5853,9 @@ class _ProductAndListlaundrybillingWidgetState
                                                                       InvoiceRecord
                                                                           .getDocumentFromData({
                                                                     ...createInvoiceRecordData(
-                                                                      invoice: functions.genInvoiceNum(
+                                                                      invoice: functions.genInvoiceNumLaundry(
                                                                           FFAppState()
-                                                                              .count,
+                                                                              .countLaundryForContinuesIncrement,
                                                                           FFAppState()
                                                                               .shiftCount),
                                                                       party: valueOrDefault<
