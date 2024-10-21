@@ -3577,6 +3577,13 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 0.0,
                                               ),
                                               shiftId: '',
+                                              createdBy: FFAppState().userdoc,
+                                              code: FFAppState().newcount,
+                                              partyMobNo:
+                                                  valueOrDefault<String>(
+                                                FFAppState().currentMobile,
+                                                '0',
+                                              ),
                                             ),
                                             ...mapToFirestore(
                                               {
@@ -3632,6 +3639,13 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                 0.0,
                                               ),
                                               shiftId: '',
+                                              createdBy: FFAppState().userdoc,
+                                              code: FFAppState().newcount,
+                                              partyMobNo:
+                                                  valueOrDefault<String>(
+                                                FFAppState().currentMobile,
+                                                '0',
+                                              ),
                                             ),
                                             ...mapToFirestore(
                                               {
@@ -3643,6 +3657,11 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             ),
                                           }, invoiceRecordReference);
                                           _shouldSetState = true;
+
+                                          await _model.invonline!.reference
+                                              .update(createInvoiceRecordData(
+                                            id: _model.invonline?.reference.id,
+                                          ));
                                           _model.hiveInvoiceDataCopyCopy =
                                               await actions.addInvoiceBillhive(
                                             _model.invonline!.reference.id,
@@ -4375,9 +4394,15 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                             ),
                                           }, invoiceRecordReference);
                                           _shouldSetState = true;
+
+                                          await _model.invonlineprt!.reference
+                                              .update(createInvoiceRecordData(
+                                            id: _model
+                                                .invonlineprt?.reference.id,
+                                          ));
                                           _model.hiveInvoiceData =
                                               await actions.addInvoiceBillhive(
-                                            '',
+                                            _model.invonlineprt!.reference.id,
                                             functions.genInvoiceNumyear(
                                                 FFAppState().newcount),
                                             valueOrDefault<String>(
