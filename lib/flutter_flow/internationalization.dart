@@ -19020,13 +19020,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // dummytest
   {
-    'tu3rsj40': {
-      'en': 'Business Name',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
     'wj1nwsjd': {
       'en': 'Home',
       'hi': '',

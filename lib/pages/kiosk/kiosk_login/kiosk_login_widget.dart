@@ -1844,20 +1844,29 @@ class _KioskLoginWidgetState extends State<KioskLoginWidget> {
                             decoration: BoxDecoration(
                               shape: BoxShape.rectangle,
                             ),
-                            child: FlutterFlowIconButton(
-                              borderColor: Colors.transparent,
-                              borderRadius: 50.0,
-                              buttonSize: 40.0,
-                              fillColor: FlutterFlowTheme.of(context).primary,
-                              icon: Icon(
-                                Icons.info_outline,
-                                color:
-                                    FlutterFlowTheme.of(context).primaryBtnText,
-                                size: 27.0,
-                              ),
-                              onPressed: () async {
-                                context.pushNamed('AboutUs');
+                            child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onLongPress: () async {
+                                context.pushNamed('dummytest');
                               },
+                              child: FlutterFlowIconButton(
+                                borderColor: Colors.transparent,
+                                borderRadius: 50.0,
+                                buttonSize: 40.0,
+                                fillColor: FlutterFlowTheme.of(context).primary,
+                                icon: Icon(
+                                  Icons.info_outline,
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBtnText,
+                                  size: 27.0,
+                                ),
+                                onPressed: () async {
+                                  context.pushNamed('AboutUs');
+                                },
+                              ),
                             ),
                           ),
                         ],

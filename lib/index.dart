@@ -171,7 +171,7 @@ export '/pages/kiosk/kiosk_advertising/kiosk_advertising_widget.dart'
 export '/pages/kiosk/kiosk_login/kiosk_login_widget.dart' show KioskLoginWidget;
 export '/pages/kiosk/kiosk_splash_screen/kiosk_splash_screen_widget.dart'
     show KioskSplashScreenWidget;
-export '/pages/kiosk/loading_screenkiosknew/loading_screenkiosknew_widget.dart'
+export '/pages/loading_screenkiosknew/loading_screenkiosknew_widget.dart'
     show LoadingScreenkiosknewWidget;
 export '/labeltest/labeltest_widget.dart' show LabeltestWidget;
 export '/pages/kiosk/kot_order_screen/kot_order_screen_widget.dart'
