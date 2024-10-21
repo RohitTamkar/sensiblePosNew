@@ -202,28 +202,41 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                 print('IconButton pressed ...');
                                               },
                                             ),
-                                            FlutterFlowIconButton(
-                                              borderColor: Colors.transparent,
-                                              borderRadius: 30.0,
-                                              borderWidth: 1.0,
-                                              buttonSize: 45.0,
-                                              disabledColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .customColor1,
-                                              icon: Icon(
-                                                Icons.print_rounded,
-                                                color:
+                                            InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onLongPress: () async {
+                                                FFAppState().printerDevice =
+                                                    null;
+                                                FFAppState().printerIndex = '';
+                                                safeSetState(() {});
+                                              },
+                                              child: FlutterFlowIconButton(
+                                                borderColor: Colors.transparent,
+                                                borderRadius: 30.0,
+                                                borderWidth: 1.0,
+                                                buttonSize: 45.0,
+                                                disabledColor:
                                                     FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
-                                                size: 22.0,
+                                                        .customColor1,
+                                                icon: Icon(
+                                                  Icons.restart_alt,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  size: 22.0,
+                                                ),
+                                                onPressed: FFAppState()
+                                                        .isPrinterConnected
+                                                    ? null
+                                                    : () {
+                                                        print(
+                                                            'IconButton pressed ...');
+                                                      },
                                               ),
-                                              onPressed: FFAppState()
-                                                      .isPrinterConnected
-                                                  ? null
-                                                  : () {
-                                                      print(
-                                                          'IconButton pressed ...');
-                                                    },
                                             ),
                                           ],
                                         ),
