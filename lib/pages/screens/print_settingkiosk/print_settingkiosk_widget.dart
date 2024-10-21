@@ -772,11 +772,13 @@ class _PrintSettingkioskWidgetState extends State<PrintSettingkioskWidget> {
                                                   _model.dropDownValue1!;
                                               FFAppState().posMode =
                                                   _model.dropDownValue2!;
-                                              safeSetState(() {});
+                                              FFAppState().update(() {});
                                               _model.resultDevice2 =
                                                   await actions.scanPrinter(
                                                 _model.dropDownValue2!,
                                               );
+
+                                              safeSetState(() {});
 
                                               safeSetState(() {});
                                             },
