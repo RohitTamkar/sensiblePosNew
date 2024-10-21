@@ -1939,7 +1939,7 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                's1v6ouy5' /* Invoice No. */,
+                                                                's1v6ouy5' /* last Invoice No. */,
                                                               ),
                                                               textAlign:
                                                                   TextAlign
