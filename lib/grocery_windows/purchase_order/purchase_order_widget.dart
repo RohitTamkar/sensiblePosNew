@@ -4569,6 +4569,15 @@ class _PurchaseOrderWidgetState extends State<PurchaseOrderWidget>
                                                             widget!.userref,
                                                         paymentMode:
                                                             widget!.paymentMode,
+                                                        suppplierbillno: _model
+                                                            .supplierbillnoTextController
+                                                            .text,
+                                                        supplierbilldate: _model
+                                                            .supplierbilldateTextController1
+                                                            .text,
+                                                        note: _model
+                                                            .supplierbilldateTextController2
+                                                            .text,
                                                       ),
                                                     ),
                                                   );

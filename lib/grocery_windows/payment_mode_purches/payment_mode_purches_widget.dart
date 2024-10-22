@@ -26,12 +26,20 @@ class PaymentModePurchesWidget extends StatefulWidget {
     this.taxDetails,
     this.userref,
     this.paymentMode,
-  });
+    String? suppplierbillno,
+    String? supplierbilldate,
+    String? note,
+  })  : this.suppplierbillno = suppplierbillno ?? '0',
+        this.supplierbilldate = supplierbilldate ?? '0',
+        this.note = note ?? '0';
 
   final dynamic shiftdetail;
   final List<TaxMasterRecord>? taxDetails;
   final DocumentReference? userref;
   final List<PaymentModeRecord>? paymentMode;
+  final String suppplierbillno;
+  final String supplierbilldate;
+  final String note;
 
   @override
   State<PaymentModePurchesWidget> createState() =>
@@ -3684,6 +3692,12 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                 orderTime: getCurrentTimestamp,
                                                 createdBy:
                                                     FFAppState().userdoc?.id,
+                                                order: 'PURCHASE',
+                                                supplierBillNo:
+                                                    widget!.suppplierbillno,
+                                                supplierBillDate:
+                                                    widget!.supplierbilldate,
+                                                note: widget!.note,
                                               ),
                                               ...mapToFirestore(
                                                 {
@@ -3733,6 +3747,12 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                 orderTime: getCurrentTimestamp,
                                                 createdBy:
                                                     FFAppState().userdoc?.id,
+                                                order: 'PURCHASE',
+                                                supplierBillNo:
+                                                    widget!.suppplierbillno,
+                                                supplierBillDate:
+                                                    widget!.supplierbilldate,
+                                                note: widget!.note,
                                               ),
                                               ...mapToFirestore(
                                                 {
@@ -3941,63 +3961,65 @@ class _PaymentModePurchesWidgetState extends State<PaymentModePurchesWidget> {
                                                 singleRecord: true,
                                               ).then((s) => s.firstOrNull);
                                               _shouldSetState = true;
-                                              var confirmDialogResponse =
-                                                  await showDialog<bool>(
-                                                        context: context,
-                                                        builder:
-                                                            (alertDialogContext) {
-                                                          return AlertDialog(
-                                                            content: Text(
-                                                                'Do You Want To Print Label ?'),
-                                                            actions: [
-                                                              TextButton(
-                                                                onPressed: () =>
-                                                                    Navigator.pop(
-                                                                        alertDialogContext,
-                                                                        false),
-                                                                child: Text(
-                                                                    'Cancel'),
-                                                              ),
-                                                              TextButton(
-                                                                onPressed: () =>
-                                                                    Navigator.pop(
-                                                                        alertDialogContext,
-                                                                        true),
-                                                                child: Text(
-                                                                    'Confirm'),
-                                                              ),
-                                                            ],
-                                                          );
-                                                        },
-                                                      ) ??
-                                                      false;
-                                              if (confirmDialogResponse) {
-                                                await showModalBottomSheet(
-                                                  isScrollControlled: true,
-                                                  backgroundColor:
-                                                      Colors.transparent,
-                                                  enableDrag: false,
-                                                  context: context,
-                                                  builder: (context) {
-                                                    return Padding(
-                                                      padding: MediaQuery
-                                                          .viewInsetsOf(
-                                                              context),
-                                                      child: Container(
-                                                        height: 300.0,
-                                                        child:
-                                                            SelectlabelWidget(),
-                                                      ),
-                                                    );
-                                                  },
-                                                ).then((value) =>
-                                                    safeSetState(() {}));
+                                              if (isAndroid) {
+                                                var confirmDialogResponse =
+                                                    await showDialog<bool>(
+                                                          context: context,
+                                                          builder:
+                                                              (alertDialogContext) {
+                                                            return AlertDialog(
+                                                              content: Text(
+                                                                  'Do You Want To Print Label ?'),
+                                                              actions: [
+                                                                TextButton(
+                                                                  onPressed: () =>
+                                                                      Navigator.pop(
+                                                                          alertDialogContext,
+                                                                          false),
+                                                                  child: Text(
+                                                                      'Cancel'),
+                                                                ),
+                                                                TextButton(
+                                                                  onPressed: () =>
+                                                                      Navigator.pop(
+                                                                          alertDialogContext,
+                                                                          true),
+                                                                  child: Text(
+                                                                      'Confirm'),
+                                                                ),
+                                                              ],
+                                                            );
+                                                          },
+                                                        ) ??
+                                                        false;
+                                                if (confirmDialogResponse) {
+                                                  await showModalBottomSheet(
+                                                    isScrollControlled: true,
+                                                    backgroundColor:
+                                                        Colors.transparent,
+                                                    enableDrag: false,
+                                                    context: context,
+                                                    builder: (context) {
+                                                      return Padding(
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
+                                                        child: Container(
+                                                          height: 300.0,
+                                                          child:
+                                                              SelectlabelWidget(),
+                                                        ),
+                                                      );
+                                                    },
+                                                  ).then((value) =>
+                                                      safeSetState(() {}));
 
-                                                await actions.labelPrint(
-                                                  _model.prdlinstnewtx!
-                                                      .toList(),
-                                                  FFAppState().laelsize,
-                                                );
+                                                  await actions.labelPrint(
+                                                    _model.prdlinstnewtx!
+                                                        .toList(),
+                                                    FFAppState().laelsize,
+                                                  );
+                                                }
                                               }
                                               if (!isAndroid) {
                                                 _model.returnurl2 =

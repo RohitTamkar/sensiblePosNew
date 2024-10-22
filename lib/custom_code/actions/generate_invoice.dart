@@ -11,12 +11,6 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
-import 'index.dart'; // Imports other custom actions
-
-import 'index.dart'; // Imports other custom actions
-
-import 'package:flutter/services.dart';
-
 import 'dart:io';
 //import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 
@@ -35,7 +29,7 @@ Future<String> generateInvoice(
   String? orderId,
   List<PurchaseSaleItemListStruct>? orderList,
   String? totalAmt,
-  PurchaseRecord? customerDetails,
+  PurchaseRecord? purchaseDetails,
   PartyRecord? userDetails,
 ) async {
   final pdf = pw.Document();
@@ -70,12 +64,21 @@ Future<String> generateInvoice(
             //   ],
             // ),
             // Order details
+            pw.Row(
+              mainAxisAlignment: pw.MainAxisAlignment.center,
+              children: [
+                pw.SizedBox(width: 10),
+                pw.Text(
+                  'PURCHASE INVOICE',
+                  style: pw.TextStyle(fontWeight: pw.FontWeight.bold),
+                ),
+              ],
+            ),
             pw.Container(
               padding: pw.EdgeInsets.symmetric(vertical: 10),
               child: pw.Column(
                 crossAxisAlignment: pw.CrossAxisAlignment.start,
                 children: [
-                  pw.Text('Thank You For Your Order !'),
                   pw.Text(
                       'Date: ${DateFormat('dd-MM-yyyy').format(DateTime.now())}'), // Current date
                   pw.Text('Order ID: $orderId'),
@@ -89,13 +92,22 @@ Future<String> generateInvoice(
                   pw.SizedBox(height: 10),
                   // Bold labels for customer details
                   pw.Text(
-                    'Customer Name: ',
+                    'Supplier Name: ',
                     style: pw.TextStyle(fontWeight: pw.FontWeight.bold),
                   ),
                   pw.Text(
                     '${userDetails?.name ?? ''}',
                   ),
-
+                  pw.Text(
+                    'Supplier BillNo: ',
+                    style: pw.TextStyle(fontWeight: pw.FontWeight.bold),
+                  ),
+                  pw.Text(
+                    '${purchaseDetails?.supplierBillNo ?? ''}',
+                  ),
+                  pw.Text(
+                    'Note: ${purchaseDetails?.note ?? ''}',
+                  ),
                   pw.Text(
                     'Mobile No: ',
                     style: pw.TextStyle(fontWeight: pw.FontWeight.bold),
@@ -125,6 +137,18 @@ Future<String> generateInvoice(
                       // ['', 'Grand Total:', totalAmt.toString()],
                     ],
                   ),
+                  pw.SizedBox(height: 10),
+                  pw.Row(
+                    mainAxisAlignment: pw.MainAxisAlignment.end,
+                    children: [
+                      pw.SizedBox(width: 10),
+                      pw.Text(
+                        'Payment Mode: ${FFAppState().groceryJson['paymentMode']}',
+                        style: pw.TextStyle(fontWeight: pw.FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                  pw.SizedBox(height: 10),
                   pw.Row(
                     mainAxisAlignment: pw.MainAxisAlignment.end,
                     children: [

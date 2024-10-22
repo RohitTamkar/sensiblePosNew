@@ -186,6 +186,21 @@ class PurchaseRecord extends FirestoreRecord {
   String get createdBy => _createdBy ?? '';
   bool hasCreatedBy() => _createdBy != null;
 
+  // "supplierBillNo" field.
+  String? _supplierBillNo;
+  String get supplierBillNo => _supplierBillNo ?? '';
+  bool hasSupplierBillNo() => _supplierBillNo != null;
+
+  // "supplierBillDate" field.
+  String? _supplierBillDate;
+  String get supplierBillDate => _supplierBillDate ?? '';
+  bool hasSupplierBillDate() => _supplierBillDate != null;
+
+  // "note" field.
+  String? _note;
+  String get note => _note ?? '';
+  bool hasNote() => _note != null;
+
   DocumentReference get parentReference => reference.parent.parent!;
 
   void _initializeFields() {
@@ -226,6 +241,9 @@ class PurchaseRecord extends FirestoreRecord {
     _taxRef = snapshotData['taxRef'] as DocumentReference?;
     _invoiceDate = castToType<int>(snapshotData['invoiceDate']);
     _createdBy = snapshotData['createdBy'] as String?;
+    _supplierBillNo = snapshotData['supplierBillNo'] as String?;
+    _supplierBillDate = snapshotData['supplierBillDate'] as String?;
+    _note = snapshotData['note'] as String?;
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -301,6 +319,9 @@ Map<String, dynamic> createPurchaseRecordData({
   DocumentReference? taxRef,
   int? invoiceDate,
   String? createdBy,
+  String? supplierBillNo,
+  String? supplierBillDate,
+  String? note,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -337,6 +358,9 @@ Map<String, dynamic> createPurchaseRecordData({
       'taxRef': taxRef,
       'invoiceDate': invoiceDate,
       'createdBy': createdBy,
+      'supplierBillNo': supplierBillNo,
+      'supplierBillDate': supplierBillDate,
+      'note': note,
     }.withoutNulls,
   );
 
@@ -382,7 +406,10 @@ class PurchaseRecordDocumentEquality implements Equality<PurchaseRecord> {
         e1?.poDueDate == e2?.poDueDate &&
         e1?.taxRef == e2?.taxRef &&
         e1?.invoiceDate == e2?.invoiceDate &&
-        e1?.createdBy == e2?.createdBy;
+        e1?.createdBy == e2?.createdBy &&
+        e1?.supplierBillNo == e2?.supplierBillNo &&
+        e1?.supplierBillDate == e2?.supplierBillDate &&
+        e1?.note == e2?.note;
   }
 
   @override
@@ -420,7 +447,10 @@ class PurchaseRecordDocumentEquality implements Equality<PurchaseRecord> {
         e?.poDueDate,
         e?.taxRef,
         e?.invoiceDate,
-        e?.createdBy
+        e?.createdBy,
+        e?.supplierBillNo,
+        e?.supplierBillDate,
+        e?.note
       ]);
 
   @override
