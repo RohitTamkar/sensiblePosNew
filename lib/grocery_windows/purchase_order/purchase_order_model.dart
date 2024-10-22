@@ -19,6 +19,7 @@ import 'purchase_order_widget.dart' show PurchaseOrderWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:easy_debounce/easy_debounce.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -83,10 +84,11 @@ class PurchaseOrderModel extends FlutterFlowModel<PurchaseOrderWidget> {
   String? Function(BuildContext, String?)?
       supplierbillnoTextControllerValidator;
   // State field(s) for supplierbilldate widget.
-  FocusNode? supplierbilldateFocusNode;
-  TextEditingController? supplierbilldateTextController;
+  FocusNode? supplierbilldateFocusNode1;
+  TextEditingController? supplierbilldateTextController1;
   String? Function(BuildContext, String?)?
-      supplierbilldateTextControllerValidator;
+      supplierbilldateTextController1Validator;
+  DateTime? datePicked;
   // State field(s) for custname widget.
   FocusNode? custnameFocusNode;
   TextEditingController? custnameTextController;
@@ -99,6 +101,11 @@ class PurchaseOrderModel extends FlutterFlowModel<PurchaseOrderWidget> {
   FocusNode? addressFocusNode;
   TextEditingController? addressTextController;
   String? Function(BuildContext, String?)? addressTextControllerValidator;
+  // State field(s) for supplierbilldate widget.
+  FocusNode? supplierbilldateFocusNode2;
+  TextEditingController? supplierbilldateTextController2;
+  String? Function(BuildContext, String?)?
+      supplierbilldateTextController2Validator;
   // Stores action output result for [Custom Action - removeHoldListItem] action in IconButton widget.
   List<dynamic>? res20;
   // Stores action output result for [Custom Action - calSubTotalForGrocery] action in IconButton widget.
@@ -120,8 +127,8 @@ class PurchaseOrderModel extends FlutterFlowModel<PurchaseOrderWidget> {
     supplierbillnoFocusNode?.dispose();
     supplierbillnoTextController?.dispose();
 
-    supplierbilldateFocusNode?.dispose();
-    supplierbilldateTextController?.dispose();
+    supplierbilldateFocusNode1?.dispose();
+    supplierbilldateTextController1?.dispose();
 
     custnameFocusNode?.dispose();
     custnameTextController?.dispose();
@@ -131,5 +138,8 @@ class PurchaseOrderModel extends FlutterFlowModel<PurchaseOrderWidget> {
 
     addressFocusNode?.dispose();
     addressTextController?.dispose();
+
+    supplierbilldateFocusNode2?.dispose();
+    supplierbilldateTextController2?.dispose();
   }
 }

@@ -70,10 +70,17 @@ class _LoadingScreenNewWidgetState extends State<LoadingScreenNewWidget> {
           singleRecord: true,
         ).then((s) => s.firstOrNull);
         if (_model.invcode != null) {
-          FFAppState().newcount =
-              functions.returncountnew(_model.invcode?.invoice)!;
-          FFAppState().countLaundryForContinuesIncrement =
-              functions.returncountnewLaundry(_model.invcode?.invoice)!;
+          FFAppState().newcount = valueOrDefault<int>(
+            functions.returncountnew(_model.invcode?.invoice),
+            0,
+          );
+          FFAppState().countLaundryForContinuesIncrement = valueOrDefault<int>(
+            functions.returncountnewLaundry(valueOrDefault<String>(
+              _model.invcode?.invoice,
+              '0',
+            )),
+            0,
+          );
           safeSetState(() {});
         } else {
           FFAppState().newcount = 0;

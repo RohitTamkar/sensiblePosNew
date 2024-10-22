@@ -1367,17 +1367,13 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                                       children: [
                                                         Expanded(
                                                           child: Container(
-                                                            width:
-                                                                double.infinity,
-                                                            height:
-                                                                double.infinity,
+                                                            width: 300.0,
+                                                            height: 250.0,
                                                             child:
                                                                 custom_widgets
                                                                     .QrCode(
-                                                              width: double
-                                                                  .infinity,
-                                                              height: double
-                                                                  .infinity,
+                                                              width: 300.0,
+                                                              height: 250.0,
                                                               data: FFAppState()
                                                                   .dId,
                                                               size: 250.0,

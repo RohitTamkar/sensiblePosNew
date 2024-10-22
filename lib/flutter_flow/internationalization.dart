@@ -21972,50 +21972,50 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    '8qo5eczf': {
-      'en': 'Product ID',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
-    'gw5612pi': {
+    '8uh5122a': {
       'en': 'Suppliers\'s Bill No',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'dn136hdj': {
+    'vyi79ntq': {
       'en': '',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'jko81jh1': {
+    'xii4rxsy': {
       'en': 'Bill no(12345679)',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'ilyro11k': {
+    'zydw60o5': {
       'en': 'Suppliers\'s Bill Date',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'p8o4gex6': {
+    '4h30ql5d': {
       'en': '',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    '911lswki': {
+    '36zw03mb': {
       'en': '2020-06-07',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '8qo5eczf': {
+      'en': 'Product ID',
       'hi': '',
       'kn': '',
       'mr': '',
@@ -22058,6 +22058,27 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ib1yzhy3': {
       'en': '',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '6s2j5k7s': {
+      'en': 'Note',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'n8s8vkuk': {
+      'en': '',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    '76cy3g6t': {
+      'en': 'Note......',
       'hi': '',
       'kn': '',
       'mr': '',
