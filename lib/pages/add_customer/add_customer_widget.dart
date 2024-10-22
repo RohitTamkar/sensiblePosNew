@@ -5963,7 +5963,7 @@ class _AddCustomerWidgetState extends State<AddCustomerWidget> {
                                                         title: Text(
                                                             'Duplicate Records '),
                                                         content: Text(
-                                                            'Mobile Is Allready Added, Choose Different Name'),
+                                                            'Mobile Is Allready Added, Choose Different Mobile'),
                                                         actions: [
                                                           TextButton(
                                                             onPressed: () =>
@@ -5975,6 +5975,9 @@ class _AddCustomerWidgetState extends State<AddCustomerWidget> {
                                                       );
                                                     },
                                                   );
+                                                  if (_shouldSetState)
+                                                    safeSetState(() {});
+                                                  return;
                                                 }
                                               } else {
                                                 if (_model.formKey
