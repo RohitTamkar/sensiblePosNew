@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
@@ -5478,476 +5479,575 @@ class _AddCustomerWidgetState extends State<AddCustomerWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    FFButtonWidget(
-                                      onPressed: () async {
-                                        var _shouldSetState = false;
-                                        if (_model.textFieldNameTextController
-                                                    .text !=
-                                                null &&
-                                            _model.textFieldNameTextController
-                                                    .text !=
-                                                '') {
-                                          if (_model.textFieldMobileTextController
-                                                      .text !=
-                                                  null &&
-                                              _model.textFieldMobileTextController
-                                                      .text !=
-                                                  '') {
-                                            var partyRecordReference =
-                                                PartyRecord.createDoc(
-                                                    FFAppState().outletIdRef!);
-                                            await partyRecordReference
-                                                .set(createPartyRecordData(
-                                              name: _model
-                                                  .textFieldNameTextController
-                                                  .text,
-                                              mobile: _model
-                                                  .textFieldMobileTextController
-                                                  .text,
-                                              alternateNumber:
-                                                  valueOrDefault<String>(
-                                                _model
-                                                    .textFieldAltnoTextController
-                                                    .text,
-                                                '0',
+                                    StreamBuilder<List<PartyRecord>>(
+                                      stream: queryPartyRecord(
+                                        parent: FFAppState().outletIdRef,
+                                      ),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 40.0,
+                                              height: 40.0,
+                                              child: SpinKitFadingCircle(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                size: 40.0,
                                               ),
-                                              email: valueOrDefault<String>(
-                                                _model
-                                                    .textFieldEmailTextController
-                                                    .text,
-                                                '0',
-                                              ),
-                                              refName: valueOrDefault<String>(
-                                                _model
-                                                    .textFieldRefNameTextController
-                                                    .text,
-                                                '0',
-                                              ),
-                                              adharCardNo:
-                                                  valueOrDefault<String>(
-                                                _model
-                                                    .textFieldAdharNoTextController
-                                                    .text,
-                                                '0',
-                                              ),
-                                              vehicleNo: valueOrDefault<String>(
-                                                _model
-                                                    .textFieldVehicleNoTextController
-                                                    .text,
-                                                '0',
-                                              ),
-                                              panCardNo: valueOrDefault<String>(
-                                                _model
-                                                    .textFieldPanNoTextController
-                                                    .text,
-                                                '0',
-                                              ),
-                                              gstNo: valueOrDefault<String>(
-                                                _model
-                                                    .textFieldGstNoTextController
-                                                    .text,
-                                                '0',
-                                              ),
-                                              address: valueOrDefault<String>(
-                                                _model
-                                                    .textFieldAddressTextController
-                                                    .text,
-                                                '0',
-                                              ),
-                                              proofOfIdentity:
-                                                  _model.dropDownProofOfIDValue,
-                                              creditLimit: valueOrDefault<int>(
-                                                int.tryParse(_model
-                                                    .textFieldCreditLimitTextController
-                                                    .text),
-                                                0,
-                                              ),
-                                              oldBalance: valueOrDefault<int>(
-                                                int.tryParse(_model
-                                                    .textFieldOldBalTextController
-                                                    .text),
-                                                0,
-                                              ),
-                                              birthday: valueOrDefault<String>(
-                                                _model.datePicked1?.toString(),
-                                                '0',
-                                              ),
-                                              anniversary:
-                                                  valueOrDefault<String>(
-                                                _model.datePicked2?.toString(),
-                                                '0',
-                                              ),
-                                              firmName: valueOrDefault<String>(
-                                                _model
-                                                    .textFieldFirmNameTextController
-                                                    .text,
-                                                '0',
-                                              ),
-                                              familySize: valueOrDefault<int>(
-                                                int.tryParse(_model
-                                                    .textFieldFamilySizeTextController
-                                                    .text),
-                                                0,
-                                              ),
-                                              city: valueOrDefault<String>(
-                                                _model
-                                                    .textFieldCityTextController
-                                                    .text,
-                                                '0',
-                                              ),
-                                              credit: _model
-                                                  .checkboxListTileCreditValue,
-                                              postalCode:
-                                                  valueOrDefault<String>(
-                                                _model
-                                                    .textFieldPostalAddTextController
-                                                    .text,
-                                                '0',
-                                              ),
-                                              extraDetails:
-                                                  valueOrDefault<String>(
-                                                _model
-                                                    .textFieldExtraDetailsTextController
-                                                    .text,
-                                                '0',
-                                              ),
-                                              gender:
-                                                  _model.dropDownGenderValue,
-                                              role: 'CUSTOMER',
-                                              type: _model.dropDownValue,
-                                              firstVisit:
-                                                  valueOrDefault<String>(
-                                                _model
-                                                    .textFieldFIrstVisitTextController
-                                                    .text,
-                                                '0',
-                                              ),
-                                              lastVisit: valueOrDefault<String>(
-                                                _model
-                                                    .textFieldLastVisitTextController
-                                                    .text,
-                                                '0',
-                                              ),
-                                            ));
-                                            _model.custDoc =
-                                                PartyRecord.getDocumentFromData(
-                                                    createPartyRecordData(
-                                                      name: _model
-                                                          .textFieldNameTextController
-                                                          .text,
-                                                      mobile: _model
-                                                          .textFieldMobileTextController
-                                                          .text,
-                                                      alternateNumber:
-                                                          valueOrDefault<
-                                                              String>(
-                                                        _model
-                                                            .textFieldAltnoTextController
-                                                            .text,
-                                                        '0',
-                                                      ),
-                                                      email: valueOrDefault<
-                                                          String>(
-                                                        _model
-                                                            .textFieldEmailTextController
-                                                            .text,
-                                                        '0',
-                                                      ),
-                                                      refName: valueOrDefault<
-                                                          String>(
-                                                        _model
-                                                            .textFieldRefNameTextController
-                                                            .text,
-                                                        '0',
-                                                      ),
-                                                      adharCardNo:
-                                                          valueOrDefault<
-                                                              String>(
-                                                        _model
-                                                            .textFieldAdharNoTextController
-                                                            .text,
-                                                        '0',
-                                                      ),
-                                                      vehicleNo: valueOrDefault<
-                                                          String>(
-                                                        _model
-                                                            .textFieldVehicleNoTextController
-                                                            .text,
-                                                        '0',
-                                                      ),
-                                                      panCardNo: valueOrDefault<
-                                                          String>(
-                                                        _model
-                                                            .textFieldPanNoTextController
-                                                            .text,
-                                                        '0',
-                                                      ),
-                                                      gstNo: valueOrDefault<
-                                                          String>(
-                                                        _model
-                                                            .textFieldGstNoTextController
-                                                            .text,
-                                                        '0',
-                                                      ),
-                                                      address: valueOrDefault<
-                                                          String>(
-                                                        _model
-                                                            .textFieldAddressTextController
-                                                            .text,
-                                                        '0',
-                                                      ),
-                                                      proofOfIdentity: _model
-                                                          .dropDownProofOfIDValue,
-                                                      creditLimit:
-                                                          valueOrDefault<int>(
-                                                        int.tryParse(_model
-                                                            .textFieldCreditLimitTextController
-                                                            .text),
-                                                        0,
-                                                      ),
-                                                      oldBalance:
-                                                          valueOrDefault<int>(
-                                                        int.tryParse(_model
-                                                            .textFieldOldBalTextController
-                                                            .text),
-                                                        0,
-                                                      ),
-                                                      birthday: valueOrDefault<
-                                                          String>(
-                                                        _model.datePicked1
-                                                            ?.toString(),
-                                                        '0',
-                                                      ),
-                                                      anniversary:
-                                                          valueOrDefault<
-                                                              String>(
-                                                        _model.datePicked2
-                                                            ?.toString(),
-                                                        '0',
-                                                      ),
-                                                      firmName: valueOrDefault<
-                                                          String>(
-                                                        _model
-                                                            .textFieldFirmNameTextController
-                                                            .text,
-                                                        '0',
-                                                      ),
-                                                      familySize:
-                                                          valueOrDefault<int>(
-                                                        int.tryParse(_model
-                                                            .textFieldFamilySizeTextController
-                                                            .text),
-                                                        0,
-                                                      ),
-                                                      city: valueOrDefault<
-                                                          String>(
-                                                        _model
-                                                            .textFieldCityTextController
-                                                            .text,
-                                                        '0',
-                                                      ),
-                                                      credit: _model
-                                                          .checkboxListTileCreditValue,
-                                                      postalCode:
-                                                          valueOrDefault<
-                                                              String>(
-                                                        _model
-                                                            .textFieldPostalAddTextController
-                                                            .text,
-                                                        '0',
-                                                      ),
-                                                      extraDetails:
-                                                          valueOrDefault<
-                                                              String>(
-                                                        _model
-                                                            .textFieldExtraDetailsTextController
-                                                            .text,
-                                                        '0',
-                                                      ),
-                                                      gender: _model
-                                                          .dropDownGenderValue,
-                                                      role: 'CUSTOMER',
-                                                      type:
-                                                          _model.dropDownValue,
-                                                      firstVisit:
-                                                          valueOrDefault<
-                                                              String>(
-                                                        _model
-                                                            .textFieldFIrstVisitTextController
-                                                            .text,
-                                                        '0',
-                                                      ),
-                                                      lastVisit: valueOrDefault<
-                                                          String>(
-                                                        _model
-                                                            .textFieldLastVisitTextController
-                                                            .text,
-                                                        '0',
-                                                      ),
-                                                    ),
-                                                    partyRecordReference);
-                                            _shouldSetState = true;
+                                            ),
+                                          );
+                                        }
+                                        List<PartyRecord>
+                                            buttonPartyRecordList =
+                                            snapshot.data!;
 
-                                            await _model.custDoc!.reference
-                                                .update(createPartyRecordData(
-                                              id: functions
-                                                  .getDocIdFromDocRefCustomer(
+                                        return FFButtonWidget(
+                                          onPressed: () async {
+                                            var _shouldSetState = false;
+                                            if (_model.textFieldNameTextController
+                                                        .text !=
+                                                    null &&
+                                                _model.textFieldNameTextController
+                                                        .text !=
+                                                    '') {
+                                              if (_model.textFieldMobileTextController
+                                                          .text !=
+                                                      null &&
+                                                  _model.textFieldMobileTextController
+                                                          .text !=
+                                                      '') {
+                                                _model.docRef = await actions
+                                                    .checkDupCustomer(
+                                                  int.tryParse(_model
+                                                      .textFieldMobileTextController
+                                                      .text),
+                                                  buttonPartyRecordList
+                                                      .toList(),
+                                                );
+                                                _shouldSetState = true;
+                                                if (!_model.docRef!) {
+                                                  var partyRecordReference =
+                                                      PartyRecord.createDoc(
+                                                          FFAppState()
+                                                              .outletIdRef!);
+                                                  await partyRecordReference
+                                                      .set(
+                                                          createPartyRecordData(
+                                                    name: _model
+                                                        .textFieldNameTextController
+                                                        .text,
+                                                    mobile: _model
+                                                        .textFieldMobileTextController
+                                                        .text,
+                                                    alternateNumber:
+                                                        valueOrDefault<String>(
                                                       _model
-                                                          .custDoc!.reference),
-                                            ));
-                                            ScaffoldMessenger.of(context)
-                                                .showSnackBar(
-                                              SnackBar(
-                                                content: Text(
-                                                  'Customer added Successfully...!',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily:
+                                                          .textFieldAltnoTextController
+                                                          .text,
+                                                      '0',
+                                                    ),
+                                                    email:
+                                                        valueOrDefault<String>(
+                                                      _model
+                                                          .textFieldEmailTextController
+                                                          .text,
+                                                      '0',
+                                                    ),
+                                                    refName:
+                                                        valueOrDefault<String>(
+                                                      _model
+                                                          .textFieldRefNameTextController
+                                                          .text,
+                                                      '0',
+                                                    ),
+                                                    adharCardNo:
+                                                        valueOrDefault<String>(
+                                                      _model
+                                                          .textFieldAdharNoTextController
+                                                          .text,
+                                                      '0',
+                                                    ),
+                                                    vehicleNo:
+                                                        valueOrDefault<String>(
+                                                      _model
+                                                          .textFieldVehicleNoTextController
+                                                          .text,
+                                                      '0',
+                                                    ),
+                                                    panCardNo:
+                                                        valueOrDefault<String>(
+                                                      _model
+                                                          .textFieldPanNoTextController
+                                                          .text,
+                                                      '0',
+                                                    ),
+                                                    gstNo:
+                                                        valueOrDefault<String>(
+                                                      _model
+                                                          .textFieldGstNoTextController
+                                                          .text,
+                                                      '0',
+                                                    ),
+                                                    address:
+                                                        valueOrDefault<String>(
+                                                      _model
+                                                          .textFieldAddressTextController
+                                                          .text,
+                                                      '0',
+                                                    ),
+                                                    proofOfIdentity: _model
+                                                        .dropDownProofOfIDValue,
+                                                    creditLimit:
+                                                        valueOrDefault<int>(
+                                                      int.tryParse(_model
+                                                          .textFieldCreditLimitTextController
+                                                          .text),
+                                                      0,
+                                                    ),
+                                                    oldBalance:
+                                                        valueOrDefault<int>(
+                                                      int.tryParse(_model
+                                                          .textFieldOldBalTextController
+                                                          .text),
+                                                      0,
+                                                    ),
+                                                    birthday:
+                                                        valueOrDefault<String>(
+                                                      _model.datePicked1
+                                                          ?.toString(),
+                                                      '0',
+                                                    ),
+                                                    anniversary:
+                                                        valueOrDefault<String>(
+                                                      _model.datePicked2
+                                                          ?.toString(),
+                                                      '0',
+                                                    ),
+                                                    firmName:
+                                                        valueOrDefault<String>(
+                                                      _model
+                                                          .textFieldFirmNameTextController
+                                                          .text,
+                                                      '0',
+                                                    ),
+                                                    familySize:
+                                                        valueOrDefault<int>(
+                                                      int.tryParse(_model
+                                                          .textFieldFamilySizeTextController
+                                                          .text),
+                                                      0,
+                                                    ),
+                                                    city:
+                                                        valueOrDefault<String>(
+                                                      _model
+                                                          .textFieldCityTextController
+                                                          .text,
+                                                      '0',
+                                                    ),
+                                                    credit: _model
+                                                        .checkboxListTileCreditValue,
+                                                    postalCode:
+                                                        valueOrDefault<String>(
+                                                      _model
+                                                          .textFieldPostalAddTextController
+                                                          .text,
+                                                      '0',
+                                                    ),
+                                                    extraDetails:
+                                                        valueOrDefault<String>(
+                                                      _model
+                                                          .textFieldExtraDetailsTextController
+                                                          .text,
+                                                      '0',
+                                                    ),
+                                                    gender: _model
+                                                        .dropDownGenderValue,
+                                                    role: 'CUSTOMER',
+                                                    type: _model.dropDownValue,
+                                                    firstVisit:
+                                                        valueOrDefault<String>(
+                                                      _model
+                                                          .textFieldFIrstVisitTextController
+                                                          .text,
+                                                      '0',
+                                                    ),
+                                                    lastVisit:
+                                                        valueOrDefault<String>(
+                                                      _model
+                                                          .textFieldLastVisitTextController
+                                                          .text,
+                                                      '0',
+                                                    ),
+                                                  ));
+                                                  _model.custDoc = PartyRecord
+                                                      .getDocumentFromData(
+                                                          createPartyRecordData(
+                                                            name: _model
+                                                                .textFieldNameTextController
+                                                                .text,
+                                                            mobile: _model
+                                                                .textFieldMobileTextController
+                                                                .text,
+                                                            alternateNumber:
+                                                                valueOrDefault<
+                                                                    String>(
+                                                              _model
+                                                                  .textFieldAltnoTextController
+                                                                  .text,
+                                                              '0',
+                                                            ),
+                                                            email:
+                                                                valueOrDefault<
+                                                                    String>(
+                                                              _model
+                                                                  .textFieldEmailTextController
+                                                                  .text,
+                                                              '0',
+                                                            ),
+                                                            refName:
+                                                                valueOrDefault<
+                                                                    String>(
+                                                              _model
+                                                                  .textFieldRefNameTextController
+                                                                  .text,
+                                                              '0',
+                                                            ),
+                                                            adharCardNo:
+                                                                valueOrDefault<
+                                                                    String>(
+                                                              _model
+                                                                  .textFieldAdharNoTextController
+                                                                  .text,
+                                                              '0',
+                                                            ),
+                                                            vehicleNo:
+                                                                valueOrDefault<
+                                                                    String>(
+                                                              _model
+                                                                  .textFieldVehicleNoTextController
+                                                                  .text,
+                                                              '0',
+                                                            ),
+                                                            panCardNo:
+                                                                valueOrDefault<
+                                                                    String>(
+                                                              _model
+                                                                  .textFieldPanNoTextController
+                                                                  .text,
+                                                              '0',
+                                                            ),
+                                                            gstNo:
+                                                                valueOrDefault<
+                                                                    String>(
+                                                              _model
+                                                                  .textFieldGstNoTextController
+                                                                  .text,
+                                                              '0',
+                                                            ),
+                                                            address:
+                                                                valueOrDefault<
+                                                                    String>(
+                                                              _model
+                                                                  .textFieldAddressTextController
+                                                                  .text,
+                                                              '0',
+                                                            ),
+                                                            proofOfIdentity: _model
+                                                                .dropDownProofOfIDValue,
+                                                            creditLimit:
+                                                                valueOrDefault<
+                                                                    int>(
+                                                              int.tryParse(_model
+                                                                  .textFieldCreditLimitTextController
+                                                                  .text),
+                                                              0,
+                                                            ),
+                                                            oldBalance:
+                                                                valueOrDefault<
+                                                                    int>(
+                                                              int.tryParse(_model
+                                                                  .textFieldOldBalTextController
+                                                                  .text),
+                                                              0,
+                                                            ),
+                                                            birthday:
+                                                                valueOrDefault<
+                                                                    String>(
+                                                              _model.datePicked1
+                                                                  ?.toString(),
+                                                              '0',
+                                                            ),
+                                                            anniversary:
+                                                                valueOrDefault<
+                                                                    String>(
+                                                              _model.datePicked2
+                                                                  ?.toString(),
+                                                              '0',
+                                                            ),
+                                                            firmName:
+                                                                valueOrDefault<
+                                                                    String>(
+                                                              _model
+                                                                  .textFieldFirmNameTextController
+                                                                  .text,
+                                                              '0',
+                                                            ),
+                                                            familySize:
+                                                                valueOrDefault<
+                                                                    int>(
+                                                              int.tryParse(_model
+                                                                  .textFieldFamilySizeTextController
+                                                                  .text),
+                                                              0,
+                                                            ),
+                                                            city:
+                                                                valueOrDefault<
+                                                                    String>(
+                                                              _model
+                                                                  .textFieldCityTextController
+                                                                  .text,
+                                                              '0',
+                                                            ),
+                                                            credit: _model
+                                                                .checkboxListTileCreditValue,
+                                                            postalCode:
+                                                                valueOrDefault<
+                                                                    String>(
+                                                              _model
+                                                                  .textFieldPostalAddTextController
+                                                                  .text,
+                                                              '0',
+                                                            ),
+                                                            extraDetails:
+                                                                valueOrDefault<
+                                                                    String>(
+                                                              _model
+                                                                  .textFieldExtraDetailsTextController
+                                                                  .text,
+                                                              '0',
+                                                            ),
+                                                            gender: _model
+                                                                .dropDownGenderValue,
+                                                            role: 'CUSTOMER',
+                                                            type: _model
+                                                                .dropDownValue,
+                                                            firstVisit:
+                                                                valueOrDefault<
+                                                                    String>(
+                                                              _model
+                                                                  .textFieldFIrstVisitTextController
+                                                                  .text,
+                                                              '0',
+                                                            ),
+                                                            lastVisit:
+                                                                valueOrDefault<
+                                                                    String>(
+                                                              _model
+                                                                  .textFieldLastVisitTextController
+                                                                  .text,
+                                                              '0',
+                                                            ),
+                                                          ),
+                                                          partyRecordReference);
+                                                  _shouldSetState = true;
+
+                                                  await _model
+                                                      .custDoc!.reference
+                                                      .update(
+                                                          createPartyRecordData(
+                                                    id: functions
+                                                        .getDocIdFromDocRefCustomer(
+                                                            _model.custDoc!
+                                                                .reference),
+                                                  ));
+                                                  ScaffoldMessenger.of(context)
+                                                      .showSnackBar(
+                                                    SnackBar(
+                                                      content: Text(
+                                                        'Customer added Successfully...!',
+                                                        style:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .titleSmallFamily,
-                                                        color:
-                                                            Color(0x00000000),
-                                                        letterSpacing: 0.0,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmallFamily),
+                                                                .titleSmall
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily,
+                                                                  color: Color(
+                                                                      0x00000000),
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleSmallFamily),
+                                                                ),
                                                       ),
-                                                ),
-                                                duration: Duration(
-                                                    milliseconds: 3000),
-                                                backgroundColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .alternate,
-                                              ),
-                                            );
-                                            safeSetState(() {
-                                              _model
-                                                  .textFieldMobileTextController
-                                                  ?.clear();
-                                              _model.textFieldNameTextController
-                                                  ?.clear();
-                                              _model
-                                                  .textFieldAltnoTextController
-                                                  ?.clear();
-                                              _model
-                                                  .textFieldEmailTextController
-                                                  ?.clear();
-                                              _model
-                                                  .textFieldRefNameTextController
-                                                  ?.clear();
-                                              _model
-                                                  .textFieldVehicleNoTextController
-                                                  ?.clear();
-                                              _model
-                                                  .textFieldAdharNoTextController
-                                                  ?.clear();
-                                              _model
-                                                  .textFieldPanNoTextController
-                                                  ?.clear();
-                                              _model
-                                                  .textFieldGstNoTextController
-                                                  ?.clear();
-                                              _model
-                                                  .textFieldCreditLimitTextController
-                                                  ?.clear();
-                                              _model
-                                                  .textFieldOldBalTextController
-                                                  ?.clear();
-                                              _model
-                                                  .textFieldFirmNameTextController
-                                                  ?.clear();
-                                              _model
-                                                  .textFieldExtraDetailsTextController
-                                                  ?.clear();
-                                              _model
-                                                  .textFieldFamilySizeTextController
-                                                  ?.clear();
-                                              _model
-                                                  .textFieldAddressTextController
-                                                  ?.clear();
-                                              _model.textFieldCityTextController
-                                                  ?.clear();
-                                              _model
-                                                  .textFieldPostalAddTextController
-                                                  ?.clear();
-                                              _model
-                                                  .textFieldFIrstVisitTextController
-                                                  ?.clear();
-                                              _model
-                                                  .textFieldLastVisitTextController
-                                                  ?.clear();
-                                            });
-                                            context.pop();
-                                          } else {
-                                            if (_model.formKey.currentState ==
-                                                    null ||
-                                                !_model.formKey.currentState!
-                                                    .validate()) {
+                                                      duration: Duration(
+                                                          milliseconds: 3000),
+                                                      backgroundColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .alternate,
+                                                    ),
+                                                  );
+                                                  safeSetState(() {
+                                                    _model
+                                                        .textFieldMobileTextController
+                                                        ?.clear();
+                                                    _model
+                                                        .textFieldNameTextController
+                                                        ?.clear();
+                                                    _model
+                                                        .textFieldAltnoTextController
+                                                        ?.clear();
+                                                    _model
+                                                        .textFieldEmailTextController
+                                                        ?.clear();
+                                                    _model
+                                                        .textFieldRefNameTextController
+                                                        ?.clear();
+                                                    _model
+                                                        .textFieldVehicleNoTextController
+                                                        ?.clear();
+                                                    _model
+                                                        .textFieldAdharNoTextController
+                                                        ?.clear();
+                                                    _model
+                                                        .textFieldPanNoTextController
+                                                        ?.clear();
+                                                    _model
+                                                        .textFieldGstNoTextController
+                                                        ?.clear();
+                                                    _model
+                                                        .textFieldCreditLimitTextController
+                                                        ?.clear();
+                                                    _model
+                                                        .textFieldOldBalTextController
+                                                        ?.clear();
+                                                    _model
+                                                        .textFieldFirmNameTextController
+                                                        ?.clear();
+                                                    _model
+                                                        .textFieldExtraDetailsTextController
+                                                        ?.clear();
+                                                    _model
+                                                        .textFieldFamilySizeTextController
+                                                        ?.clear();
+                                                    _model
+                                                        .textFieldAddressTextController
+                                                        ?.clear();
+                                                    _model
+                                                        .textFieldCityTextController
+                                                        ?.clear();
+                                                    _model
+                                                        .textFieldPostalAddTextController
+                                                        ?.clear();
+                                                    _model
+                                                        .textFieldFIrstVisitTextController
+                                                        ?.clear();
+                                                    _model
+                                                        .textFieldLastVisitTextController
+                                                        ?.clear();
+                                                  });
+                                                  context.pop();
+                                                } else {
+                                                  await showDialog(
+                                                    context: context,
+                                                    builder:
+                                                        (alertDialogContext) {
+                                                      return AlertDialog(
+                                                        title: Text(
+                                                            'Duplicate Records '),
+                                                        content: Text(
+                                                            'Mobile Is Allready Added, Choose Different Name'),
+                                                        actions: [
+                                                          TextButton(
+                                                            onPressed: () =>
+                                                                Navigator.pop(
+                                                                    alertDialogContext),
+                                                            child: Text('Ok'),
+                                                          ),
+                                                        ],
+                                                      );
+                                                    },
+                                                  );
+                                                }
+                                              } else {
+                                                if (_model.formKey
+                                                            .currentState ==
+                                                        null ||
+                                                    !_model
+                                                        .formKey.currentState!
+                                                        .validate()) {
+                                                  return;
+                                                }
+                                                if (_shouldSetState)
+                                                  safeSetState(() {});
+                                                return;
+                                              }
+                                            } else {
+                                              if (_model.formKey.currentState ==
+                                                      null ||
+                                                  !_model.formKey.currentState!
+                                                      .validate()) {
+                                                return;
+                                              }
+                                              if (_shouldSetState)
+                                                safeSetState(() {});
                                               return;
                                             }
+
                                             if (_shouldSetState)
                                               safeSetState(() {});
-                                            return;
-                                          }
-                                        } else {
-                                          if (_model.formKey.currentState ==
-                                                  null ||
-                                              !_model.formKey.currentState!
-                                                  .validate()) {
-                                            return;
-                                          }
-                                          if (_shouldSetState)
-                                            safeSetState(() {});
-                                          return;
-                                        }
-
-                                        if (_shouldSetState)
-                                          safeSetState(() {});
-                                      },
-                                      text: FFLocalizations.of(context).getText(
-                                        'mcqsgrv7' /* SAVE */,
-                                      ),
-                                      options: FFButtonOptions(
-                                        width: 200.0,
-                                        height: 40.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 0.0),
-                                        iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondary,
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .headlineSmall
-                                            .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmallFamily,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .lineColor,
-                                              letterSpacing: 0.0,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineSmallFamily),
+                                          },
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            'mcqsgrv7' /* SAVE */,
+                                          ),
+                                          options: FFButtonOptions(
+                                            width: 200.0,
+                                            height: 40.0,
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            iconPadding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondary,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineSmall
+                                                    .override(
+                                                      fontFamily: FlutterFlowTheme
+                                                              .of(context)
+                                                          .headlineSmallFamily,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .lineColor,
+                                                      letterSpacing: 0.0,
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineSmallFamily),
+                                                    ),
+                                            elevation: 2.0,
+                                            borderSide: BorderSide(
+                                              color: Colors.transparent,
+                                              width: 1.0,
                                             ),
-                                        elevation: 2.0,
-                                        borderSide: BorderSide(
-                                          color: Colors.transparent,
-                                          width: 1.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(0.0),
-                                      ),
+                                            borderRadius:
+                                                BorderRadius.circular(0.0),
+                                          ),
+                                        );
+                                      },
                                     ),
                                   ],
                                 ),

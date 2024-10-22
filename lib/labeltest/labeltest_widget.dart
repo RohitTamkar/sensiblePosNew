@@ -212,11 +212,20 @@ class _LabeltestWidgetState extends State<LabeltestWidget> {
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Container(
-                    width: double.infinity,
-                    height: 500.0,
-                    child: custom_widgets.UserInput(
+                  if (false)
+                    Container(
                       width: double.infinity,
+                      height: 500.0,
+                      child: custom_widgets.UserInput(
+                        width: double.infinity,
+                        height: 500.0,
+                      ),
+                    ),
+                  Container(
+                    width: 500.0,
+                    height: 500.0,
+                    child: custom_widgets.Labeltestprint(
+                      width: 500.0,
                       height: 500.0,
                     ),
                   ),
