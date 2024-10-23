@@ -18,8 +18,8 @@ class ProductCartListComplaundryModel
 
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
-  TextEditingController? textController;
-  String? Function(BuildContext, String?)? textControllerValidator;
+  TextEditingController? textController1;
+  String? Function(BuildContext, String?)? textController1Validator;
   // Stores action output result for [Custom Action - laundryaddToHoldListprdplus] action in TextField widget.
   List<dynamic>? resultplusCopy2Copy;
   // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in TextField widget.
@@ -32,6 +32,16 @@ class ProductCartListComplaundryModel
   double? resultmi;
   // Stores action output result for [Custom Action - calBillAmt] action in Minus widget.
   double? reu34;
+  // State field(s) for productQty widget.
+  FocusNode? productQtyFocusNode;
+  TextEditingController? productQtyTextController;
+  String? Function(BuildContext, String?)? productQtyTextControllerValidator;
+  // Stores action output result for [Custom Action - laudryAddCustomQty] action in productQty widget.
+  List<dynamic>? custqty;
+  // Stores action output result for [Custom Action - laundrycalSubTotalForHoldList] action in productQty widget.
+  double? calSubtotal;
+  // Stores action output result for [Custom Action - calBillAmt] action in productQty widget.
+  double? reuslt12CopyCopyCopy;
   // Stores action output result for [Custom Action - addToHoldListprdplus] action in Plus widget.
   List<dynamic>? resultplus;
   // Stores action output result for [Custom Action - calSubTotalForHoldList] action in Plus widget.
@@ -45,6 +55,9 @@ class ProductCartListComplaundryModel
   @override
   void dispose() {
     textFieldFocusNode?.dispose();
-    textController?.dispose();
+    textController1?.dispose();
+
+    productQtyFocusNode?.dispose();
+    productQtyTextController?.dispose();
   }
 }

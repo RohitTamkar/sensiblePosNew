@@ -1,6 +1,7 @@
 export 'check_platform.dart' show checkPlatform;
 export 'calculate_mixpaymentamt.dart' show calculateMixpaymentamt;
 export 'print_billnewhive.dart' show printBillnewhive;
+export 'laudry_add_custom_qty.dart' show laudryAddCustomQty;
 export 'cal_bill_amt_grocery_pay.dart' show calBillAmtGroceryPay;
 export 'print_bill_format_two.dart' show printBillFormatTwo;
 export 'print_k_o_twithusbkioskhive.dart' show printKOTwithusbkioskhive;

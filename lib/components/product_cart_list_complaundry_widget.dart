@@ -65,17 +65,25 @@ class _ProductCartListComplaundryWidgetState
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       safeSetState(() {
-        _model.textController?.text = widget!.parameter2!.toString();
-        _model.textController?.selection =
-            TextSelection.collapsed(offset: _model.textController!.text.length);
+        _model.textController1?.text = widget!.parameter2!.toString();
+        _model.textController1?.selection = TextSelection.collapsed(
+            offset: _model.textController1!.text.length);
+      });
+      safeSetState(() {
+        _model.productQtyTextController?.text = widget!.parameter8!.toString();
+        _model.productQtyTextController?.selection = TextSelection.collapsed(
+            offset: _model.productQtyTextController!.text.length);
       });
 
       _model.updatePage(() {});
     });
 
-    _model.textController ??= TextEditingController();
+    _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
     _model.textFieldFocusNode!.addListener(() => safeSetState(() {}));
+    _model.productQtyTextController ??= TextEditingController();
+    _model.productQtyFocusNode ??= FocusNode();
+    _model.productQtyFocusNode!.addListener(() => safeSetState(() {}));
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -169,7 +177,7 @@ class _ProductCartListComplaundryWidgetState
                               Container(
                                 width: 100.0,
                                 child: TextFormField(
-                                  controller: _model.textController,
+                                  controller: _model.textController1,
                                   focusNode: _model.textFieldFocusNode,
                                   onFieldSubmitted: (_) async {
                                     _model.resultplusCopy2Copy = await actions
@@ -180,7 +188,7 @@ class _ProductCartListComplaundryWidgetState
                                       functions.enabletaxinclusive(
                                           widget!.parameter7!),
                                       double.tryParse(
-                                          _model.textController.text),
+                                          _model.textController1.text),
                                     );
                                     _model.resultofSubCalCopy = await actions
                                         .laundrycalSubTotalForHoldList(
@@ -268,7 +276,7 @@ class _ProductCartListComplaundryWidgetState
                                           decimal: true),
                                   cursorColor:
                                       FlutterFlowTheme.of(context).primaryText,
-                                  validator: _model.textControllerValidator
+                                  validator: _model.textController1Validator
                                       .asValidator(context),
                                 ),
                               ),
@@ -375,25 +383,143 @@ class _ProductCartListComplaundryWidgetState
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Text(
-                                    widget!.parameter8!.toString(),
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodySmall
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodySmallFamily,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          fontSize: 13.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w500,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodySmallFamily),
+                                  Container(
+                                    width: 200.0,
+                                    child: TextFormField(
+                                      controller:
+                                          _model.productQtyTextController,
+                                      focusNode: _model.productQtyFocusNode,
+                                      onFieldSubmitted: (_) async {
+                                        _model.custqty =
+                                            await actions.laudryAddCustomQty(
+                                          widget!.parameter4!,
+                                          FFAppState().selBill,
+                                          widget!.parameter5!.toList(),
+                                          functions.enabletaxinclusive(
+                                              widget!.parameter7!),
+                                          double.tryParse(_model
+                                              .productQtyTextController.text),
+                                        );
+                                        _model.calSubtotal = await actions
+                                            .laundrycalSubTotalForHoldList(
+                                          FFAppState().selBill.toString(),
+                                          _model.custqty!.toList(),
+                                        );
+                                        _model.reuslt12CopyCopyCopy =
+                                            await actions.calBillAmt(
+                                          valueOrDefault<double>(
+                                            FFAppState().disAmt,
+                                            0.0,
+                                          ),
+                                          FFAppState().delCharges,
+                                        );
+
+                                        safeSetState(() {});
+                                      },
+                                      autofocus: false,
+                                      obscureText: false,
+                                      decoration: InputDecoration(
+                                        isDense: true,
+                                        labelText:
+                                            FFLocalizations.of(context).getText(
+                                          'bxnt01gt' /* 1 */,
                                         ),
+                                        labelStyle: FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodySmallFamily,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              fontSize: 13.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w500,
+                                              useGoogleFonts:
+                                                  GoogleFonts.asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodySmallFamily),
+                                            ),
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'i5q43jrn' /* TextField */,
+                                        ),
+                                        hintStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMediumFamily,
+                                              letterSpacing: 0.0,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMediumFamily),
+                                            ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: Color(0x00000000),
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: Color(0x00000000),
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        errorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        focusedErrorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        filled: true,
+                                        fillColor: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily,
+                                            letterSpacing: 0.0,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily),
+                                          ),
+                                      keyboardType:
+                                          const TextInputType.numberWithOptions(
+                                              decimal: true),
+                                      cursorColor: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      validator: _model
+                                          .productQtyTextControllerValidator
+                                          .asValidator(context),
+                                    ),
                                   ),
                                 ],
                               ),
