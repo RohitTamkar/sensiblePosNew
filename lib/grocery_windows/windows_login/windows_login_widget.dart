@@ -10,8 +10,8 @@ import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
@@ -168,7 +168,7 @@ class _WindowsLoginWidgetState extends State<WindowsLoginWidget> {
                                           ],
                                           carouselController:
                                               _model.carouselController ??=
-                                                  CarouselController(),
+                                                  CarouselSliderController(),
                                           options: CarouselOptions(
                                             initialPage: 1,
                                             viewportFraction: 1.0,

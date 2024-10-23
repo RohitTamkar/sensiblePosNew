@@ -10,9 +10,9 @@ import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:carousel_slider/carousel_slider.dart';
 import 'windows_login_widget.dart' show WindowsLoginWidget;
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +30,7 @@ class WindowsLoginModel extends FlutterFlowModel<WindowsLoginWidget> {
   // Stores action output result for [Custom Action - checkPlatform] action in WindowsLogin widget.
   String? platform;
   // State field(s) for Carousel widget.
-  CarouselController? carouselController;
+  CarouselSliderController? carouselController;
   int carouselCurrentIndex = 1;
 
   // State field(s) for TextField widget.

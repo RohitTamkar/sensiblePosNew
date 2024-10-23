@@ -6,8 +6,8 @@ import '/pages/kiosk/kiosk_header/kiosk_header_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'kiosk_advertising_widget.dart' show KioskAdvertisingWidget;
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -25,7 +25,7 @@ class KioskAdvertisingModel extends FlutterFlowModel<KioskAdvertisingWidget> {
   // Model for KioskHeader component.
   late KioskHeaderModel kioskHeaderModel;
   // State field(s) for Carousel widget.
-  CarouselController? carouselController;
+  CarouselSliderController? carouselController;
   int carouselCurrentIndex = 1;
 
   @override

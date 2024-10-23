@@ -2068,60 +2068,9 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          Theme(
-                            data: ThemeData(
-                              checkboxTheme: CheckboxThemeData(
-                                visualDensity: VisualDensity.compact,
-                                materialTapTargetSize:
-                                    MaterialTapTargetSize.shrinkWrap,
-                              ),
-                              unselectedWidgetColor:
-                                  FlutterFlowTheme.of(context).secondaryText,
-                            ),
-                            child: CheckboxListTile(
-                              value: _model.checkboxListTileValue1 ??= false,
-                              onChanged: (newValue) async {
-                                safeSetState(() =>
-                                    _model.checkboxListTileValue1 = newValue!);
-                              },
-                              title: Text(
-                                FFLocalizations.of(context).getText(
-                                  'vrx4neuh' /* Weightable */,
-                                ),
-                                textAlign: TextAlign.start,
-                                style: FlutterFlowTheme.of(context)
-                                    .titleLarge
-                                    .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .titleLargeFamily,
-                                      letterSpacing: 0.0,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .titleLargeFamily),
-                                    ),
-                              ),
-                              tileColor: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              activeColor: FlutterFlowTheme.of(context).primary,
-                              checkColor: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              dense: false,
-                              controlAffinity: ListTileControlAffinity.leading,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        width: 300.0,
-                        decoration: BoxDecoration(),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Theme(
+                          Material(
+                            color: Colors.transparent,
+                            child: Theme(
                               data: ThemeData(
                                 checkboxTheme: CheckboxThemeData(
                                   visualDensity: VisualDensity.compact,
@@ -2132,15 +2081,16 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                     FlutterFlowTheme.of(context).secondaryText,
                               ),
                               child: CheckboxListTile(
-                                value: _model.checkboxListTileValue2 ??= false,
+                                value: _model.checkboxListTileValue1 ??= false,
                                 onChanged: (newValue) async {
                                   safeSetState(() => _model
-                                      .checkboxListTileValue2 = newValue!);
+                                      .checkboxListTileValue1 = newValue!);
                                 },
                                 title: Text(
                                   FFLocalizations.of(context).getText(
-                                    'k7ymm4w8' /* Stocktable */,
+                                    'vrx4neuh' /* Weightable */,
                                   ),
+                                  textAlign: TextAlign.start,
                                   style: FlutterFlowTheme.of(context)
                                       .titleLarge
                                       .override(
@@ -2162,6 +2112,67 @@ class _AddProductGroceryWidgetState extends State<AddProductGroceryWidget> {
                                 dense: false,
                                 controlAffinity:
                                     ListTileControlAffinity.leading,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        width: 300.0,
+                        decoration: BoxDecoration(),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Material(
+                              color: Colors.transparent,
+                              child: Theme(
+                                data: ThemeData(
+                                  checkboxTheme: CheckboxThemeData(
+                                    visualDensity: VisualDensity.compact,
+                                    materialTapTargetSize:
+                                        MaterialTapTargetSize.shrinkWrap,
+                                  ),
+                                  unselectedWidgetColor:
+                                      FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                ),
+                                child: CheckboxListTile(
+                                  value: _model.checkboxListTileValue2 ??=
+                                      false,
+                                  onChanged: (newValue) async {
+                                    safeSetState(() => _model
+                                        .checkboxListTileValue2 = newValue!);
+                                  },
+                                  title: Text(
+                                    FFLocalizations.of(context).getText(
+                                      'k7ymm4w8' /* Stocktable */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleLargeFamily,
+                                          letterSpacing: 0.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleLargeFamily),
+                                        ),
+                                  ),
+                                  tileColor: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  activeColor:
+                                      FlutterFlowTheme.of(context).primary,
+                                  checkColor: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  dense: false,
+                                  controlAffinity:
+                                      ListTileControlAffinity.leading,
+                                ),
                               ),
                             ),
                           ],

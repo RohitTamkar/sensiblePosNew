@@ -2477,7 +2477,9 @@ class _ProductAndListlaundrybillingWidgetState
                                                                                                   Padding(
                                                                                                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 7.0),
                                                                                                     child: Text(
-                                                                                                      productListItem.name.maybeHandleOverflow(maxChars: 25),
+                                                                                                      productListItem.name.maybeHandleOverflow(
+                                                                                                        maxChars: 25,
+                                                                                                      ),
                                                                                                       textAlign: TextAlign.center,
                                                                                                       style: FlutterFlowTheme.of(context).titleMedium.override(
                                                                                                             fontFamily: FlutterFlowTheme.of(context).titleMediumFamily,
