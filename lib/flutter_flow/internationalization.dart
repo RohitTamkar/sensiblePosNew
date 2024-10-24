@@ -27547,6 +27547,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
+    'mtkbwsm3': {
+      'en': 'C:\\\\Users\\\\Admin\\\\AppData\\\\Local\\\\firestore',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
     'g9c03pbk': {
       'en': 'save',
       'hi': '',
