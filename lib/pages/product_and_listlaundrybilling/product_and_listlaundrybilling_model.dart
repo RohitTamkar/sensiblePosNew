@@ -166,6 +166,16 @@ class ProductAndListlaundrybillingModel
   ProductStructStruct? productupdated;
   // Stores action output result for [Custom Action - getProductlistHive] action in Button widget.
   List<ProductStructStruct>? newupdatedproductlist2;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  InvoiceRecord? pdfinvoiceDoc1;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  HeaderRecord? pdfheaderDoc1;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  OutletRecord? pdfOutletDoc1;
+  // Stores action output result for [Custom Action - genBillInvoicePdf] action in Button widget.
+  String? base64Link1;
+  // Stores action output result for [Backend Call - API (sendWhatsappMsgBillPdf)] action in Button widget.
+  ApiCallResponse? apiResultjx33;
   // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
   List<SelItemListStruct>? prdlinstnewtx;
   // Stores action output result for [Custom Action - oldbalanceplusamt] action in Button widget.

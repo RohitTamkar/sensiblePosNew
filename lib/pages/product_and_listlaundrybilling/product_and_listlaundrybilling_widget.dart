@@ -5369,6 +5369,148 @@ class _ProductAndListlaundrybillingWidgetState
                                                                     safeSetState(
                                                                         () {});
                                                                   }
+                                                                  var confirmDialogResponse =
+                                                                      await showDialog<
+                                                                              bool>(
+                                                                            context:
+                                                                                context,
+                                                                            builder:
+                                                                                (alertDialogContext) {
+                                                                              return AlertDialog(
+                                                                                title: Text('Send Whatsapp Bill'),
+                                                                                content: Text('You want to send bill to whatsapp.'),
+                                                                                actions: [
+                                                                                  TextButton(
+                                                                                    onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                    child: Text('Cancel'),
+                                                                                  ),
+                                                                                  TextButton(
+                                                                                    onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                    child: Text('Confirm'),
+                                                                                  ),
+                                                                                ],
+                                                                              );
+                                                                            },
+                                                                          ) ??
+                                                                          false;
+                                                                  if (confirmDialogResponse) {
+                                                                    if (FFAppState().setCustMobNo !=
+                                                                            null &&
+                                                                        FFAppState().setCustMobNo !=
+                                                                            '') {
+                                                                      _model.pdfinvoiceDoc1 =
+                                                                          await queryInvoiceRecordOnce(
+                                                                        parent:
+                                                                            FFAppState().outletIdRef,
+                                                                        queryBuilder:
+                                                                            (invoiceRecord) =>
+                                                                                invoiceRecord.where(
+                                                                          'id',
+                                                                          isEqualTo: _model
+                                                                              .invonline
+                                                                              ?.id,
+                                                                        ),
+                                                                        singleRecord:
+                                                                            true,
+                                                                      ).then((s) =>
+                                                                              s.firstOrNull);
+                                                                      _shouldSetState =
+                                                                          true;
+                                                                      _model.pdfheaderDoc1 =
+                                                                          await queryHeaderRecordOnce(
+                                                                        parent:
+                                                                            FFAppState().outletIdRef,
+                                                                        singleRecord:
+                                                                            true,
+                                                                      ).then((s) =>
+                                                                              s.firstOrNull);
+                                                                      _shouldSetState =
+                                                                          true;
+                                                                      _model.pdfOutletDoc1 =
+                                                                          await queryOutletRecordOnce(
+                                                                        queryBuilder:
+                                                                            (outletRecord) =>
+                                                                                outletRecord.where(
+                                                                          'id',
+                                                                          isEqualTo: FFAppState()
+                                                                              .outletIdRef
+                                                                              ?.id,
+                                                                        ),
+                                                                        singleRecord:
+                                                                            true,
+                                                                      ).then((s) =>
+                                                                              s.firstOrNull);
+                                                                      _shouldSetState =
+                                                                          true;
+                                                                      _model.base64Link1 =
+                                                                          await actions
+                                                                              .genBillInvoicePdf(
+                                                                        _model
+                                                                            .pdfinvoiceDoc1!,
+                                                                        _model
+                                                                            .pdfOutletDoc1!,
+                                                                        _model
+                                                                            .pdfheaderDoc1!,
+                                                                      );
+                                                                      _shouldSetState =
+                                                                          true;
+                                                                      _model.apiResultjx33 =
+                                                                          await SendWhatsappMsgBillPdfCall
+                                                                              .call(
+                                                                        userMobileNumber:
+                                                                            FFAppState().setCustMobNo,
+                                                                        link: _model
+                                                                            .base64Link1,
+                                                                        name: FFAppState()
+                                                                            .setCustName,
+                                                                        filename:
+                                                                            'invoice',
+                                                                      );
+
+                                                                      _shouldSetState =
+                                                                          true;
+                                                                      if ((_model
+                                                                              .apiResultjx33
+                                                                              ?.succeeded ??
+                                                                          true)) {
+                                                                        await showDialog(
+                                                                          context:
+                                                                              context,
+                                                                          builder:
+                                                                              (alertDialogContext) {
+                                                                            return AlertDialog(
+                                                                              title: Text('Success'),
+                                                                              content: Text('WhatsApp Bill Send Successfully'),
+                                                                              actions: [
+                                                                                TextButton(
+                                                                                  onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                  child: Text('Ok'),
+                                                                                ),
+                                                                              ],
+                                                                            );
+                                                                          },
+                                                                        );
+                                                                      } else {
+                                                                        await showDialog(
+                                                                          context:
+                                                                              context,
+                                                                          builder:
+                                                                              (alertDialogContext) {
+                                                                            return AlertDialog(
+                                                                              title: Text('Error'),
+                                                                              content: Text('Something Went Wrong!'),
+                                                                              actions: [
+                                                                                TextButton(
+                                                                                  onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                  child: Text('Ok'),
+                                                                                ),
+                                                                              ],
+                                                                            );
+                                                                          },
+                                                                        );
+                                                                      }
+                                                                    }
+                                                                  }
                                                                 }
                                                                 await actions
                                                                     .removeFromAllBillList(
@@ -6791,7 +6933,7 @@ class _ProductAndListlaundrybillingWidgetState
                                                                           link:
                                                                               _model.base64Link,
                                                                           name:
-                                                                              buttonOutletRecord.name,
+                                                                              FFAppState().setCustName,
                                                                           filename:
                                                                               'invoice',
                                                                         );

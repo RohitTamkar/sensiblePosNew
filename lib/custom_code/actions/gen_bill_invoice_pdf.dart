@@ -9,6 +9,19 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'package:collection/collection.dart';
+import 'dart:io';
+import 'dart:convert';
+import 'index.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:pdf/pdf.dart';
+import 'dart:typed_data';
+import 'package:pdf/pdf.dart' as pw;
+import 'package:pdf/widgets.dart' as pw;
+import 'package:intl/intl.dart';
+import 'package:http/http.dart' as http;
+import 'package:pdf/widgets.dart' as pw;
+
 Future<String> genBillInvoicePdf(
   InvoiceRecord bill,
   OutletRecord outletDoc,
@@ -189,24 +202,7 @@ Future<String> genBillInvoicePdf(
   // Save the PDF
   final bytes = await pdf.save();
   final base64String = base64Encode(bytes);
-
-  // Saving PDF to external storage
-  Directory? directory = await getExternalStorageDirectory();
-  String downloadsPath = '/storage/emulated/0/Download';
-  Directory downloadsDirectory = Directory(downloadsPath);
-
-  if (!downloadsDirectory.existsSync()) {
-    downloadsDirectory.createSync(recursive: true);
-  }
-
-  String sanitizedInvoice = bill.invoice
-      .replaceAll(':', '_')
-      .replaceAll('/', '_')
-      .replaceAll('-', '_');
-  File file = File("$downloadsPath/" + sanitizedInvoice + ".pdf");
-
-  await file.writeAsBytes(bytes);
-  print("File saved at: ${file.path}");
+  return base64String;
 }
 
 String convertToWords(int amount) {
