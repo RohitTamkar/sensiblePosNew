@@ -183,7 +183,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
                                             FocusScope.of(dialogContext)
                                                 .unfocus(),
                                         child: Container(
-                                          height: 300.0,
+                                          height: 200.0,
                                           width: 300.0,
                                           child: DirectorypathWidget(),
                                         ),
