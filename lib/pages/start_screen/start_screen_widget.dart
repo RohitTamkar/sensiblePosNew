@@ -1,3 +1,4 @@
+import '/components/directorypath_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -165,6 +166,27 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
                               safeSetState(() {});
 
                               context.pushNamed('phoneAuthPage');
+                            },
+                            onLongPress: () async {
+                              await showModalBottomSheet(
+                                isScrollControlled: true,
+                                backgroundColor: Colors.transparent,
+                                enableDrag: false,
+                                context: context,
+                                builder: (context) {
+                                  return GestureDetector(
+                                    onTap: () =>
+                                        FocusScope.of(context).unfocus(),
+                                    child: Padding(
+                                      padding: MediaQuery.viewInsetsOf(context),
+                                      child: Container(
+                                        height: 300.0,
+                                        child: DirectorypathWidget(),
+                                      ),
+                                    ),
+                                  );
+                                },
+                              ).then((value) => safeSetState(() {}));
                             },
                             child: Material(
                               color: Colors.transparent,

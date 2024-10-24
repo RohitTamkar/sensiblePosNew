@@ -624,6 +624,9 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _newcount = prefs.getInt('ff_newcount') ?? _newcount;
     });
+    _safeInit(() {
+      _directory = prefs.getString('ff_directory') ?? _directory;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -3513,6 +3516,13 @@ class FFAppState extends ChangeNotifier {
       _countLaundryForContinuesIncrement;
   set countLaundryForContinuesIncrement(int value) {
     _countLaundryForContinuesIncrement = value;
+  }
+
+  String _directory = '';
+  String get directory => _directory;
+  set directory(String value) {
+    _directory = value;
+    prefs.setString('ff_directory', value);
   }
 }
 
