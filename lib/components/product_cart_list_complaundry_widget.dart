@@ -420,10 +420,6 @@ class _ProductCartListComplaundryWidgetState
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         isDense: true,
-                                        labelText:
-                                            FFLocalizations.of(context).getText(
-                                          'bxnt01gt' /* 1 */,
-                                        ),
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
@@ -445,7 +441,7 @@ class _ProductCartListComplaundryWidgetState
                                             ),
                                         hintText:
                                             FFLocalizations.of(context).getText(
-                                          'i5q43jrn' /* TextField */,
+                                          'ons6zsbs' /* qty */,
                                         ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium

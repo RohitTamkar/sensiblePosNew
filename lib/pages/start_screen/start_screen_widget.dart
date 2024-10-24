@@ -154,94 +154,102 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
                         ),
                       ),
                       Expanded(
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              FFAppState().navigate = 'PARKING';
-                              safeSetState(() {});
+                        child: Builder(
+                          builder: (context) => Padding(
+                            padding: EdgeInsets.all(15.0),
+                            child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                FFAppState().navigate = 'PARKING';
+                                safeSetState(() {});
 
-                              context.pushNamed('phoneAuthPage');
-                            },
-                            onLongPress: () async {
-                              await showModalBottomSheet(
-                                isScrollControlled: true,
-                                backgroundColor: Colors.transparent,
-                                enableDrag: false,
-                                context: context,
-                                builder: (context) {
-                                  return GestureDetector(
-                                    onTap: () =>
-                                        FocusScope.of(context).unfocus(),
-                                    child: Padding(
-                                      padding: MediaQuery.viewInsetsOf(context),
-                                      child: Container(
-                                        height: 300.0,
-                                        child: DirectorypathWidget(),
+                                context.pushNamed('phoneAuthPage');
+                              },
+                              onLongPress: () async {
+                                await showDialog(
+                                  context: context,
+                                  builder: (dialogContext) {
+                                    return Dialog(
+                                      elevation: 0,
+                                      insetPadding: EdgeInsets.zero,
+                                      backgroundColor: Colors.transparent,
+                                      alignment: AlignmentDirectional(0.0, 0.0)
+                                          .resolve(Directionality.of(context)),
+                                      child: GestureDetector(
+                                        onTap: () =>
+                                            FocusScope.of(dialogContext)
+                                                .unfocus(),
+                                        child: Container(
+                                          height: 300.0,
+                                          width: 300.0,
+                                          child: DirectorypathWidget(),
+                                        ),
                                       ),
-                                    ),
-                                  );
-                                },
-                              ).then((value) => safeSetState(() {}));
-                            },
-                            child: Material(
-                              color: Colors.transparent,
-                              elevation: 2.0,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(25.0),
-                              ),
-                              child: Container(
-                                width: 100.0,
-                                height: MediaQuery.sizeOf(context).height * 0.4,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
+                                    );
+                                  },
+                                );
+                              },
+                              child: Material(
+                                color: Colors.transparent,
+                                elevation: 2.0,
+                                shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(25.0),
-                                  border: Border.all(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    width: 10.0,
-                                  ),
                                 ),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 10.0),
-                                      child: Icon(
-                                        Icons.local_parking,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        size: 60.0,
-                                      ),
+                                child: Container(
+                                  width: 100.0,
+                                  height:
+                                      MediaQuery.sizeOf(context).height * 0.4,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    borderRadius: BorderRadius.circular(25.0),
+                                    border: Border.all(
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBackground,
+                                      width: 10.0,
                                     ),
-                                    Text(
-                                      FFLocalizations.of(context).getText(
-                                        '3gs32g9m' /* Parking APP */,
+                                  ),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 10.0),
+                                        child: Icon(
+                                          Icons.local_parking,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          size: 60.0,
+                                        ),
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .headlineMedium
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineMediumFamily,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            fontSize: 25.0,
-                                            letterSpacing: 0.0,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .headlineMediumFamily),
-                                          ),
-                                    ),
-                                  ],
+                                      Text(
+                                        FFLocalizations.of(context).getText(
+                                          '3gs32g9m' /* Parking APP */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .headlineMedium
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineMediumFamily,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              fontSize: 25.0,
+                                              letterSpacing: 0.0,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(FlutterFlowTheme
+                                                          .of(context)
+                                                      .headlineMediumFamily),
+                                            ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),

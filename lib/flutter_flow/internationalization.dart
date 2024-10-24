@@ -27523,15 +27523,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'bxnt01gt': {
-      'en': '1',
+    '5j9i5xo7': {
+      'en': '',
       'hi': '',
       'kn': '',
       'mr': '',
       'ta': '',
     },
-    'i5q43jrn': {
-      'en': 'TextField',
+    'ons6zsbs': {
+      'en': 'qty',
       'hi': '',
       'kn': '',
       'mr': '',
