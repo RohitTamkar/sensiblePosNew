@@ -3518,7 +3518,7 @@ class FFAppState extends ChangeNotifier {
     _countLaundryForContinuesIncrement = value;
   }
 
-  String _directory = '';
+  String _directory = 'C:\\\\Users\\\\Admin\\\\AppData\\\\Local\\\\firestore';
   String get directory => _directory;
   set directory(String value) {
     _directory = value;
