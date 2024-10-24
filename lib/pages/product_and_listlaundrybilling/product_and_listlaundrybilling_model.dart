@@ -1,4 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/components/discount_and_delivery_copy/discount_and_delivery_copy_widget.dart';
@@ -199,6 +200,14 @@ class ProductAndListlaundrybillingModel
   ProductStructStruct? productupdated2;
   // Stores action output result for [Custom Action - getProductlistHive] action in Button widget.
   List<ProductStructStruct>? newupdatedproductlist22;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  InvoiceRecord? pdfinvoiceDoc;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  HeaderRecord? pdfheaderDoc;
+  // Stores action output result for [Custom Action - genBillInvoicePdf] action in Button widget.
+  String? base64Link;
+  // Stores action output result for [Backend Call - API (sendWhatsappMsgBillPdf)] action in Button widget.
+  ApiCallResponse? apiResultjx3;
   // State field(s) for TextFieldsearch widget.
   FocusNode? textFieldsearchFocusNode;
   TextEditingController? textFieldsearchTextController;

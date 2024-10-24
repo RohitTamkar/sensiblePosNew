@@ -439,10 +439,6 @@ class _ProductCartListComplaundryWidgetState
                                                                   context)
                                                               .bodySmallFamily),
                                             ),
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          'ons6zsbs' /* qty */,
-                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(

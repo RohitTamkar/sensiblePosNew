@@ -144,14 +144,6 @@ class _WelcomeScreenNewWidgetState extends State<WelcomeScreenNewWidget>
         );
       }
 
-      FFAppState().screenSize = valueOrDefault<double>(
-        getJsonField(
-          _model.docRes,
-          r'''$.displaySizeInches''',
-        ),
-        0.0,
-      );
-      safeSetState(() {});
       if (FFAppState().targetPlatform == 'android') {
         context.pushNamed('LoginPageNew');
       } else {

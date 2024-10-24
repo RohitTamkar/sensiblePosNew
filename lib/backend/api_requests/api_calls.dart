@@ -404,6 +404,39 @@ class SendEmailCall {
   }
 }
 
+class SendWhatsappMsgBillPdfCall {
+  static Future<ApiCallResponse> call({
+    String? userMobileNumber = '',
+    String? link = '',
+    String? filename = '',
+    String? name = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "userMobileNumber": "${userMobileNumber}",
+  "link": "${link}",
+  "filename": "${filename}",
+  "name": "${name}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'sendWhatsappMsgBillPdf',
+      apiUrl:
+          'https://asia-south1-sensiblebizpro.cloudfunctions.net/msg91Whatsapp/send_pdf_whatsapp',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
 class ApiPagingParams {
   int nextPageNumber = 0;
   int numItems = 0;

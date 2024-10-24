@@ -27530,13 +27530,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'mr': '',
       'ta': '',
     },
-    'ons6zsbs': {
-      'en': 'qty',
-      'hi': '',
-      'kn': '',
-      'mr': '',
-      'ta': '',
-    },
   },
   // directorypath
   {

@@ -184,7 +184,7 @@ class _StartScreenWidgetState extends State<StartScreenWidget> {
                                                 .unfocus(),
                                         child: Container(
                                           height: 200.0,
-                                          width: 300.0,
+                                          width: 600.0,
                                           child: DirectorypathWidget(),
                                         ),
                                       ),
