@@ -159,14 +159,6 @@ class ProductAndListlaundrybillingModel
   // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
   ShiftDetailsStruct? updatedShift23;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
-  ProductRecord? stockupdateprd;
-  // Stores action output result for [Custom Action - hivegetproductbyId] action in Button widget.
-  ProductStructStruct? itemprd;
-  // Stores action output result for [Custom Action - hiveProductCrud] action in Button widget.
-  ProductStructStruct? productupdated;
-  // Stores action output result for [Custom Action - getProductlistHive] action in Button widget.
-  List<ProductStructStruct>? newupdatedproductlist2;
-  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   InvoiceRecord? pdfinvoiceDoc1;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   HeaderRecord? pdfheaderDoc1;
@@ -176,6 +168,14 @@ class ProductAndListlaundrybillingModel
   String? base64Link1;
   // Stores action output result for [Backend Call - API (sendWhatsappMsgBillPdf)] action in Button widget.
   ApiCallResponse? apiResultjx33;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  ProductRecord? stockupdateprd;
+  // Stores action output result for [Custom Action - hivegetproductbyId] action in Button widget.
+  ProductStructStruct? itemprd;
+  // Stores action output result for [Custom Action - hiveProductCrud] action in Button widget.
+  ProductStructStruct? productupdated;
+  // Stores action output result for [Custom Action - getProductlistHive] action in Button widget.
+  List<ProductStructStruct>? newupdatedproductlist2;
   // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
   List<SelItemListStruct>? prdlinstnewtx;
   // Stores action output result for [Custom Action - oldbalanceplusamt] action in Button widget.
@@ -192,6 +192,14 @@ class ProductAndListlaundrybillingModel
   ShiftRecord? shiftondataprint;
   // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
   ShiftDetailsStruct? updatedShiftDetails;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  InvoiceRecord? pdfinvoiceDoc;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  HeaderRecord? pdfheaderDoc;
+  // Stores action output result for [Custom Action - genBillInvoicePdf] action in Button widget.
+  String? base64Link;
+  // Stores action output result for [Backend Call - API (sendWhatsappMsgBillPdf)] action in Button widget.
+  ApiCallResponse? apiResultjx3;
   // Stores action output result for [Custom Action - scanPrinter] action in Button widget.
   bool? resDevice2;
   // Stores action output result for [Custom Action - connectDevice] action in Button widget.
@@ -210,14 +218,6 @@ class ProductAndListlaundrybillingModel
   ProductStructStruct? productupdated2;
   // Stores action output result for [Custom Action - getProductlistHive] action in Button widget.
   List<ProductStructStruct>? newupdatedproductlist22;
-  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
-  InvoiceRecord? pdfinvoiceDoc;
-  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
-  HeaderRecord? pdfheaderDoc;
-  // Stores action output result for [Custom Action - genBillInvoicePdf] action in Button widget.
-  String? base64Link;
-  // Stores action output result for [Backend Call - API (sendWhatsappMsgBillPdf)] action in Button widget.
-  ApiCallResponse? apiResultjx3;
   // State field(s) for TextFieldsearch widget.
   FocusNode? textFieldsearchFocusNode;
   TextEditingController? textFieldsearchTextController;

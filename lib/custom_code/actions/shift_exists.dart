@@ -10,6 +10,8 @@ import 'package:flutter/material.dart';
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
 import 'index.dart'; // Imports other custom actions
+
+import 'index.dart'; // Imports other custom actions
 import "package:firedart/firedart.dart";
 // Imports other custom actions
 
@@ -27,12 +29,26 @@ Future<dynamic> shiftExists(
   QuerySnapshot querySnapshot;
 
   if (FFAppState().targetPlatform == "windows") {
-    var ref = Firestore.instance
-        .collection('OUTLET/' + outletId + '/SHIFT')
-        .where('dayId', isEqualTo: dayId);
+    if (shiftId.toString() != "0") {
+      querySnapshot = await FirebaseFirestore.instance
+          .collection('OUTLET')
+          .doc(outletId)
+          .collection('SHIFT')
+          .where('dayId', isEqualTo: dayId)
+          .where("shiftId", isEqualTo: id.toString())
+          .get()
+          .then((value) => value);
+    } else {
+      querySnapshot = await FirebaseFirestore.instance
+          .collection('OUTLET')
+          .doc(outletId)
+          .collection('SHIFT')
+          .where('dayId', isEqualTo: dayId)
+          .get()
+          .then((value) => value);
+    }
 
-    var document = await ref.get();
-    if (document.length == 0) {
+    if (querySnapshot.size == 0) {
       print('No matching documents.');
       docRecord.add({
         "msg": "Shift not Started",
@@ -41,9 +57,9 @@ Future<dynamic> shiftExists(
         "startTimeFormat": "0"
       });
     } else {
-      int len = document.length;
+      int len = querySnapshot.docs.length;
       int count = 0;
-      document.forEach((doc) {
+      querySnapshot.docs.forEach((doc) {
         count = count + 1;
         if (doc["endTime"] == 0) {
           flag = true;

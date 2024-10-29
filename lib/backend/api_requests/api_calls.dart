@@ -410,18 +410,20 @@ class SendWhatsappMsgBillPdfCall {
     String? link = '',
     String? filename = '',
     String? name = '',
+    String? outletName = '',
   }) async {
     final ffApiRequestBody = '''
 {
   "userMobileNumber": "${userMobileNumber}",
   "link": "${link}",
   "filename": "${filename}",
-  "name": "${name}"
+  "name": "${name}",
+  "outletName": "${outletName}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'sendWhatsappMsgBillPdf',
       apiUrl:
-          'https://asia-south1-sensiblebizpro.cloudfunctions.net/msg91Whatsapp/send_pdf_whatsapp',
+          'https://asia-south1-sconnect-pos.cloudfunctions.net/SavePDFSendPDF/send_pdf_whatsapp',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
