@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom actions
+
 Future<List<dynamic>> addToHoldListprdGrocery(
   ProductStructStruct document,
   int billno,
@@ -19,29 +21,22 @@ Future<List<dynamic>> addToHoldListprdGrocery(
   List<dynamic> list = FFAppState().allBillsList;
   print(document);
   List<dynamic> itemList = [];
-  var y = 1.0;
+  double quantity = 1.0; // Default quantity
 
-  String? taxId = '';
-  if (document!.taxId.isNotEmpty) {
-    taxId = document.taxId;
-  } else {
-    taxId = 'QPIz6c63YKBYVKT80oPv';
-  }
+  // Resolve taxId and unitId defaults if necessary
+  String taxId =
+      document.taxId.isNotEmpty ? document.taxId : 'QPIz6c63YKBYVKT80oPv';
   TaxMasterRecord? taxRecord = taxcollection.firstWhere(
     (element) => element.id == taxId,
-    orElse: null,
   );
 
-  String? unitId = '';
-  if (document!.unitId.isNotEmpty) {
-    unitId = document?.unitId;
-  } else {
-    unitId = 'HjExWViQAwNJCUiUPwBz';
-  }
+  String unitId =
+      document.unitId.isNotEmpty ? document.unitId : 'HjExWViQAwNJCUiUPwBz';
   UnitTypeRecord? unitRecord = unitcollection.firstWhere(
     (element) => element.id == unitId,
-    orElse: null,
   );
+
+  // Discount calculation adjustments
   int disPer = document.discountPer.toInt();
   double disAmt = document.discountAmt;
 
@@ -50,125 +45,96 @@ Future<List<dynamic>> addToHoldListprdGrocery(
   } else if (disPer > 0) {
     disAmt = (document.sellingPrice * disPer) / 100.0;
   }
+
+  // Continue if taxRecord is available
   if (taxRecord != null) {
     double taxPer = taxRecord.percentage ?? 0.0;
-    double price = document!.sellingPrice;
-    double quantity = y.toDouble();
+    double price = document.sellingPrice;
 
-    // Calculate taxAmt for each item separately
+    // Calculate tax amount per item based on inclusive/exclusive option
     double taxAmtPerItem = (inclusiveorexclusive.toLowerCase() == 'inclusive')
         ? (price * taxPer) / (100.0 + taxPer)
         : (price * taxPer) / 100.0;
 
     double taxAmt = taxAmtPerItem * quantity;
 
+    // Calculate total price based on tax and discount
     double total = (inclusiveorexclusive.toLowerCase() == 'inclusive')
         ? (price * quantity)
-        : (price * quantity) + double.parse(taxAmt.toStringAsFixed(2));
+        : (price * quantity) + taxAmt;
+    total -= disAmt * quantity; // Deduct discount
 
-    // Deduct discount amount from total
-    total -= disAmt * quantity;
-
-    // Add tax amount for exclusive tax
-    /* if (inclusiveorexclusive.toLowerCase() == 'exclusive') {
-      total += taxAmt;
-    }
-*/
     int srNo = 1;
-    if (list.isNotEmpty) {
-      for (var bill in list) {
-        if (bill["billno"] == billno) {
-          if (bill["details"]["itemList"].isNotEmpty) {
-            itemList = bill["details"]["itemList"];
-            srNo = itemList.length + 1;
-            break;
-          }
-        }
+    // Fetch serial number if a bill with the same number already exists
+    for (var bill in list) {
+      if (bill["billno"] == billno && bill["details"]["itemList"].isNotEmpty) {
+        itemList = bill["details"]["itemList"];
+        srNo = itemList.length + 1;
+        break;
       }
     }
 
+    // New data structure for an item
     final data = {
       "srno": srNo,
-      "name": document!.name,
-      "regionallang": document!.regionalName,
-      "barcode": document!.barcode,
-      "price": (document.sellingPrice)!.toDouble(),
-      "mrpPrice": (document.mrpPrice)!.toDouble(),
+      "name": document.name,
+      "regionallang": document.regionalName,
+      "barcode": document.barcode,
+      "price": price,
+      "mrpPrice": document.mrpPrice.toDouble(),
       "quantity": quantity,
-      "unit": unitRecord.unitType, //kg,pcs,doz
-      "unitId": unitRecord.id,
-      "total": total, // Include taxAmt for exclusive tax
-      "id": document!.id,
-      "catId": document!.categoryId,
-      "taxId": document!.taxId,
+      "unit": unitRecord?.unitType,
+      "unitId": unitRecord?.id,
+      "total": double.parse(total.toStringAsFixed(2)),
+      "id": document.id,
+      "catId": document.categoryId,
+      "taxId": document.taxId,
       "taxPer": double.parse(taxPer.toStringAsFixed(2)),
       "taxAmt": double.parse(taxAmt.toStringAsFixed(2)),
       "disPer": double.parse(disPer.toStringAsFixed(2)),
-      "disAmt": disAmt,
+      "disAmt": double.parse(disAmt.toStringAsFixed(2)),
       "mfgDate": " ",
       "expDate": " ",
     };
 
-    var index;
-    var flag = false;
-    var flag1 = false;
-
-    if (list.isNotEmpty) {
-      for (int i = 0; i < list.length; i++) {
-        if (list[i]["billno"] == billno) {
-          if (list[i]["details"]["itemList"].length > 0) {
-            itemList = (list[i]["details"]["itemList"]);
-            index = i;
-            flag1 = true;
-            break;
-          } else {
-            itemList.add(data);
-            list[i]["details"]["itemList"] = itemList;
-
-            FFAppState().allBillsList = list;
-            break;
-          }
-        }
-      }
-
-      if (flag1) {
+    // Add or update item in the bill list
+    bool itemFound = false;
+    for (int i = 0; i < list.length; i++) {
+      if (list[i]["billno"] == billno) {
         for (int j = 0; j < itemList.length; j++) {
           if (itemList[j]["name"] == data["name"]) {
             itemList[j]["quantity"]++;
+
             itemList[j]["disAmt"] = double.parse(
                 (disAmt * itemList[j]["quantity"]).toStringAsFixed(2));
-            itemList[j]["taxAmt"] +=
-                double.parse(taxAmtPerItem.toStringAsFixed(2));
-            // Update taxAmt for each item
-            if (inclusiveorexclusive.toLowerCase() == 'inclusive') {
-              itemList[j]["total"] =
-                  itemList[j]["quantity"] * itemList[j]["price"];
-              // Update total for each item
-              double tt = itemList[j]["total"];
-              itemList[j]["total"] = double.parse(tt.toStringAsFixed(2));
-            } else {
-              itemList[j]["total"] =
-                  itemList[j]["quantity"] * itemList[j]["price"];
-              double tt = itemList[j]["total"];
-              itemList[j]["total"] = double.parse(tt.toStringAsFixed(2));
-            }
-            list[index]["details"]["itemList"] = itemList;
+
+            itemList[j]["taxAmt"] = double.parse(
+                (taxAmtPerItem * itemList[j]["quantity"]).toStringAsFixed(2));
+
+            // Update total for inclusive or exclusive tax
+            itemList[j]["total"] =
+                inclusiveorexclusive.toLowerCase() == 'inclusive'
+                    ? (itemList[j]["price"] * itemList[j]["quantity"])
+                    : (itemList[j]["price"] * itemList[j]["quantity"]) +
+                        itemList[j]["taxAmt"];
+            itemList[j]["total"] -= itemList[j]["disAmt"];
+
+            list[i]["details"]["itemList"] = itemList;
             FFAppState().allBillsList = list;
-            flag = true;
+            itemFound = true;
             break;
           }
         }
-
-        if (!flag) {
+        if (!itemFound) {
           data["srno"] = itemList.length + 1;
           itemList.add(data);
-          list[index]["details"]["itemList"] = itemList;
+          list[i]["details"]["itemList"] = itemList;
           FFAppState().allBillsList = list;
         }
+        break;
       }
     }
   }
-
   print(FFAppState().allBillsList);
   return itemList;
 }

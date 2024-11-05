@@ -6601,8 +6601,6 @@ class _ProductAndListlaundrybillingWidgetState
                                                                                 FFAppState().setCustName,
                                                                             filename:
                                                                                 'invoice.pdf',
-                                                                            outletName:
-                                                                                buttonOutletRecord.name,
                                                                           );
 
                                                                           _shouldSetState =

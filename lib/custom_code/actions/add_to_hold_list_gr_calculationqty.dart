@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom actions
+
 // Imports other custom actions
 
 // Imports other custom actions
@@ -40,25 +42,21 @@ Future<List<dynamic>> addToHoldListGrCalculationqty(
   double quantity = qty.toDouble();
 
   // Calculate discount amount based on discount percentage (if provided)
-  if (disAmt > 0) {
-    disAmt = (price * quantity * disPer) / 100.0;
+  if (disPer > 0) {
+    disAmt = (price * quantity * disPer) / 100.0; // Calculate discount amount
+  } else {
+    disAmt = 0.0; // No discount
   }
 
-  // Apply discount first by calculating the discounted total
+  // Calculate discounted total
   double discountedTotal = (price * quantity) - disAmt;
 
-  // Calculate taxAmt for each item based on the discounted total
-  double taxAmtPerItem = (inclusiveorexclusive.toLowerCase() == 'inclusive')
-      ? (discountedTotal * taxPer) / (100.0 + taxPer)
-      : (discountedTotal * taxPer) / 100.0;
+  // Calculate tax amount (exclusive GST)
+  double totalTaxAmt =
+      (discountedTotal * taxPer) / 100.0; // Apply tax on discounted total
 
-  // Calculate total tax amount based on quantity
-  double totalTaxAmt = taxAmtPerItem * quantity;
-
-  // Calculate total amount considering the discounted price and tax
-  double total = (inclusiveorexclusive.toLowerCase() == 'exclusive')
-      ? discountedTotal + totalTaxAmt
-      : discountedTotal;
+  // Calculate final total (exclusive GST)
+  double total = discountedTotal + totalTaxAmt;
 
   final data = {
     "name": document!.name,
@@ -96,19 +94,35 @@ Future<List<dynamic>> addToHoldListGrCalculationqty(
     for (int j = 0; j < itemList.length; j++) {
       if (itemList[j]["name"] == data["name"]) {
         itemExists = true;
+
+        // Update quantity
+        itemList[j]["quantity"] = quantity;
+
+        // Recalculate discount amount
+        if (disPer > 0) {
+          disAmt = (price * quantity * disPer) /
+              100.0; // Recalculate discount amount
+        } else {
+          disAmt = 0.0; // No discount
+        }
+
+        // Recalculate discounted total
+        double discountedTotal = (price * quantity) - disAmt;
+
+        // Recalculate tax amount (exclusive GST)
+        double totalTaxAmt = (discountedTotal * taxPer) / 100.0;
+
+        // Recalculate final total (exclusive GST)
+        double total = discountedTotal + totalTaxAmt;
+
+        // Update item details
         itemList[j]["taxPer"] = taxPer;
         itemList[j]["price"] = price;
-        itemList[j]["quantity"] = quantity;
         itemList[j]["taxAmt"] = double.parse(totalTaxAmt.toStringAsFixed(2));
         itemList[j]["disPer"] = disPer;
         itemList[j]["disAmt"] = double.parse(disAmt.toStringAsFixed(2));
-
-        itemList[j]["total"] = discountedTotal +
-            (inclusiveorexclusive.toLowerCase() == 'exclusive'
-                ? totalTaxAmt
-                : 0.0);
-        double tt = itemList[j]["total"];
-        itemList[j]["total"] = double.parse(tt.toStringAsFixed(2));
+        itemList[j]["total"] =
+            double.parse(total.toStringAsFixed(2)); // Update total
 
         list[billIndex]["details"]["itemList"] = itemList;
         break;

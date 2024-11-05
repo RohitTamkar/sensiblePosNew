@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom actions
+
 import 'dart:io';
 
 Future<void> newCustomAction5() async {
@@ -18,10 +20,10 @@ Future<void> newCustomAction5() async {
 Future<void> deleteFirestoreFolder() async {
   try {
     // Define the path to the Firestore folder
-    final directoryPath = 'C:\\Users\\POS\\AppData\\Local\\firestore';
-
+    // final directoryPath = FFAppState().directory;
+//C:\\Users\\Pos\\AppData\\Local\\firestore'
     // Create a reference to the directory
-    final directory = Directory(directoryPath);
+    final directory = Directory(FFAppState().directory);
 
     // Check if the directory exists
     if (await directory.exists()) {

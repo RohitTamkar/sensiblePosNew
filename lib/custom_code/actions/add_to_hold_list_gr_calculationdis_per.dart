@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom actions
+
 // Imports other custom actions
 
 // Imports other custom actions
@@ -26,11 +28,9 @@ Future<List<dynamic>> addToHoldListGrCalculationdisPer(
   double taxAmt,
 ) async {
   List<dynamic> list = FFAppState().allBillsList;
-  print(document);
   List<dynamic> itemList = [];
 
   String? unitId = document?.unitId ?? 'HjExWViQAwNJCUiUPwBz';
-
   UnitTypeRecord? unitRecord = unitcollection.firstWhere(
     (element) => element.id == unitId,
   );
@@ -38,24 +38,25 @@ Future<List<dynamic>> addToHoldListGrCalculationdisPer(
   double price = ratePrice;
   double quantity = qty.toDouble();
 
-  // Calculate discount amount (disAmt) based on disPer
-  disAmt = (price * quantity * disPer) / 100.0;
+  // Calculate discount amount based on discount percentage (disPer)
+  disAmt = (price * quantity * disPer) / 100.0; // Calculate discount amount
 
-  // Apply discount to price * quantity
+  // Calculate discounted total
   double discountedTotal = (price * quantity) - disAmt;
 
-  // Calculate taxAmt for each item based on the discounted total
-  double taxAmtPerItem = (inclusiveorexclusive.toLowerCase() == 'inclusive')
-      ? (discountedTotal * taxPer) / (100.0 + taxPer)
-      : (discountedTotal * taxPer) / 100.0;
+  // Calculate tax amount based on the discounted total
+  double totalTaxAmt;
+  if (inclusiveorexclusive.toLowerCase() == 'inclusive') {
+    // For inclusive, calculate the tax amount accordingly
+    totalTaxAmt = (discountedTotal * taxPer) / (100.0 + taxPer);
+  } else {
+    // For exclusive, calculate the tax amount normally
+    totalTaxAmt = (discountedTotal * taxPer) / 100.0;
+  }
 
-  // Calculate total tax amount based on quantity
-  double totalTaxAmt = taxAmtPerItem * quantity;
-
-  // Calculate total amount considering discounts and tax
-  double total = (inclusiveorexclusive.toLowerCase() == 'exclusive')
-      ? discountedTotal + totalTaxAmt
-      : discountedTotal;
+  // Calculate the final total
+  double total = discountedTotal +
+      (inclusiveorexclusive.toLowerCase() == 'exclusive' ? totalTaxAmt : 0.0);
 
   final data = {
     "name": document!.name,
@@ -63,20 +64,22 @@ Future<List<dynamic>> addToHoldListGrCalculationdisPer(
     "mrpPrice": (document.mrpPrice)!.toDouble(),
     "quantity": quantity,
     "unit": unitRecord?.unitType,
-    "total": total,
+    "total": double.parse(total.toStringAsFixed(2)),
+    // Store total as fixed to 2 decimal places
     "id": document.id,
     "catId": document.categoryId,
     "taxId": document.taxId,
     "taxPer": taxPer,
     "taxAmt": double.parse(totalTaxAmt.toStringAsFixed(2)),
-    "disPer": disPer,
+    // Store tax amount as fixed to 2 decimal places
+    "disPer": double.parse(disPer.toStringAsFixed(2)),
     "disAmt": double.parse(disAmt.toStringAsFixed(2)),
   };
 
   bool billExists = false;
   int billIndex = -1;
 
-  // Iterate over existing bills
+  // Check if the bill exists
   for (int i = 0; i < list.length; i++) {
     if (list[i]["billno"] == billno) {
       billExists = true;
@@ -89,23 +92,34 @@ Future<List<dynamic>> addToHoldListGrCalculationdisPer(
   if (billExists) {
     bool itemExists = false;
 
-    // Iterate over existing items in the bill
+    // Check if the item already exists in the bill
     for (int j = 0; j < itemList.length; j++) {
       if (itemList[j]["name"] == data["name"]) {
         itemExists = true;
+
+        // Update item details
         itemList[j]["taxPer"] = taxPer;
         itemList[j]["price"] = price;
         itemList[j]["quantity"] = quantity;
-        itemList[j]["taxAmt"] = double.parse(totalTaxAmt.toStringAsFixed(2));
-        itemList[j]["disPer"] = double.parse(disPer.toStringAsFixed(2));
-        itemList[j]["disAmt"] = double.parse(disAmt.toStringAsFixed(2));
 
-        itemList[j]["total"] = discountedTotal +
-            (inclusiveorexclusive.toLowerCase() == 'exclusive'
-                ? totalTaxAmt
-                : 0.0);
-        double tt = itemList[j]["total"];
-        itemList[j]["total"] = double.parse(tt.toStringAsFixed(2));
+        // Update discount amount
+        itemList[j]["disAmt"] = double.parse(disAmt.toStringAsFixed(2));
+        itemList[j]["disPer"] = double.parse(disPer.toStringAsFixed(2));
+        // Recalculate the total for the existing item
+        double updatedDiscountedTotal =
+            (price * quantity) - itemList[j]["disAmt"];
+
+        // Recalculate tax amount
+        double updatedTotalTaxAmt =
+            (inclusiveorexclusive.toLowerCase() == 'exclusive')
+                ? (updatedDiscountedTotal * taxPer) / 100.0
+                : (updatedDiscountedTotal * taxPer) / (100.0 + taxPer);
+
+        // Update the total amount
+        itemList[j]["total"] = double.parse(
+            (updatedDiscountedTotal + updatedTotalTaxAmt).toStringAsFixed(2));
+        itemList[j]["taxAmt"] =
+            double.parse(updatedTotalTaxAmt.toStringAsFixed(2));
 
         list[billIndex]["details"]["itemList"] = itemList;
         break;

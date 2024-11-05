@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom actions
+
 // Imports other custom actions
 Future<List<dynamic>> taxAmtChangedFunctiongrocery(
   ProductStructStruct document,
@@ -89,7 +91,7 @@ Future<List<dynamic>> taxAmtChangedFunctiongrocery(
     "taxPer": taxPer,
     "taxAmt": double.parse(totalTaxAmt.toStringAsFixed(2)),
     "disPer": disPer,
-    "disAmt": disAmt,
+    "disAmt": double.parse(disAmt.toStringAsFixed(2)),
   };
 
   var index;
@@ -119,15 +121,20 @@ Future<List<dynamic>> taxAmtChangedFunctiongrocery(
         if (itemList[j]["name"] == data["name"]) {
           itemList[j]["taxPer"] = taxPer;
           itemList[j]["price"] = ratePrice;
-          itemList[j]["taxAmt"] = taxAmt * qty; // Update taxAmt for each item
+          itemList[j]["taxAmt"] = double.parse(
+              (taxAmt * qty).toStringAsFixed(2)); // Update taxAmt for each item
           itemList[j]["disPer"] = disPer;
-          itemList[j]["disAmt"] = disAmt;
+          itemList[j]["disAmt"] = double.parse(disAmt.toStringAsFixed(2));
           itemList[j]["quantity"] = qty;
 
           if (inclusiveorexclusive.toLowerCase() == 'inclusive') {
             itemList[j]["total"] = qty * itemList[j]["price"];
+            double tt = itemList[j]["total"];
+            itemList[j]["total"] = double.parse(tt.toStringAsFixed(2));
           } else {
             itemList[j]["total"] = qty * itemList[j]["price"] + taxAmt;
+            double tt = itemList[j]["total"];
+            itemList[j]["total"] = double.parse(tt.toStringAsFixed(2));
           }
           itemList[j]["total"] -= disAmt * qty;
 

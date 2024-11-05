@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 // Imports other custom actions
 Future<List<dynamic>> taxPerChangedFunctiongrocery(
   ProductStructStruct document,
@@ -109,9 +111,13 @@ Future<List<dynamic>> taxPerChangedFunctiongrocery(
 
         if (inclusiveorexclusive.toLowerCase() == 'inclusive') {
           itemList[j]["total"] = (price * quantity) - disAmt * quantity;
+          double tt = itemList[j]["total"];
+          itemList[j]["total"] = double.parse(tt.toStringAsFixed(2));
         } else {
           itemList[j]["total"] =
               (price * quantity) + totalTaxAmt - disAmt * quantity;
+          double tt = itemList[j]["total"];
+          itemList[j]["total"] = double.parse(tt.toStringAsFixed(2));
         }
 
         list[billIndex]["details"]["itemList"] = itemList;

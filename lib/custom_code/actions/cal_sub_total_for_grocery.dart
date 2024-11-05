@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 // Imports other custom actions
 
 Future<double> calSubTotalForGrocery(
@@ -21,6 +23,7 @@ Future<double> calSubTotalForGrocery(
   double qty = 0;
   double tax = 0;
   double disAmt = 0;
+  double disPer = 0;
 
 //  print(obj.length);
   List<dynamic> itemList = [];
@@ -34,19 +37,23 @@ Future<double> calSubTotalForGrocery(
             for (int i = 0; i < itemList.length; i++) {
               tax += itemList[i]["taxAmt"];
               disAmt += itemList[i]["disAmt"];
+              disPer += itemList[i]["disPer"];
               //tax = 0;
-              double tax2 = itemList[i]["taxAmt"];
+              double tax2 = itemList[i]["taxPer"];
+              itemList[i]["taxPer"] = tax2.roundToDouble();
               /*  if (itemList[i]["taxPer"] > 0.0) {
                 total += itemList[i]["total"] ;
               } else {
                 total += itemList[i]["total"] ;
               }*/
+              tax.toStringAsFixed(2);
               total += itemList[i]["total"];
               qty += itemList[i]["quantity"];
               print("total");
               print(total);
             }
           }
+          FFAppState().disPer = disPer.toDouble();
           FFAppState().disAmt = disAmt.toDouble();
           FFAppState().subTotal = total.toDouble();
           FFAppState().taxamt = tax.toDouble();

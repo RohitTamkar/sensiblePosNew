@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 // Imports other custom actions
 
 import 'dart:async';
@@ -85,17 +87,7 @@ Future printBillnewhivegrocery(
           .get();
       for (var doc in querySnapshot.docs) {
         print(doc);
-        /*  if (doc["recepitLogoUrl"] != null && doc["recepitLogoUrl"].isNotEmpty) {
-          final ByteData data =
-              await NetworkAssetBundle(Uri.parse(doc["recepitLogoUrl"]))
-                  .load("");
-          final Uint8List imgBytes = data.buffer.asUint8List();
-          final img.Image image = img.decodeImage(imgBytes)!;
 
-          //   bytes += generator.imageRaster(image, imageFn: PosImageFn.graphics);
-          bytes += generator.image(image);
-          // bytes += generator.imageRaster(image);
-        }*/
         if (doc["title"] != null && doc["title"].isNotEmpty) {
           bytes += generator.text(doc["title"],
               styles: PosStyles(
@@ -209,7 +201,7 @@ Future printBillnewhivegrocery(
 
       String printLine = '';
       String dateString = '';
-      String serialTemp = 'Serial no: ' + FFAppState().count.toString();
+      String serialTemp = 'Serial no: ' + FFAppState().newcount.toString();
 
       final DateTime now = DateTime.now();
       final DateFormat formatter = DateFormat('dd-MM-yyyy');
