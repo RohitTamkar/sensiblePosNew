@@ -371,8 +371,8 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                       widget!.jsonitem,
                                       r'''$.currentStock''',
                                     )),
-                                    int.parse(_model
-                                        .textFieldqtTextController.text))) {
+                                    functions.stringToint(_model
+                                        .textFieldqtTextController.text)!)) {
                                   await showDialog(
                                     context: context,
                                     builder: (alertDialogContext) {
@@ -588,8 +588,8 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                     widget!.jsonitem,
                                     r'''$.currentStock''',
                                   )),
-                                  int.parse(
-                                      _model.textFieldqtTextController.text))) {
+                                  functions.stringToint(_model
+                                      .textFieldqtTextController.text)!)) {
                                 await showDialog(
                                   context: context,
                                   builder: (alertDialogContext) {

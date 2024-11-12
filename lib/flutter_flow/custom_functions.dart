@@ -1274,3 +1274,7 @@ int? returncountnew(String? invoicestring) {
 
   return null;
 }
+
+int? stringToint(String? doubleString) {
+  return int.tryParse(doubleString!) ?? 0;
+}
