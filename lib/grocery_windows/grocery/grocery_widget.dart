@@ -362,20 +362,17 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             focusNode: _model.textFieldqtFocusNode,
                             onFieldSubmitted: (_) async {
                               var _shouldSetState = false;
-                              if (true ==
-                                  getJsonField(
-                                    widget!.jsonitem,
-                                    r'''$.stockable''',
-                                  )) {
+                              if (getJsonField(
+                                widget!.jsonitem,
+                                r'''$.stockable''',
+                              )) {
                                 if (!functions.greatethanlesskiosk(
                                     functions.jsontoint(getJsonField(
                                       widget!.jsonitem,
                                       r'''$.currentStock''',
                                     )),
-                                    functions.jsontoint(getJsonField(
-                                      widget!.jsonitem,
-                                      r'''$.quantity''',
-                                    )))) {
+                                    int.parse(_model
+                                        .textFieldqtTextController.text))) {
                                   await showDialog(
                                     context: context,
                                     builder: (alertDialogContext) {
@@ -571,20 +568,28 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                           ),
                           onPressed: () async {
                             var _shouldSetState = false;
-                            if (true ==
-                                getJsonField(
-                                  widget!.jsonitem,
-                                  r'''$.stockable''',
-                                )) {
+                            safeSetState(() {
+                              _model.textFieldqtTextController?.text =
+                                  (double.parse(_model
+                                              .textFieldqtTextController.text) +
+                                          1)
+                                      .toString();
+                              _model.textFieldqtTextController?.selection =
+                                  TextSelection.collapsed(
+                                      offset: _model.textFieldqtTextController!
+                                          .text.length);
+                            });
+                            if (getJsonField(
+                              widget!.jsonitem,
+                              r'''$.stockable''',
+                            )) {
                               if (!functions.greatethanlesskiosk(
                                   functions.jsontoint(getJsonField(
                                     widget!.jsonitem,
                                     r'''$.currentStock''',
                                   )),
-                                  functions.jsontoint(getJsonField(
-                                    widget!.jsonitem,
-                                    r'''$.quantity''',
-                                  )))) {
+                                  int.parse(
+                                      _model.textFieldqtTextController.text))) {
                                 await showDialog(
                                   context: context,
                                   builder: (alertDialogContext) {
@@ -604,17 +609,6 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                 return;
                               }
                             }
-                            safeSetState(() {
-                              _model.textFieldqtTextController?.text =
-                                  (double.parse(_model
-                                              .textFieldqtTextController.text) +
-                                          1)
-                                      .toString();
-                              _model.textFieldqtTextController?.selection =
-                                  TextSelection.collapsed(
-                                      offset: _model.textFieldqtTextController!
-                                          .text.length);
-                            });
                             _model.all =
                                 await actions.addToHoldListGrCalculationqty(
                               widget!.parameter2!,
