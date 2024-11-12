@@ -12,6 +12,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom widgets
 
+import 'index.dart'; // Imports other custom widgets
+
 import 'package:flutter_libserialport/flutter_libserialport.dart';
 
 class Weightscalewidget extends StatefulWidget {
@@ -53,7 +55,7 @@ class _WeightscalewidgetState extends State<Weightscalewidget> {
           String? weight = _extractWeightFromBuffer(_buffer);
           if (weight != null) {
             setState(() {
-              _weightData = '$weight kg';
+              _weightData = weight;
               FFAppState().weight = _weightData; // Update the displayed weight
             });
             _buffer = ""; // Clear buffer after processing
@@ -76,7 +78,6 @@ class _WeightscalewidgetState extends State<Weightscalewidget> {
 
   // Extract weight value from the buffer
   String? _extractWeightFromBuffer(String buffer) {
-    // Adjust regex to capture positive/negative decimal values (e.g., -0.003, 0.004, etc.)
     final RegExp regex = RegExp(r'([-+]?\d*\.\d+)');
     final match = regex.allMatches(buffer).map((m) => m.group(0)).toList();
 
@@ -84,11 +85,11 @@ class _WeightscalewidgetState extends State<Weightscalewidget> {
     for (String? value in match) {
       if (value != null) {
         double weight = double.tryParse(value) ?? 0.0;
-        // Apply a threshold: ignore values close to zero (e.g., < 0.01 kg)
-        if (weight.abs() > 0.01) {
-          return weight
-              .toStringAsFixed(3); // Return the weight with 3 decimal places
+        // Apply a threshold: treat values below 0.01 as zero
+        if (weight.abs() < 0.01) {
+          return "0.000 "; // Show zero weight if below threshold
         }
+        return '${weight.toStringAsFixed(3)}'; // Return the weight with 3 decimal places
       }
     }
     return null; // No valid weight found

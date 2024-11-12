@@ -134,6 +134,7 @@ class _KioskAdvertisingWidgetState extends State<KioskAdvertisingWidget> {
                                     builder: (context) {
                                       final kioskAdvertisingVar =
                                           kioskAdvertisingAdvertisementRecordList
+                                              .map((e) => e)
                                               .toList();
 
                                       return Container(

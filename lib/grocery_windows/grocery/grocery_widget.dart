@@ -361,6 +361,39 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             controller: _model.textFieldqtTextController,
                             focusNode: _model.textFieldqtFocusNode,
                             onFieldSubmitted: (_) async {
+                              var _shouldSetState = false;
+                              if (getJsonField(
+                                widget!.jsonitem,
+                                r'''$.stockable''',
+                              )) {
+                                if (!functions.greatethanlesskiosk(
+                                    functions.jsontoint(getJsonField(
+                                      widget!.jsonitem,
+                                      r'''$.currentStock''',
+                                    )),
+                                    functions.jsontoint(getJsonField(
+                                      widget!.jsonitem,
+                                      r'''$.quantity''',
+                                    )))) {
+                                  await showDialog(
+                                    context: context,
+                                    builder: (alertDialogContext) {
+                                      return AlertDialog(
+                                        content: Text('Item Out Of Stock !'),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () => Navigator.pop(
+                                                alertDialogContext),
+                                            child: Text('Ok'),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
+                                  if (_shouldSetState) safeSetState(() {});
+                                  return;
+                                }
+                              }
                               _model.allbillist =
                                   await actions.addToHoldListGrCalculationqty(
                                 widget!.parameter2!,
@@ -382,6 +415,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                 double.parse(
                                     _model.textFieldTaxAmtTextController.text),
                               );
+                              _shouldSetState = true;
                               safeSetState(() {
                                 _model.textFielddisAmtTextController?.text =
                                     getJsonField(
@@ -437,6 +471,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                 FFAppState().selBill.toString(),
                                 FFAppState().allBillsList.toList(),
                               );
+                              _shouldSetState = true;
                               _model.reuslt12 = await actions.calBillAmtGrocery(
                                 valueOrDefault<double>(
                                   FFAppState().disAmt,
@@ -444,8 +479,8 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                 ),
                                 FFAppState().delCharges,
                               );
-
-                              safeSetState(() {});
+                              _shouldSetState = true;
+                              if (_shouldSetState) safeSetState(() {});
                             },
                             autofocus: false,
                             obscureText: false,
@@ -534,6 +569,39 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             size: 10.0,
                           ),
                           onPressed: () async {
+                            var _shouldSetState = false;
+                            if (getJsonField(
+                              widget!.jsonitem,
+                              r'''$.stockable''',
+                            )) {
+                              if (!functions.greatethanlesskiosk(
+                                  functions.jsontoint(getJsonField(
+                                    widget!.jsonitem,
+                                    r'''$.currentStock''',
+                                  )),
+                                  functions.jsontoint(getJsonField(
+                                    widget!.jsonitem,
+                                    r'''$.quantity''',
+                                  )))) {
+                                await showDialog(
+                                  context: context,
+                                  builder: (alertDialogContext) {
+                                    return AlertDialog(
+                                      content: Text('Item Out Of Stock !'),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () =>
+                                              Navigator.pop(alertDialogContext),
+                                          child: Text('Ok'),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
+                                if (_shouldSetState) safeSetState(() {});
+                                return;
+                              }
+                            }
                             safeSetState(() {
                               _model.textFieldqtTextController?.text =
                                   (double.parse(_model
@@ -565,6 +633,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                               double.parse(
                                   _model.textFieldTaxAmtTextController.text),
                             );
+                            _shouldSetState = true;
                             safeSetState(() {
                               _model.textFielddisAmtTextController?.text =
                                   getJsonField(
@@ -618,6 +687,7 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                               FFAppState().selBill.toString(),
                               FFAppState().allBillsList.toList(),
                             );
+                            _shouldSetState = true;
                             _model.reuslt121 = await actions.calBillAmtGrocery(
                               valueOrDefault<double>(
                                 FFAppState().disAmt,
@@ -625,10 +695,10 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                               ),
                               FFAppState().delCharges,
                             );
+                            _shouldSetState = true;
                             FFAppState().finalAmt = FFAppState().finalAmt;
                             FFAppState().update(() {});
-
-                            safeSetState(() {});
+                            if (_shouldSetState) safeSetState(() {});
                           },
                         ),
                         SizedBox(
