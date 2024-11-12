@@ -3533,6 +3533,10 @@ class _BillingGroceryNewWidgetState extends State<BillingGroceryNewWidget>
                                                                 FFAppState()
                                                                     .delCharges,
                                                               );
+                                                              FFAppState()
+                                                                  .prdid = '';
+                                                              safeSetState(
+                                                                  () {});
 
                                                               safeSetState(
                                                                   () {});
