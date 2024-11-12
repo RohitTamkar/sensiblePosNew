@@ -362,10 +362,11 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                             focusNode: _model.textFieldqtFocusNode,
                             onFieldSubmitted: (_) async {
                               var _shouldSetState = false;
-                              if (getJsonField(
-                                widget!.jsonitem,
-                                r'''$.stockable''',
-                              )) {
+                              if (true ==
+                                  getJsonField(
+                                    widget!.jsonitem,
+                                    r'''$.stockable''',
+                                  )) {
                                 if (!functions.greatethanlesskiosk(
                                     functions.jsontoint(getJsonField(
                                       widget!.jsonitem,
@@ -570,10 +571,11 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                           ),
                           onPressed: () async {
                             var _shouldSetState = false;
-                            if (getJsonField(
-                              widget!.jsonitem,
-                              r'''$.stockable''',
-                            )) {
+                            if (true ==
+                                getJsonField(
+                                  widget!.jsonitem,
+                                  r'''$.stockable''',
+                                )) {
                               if (!functions.greatethanlesskiosk(
                                   functions.jsontoint(getJsonField(
                                     widget!.jsonitem,
