@@ -5073,7 +5073,7 @@ class _PaymentModeGroceryWidgetState extends State<PaymentModeGroceryWidget> {
                                                       ..synC =
                                                           _model.itemprd2?.synC
                                                       ..hivekey = _model
-                                                          .itemprd2?.version
+                                                          .itemprd2?.hivekey
                                                       ..version = _model
                                                           .itemprd2?.version,
                                                   );
