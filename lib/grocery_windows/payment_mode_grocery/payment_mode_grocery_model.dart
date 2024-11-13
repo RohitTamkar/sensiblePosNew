@@ -83,6 +83,14 @@ class PaymentModeGroceryModel
   ShiftRecord? shiftondata;
   // Stores action output result for [Custom Action - hiveShiftCrud] action in Button widget.
   ShiftDetailsStruct? updatedShift;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  ProductRecord? stockupdateprdsave;
+  // Stores action output result for [Custom Action - hivegetproductbyId] action in Button widget.
+  ProductStructStruct? itemprd;
+  // Stores action output result for [Custom Action - hiveProductCrud] action in Button widget.
+  ProductStructStruct? productupdated;
+  // Stores action output result for [Custom Action - getProductlistHive] action in Button widget.
+  List<ProductStructStruct>? newupdatedproductlist2;
   // Stores action output result for [Custom Action - filterProducts2] action in Button widget.
   List<SelItemListStruct>? prdlinstnewtx;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
@@ -111,6 +119,14 @@ class PaymentModeGroceryModel
   List<dynamic>? returnedList2;
   // Stores action output result for [Custom Action - newCustomAction] action in Button widget.
   List<dynamic>? device;
+  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
+  ProductRecord? stockupdateprdprt;
+  // Stores action output result for [Custom Action - hivegetproductbyId] action in Button widget.
+  ProductStructStruct? itemprd2;
+  // Stores action output result for [Custom Action - hiveProductCrud] action in Button widget.
+  ProductStructStruct? productupdated2;
+  // Stores action output result for [Custom Action - getProductlistHive] action in Button widget.
+  List<ProductStructStruct>? newupdatedproductlist22;
 
   @override
   void initState(BuildContext context) {}
