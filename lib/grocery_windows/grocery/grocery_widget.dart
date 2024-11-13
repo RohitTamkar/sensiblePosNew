@@ -366,13 +366,12 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                 widget!.jsonitem,
                                 r'''$.stockable''',
                               )) {
-                                if (!functions.greatethanlesskiosk(
-                                    functions.jsontoint(getJsonField(
+                                if (functions.jsontoint(getJsonField(
                                       widget!.jsonitem,
                                       r'''$.currentStock''',
-                                    )),
+                                    )) <
                                     functions.stringToint(_model
-                                        .textFieldqtTextController.text)!)) {
+                                        .textFieldqtTextController.text)!) {
                                   await showDialog(
                                     context: context,
                                     builder: (alertDialogContext) {
