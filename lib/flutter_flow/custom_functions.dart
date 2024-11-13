@@ -1278,3 +1278,16 @@ int? returncountnew(String? invoicestring) {
 int? stringToint(String? doubleString) {
   return (double.tryParse(doubleString ?? '')?.toInt()) ?? 0;
 }
+
+bool greaterThanlessgrocery(
+  int first,
+  int second,
+) {
+  bool val = false;
+  if (first >= second) {
+    val = true;
+  } else {
+    val = false;
+  }
+  return val;
+}
