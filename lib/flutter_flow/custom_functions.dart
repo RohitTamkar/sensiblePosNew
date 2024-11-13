@@ -1276,5 +1276,5 @@ int? returncountnew(String? invoicestring) {
 }
 
 int? stringToint(String? doubleString) {
-  return int.tryParse(doubleString!) ?? 0;
+  return (double.tryParse(doubleString ?? '')?.toInt()) ?? 0;
 }

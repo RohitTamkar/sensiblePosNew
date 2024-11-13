@@ -10,6 +10,8 @@ import 'package:flutter/material.dart';
 // Begin custom widget code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom widgets
+
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:provider/provider.dart';
 
@@ -99,23 +101,479 @@ class _SearchHiveprdGroceryState extends State<SearchHiveprdGrocery> {
           child: Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
             child: TypeAheadField<ProductStructStruct>(
-              textFieldConfiguration: TextFieldConfiguration(
-                controller: _productNameController,
-                focusNode: _focusNode,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Search for a product...',
-                ),
-                onSubmitted: (value) async {
-                  print('Submitted value: $value');
-                  List<ProductStructStruct> matchingProducts = widget.document
-                      .where((product) => product.barcode == value)
-                      .toList();
+                textFieldConfiguration: TextFieldConfiguration(
+                  controller: _productNameController,
+                  focusNode: _focusNode,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'Search for a product...',
+                  ),
+                  onSubmitted: (value) async {
+                    print('Submitted value: $value');
+                    List<ProductStructStruct> matchingProducts = widget.document
+                        .where((product) => product.barcode == value)
+                        .toList();
 
-                  if (matchingProducts.isNotEmpty) {
-                    ProductStructStruct selectedProduct =
-                        matchingProducts.first;
-                    FFAppState().productHiveput = selectedProduct;
+                    if (matchingProducts.isNotEmpty) {
+                      ProductStructStruct selectedProduct =
+                          matchingProducts.first;
+                      FFAppState().productHiveput = selectedProduct;
+
+                      var _shouldSetState = false;
+                      if (selectedProduct.stockable) {
+                        if (selectedProduct.stock > 0) {
+                          if (FFAppState().prdid != selectedProduct.id) {
+                            ///////////////////////////////////////////////////
+                            if (FFAppState().holdBillCount == 0) {
+                              FFAppState().holdBillCount =
+                                  FFAppState().holdBillCount + 1;
+                              FFAppState().addToAllBillsList(
+                                  functions.generateBillDetailsJson(
+                                      0.0,
+                                      0.0,
+                                      0.0,
+                                      'CASH',
+                                      0.0,
+                                      0.0,
+                                      FFAppState().billAmt,
+                                      0.0,
+                                      FFAppState().finalAmt,
+                                      '0',
+                                      FFAppState().itemCartList.toList(),
+                                      FFAppState().holdBillCount));
+                              FFAppState().selBill = 1;
+                            }
+                            _model.addtosavebill =
+                                await actions.addToHoldListprdGrocery(
+                              FFAppState().productHiveput,
+                              FFAppState().selBill,
+                              widget.taxcollection,
+                              functions.enabletaxinclusive(widget
+                                  .appSettingsRecord.settingList
+                                  .where((e) => e.title == 'enableInclusiveTax')
+                                  .toList()
+                                  .first
+                                  .value),
+                              widget.unitcollection,
+                            );
+                            _model.calculateResult =
+                                await actions.calSubTotalForGrocery(
+                              FFAppState().selBill.toString(),
+                              FFAppState().allBillsList!,
+                            );
+                            _model.calbillAmt = await actions.calBillAmtGrocery(
+                              FFAppState().disAmt,
+                              FFAppState().delCharges,
+                            );
+
+                            FFAppState().groceryshow = false;
+                            setState(() {});
+                            FFAppState().prdid = selectedProduct.id;
+                            safeSetState(() {});
+                            await _model.listViewprd?.animateTo(
+                              _model.listViewprd!.position.maxScrollExtent,
+                              duration: Duration(milliseconds: 100),
+                              curve: Curves.ease,
+                            );
+                            _model.submitForm();
+                            FFAppState().update(() {});
+
+                            setState(() {});
+                            _productNameController.clear();
+                            await Future.delayed(Duration(milliseconds: 100));
+                            FocusScope.of(context).requestFocus(_focusNode);
+                            if (_shouldSetState) safeSetState(() {});
+                            return;
+                          } else {
+                            if (selectedProduct.stock >
+                                functions.doubleToInt(valueOrDefault<double>(
+                                  getJsonField(
+                                    functions
+                                        .filterBillList(FFAppState().selBill,
+                                            FFAppState().allBillsList.toList())
+                                        .where((e) =>
+                                            selectedProduct.id ==
+                                            valueOrDefault<String>(
+                                              getJsonField(
+                                                e,
+                                                r'''$.id''',
+                                              )?.toString(),
+                                              '0',
+                                            ))
+                                        .toList()
+                                        .first,
+                                    r'''$.quantity''',
+                                  ),
+                                  0.0,
+                                ))!) {
+                              ////////////////////
+                              if (FFAppState().holdBillCount == 0) {
+                                FFAppState().holdBillCount =
+                                    FFAppState().holdBillCount + 1;
+                                FFAppState().addToAllBillsList(
+                                    functions.generateBillDetailsJson(
+                                        0.0,
+                                        0.0,
+                                        0.0,
+                                        'CASH',
+                                        0.0,
+                                        0.0,
+                                        FFAppState().billAmt,
+                                        0.0,
+                                        FFAppState().finalAmt,
+                                        '0',
+                                        FFAppState().itemCartList.toList(),
+                                        FFAppState().holdBillCount));
+                                FFAppState().selBill = 1;
+                              }
+                              _model.addtosavebill =
+                                  await actions.addToHoldListprdGrocery(
+                                FFAppState().productHiveput,
+                                FFAppState().selBill,
+                                widget.taxcollection,
+                                functions.enabletaxinclusive(widget
+                                    .appSettingsRecord.settingList
+                                    .where(
+                                        (e) => e.title == 'enableInclusiveTax')
+                                    .toList()
+                                    .first
+                                    .value),
+                                widget.unitcollection,
+                              );
+                              _model.calculateResult =
+                                  await actions.calSubTotalForGrocery(
+                                FFAppState().selBill.toString(),
+                                FFAppState().allBillsList!,
+                              );
+                              _model.calbillAmt =
+                                  await actions.calBillAmtGrocery(
+                                FFAppState().disAmt,
+                                FFAppState().delCharges,
+                              );
+
+                              FFAppState().groceryshow = false;
+                              setState(() {});
+                              _model.submitForm();
+                              _productNameController.clear();
+                              await Future.delayed(Duration(milliseconds: 100));
+                              FocusScope.of(context).requestFocus(_focusNode);
+                              FFAppState().update(() {});
+
+                              setState(() {});
+                            } else {
+                              await showDialog(
+                                context: context,
+                                builder: (alertDialogContext) {
+                                  return AlertDialog(
+                                    content: Text('Item Out Of Stock'),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () =>
+                                            Navigator.pop(alertDialogContext),
+                                        child: Text('Ok'),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
+                              _model.submitForm();
+                              FFAppState().update(() {});
+
+                              setState(() {});
+                              _productNameController.clear();
+                              await Future.delayed(Duration(milliseconds: 100));
+                              FocusScope.of(context).requestFocus(_focusNode);
+                              if (_shouldSetState) safeSetState(() {});
+                              return;
+                            }
+                          }
+                        } else {
+                          await showDialog(
+                            context: context,
+                            builder: (alertDialogContext) {
+                              return AlertDialog(
+                                content: Text('Item Out Of Stock'),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () =>
+                                        Navigator.pop(alertDialogContext),
+                                    child: Text('Ok'),
+                                  ),
+                                ],
+                              );
+                            },
+                          );
+                          _model.submitForm();
+                          FFAppState().update(() {});
+
+                          setState(() {});
+                          _productNameController.clear();
+                          await Future.delayed(Duration(milliseconds: 100));
+                          FocusScope.of(context).requestFocus(_focusNode);
+                          if (_shouldSetState) safeSetState(() {});
+                          return;
+                        }
+                      } else {
+                        ////////////////////////////////////////////////////////
+                        if (FFAppState().holdBillCount == 0) {
+                          FFAppState().holdBillCount =
+                              FFAppState().holdBillCount + 1;
+                          FFAppState().addToAllBillsList(
+                              functions.generateBillDetailsJson(
+                                  0.0,
+                                  0.0,
+                                  0.0,
+                                  'CASH',
+                                  0.0,
+                                  0.0,
+                                  FFAppState().billAmt,
+                                  0.0,
+                                  FFAppState().finalAmt,
+                                  '0',
+                                  FFAppState().itemCartList.toList(),
+                                  FFAppState().holdBillCount));
+                          FFAppState().selBill = 1;
+                        }
+                        _model.addtosavebill =
+                            await actions.addToHoldListprdGrocery(
+                          FFAppState().productHiveput,
+                          FFAppState().selBill,
+                          widget.taxcollection,
+                          functions.enabletaxinclusive(widget
+                              .appSettingsRecord.settingList
+                              .where((e) => e.title == 'enableInclusiveTax')
+                              .toList()
+                              .first
+                              .value),
+                          widget.unitcollection,
+                        );
+                        _model.calculateResult =
+                            await actions.calSubTotalForGrocery(
+                          FFAppState().selBill.toString(),
+                          FFAppState().allBillsList!,
+                        );
+                        _model.calbillAmt = await actions.calBillAmtGrocery(
+                          FFAppState().disAmt,
+                          FFAppState().delCharges,
+                        );
+
+                        /* setState(() {
+                      print(_model2.textFieldqtTextController?.text);
+
+                      _model2.textFieldqtTextController?.text =
+                          getJsonField(
+                            _model.addtosavebill!
+                                .where((e) =>
+                            getJsonField(
+                              e,
+                              r'''$.barcode''',
+                            ) ==
+                              value )
+                                .toList()
+                                .first,
+                            r'''$.quantity''',
+                          ).toString();
+
+
+                    });*/
+                        FFAppState().groceryshow = false;
+                        setState(() {});
+                        _model.submitForm();
+                        _productNameController.clear();
+                        await Future.delayed(Duration(milliseconds: 100));
+                        FocusScope.of(context).requestFocus(_focusNode);
+                        FFAppState().update(() {});
+
+                        setState(() {});
+                      }
+                    }
+                  },
+                ),
+                suggestionsCallback: (pattern) {
+                  return widget.document.where((product) => product.name
+                      .toLowerCase()
+                      .contains(pattern.toLowerCase()));
+                },
+                itemBuilder: (context, ProductStructStruct product) {
+                  if (product.stockable) {
+                    return ListTile(
+                      title: Text(product.name),
+                      subtitle: Text(
+                          '\₹${product.sellingPrice.toStringAsFixed(2)}  Stock :${product.stock.toStringAsFixed(2)}'),
+                      subtitleTextStyle: TextStyle(color: Colors.red),
+                    );
+                  } else {
+                    return ListTile(
+                      title: Text(product.name),
+                      subtitle:
+                          Text('\₹${product.sellingPrice.toStringAsFixed(2)} '),
+                    );
+                  }
+                },
+                onSuggestionSelected: (ProductStructStruct document) async {
+                  var _shouldSetState = false;
+                  if (document.stockable) {
+                    if (document.stock > 0) {
+                      if (FFAppState().prdid != document.id) {
+                        ///////////////////////////////////////////////////////////
+                        if (FFAppState().holdBillCount == 0) {
+                          FFAppState().holdBillCount =
+                              FFAppState().holdBillCount + 1;
+                          FFAppState().addToAllBillsList(
+                              functions.generateBillDetailsJson(
+                                  0.0,
+                                  0.0,
+                                  0.0,
+                                  'CASH',
+                                  0.0,
+                                  0.0,
+                                  FFAppState().billAmt,
+                                  0.0,
+                                  FFAppState().finalAmt,
+                                  '0',
+                                  FFAppState().itemCartList.toList(),
+                                  FFAppState().holdBillCount));
+                          FFAppState().selBill = 1;
+                        }
+                        _model.addtosavebill =
+                            await actions.addToHoldListprdGrocery(
+                                document,
+                                FFAppState().selBill,
+                                widget.taxcollection!.toList(),
+                                functions.enabletaxinclusive(widget
+                                    .appSettingsRecord.settingList
+                                    .where(
+                                        (e) => e.title == 'enableInclusiveTax')
+                                    .toList()
+                                    .first
+                                    .value),
+                                widget.unitcollection!.toList());
+                        _model.calculateResult =
+                            await actions.calSubTotalForGrocery(
+                          FFAppState().selBill.toString(),
+                          FFAppState().allBillsList!.toList(),
+                        );
+
+                        _model.calbillAmt = await actions.calBillAmtGrocery(
+                          FFAppState().disAmt,
+                          FFAppState().delCharges,
+                        );
+                        FFAppState().groceryshow = false;
+                        FFAppState().prdid = document.id;
+                        FFAppState().update(() {});
+
+                        setState(() {});
+                      } else {
+                        if (document.stock >
+                            functions.doubleToInt(valueOrDefault<double>(
+                              getJsonField(
+                                functions
+                                    .filterBillList(FFAppState().selBill,
+                                        FFAppState().allBillsList.toList())
+                                    .where((e) =>
+                                        document.id ==
+                                        valueOrDefault<String>(
+                                          getJsonField(
+                                            e,
+                                            r'''$.id''',
+                                          )?.toString(),
+                                          '0',
+                                        ))
+                                    .toList()
+                                    .first,
+                                r'''$.quantity''',
+                              ),
+                              0.0,
+                            ))!) {
+                          ///////////////////////////////////////////////
+
+                          if (FFAppState().holdBillCount == 0) {
+                            FFAppState().holdBillCount =
+                                FFAppState().holdBillCount + 1;
+                            FFAppState().addToAllBillsList(
+                                functions.generateBillDetailsJson(
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    'CASH',
+                                    0.0,
+                                    0.0,
+                                    FFAppState().billAmt,
+                                    0.0,
+                                    FFAppState().finalAmt,
+                                    '0',
+                                    FFAppState().itemCartList.toList(),
+                                    FFAppState().holdBillCount));
+                            FFAppState().selBill = 1;
+                          }
+                          _model.addtosavebill =
+                              await actions.addToHoldListprdGrocery(
+                                  document,
+                                  FFAppState().selBill,
+                                  widget.taxcollection!.toList(),
+                                  functions.enabletaxinclusive(widget
+                                      .appSettingsRecord.settingList
+                                      .where((e) =>
+                                          e.title == 'enableInclusiveTax')
+                                      .toList()
+                                      .first
+                                      .value),
+                                  widget.unitcollection!.toList());
+                          _model.calculateResult =
+                              await actions.calSubTotalForGrocery(
+                            FFAppState().selBill.toString(),
+                            FFAppState().allBillsList!.toList(),
+                          );
+
+                          _model.calbillAmt = await actions.calBillAmtGrocery(
+                            FFAppState().disAmt,
+                            FFAppState().delCharges,
+                          );
+                          FFAppState().groceryshow = false;
+                          FFAppState().update(() {});
+
+                          setState(() {});
+                        } else {
+                          await showDialog(
+                            context: context,
+                            builder: (alertDialogContext) {
+                              return AlertDialog(
+                                content: Text('Item Out Of Stock'),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () =>
+                                        Navigator.pop(alertDialogContext),
+                                    child: Text('Ok'),
+                                  ),
+                                ],
+                              );
+                            },
+                          );
+                          if (_shouldSetState) safeSetState(() {});
+                          return;
+                        }
+                      }
+                    } else {
+                      await showDialog(
+                        context: context,
+                        builder: (alertDialogContext) {
+                          return AlertDialog(
+                            content: Text('Item Out Of Stock'),
+                            actions: [
+                              TextButton(
+                                onPressed: () =>
+                                    Navigator.pop(alertDialogContext),
+                                child: Text('Ok'),
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                      if (_shouldSetState) safeSetState(() {});
+                      return;
+                    }
+                  } else {
+                    ///////////////////////////////////////////////
                     if (FFAppState().holdBillCount == 0) {
                       FFAppState().holdBillCount =
                           FFAppState().holdBillCount + 1;
@@ -137,119 +595,36 @@ class _SearchHiveprdGroceryState extends State<SearchHiveprdGrocery> {
                     }
                     _model.addtosavebill =
                         await actions.addToHoldListprdGrocery(
-                      FFAppState().productHiveput,
-                      FFAppState().selBill,
-                      widget.taxcollection,
-                      functions.enabletaxinclusive(
-                          widget.appSettingsRecord.inclusiveTax),
-                      widget.unitcollection,
-                    );
+                            document,
+                            FFAppState().selBill,
+                            widget.taxcollection!.toList(),
+                            functions.enabletaxinclusive(widget
+                                .appSettingsRecord.settingList
+                                .where((e) => e.title == 'enableInclusiveTax')
+                                .toList()
+                                .first
+                                .value),
+                            widget.unitcollection!.toList());
                     _model.calculateResult =
                         await actions.calSubTotalForGrocery(
                       FFAppState().selBill.toString(),
-                      FFAppState().allBillsList!,
+                      FFAppState().allBillsList!.toList(),
                     );
+
                     _model.calbillAmt = await actions.calBillAmtGrocery(
                       FFAppState().disAmt,
                       FFAppState().delCharges,
                     );
-
-                    /* setState(() {
-                      print(_model2.textFieldqtTextController?.text);
-
-                      _model2.textFieldqtTextController?.text =
-                          getJsonField(
-                            _model.addtosavebill!
-                                .where((e) =>
-                            getJsonField(
-                              e,
-                              r'''$.barcode''',
-                            ) ==
-                              value )
-                                .toList()
-                                .first,
-                            r'''$.quantity''',
-                          ).toString();
-
-
-                    });*/
                     FFAppState().groceryshow = false;
-                    setState(() {});
-                    _model.submitForm();
-                    _productNameController.clear();
-                    await Future.delayed(Duration(milliseconds: 100));
-                    FocusScope.of(context).requestFocus(_focusNode);
                     FFAppState().update(() {});
 
                     setState(() {});
                   }
-                },
-              ),
-              suggestionsCallback: (pattern) {
-                return widget.document.where((product) =>
-                    product.name.toLowerCase().contains(pattern.toLowerCase()));
-              },
-              itemBuilder: (context, ProductStructStruct product) {
-                return ListTile(
-                  title: Text(product.name),
-                  subtitle:
-                      Text('\₹${product.sellingPrice.toStringAsFixed(2)}'),
-                );
-              },
-              onSuggestionSelected: (ProductStructStruct document) async {
-                _productNameController.clear();
-                if (FFAppState().holdBillCount == 0) {
-                  FFAppState().holdBillCount = FFAppState().holdBillCount + 1;
-                  FFAppState().addToAllBillsList(
-                      functions.generateBillDetailsJson(
-                          0.0,
-                          0.0,
-                          0.0,
-                          'CASH',
-                          0.0,
-                          0.0,
-                          FFAppState().billAmt,
-                          0.0,
-                          FFAppState().finalAmt,
-                          '0',
-                          FFAppState().itemCartList.toList(),
-                          FFAppState().holdBillCount));
-                  FFAppState().selBill = 1;
-                }
-                _model.addtosavebill = await actions.addToHoldListprdGrocery(
-                    document,
-                    FFAppState().selBill,
-                    widget.taxcollection!.toList(),
-                    functions.enabletaxinclusive(
-                        widget.appSettingsRecord.inclusiveTax),
-                    widget.unitcollection!.toList());
-                _model.calculateResult = await actions.calSubTotalForGrocery(
-                  FFAppState().selBill.toString(),
-                  FFAppState().allBillsList!.toList(),
-                );
 
-                _model.calbillAmt = await actions.calBillAmtGrocery(
-                  FFAppState().disAmt,
-                  FFAppState().delCharges,
-                );
-                FFAppState().groceryshow = false;
-                FFAppState().update(() {});
-
-                setState(() {});
-                /*
-
-                  await _model.listViewprd?.animateTo
-                  (
-                  _model.listViewprd!.position.maxScrollExtent,
-                  duration: Duration(milliseconds: 100),
-                  curve: Curves.ease,
-                  );
-
-                  */
-              },
-            ),
+                  if (_shouldSetState) safeSetState(() {});
+                }),
           ),
-        )
+        ),
       ],
     );
   }

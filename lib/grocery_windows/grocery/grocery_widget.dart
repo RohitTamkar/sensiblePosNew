@@ -568,17 +568,6 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                           ),
                           onPressed: () async {
                             var _shouldSetState = false;
-                            safeSetState(() {
-                              _model.textFieldqtTextController?.text =
-                                  (double.parse(_model
-                                              .textFieldqtTextController.text) +
-                                          1)
-                                      .toString();
-                              _model.textFieldqtTextController?.selection =
-                                  TextSelection.collapsed(
-                                      offset: _model.textFieldqtTextController!
-                                          .text.length);
-                            });
                             if (getJsonField(
                               widget!.jsonitem,
                               r'''$.stockable''',
@@ -609,6 +598,17 @@ class _GroceryWidgetState extends State<GroceryWidget> {
                                 return;
                               }
                             }
+                            safeSetState(() {
+                              _model.textFieldqtTextController?.text =
+                                  (double.parse(_model
+                                              .textFieldqtTextController.text) +
+                                          1)
+                                      .toString();
+                              _model.textFieldqtTextController?.selection =
+                                  TextSelection.collapsed(
+                                      offset: _model.textFieldqtTextController!
+                                          .text.length);
+                            });
                             _model.all =
                                 await actions.addToHoldListGrCalculationqty(
                               widget!.parameter2!,

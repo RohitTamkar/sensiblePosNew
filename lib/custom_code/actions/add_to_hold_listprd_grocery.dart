@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom actions
 
+import 'index.dart'; // Imports other custom actions
+
 Future<List<dynamic>> addToHoldListprdGrocery(
   ProductStructStruct document,
   int billno,
@@ -95,6 +97,8 @@ Future<List<dynamic>> addToHoldListprdGrocery(
       "disAmt": double.parse(disAmt.toStringAsFixed(2)),
       "mfgDate": " ",
       "expDate": " ",
+      "stockable": document.stockable,
+      "currentStock": document.stock,
     };
 
     // Add or update item in the bill list
