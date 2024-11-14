@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom actions
+
 import 'package:hive/hive.dart';
 import 'package:sensible_biz_p_o_s/custom_code/actions/setup_item_hive.dart';
 
@@ -34,6 +36,7 @@ Future<ProductStructStruct?> hivegetproductbyId(
         if (itemBlob != null) {
           print('get');
           print(itemBlob);
+          itemBlob.hivekey = hivekey;
           return itemBlob;
         }
       }

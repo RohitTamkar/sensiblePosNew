@@ -225,3 +225,4 @@ export '/pages/weightscalesetting/weightscalesetting_widget.dart'
     show WeightscalesettingWidget;
 export '/pages/product_and_listlaundrybilling/product_and_listlaundrybilling_widget.dart'
     show ProductAndListlaundrybillingWidget;
+export '/test_widget/test_widget_widget.dart' show TestWidgetWidget;

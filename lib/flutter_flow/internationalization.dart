@@ -23241,6 +23241,30 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ta': '',
     },
   },
+  // testWidget
+  {
+    'vevrxux4': {
+      'en': 'Back',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    'x9mzaph9': {
+      'en': 'Page Title',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+    't1j0ur2i': {
+      'en': 'Home',
+      'hi': '',
+      'kn': '',
+      'mr': '',
+      'ta': '',
+    },
+  },
   // OutletDetailsHeader
   {
     'dk8fulps': {
